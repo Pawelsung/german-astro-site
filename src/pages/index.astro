@@ -1,11 +1,77 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// 1. 同時抓取 mdx 和 astro 檔案
+const allFiles = import.meta.glob('./*.{mdx,astro}', { eager: true });
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// 2. 轉換為陣列並過濾
+const allLessons = Object.values(allFiles).filter((file: any) => {
+  // 取得檔名來排除自己 (index.astro)
+  const fileName = file.file?.split('/').pop();
+  const isIndex = fileName === 'index.astro';
+  
+  // 必須要有標題 (title) 才會顯示在首頁卡片上
+  return !isIndex && file.frontmatter?.title;
+});
+
+// 3. 取得所有不重複的分類
+const categories = [...new Set(allLessons.map((lesson: any) => lesson.frontmatter.category))].filter(Boolean);
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>德語學習中心 | German Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FDFBF7] min-h-screen pb-20 font-sans">
+  
+  <header class="bg-amber-600 text-white py-16 px-4 text-center rounded-b-[60px] shadow-2xl">
+    <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">🇩🇪 德語特訓營</h1>
+    <p class="text-amber-100 text-lg font-medium">系統化標籤分類，攻克德文</p>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 -mt-10 pb-20">
+    {/* 如果沒有任何課程，顯示提示 */}
+    {categories.length === 0 && (
+      <div class="bg-white p-20 rounded-[40px] text-center border-2 border-dashed border-amber-200 shadow-xl">
+        <p class="text-gray-400 font-bold text-xl">目前還沒有符合條件的課程檔案</p>
+        <p class="text-gray-400 text-sm mt-2">請檢查檔案頂部是否有正確的 title 與 category 設定</p>
+      </div>
+    )}
+
+    {/* 分類循環 */}
+    {categories.map(category => (
+      <section class="mb-12">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-8 w-2 bg-amber-500 rounded-full"></div>
+          <h2 class="text-2xl font-black text-gray-800">{category}</h2>
+        </div>
+
+        {/* 課程卡片網格 */}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {allLessons
+            .filter((l: any) => l.frontmatter.category === category)
+            .map((lesson: any) => (
+            <a href={lesson.url} class="group bg-white rounded-[40px] p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-amber-50 flex flex-col h-full">
+              <h3 class="text-2xl font-black text-gray-800 group-hover:text-amber-600 mb-4 leading-tight transition-colors">
+                {lesson.frontmatter.title}
+              </h3>
+              <p class="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-medium">
+                {lesson.frontmatter.description}
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-auto">
+                {lesson.frontmatter.tags?.map((tag: string) => (
+                  <span class="px-3 py-1 bg-amber-50 text-amber-600 text-[10px] font-black rounded-full border border-amber-100 shadow-sm">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+</body>
+</html>

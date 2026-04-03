@@ -1,0 +1,38 @@
+---
+title: "名詞大挑戰 (Nomen Challenge)"
+description: "德語學習者的夢魘？透過極速挑戰模式，把 Der, Die, Das 變成你的直覺反應！"
+category: "德語特訓營"
+tags: ["名詞", "詞性", "Der/Die/Das", "極速測驗"]
+image: "https://images.unsplash.com/photo-1546410531-b4ec37bc9d72?w=400"
+---
+
+import NounChallengeApp from '../components/NounChallengeApp.jsx';
+
+<div className="max-w-4xl mx-auto px-4 py-8">
+  <a href="/" className="text-indigo-600 font-bold mb-6 inline-block hover:underline transition-all">
+    ← 返回學習大廳
+  </a>
+  
+  <div className="mb-8">
+    <h1 className="text-4xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight">
+      {frontmatter.title}
+    </h1>
+    
+    <div className="flex flex-wrap gap-2 mb-6">
+      {frontmatter.tags.map(tag => (
+        <span className="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-black rounded-full border border-indigo-100">
+          #{tag}
+        </span>
+      ))}
+    </div>
+
+    <p className="text-slate-600 leading-relaxed font-medium">
+      {frontmatter.description} <br/>
+      在這個模式中，你需要在最短的時間內，為畫面上出現的名詞選擇正確的定冠詞。準備好挑戰你的最高連擊數了嗎？
+    </p>
+  </div>
+
+  {/* 載入互動挑戰元件 */}
+  <NounChallengeApp client:load />
+
+</div>

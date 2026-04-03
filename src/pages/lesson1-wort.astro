@@ -1,0 +1,686 @@
+---
+
+// 這一行是讓首頁 index.astro 能夠成功讀取到卡片資訊的魔法！
+
+export const frontmatter = {
+
+  title: "Lektion 1: 德語名詞練習",
+
+  description: "包含了閃卡、詞性、聽寫與字典的完整綜合練習平台。可自製單字卡上傳練習（json檔）",
+
+  category: "德語文法特訓",
+
+  tags: ["全功能", "聽寫", "雲端同步"]
+
+};
+
+---
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德語磚家 Wort-Meister | 語音修復版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style is:global>
+        body { font-family: 'Nunito', 'Noto Sans TC', sans-serif; background-color: #f8fafc; }
+        
+        .theme-der-text { color: #2563eb; } .theme-der-bg { background-color: #eff6ff; } .theme-der-border { border-color: #bfdbfe; } .theme-der-badge { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .theme-die-text { color: #e11d48; } .theme-die-bg { background-color: #fff1f2; } .theme-die-border { border-color: #fecdd3; } .theme-die-badge { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+        .theme-das-text { color: #059669; } .theme-das-bg { background-color: #ecfdf5; } .theme-das-border { border-color: #a7f3d0; } .theme-das-badge { background: linear-gradient(135deg, #10b981, #059669); }
+        
+        .card-container { perspective: 1200px; }
+        .card-inner { transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); transform-style: preserve-3d; position: relative; width: 100%; height: 100%; }
+        .card-container.flipped .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back { backface-visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1.5rem; }
+        .card-back { transform: rotateY(180deg); }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; scroll-behavior: smooth; }
+
+        @keyframes spin-sync {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .sync-active { animation: spin-sync 2s linear infinite; }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col relative selection:bg-indigo-100 selection:text-indigo-900">
+
+    <div id="toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 px-6 py-3.5 rounded-2xl text-white font-bold shadow-2xl z-[60] transition-all duration-400 opacity-0 translate-y-[-20px] hidden backdrop-blur-md">
+        提示訊息
+    </div>
+
+    <div id="confirm-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden justify-center items-center z-50 transition-opacity">
+        <div class="bg-white p-8 rounded-[2rem] shadow-2xl max-w-sm w-11/12 text-center mx-4 transform scale-100 transition-transform">
+            <div class="w-20 h-20 bg-rose-100 text-rose-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-5">⚠️</div>
+            <p class="text-2xl font-black text-slate-800 mb-2">確定重設資料？</p>
+            <p class="text-slate-500 mb-8 font-medium leading-relaxed">您的雲端同步資料與本地資料都將被重置為預設單字。</p>
+            <div class="flex gap-4">
+                <button onclick="window.closeConfirm()" class="flex-1 bg-slate-100 text-slate-700 py-3.5 rounded-xl font-bold hover:bg-slate-200">取消</button>
+                <button onclick="window.executeRestore()" class="flex-1 bg-rose-500 text-white py-3.5 rounded-xl font-bold hover:bg-rose-600 shadow-lg">確定重設</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="category-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden flex-col justify-end sm:justify-center items-center z-50 transition-opacity opacity-0">
+        <div class="bg-white w-full sm:w-11/12 sm:max-w-lg sm:rounded-[2rem] rounded-t-[2rem] shadow-2xl transform translate-y-full sm:translate-y-0 sm:scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <h2 class="text-xl font-black text-slate-800">選擇學習目標</h2>
+                <button onclick="window.closeCategoryModal()" class="w-10 h-10 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xl font-bold">✕</button>
+            </div>
+            <div class="p-6 overflow-y-auto no-scrollbar flex-grow">
+                <div id="category-grid" class="flex flex-wrap gap-3"></div>
+            </div>
+        </div>
+    </div>
+
+<header class="bg-white/80 backdrop-blur-lg border-b border-slate-200/60 sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="/" class="w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-600 rounded-full font-black hover:bg-indigo-100 transition-all">
+                    ←
+                </a>
+                <h1 class="text-2xl font-black text-slate-800 tracking-tight flex items-center gap-2">
+                    <span class="text-2xl">🇩🇪</span> 德語磚家
+                </h1>
+                <div id="cloud-status-icon" class="text-slate-300" title="雲端同步狀態">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" /></svg>
+                </div>
+            </div>
+            
+            <div class="flex bg-slate-100/80 p-1 rounded-2xl w-full sm:w-auto overflow-x-auto no-scrollbar shadow-inner border border-slate-200/50">
+                <button id="btn-mode-learn" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('learn')">📖 閃卡</button>
+                <button id="btn-mode-quiz" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('quiz')">🧠 詞性</button>
+                <button id="btn-mode-spell" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('spell')">✍️ 聽寫</button>
+                <button id="btn-mode-list" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('list')">🔍 字典</button>
+                <button id="btn-mode-db" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('db')">⚙️ 儀表板</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-2xl mx-auto w-full px-4 py-6 flex flex-col items-center">
+        
+        <div id="top-controls" class="w-full mb-8 flex flex-col items-center">
+            <button onclick="window.openCategoryModal()" class="group flex items-center justify-between gap-3 bg-white border-2 border-slate-200 px-5 py-3.5 rounded-2xl font-bold text-slate-700 hover:border-indigo-300 hover:shadow-lg transition-all active:scale-95 w-full max-w-sm mb-4">
+                <div class="flex items-center gap-3 overflow-hidden">
+                    <span id="current-category-text" class="truncate text-lg text-slate-800">載入中...</span>
+                    <span id="category-error-badge" class="hidden bg-rose-500 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full shadow-sm ml-1">⚠️ 0</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-slate-400"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+        </div>
+
+        <div id="learn-view" class="w-full h-96 card-container cursor-pointer mb-6 relative group">
+            <div id="flashcard-box" class="card-inner w-full h-full shadow-xl rounded-[2rem]" onclick="window.toggleCard()">
+                <div id="card-front" class="card-front bg-white border-2 flex flex-col items-center p-8 text-center transition-colors relative">
+                    <button id="btn-star" onclick="window.toggleStar(event)" class="absolute top-6 left-6 w-12 h-12 flex items-center justify-center rounded-full z-20 text-slate-300">
+                        <svg id="star-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /></svg>
+                    </button>
+                    <button onclick="window.playAudio(event, window.filteredWords[window.currentIndex]?.word)" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-slate-50 rounded-full z-10 text-xl hover:bg-indigo-50">🔊</button>
+                    <div class="flex-grow flex flex-col justify-center items-center w-full">
+                        <span id="word-article-badge" class="px-4 py-1.5 rounded-full text-white font-black text-sm uppercase mb-6 shadow-md"></span>
+                        <span id="word-main" class="text-6xl font-black text-slate-800 tracking-tight leading-tight"></span>
+                    </div>
+                    <div class="mt-auto pt-6 text-xs font-bold text-slate-400">左右滑動切換 • 點擊翻面</div>
+                </div>
+                <div id="card-back" class="card-back border-2 flex flex-col justify-center items-center p-8 text-center bg-white relative">
+                     <div class="flex-grow flex flex-col justify-center items-center w-full">
+                        <span id="word-meaning" class="text-5xl font-black text-slate-800 mb-6"></span>
+                        <div class="bg-slate-50 px-5 py-2 rounded-xl border border-slate-100 mb-8">
+                            <span id="word-plural" class="text-lg font-bold text-slate-600"></span>
+                        </div>
+                        
+                        <div class="w-full flex flex-col items-center gap-3">
+                            <button onclick="window.playAudio(event, window.filteredWords[window.currentIndex]?.example)" class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center shadow-sm hover:bg-indigo-100 active:scale-95 transition-all text-xl">
+                                🔊
+                            </button>
+                            <p id="word-example" class="text-lg text-slate-700 italic text-center leading-relaxed max-w-[90%]"></p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-view" class="w-full hidden flex-col items-center mb-6">
+            <div class="bg-white rounded-[2rem] shadow-xl w-full p-10 text-center mb-8 border border-slate-100 relative">
+                <button onclick="window.playAudio(event, window.filteredWords[window.currentIndex]?.word)" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-slate-50 rounded-full">🔊</button>
+                <span id="quiz-word" class="text-5xl font-black text-slate-800 mb-4 block"></span>
+                <span id="quiz-meaning" class="text-xl font-bold text-slate-400 block"></span>
+            </div>
+            <div class="grid grid-cols-3 gap-4 w-full" id="quiz-btn-container">
+                <button onclick="window.submitQuiz('der')" class="py-6 rounded-3xl bg-white border-2 border-slate-100 font-black text-3xl text-blue-600">der</button>
+                <button onclick="window.submitQuiz('die')" class="py-6 rounded-3xl bg-white border-2 border-slate-100 font-black text-3xl text-rose-500">die</button>
+                <button onclick="window.submitQuiz('das')" class="py-6 rounded-3xl bg-white border-2 border-slate-100 font-black text-3xl text-emerald-600">das</button>
+            </div>
+            <div id="quiz-feedback-container" class="w-full h-0 overflow-hidden opacity-0 mt-0"><div id="quiz-feedback" class="h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl"></div></div>
+        </div>
+
+        <div id="spell-view" class="w-full hidden flex-col items-center mb-6">
+            <div class="bg-white rounded-[2rem] shadow-xl w-full p-8 text-center border border-slate-100">
+                <button onclick="window.playAudio(event, window.filteredWords[window.currentIndex]?.word)" class="w-20 h-20 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto text-3xl">🔊</button>
+                <span id="spell-meaning" class="text-3xl font-black text-slate-800 block mb-8"></span>
+                <form onsubmit="event.preventDefault(); window.submitSpell();" class="w-full flex flex-col gap-2">
+                    <div class="flex gap-3">
+                        <span id="spell-article" class="text-xl font-black text-slate-500 bg-slate-100 px-5 py-4 rounded-2xl shrink-0"></span>
+                        <input type="text" id="spell-input" enterkeyhint="send" placeholder="拼出單字..." autocomplete="off" class="flex-1 bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-2xl font-bold text-center outline-none focus:border-indigo-500">
+                    </div>
+                    <div id="spell-feedback-container" class="w-full h-0 overflow-hidden opacity-0 mt-2"><div id="spell-feedback" class="h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl"></div></div>
+                    <button type="submit" class="w-full mt-2 bg-slate-800 text-white py-4 rounded-2xl font-bold">檢查答案</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="list-view" class="w-full hidden flex-col mb-6">
+            <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-200 mb-4 sticky top-20 z-10">
+                <input type="text" id="list-search" oninput="window.renderVerbList()" placeholder="搜尋單字、中文或分類..." class="w-full px-6 py-3 rounded-2xl bg-slate-50 outline-none font-bold">
+            </div>
+            <div id="verb-list-container" class="space-y-4 w-full"></div>
+        </div>
+
+        <div id="db-view" class="w-full hidden flex-col items-center mb-6">
+            <div class="w-full bg-blue-600 p-6 rounded-[2rem] shadow-lg text-white mb-6 flex items-center justify-between">
+                <div>
+                    <h3 class="font-black text-xl mb-1">雲端同步中心</h3>
+                    <p id="cloud-status-text" class="text-blue-100 text-xs font-bold uppercase tracking-widest">正在連接...</p>
+                </div>
+                <div id="cloud-sync-btn" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center cursor-pointer" onclick="window.saveDatabaseToCloud()">🔄</div>
+            </div>
+
+            <div class="w-full bg-white p-6 rounded-[2rem] border border-slate-200 mb-6">
+                <h3 class="font-black text-slate-800 mb-4 flex items-center gap-2">🎙️ 語音設定</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-black text-slate-400 uppercase mb-2">德語人聲</label>
+                        <select id="voice-select" class="w-full p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-sm outline-none"></select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-[10px] font-black text-slate-400 uppercase">語速</label>
+                                <span id="rate-value" class="text-xs font-black text-indigo-600">0.9x</span>
+                            </div>
+                            <input type="range" id="voice-rate" min="0.5" max="1.5" step="0.1" value="0.9" oninput="window.updateVoiceParam('rate', this.value)" class="w-full accent-indigo-600">
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-[10px] font-black text-slate-400 uppercase">音調</label>
+                                <span id="pitch-value" class="text-xs font-black text-indigo-600">1.0</span>
+                            </div>
+                            <input type="range" id="voice-pitch" min="0.5" max="2.0" step="0.1" value="1.0" oninput="window.updateVoiceParam('pitch', this.value)" class="w-full accent-indigo-600">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col gap-3">
+                <input type="file" id="file-import" accept=".json,.txt,.csv" class="hidden" onchange="window.handleFileImport(event)">
+                <div class="flex gap-3">
+                    <button onclick="document.getElementById('file-import').click()" class="flex-1 bg-white border-2 border-slate-200 py-3.5 rounded-xl font-bold">📥 匯入字庫</button>
+                    <button onclick="window.exportToFile()" class="flex-1 bg-white border-2 border-slate-200 py-3.5 rounded-xl font-bold">💾 匯出備份</button>
+                </div>
+                <button onclick="window.openConfirm()" class="w-full bg-rose-50 text-rose-600 border-2 border-rose-100 py-3.5 rounded-xl font-bold mt-2">🧹 重設所有資料</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="bottom-controls" class="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-xl border-t border-slate-200/60 pb-safe pt-3 px-4 z-40">
+        <div class="max-w-2xl mx-auto flex items-center justify-between pb-3 gap-4">
+            <button onclick="window.prevWord()" class="w-14 h-14 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center active:scale-90 font-bold transition-all">←</button>
+            <div class="flex-1 flex flex-col items-center">
+                <div id="progress-text" class="bg-slate-100 px-6 py-2 rounded-full font-black text-slate-700 text-sm">0 / 0</div>
+            </div>
+            <button onclick="window.nextWord()" class="w-14 h-14 bg-indigo-600 text-white rounded-full flex items-center justify-center shadow-lg active:scale-90 font-bold transition-all">→</button>
+        </div>
+    </div>
+    
+    <div class="h-24"></div>
+
+    <script type="module" is:inline>
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // 安全載入 Firebase 設定 (避免 Astro SSR 找不到變數而崩潰)
+        let firebaseConfig = {};
+        try {
+            if (typeof __firebase_config !== 'undefined') {
+                firebaseConfig = JSON.parse(__firebase_config);
+            }
+        } catch (e) {
+            console.warn("使用本地離線模式運行");
+        }
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'german-brick-pro-v3';
+        
+        let app, auth, db;
+        try {
+            if (Object.keys(firebaseConfig).length > 0) {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+            }
+        } catch (e) {
+            console.warn("Firebase 未啟動", e);
+        }
+
+        const defaultDatabase = [
+            { article: "der", word: "Apfel", plural: "die Äpfel", meaning: "蘋果", example: "Ein Kilo Äpfel bitte.", category: "🍎 飲食與採買", errors: 0, starred: false },
+            { article: "die", word: "Banane", plural: "die Bananen", meaning: "香蕉", example: "Die Bananen sind süß.", category: "🍎 飲食與採買", errors: 0, starred: false },
+            { article: "das", word: "Brot", plural: "die Brote", meaning: "麵包", example: "Das Brot ist sehr frisch.", category: "🍎 飲食與採買", errors: 0, starred: false }
+        ];
+
+        window.wordDatabase = [];
+        window.userStats = { streak: 0, lastDate: null, history: {}, voices: { rate: 0.9, pitch: 1.0, selectedURI: null } };
+        window.currentMode = 'learn';
+        window.currentCategory = '';
+        window.filteredWords = [];
+        window.currentIndex = 0;
+        window.isFlipped = false;
+        window.voices = [];
+        window.user = null;
+
+        async function init() {
+            setupVoices();
+            setupGestures();
+            loadLocalData();
+
+            if (auth) {
+                try {
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                } catch (e) { console.error("Auth Fail", e); }
+
+                onAuthStateChanged(auth, (u) => {
+                    window.user = u;
+                    if (u) {
+                        updateCloudStatusUI(true);
+                        setupCloudSync(u.uid);
+                    } else {
+                        updateCloudStatusUI(false);
+                    }
+                });
+            } else {
+                updateCloudStatusUI(false);
+            }
+
+            setMode('learn');
+        }
+
+        function loadLocalData() {
+            const d = localStorage.getItem('deutschLernkartenDB_vPro');
+            const s = localStorage.getItem('deutschLernkartenStats');
+            window.wordDatabase = d ? JSON.parse(d) : [...defaultDatabase];
+            if (s) window.userStats = JSON.parse(s);
+            refreshUI();
+        }
+
+        function setupCloudSync(uid) {
+            if (!db) return;
+            const docRef = doc(db, 'artifacts', appId, 'users', uid, 'userData', 'main');
+            onSnapshot(docRef, (snap) => {
+                if (snap.exists()) {
+                    const data = snap.data();
+                    if (data.wordDatabase?.length > 0) {
+                        window.wordDatabase = data.wordDatabase;
+                        window.userStats = data.userStats || window.userStats;
+                        localStorage.setItem('deutschLernkartenDB_vPro', JSON.stringify(window.wordDatabase));
+                        localStorage.setItem('deutschLernkartenStats', JSON.stringify(window.userStats));
+                        refreshUI();
+                    }
+                } else { window.saveDatabaseToCloud(); }
+            });
+        }
+
+        window.saveDatabaseToCloud = async function() {
+            if (!window.user || !db) return;
+            const docRef = doc(db, 'artifacts', appId, 'users', window.user.uid, 'userData', 'main');
+            const icon = document.getElementById('cloud-status-icon');
+            icon?.classList.add('sync-active');
+            try {
+                await setDoc(docRef, {
+                    wordDatabase: window.wordDatabase,
+                    userStats: window.userStats,
+                    updatedAt: Date.now()
+                }, { merge: true });
+            } catch (e) { console.error(e); } finally {
+                setTimeout(() => icon?.classList.remove('sync-active'), 1500);
+            }
+        };
+
+        window.setMode = function(mode) {
+            window.currentMode = mode;
+            ['learn','quiz','spell','list','db'].forEach(m => {
+                const btn = document.getElementById(`btn-mode-${m}`);
+                if(btn) btn.className = m === mode ? "flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold bg-white text-indigo-600 shadow-sm" : "flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-200/50";
+                const view = document.getElementById(`${m}-view`);
+                if(view) view.classList.toggle('hidden', m !== mode);
+            });
+            document.getElementById('top-controls').style.display = mode === 'db' ? 'none' : 'flex';
+            document.getElementById('bottom-controls').style.display = (mode === 'db' || mode === 'list') ? 'none' : 'block';
+            if (mode === 'learn' && window.isFlipped) window.toggleCard();
+            refreshUI();
+        };
+
+        function refreshUI() {
+            setupCategories();
+            window.renderVerbList();
+            updateUI();
+        }
+
+        function setupCategories() {
+            let cats = [...new Set(window.wordDatabase.map(w => w.category))];
+            if (window.wordDatabase.some(w => (w.errors || 0) > 0)) cats.unshift("⚠️ 錯題複議");
+            if (window.wordDatabase.some(w => w.starred)) cats.unshift("⭐ 我的收藏");
+            if (cats.length > 1) cats.unshift("🗂️ 全部單字");
+            window.categories = cats;
+            if (!window.currentCategory || !cats.includes(window.currentCategory)) window.currentCategory = cats[0] || '';
+            window.setCategory(window.currentCategory, false);
+        }
+
+        window.setCategory = function(cat, refresh = true) {
+            window.currentCategory = cat;
+            const textEl = document.getElementById('current-category-text');
+            if(textEl) textEl.innerText = cat || '無單字';
+            if (cat === "🗂️ 全部單字") window.filteredWords = [...window.wordDatabase];
+            else if (cat === "⚠️ 錯題複議") window.filteredWords = window.wordDatabase.filter(w => (w.errors || 0) > 0).sort((a,b)=>b.errors-a.errors);
+            else if (cat === "⭐ 我的收藏") window.filteredWords = window.wordDatabase.filter(w => w.starred);
+            else window.filteredWords = window.wordDatabase.filter(w => w.category === cat);
+            if (!cat.includes("⚠️") && !cat.includes("⭐")) window.filteredWords.sort(() => Math.random() - 0.5);
+            window.currentIndex = 0;
+            if (refresh) { updateUI(); window.closeCategoryModal(); }
+        };
+
+        function updateUI() {
+            const count = window.filteredWords.length;
+            const progEl = document.getElementById('progress-text');
+            if(progEl) progEl.innerText = count > 0 ? `${window.currentIndex + 1} / ${count}` : '0 / 0';
+            updateCategoryBadge();
+            if (count === 0) {
+                if (window.currentMode === 'learn') document.getElementById('word-main').innerText = "📭";
+                return;
+            }
+            const w = window.filteredWords[window.currentIndex];
+            const art = ['der','die','das'].includes(w.article) ? w.article : 'das';
+            if (window.currentMode === 'learn') {
+                document.getElementById('card-front').className = `card-front flex flex-col items-center p-8 text-center transition-colors theme-${art}-bg theme-${art}-border`;
+                document.getElementById('word-article-badge').innerText = w.article;
+                document.getElementById('word-article-badge').className = `px-4 py-1.5 rounded-full text-white font-black text-sm uppercase mb-6 theme-${art}-badge`;
+                document.getElementById('word-main').innerText = w.word;
+                document.getElementById('word-meaning').innerText = w.meaning;
+                document.getElementById('word-plural').innerText = `複數: ${w.plural || '-'}`;
+                document.getElementById('word-example').innerText = w.example || '';
+                updateStarUI();
+            } else if (window.currentMode === 'quiz') {
+                document.getElementById('quiz-word').innerText = w.word;
+                document.getElementById('quiz-meaning').innerText = w.meaning;
+                resetFeedback('quiz');
+            } else if (window.currentMode === 'spell') {
+                document.getElementById('spell-meaning').innerText = w.meaning;
+                document.getElementById('spell-article').innerText = w.article;
+                resetFeedback('spell');
+            }
+        }
+
+        window.handleFileImport = function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = evt => {
+                const content = evt.target.result;
+                const lines = content.split('\n');
+                const newDB = [];
+                for (let line of lines) {
+                    line = line.trim();
+                    if (!line || (line.includes("詞性") && line.includes("單字"))) continue;
+                    const sep = line.includes('\t') ? '\t' : ',';
+                    const parts = line.split(sep).map(s => s.trim());
+                    if (parts.length >= 6) {
+                        const category = parts.pop();
+                        const article = parts.shift().toLowerCase();
+                        const word = parts.shift();
+                        const plural = parts.shift();
+                        const meaning = parts.shift();
+                        const example = parts.join(sep);
+                        newDB.push({ article, word, plural, meaning, example, category, errors: 0, starred: false });
+                    }
+                }
+                if (newDB.length > 0) {
+                    window.wordDatabase = newDB;
+                    window.saveDatabaseToCloud();
+                    window.showToast(`✅ 成功匯入 ${newDB.length} 個單字`);
+                    refreshUI();
+                }
+                e.target.value = "";
+            };
+            reader.readAsText(file);
+        };
+
+        function setupVoices() {
+            if (!window.speechSynthesis) return;
+            const load = () => {
+                window.voices = window.speechSynthesis.getVoices().filter(v => v.lang.startsWith('de'));
+                const select = document.getElementById('voice-select');
+                if (select && select.options.length === 0) {
+                    select.innerHTML = window.voices.map(v => `<option value="${v.voiceURI}">${v.name}</option>`).join('');
+                    if (window.userStats.voices?.selectedURI) select.value = window.userStats.voices.selectedURI;
+                }
+            };
+            load();
+            window.speechSynthesis.onvoiceschanged = load;
+        }
+
+        window.playAudio = function(e, text) {
+            if(e) e.stopPropagation();
+            if(!text || !window.speechSynthesis) return;
+            window.speechSynthesis.cancel();
+            const ut = new SpeechSynthesisUtterance(text);
+            ut.lang = 'de-DE';
+            ut.rate = window.userStats.voices?.rate || 0.9;
+            ut.pitch = window.userStats.voices?.pitch || 1.0;
+            const sel = window.voices.find(v => v.voiceURI === document.getElementById('voice-select')?.value);
+            if (sel) ut.voice = sel;
+            window.speechSynthesis.speak(ut);
+        };
+
+        window.updateVoiceParam = function(p, v) {
+            const label = document.getElementById(`${p}-value`);
+            if(label) label.innerText = p === 'rate' ? v + 'x' : v;
+            window.userStats.voices[p] = parseFloat(v);
+        };
+
+        function updateCategoryBadge() {
+            const errs = window.wordDatabase.filter(w => (w.errors || 0) > 0).length;
+            const badge = document.getElementById('category-error-badge');
+            if (badge) {
+                badge.className = errs > 0 ? "bg-rose-500 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full shadow-sm ml-1 shrink-0" : "hidden";
+                badge.innerText = `⚠️ ${errs}`;
+            }
+        }
+
+        function updateCloudStatusUI(on) {
+            const txt = document.getElementById('cloud-status-text');
+            const icon = document.getElementById('cloud-status-icon');
+            if(txt) txt.innerText = on ? "雲端同步已開啟" : "離線模式";
+            if(icon) icon.className = on ? "text-blue-500" : "text-slate-300";
+        }
+
+        window.toggleStar = function(e) {
+            e.stopPropagation();
+            const w = window.filteredWords[window.currentIndex];
+            if (!w) return;
+            w.starred = !w.starred;
+            updateStarUI();
+            window.saveDatabaseToCloud();
+        };
+
+        function updateStarUI() {
+            const w = window.filteredWords[window.currentIndex];
+            const icon = document.getElementById('star-icon');
+            if (w?.starred) {
+                if(icon) icon.setAttribute('fill', 'currentColor');
+                document.getElementById('btn-star').className = "absolute top-6 left-6 w-12 h-12 flex items-center justify-center rounded-full z-20 text-amber-400 scale-110";
+            } else {
+                if(icon) icon.setAttribute('fill', 'none');
+                document.getElementById('btn-star').className = "absolute top-6 left-6 w-12 h-12 flex items-center justify-center rounded-full z-20 text-slate-300";
+            }
+        }
+
+        window.submitQuiz = function(ans) {
+            const w = window.filteredWords[window.currentIndex];
+            const correct = w.article.toLowerCase();
+            const fb = document.getElementById('quiz-feedback');
+            const container = document.getElementById('quiz-feedback-container');
+            if(container) container.className = "w-full h-14 opacity-100 mt-6";
+            if (ans === correct) {
+                if (w.errors > 0) w.errors--;
+                fb.innerText = "✓ 答對了！";
+                fb.className = "h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl text-emerald-700 bg-emerald-100";
+                window.saveDatabaseToCloud();
+                setTimeout(window.nextWord, 1000);
+            } else {
+                w.errors = (w.errors || 0) + 1;
+                fb.innerText = `✗ 正確是 ${correct}`;
+                fb.className = "h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl text-rose-700 bg-rose-100";
+                window.saveDatabaseToCloud();
+                setTimeout(window.nextWord, 2000);
+            }
+        };
+
+        window.submitSpell = function() {
+            const input = document.getElementById('spell-input');
+            const w = window.filteredWords[window.currentIndex];
+            const fb = document.getElementById('spell-feedback');
+            const container = document.getElementById('spell-feedback-container');
+            if(!input || !input.value.trim()) return;
+            if(container) container.className = "w-full h-14 opacity-100 mb-4";
+            if (input.value.trim().toLowerCase() === w.word.toLowerCase()) {
+                if (w.errors > 0) w.errors--;
+                fb.innerText = "✓ 正確！";
+                fb.className = "h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl text-emerald-700 bg-emerald-100";
+                window.saveDatabaseToCloud();
+                setTimeout(window.nextWord, 1500);
+            } else {
+                w.errors = (w.errors || 0) + 1;
+                fb.innerText = `✗ 正確是：${w.word}`;
+                fb.className = "h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl text-rose-700 bg-rose-100";
+                window.saveDatabaseToCloud();
+                setTimeout(window.nextWord, 2500);
+            }
+        };
+
+        window.toggleCard = function() {
+            document.getElementById('flashcard-box').parentElement.classList.toggle('flipped');
+        };
+
+        window.nextWord = function() {
+            if (window.filteredWords.length === 0) return;
+            window.currentIndex = (window.currentIndex + 1) % window.filteredWords.length;
+            updateUI();
+        };
+
+        window.prevWord = function() {
+            if (window.filteredWords.length === 0) return;
+            window.currentIndex = (window.currentIndex - 1 + window.filteredWords.length) % window.filteredWords.length;
+            updateUI();
+        };
+
+        window.openCategoryModal = function() {
+            const grid = document.getElementById('category-grid');
+            grid.innerHTML = window.categories.map(c => `<button onclick="window.setCategory('${c}')" class="px-4 py-3 rounded-2xl text-sm font-bold border ${c === window.currentCategory ? 'bg-indigo-600 text-white border-indigo-600 shadow-md' : 'bg-slate-50 border-slate-200 text-slate-600'}">${c}</button>`).join('');
+            const modal = document.getElementById('category-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => { modal.classList.add('opacity-100'); modal.querySelector('div').classList.remove('translate-y-full'); }, 10);
+        };
+
+        window.closeCategoryModal = function() {
+            const modal = document.getElementById('category-modal');
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.add('translate-y-full');
+            setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+        };
+
+        function resetFeedback(p) {
+            const c = document.getElementById(`${p}-feedback-container`);
+            if(c) c.className = "w-full h-0 opacity-0 overflow-hidden";
+            const i = document.getElementById(`${p}-input`);
+            if(i) { i.value = ''; i.focus(); }
+        }
+
+        window.renderVerbList = function() {
+            const container = document.getElementById('verb-list-container');
+            if(!container) return;
+            const search = document.getElementById('list-search')?.value.toLowerCase() || '';
+            const list = window.wordDatabase.filter(w => w.word.toLowerCase().includes(search) || w.meaning.includes(search));
+            container.innerHTML = list.map(w => {
+                const art = ['der','die','das'].includes(w.article)?w.article:'das';
+                return `
+                <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col gap-3 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-xs theme-${art}-badge text-white">${w.article}</span>
+                            <div>
+                                <div class="font-black text-slate-800 text-lg">${w.word}</div>
+                                <div class="text-xs text-slate-400 font-bold">${w.meaning}</div>
+                            </div>
+                        </div>
+                        <button onclick="window.playAudio(null, \`${w.word.replace(/'/g, "\\'")}\`)" class="w-10 h-10 bg-slate-50 rounded-full hover:bg-indigo-50 text-indigo-600 font-bold">🔊</button>
+                    </div>
+                    ${w.example ? `
+                    <div class="bg-slate-50/50 p-3 rounded-xl flex items-center justify-between gap-3 border border-slate-100">
+                        <p class="text-xs text-slate-500 italic flex-1 leading-relaxed">${w.example}</p>
+                        <button onclick="window.playAudio(null, \`${w.example.replace(/'/g, "\\'")}\`)" class="p-2 text-indigo-400 hover:text-indigo-600">
+                             🔊
+                        </button>
+                    </div>` : ''}
+                </div>`;
+            }).join('');
+        };
+
+        window.showToast = function(m, err=false) {
+            const t = document.getElementById('toast');
+            t.innerText = m;
+            t.className = `fixed top-6 left-1/2 transform -translate-x-1/2 px-6 py-3.5 rounded-2xl text-white font-bold shadow-2xl z-[60] transition-all duration-400 ${err ? 'bg-rose-500' : 'bg-slate-800'} backdrop-blur-md`;
+            t.style.display = 'block';
+            setTimeout(() => { t.classList.remove('opacity-0','translate-y-[-20px]'); t.classList.add('opacity-100','translate-y-0'); }, 10);
+            setTimeout(() => { t.classList.remove('opacity-100','translate-y-0'); t.classList.add('opacity-0','translate-y-[-20px]'); setTimeout(()=>t.style.display='none',300); }, 3000);
+        };
+
+        window.openConfirm = function() { document.getElementById('confirm-modal').classList.add('flex'); document.getElementById('confirm-modal').classList.remove('hidden'); };
+        window.closeConfirm = function() { document.getElementById('confirm-modal').classList.add('hidden'); document.getElementById('confirm-modal').classList.remove('flex'); };
+        window.executeRestore = async function() {
+            window.wordDatabase = [...defaultDatabase];
+            window.userStats = { streak: 0, lastDate: null, history: {}, voices: { rate: 0.9, pitch: 1.0, selectedURI: null } };
+            await window.saveDatabaseToCloud();
+            localStorage.clear();
+            location.reload();
+        };
+
+        window.exportToFile = function() {
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(new Blob([JSON.stringify(window.wordDatabase, null, 2)], { type: "application/json" }));
+            a.download = `德語磚家備份_${new Date().toISOString().slice(0,10)}.json`;
+            a.click();
+        };
+
+        function setupGestures() {
+            const card = document.getElementById('learn-view');
+            let startX = 0;
+            card.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
+            card.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 70) diff > 0 ? window.nextWord() : window.prevWord();
+            }, { passive: true });
+        }
+
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
