@@ -8,36 +8,42 @@ image: "https://images.unsplash.com/photo-1527552339064-58674ae69404?w=400"
 
 import VerbWithPreposition from '../components/VerbWithPreposition.jsx';
 
-<div className="max-w-4xl mx-auto px-4 py-8">
-  {/* 增加返回鍵，讓頁面更專業 */}
-  <a href="/" className="text-amber-600 font-bold mb-4 inline-block hover:underline">← 返回課程總覽</a>
+{/* 上半部：標題與介紹 (保留 px-4 左右留白，讓文字好讀) */}
+<div className="max-w-4xl mx-auto px-4 pt-8 pb-4">
+  <a href="/" className="text-amber-600 font-bold mb-6 inline-block hover:underline transition-all">
+    ← 返回課程總覽
+  </a>
   
-  <h1 className="text-4xl font-black text-gray-800 mb-4">{frontmatter.title}</h1>
-  
-  {/* 自動顯示你在上面定義的標籤 */}
-  <div className="flex gap-2 mb-8">
-    {frontmatter.tags.map(tag => (
-      <span className="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">#{tag}</span>
-    ))}
-  </div>
-
-  <div className="prose prose-amber max-w-none mb-10">
-    <p className="text-gray-600 leading-relaxed">
-      這是一個專為德語學習者設計的互動式工具。本課將帶領你深入練習動詞與介系詞的搭配（Verben mit Präpositionen），這也是德語學習中最具挑戰性的部分之一。
+  <div className="mb-2">
+    <h1 className="text-3xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight">
+      {frontmatter.title}
+    </h1>
+    <div className="flex flex-wrap gap-2 mb-6">
+      {frontmatter.tags.map(tag => (
+        <span className="px-3 py-1 bg-amber-50 text-amber-600 text-xs font-black rounded-full border border-amber-100">
+          #{tag}
+        </span>
+      ))}
+    </div>
+    <p className="text-slate-600 leading-relaxed font-medium">
+      {frontmatter.description}
     </p>
   </div>
+</div>
 
-  {/* 呼叫你的練習器 */}
+{/* 中間部：APP 互動區 (移除 px-4 限制，讓它 100% 滿版顯示！) */}
+<div className="w-full">
   <VerbWithPreposition client:load />
+</div>
 
-  <hr className="my-12 border-amber-100" />
-
-  <div className="bg-amber-50 p-6 rounded-3xl">
-    <h3 className="font-black text-amber-800 mb-4 text-xl">💡 學習小撇步</h3>
-    <ul className="space-y-3 text-sm text-amber-900/80 font-medium">
-      <li>• <strong>善用收藏功能</strong>：遇到老是記不住的動詞，點擊星星收藏。</li>
-      <li>• <strong>聆聽發音</strong>：點擊喇叭按鈕聆聽 AI 發音，模仿其語調。</li>
-      <li>• <strong>注意格位</strong>：後接 Akkusativ 通常有目標性，Dativ 則多與狀態有關。</li>
+{/* 下半部：學習小撇步 (恢復 px-4 左右留白) */}
+<div className="max-w-4xl mx-auto px-4 pb-12 mt-4">
+  <div className="bg-amber-50 p-6 rounded-3xl border border-amber-100 shadow-sm">
+    <h3 className="text-lg font-bold text-amber-800 mb-3">💡 學習小撇步</h3>
+    <ul className="space-y-3 text-sm text-amber-700 font-medium">
+        <li>• 善用收藏功能：遇到老是記不住的動詞，點擊星星收藏。</li>
+        <li>• 聆聽發音：點擊喇叭按鈕聆聽 AI 發音，模仿其語調。</li>
+        <li>• 注意格位：後接 Akkusativ 通常有目標性，Dativ 則多與狀態有關。</li>
     </ul>
   </div>
 </div>

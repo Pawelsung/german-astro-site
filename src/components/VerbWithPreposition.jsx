@@ -776,7 +776,7 @@ export default function VerbWithPreposition() {
 
   // ▼▼▼ 以下是針對你的 MDX 嵌入所做的徹底瘦身與排版優化 ▼▼▼
   return (
-    <div className="w-full bg-[#FDFBF7] text-gray-800 font-sans selection:bg-amber-200 rounded-[2rem] shadow-xl border border-amber-100 overflow-hidden relative mt-8 mb-12">
+    <div className="w-full bg-[#FDFBF7] text-gray-800 font-sans selection:bg-amber-200 md:rounded-[2rem] md:shadow-xl border-y md:border border-amber-100 overflow-hidden relative mb-8">
       
       <div className="bg-amber-600 text-white p-3 flex justify-between items-center px-4 md:px-6">
         <div className="flex items-center gap-2">
