@@ -648,7 +648,7 @@ const SettingsView = ({ voiceData, userData, user }) => {
 };
 
 
-// === 這是我們剛剛大幅修改的「嵌入專用」主要區塊 ===
+// === 這是我們剛剛大幅修改的「完全去背融入」區塊 ===
 export default function VerbWithPreposition() {
   const [activeTab, setActiveTab] = useState('flashcards');
   const [flashcardIndex, setFlashcardIndex] = useState(0);
@@ -774,25 +774,14 @@ export default function VerbWithPreposition() {
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
   }, [activeTab, nextCard, prevCard]);
 
-  // ▼▼▼ 以下是針對你的 MDX 嵌入所做的徹底瘦身與排版優化 ▼▼▼
   return (
-    <div className="w-full bg-[#FDFBF7] text-gray-800 font-sans selection:bg-amber-200 md:rounded-[2rem] md:shadow-xl border-y md:border border-amber-100 overflow-hidden relative mb-8">
+    // 重大改變 1：移除所有邊框和白色背景，改為透明 (bg-transparent)，讓它融入你的 Astro 底色
+    <div className="w-full relative pb-24 md:pb-8 text-gray-800 font-sans selection:bg-amber-200">
       
-      <div className="bg-amber-600 text-white p-3 flex justify-between items-center px-4 md:px-6">
-        <div className="flex items-center gap-2">
-            <GraduationCap size={20} />
-            <span className="font-bold text-sm tracking-widest uppercase">Verben Trainer</span>
-        </div>
-        <div className="flex items-center gap-2">
-            {user ? <Cloud size={16} className="text-amber-200" title="已連線同步" /> : <CloudOff size={16} className="text-amber-200 opacity-50" title="本地模式" />}
-            <div className="text-[10px] sm:text-xs bg-amber-800/50 px-2.5 py-1 rounded-full font-bold">
-                {verbData.length} 詞
-            </div>
-        </div>
-      </div>
+      {/* 重大改變 2：去掉了原本那個多餘的「橘色標題列」，因為 Astro 頁面已經有 Lektion 2 大標題了 */}
 
-      {/* 電腦版/平板版專用的「頂部選單」(不再用左邊擋路的側邊欄) */}
-      <div className="hidden md:flex justify-center items-center gap-4 bg-white border-b border-amber-100 p-3">
+      {/* 電腦版/平板版專用的「頂部選單」(去除原本的背景，改成透明底線) */}
+      <div className="hidden md:flex justify-center items-center gap-4 mb-6 border-b border-amber-200/50 pb-4">
         {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {
               const icons = { 'flashcards': RotateCw, 'quiz': Brain, 'list': List, 'settings': Settings };
               const labels = { 'flashcards': '字卡', 'quiz': '測驗', 'list': '列表', 'settings': '設定' };
@@ -800,7 +789,7 @@ export default function VerbWithPreposition() {
               const isActive = activeTab === tab;
               
               return (
-                  <button key={tab} onClick={() => setActiveTab(tab)} className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${isActive ? 'bg-amber-100 text-amber-700 shadow-sm' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'}`}>
+                  <button key={tab} onClick={() => setActiveTab(tab)} className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm transition-all ${isActive ? 'bg-amber-100 text-amber-700 shadow-sm' : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'}`}>
                       <Icon size={18} strokeWidth={isActive ? 2.5 : 2} />
                       {labels[tab]}
                   </button>
@@ -808,7 +797,7 @@ export default function VerbWithPreposition() {
           })}
       </div>
 
-      <main className="w-full p-4 sm:p-6 pb-24 md:pb-8">
+      <main className="w-full">
         
         {activeTab === 'flashcards' && currentCard && (
           <div className="flex flex-col items-center">
@@ -860,8 +849,8 @@ export default function VerbWithPreposition() {
 
       </main>
 
-      {/* 手機版底部導覽列 (改為 absolute 定位，不干擾整個網頁) */}
-      <nav className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-amber-100 shadow-[0_-10px_20px_rgba(0,0,0,0.03)] md:hidden z-10 rounded-b-[2rem]">
+      {/* 手機版底部導覽列 (改為 fixed 貼合手機最底部，不會因為內容長度而亂跑) */}
+      <nav className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden z-50 pb-safe">
         <div className="flex justify-around items-center h-[72px]">
           {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {
               const icons = { 'flashcards': RotateCw, 'quiz': Brain, 'list': List, 'settings': Settings };
@@ -880,6 +869,7 @@ export default function VerbWithPreposition() {
       </nav>
       
       <style>{`
+          .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
           .perspective-1000 { perspective: 1000px; }
           .preserve-3d { transform-style: preserve-3d; }
           .backface-hidden { backface-visibility: hidden; }
