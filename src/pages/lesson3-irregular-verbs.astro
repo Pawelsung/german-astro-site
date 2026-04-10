@@ -1,0 +1,38 @@
+---
+export const frontmatter = {
+  title: "Lektion 3: 不規則動詞特訓",
+  description: "練習德語強變化與不規則動詞的三態、助動詞與錯題重練。",
+  category: "德語文法特訓",
+  tags: ["A1-A2-B1", "不規則動詞", "Präteritum", "Perfekt"]
+};
+
+import IrregularVerbTrainer from '../components/IrregularVerbTrainer.jsx';
+---
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>德語不規則動詞特訓</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#FDFBF7] min-h-screen">
+    <header class="sticky top-0 z-30 bg-white/85 backdrop-blur border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center gap-3">
+        <a
+          href="/"
+          class="w-11 h-11 rounded-full bg-amber-50 text-amber-600 font-black flex items-center justify-center border border-amber-200 hover:bg-amber-100 transition"
+        >
+          ←
+        </a>
+        <div>
+          <div class="text-xs font-black text-amber-600">German Hub</div>
+          <div class="text-lg md:text-xl font-black text-slate-800">不規則動詞特訓</div>
+        </div>
+      </div>
+    </header>
+
+    <IrregularVerbTrainer client:load />
+  </body>
+</html>
