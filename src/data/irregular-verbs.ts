@@ -57,6 +57,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gedurft",
     level: "A1",
+    group: "modal",
     meaningZh: "可以；被允許",
     example: "Früher durfte ich länger draußen bleiben."
   },
@@ -213,6 +214,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gekonnt",
     level: "A1",
+    group: "modal",
     meaningZh: "能夠；會",
     example: "Früher konnte ich besser schwimmen."
   },
@@ -237,6 +239,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemocht",
     level: "A1",
+    group: "modal",
     meaningZh: "喜歡",
     example: "Als Kind mochte ich keinen Kaffee."
   },
@@ -249,6 +252,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemusst",
     level: "A1",
+    group: "modal",
     meaningZh: "必須",
     example: "Ich habe lange arbeiten müssen."
   },
@@ -357,6 +361,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesollt",
     level: "A1",
+    group: "modal",
     meaningZh: "應該",
     example: "Ich habe mehr lernen sollen."
   },
@@ -441,6 +446,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewollt",
     level: "A1",
+    group: "modal",
     meaningZh: "想要",
     example: "Er hat Arzt werden wollen."
   },
@@ -938,7 +944,7 @@ export const irregularVerbs = [
     participle: "geschehen",
     level: "B1",
     meaningZh: "發生",
-    example: "Was ist hier passiert oder geschehen?"
+    example: "Was ist hier geschehen?"
   },
   {
     id: "giessen",
@@ -953,6 +959,30 @@ export const irregularVerbs = [
     example: "Sie hat die Blumen gegossen."
   },
   {
+    id: "gleichen",
+    infinitive: "gleichen",
+    present3rd: "gleicht",
+    praeteritum: "glich",
+    perfekt: "hat geglichen",
+    auxiliary: "hat",
+    participle: "geglichen",
+    level: "B1",
+    meaningZh: "相像",
+    example: "Er hat seinem Vater sehr geglichen."
+  },
+  {
+    id: "graben",
+    infinitive: "graben",
+    present3rd: "gräbt",
+    praeteritum: "grub",
+    perfekt: "hat gegraben",
+    auxiliary: "hat",
+    participle: "gegraben",
+    level: "B1",
+    meaningZh: "挖",
+    example: "Der Hund hat im Garten gegraben."
+  },
+  {
     id: "greifen",
     infinitive: "greifen",
     present3rd: "greift",
@@ -963,6 +993,18 @@ export const irregularVerbs = [
     level: "B1",
     meaningZh: "抓取",
     example: "Er hat schnell nach der Tasche gegriffen."
+  },
+  {
+    id: "haengen",
+    infinitive: "hängen",
+    present3rd: "hängt",
+    praeteritum: "hing",
+    perfekt: "hat gehangen",
+    auxiliary: "hat",
+    participle: "gehangen",
+    level: "B1",
+    meaningZh: "懸掛",
+    example: "Das Bild hat lange an der Wand gehangen."
   },
   {
     id: "halten",
@@ -987,6 +1029,18 @@ export const irregularVerbs = [
     level: "B1",
     meaningZh: "舉起",
     example: "Er hat die Kiste allein gehoben."
+  },
+  {
+    id: "klingen",
+    infinitive: "klingen",
+    present3rd: "klingt",
+    praeteritum: "klang",
+    perfekt: "hat geklungen",
+    auxiliary: "hat",
+    participle: "geklungen",
+    level: "B1",
+    meaningZh: "聽起來",
+    example: "Seine Idee hat interessant geklungen."
   },
   {
     id: "lassen",
@@ -1037,6 +1091,18 @@ export const irregularVerbs = [
     example: "Er hat mich angelogen."
   },
   {
+    id: "meiden",
+    infinitive: "meiden",
+    present3rd: "meidet",
+    praeteritum: "mied",
+    perfekt: "hat gemieden",
+    auxiliary: "hat",
+    participle: "gemieden",
+    level: "B1",
+    meaningZh: "避免",
+    example: "Er hat den Kontakt lange gemieden."
+  },
+  {
     id: "messen",
     infinitive: "messen",
     present3rd: "misst",
@@ -1061,6 +1127,18 @@ export const irregularVerbs = [
     example: "Der Arzt hat mir Ruhe geraten."
   },
   {
+    id: "reiben",
+    infinitive: "reiben",
+    present3rd: "reibt",
+    praeteritum: "rieb",
+    perfekt: "hat gerieben",
+    auxiliary: "hat",
+    participle: "gerieben",
+    level: "B1",
+    meaningZh: "摩擦",
+    example: "Sie hat sich die Augen gerieben."
+  },
+  {
     id: "reiten",
     infinitive: "reiten",
     present3rd: "reitet",
@@ -1083,6 +1161,18 @@ export const irregularVerbs = [
     level: "B1",
     meaningZh: "創造",
     example: "Die Firma hat viele Arbeitsplätze geschaffen."
+  },
+  {
+    id: "scheiden",
+    infinitive: "scheiden",
+    present3rd: "scheidet",
+    praeteritum: "schied",
+    perfekt: "ist geschieden",
+    auxiliary: "ist",
+    participle: "geschieden",
+    level: "B1",
+    meaningZh: "分開；離婚",
+    example: "Das Paar ist vor zwei Jahren geschieden."
   },
   {
     id: "scheinen",
@@ -1133,6 +1223,18 @@ export const irregularVerbs = [
     example: "Unsere Mannschaft hat den Gegner geschlagen."
   },
   {
+    id: "schmeissen",
+    infinitive: "schmeißen",
+    present3rd: "schmeißt",
+    praeteritum: "schmiss",
+    perfekt: "hat geschmissen",
+    auxiliary: "hat",
+    participle: "geschmissen",
+    level: "B1",
+    meaningZh: "丟；扔",
+    example: "Er hat den Ball weit geschmissen."
+  },
+  {
     id: "schneiden",
     infinitive: "schneiden",
     present3rd: "schneidet",
@@ -1155,6 +1257,18 @@ export const irregularVerbs = [
     level: "B1",
     meaningZh: "大叫",
     example: "Das Kind hat laut geschrien."
+  },
+  {
+    id: "senden",
+    infinitive: "senden",
+    present3rd: "sendet",
+    praeteritum: "sandte",
+    perfekt: "hat gesandt",
+    auxiliary: "hat",
+    participle: "gesandt",
+    level: "B1",
+    meaningZh: "寄送；傳送",
+    example: "Die Firma hat mir eine Nachricht gesandt."
   },
   {
     id: "sinken",
@@ -1191,6 +1305,18 @@ export const irregularVerbs = [
     level: "B1",
     meaningZh: "偷",
     example: "Jemand hat mein Fahrrad gestohlen."
+  },
+  {
+    id: "stinken",
+    infinitive: "stinken",
+    present3rd: "stinkt",
+    praeteritum: "stank",
+    perfekt: "hat gestunken",
+    auxiliary: "hat",
+    participle: "gestunken",
+    level: "B1",
+    meaningZh: "發臭",
+    example: "Der Müll hat stark gestunken."
   },
   {
     id: "streiten",
@@ -1323,7 +1449,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geboren",
     level: "B2",
-    meaningZh: "生產；生育",
+    meaningZh: "生育",
     example: "Sie hat ein gesundes Kind geboren."
   },
   {
@@ -1411,6 +1537,30 @@ export const irregularVerbs = [
     example: "Er hat die ganze Zeit geschwiegen."
   },
   {
+    id: "schwellen",
+    infinitive: "schwellen",
+    present3rd: "schwillt",
+    praeteritum: "schwoll",
+    perfekt: "ist geschwollen",
+    auxiliary: "ist",
+    participle: "geschwollen",
+    level: "B2",
+    meaningZh: "腫起來；膨脹",
+    example: "Sein Knie ist stark geschwollen."
+  },
+  {
+    id: "schwinden",
+    infinitive: "schwinden",
+    present3rd: "schwindet",
+    praeteritum: "schwand",
+    perfekt: "ist geschwunden",
+    auxiliary: "ist",
+    participle: "geschwunden",
+    level: "B2",
+    meaningZh: "減少；消失",
+    example: "Die Hoffnung ist langsam geschwunden."
+  },
+  {
     id: "schwoeren",
     infinitive: "schwören",
     present3rd: "schwört",
@@ -1421,6 +1571,18 @@ export const irregularVerbs = [
     level: "B2",
     meaningZh: "發誓",
     example: "Er hat die Wahrheit geschworen."
+  },
+  {
+    id: "spinnen",
+    infinitive: "spinnen",
+    present3rd: "spinnt",
+    praeteritum: "spann",
+    perfekt: "hat gesponnen",
+    auxiliary: "hat",
+    participle: "gesponnen",
+    level: "B2",
+    meaningZh: "紡紗；胡說",
+    example: "Er hat völlig gesponnen."
   },
   {
     id: "stechen",
@@ -1493,6 +1655,18 @@ export const irregularVerbs = [
     level: "B2",
     meaningZh: "轉向；轉身",
     example: "Er hat sich schnell gewandt."
+  },
+  {
+    id: "winden",
+    infinitive: "winden",
+    present3rd: "windet",
+    praeteritum: "wand",
+    perfekt: "hat gewunden",
+    auxiliary: "hat",
+    participle: "gewunden",
+    level: "B2",
+    meaningZh: "纏繞；扭動",
+    example: "Die Schlange hat sich um den Ast gewunden."
   },
 
   // C1
@@ -1581,6 +1755,30 @@ export const irregularVerbs = [
     example: "Das Boot ist ruhig über das Wasser geglitten."
   },
   {
+    id: "kneifen",
+    infinitive: "kneifen",
+    present3rd: "kneift",
+    praeteritum: "kniff",
+    perfekt: "hat gekniffen",
+    auxiliary: "hat",
+    participle: "gekniffen",
+    level: "C1",
+    meaningZh: "捏；臨陣退縮",
+    example: "Er hat im entscheidenden Moment gekniffen."
+  },
+  {
+    id: "klimmen",
+    infinitive: "klimmen",
+    present3rd: "klimmt",
+    praeteritum: "klomm",
+    perfekt: "ist geklommen",
+    auxiliary: "ist",
+    participle: "geklommen",
+    level: "C1",
+    meaningZh: "往上爬",
+    example: "Der Bergsteiger ist schnell höher geklommen."
+  },
+  {
     id: "kriechen",
     infinitive: "kriechen",
     present3rd: "kriecht",
@@ -1591,6 +1789,18 @@ export const irregularVerbs = [
     level: "C1",
     meaningZh: "爬行",
     example: "Das Kind ist unter den Tisch gekrochen."
+  },
+  {
+    id: "melken",
+    infinitive: "melken",
+    present3rd: "melkt",
+    praeteritum: "molk",
+    perfekt: "hat gemolken",
+    auxiliary: "hat",
+    participle: "gemolken",
+    level: "C1",
+    meaningZh: "擠奶",
+    example: "Der Bauer hat morgens die Kühe gemolken."
   },
   {
     id: "preisen",
@@ -1605,6 +1815,42 @@ export const irregularVerbs = [
     example: "Der Kritiker hat den Film sehr gepriesen."
   },
   {
+    id: "quellen",
+    infinitive: "quellen",
+    present3rd: "quillt",
+    praeteritum: "quoll",
+    perfekt: "ist gequollen",
+    auxiliary: "ist",
+    participle: "gequollen",
+    level: "C1",
+    meaningZh: "湧出；膨脹",
+    example: "Wasser ist aus dem Rohr gequollen."
+  },
+  {
+    id: "rinnen",
+    infinitive: "rinnen",
+    present3rd: "rinnt",
+    praeteritum: "rann",
+    perfekt: "ist geronnen",
+    auxiliary: "ist",
+    participle: "geronnen",
+    level: "C1",
+    meaningZh: "流淌",
+    example: "Das Blut ist langsam über seine Hand geronnen."
+  },
+  {
+    id: "saugen",
+    infinitive: "saugen",
+    present3rd: "saugt",
+    praeteritum: "sog",
+    perfekt: "hat gesogen",
+    auxiliary: "hat",
+    participle: "gesogen",
+    level: "C1",
+    meaningZh: "吸；吸取",
+    example: "Das Gerät hat den Staub eingesogen."
+  },
+  {
     id: "schleichen",
     infinitive: "schleichen",
     present3rd: "schleicht",
@@ -1615,6 +1861,18 @@ export const irregularVerbs = [
     level: "C1",
     meaningZh: "悄悄走",
     example: "Er ist leise aus dem Zimmer geschlichen."
+  },
+  {
+    id: "schleifen",
+    infinitive: "schleifen",
+    present3rd: "schleift",
+    praeteritum: "schliff",
+    perfekt: "hat geschliffen",
+    auxiliary: "hat",
+    participle: "geschliffen",
+    level: "C1",
+    meaningZh: "磨；打磨",
+    example: "Er hat das Messer sorgfältig geschliffen."
   },
   {
     id: "schlingen",
@@ -1651,139 +1909,6 @@ export const irregularVerbs = [
     level: "C1",
     meaningZh: "深思",
     example: "Er hat lange über eine Lösung gesonnen."
-  },
-  {
-    id: "saugen",
-    infinitive: "saugen",
-    present3rd: "saugt",
-    praeteritum: "sog",
-    perfekt: "hat gesogen",
-    auxiliary: "hat",
-    participle: "gesogen",
-    level: "C1",
-    meaningZh: "吸；吸取",
-    example: "Das Gerät hat den Staub eingesogen."
-  }
-,
-  {
-    id: "schwellen",
-    infinitive: "schwellen",
-    present3rd: "schwillt",
-    praeteritum: "schwoll",
-    perfekt: "ist geschwollen",
-    auxiliary: "ist",
-    participle: "geschwollen",
-    level: "B2",
-    meaningZh: "腫起來；膨脹",
-    example: "Sein Knie ist stark geschwollen."
-  },
-  {
-    id: "schwinden",
-    infinitive: "schwinden",
-    present3rd: "schwindet",
-    praeteritum: "schwand",
-    perfekt: "ist geschwunden",
-    auxiliary: "ist",
-    participle: "geschwunden",
-    level: "B2",
-    meaningZh: "減少；消失",
-    example: "Die Hoffnung ist langsam geschwunden."
-  },
-  {
-    id: "spinnen",
-    infinitive: "spinnen",
-    present3rd: "spinnt",
-    praeteritum: "spann",
-    perfekt: "hat gesponnen",
-    auxiliary: "hat",
-    participle: "gesponnen",
-    level: "B2",
-    meaningZh: "紡紗；胡說",
-    example: "Er hat völlig gesponnen."
-  },
-  {
-    id: "winden",
-    infinitive: "winden",
-    present3rd: "windet",
-    praeteritum: "wand",
-    perfekt: "hat gewunden",
-    auxiliary: "hat",
-    participle: "gewunden",
-    level: "B2",
-    meaningZh: "纏繞；扭動",
-    example: "Die Schlange hat sich um den Ast gewunden."
-  },
-  {
-    id: "kneifen",
-    infinitive: "kneifen",
-    present3rd: "kneift",
-    praeteritum: "kniff",
-    perfekt: "hat gekniffen",
-    auxiliary: "hat",
-    participle: "gekniffen",
-    level: "C1",
-    meaningZh: "捏；臨陣退縮",
-    example: "Er hat im entscheidenden Moment gekniffen."
-  },
-  {
-    id: "klimmen",
-    infinitive: "klimmen",
-    present3rd: "klimmt",
-    praeteritum: "klomm",
-    perfekt: "ist geklommen",
-    auxiliary: "ist",
-    participle: "geklommen",
-    level: "C1",
-    meaningZh: "往上爬",
-    example: "Der Bergsteiger ist schnell höher geklommen."
-  },
-  {
-    id: "melken",
-    infinitive: "melken",
-    present3rd: "melkt",
-    praeteritum: "molk",
-    perfekt: "hat gemolken",
-    auxiliary: "hat",
-    participle: "gemolken",
-    level: "C1",
-    meaningZh: "擠奶",
-    example: "Der Bauer hat morgens die Kühe gemolken."
-  },
-  {
-    id: "quellen",
-    infinitive: "quellen",
-    present3rd: "quillt",
-    praeteritum: "quoll",
-    perfekt: "ist gequollen",
-    auxiliary: "ist",
-    participle: "gequollen",
-    level: "C1",
-    meaningZh: "湧出；膨脹",
-    example: "Wasser ist aus dem Rohr gequollen."
-  },
-  {
-    id: "rinnen",
-    infinitive: "rinnen",
-    present3rd: "rinnt",
-    praeteritum: "rann",
-    perfekt: "ist geronnen",
-    auxiliary: "ist",
-    participle: "geronnen",
-    level: "C1",
-    meaningZh: "流淌",
-    example: "Das Blut ist langsam über seine Hand geronnen."
-  },
-  {
-    id: "schleifen",
-    infinitive: "schleifen",
-    present3rd: "schleift",
-    praeteritum: "schliff",
-    perfekt: "hat geschliffen",
-    auxiliary: "hat",
-    participle: "geschliffen",
-    level: "C1",
-    meaningZh: "磨；打磨",
-    example: "Er hat das Messer sorgfältig geschliffen."
   },
   {
     id: "spriessen",

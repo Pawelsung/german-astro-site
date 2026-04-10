@@ -1,14 +1,17 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { irregularVerbs } from '../data/irregular-verbs';
 
-const STORAGE_KEY = 'irregular-verbs-trainer-v1';
+const STORAGE_KEY = 'irregular-verbs-trainer-v2';
 
 const MODES = {
   FLASHCARD: 'flashcard',
   TYPING: 'typing',
-  AUX: 'aux',
+  HABEN_SEIN: 'habenSein',
+  MODAL: 'modal',
   LIST: 'list',
-  WRONG: 'wrong'
+  WRONG: 'wrong',
+  HARD: 'hard',
+  STARRED: 'starred'
 };
 
 function shuffle(array) {
@@ -21,10 +24,7 @@ function shuffle(array) {
 }
 
 function normalizeText(value) {
-  return value
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, ' ');
+  return value.trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
 function splitPerfekt(perfekt) {
@@ -69,6 +69,15 @@ export default function IrregularVerbTrainer() {
   const [auxAnswer, setAuxAnswer] = useState('');
   const [auxFeedback, setAuxFeedback] = useState(null);
 
+  const [modalAnswer, setModalAnswer] = useState('');
+  const [modalFeedback, setModalFeedback] = useState(null);
+
+  const [voices, setVoices] = useState([]);
+  const [voiceURI, setVoiceURI] = useState('');
+  const [rate, setRate] = useState(0.9);
+  const [pitch, setPitch] = useState(1.0);
+  const [autoSpeak, setAutoSpeak] = useState(false);
+
   useEffect(() => {
     setProgress(loadProgress());
   }, []);
@@ -76,6 +85,45 @@ export default function IrregularVerbTrainer() {
   useEffect(() => {
     saveProgress(progress);
   }, [progress]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) return;
+
+    const loadVoices = () => {
+      const germanVoices = window.speechSynthesis
+        .getVoices()
+        .filter((voice) => voice.lang.toLowerCase().startsWith('de'));
+
+      setVoices(germanVoices);
+
+      if (!voiceURI && germanVoices.length > 0) {
+        setVoiceURI(germanVoices[0].voiceURI);
+      }
+    };
+
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+
+    return () => {
+      window.speechSynthesis.onvoiceschanged = null;
+    };
+  }, [voiceURI]);
+
+  function speak(text) {
+    if (typeof window === 'undefined' || !window.speechSynthesis || !text) return;
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'de-DE';
+    utterance.rate = rate;
+    utterance.pitch = pitch;
+
+    const selectedVoice = voices.find((voice) => voice.voiceURI === voiceURI);
+    if (selectedVoice) utterance.voice = selectedVoice;
+
+    window.speechSynthesis.speak(utterance);
+  }
 
   const filteredByLevel = useMemo(() => {
     if (level === 'ALL') return irregularVerbs;
@@ -86,15 +134,30 @@ export default function IrregularVerbTrainer() {
     return filteredByLevel.filter((verb) => (progress[verb.id]?.wrongCount || 0) > 0);
   }, [filteredByLevel, progress]);
 
+  const hardList = useMemo(() => {
+    return filteredByLevel.filter((verb) => progress[verb.id]?.isHard);
+  }, [filteredByLevel, progress]);
+
+  const starredList = useMemo(() => {
+    return filteredByLevel.filter((verb) => progress[verb.id]?.starred);
+  }, [filteredByLevel, progress]);
+
+  const modalList = useMemo(() => {
+    return filteredByLevel.filter((verb) => verb.group === 'modal');
+  }, [filteredByLevel]);
+
   const visibleList = useMemo(() => {
-    const base =
-      mode === MODES.WRONG
-        ? wrongList
-        : filteredByLevel;
+    let base = filteredByLevel;
+
+    if (mode === MODES.WRONG) base = wrongList;
+    if (mode === MODES.HARD) base = hardList;
+    if (mode === MODES.STARRED) base = starredList;
+    if (mode === MODES.MODAL) base = modalList;
 
     if (!search.trim()) return base;
 
     const q = normalizeText(search);
+
     return base.filter((verb) => {
       const haystack = [
         verb.infinitive,
@@ -102,18 +165,26 @@ export default function IrregularVerbTrainer() {
         verb.praeteritum,
         verb.perfekt,
         verb.meaningZh,
-        verb.level
+        verb.level,
+        verb.group || ''
       ]
         .join(' ')
         .toLowerCase();
+
       return haystack.includes(q);
     });
-  }, [filteredByLevel, wrongList, search, mode]);
+  }, [filteredByLevel, wrongList, hardList, starredList, modalList, search, mode]);
 
   useEffect(() => {
     let nextDeck = visibleList;
 
-    if (mode === MODES.TYPING || mode === MODES.AUX) {
+    if (
+      mode === MODES.TYPING ||
+      mode === MODES.HABEN_SEIN ||
+      mode === MODES.MODAL ||
+      mode === MODES.WRONG ||
+      mode === MODES.HARD
+    ) {
       nextDeck = shuffle(visibleList);
     }
 
@@ -125,37 +196,63 @@ export default function IrregularVerbTrainer() {
     setTypingFeedback(null);
     setAuxAnswer('');
     setAuxFeedback(null);
+    setModalAnswer('');
+    setModalFeedback(null);
   }, [visibleList, mode]);
 
   const currentVerb = deck[currentIndex] || null;
 
+  useEffect(() => {
+    if (!autoSpeak || !currentVerb) return;
+    const t = setTimeout(() => {
+      speak(currentVerb.infinitive);
+    }, 180);
+    return () => clearTimeout(t);
+  }, [currentVerb, autoSpeak]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function updateItemProgress(verbId, updater) {
+    setProgress((prev) => {
+      const current = prev[verbId] || {};
+      return {
+        ...prev,
+        [verbId]: updater(current)
+      };
+    });
+  }
+
   function markSeen(verbId) {
-    setProgress((prev) => ({
-      ...prev,
-      [verbId]: {
-        ...(prev[verbId] || {}),
-        seenCount: (prev[verbId]?.seenCount || 0) + 1
-      }
+    updateItemProgress(verbId, (current) => ({
+      ...current,
+      seenCount: (current.seenCount || 0) + 1
     }));
   }
 
   function markCorrect(verbId) {
-    setProgress((prev) => ({
-      ...prev,
-      [verbId]: {
-        ...(prev[verbId] || {}),
-        correctCount: (prev[verbId]?.correctCount || 0) + 1
-      }
+    updateItemProgress(verbId, (current) => ({
+      ...current,
+      correctCount: (current.correctCount || 0) + 1
     }));
   }
 
   function markWrong(verbId) {
-    setProgress((prev) => ({
-      ...prev,
-      [verbId]: {
-        ...(prev[verbId] || {}),
-        wrongCount: (prev[verbId]?.wrongCount || 0) + 1
-      }
+    updateItemProgress(verbId, (current) => ({
+      ...current,
+      wrongCount: (current.wrongCount || 0) + 1,
+      isHard: true
+    }));
+  }
+
+  function toggleStar(verbId) {
+    updateItemProgress(verbId, (current) => ({
+      ...current,
+      starred: !current.starred
+    }));
+  }
+
+  function toggleHard(verbId) {
+    updateItemProgress(verbId, (current) => ({
+      ...current,
+      isHard: !current.isHard
     }));
   }
 
@@ -168,6 +265,8 @@ export default function IrregularVerbTrainer() {
     setTypingFeedback(null);
     setAuxAnswer('');
     setAuxFeedback(null);
+    setModalAnswer('');
+    setModalFeedback(null);
   }
 
   function prevCard() {
@@ -179,6 +278,8 @@ export default function IrregularVerbTrainer() {
     setTypingFeedback(null);
     setAuxAnswer('');
     setAuxFeedback(null);
+    setModalAnswer('');
+    setModalFeedback(null);
   }
 
   function handleFlip() {
@@ -234,14 +335,62 @@ export default function IrregularVerbTrainer() {
     }
   }
 
+  function handleModalSubmit(answer) {
+    if (!currentVerb) return;
+    setModalAnswer(answer);
+
+    if (answer === currentVerb.present3rd) {
+      markCorrect(currentVerb.id);
+      setModalFeedback({
+        type: 'success',
+        text: `答對了：${currentVerb.infinitive} → ${currentVerb.present3rd}`
+      });
+      setTimeout(() => nextCard(), 900);
+    } else {
+      markWrong(currentVerb.id);
+      setModalFeedback({
+        type: 'error',
+        text: `錯了，正確是 ${currentVerb.present3rd}；Präteritum 是 ${currentVerb.praeteritum}`
+      });
+    }
+  }
+
+  function generateModalOptions(verb) {
+    const core = ['darf', 'kann', 'mag', 'muss', 'soll', 'will'];
+    const set = new Set([verb.present3rd]);
+
+    while (set.size < 4) {
+      const random = core[Math.floor(Math.random() * core.length)];
+      set.add(random);
+    }
+
+    return shuffle([...set]);
+  }
+
   function renderStats(verb) {
     const item = progress[verb.id] || {};
     return {
       seen: item.seenCount || 0,
       correct: item.correctCount || 0,
-      wrong: item.wrongCount || 0
+      wrong: item.wrongCount || 0,
+      starred: !!item.starred,
+      hard: !!item.isHard
     };
   }
+
+  const currentStats = currentVerb ? renderStats(currentVerb) : null;
+  const modalOptions = currentVerb && mode === MODES.MODAL ? generateModalOptions(currentVerb) : [];
+
+  const modeLabel = {
+    flashcard: '字卡',
+    typing: '三態拼寫',
+    habenSein: 'haben / sein',
+    modal: '情態動詞',
+    list: '列表',
+    wrong: '錯題重練',
+    hard: '不熟清單',
+    starred: '收藏清單'
+  }[mode];
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] text-slate-800">
@@ -254,30 +403,27 @@ export default function IrregularVerbTrainer() {
                 🇩🇪 不規則動詞特訓
               </h1>
               <p className="text-slate-500 mt-3 font-medium leading-relaxed">
-                練習 Infinitiv、第三人稱現在式、Präteritum、Perfekt 與 haben / sein。
+                練習 Infinitiv、第三人稱現在式、Präteritum、Perfekt、haben / sein，
+                並額外加入情態動詞、語音、不熟與收藏。
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-4 gap-4">
               <div className="bg-amber-50 rounded-2xl px-4 py-3">
                 <div className="text-xs font-black text-amber-600 mb-1">題庫數量</div>
                 <div className="text-2xl font-black">{visibleList.length}</div>
               </div>
               <div className="bg-slate-50 rounded-2xl px-4 py-3">
                 <div className="text-xs font-black text-slate-500 mb-1">目前模式</div>
-                <div className="text-2xl font-black">
-                  {{
-                    flashcard: '字卡',
-                    typing: '拼寫測驗',
-                    aux: 'haben / sein',
-                    list: '列表',
-                    wrong: '錯題重練'
-                  }[mode]}
-                </div>
+                <div className="text-2xl font-black">{modeLabel}</div>
               </div>
               <div className="bg-rose-50 rounded-2xl px-4 py-3">
                 <div className="text-xs font-black text-rose-500 mb-1">錯題數</div>
                 <div className="text-2xl font-black">{wrongList.length}</div>
+              </div>
+              <div className="bg-indigo-50 rounded-2xl px-4 py-3">
+                <div className="text-xs font-black text-indigo-500 mb-1">情態動詞</div>
+                <div className="text-2xl font-black">{modalList.length}</div>
               </div>
             </div>
           </div>
@@ -295,6 +441,7 @@ export default function IrregularVerbTrainer() {
             >
               📖 字卡
             </button>
+
             <button
               onClick={() => setMode(MODES.TYPING)}
               className={`px-4 py-2 rounded-full font-black border ${
@@ -303,18 +450,31 @@ export default function IrregularVerbTrainer() {
                   : 'bg-white text-slate-700 border-slate-200'
               }`}
             >
-              ✍️ 拼寫測驗
+              ✍️ 三態拼寫
             </button>
+
             <button
-              onClick={() => setMode(MODES.AUX)}
+              onClick={() => setMode(MODES.HABEN_SEIN)}
               className={`px-4 py-2 rounded-full font-black border ${
-                mode === MODES.AUX
+                mode === MODES.HABEN_SEIN
                   ? 'bg-amber-600 text-white border-amber-600'
                   : 'bg-white text-slate-700 border-slate-200'
               }`}
             >
               ⚡ haben / sein
             </button>
+
+            <button
+              onClick={() => setMode(MODES.MODAL)}
+              className={`px-4 py-2 rounded-full font-black border ${
+                mode === MODES.MODAL
+                  ? 'bg-indigo-600 text-white border-indigo-600'
+                  : 'bg-white text-slate-700 border-slate-200'
+              }`}
+            >
+              🧩 情態動詞
+            </button>
+
             <button
               onClick={() => setMode(MODES.LIST)}
               className={`px-4 py-2 rounded-full font-black border ${
@@ -325,6 +485,7 @@ export default function IrregularVerbTrainer() {
             >
               📚 列表
             </button>
+
             <button
               onClick={() => setMode(MODES.WRONG)}
               className={`px-4 py-2 rounded-full font-black border ${
@@ -333,7 +494,29 @@ export default function IrregularVerbTrainer() {
                   : 'bg-white text-slate-700 border-slate-200'
               }`}
             >
-              ⚠️ 錯題重練
+              ⚠️ 錯題
+            </button>
+
+            <button
+              onClick={() => setMode(MODES.HARD)}
+              className={`px-4 py-2 rounded-full font-black border ${
+                mode === MODES.HARD
+                  ? 'bg-orange-500 text-white border-orange-500'
+                  : 'bg-white text-slate-700 border-slate-200'
+              }`}
+            >
+              🔥 不熟
+            </button>
+
+            <button
+              onClick={() => setMode(MODES.STARRED)}
+              className={`px-4 py-2 rounded-full font-black border ${
+                mode === MODES.STARRED
+                  ? 'bg-yellow-500 text-white border-yellow-500'
+                  : 'bg-white text-slate-700 border-slate-200'
+              }`}
+            >
+              ⭐ 收藏
             </button>
           </div>
 
@@ -347,6 +530,8 @@ export default function IrregularVerbTrainer() {
               <option value="A1">A1</option>
               <option value="A2">A2</option>
               <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
             </select>
 
             <input
@@ -356,6 +541,68 @@ export default function IrregularVerbTrainer() {
               className="flex-1 bg-white border border-slate-200 rounded-2xl px-4 py-3 font-bold outline-none"
             />
           </div>
+
+          <div className="bg-white border border-slate-200 rounded-[24px] p-4 flex flex-col gap-4">
+            <div className="text-sm font-black text-slate-500">🔊 德語語音設定</div>
+
+            <div className="grid md:grid-cols-4 gap-4">
+              <div>
+                <label className="block text-xs font-black text-slate-400 mb-2">德語人聲</label>
+                <select
+                  value={voiceURI}
+                  onChange={(e) => setVoiceURI(e.target.value)}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-3 py-3 font-bold outline-none"
+                >
+                  {voices.map((voice) => (
+                    <option key={voice.voiceURI} value={voice.voiceURI}>
+                      {voice.name} ({voice.lang})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-black text-slate-400 mb-2">
+                  語速 {rate.toFixed(1)}x
+                </label>
+                <input
+                  type="range"
+                  min="0.5"
+                  max="1.3"
+                  step="0.1"
+                  value={rate}
+                  onChange={(e) => setRate(parseFloat(e.target.value))}
+                  className="w-full"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-black text-slate-400 mb-2">
+                  音高 {pitch.toFixed(1)}
+                </label>
+                <input
+                  type="range"
+                  min="0.7"
+                  max="1.5"
+                  step="0.1"
+                  value={pitch}
+                  onChange={(e) => setPitch(parseFloat(e.target.value))}
+                  className="w-full"
+                />
+              </div>
+
+              <div className="flex items-end">
+                <label className="inline-flex items-center gap-2 font-black text-slate-700">
+                  <input
+                    type="checkbox"
+                    checked={autoSpeak}
+                    onChange={(e) => setAutoSpeak(e.target.checked)}
+                  />
+                  自動播放
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
 
         {!currentVerb && (
@@ -363,8 +610,62 @@ export default function IrregularVerbTrainer() {
             <div className="text-5xl mb-4">📭</div>
             <div className="text-2xl font-black mb-2">目前沒有資料</div>
             <p className="text-slate-500 font-medium">
-              請切換等級、搜尋條件，或先累積一些錯題。
+              請切換等級、搜尋條件，或先累積一些錯題／不熟／收藏。
             </p>
+          </div>
+        )}
+
+        {currentVerb && (
+          <div className="mb-5 flex flex-wrap gap-3 items-center">
+            <button
+              onClick={() => toggleStar(currentVerb.id)}
+              className={`px-4 py-2 rounded-full font-black border ${
+                currentStats?.starred
+                  ? 'bg-yellow-500 text-white border-yellow-500'
+                  : 'bg-white text-slate-700 border-slate-200'
+              }`}
+            >
+              ⭐ 收藏
+            </button>
+
+            <button
+              onClick={() => toggleHard(currentVerb.id)}
+              className={`px-4 py-2 rounded-full font-black border ${
+                currentStats?.hard
+                  ? 'bg-orange-500 text-white border-orange-500'
+                  : 'bg-white text-slate-700 border-slate-200'
+              }`}
+            >
+              🔥 不熟
+            </button>
+
+            <button
+              onClick={() => speak(currentVerb.infinitive)}
+              className="px-4 py-2 rounded-full bg-white border border-slate-200 font-black text-slate-700"
+            >
+              🔊 念動詞
+            </button>
+
+            <button
+              onClick={() => speak(currentVerb.praeteritum)}
+              className="px-4 py-2 rounded-full bg-white border border-slate-200 font-black text-slate-700"
+            >
+              🔊 念過去式
+            </button>
+
+            <button
+              onClick={() => speak(currentVerb.perfekt)}
+              className="px-4 py-2 rounded-full bg-white border border-slate-200 font-black text-slate-700"
+            >
+              🔊 念完成式
+            </button>
+
+            <button
+              onClick={() => speak(currentVerb.example)}
+              className="px-4 py-2 rounded-full bg-white border border-slate-200 font-black text-slate-700"
+            >
+              🔊 念例句
+            </button>
           </div>
         )}
 
@@ -377,9 +678,17 @@ export default function IrregularVerbTrainer() {
               >
                 {!showBack ? (
                   <>
-                    <div className="mb-3 px-3 py-1 rounded-full bg-white text-amber-600 text-sm font-black border border-amber-200">
-                      {currentVerb.level}
+                    <div className="mb-3 flex flex-wrap justify-center gap-2">
+                      <span className="px-3 py-1 rounded-full bg-white text-amber-600 text-sm font-black border border-amber-200">
+                        {currentVerb.level}
+                      </span>
+                      {currentVerb.group === 'modal' && (
+                        <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-sm font-black border border-indigo-200">
+                          Modalverb
+                        </span>
+                      )}
                     </div>
+
                     <div className="text-5xl md:text-6xl font-black mb-4">
                       {currentVerb.infinitive}
                     </div>
@@ -517,21 +826,28 @@ export default function IrregularVerbTrainer() {
           </div>
         )}
 
-        {currentVerb && mode === MODES.AUX && (
+        {currentVerb && mode === MODES.HABEN_SEIN && (
           <div className="space-y-5">
             <div className="bg-white rounded-[36px] shadow-sm border border-slate-200 p-6 md:p-8 text-center">
               <div className="mb-3 px-3 py-1 rounded-full inline-block bg-amber-50 text-amber-600 text-sm font-black border border-amber-200">
                 {currentVerb.level}
               </div>
               <div className="text-5xl font-black mb-3">{currentVerb.infinitive}</div>
-              <div className="text-xl font-bold text-slate-500 mb-8">{currentVerb.meaningZh}</div>
+              <div className="text-xl font-bold text-slate-500 mb-6">{currentVerb.meaningZh}</div>
 
-             <div className="text-sm font-black text-slate-400 mb-2">
+              <div className="text-sm font-black text-slate-400 mb-2">
                 請選擇 Perfekt 要用的 Hilfsverb
-            </div>
-            <div className="text-lg font-black text-slate-600 mb-6">
+              </div>
+              <div className="text-lg font-black text-slate-600 mb-3">
                 {splitPerfekt(currentVerb.perfekt).participle}
-            </div>
+              </div>
+
+              <button
+                onClick={() => speak(splitPerfekt(currentVerb.perfekt).participle)}
+                className="mb-6 px-4 py-2 rounded-full bg-slate-100 font-black text-slate-700"
+              >
+                🔊 念分詞
+              </button>
 
               <div className="flex justify-center gap-4">
                 <button
@@ -589,6 +905,78 @@ export default function IrregularVerbTrainer() {
           </div>
         )}
 
+        {currentVerb && mode === MODES.MODAL && (
+          <div className="space-y-5">
+            <div className="bg-white rounded-[36px] shadow-sm border border-indigo-200 p-6 md:p-8 text-center">
+              <div className="mb-3 px-3 py-1 rounded-full inline-block bg-indigo-50 text-indigo-600 text-sm font-black border border-indigo-200">
+                Modalverb
+              </div>
+              <div className="text-5xl font-black mb-3">{currentVerb.infinitive}</div>
+              <div className="text-xl font-bold text-slate-500 mb-2">{currentVerb.meaningZh}</div>
+              <div className="text-sm text-slate-400 font-black mb-8">
+                請選第三人稱現在式
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+                {modalOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleModalSubmit(option)}
+                    className={`px-6 py-4 rounded-2xl font-black text-xl border ${
+                      modalAnswer === option
+                        ? 'bg-indigo-600 text-white border-indigo-600'
+                        : 'bg-white text-slate-700 border-slate-200'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mt-8 grid md:grid-cols-2 gap-4 text-left">
+                <div className="bg-slate-50 rounded-2xl p-4">
+                  <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
+                  <div className="font-black text-xl">{currentVerb.praeteritum}</div>
+                </div>
+                <div className="bg-slate-50 rounded-2xl p-4">
+                  <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
+                  <div className="font-black text-xl">{currentVerb.perfekt}</div>
+                </div>
+              </div>
+            </div>
+
+            {modalFeedback && (
+              <div
+                className={`rounded-2xl px-5 py-4 font-black ${
+                  modalFeedback.type === 'success'
+                    ? 'bg-emerald-100 text-emerald-700'
+                    : 'bg-rose-100 text-rose-700'
+                }`}
+              >
+                {modalFeedback.text}
+              </div>
+            )}
+
+            <div className="flex items-center justify-between gap-3">
+              <button
+                onClick={prevCard}
+                className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
+              >
+                ← 上一題
+              </button>
+              <div className="px-4 py-2 rounded-full bg-slate-100 font-black text-slate-700">
+                {currentIndex + 1} / {deck.length}
+              </div>
+              <button
+                onClick={nextCard}
+                className="px-5 py-3 rounded-2xl bg-indigo-600 text-white font-black"
+              >
+                下一題 →
+              </button>
+            </div>
+          </div>
+        )}
+
         {mode === MODES.LIST && (
           <div className="grid gap-4">
             {visibleList.map((verb) => {
@@ -602,9 +990,16 @@ export default function IrregularVerbTrainer() {
                     <div>
                       <div className="flex items-center gap-3 mb-3 flex-wrap">
                         <div className="text-2xl font-black">{verb.infinitive}</div>
-                        <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-sm font-black border border-amber-200">
-                          {verb.level}
-                        </span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-sm font-black border border-amber-200">
+                            {verb.level}
+                          </span>
+                          {verb.group === 'modal' && (
+                            <span className="px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-sm font-black border border-indigo-200">
+                              Modalverb
+                            </span>
+                          )}
+                        </div>
                       </div>
 
                       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -631,11 +1026,13 @@ export default function IrregularVerbTrainer() {
                       </div>
                     </div>
 
-                    <div className="min-w-[180px] bg-rose-50 rounded-2xl p-4">
+                    <div className="min-w-[220px] bg-rose-50 rounded-2xl p-4">
                       <div className="text-sm font-black text-rose-500 mb-2">學習紀錄</div>
                       <div className="text-sm font-bold text-slate-700">看過：{stats.seen}</div>
                       <div className="text-sm font-bold text-slate-700">答對：{stats.correct}</div>
                       <div className="text-sm font-bold text-slate-700">答錯：{stats.wrong}</div>
+                      <div className="text-sm font-bold text-slate-700">收藏：{stats.starred ? '是' : '否'}</div>
+                      <div className="text-sm font-bold text-slate-700">不熟：{stats.hard ? '是' : '否'}</div>
                     </div>
                   </div>
                 </div>
@@ -644,7 +1041,7 @@ export default function IrregularVerbTrainer() {
           </div>
         )}
 
-        {mode === MODES.WRONG && currentVerb && (
+        {(mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) && currentVerb && (
           <div className="space-y-5">
             <div className="bg-white rounded-[36px] shadow-sm border border-rose-200 p-6 md:p-8">
               <div
@@ -654,7 +1051,7 @@ export default function IrregularVerbTrainer() {
                 {!showBack ? (
                   <>
                     <div className="mb-3 px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
-                      錯題重練
+                      {mode === MODES.WRONG ? '錯題重練' : mode === MODES.HARD ? '不熟清單' : '收藏清單'}
                     </div>
                     <div className="text-5xl md:text-6xl font-black mb-4">
                       {currentVerb.infinitive}
