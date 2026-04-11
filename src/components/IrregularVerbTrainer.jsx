@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { irregularVerbs } from '../data/irregular-verbs';
 
-const STORAGE_KEY = 'irregular-verbs-trainer-v2';
+const STORAGE_KEY = 'irregular-verbs-trainer-v3';
 
 const MODES = {
   FLASHCARD: 'flashcard',
@@ -28,11 +28,11 @@ function shuffle(array) {
   return copied;
 }
 
-function normalizeText(value) {
+function normalizeText(value = '') {
   return value.trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
-function splitPerfekt(perfekt) {
+function splitPerfekt(perfekt = '') {
   const parts = perfekt.split(' ');
   if (parts.length < 2) {
     return { aux: '', participle: perfekt };
@@ -151,14 +151,14 @@ function getTypeMeta(type) {
 }
 
 function inferAuxHint(verb) {
-  if (verb.auxiliary === 'ist') {
+  if (verb?.auxiliary === 'ist') {
     return {
       label: 'Perfekt 用 sein',
       cls: 'bg-emerald-100 text-emerald-700 border-emerald-200'
     };
   }
 
-  if (verb.auxiliary === 'hat') {
+  if (verb?.auxiliary === 'hat') {
     return {
       label: 'Perfekt 用 haben',
       cls: 'bg-sky-100 text-sky-700 border-sky-200'
@@ -187,6 +187,52 @@ function deriveLearningState(item = {}) {
   }
 
   return { label: '未開始', cls: 'bg-slate-100 text-slate-600 border-slate-200' };
+}
+
+function getModeTone(mode) {
+  if (mode === MODES.MODAL) return 'indigo';
+  if (mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) return 'rose';
+  return 'amber';
+}
+
+function getModeLabel(mode) {
+  return {
+    flashcard: '字卡',
+    typing: '三態拼寫',
+    habenSein: 'haben / sein',
+    modal: '情態專練',
+    list: '列表',
+    wrong: '錯題',
+    hard: '不熟',
+    starred: '收藏'
+  }[mode];
+}
+
+function getToneClasses(tone) {
+  if (tone === 'rose') {
+    return {
+      outer: 'border-rose-200',
+      inner: 'border-rose-100 bg-rose-50/80',
+      next: 'bg-rose-500 text-white',
+      nav: 'bg-white/95 border-rose-200 text-rose-600'
+    };
+  }
+
+  if (tone === 'indigo') {
+    return {
+      outer: 'border-indigo-200',
+      inner: 'border-indigo-100 bg-indigo-50/70',
+      next: 'bg-indigo-600 text-white',
+      nav: 'bg-white/95 border-indigo-200 text-indigo-600'
+    };
+  }
+
+  return {
+    outer: 'border-slate-200',
+    inner: 'border-amber-100 bg-amber-50/80',
+    next: 'bg-amber-600 text-white',
+    nav: 'bg-white/95 border-slate-200 text-slate-700'
+  };
 }
 
 function AudioPill({ onClick, label }) {
@@ -246,6 +292,267 @@ function ActionToggle({ active, onClick, activeClass, inactiveClass, children })
     >
       {children}
     </button>
+  );
+}
+
+function SideNavButton({ direction, onClick, label, tone = 'amber' }) {
+  const isPrev = direction === 'prev';
+  const toneClass = getToneClasses(tone).nav;
+
+  return (
+    <button
+      onClick={onClick}
+      type="button"
+      aria-label={label}
+      title={label}
+      className={`absolute top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center
+        w-14 h-14 rounded-full border shadow-sm hover:bg-white active:scale-95 transition-all
+        ${toneClass}
+        ${isPrev ? '-left-7' : '-right-7'}`}
+    >
+      <span className="text-2xl font-black">{isPrev ? '←' : '→'}</span>
+    </button>
+  );
+}
+
+function MetaPills({
+  currentLearningState,
+  currentTypeMeta,
+  currentAuxHint,
+  currentVerb,
+  currentIndex,
+  deckLength
+}) {
+  if (!currentVerb) return null;
+
+  return (
+    <div className="mb-3 flex flex-wrap items-center gap-2">
+      {currentLearningState && (
+        <span className={`px-2.5 py-1 rounded-full text-xs font-black border opacity-80 ${currentLearningState.cls}`}>
+          {currentLearningState.label}
+        </span>
+      )}
+
+      {currentTypeMeta && (
+        <span className={`px-2.5 py-1 rounded-full text-xs font-black border opacity-80 ${currentTypeMeta.cls}`}>
+          {currentTypeMeta.label}
+        </span>
+      )}
+
+      {currentAuxHint && (
+        <span className={`px-2.5 py-1 rounded-full text-xs font-black border opacity-80 ${currentAuxHint.cls}`}>
+          {currentAuxHint.label}
+        </span>
+      )}
+
+      <span className="px-2.5 py-1 rounded-full text-xs font-black border bg-white text-amber-600 border-amber-200 opacity-80">
+        {currentVerb.level}
+      </span>
+
+      <span className="px-2.5 py-1 rounded-full text-xs font-black border bg-slate-100 text-slate-600 border-slate-200 opacity-80">
+        {currentIndex + 1} / {deckLength}
+      </span>
+    </div>
+  );
+}
+
+function FixedCardFrame({
+  tone = 'amber',
+  children,
+  topRight,
+  onPrev,
+  onNext
+}) {
+  const toneStyles = getToneClasses(tone);
+
+  return (
+    <div className="space-y-4">
+      <div className="relative px-0 md:px-8">
+        <SideNavButton direction="prev" onClick={onPrev} label="上一個" tone={tone} />
+        <SideNavButton direction="next" onClick={onNext} label="下一個" tone={tone} />
+
+        <div className={`bg-white rounded-[32px] shadow-sm border ${toneStyles.outer} p-3.5 md:p-4`}>
+          <div className="relative">
+            {topRight && <div className="absolute right-3 top-3 z-10 flex gap-2">{topRight}</div>}
+
+            <div
+              className={`min-h-[520px] rounded-[28px] border ${toneStyles.inner} flex flex-col justify-center px-6 py-12 md:px-10`}
+            >
+              {children}
+            </div>
+
+            <div className="mt-4 flex justify-between gap-3 md:hidden">
+              <button
+                onClick={onPrev}
+                className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
+                type="button"
+              >
+                ← 上一個
+              </button>
+
+              <button
+                onClick={onNext}
+                className={`px-5 py-3 rounded-2xl font-black ${toneStyles.next}`}
+                type="button"
+              >
+                下一個 →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FlashcardLikeMode({
+  tone,
+  currentVerb,
+  currentStats,
+  onToggleStar,
+  onToggleHard,
+  onFlip,
+  onPrev,
+  onNext,
+  showBack,
+  speak,
+  frontBadge
+}) {
+  return (
+    <FixedCardFrame
+      tone={tone}
+      onPrev={onPrev}
+      onNext={onNext}
+      topRight={
+        <>
+          <ActionToggle
+            active={currentStats?.starred}
+            onClick={() => onToggleStar(currentVerb.id)}
+            activeClass="bg-yellow-500 text-white border-yellow-500"
+            inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
+          >
+            ⭐ 收藏
+          </ActionToggle>
+
+          <ActionToggle
+            active={currentStats?.hard}
+            onClick={() => onToggleHard(currentVerb.id)}
+            activeClass="bg-orange-500 text-white border-orange-500"
+            inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
+          >
+            🔥 不熟
+          </ActionToggle>
+        </>
+      }
+    >
+      <div onClick={onFlip} className="cursor-pointer w-full max-w-3xl mx-auto">
+        {!showBack ? (
+          <div className="min-h-[420px] flex flex-col justify-center items-center text-center">
+            {frontBadge && (
+              <div className="mb-3 flex justify-center">
+                <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
+                  {frontBadge}
+                </span>
+              </div>
+            )}
+
+            <div className="flex items-center justify-center gap-3 flex-wrap mb-4">
+              <div className="text-6xl md:text-7xl font-black leading-none">
+                {currentVerb.infinitive}
+              </div>
+              <AudioPill
+                onClick={(e) => {
+                  e.stopPropagation();
+                  speak(currentVerb.infinitive);
+                }}
+                label="播放動詞發音"
+              />
+            </div>
+
+            <div className="text-xl md:text-2xl text-slate-500 font-bold mb-2">
+              {currentVerb.meaningZh}
+            </div>
+
+            <div className="text-sm text-slate-400 font-bold mt-6">
+              點一下翻面看變化
+            </div>
+          </div>
+        ) : (
+          <div className="min-h-[420px] flex flex-col justify-center">
+            <div className="grid sm:grid-cols-2 gap-4 text-left auto-rows-fr">
+              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+                <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-2xl font-black">{currentVerb.infinitive}</div>
+                  <AudioPill
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speak(currentVerb.infinitive);
+                    }}
+                    label="播放動詞發音"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+                <div className="text-xs font-black text-slate-400 mb-2">3. Person</div>
+                <div className="text-2xl font-black">
+                  {highlightChangedVowel(currentVerb.infinitive, currentVerb.present3rd)}
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+                <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-2xl font-black">
+                    {highlightChangedVowel(currentVerb.infinitive, currentVerb.praeteritum)}
+                  </div>
+                  <AudioPill
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speak(currentVerb.praeteritum);
+                    }}
+                    label="播放過去式發音"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+                <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-2xl font-black">
+                    {renderPerfektWithAuxHighlight(currentVerb.perfekt)}
+                  </div>
+                  <AudioPill
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speak(currentVerb.perfekt);
+                    }}
+                    label="播放完成式發音"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 bg-white rounded-2xl p-4 border border-slate-100 text-left min-h-[116px] flex items-start">
+              <div className="w-full">
+                <div className="text-xs font-black text-slate-400 mb-2">例句</div>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="text-lg font-bold flex-1">{currentVerb.example}</div>
+                  <AudioPill
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speak(currentVerb.example);
+                    }}
+                    label="播放例句發音"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </FixedCardFrame>
   );
 }
 
@@ -309,6 +616,40 @@ export default function IrregularVerbTrainer() {
       window.speechSynthesis.onvoiceschanged = null;
     };
   }, [voiceURI]);
+
+  useEffect(() => {
+    const handleKeydown = (e) => {
+      if (!deck.length) return;
+
+      const tag = document.activeElement?.tagName?.toLowerCase();
+      const isTypingField = tag === 'input' || tag === 'textarea';
+
+      if (e.key === 'ArrowLeft' && !isTypingField) {
+        e.preventDefault();
+        prevCard();
+      }
+
+      if (e.key === 'ArrowRight' && !isTypingField) {
+        e.preventDefault();
+        nextCard();
+      }
+
+      if (
+        e.key === ' ' &&
+        !isTypingField &&
+        (mode === MODES.FLASHCARD ||
+          mode === MODES.WRONG ||
+          mode === MODES.HARD ||
+          mode === MODES.STARRED)
+      ) {
+        e.preventDefault();
+        handleFlip();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeydown);
+    return () => window.removeEventListener('keydown', handleKeydown);
+  }, [deck.length, mode, showBack, currentIndex]);
 
   function speak(text) {
     if (typeof window === 'undefined' || !window.speechSynthesis || !text) return;
@@ -470,9 +811,7 @@ export default function IrregularVerbTrainer() {
     }));
   }
 
-  function nextCard() {
-    if (!deck.length) return;
-    setCurrentIndex((prev) => (prev + 1) % deck.length);
+  function resetCardUI() {
     setShowBack(false);
     setTypingPraeteritum('');
     setTypingPerfekt('');
@@ -483,17 +822,16 @@ export default function IrregularVerbTrainer() {
     setModalFeedback(null);
   }
 
+  function nextCard() {
+    if (!deck.length) return;
+    setCurrentIndex((prev) => (prev + 1) % deck.length);
+    resetCardUI();
+  }
+
   function prevCard() {
     if (!deck.length) return;
     setCurrentIndex((prev) => (prev - 1 + deck.length) % deck.length);
-    setShowBack(false);
-    setTypingPraeteritum('');
-    setTypingPerfekt('');
-    setTypingFeedback(null);
-    setAuxAnswer('');
-    setAuxFeedback(null);
-    setModalAnswer('');
-    setModalFeedback(null);
+    resetCardUI();
   }
 
   function handleFlip() {
@@ -675,6 +1013,28 @@ export default function IrregularVerbTrainer() {
             >
               🔊 語音
             </button>
+          </div>
+
+          <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-400">
+            <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
+              模式：{getModeLabel(mode)}
+            </span>
+            <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
+              ← / → 切換
+            </span>
+            {(mode === MODES.FLASHCARD ||
+              mode === MODES.WRONG ||
+              mode === MODES.HARD ||
+              mode === MODES.STARRED) && (
+              <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
+                Space 翻卡
+              </span>
+            )}
+            {mode === MODES.TYPING && (
+              <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
+                Enter 送出
+              </span>
+            )}
           </div>
 
           {showAdvancedFilters && (
@@ -888,197 +1248,52 @@ export default function IrregularVerbTrainer() {
       )}
 
       {currentVerb && mode !== MODES.LIST && (
-        <div className="mb-3 flex flex-wrap items-center gap-2">
-          {currentLearningState && (
-            <span className={`px-3 py-1.5 rounded-full text-sm font-black border ${currentLearningState.cls}`}>
-              {currentLearningState.label}
-            </span>
-          )}
-
-          {currentTypeMeta && (
-            <span className={`px-3 py-1.5 rounded-full text-sm font-black border ${currentTypeMeta.cls}`}>
-              {currentTypeMeta.label}
-            </span>
-          )}
-
-          {currentAuxHint && (
-            <span className={`px-3 py-1.5 rounded-full text-sm font-black border ${currentAuxHint.cls}`}>
-              {currentAuxHint.label}
-            </span>
-          )}
-        </div>
+        <MetaPills
+          currentLearningState={currentLearningState}
+          currentTypeMeta={currentTypeMeta}
+          currentAuxHint={currentAuxHint}
+          currentVerb={currentVerb}
+          currentIndex={currentIndex}
+          deckLength={deck.length}
+        />
       )}
 
       {currentVerb && mode === MODES.FLASHCARD && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-[32px] shadow-sm border border-slate-200 p-3.5 md:p-4">
-            <div className="relative">
-              <div className="absolute top-0 left-0 z-10 flex gap-2">
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-amber-600 border-amber-200">
-                  {currentVerb.level}
-                </span>
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-slate-600 border-slate-200">
-                  {currentIndex + 1} / {deck.length}
-                </span>
-              </div>
+        <FlashcardLikeMode
+          tone="amber"
+          currentVerb={currentVerb}
+          currentStats={currentStats}
+          onToggleStar={toggleStar}
+          onToggleHard={toggleHard}
+          onFlip={handleFlip}
+          onPrev={prevCard}
+          onNext={nextCard}
+          showBack={showBack}
+          speak={speak}
+        />
+      )}
 
-              <div className="absolute top-0 right-0 z-10 flex gap-2">
-                <ActionToggle
-                  active={currentStats?.starred}
-                  onClick={() => toggleStar(currentVerb.id)}
-                  activeClass="bg-yellow-500 text-white border-yellow-500"
-                  inactiveClass="bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
-                >
-                  ⭐ 收藏
-                </ActionToggle>
-
-                <ActionToggle
-                  active={currentStats?.hard}
-                  onClick={() => toggleHard(currentVerb.id)}
-                  activeClass="bg-orange-500 text-white border-orange-500"
-                  inactiveClass="bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
-                >
-                  🔥 不熟
-                </ActionToggle>
-              </div>
-
-              <div
-                onClick={handleFlip}
-                className="cursor-pointer min-h-[460px] rounded-[28px] border border-amber-100 bg-amber-50/80 flex flex-col justify-center items-center text-center px-6 py-12 md:px-10"
-              >
-                {!showBack ? (
-                  <>
-                    <div className="flex items-center justify-center gap-3 flex-wrap mb-4">
-                      <div className="text-6xl md:text-7xl font-black leading-none">
-                        {currentVerb.infinitive}
-                      </div>
-                      <AudioPill
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          speak(currentVerb.infinitive);
-                        }}
-                        label="播放動詞發音"
-                      />
-                    </div>
-
-                    <div className="text-xl md:text-2xl text-slate-500 font-bold mb-2">
-                      {currentVerb.meaningZh}
-                    </div>
-
-                    <div className="text-sm text-slate-400 font-bold mt-6">
-                      點一下翻面看變化
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full max-w-3xl">
-                    <div className="grid sm:grid-cols-2 gap-4 text-left">
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                        <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="text-2xl font-black">{currentVerb.infinitive}</div>
-                          <AudioPill
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              speak(currentVerb.infinitive);
-                            }}
-                            label="播放動詞發音"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                        <div className="text-xs font-black text-slate-400 mb-2">3. Person</div>
-                        <div className="text-2xl font-black">
-                          {highlightChangedVowel(currentVerb.infinitive, currentVerb.present3rd)}
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                        <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="text-2xl font-black">
-                            {highlightChangedVowel(currentVerb.infinitive, currentVerb.praeteritum)}
-                          </div>
-                          <AudioPill
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              speak(currentVerb.praeteritum);
-                            }}
-                            label="播放過去式發音"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                        <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="text-2xl font-black">
-                            {renderPerfektWithAuxHighlight(currentVerb.perfekt)}
-                          </div>
-                          <AudioPill
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              speak(currentVerb.perfekt);
-                            }}
-                            label="播放完成式發音"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-4 bg-white rounded-2xl p-4 border border-slate-100 text-left">
-                      <div className="text-xs font-black text-slate-400 mb-2">例句</div>
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="text-lg font-bold flex-1">{currentVerb.example}</div>
-                        <AudioPill
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            speak(currentVerb.example);
-                          }}
-                          label="播放例句發音"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between gap-3">
-            <button
-              onClick={prevCard}
-              className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
-              type="button"
-            >
-              ← 上一個
-            </button>
-
-            <button
-              onClick={nextCard}
-              className="px-5 py-3 rounded-2xl bg-amber-600 text-white font-black"
-              type="button"
-            >
-              下一個 →
-            </button>
-          </div>
-        </div>
+      {(mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) && currentVerb && (
+        <FlashcardLikeMode
+          tone="rose"
+          currentVerb={currentVerb}
+          currentStats={currentStats}
+          onToggleStar={toggleStar}
+          onToggleHard={toggleHard}
+          onFlip={handleFlip}
+          onPrev={prevCard}
+          onNext={nextCard}
+          showBack={showBack}
+          speak={speak}
+          frontBadge={mode === MODES.WRONG ? '錯題重練' : mode === MODES.HARD ? '不熟清單' : '收藏清單'}
+        />
       )}
 
       {currentVerb && mode === MODES.TYPING && (
         <div className="space-y-4">
-          <div className="bg-white rounded-[32px] shadow-sm border border-slate-200 p-6 md:p-8">
-            <div className="relative">
-              <div className="absolute top-0 left-0 z-10 flex gap-2">
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-amber-600 border-amber-200">
-                  {currentVerb.level}
-                </span>
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-slate-600 border-slate-200">
-                  {currentIndex + 1} / {deck.length}
-                </span>
-              </div>
-
-              <div className="text-center mb-8 pt-10">
+          <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
+            <div className="w-full max-w-2xl mx-auto min-h-[420px] flex flex-col justify-center">
+              <div className="text-center mb-8">
                 <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
                   <div className="text-5xl font-black">{currentVerb.infinitive}</div>
                   <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
@@ -1086,37 +1301,37 @@ export default function IrregularVerbTrainer() {
 
                 <div className="text-xl font-bold text-slate-500">{currentVerb.meaningZh}</div>
               </div>
+
+              <form onSubmit={handleTypingSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-black text-slate-500 mb-2">Präteritum</label>
+                  <input
+                    value={typingPraeteritum}
+                    onChange={(e) => setTypingPraeteritum(e.target.value)}
+                    className="w-full bg-white border border-slate-200 rounded-2xl px-4 py-4 text-xl font-bold outline-none"
+                    placeholder="請輸入過去式"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-black text-slate-500 mb-2">Perfekt</label>
+                  <input
+                    value={typingPerfekt}
+                    onChange={(e) => setTypingPerfekt(e.target.value)}
+                    className="w-full bg-white border border-slate-200 rounded-2xl px-4 py-4 text-xl font-bold outline-none"
+                    placeholder="請輸入完成式"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-amber-600 text-white py-4 rounded-2xl font-black text-lg"
+                >
+                  檢查答案
+                </button>
+              </form>
             </div>
-
-            <form onSubmit={handleTypingSubmit} className="space-y-4 max-w-2xl mx-auto">
-              <div>
-                <label className="block text-sm font-black text-slate-500 mb-2">Präteritum</label>
-                <input
-                  value={typingPraeteritum}
-                  onChange={(e) => setTypingPraeteritum(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 text-xl font-bold outline-none"
-                  placeholder="請輸入過去式"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-black text-slate-500 mb-2">Perfekt</label>
-                <input
-                  value={typingPerfekt}
-                  onChange={(e) => setTypingPerfekt(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 text-xl font-bold outline-none"
-                  placeholder="請輸入完成式"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-amber-600 text-white py-4 rounded-2xl font-black text-lg"
-              >
-                檢查答案
-              </button>
-            </form>
-          </div>
+          </FixedCardFrame>
 
           {typingFeedback && (
             <div
@@ -1129,89 +1344,60 @@ export default function IrregularVerbTrainer() {
               {typingFeedback.text}
             </div>
           )}
-
-          <div className="flex items-center justify-between gap-3">
-            <button
-              onClick={prevCard}
-              className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
-              type="button"
-            >
-              ← 上一題
-            </button>
-
-            <button
-              onClick={nextCard}
-              className="px-5 py-3 rounded-2xl bg-amber-600 text-white font-black"
-              type="button"
-            >
-              下一題 →
-            </button>
-          </div>
         </div>
       )}
 
       {currentVerb && mode === MODES.HABEN_SEIN && (
         <div className="space-y-4">
-          <div className="bg-white rounded-[32px] shadow-sm border border-slate-200 p-6 md:p-8 text-center">
-            <div className="relative">
-              <div className="absolute top-0 left-0 z-10 flex gap-2">
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-amber-600 border-amber-200">
-                  {currentVerb.level}
-                </span>
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-slate-600 border-slate-200">
-                  {currentIndex + 1} / {deck.length}
-                </span>
+          <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
+            <div className="w-full max-w-2xl mx-auto min-h-[420px] flex flex-col justify-center text-center">
+              <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
+                <div className="text-5xl font-black">{currentVerb.infinitive}</div>
+                <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
               </div>
 
-              <div className="pt-10">
-                <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                  <div className="text-5xl font-black">{currentVerb.infinitive}</div>
-                  <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
+              <div className="text-xl font-bold text-slate-500 mb-6">{currentVerb.meaningZh}</div>
+
+              <div className="text-sm font-black text-slate-400 mb-2">
+                請選擇 Perfekt 要用的 Hilfsverb
+              </div>
+
+              <div className="flex items-center justify-center gap-3 flex-wrap mb-6">
+                <div className="text-lg font-black text-slate-600">
+                  {splitPerfekt(currentVerb.perfekt).participle}
                 </div>
+                <AudioPill
+                  onClick={() => speak(splitPerfekt(currentVerb.perfekt).participle)}
+                  label="播放分詞發音"
+                />
+              </div>
 
-                <div className="text-xl font-bold text-slate-500 mb-6">{currentVerb.meaningZh}</div>
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={() => handleAuxAnswer('hat')}
+                  className={`px-8 py-4 rounded-2xl font-black text-xl border ${
+                    auxAnswer === 'hat'
+                      ? 'bg-amber-600 text-white border-amber-600'
+                      : 'bg-white text-slate-700 border-slate-200'
+                  }`}
+                  type="button"
+                >
+                  hat
+                </button>
+                <button
+                  onClick={() => handleAuxAnswer('ist')}
+                  className={`px-8 py-4 rounded-2xl font-black text-xl border ${
+                    auxAnswer === 'ist'
+                      ? 'bg-amber-600 text-white border-amber-600'
+                      : 'bg-white text-slate-700 border-slate-200'
+                  }`}
+                  type="button"
+                >
+                  ist
+                </button>
               </div>
             </div>
-
-            <div className="text-sm font-black text-slate-400 mb-2">
-              請選擇 Perfekt 要用的 Hilfsverb
-            </div>
-
-            <div className="flex items-center justify-center gap-3 flex-wrap mb-6">
-              <div className="text-lg font-black text-slate-600">
-                {splitPerfekt(currentVerb.perfekt).participle}
-              </div>
-              <AudioPill
-                onClick={() => speak(splitPerfekt(currentVerb.perfekt).participle)}
-                label="播放分詞發音"
-              />
-            </div>
-
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={() => handleAuxAnswer('hat')}
-                className={`px-8 py-4 rounded-2xl font-black text-xl border ${
-                  auxAnswer === 'hat'
-                    ? 'bg-amber-600 text-white border-amber-600'
-                    : 'bg-white text-slate-700 border-slate-200'
-                }`}
-                type="button"
-              >
-                hat
-              </button>
-              <button
-                onClick={() => handleAuxAnswer('ist')}
-                className={`px-8 py-4 rounded-2xl font-black text-xl border ${
-                  auxAnswer === 'ist'
-                    ? 'bg-amber-600 text-white border-amber-600'
-                    : 'bg-white text-slate-700 border-slate-200'
-                }`}
-                type="button"
-              >
-                ist
-              </button>
-            </div>
-          </div>
+          </FixedCardFrame>
 
           {auxFeedback && (
             <div
@@ -1224,90 +1410,61 @@ export default function IrregularVerbTrainer() {
               {auxFeedback.text}
             </div>
           )}
-
-          <div className="flex items-center justify-between gap-3">
-            <button
-              onClick={prevCard}
-              className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
-              type="button"
-            >
-              ← 上一題
-            </button>
-
-            <button
-              onClick={nextCard}
-              className="px-5 py-3 rounded-2xl bg-amber-600 text-white font-black"
-              type="button"
-            >
-              下一題 →
-            </button>
-          </div>
         </div>
       )}
 
       {currentVerb && mode === MODES.MODAL && (
         <div className="space-y-4">
-          <div className="bg-white rounded-[32px] shadow-sm border border-indigo-200 p-6 md:p-8 text-center">
-            <div className="relative">
-              <div className="absolute top-0 left-0 z-10 flex gap-2">
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-amber-600 border-amber-200">
-                  {currentVerb.level}
-                </span>
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-slate-600 border-slate-200">
-                  {currentIndex + 1} / {deck.length}
-                </span>
-              </div>
-
-              <div className="mb-3 px-3 py-1 rounded-full inline-block bg-indigo-50 text-indigo-600 text-sm font-black border border-indigo-200">
+          <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
+            <div className="w-full max-w-3xl mx-auto min-h-[420px] flex flex-col justify-center text-center">
+              <div className="mb-3 px-3 py-1 rounded-full inline-block self-center bg-indigo-50 text-indigo-600 text-sm font-black border border-indigo-200">
                 情態動詞專練
               </div>
 
-              <div className="pt-2">
-                <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                  <div className="text-5xl font-black">{currentVerb.infinitive}</div>
-                  <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
-                </div>
-
-                <div className="text-xl font-bold text-slate-500 mb-2">{currentVerb.meaningZh}</div>
-                <div className="text-sm text-slate-400 font-black mb-8">請選第三人稱現在式</div>
-              </div>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-              {modalOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => handleModalSubmit(option)}
-                  className={`px-6 py-4 rounded-2xl font-black text-xl border ${
-                    modalAnswer === option
-                      ? 'bg-indigo-600 text-white border-indigo-600'
-                      : 'bg-white text-slate-700 border-slate-200'
-                  }`}
-                  type="button"
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-8 grid md:grid-cols-2 gap-4 text-left">
-              <div className="bg-slate-50 rounded-2xl p-4">
-                <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
-                <div className="flex items-center justify-between gap-3">
-                  <div className="font-black text-xl">{currentVerb.praeteritum}</div>
-                  <AudioPill onClick={() => speak(currentVerb.praeteritum)} label="播放過去式發音" />
-                </div>
+              <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
+                <div className="text-5xl font-black">{currentVerb.infinitive}</div>
+                <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-4">
-                <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
-                <div className="flex items-center justify-between gap-3">
-                  <div className="font-black text-xl">{currentVerb.perfekt}</div>
-                  <AudioPill onClick={() => speak(currentVerb.perfekt)} label="播放完成式發音" />
+              <div className="text-xl font-bold text-slate-500 mb-2">{currentVerb.meaningZh}</div>
+              <div className="text-sm text-slate-400 font-black mb-8">請選第三人稱現在式</div>
+
+              <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto w-full">
+                {modalOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleModalSubmit(option)}
+                    className={`px-6 py-4 rounded-2xl font-black text-xl border ${
+                      modalAnswer === option
+                        ? 'bg-indigo-600 text-white border-indigo-600'
+                        : 'bg-white text-slate-700 border-slate-200'
+                    }`}
+                    type="button"
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mt-8 grid md:grid-cols-2 gap-4 text-left">
+                <div className="bg-white rounded-2xl p-4 border border-slate-100">
+                  <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="font-black text-xl">{currentVerb.praeteritum}</div>
+                    <AudioPill onClick={() => speak(currentVerb.praeteritum)} label="播放過去式發音" />
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-4 border border-slate-100">
+                  <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="font-black text-xl">{currentVerb.perfekt}</div>
+                    <AudioPill onClick={() => speak(currentVerb.perfekt)} label="播放完成式發音" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </FixedCardFrame>
 
           {modalFeedback && (
             <div
@@ -1320,24 +1477,6 @@ export default function IrregularVerbTrainer() {
               {modalFeedback.text}
             </div>
           )}
-
-          <div className="flex items-center justify-between gap-3">
-            <button
-              onClick={prevCard}
-              className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
-              type="button"
-            >
-              ← 上一題
-            </button>
-
-            <button
-              onClick={nextCard}
-              className="px-5 py-3 rounded-2xl bg-indigo-600 text-white font-black"
-              type="button"
-            >
-              下一題 →
-            </button>
-          </div>
         </div>
       )}
 
@@ -1431,138 +1570,6 @@ export default function IrregularVerbTrainer() {
               </div>
             );
           })}
-        </div>
-      )}
-
-      {(mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) && currentVerb && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-[32px] shadow-sm border border-rose-200 p-3.5 md:p-4">
-            <div className="relative">
-              <div className="absolute top-0 left-0 z-10 flex gap-2">
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-amber-600 border-amber-200">
-                  {currentVerb.level}
-                </span>
-                <span className="px-3 py-1.5 rounded-full text-sm font-black border bg-white text-slate-600 border-slate-200">
-                  {currentIndex + 1} / {deck.length}
-                </span>
-              </div>
-
-              <div className="absolute top-0 right-0 z-10 flex gap-2">
-                <ActionToggle
-                  active={currentStats?.starred}
-                  onClick={() => toggleStar(currentVerb.id)}
-                  activeClass="bg-yellow-500 text-white border-yellow-500"
-                  inactiveClass="bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
-                >
-                  ⭐ 收藏
-                </ActionToggle>
-
-                <ActionToggle
-                  active={currentStats?.hard}
-                  onClick={() => toggleHard(currentVerb.id)}
-                  activeClass="bg-orange-500 text-white border-orange-500"
-                  inactiveClass="bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
-                >
-                  🔥 不熟
-                </ActionToggle>
-              </div>
-
-              <div
-                onClick={handleFlip}
-                className="cursor-pointer min-h-[460px] rounded-[28px] border border-rose-100 bg-rose-50/80 flex flex-col justify-center items-center text-center px-6 py-12 md:px-10"
-              >
-                {!showBack ? (
-                  <>
-                    <div className="mb-3 flex flex-wrap justify-center gap-2">
-                      <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
-                        {mode === MODES.WRONG ? '錯題重練' : mode === MODES.HARD ? '不熟清單' : '收藏清單'}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-center gap-3 flex-wrap mb-4">
-                      <div className="text-6xl md:text-7xl font-black">{currentVerb.infinitive}</div>
-                      <AudioPill
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          speak(currentVerb.infinitive);
-                        }}
-                        label="播放動詞發音"
-                      />
-                    </div>
-
-                    <div className="text-lg md:text-xl text-slate-500 font-bold mb-2">
-                      {currentVerb.meaningZh}
-                    </div>
-
-                    <div className="text-sm text-slate-400 font-bold mt-6">
-                      點一下翻面看答案
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full max-w-3xl">
-                    <div className="grid sm:grid-cols-2 gap-4 text-left">
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                        <div className="text-xs font-black text-slate-400 mb-2">3. Person</div>
-                        <div className="font-black text-2xl">
-                          {highlightChangedVowel(currentVerb.infinitive, currentVerb.present3rd)}
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                        <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="font-black text-2xl">
-                            {highlightChangedVowel(currentVerb.infinitive, currentVerb.praeteritum)}
-                          </div>
-                          <AudioPill
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              speak(currentVerb.praeteritum);
-                            }}
-                            label="播放過去式發音"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-2xl p-4 border border-slate-100 sm:col-span-2">
-                        <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="font-black text-2xl">
-                            {renderPerfektWithAuxHighlight(currentVerb.perfekt)}
-                          </div>
-                          <AudioPill
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              speak(currentVerb.perfekt);
-                            }}
-                            label="播放完成式發音"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between gap-3">
-            <button
-              onClick={prevCard}
-              className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
-              type="button"
-            >
-              ← 上一個
-            </button>
-
-            <button
-              onClick={nextCard}
-              className="px-5 py-3 rounded-2xl bg-rose-500 text-white font-black"
-              type="button"
-            >
-              下一個 →
-            </button>
-          </div>
         </div>
       )}
     </div>
