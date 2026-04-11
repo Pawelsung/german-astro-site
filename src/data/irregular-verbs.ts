@@ -9,6 +9,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "begonnen",
     level: "A1",
+    type: "strong",
     meaningZh: "開始",
     example: "Der Kurs beginnt um neun Uhr."
   },
@@ -21,6 +22,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geblieben",
     level: "A1",
+    type: "strong",
     meaningZh: "停留；留下",
     example: "Ich bin zu Hause geblieben."
   },
@@ -33,6 +35,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebracht",
     level: "A1",
+    type: "mixed",
     meaningZh: "帶來",
     example: "Sie hat Kaffee gebracht."
   },
@@ -45,6 +48,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gedacht",
     level: "A1",
+    type: "mixed",
     meaningZh: "想；思考",
     example: "Ich habe lange darüber gedacht."
   },
@@ -57,6 +61,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gedurft",
     level: "A1",
+    type: "modal",
     group: "modal",
     meaningZh: "可以；被允許",
     example: "Früher durfte ich länger draußen bleiben."
@@ -70,6 +75,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gegessen",
     level: "A1",
+    type: "strong",
     meaningZh: "吃",
     example: "Wir haben zusammen gegessen."
   },
@@ -82,6 +88,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gefahren",
     level: "A1",
+    type: "strong",
     meaningZh: "搭車；行駛；前往",
     example: "Er ist nach Berlin gefahren."
   },
@@ -94,6 +101,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gefangen",
     level: "A1",
+    type: "strong",
     meaningZh: "抓住",
     example: "Die Katze hat eine Maus gefangen."
   },
@@ -106,6 +114,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gefunden",
     level: "A1",
+    type: "strong",
     meaningZh: "找到；覺得",
     example: "Ich habe meinen Schlüssel gefunden."
   },
@@ -118,6 +127,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geflogen",
     level: "A1",
+    type: "strong",
     meaningZh: "飛",
     example: "Sie ist nach Japan geflogen."
   },
@@ -130,6 +140,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gegeben",
     level: "A1",
+    type: "strong",
     meaningZh: "給",
     example: "Er hat mir ein Buch gegeben."
   },
@@ -142,6 +153,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gegangen",
     level: "A1",
+    type: "strong",
     meaningZh: "去；走",
     example: "Sie ist früh nach Hause gegangen."
   },
@@ -154,6 +166,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gehabt",
     level: "A1",
+    type: "special",
     meaningZh: "有",
     example: "Ich habe keine Zeit gehabt."
   },
@@ -166,6 +179,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geheißen",
     level: "A1",
+    type: "strong",
     meaningZh: "叫做；名叫",
     example: "Wie hat das Restaurant geheißen?"
   },
@@ -178,6 +192,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geholfen",
     level: "A1",
+    type: "strong",
     meaningZh: "幫助",
     example: "Mein Freund hat mir geholfen."
   },
@@ -190,6 +205,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gekannt",
     level: "A1",
+    type: "mixed",
     meaningZh: "認識；知道",
     example: "Ich habe ihn lange gekannt."
   },
@@ -202,6 +218,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gekommen",
     level: "A1",
+    type: "strong",
     meaningZh: "來",
     example: "Sie ist pünktlich gekommen."
   },
@@ -214,6 +231,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gekonnt",
     level: "A1",
+    type: "modal",
     group: "modal",
     meaningZh: "能夠；會",
     example: "Früher konnte ich besser schwimmen."
@@ -227,6 +245,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gelesen",
     level: "A1",
+    type: "strong",
     meaningZh: "讀",
     example: "Ich habe das Buch schon gelesen."
   },
@@ -239,6 +258,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemocht",
     level: "A1",
+    type: "modal",
     group: "modal",
     meaningZh: "喜歡",
     example: "Als Kind mochte ich keinen Kaffee."
@@ -252,6 +272,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemusst",
     level: "A1",
+    type: "modal",
     group: "modal",
     meaningZh: "必須",
     example: "Ich habe lange arbeiten müssen."
@@ -265,6 +286,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "genommen",
     level: "A1",
+    type: "strong",
     meaningZh: "拿；帶",
     example: "Er hat ein Taxi genommen."
   },
@@ -277,6 +299,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gerufen",
     level: "A1",
+    type: "strong",
     meaningZh: "叫；呼喚",
     example: "Sie hat sofort den Arzt gerufen."
   },
@@ -289,6 +312,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschlafen",
     level: "A1",
+    type: "strong",
     meaningZh: "睡覺",
     example: "Ich habe nur fünf Stunden geschlafen."
   },
@@ -301,6 +325,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschrieben",
     level: "A1",
+    type: "strong",
     meaningZh: "寫",
     example: "Er hat mir eine Nachricht geschrieben."
   },
@@ -313,6 +338,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschwommen",
     level: "A1",
+    type: "strong",
     meaningZh: "游泳",
     example: "Wir sind im See geschwommen."
   },
@@ -325,6 +351,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesehen",
     level: "A1",
+    type: "strong",
     meaningZh: "看見",
     example: "Ich habe ihn gestern gesehen."
   },
@@ -337,6 +364,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gewesen",
     level: "A1",
+    type: "special",
     meaningZh: "是",
     example: "Gestern bin ich sehr müde gewesen."
   },
@@ -349,6 +377,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesungen",
     level: "A1",
+    type: "strong",
     meaningZh: "唱歌",
     example: "Sie hat ein Lied gesungen."
   },
@@ -361,6 +390,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesollt",
     level: "A1",
+    type: "modal",
     group: "modal",
     meaningZh: "應該",
     example: "Ich habe mehr lernen sollen."
@@ -374,6 +404,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesprochen",
     level: "A1",
+    type: "strong",
     meaningZh: "說話",
     example: "Wir haben lange Deutsch gesprochen."
   },
@@ -386,6 +417,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestanden",
     level: "A1",
+    type: "strong",
     meaningZh: "站立；位於",
     example: "Das Auto hat vor dem Haus gestanden."
   },
@@ -398,6 +430,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "getroffen",
     level: "A1",
+    type: "strong",
     meaningZh: "遇見；碰面",
     example: "Ich habe meine Freunde getroffen."
   },
@@ -410,6 +443,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "getrunken",
     level: "A1",
+    type: "strong",
     meaningZh: "喝",
     example: "Er hat zu viel Kaffee getrunken."
   },
@@ -422,6 +456,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "getan",
     level: "A1",
+    type: "strong",
     meaningZh: "做",
     example: "Was hast du gestern getan?"
   },
@@ -434,6 +469,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewusst",
     level: "A1",
+    type: "mixed",
     meaningZh: "知道",
     example: "Ich habe das nicht gewusst."
   },
@@ -446,6 +482,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewollt",
     level: "A1",
+    type: "modal",
     group: "modal",
     meaningZh: "想要",
     example: "Er hat Arzt werden wollen."
@@ -461,6 +498,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebacken",
     level: "A2",
+    type: "strong",
     meaningZh: "烘焙",
     example: "Meine Mutter hat Brot gebacken."
   },
@@ -473,6 +511,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebogen",
     level: "A2",
+    type: "strong",
     meaningZh: "彎曲",
     example: "Der Wind hat den Ast gebogen."
   },
@@ -485,6 +524,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geboten",
     level: "A2",
+    type: "strong",
     meaningZh: "提供",
     example: "Das Hotel hat guten Service geboten."
   },
@@ -497,6 +537,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebeten",
     level: "A2",
+    type: "strong",
     meaningZh: "請求",
     example: "Ich habe ihn um Hilfe gebeten."
   },
@@ -509,6 +550,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebraten",
     level: "A2",
+    type: "strong",
     meaningZh: "煎；烤",
     example: "Er hat das Fleisch gebraten."
   },
@@ -521,6 +563,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gefallen",
     level: "A2",
+    type: "strong",
     meaningZh: "掉落",
     example: "Das Glas ist auf den Boden gefallen."
   },
@@ -533,6 +576,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gefallen",
     level: "A2",
+    type: "strong",
     meaningZh: "使喜歡",
     example: "Der Film hat mir gut gefallen."
   },
@@ -545,6 +589,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewonnen",
     level: "A2",
+    type: "strong",
     meaningZh: "贏得",
     example: "Unsere Mannschaft hat gewonnen."
   },
@@ -557,6 +602,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geladen",
     level: "A2",
+    type: "strong",
     meaningZh: "裝載；邀請",
     example: "Sie hat viele Gäste eingeladen."
   },
@@ -569,6 +615,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gelaufen",
     level: "A2",
+    type: "strong",
     meaningZh: "跑；運轉",
     example: "Ich bin heute Morgen im Park gelaufen."
   },
@@ -581,6 +628,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gelegen",
     level: "A2",
+    type: "strong",
     meaningZh: "躺；位於",
     example: "Das Buch hat auf dem Tisch gelegen."
   },
@@ -593,6 +641,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "genannt",
     level: "A2",
+    type: "mixed",
     meaningZh: "稱呼",
     example: "Er hat mich beim Namen genannt."
   },
@@ -605,6 +654,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gerannt",
     level: "A2",
+    type: "mixed",
     meaningZh: "奔跑",
     example: "Das Kind ist schnell gerannt."
   },
@@ -617,6 +667,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gerochen",
     level: "A2",
+    type: "strong",
     meaningZh: "聞起來；嗅",
     example: "Die Blumen haben gut gerochen."
   },
@@ -629,6 +680,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschlossen",
     level: "A2",
+    type: "strong",
     meaningZh: "關閉",
     example: "Sie hat die Tür geschlossen."
   },
@@ -641,6 +693,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesessen",
     level: "A2",
+    type: "strong",
     meaningZh: "坐",
     example: "Wir haben lange im Café gesessen."
   },
@@ -653,6 +706,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gestiegen",
     level: "A2",
+    type: "strong",
     meaningZh: "上升；攀登",
     example: "Die Preise sind gestiegen."
   },
@@ -665,6 +719,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gestorben",
     level: "A2",
+    type: "strong",
     meaningZh: "死亡",
     example: "Sein alter Hund ist gestorben."
   },
@@ -677,6 +732,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "getrieben",
     level: "A2",
+    type: "strong",
     meaningZh: "驅動；從事",
     example: "Der Wind hat das Boot getrieben."
   },
@@ -689,6 +745,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "vergessen",
     level: "A2",
+    type: "strong",
     meaningZh: "忘記",
     example: "Ich habe deinen Namen vergessen."
   },
@@ -701,6 +758,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "verloren",
     level: "A2",
+    type: "strong",
     meaningZh: "失去；輸掉",
     example: "Er hat seinen Schlüssel verloren."
   },
@@ -713,6 +771,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gewachsen",
     level: "A2",
+    type: "strong",
     meaningZh: "生長",
     example: "Die Kinder sind schnell gewachsen."
   },
@@ -725,6 +784,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewaschen",
     level: "A2",
+    type: "strong",
     meaningZh: "洗",
     example: "Ich habe das Auto gewaschen."
   },
@@ -737,6 +797,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geworden",
     level: "A2",
+    type: "special",
     meaningZh: "變成",
     example: "Er ist Arzt geworden."
   },
@@ -749,6 +810,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geworfen",
     level: "A2",
+    type: "strong",
     meaningZh: "丟；投擲",
     example: "Er hat den Ball weit geworfen."
   },
@@ -761,6 +823,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gezogen",
     level: "A2",
+    type: "strong",
     meaningZh: "拉；搬遷",
     example: "Wir haben den Tisch näher gezogen."
   },
@@ -775,6 +838,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "befohlen",
     level: "B1",
+    type: "strong",
     meaningZh: "命令",
     example: "Der Chef hat sofortige Änderungen befohlen."
   },
@@ -787,6 +851,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebissen",
     level: "B1",
+    type: "strong",
     meaningZh: "咬",
     example: "Der Hund hat mich nicht gebissen."
   },
@@ -799,6 +864,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebunden",
     level: "B1",
+    type: "strong",
     meaningZh: "綁",
     example: "Sie hat ihre Haare zusammengebunden."
   },
@@ -811,6 +877,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebrochen",
     level: "B1",
+    type: "strong",
     meaningZh: "打破；折斷",
     example: "Er hat sich den Arm gebrochen."
   },
@@ -823,6 +890,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gebrannt",
     level: "B1",
+    type: "mixed",
     meaningZh: "燃燒",
     example: "Das Licht hat die ganze Nacht gebrannt."
   },
@@ -835,6 +903,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "empfohlen",
     level: "B1",
+    type: "strong",
     meaningZh: "推薦",
     example: "Sie hat mir dieses Buch empfohlen."
   },
@@ -847,6 +916,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "erschrocken",
     level: "B1",
+    type: "strong",
     meaningZh: "受驚嚇",
     example: "Ich bin über das Geräusch erschrocken."
   },
@@ -859,6 +929,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geflohen",
     level: "B1",
+    type: "strong",
     meaningZh: "逃離",
     example: "Viele Menschen sind aus dem Land geflohen."
   },
@@ -871,6 +942,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geflossen",
     level: "B1",
+    type: "strong",
     meaningZh: "流動",
     example: "Das Wasser ist schnell geflossen."
   },
@@ -883,6 +955,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gefressen",
     level: "B1",
+    type: "strong",
     meaningZh: "吃（動物）",
     example: "Der Hund hat schon gefressen."
   },
@@ -895,6 +968,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gefroren",
     level: "B1",
+    type: "strong",
     meaningZh: "覺得冷；結冰",
     example: "Ich habe draußen sehr gefroren."
   },
@@ -907,6 +981,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gelungen",
     level: "B1",
+    type: "strong",
     meaningZh: "成功",
     example: "Das Projekt ist uns gut gelungen."
   },
@@ -919,6 +994,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gegolten",
     level: "B1",
+    type: "strong",
     meaningZh: "適用；算作",
     example: "Diese Regel hat früher nicht gegolten."
   },
@@ -931,6 +1007,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "genossen",
     level: "B1",
+    type: "strong",
     meaningZh: "享受",
     example: "Wir haben den Abend sehr genossen."
   },
@@ -943,6 +1020,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschehen",
     level: "B1",
+    type: "strong",
     meaningZh: "發生",
     example: "Was ist hier geschehen?"
   },
@@ -955,6 +1033,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gegossen",
     level: "B1",
+    type: "strong",
     meaningZh: "澆；倒",
     example: "Sie hat die Blumen gegossen."
   },
@@ -967,6 +1046,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geglichen",
     level: "B1",
+    type: "strong",
     meaningZh: "相像",
     example: "Er hat seinem Vater sehr geglichen."
   },
@@ -979,6 +1059,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gegraben",
     level: "B1",
+    type: "strong",
     meaningZh: "挖",
     example: "Der Hund hat im Garten gegraben."
   },
@@ -991,6 +1072,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gegriffen",
     level: "B1",
+    type: "strong",
     meaningZh: "抓取",
     example: "Er hat schnell nach der Tasche gegriffen."
   },
@@ -1003,6 +1085,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gehangen",
     level: "B1",
+    type: "strong",
     meaningZh: "懸掛",
     example: "Das Bild hat lange an der Wand gehangen."
   },
@@ -1015,6 +1098,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gehalten",
     level: "B1",
+    type: "strong",
     meaningZh: "握住；停下",
     example: "Der Zug hat nicht lange gehalten."
   },
@@ -1027,6 +1111,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gehoben",
     level: "B1",
+    type: "strong",
     meaningZh: "舉起",
     example: "Er hat die Kiste allein gehoben."
   },
@@ -1039,6 +1124,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geklungen",
     level: "B1",
+    type: "strong",
     meaningZh: "聽起來",
     example: "Seine Idee hat interessant geklungen."
   },
@@ -1051,6 +1137,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gelassen",
     level: "B1",
+    type: "strong",
     meaningZh: "讓；留下",
     example: "Ich habe mein Handy zu Hause gelassen."
   },
@@ -1063,6 +1150,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gelitten",
     level: "B1",
+    type: "strong",
     meaningZh: "受苦",
     example: "Er hat jahrelang darunter gelitten."
   },
@@ -1075,6 +1163,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geliehen",
     level: "B1",
+    type: "strong",
     meaningZh: "借出；借入",
     example: "Sie hat mir Geld geliehen."
   },
@@ -1087,6 +1176,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gelogen",
     level: "B1",
+    type: "strong",
     meaningZh: "說謊",
     example: "Er hat mich angelogen."
   },
@@ -1099,6 +1189,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemieden",
     level: "B1",
+    type: "strong",
     meaningZh: "避免",
     example: "Er hat den Kontakt lange gemieden."
   },
@@ -1111,6 +1202,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemessen",
     level: "B1",
+    type: "strong",
     meaningZh: "測量",
     example: "Wir haben die Länge genau gemessen."
   },
@@ -1123,6 +1215,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geraten",
     level: "B1",
+    type: "strong",
     meaningZh: "建議；猜",
     example: "Der Arzt hat mir Ruhe geraten."
   },
@@ -1135,6 +1228,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gerieben",
     level: "B1",
+    type: "strong",
     meaningZh: "摩擦",
     example: "Sie hat sich die Augen gerieben."
   },
@@ -1147,6 +1241,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geritten",
     level: "B1",
+    type: "strong",
     meaningZh: "騎馬",
     example: "Sie ist früher oft geritten."
   },
@@ -1159,6 +1254,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschaffen",
     level: "B1",
+    type: "strong",
     meaningZh: "創造",
     example: "Die Firma hat viele Arbeitsplätze geschaffen."
   },
@@ -1171,6 +1267,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschieden",
     level: "B1",
+    type: "strong",
     meaningZh: "分開；離婚",
     example: "Das Paar ist vor zwei Jahren geschieden."
   },
@@ -1183,6 +1280,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschienen",
     level: "B1",
+    type: "strong",
     meaningZh: "照耀；似乎",
     example: "Die Sonne hat den ganzen Tag geschienen."
   },
@@ -1195,6 +1293,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschoben",
     level: "B1",
+    type: "strong",
     meaningZh: "推",
     example: "Er hat den Tisch an die Wand geschoben."
   },
@@ -1207,6 +1306,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschossen",
     level: "B1",
+    type: "strong",
     meaningZh: "射擊",
     example: "Der Spieler hat ein Tor geschossen."
   },
@@ -1219,6 +1319,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschlagen",
     level: "B1",
+    type: "strong",
     meaningZh: "打；擊敗",
     example: "Unsere Mannschaft hat den Gegner geschlagen."
   },
@@ -1231,6 +1332,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschmissen",
     level: "B1",
+    type: "strong",
     meaningZh: "丟；扔",
     example: "Er hat den Ball weit geschmissen."
   },
@@ -1243,6 +1345,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschnitten",
     level: "B1",
+    type: "strong",
     meaningZh: "切",
     example: "Ich habe das Brot geschnitten."
   },
@@ -1255,6 +1358,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschrien",
     level: "B1",
+    type: "strong",
     meaningZh: "大叫",
     example: "Das Kind hat laut geschrien."
   },
@@ -1267,6 +1371,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesandt",
     level: "B1",
+    type: "mixed",
     meaningZh: "寄送；傳送",
     example: "Die Firma hat mir eine Nachricht gesandt."
   },
@@ -1279,6 +1384,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gesunken",
     level: "B1",
+    type: "strong",
     meaningZh: "下沉；下降",
     example: "Die Temperatur ist plötzlich gesunken."
   },
@@ -1291,6 +1397,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gesprungen",
     level: "B1",
+    type: "strong",
     meaningZh: "跳",
     example: "Das Kind ist ins Wasser gesprungen."
   },
@@ -1303,6 +1410,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestohlen",
     level: "B1",
+    type: "strong",
     meaningZh: "偷",
     example: "Jemand hat mein Fahrrad gestohlen."
   },
@@ -1315,6 +1423,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestunken",
     level: "B1",
+    type: "strong",
     meaningZh: "發臭",
     example: "Der Müll hat stark gestunken."
   },
@@ -1327,6 +1436,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestritten",
     level: "B1",
+    type: "strong",
     meaningZh: "爭吵",
     example: "Wir haben uns gestern gestritten."
   },
@@ -1339,6 +1449,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "getragen",
     level: "B1",
+    type: "strong",
     meaningZh: "穿；搬運",
     example: "Sie hat ein rotes Kleid getragen."
   },
@@ -1351,6 +1462,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "getreten",
     level: "B1",
+    type: "strong",
     meaningZh: "踩；踏",
     example: "Er ist auf die Bühne getreten."
   },
@@ -1363,6 +1475,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "verziehen",
     level: "B1",
+    type: "strong",
     meaningZh: "原諒",
     example: "Sie hat ihm den Fehler verziehen."
   },
@@ -1375,6 +1488,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewiesen",
     level: "B1",
+    type: "strong",
     meaningZh: "指出；指示",
     example: "Der Lehrer hat auf den Fehler hingewiesen."
   },
@@ -1387,6 +1501,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geworben",
     level: "B1",
+    type: "strong",
     meaningZh: "招攬；做廣告",
     example: "Die Firma hat lange für das Produkt geworben."
   },
@@ -1399,6 +1514,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewogen",
     level: "B1",
+    type: "strong",
     meaningZh: "秤重",
     example: "Der Koffer hat viel gewogen."
   },
@@ -1411,6 +1527,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gezwungen",
     level: "B1",
+    type: "strong",
     meaningZh: "強迫",
     example: "Niemand hat mich dazu gezwungen."
   },
@@ -1425,6 +1542,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geborgen",
     level: "B2",
+    type: "strong",
     meaningZh: "救出；藏有",
     example: "Die Feuerwehr hat die Menschen geborgen."
   },
@@ -1437,6 +1555,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geblasen",
     level: "B2",
+    type: "strong",
     meaningZh: "吹",
     example: "Der Wind hat stark geblasen."
   },
@@ -1449,6 +1568,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geboren",
     level: "B2",
+    type: "strong",
     meaningZh: "生育",
     example: "Sie hat ein gesundes Kind geboren."
   },
@@ -1461,6 +1581,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gepfiffen",
     level: "B2",
+    type: "strong",
     meaningZh: "吹口哨",
     example: "Er hat ein Lied gepfiffen."
   },
@@ -1473,6 +1594,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gerissen",
     level: "B2",
+    type: "strong",
     meaningZh: "撕裂",
     example: "Das Seil ist plötzlich gerissen."
   },
@@ -1485,6 +1607,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gerungen",
     level: "B2",
+    type: "strong",
     meaningZh: "奮力爭取",
     example: "Er hat lange um eine Lösung gerungen."
   },
@@ -1497,6 +1620,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesoffen",
     level: "B2",
+    type: "strong",
     meaningZh: "豪飲",
     example: "Er hat zu viel Bier gesoffen."
   },
@@ -1509,6 +1633,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschmolzen",
     level: "B2",
+    type: "strong",
     meaningZh: "融化",
     example: "Der Schnee ist schnell geschmolzen."
   },
@@ -1521,6 +1646,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschritten",
     level: "B2",
+    type: "strong",
     meaningZh: "大步行走",
     example: "Er ist ruhig durch den Saal geschritten."
   },
@@ -1533,6 +1659,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschwiegen",
     level: "B2",
+    type: "strong",
     meaningZh: "沉默",
     example: "Er hat die ganze Zeit geschwiegen."
   },
@@ -1545,6 +1672,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschwollen",
     level: "B2",
+    type: "strong",
     meaningZh: "腫起來；膨脹",
     example: "Sein Knie ist stark geschwollen."
   },
@@ -1557,6 +1685,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschwunden",
     level: "B2",
+    type: "strong",
     meaningZh: "減少；消失",
     example: "Die Hoffnung ist langsam geschwunden."
   },
@@ -1569,6 +1698,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschworen",
     level: "B2",
+    type: "strong",
     meaningZh: "發誓",
     example: "Er hat die Wahrheit geschworen."
   },
@@ -1581,6 +1711,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesponnen",
     level: "B2",
+    type: "strong",
     meaningZh: "紡紗；胡說",
     example: "Er hat völlig gesponnen."
   },
@@ -1593,6 +1724,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestochen",
     level: "B2",
+    type: "strong",
     meaningZh: "刺；叮",
     example: "Eine Biene hat mich gestochen."
   },
@@ -1605,6 +1737,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestoßen",
     level: "B2",
+    type: "strong",
     meaningZh: "撞；推",
     example: "Er hat versehentlich gegen die Tür gestoßen."
   },
@@ -1617,6 +1750,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gestrichen",
     level: "B2",
+    type: "strong",
     meaningZh: "塗；劃掉",
     example: "Sie hat den Satz gestrichen."
   },
@@ -1629,6 +1763,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "verdorben",
     level: "B2",
+    type: "strong",
     meaningZh: "使腐壞；毀掉",
     example: "Die Hitze hat das Essen verdorben."
   },
@@ -1641,6 +1776,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gewichen",
     level: "B2",
+    type: "strong",
     meaningZh: "讓開；退去",
     example: "Die Angst ist langsam gewichen."
   },
@@ -1653,6 +1789,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewandt",
     level: "B2",
+    type: "mixed",
     meaningZh: "轉向；轉身",
     example: "Er hat sich schnell gewandt."
   },
@@ -1665,6 +1802,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewunden",
     level: "B2",
+    type: "strong",
     meaningZh: "纏繞；扭動",
     example: "Die Schlange hat sich um den Ast gewunden."
   },
@@ -1679,6 +1817,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "bewogen",
     level: "C1",
+    type: "strong",
     meaningZh: "促使；使感動",
     example: "Seine Worte haben mich tief bewogen."
   },
@@ -1691,6 +1830,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gedrungen",
     level: "C1",
+    type: "strong",
     meaningZh: "闖入；滲入",
     example: "Wasser ist in den Keller gedrungen."
   },
@@ -1703,6 +1843,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "erloschen",
     level: "C1",
+    type: "strong",
     meaningZh: "熄滅；失效",
     example: "Das Feuer ist plötzlich erloschen."
   },
@@ -1715,6 +1856,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gefochten",
     level: "C1",
+    type: "strong",
     meaningZh: "擊劍；爭辯",
     example: "Er hat hart um seine Rechte gefochten."
   },
@@ -1727,6 +1869,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gediehen",
     level: "C1",
+    type: "strong",
     meaningZh: "繁榮；茁壯成長",
     example: "Die Pflanzen sind im Garten gut gediehen."
   },
@@ -1739,6 +1882,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "genesen",
     level: "C1",
+    type: "strong",
     meaningZh: "痊癒",
     example: "Der Patient ist vollständig genesen."
   },
@@ -1751,6 +1895,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geglitten",
     level: "C1",
+    type: "strong",
     meaningZh: "滑行",
     example: "Das Boot ist ruhig über das Wasser geglitten."
   },
@@ -1763,6 +1908,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gekniffen",
     level: "C1",
+    type: "strong",
     meaningZh: "捏；臨陣退縮",
     example: "Er hat im entscheidenden Moment gekniffen."
   },
@@ -1775,6 +1921,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geklommen",
     level: "C1",
+    type: "strong",
     meaningZh: "往上爬",
     example: "Der Bergsteiger ist schnell höher geklommen."
   },
@@ -1787,6 +1934,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gekrochen",
     level: "C1",
+    type: "strong",
     meaningZh: "爬行",
     example: "Das Kind ist unter den Tisch gekrochen."
   },
@@ -1799,6 +1947,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gemolken",
     level: "C1",
+    type: "strong",
     meaningZh: "擠奶",
     example: "Der Bauer hat morgens die Kühe gemolken."
   },
@@ -1811,6 +1960,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gepriesen",
     level: "C1",
+    type: "strong",
     meaningZh: "稱頌；讚揚",
     example: "Der Kritiker hat den Film sehr gepriesen."
   },
@@ -1823,6 +1973,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gequollen",
     level: "C1",
+    type: "strong",
     meaningZh: "湧出；膨脹",
     example: "Wasser ist aus dem Rohr gequollen."
   },
@@ -1835,6 +1986,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geronnen",
     level: "C1",
+    type: "strong",
     meaningZh: "流淌",
     example: "Das Blut ist langsam über seine Hand geronnen."
   },
@@ -1847,6 +1999,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesogen",
     level: "C1",
+    type: "strong",
     meaningZh: "吸；吸取",
     example: "Das Gerät hat den Staub eingesogen."
   },
@@ -1859,6 +2012,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "geschlichen",
     level: "C1",
+    type: "strong",
     meaningZh: "悄悄走",
     example: "Er ist leise aus dem Zimmer geschlichen."
   },
@@ -1871,6 +2025,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschliffen",
     level: "C1",
+    type: "strong",
     meaningZh: "磨；打磨",
     example: "Er hat das Messer sorgfältig geschliffen."
   },
@@ -1883,6 +2038,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschlungen",
     level: "C1",
+    type: "strong",
     meaningZh: "狼吞虎嚥；纏繞",
     example: "Er hat das Essen hastig hinuntergeschlungen."
   },
@@ -1895,6 +2051,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "geschwungen",
     level: "C1",
+    type: "strong",
     meaningZh: "揮舞；擺動",
     example: "Sie hat den Schläger kraftvoll geschwungen."
   },
@@ -1907,6 +2064,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gesonnen",
     level: "C1",
+    type: "strong",
     meaningZh: "深思",
     example: "Er hat lange über eine Lösung gesonnen."
   },
@@ -1919,6 +2077,7 @@ export const irregularVerbs = [
     auxiliary: "ist",
     participle: "gesprossen",
     level: "C1",
+    type: "strong",
     meaningZh: "發芽；冒出",
     example: "Im Frühling ist überall neues Gras gesprossen."
   },
@@ -1931,6 +2090,7 @@ export const irregularVerbs = [
     auxiliary: "hat",
     participle: "gewrungen",
     level: "C1",
+    type: "strong",
     meaningZh: "擰乾",
     example: "Sie hat das nasse Tuch fest gewrungen."
   }

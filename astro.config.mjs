@@ -1,13 +1,11 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind'; // 修正：使用官方集成
 import mdx from '@astrojs/mdx';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    react(), 
-    tailwind(), // 修正：讓 Tailwind 掃描全站樣式
-    mdx()
-  ],
+  integrations: [react(), mdx()],
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
