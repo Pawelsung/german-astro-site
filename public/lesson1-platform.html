@@ -103,14 +103,14 @@
 
         <!-- Learn View -->
         <div id="learn-view" class="w-full mb-6">
-            <div class="grid grid-cols-[56px_1fr_56px] md:grid-cols-[72px_1fr_72px] gap-3 md:gap-6 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-[72px_1fr_72px] gap-3 md:gap-6 items-center">
                 <!-- Left Arrow -->
                 <button
                     onclick="window.prevWord()"
-                    class="side-nav-btn w-14 h-14 md:w-16 md:h-16 rounded-full bg-white border border-slate-200 text-slate-600 flex items-center justify-center active:scale-90 font-black transition-all hover:bg-slate-50"
-                    aria-label="上一張"
+                    class="side-nav-btn hidden md:flex w-16 h-16 rounded-full bg-white border border-slate-200 text-slate-600 items-center justify-center active:scale-90 font-black transition-all hover:bg-slate-50"
+                    aria-label="復原上一張"
                 >
-                    ←
+                    ↶
                 </button>
 
                 <!-- Flashcard -->
@@ -148,10 +148,29 @@
                 <!-- Right Arrow -->
                 <button
                     onclick="window.nextWord()"
-                    class="side-nav-btn w-14 h-14 md:w-16 md:h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center active:scale-90 font-black transition-all hover:bg-indigo-700"
-                    aria-label="下一張"
+                    class="side-nav-btn hidden md:flex w-16 h-16 rounded-full bg-indigo-600 text-white items-center justify-center active:scale-90 font-black transition-all hover:bg-indigo-700"
+                    aria-label="重做下一張"
                 >
-                    →
+                    ↷
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mt-4 md:hidden">
+                <button
+                    onclick="window.prevWord()"
+                    class="h-12 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center gap-2 active:scale-95 font-black shadow-sm"
+                    aria-label="復原上一張"
+                >
+                    <span class="text-lg">↶</span>
+                    復原
+                </button>
+                <button
+                    onclick="window.nextWord()"
+                    class="h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center gap-2 active:scale-95 font-black shadow-sm"
+                    aria-label="重做下一張"
+                >
+                    重做
+                    <span class="text-lg">↷</span>
                 </button>
             </div>
 
