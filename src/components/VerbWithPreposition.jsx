@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { 
   BookOpen, Brain, GraduationCap, Settings, List, Volume2, RotateCw, 
   CheckCircle, XCircle, Trophy, History, Search, ChevronDown, ChevronUp, 
-  Play, Star, Cloud, CloudOff, Calendar, Undo2, Redo2
+  Play, Star, Cloud, CloudOff, Calendar
 } from 'lucide-react';
 
 import { onAuthStateChanged } from 'firebase/auth';
@@ -721,16 +721,8 @@ export default function VerbWithPreposition() {
         {activeTab === 'flashcards' && currentCard && (
           <div className="flex flex-col items-center">
             
-            <div className="w-full grid grid-cols-[1fr_auto_1fr] items-center gap-3 mb-4 sm:mb-6 max-w-md px-1">
-              <button
-                onClick={prevCard}
-                className="h-11 px-3 rounded-full bg-white shadow-sm border border-gray-100 hover:bg-amber-50 active:scale-95 text-amber-600 transition-all flex items-center justify-center gap-1.5 font-black text-xs sm:text-sm"
-                type="button"
-                aria-label="復原上一張"
-              >
-                <Undo2 size={18} />
-                <span className="hidden xs:inline sm:inline">復原</span>
-              </button>
+            <div className="w-full flex justify-between items-center mb-4 sm:mb-6 max-w-md px-1">
+              <button onClick={prevCard} className="p-3 rounded-full bg-white shadow-sm border border-gray-100 hover:bg-amber-50 active:scale-95 text-amber-600 transition-all"><ChevronDown className="rotate-90" size={20} /></button>
               
               <div className="flex flex-col items-center">
                   <span className="text-gray-500 font-black font-mono bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 text-base sm:text-lg">
@@ -747,15 +739,7 @@ export default function VerbWithPreposition() {
                   )}
               </div>
 
-              <button
-                onClick={nextCard}
-                className="h-11 px-3 rounded-full bg-amber-600 shadow-sm border border-amber-600 hover:bg-amber-700 active:scale-95 text-white transition-all flex items-center justify-center gap-1.5 font-black text-xs sm:text-sm"
-                type="button"
-                aria-label="重做下一張"
-              >
-                <span className="hidden xs:inline sm:inline">重做</span>
-                <Redo2 size={18} />
-              </button>
+              <button onClick={nextCard} className="p-3 rounded-full bg-white shadow-sm border border-gray-100 hover:bg-amber-50 active:scale-95 text-amber-600 transition-all"><ChevronDown className="-rotate-90" size={20} /></button>
             </div>
             
             <Flashcard 

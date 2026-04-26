@@ -392,18 +392,18 @@ function FixedCardFrame({
             <div className="mt-4 flex justify-between gap-3 md:hidden">
               <button
                 onClick={onPrev}
-                className="flex-1 px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
+                className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
                 type="button"
               >
-                ↶ 復原
+                ← 上一個
               </button>
 
               <button
                 onClick={onNext}
-                className={`flex-1 px-5 py-3 rounded-2xl font-black ${toneStyles.next}`}
+                className={`px-5 py-3 rounded-2xl font-black ${toneStyles.next}`}
                 type="button"
               >
-                重做 ↷
+                下一個 →
               </button>
             </div>
           </div>
