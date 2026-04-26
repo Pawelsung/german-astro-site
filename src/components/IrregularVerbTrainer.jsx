@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { doc, onSnapshot, setDoc } from 'firebase/firestore';
 import { irregularVerbs } from '../data/irregular-verbs';
+import { getFirebaseServices } from '../lib/firebase';
 
 const STORAGE_KEY = 'irregular-verbs-trainer-v3';
 
@@ -56,6 +59,11 @@ function loadProgress() {
 function saveProgress(progress) {
   if (typeof window === 'undefined') return;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  window.dispatchEvent(new CustomEvent('learning-progress-updated'));
+}
+
+function mergeProgress(local = {}, remote = {}) {
+  return { ...remote, ...local };
 }
 
 function stripEndingForCompare(word = '') {
@@ -585,6 +593,7 @@ export default function IrregularVerbTrainer() {
   const [rate, setRate] = useState(0.9);
   const [pitch, setPitch] = useState(1.0);
   const [autoSpeak, setAutoSpeak] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     setProgress(loadProgress());
@@ -593,6 +602,46 @@ export default function IrregularVerbTrainer() {
   useEffect(() => {
     saveProgress(progress);
   }, [progress]);
+
+  useEffect(() => {
+    const services = getFirebaseServices();
+    if (!services) return;
+
+    const unsubscribe = onAuthStateChanged(services.auth, setUser);
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    const services = getFirebaseServices();
+    if (!services || !user) return;
+
+    const docRef = doc(services.db, 'users', user.uid, 'learning', 'progress');
+    const unsubscribe = onSnapshot(docRef, (snapshot) => {
+      const remoteLesson3 = snapshot.exists() ? snapshot.data().lesson3 : null;
+      if (!remoteLesson3) {
+        setDoc(docRef, { lesson3: progress, updatedAt: new Date().toISOString() }, { merge: true });
+        return;
+      }
+
+      setProgress((current) => {
+        const merged = mergeProgress(current, remoteLesson3);
+        saveProgress(merged);
+        return merged;
+      });
+    });
+
+    return () => unsubscribe();
+  }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    const services = getFirebaseServices();
+    if (!services || !user) return;
+
+    const docRef = doc(services.db, 'users', user.uid, 'learning', 'progress');
+    setDoc(docRef, { lesson3: progress, updatedAt: new Date().toISOString() }, { merge: true }).catch(
+      console.error
+    );
+  }, [progress, user]);
 
   useEffect(() => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;

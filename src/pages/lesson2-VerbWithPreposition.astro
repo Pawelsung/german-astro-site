@@ -1,69 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LessonShell from '../components/LessonShell.astro';
 import VerbWithPreposition from '../components/VerbWithPreposition.jsx';
 
 export const frontmatter = {
   title: "Lektion 2: 基礎動詞介系詞特訓",
   description: "這是一個專為德語學習者設計的互動式工具。本課將帶領你深入練習動詞與介系詞的搭配，這也是德語學習中最具挑戰性的部分之一。",
   category: "德語文法特訓",
-  tags: ["B1-B2", "Akkusativ", "Dativ", "互動學習", "SRS系統"]
+  tags: ["B1-B2", "Akkusativ", "Dativ", "互動學習", "SRS系統"],
+  order: 2,
+  level: "B1-B2",
+  estimatedMinutes: 20
 };
 ---
 
-<Layout title={frontmatter.title}>
-  <main class="min-h-screen bg-[#FDFBF7] text-slate-800 flex flex-col">
-    <div class="w-full px-4 pt-8 pb-2">
-      <div class="max-w-4xl mx-auto">
-        <a
-          href="/"
-          class="text-amber-600 font-black mb-6 inline-flex items-center gap-2 hover:bg-amber-50 px-4 py-2 rounded-xl transition-all"
-        >
-          ← 返回課程總覽
-        </a>
+<LessonShell frontmatter={frontmatter} contentClass="w-full flex-grow relative z-10 px-0">
+  <VerbWithPreposition client:only="react" />
 
-        <h1 class="text-3xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight leading-tight">
-          {frontmatter.title}
-        </h1>
-
-        <div class="flex flex-wrap gap-2 mb-6">
-          {frontmatter.tags.map((tag) => (
-            <span class="px-3 py-1 bg-amber-50 text-amber-600 text-xs font-black rounded-full border border-amber-100 shadow-sm">
-              #{tag}
-            </span>
-          ))}
-        </div>
-
-        <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base">
-          {frontmatter.description}
-        </p>
-      </div>
-    </div>
-
-    <div class="w-full flex-grow relative z-10 px-0">
-      <VerbWithPreposition client:only="react" />
-    </div>
-
-    <div class="w-full px-4 pb-12 mt-2 mb-8 relative z-0">
-      <div class="max-w-4xl mx-auto bg-amber-50 p-6 rounded-[2rem] border border-amber-100 shadow-sm">
-        <h3 class="text-lg font-black text-amber-800 mb-4 flex items-center gap-2">
-          <span class="text-2xl">💡</span> 學習小撇步
-        </h3>
-
-        <ul class="space-y-4 text-sm text-amber-700 font-bold">
-          <li class="flex items-start gap-2">
-            <span class="text-amber-400 mt-0.5">•</span>
-            <span>善用收藏功能：遇到老是記不住的動詞，點擊右上角星星收藏，之後可專門針對收藏單字測驗。</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-amber-400 mt-0.5">•</span>
-            <span>聆聽發音：點擊喇叭按鈕聆聽發音，大聲跟讀模仿語調，能加深記憶。</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-amber-400 mt-0.5">•</span>
-            <span>注意格位：德文介系詞後面接 Akkusativ 通常有方向、目標性；接 Dativ 多與狀態、位置有關。</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </main>
-</Layout>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-amber-400 mt-0.5">•</span>
+    <span>善用收藏功能：遇到老是記不住的動詞，點擊右上角星星收藏，之後可專門針對收藏單字測驗。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-amber-400 mt-0.5">•</span>
+    <span>聆聽發音：點擊喇叭按鈕聆聽發音，大聲跟讀模仿語調，能加深記憶。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-amber-400 mt-0.5">•</span>
+    <span>注意格位：德文介系詞後面接 Akkusativ 通常有方向、目標性；接 Dativ 多與狀態、位置有關。</span>
+  </li>
+</LessonShell>

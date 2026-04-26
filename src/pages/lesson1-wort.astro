@@ -1,58 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LessonShell from '../components/LessonShell.astro';
 
 export const frontmatter = {
   title: "Lektion 1: 德語名詞練習",
   description: "包含了閃卡、詞性、聽寫與字典的完整綜合練習平台。可自製單字卡上傳練習（json檔）",
   category: "德語文法特訓",
-  tags: ["全功能", "聽寫", "雲端同步"]
+  tags: ["全功能", "聽寫", "雲端同步"],
+  order: 1,
+  level: "A1-B1",
+  estimatedMinutes: 15
 };
 ---
 
-<Layout title={frontmatter.title}>
-  <main class="min-h-screen bg-[#FDFBF7] text-slate-800 flex flex-col">
-    <div class="w-full px-4 pt-8 pb-2">
-      <div class="max-w-4xl mx-auto">
-        <a
-          href="/"
-          class="text-amber-600 font-black mb-6 inline-flex items-center gap-2 hover:bg-amber-50 px-4 py-2 rounded-xl transition-all"
-        >
-          ← 返回課程總覽
-        </a>
-
-        <h1 class="text-3xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight leading-tight">
-          {frontmatter.title}
-        </h1>
-
-        <div class="flex flex-wrap gap-2 mb-6">
-          {frontmatter.tags.map((tag) => (
-            <span class="px-3 py-1 bg-amber-50 text-amber-600 text-xs font-black rounded-full border border-amber-100 shadow-sm">
-              #{tag}
-            </span>
-          ))}
-        </div>
-
-        <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base">
-          {frontmatter.description}
-        </p>
-      </div>
+<LessonShell frontmatter={frontmatter} contentClass="w-full flex-grow px-4 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <div class="bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
+      <iframe
+        id="lesson1-frame"
+        src="/lesson1-platform.html"
+        title="Lektion 1 platform"
+        class="w-full border-0 block"
+        style="height: 900px;"
+        loading="eager"
+      ></iframe>
     </div>
-
-    <div class="w-full flex-grow px-4 pb-10">
-      <div class="max-w-6xl mx-auto">
-        <div class="bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
-          <iframe
-            id="lesson1-frame"
-            src="/lesson1-platform.html"
-            title="Lektion 1 platform"
-            class="w-full border-0 block"
-            style="height: 900px;"
-            loading="eager"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </main>
+  </div>
 
   <script>
     function resizeLesson1Frame() {
@@ -106,4 +78,4 @@ export const frontmatter = {
       });
     });
   </script>
-</Layout>
+</LessonShell>

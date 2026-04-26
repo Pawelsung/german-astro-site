@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LearningDashboard from '../components/LearningDashboard.jsx';
 
 const allFiles = import.meta.glob('./*.{mdx,astro}', { eager: true });
 
@@ -9,7 +10,8 @@ const allLessons = Object.entries(allFiles)
     const isIndex = fileName === 'index.astro';
     return !isIndex && mod.frontmatter?.title;
   })
-  .map(([_, mod]: [string, any]) => mod);
+  .map(([_, mod]: [string, any]) => mod)
+  .sort((a: any, b: any) => (a.frontmatter.order ?? 999) - (b.frontmatter.order ?? 999));
 
 const categories = [...new Set(allLessons.map((lesson: any) => lesson.frontmatter.category))].filter(Boolean);
 ---
@@ -21,6 +23,8 @@ const categories = [...new Set(allLessons.map((lesson: any) => lesson.frontmatte
   </header>
 
   <main class="max-w-6xl mx-auto px-4 -mt-10 pb-20">
+    <LearningDashboard client:only="react" />
+
     {categories.length === 0 && (
       <div class="bg-white p-20 rounded-[40px] text-center border-2 border-dashed border-amber-200 shadow-xl">
         <p class="text-gray-400 font-bold text-xl">目前還沒有符合條件的課程檔案</p>
@@ -50,6 +54,19 @@ const categories = [...new Set(allLessons.map((lesson: any) => lesson.frontmatte
                 <p class="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-medium">
                   {lesson.frontmatter.description}
                 </p>
+
+                <div class="flex flex-wrap gap-2 mb-5 text-[11px] font-black text-slate-500">
+                  {lesson.frontmatter.level && (
+                    <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                      {lesson.frontmatter.level}
+                    </span>
+                  )}
+                  {lesson.frontmatter.estimatedMinutes && (
+                    <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                      {lesson.frontmatter.estimatedMinutes} 分鐘
+                    </span>
+                  )}
+                </div>
 
                 <div class="flex flex-wrap gap-2 mt-auto">
                   {lesson.frontmatter.tags?.map((tag: string) => (

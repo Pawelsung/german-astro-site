@@ -1,0 +1,4662 @@
+[
+  {
+    "article": "der",
+    "word": "Apfel",
+    "plural": "die Äpfel",
+    "meaning": "蘋果",
+    "example": "Ein Kilo Äpfel bitte.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Käse",
+    "plural": "die Käse",
+    "meaning": "起司",
+    "example": "Ich esse gern Käse.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kaffee",
+    "plural": "die Kaffees",
+    "meaning": "咖啡",
+    "example": "Ich trinke Kaffee schwarz.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Saft",
+    "plural": "die Säfte",
+    "meaning": "果汁",
+    "example": "Er trinkt einen Saft.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Supermarkt",
+    "plural": "die Supermärkte",
+    "meaning": "超市",
+    "example": "Wir gehen in den Supermarkt.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kuchen",
+    "plural": "die Kuchen",
+    "meaning": "蛋糕",
+    "example": "Der Kuchen schmeckt sehr gut.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Hunger",
+    "plural": "(無複數)",
+    "meaning": "飢餓",
+    "example": "Ich habe großen Hunger.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Banane",
+    "plural": "die Bananen",
+    "meaning": "香蕉",
+    "example": "Die Bananen sind süß.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Milch",
+    "plural": "(無複數)",
+    "meaning": "牛奶",
+    "example": "Trinkst du gern Milch?",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kartoffel",
+    "plural": "die Kartoffeln",
+    "meaning": "馬鈴薯",
+    "example": "Wir kochen heute Kartoffeln.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Wurst",
+    "plural": "die Würste",
+    "meaning": "香腸",
+    "example": "Deutsche essen viel Wurst.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Rechnung",
+    "plural": "die Rechnungen",
+    "meaning": "帳單",
+    "example": "Die Rechnung bitte!",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tomate",
+    "plural": "die Tomaten",
+    "meaning": "番茄",
+    "example": "Die Tomate ist rot.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Brot",
+    "plural": "die Brote",
+    "meaning": "麵包",
+    "example": "Das Brot ist sehr frisch.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Ei",
+    "plural": "die Eier",
+    "meaning": "雞蛋",
+    "example": "Ich esse ein Ei zum Frühstück.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Wasser",
+    "plural": "(無複數)",
+    "meaning": "水",
+    "example": "Ein Glas Wasser bitte.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Fleisch",
+    "plural": "(無複數)",
+    "meaning": "肉類",
+    "example": "Er isst heute kein Fleisch.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Obst",
+    "plural": "(無複數)",
+    "meaning": "水果",
+    "example": "Obst ist sehr gesund.",
+    "category": "🍎 飲食與採買",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Tisch",
+    "plural": "die Tische",
+    "meaning": "桌子",
+    "example": "Der Tisch steht in der Küche.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Stuhl",
+    "plural": "die Stühle",
+    "meaning": "椅子",
+    "example": "Wir brauchen zwei Stühle.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schrank",
+    "plural": "die Schränke",
+    "meaning": "櫃子",
+    "example": "Die Jacke ist im Schrank.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Balkon",
+    "plural": "die Balkone",
+    "meaning": "陽台",
+    "example": "Wir sitzen auf dem Balkon.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schlüssel",
+    "plural": "die Schlüssel",
+    "meaning": "鑰匙",
+    "example": "Wo ist mein Schlüssel?",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Wohnung",
+    "plural": "die Wohnungen",
+    "meaning": "公寓",
+    "example": "Meine Wohnung ist sehr hell.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tür",
+    "plural": "die Türen",
+    "meaning": "門",
+    "example": "Mach bitte die Tür zu!",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Miete",
+    "plural": "die Mieten",
+    "meaning": "租金",
+    "example": "Die Miete ist sehr hoch.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Küche",
+    "plural": "die Küchen",
+    "meaning": "廚房",
+    "example": "Wir kochen in der Küche.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Lampe",
+    "plural": "die Lampen",
+    "meaning": "燈",
+    "example": "Mach bitte die Lampe an.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Bett",
+    "plural": "die Betten",
+    "meaning": "床",
+    "example": "Ich bin müde und gehe ins Bett.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Zimmer",
+    "plural": "die Zimmer",
+    "meaning": "房間",
+    "example": "Das Zimmer ist klein.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Fenster",
+    "plural": "die Fenster",
+    "meaning": "窗戶",
+    "example": "Kannst du das Fenster öffnen?",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Sofa",
+    "plural": "die Sofas",
+    "meaning": "沙發",
+    "example": "Das Sofa ist sehr bequem.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Bad",
+    "plural": "die Bäder",
+    "meaning": "浴室",
+    "example": "Das Bad ist neu.",
+    "category": "🏠 居住與家具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bahnhof",
+    "plural": "die Bahnhöfe",
+    "meaning": "火車站",
+    "example": "Der Zug fährt am Bahnhof ab.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Zug",
+    "plural": "die Züge",
+    "meaning": "火車",
+    "example": "Der Zug hat Verspätung.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Koffer",
+    "plural": "die Koffer",
+    "meaning": "行李箱",
+    "example": "Mein Koffer ist zu schwer.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Urlaub",
+    "plural": "die Urlaube",
+    "meaning": "假期",
+    "example": "Ich brauche endlich Urlaub!",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bus",
+    "plural": "die Busse",
+    "meaning": "公車",
+    "example": "Er fährt mit dem Bus.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Flughafen",
+    "plural": "die Flughäfen",
+    "meaning": "機場",
+    "example": "Wir fahren zum Flughafen.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "U-Bahn",
+    "plural": "die U-Bahnen",
+    "meaning": "地鐵",
+    "example": "Ich fahre mit der U-Bahn.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Fahrkarte",
+    "plural": "die Fahrkarten",
+    "meaning": "車票",
+    "example": "Bitte die Fahrkarte zeigen.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Reise",
+    "plural": "die Reisen",
+    "meaning": "旅行",
+    "example": "Wir machen eine tolle Reise.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Straße",
+    "plural": "die Straßen",
+    "meaning": "街道",
+    "example": "Die Straße ist sehr lang.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Ampel",
+    "plural": "die Ampeln",
+    "meaning": "紅綠燈",
+    "example": "Die Ampel ist rot.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Auto",
+    "plural": "die Autos",
+    "meaning": "汽車",
+    "example": "Fährst du mit dem Auto?",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Fahrrad",
+    "plural": "die Fahrräder",
+    "meaning": "腳踏車",
+    "example": "Ich fahre gern Fahrrad.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Flugzeug",
+    "plural": "die Flugzeuge",
+    "meaning": "飛機",
+    "example": "Das Flugzeug startet bald.",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Ticket",
+    "plural": "die Tickets",
+    "meaning": "票券",
+    "example": "Hast du dein Ticket?",
+    "category": "✈️ 交通與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Beruf",
+    "plural": "die Berufe",
+    "meaning": "職業",
+    "example": "Was bist du von Beruf?",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Computer",
+    "plural": "die Computer",
+    "meaning": "電腦",
+    "example": "Mein Computer ist kaputt.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kollege",
+    "plural": "die Kollegen",
+    "meaning": "同事(男)",
+    "example": "Mein Kollege ist sehr nett.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Chef",
+    "plural": "die Chefs",
+    "meaning": "老闆",
+    "example": "Der Chef ist heute nicht da.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Lehrer",
+    "plural": "die Lehrer",
+    "meaning": "老師(男)",
+    "example": "Der Lehrer erklärt das Wort.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Arbeit",
+    "plural": "die Arbeiten",
+    "meaning": "工作",
+    "example": "Ich habe heute viel Arbeit.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Firma",
+    "plural": "die Firmen",
+    "meaning": "公司",
+    "example": "Er arbeitet in einer Firma.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Schule",
+    "plural": "die Schulen",
+    "meaning": "學校",
+    "example": "Die Kinder gehen in die Schule.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Pause",
+    "plural": "die Pausen",
+    "meaning": "休息",
+    "example": "Wir machen zehn Minuten Pause.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Sprache",
+    "plural": "die Sprachen",
+    "meaning": "語言",
+    "example": "Welche Sprache sprichst du?",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Büro",
+    "plural": "die Büros",
+    "meaning": "辦公室",
+    "example": "Ich bin schon im Büro.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Buch",
+    "plural": "die Bücher",
+    "meaning": "書",
+    "example": "Ich lese abends ein Buch.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Wort",
+    "plural": "die Wörter",
+    "meaning": "單字",
+    "example": "Ich lerne jeden Tag Wörter.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Studium",
+    "plural": "die Studien",
+    "meaning": "大學學業",
+    "example": "Das Studium ist schwer.",
+    "category": "💼 職場與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kopf",
+    "plural": "die Köpfe",
+    "meaning": "頭",
+    "example": "Mein Kopf tut weh.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Arzt",
+    "plural": "die Ärzte",
+    "meaning": "醫生(男)",
+    "example": "Ich muss heute zum Arzt.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schmerz",
+    "plural": "die Schmerzen",
+    "meaning": "疼痛",
+    "example": "Haben Sie Schmerzen?",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bauch",
+    "plural": "die Bäuche",
+    "meaning": "肚子",
+    "example": "Ich habe Bauchschmerzen.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Rücken",
+    "plural": "die Rücken",
+    "meaning": "背部",
+    "example": "Mein Rücken tut weh.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Zahn",
+    "plural": "die Zähne",
+    "meaning": "牙齒",
+    "example": "Der Zahnarzt kontrolliert die Zähne.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hand",
+    "plural": "die Hände",
+    "meaning": "手",
+    "example": "Bitte waschen Sie die Hände.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Apotheke",
+    "plural": "die Apotheken",
+    "meaning": "藥局",
+    "example": "Wo ist die nächste Apotheke?",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Nase",
+    "plural": "die Nasen",
+    "meaning": "鼻子",
+    "example": "Meine Nase läuft.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Krankheit",
+    "plural": "die Krankheiten",
+    "meaning": "疾病",
+    "example": "Das ist eine schlimme Krankheit.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Auge",
+    "plural": "die Augen",
+    "meaning": "眼睛",
+    "example": "Sie hat blaue Augen.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Ohr",
+    "plural": "die Ohren",
+    "meaning": "耳朵",
+    "example": "Mein linkes Ohr tut weh.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Bein",
+    "plural": "die Beine",
+    "meaning": "腿",
+    "example": "Meine Beine sind müde.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Fieber",
+    "plural": "(無複數)",
+    "meaning": "發燒",
+    "example": "Das Kind hat hohes Fieber.",
+    "category": "⚕️ 身體與健康",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Pullover",
+    "plural": "die Pullover",
+    "meaning": "毛衣",
+    "example": "Der Pullover ist warm.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Mantel",
+    "plural": "die Mäntel",
+    "meaning": "大衣",
+    "example": "Zieh deinen Mantel an.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schuh",
+    "plural": "die Schuhe",
+    "meaning": "鞋子",
+    "example": "Die Schuhe sind bequem.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Rock",
+    "plural": "die Röcke",
+    "meaning": "裙子",
+    "example": "Der Rock ist sehr kurz.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Regenschirm",
+    "plural": "die Regenschirme",
+    "meaning": "雨傘",
+    "example": "Hast du einen Regenschirm?",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hose",
+    "plural": "die Hosen",
+    "meaning": "褲子",
+    "example": "Ich suche eine schwarze Hose.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Jacke",
+    "plural": "die Jacken",
+    "meaning": "外套",
+    "example": "Deine Jacke ist sehr schön.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Brille",
+    "plural": "die Brillen",
+    "meaning": "眼鏡",
+    "example": "Ich brauche eine neue Brille.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tasche",
+    "plural": "die Taschen",
+    "meaning": "包包",
+    "example": "Was hast du in der Tasche?",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Uhr",
+    "plural": "die Uhren",
+    "meaning": "手錶",
+    "example": "Wie viel Uhr ist es?",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Hemd",
+    "plural": "die Hemden",
+    "meaning": "襯衫",
+    "example": "Das Hemd ist zu groß.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Kleid",
+    "plural": "die Kleider",
+    "meaning": "洋裝",
+    "example": "Sie trägt ein rotes Kleid.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "T-Shirt",
+    "plural": "die T-Shirts",
+    "meaning": "T恤",
+    "example": "Ich trage oft ein T-Shirt.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Geld",
+    "plural": "(無複數)",
+    "meaning": "錢",
+    "example": "Ich habe nicht genug Geld.",
+    "category": "👕 日常與衣物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Baum",
+    "plural": "die Bäume",
+    "meaning": "樹木",
+    "example": "Der Baum ist sehr alt.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Wald",
+    "plural": "die Wälder",
+    "meaning": "森林",
+    "example": "Wir spazieren gern im Wald.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Berg",
+    "plural": "die Berge",
+    "meaning": "山",
+    "example": "Wir wandern auf den Berg.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schnee",
+    "plural": "(無複數)",
+    "meaning": "雪",
+    "example": "Morgen gibt es Schnee.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Regen",
+    "plural": "(無複數)",
+    "meaning": "雨",
+    "example": "Der Regen ist sehr stark.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Sonne",
+    "plural": "die Sonnen",
+    "meaning": "太陽",
+    "example": "Die Sonne scheint heute.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Blume",
+    "plural": "die Blumen",
+    "meaning": "花",
+    "example": "Diese Blume ist wunderschön.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Natur",
+    "plural": "(無複數)",
+    "meaning": "自然",
+    "example": "Wir lieben die Natur.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Wolke",
+    "plural": "die Wolken",
+    "meaning": "雲",
+    "example": "Es gibt heute viele Wolken.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Meer",
+    "plural": "die Meere",
+    "meaning": "海洋",
+    "example": "Wir fahren ans Meer.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Wetter",
+    "plural": "(無複數)",
+    "meaning": "天氣",
+    "example": "Das Wetter ist heute fantastisch.",
+    "category": "🌳 自然與天氣",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fernseher",
+    "plural": "die Fernseher",
+    "meaning": "電視",
+    "example": "Der Fernseher ist neu.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Drucker",
+    "plural": "die Drucker",
+    "meaning": "印表機",
+    "example": "Der Drucker funktioniert nicht.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Film",
+    "plural": "die Filme",
+    "meaning": "電影",
+    "example": "Der Film war sehr spannend.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "E-Mail",
+    "plural": "die E-Mails",
+    "meaning": "電子郵件",
+    "example": "Ich schreibe eine E-Mail.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Nachricht",
+    "plural": "die Nachrichten",
+    "meaning": "訊息",
+    "example": "Ich habe deine Nachricht gelesen.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "App",
+    "plural": "die Apps",
+    "meaning": "應用程式",
+    "example": "Diese App ist sehr praktisch.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Handy",
+    "plural": "die Handys",
+    "meaning": "手機",
+    "example": "Mein Handy ist fast leer.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Internet",
+    "plural": "(無複數)",
+    "meaning": "網路",
+    "example": "Wir haben kein Internet hier.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Tablet",
+    "plural": "die Tablets",
+    "meaning": "平板電腦",
+    "example": "Ich lese auf dem Tablet.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Radio",
+    "plural": "die Radios",
+    "meaning": "收音機",
+    "example": "Wir hören Musik im Radio.",
+    "category": "📱 科技與通訊",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Sport",
+    "plural": "die Sportarten",
+    "meaning": "運動",
+    "example": "Sport ist wichtig für uns.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fußball",
+    "plural": "die Fußbälle",
+    "meaning": "足球",
+    "example": "Er spielt jeden Tag Fußball.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Verein",
+    "plural": "die Vereine",
+    "meaning": "俱樂部",
+    "example": "Ich bin in einem Verein.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Hund",
+    "plural": "die Hunde",
+    "meaning": "狗",
+    "example": "Wir haben einen Hund.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Garten",
+    "plural": "die Gärten",
+    "meaning": "花園",
+    "example": "Wir grillen im Garten.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Musik",
+    "plural": "(無複數)",
+    "meaning": "音樂",
+    "example": "Ich höre gern Musik.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Gitarre",
+    "plural": "die Gitarren",
+    "meaning": "吉他",
+    "example": "Sie spielt sehr gut Gitarre.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Party",
+    "plural": "die Partys",
+    "meaning": "派對",
+    "example": "Kommst du zu meiner Party?",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Freizeit",
+    "plural": "(無複數)",
+    "meaning": "空閒時間",
+    "example": "Was machst du in der Freizeit?",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Hobby",
+    "plural": "die Hobbys",
+    "meaning": "興趣",
+    "example": "Mein Hobby ist Schwimmen.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Konzert",
+    "plural": "die Konzerte",
+    "meaning": "演唱會",
+    "example": "Das Konzert beginnt um acht.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Kino",
+    "plural": "die Kinos",
+    "meaning": "電影院",
+    "example": "Wir gehen heute ins Kino.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Museum",
+    "plural": "die Museen",
+    "meaning": "博物館",
+    "example": "Das Museum ist sehr groß.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Spiel",
+    "plural": "die Spiele",
+    "meaning": "遊戲",
+    "example": "Das Spiel macht viel Spaß.",
+    "category": "⚽ 興趣與休閒",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Mann",
+    "plural": "die Männer",
+    "meaning": "男人",
+    "example": "Der Mann ist mein Onkel.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Freund",
+    "plural": "die Freunde",
+    "meaning": "朋友(男)",
+    "example": "Er ist ein guter Freund.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Vater",
+    "plural": "die Väter",
+    "meaning": "父親",
+    "example": "Mein Vater arbeitet hart.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bruder",
+    "plural": "die Brüder",
+    "meaning": "兄弟",
+    "example": "Mein Bruder studiert noch.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Name",
+    "plural": "die Namen",
+    "meaning": "名字",
+    "example": "Wie ist dein Name?",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Frau",
+    "plural": "die Frauen",
+    "meaning": "女人/妻子",
+    "example": "Die Frau heißt Maria.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Freundin",
+    "plural": "die Freundinnen",
+    "meaning": "朋友(女)",
+    "example": "Sie ist meine beste Freundin.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Mutter",
+    "plural": "die Mütter",
+    "meaning": "母親",
+    "example": "Meine Mutter kocht sehr gut.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Schwester",
+    "plural": "die Schwestern",
+    "meaning": "姊妹",
+    "example": "Meine Schwester wohnt in Berlin.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Familie",
+    "plural": "die Familien",
+    "meaning": "家庭",
+    "example": "Meine Familie ist sehr groß.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Leute",
+    "plural": "(只有複數)",
+    "meaning": "人們",
+    "example": "Die Leute hier sind nett.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Kind",
+    "plural": "die Kinder",
+    "meaning": "孩子",
+    "example": "Das Kind spielt im Park.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Baby",
+    "plural": "die Babys",
+    "meaning": "嬰兒",
+    "example": "Das Baby schläft jetzt.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Mädchen",
+    "plural": "die Mädchen",
+    "meaning": "女孩",
+    "example": "Das Mädchen lernt Deutsch.",
+    "category": "👥 人際與家庭",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Platz",
+    "plural": "die Plätze",
+    "meaning": "廣場/座位",
+    "example": "Wir treffen uns am Platz.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Park",
+    "plural": "die Parks",
+    "meaning": "公園",
+    "example": "Wir spazieren im Park.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Markt",
+    "plural": "die Märkte",
+    "meaning": "市場",
+    "example": "Ich kaufe Obst auf dem Markt.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Turm",
+    "plural": "die Türme",
+    "meaning": "塔",
+    "example": "Der Turm ist sehr hoch.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Stadt",
+    "plural": "die Städte",
+    "meaning": "城市",
+    "example": "Berlin ist eine große Stadt.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Post",
+    "plural": "(無複數)",
+    "meaning": "郵局",
+    "example": "Ich bringe den Brief zur Post.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Bank",
+    "plural": "die Banken",
+    "meaning": "銀行",
+    "example": "Ich hole Geld bei der Bank.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kirche",
+    "plural": "die Kirchen",
+    "meaning": "教堂",
+    "example": "Die Kirche ist sehr alt.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Brücke",
+    "plural": "die Brücken",
+    "meaning": "橋",
+    "example": "Wir gehen über die Brücke.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Polizei",
+    "plural": "(無複數)",
+    "meaning": "警察局",
+    "example": "Rufen Sie die Polizei!",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Zentrum",
+    "plural": "die Zentren",
+    "meaning": "中心",
+    "example": "Wir wohnen im Zentrum.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Rathaus",
+    "plural": "die Rathäuser",
+    "meaning": "市政廳",
+    "example": "Das Rathaus ist dort drüben.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Hotel",
+    "plural": "die Hotels",
+    "meaning": "飯店",
+    "example": "Das Hotel ist ausgebucht.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Krankenhaus",
+    "plural": "die Krankenhäuser",
+    "meaning": "醫院",
+    "example": "Er liegt im Krankenhaus.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Tag",
+    "plural": "die Tage",
+    "meaning": "天/日子",
+    "example": "Ich habe heute einen guten Tag.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Morgen",
+    "plural": "die Morgen",
+    "meaning": "早晨",
+    "example": "Guten Morgen!",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Abend",
+    "plural": "die Abende",
+    "meaning": "晚上",
+    "example": "Am Abend sehe ich fern.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Monat",
+    "plural": "die Monate",
+    "meaning": "月份",
+    "example": "Ein Jahr hat zwölf Monate.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Sommer",
+    "plural": "die Sommer",
+    "meaning": "夏天",
+    "example": "Im Sommer ist es heiß.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Winter",
+    "plural": "die Winter",
+    "meaning": "冬天",
+    "example": "Im Winter schneit es oft.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Woche",
+    "plural": "die Wochen",
+    "meaning": "星期",
+    "example": "Wir sehen uns nächste Woche.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Nacht",
+    "plural": "die Nächte",
+    "meaning": "夜晚",
+    "example": "Gute Nacht!",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Stunde",
+    "plural": "die Stunden",
+    "meaning": "小時",
+    "example": "Der Kurs dauert zwei Stunden.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Minute",
+    "plural": "die Minuten",
+    "meaning": "分鐘",
+    "example": "Warte bitte eine Minute.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zeit",
+    "plural": "die Zeiten",
+    "meaning": "時間",
+    "example": "Ich habe heute keine Zeit.",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Jahr",
+    "plural": "die Jahre",
+    "meaning": "年",
+    "example": "Frohes neues Jahr!",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Wochenende",
+    "plural": "die Wochenenden",
+    "meaning": "週末",
+    "example": "Schönes Wochenende!",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Datum",
+    "plural": "die Daten",
+    "meaning": "日期",
+    "example": "Welches Datum haben wir heute?",
+    "category": "📆 時間與日期",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Vogel",
+    "plural": "die Vögel",
+    "meaning": "鳥",
+    "example": "Der Vogel singt schön.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fisch",
+    "plural": "die Fische",
+    "meaning": "魚",
+    "example": "Der Fisch schwimmt im Wasser.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bär",
+    "plural": "die Bären",
+    "meaning": "熊",
+    "example": "Der Bär ist ein großes Tier.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Affe",
+    "plural": "die Affen",
+    "meaning": "猴子",
+    "example": "Der Affe isst eine Banane.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Katze",
+    "plural": "die Katzen",
+    "meaning": "貓",
+    "example": "Meine Katze schläft gern.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Maus",
+    "plural": "die Mäuse",
+    "meaning": "老鼠",
+    "example": "Die Katze fängt die Maus.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kuh",
+    "plural": "die Kühe",
+    "meaning": "母牛",
+    "example": "Die Kuh gibt Milch.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Fliege",
+    "plural": "die Fliegen",
+    "meaning": "蒼蠅",
+    "example": "Da ist eine Fliege in der Suppe.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Tier",
+    "plural": "die Tiere",
+    "meaning": "動物",
+    "example": "Ich liebe Tiere.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Pferd",
+    "plural": "die Pferde",
+    "meaning": "馬",
+    "example": "Sie reitet auf dem Pferd.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Schwein",
+    "plural": "die Schweine",
+    "meaning": "豬",
+    "example": "Das Schwein ist rosa.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Schaf",
+    "plural": "die Schafe",
+    "meaning": "羊",
+    "example": "Das Schaf frisst Gras.",
+    "category": "🐾 動物與寵物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Teller",
+    "plural": "die Teller",
+    "meaning": "盤子",
+    "example": "Der Teller ist leer.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Löffel",
+    "plural": "die Löffel",
+    "meaning": "湯匙",
+    "example": "Ich brauche einen Löffel.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Topf",
+    "plural": "die Töpfe",
+    "meaning": "鍋子",
+    "example": "Die Suppe kocht im Topf.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kühlschrank",
+    "plural": "die Kühlschränke",
+    "meaning": "冰箱",
+    "example": "Die Milch ist im Kühlschrank.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Gabel",
+    "plural": "die Gabeln",
+    "meaning": "叉子",
+    "example": "Wo ist meine Gabel?",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tasse",
+    "plural": "die Tassen",
+    "meaning": "杯子(有耳)",
+    "example": "Ich trinke eine Tasse Tee.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Flasche",
+    "plural": "die Flaschen",
+    "meaning": "瓶子",
+    "example": "Eine Flasche Wasser bitte.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Pfanne",
+    "plural": "die Pfannen",
+    "meaning": "平底鍋",
+    "example": "Wir braten das Fleisch in der Pfanne.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Messer",
+    "plural": "die Messer",
+    "meaning": "刀子",
+    "example": "Das Messer ist sehr scharf.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Glas",
+    "plural": "die Gläser",
+    "meaning": "玻璃杯",
+    "example": "Ein Glas Wein bitte.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Geschirr",
+    "plural": "(無複數)",
+    "meaning": "餐具總稱",
+    "example": "Ich wasche das Geschirr ab.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Besteck",
+    "plural": "die Bestecke",
+    "meaning": "刀叉餐具",
+    "example": "Bringen Sie uns bitte noch ein Besteck.",
+    "category": "🍽️ 餐具與廚房",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Stift",
+    "plural": "die Stifte",
+    "meaning": "筆",
+    "example": "Hast du einen Stift für mich?",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bleistift",
+    "plural": "die Bleistifte",
+    "meaning": "鉛筆",
+    "example": "Ich schreibe mit dem Bleistift.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kugelschreiber",
+    "plural": "die Kugelschreiber",
+    "meaning": "原子筆",
+    "example": "Der Kugelschreiber schreibt nicht mehr.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Radiergummi",
+    "plural": "die Radiergummis",
+    "meaning": "橡皮擦",
+    "example": "Ich brauche einen Radiergummi.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Text",
+    "plural": "die Texte",
+    "meaning": "文章/文本",
+    "example": "Lesen Sie den Text.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hausaufgabe",
+    "plural": "die Hausaufgaben",
+    "meaning": "回家作業",
+    "example": "Machst du deine Hausaufgaben?",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Prüfung",
+    "plural": "die Prüfungen",
+    "meaning": "考試",
+    "example": "Die Prüfung war sehr schwer.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Frage",
+    "plural": "die Fragen",
+    "meaning": "問題",
+    "example": "Ich habe eine Frage.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Antwort",
+    "plural": "die Antworten",
+    "meaning": "回答",
+    "example": "Das ist die richtige Antwort.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tafel",
+    "plural": "die Tafeln",
+    "meaning": "黑板/白板",
+    "example": "Der Lehrer schreibt an die Tafel.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Heft",
+    "plural": "die Hefte",
+    "meaning": "筆記本",
+    "example": "Schreiben Sie das in Ihr Heft.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Papier",
+    "plural": "die Papiere",
+    "meaning": "紙",
+    "example": "Hast du ein Stück Papier?",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Wörterbuch",
+    "plural": "die Wörterbücher",
+    "meaning": "字典",
+    "example": "Ich schlage das Wort im Wörterbuch nach.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Beispiel",
+    "plural": "die Beispiele",
+    "meaning": "例子",
+    "example": "Zum Beispiel fahre ich gern Rad.",
+    "category": "🏫 學習與文具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Preis",
+    "plural": "die Preise",
+    "meaning": "價格",
+    "example": "Der Preis ist sehr hoch.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kassenbon",
+    "plural": "die Kassenbons",
+    "meaning": "收據",
+    "example": "Brauchen Sie den Kassenbon?",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Euro",
+    "plural": "die Euro",
+    "meaning": "歐元",
+    "example": "Das kostet fünf Euro.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Cent",
+    "plural": "die Cent",
+    "meaning": "分(錢)",
+    "example": "Neunzig Cent bitte.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kasse",
+    "plural": "die Kassen",
+    "meaning": "結帳櫃檯",
+    "example": "Bitte zahlen Sie an der Kasse.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tüte",
+    "plural": "die Tüten",
+    "meaning": "袋子",
+    "example": "Brauchen Sie eine Tüte?",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kreditkarte",
+    "plural": "die Kreditkarten",
+    "meaning": "信用卡",
+    "example": "Kann ich mit Kreditkarte zahlen?",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Größe",
+    "plural": "die Größen",
+    "meaning": "尺寸",
+    "example": "Haben Sie das in Größe M?",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Angebot",
+    "plural": "die Angebote",
+    "meaning": "特價/提供",
+    "example": "Das ist ein gutes Angebot.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Geschäft",
+    "plural": "die Geschäfte",
+    "meaning": "商店",
+    "example": "Das Geschäft schließt um acht.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Geschenk",
+    "plural": "die Geschenke",
+    "meaning": "禮物",
+    "example": "Das Geschenk ist für dich.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Paket",
+    "plural": "die Pakete",
+    "meaning": "包裹",
+    "example": "Ich hole ein Paket ab.",
+    "category": "🛍️ 購物與物品",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Brief",
+    "plural": "die Briefe",
+    "meaning": "信件",
+    "example": "Ich schreibe einen Brief.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Artikel",
+    "plural": "die Artikel",
+    "meaning": "文章/冠詞",
+    "example": "Der Artikel ist sehr interessant.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Sänger",
+    "plural": "die Sänger",
+    "meaning": "歌手",
+    "example": "Er ist ein berühmter Sänger.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zeitung",
+    "plural": "die Zeitungen",
+    "meaning": "報紙",
+    "example": "Ich lese morgens die Zeitung.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zeitschrift",
+    "plural": "die Zeitschriften",
+    "meaning": "雜誌",
+    "example": "Sie kauft eine Zeitschrift.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Eintrittskarte",
+    "plural": "die Eintrittskarten",
+    "meaning": "門票",
+    "example": "Wie viel kostet die Eintrittskarte?",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kunst",
+    "plural": "die Künste",
+    "meaning": "藝術",
+    "example": "Er interessiert sich für Kunst.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Bild",
+    "plural": "die Bilder",
+    "meaning": "圖片/畫",
+    "example": "Das Bild ist sehr schön.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Lied",
+    "plural": "die Lieder",
+    "meaning": "歌曲",
+    "example": "Wir singen ein Lied.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Programm",
+    "plural": "die Programme",
+    "meaning": "節目/程式",
+    "example": "Was kommt heute im Programm?",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Theater",
+    "plural": "die Theater",
+    "meaning": "劇院",
+    "example": "Wir gehen heute ins Theater.",
+    "category": "🎵 文化與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Pass",
+    "plural": "die Pässe",
+    "meaning": "護照",
+    "example": "Zeigen Sie mir Ihren Pass.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Ausländer",
+    "plural": "die Ausländer",
+    "meaning": "外國人",
+    "example": "Er ist Ausländer in Deutschland.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Weg",
+    "plural": "die Wege",
+    "meaning": "道路/路途",
+    "example": "Kannst du mir den Weg zeigen?",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "See",
+    "plural": "die Seen",
+    "meaning": "湖泊",
+    "example": "Wir schwimmen im See.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Grenze",
+    "plural": "die Grenzen",
+    "meaning": "邊界",
+    "example": "Wir überqueren die Grenze.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Welt",
+    "plural": "die Welten",
+    "meaning": "世界",
+    "example": "Die Welt ist groß.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hauptstadt",
+    "plural": "die Hauptstädte",
+    "meaning": "首都",
+    "example": "Berlin ist die Hauptstadt.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Insel",
+    "plural": "die Inseln",
+    "meaning": "島嶼",
+    "example": "Wir machen Urlaub auf einer Insel.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Ausland",
+    "plural": "(無複數)",
+    "meaning": "國外",
+    "example": "Sie fährt oft ins Ausland.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Land",
+    "plural": "die Länder",
+    "meaning": "國家",
+    "example": "Deutschland ist ein schönes Land.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Dorf",
+    "plural": "die Dörfer",
+    "meaning": "村莊",
+    "example": "Meine Großeltern leben in einem Dorf.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Zelt",
+    "plural": "die Zelte",
+    "meaning": "帳篷",
+    "example": "Wir schlafen im Zelt.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Hals",
+    "plural": "die Hälse",
+    "meaning": "脖子/喉嚨",
+    "example": "Mein Hals tut weh.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Arm",
+    "plural": "die Arme",
+    "meaning": "手臂",
+    "example": "Mein rechter Arm ist gebrochen.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Finger",
+    "plural": "die Finger",
+    "meaning": "手指",
+    "example": "Ich habe mich in den Finger geschnitten.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fuß",
+    "plural": "die Füße",
+    "meaning": "腳",
+    "example": "Mir tun die Füße weh.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Husten",
+    "plural": "(無複數)",
+    "meaning": "咳嗽",
+    "example": "Er hat starken Husten.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schnupfen",
+    "plural": "(無複數)",
+    "meaning": "鼻塞/流鼻水",
+    "example": "Ich habe Schnupfen.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Gesundheit",
+    "plural": "(無複數)",
+    "meaning": "健康",
+    "example": "Gesundheit ist das Wichtigste.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tablette",
+    "plural": "die Tabletten",
+    "meaning": "藥片",
+    "example": "Nehmen Sie eine Tablette nach dem Essen.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Praxis",
+    "plural": "die Praxen",
+    "meaning": "診所",
+    "example": "Die Praxis ist heute geschlossen.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Haar",
+    "plural": "die Haare",
+    "meaning": "頭髮",
+    "example": "Sie hat lange Haare.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gesicht",
+    "plural": "die Gesichter",
+    "meaning": "臉",
+    "example": "Wasch dir bitte das Gesicht.",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Pflaster",
+    "plural": "die Pflaster",
+    "meaning": "OK繃",
+    "example": "Hast du ein Pflaster für mich?",
+    "category": "🤧 身體與症狀",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fehler",
+    "plural": "die Fehler",
+    "meaning": "錯誤",
+    "example": "Ich habe einen Fehler gemacht.",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Spaß",
+    "plural": "(無複數)",
+    "meaning": "樂趣",
+    "example": "Viel Spaß!",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Grund",
+    "plural": "die Gründe",
+    "meaning": "原因",
+    "example": "Was ist der Grund dafür?",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Teil",
+    "plural": "die Teile",
+    "meaning": "部分",
+    "example": "Das ist der erste Teil.",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Idee",
+    "plural": "die Ideen",
+    "meaning": "點子/主意",
+    "example": "Das ist eine gute Idee!",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hilfe",
+    "plural": "die Hilfen",
+    "meaning": "幫助",
+    "example": "Ich brauche deine Hilfe.",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Lösung",
+    "plural": "die Lösungen",
+    "meaning": "解決方案/答案",
+    "example": "Das ist die richtige Lösung.",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Sache",
+    "plural": "die Sachen",
+    "meaning": "事情/東西",
+    "example": "Pack deine Sachen!",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Problem",
+    "plural": "die Probleme",
+    "meaning": "問題/困難",
+    "example": "Kein Problem!",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Ziel",
+    "plural": "die Ziele",
+    "meaning": "目標/目的地",
+    "example": "Wir haben unser Ziel erreicht.",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Glück",
+    "plural": "(無複數)",
+    "meaning": "幸運/幸福",
+    "example": "Viel Glück!",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Thema",
+    "plural": "die Themen",
+    "meaning": "主題",
+    "example": "Das Thema ist sehr wichtig.",
+    "category": "🛠️ 綜合與抽象",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Staat",
+    "plural": "die Staaten",
+    "meaning": "國家/政府",
+    "example": "Der Staat hilft den Bürgern.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Politiker",
+    "plural": "die Politiker",
+    "meaning": "政治人物",
+    "example": "Der Politiker hält eine Rede.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bürger",
+    "plural": "die Bürger",
+    "meaning": "公民",
+    "example": "Jeder Bürger hat Rechte.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Wahl",
+    "plural": "die Wahlen",
+    "meaning": "選舉/選擇",
+    "example": "Die Wahl findet im Herbst statt.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Gesellschaft",
+    "plural": "die Gesellschaften",
+    "meaning": "社會",
+    "example": "Wir leben in einer Gesellschaft.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Partei",
+    "plural": "die Parteien",
+    "meaning": "政黨",
+    "example": "Welche Partei wählst du?",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gesetz",
+    "plural": "die Gesetze",
+    "meaning": "法律",
+    "example": "Das ist ein neues Gesetz.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Recht",
+    "plural": "die Rechte",
+    "meaning": "權利",
+    "example": "Du hast das Recht zu schweigen.",
+    "category": "🏛️ 社會與政治",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Vertrag",
+    "plural": "die Verträge",
+    "meaning": "合約",
+    "example": "Bitte unterschreiben Sie den Vertrag.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Betrieb",
+    "plural": "die Betriebe",
+    "meaning": "企業/工廠",
+    "example": "Er arbeitet in einem großen Betrieb.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Erfolg",
+    "plural": "die Erfolge",
+    "meaning": "成功",
+    "example": "Ich wünsche dir viel Erfolg!",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Bewerbung",
+    "plural": "die Bewerbungen",
+    "meaning": "求職申請",
+    "example": "Ich schreibe eine Bewerbung.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Wirtschaft",
+    "plural": "die Wirtschaften",
+    "meaning": "經濟",
+    "example": "Die Wirtschaft wächst schnell.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Erfahrung",
+    "plural": "die Erfahrungen",
+    "meaning": "經驗",
+    "example": "Er hat viel Erfahrung im Beruf.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Praktikum",
+    "plural": "die Praktika",
+    "meaning": "實習",
+    "example": "Sie macht ein Praktikum im Krankenhaus.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gehalt",
+    "plural": "die Gehälter",
+    "meaning": "薪水",
+    "example": "Das Gehalt in dieser Firma ist sehr gut.",
+    "category": "💼 職場與經濟",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Verkehr",
+    "plural": "(無複數)",
+    "meaning": "交通",
+    "example": "Der Verkehr in der Stadt ist schlimm.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Müll",
+    "plural": "(無複數)",
+    "meaning": "垃圾",
+    "example": "Bitte werfen Sie den Müll in die Tonne.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Umweltschutz",
+    "plural": "(無複數)",
+    "meaning": "環境保護",
+    "example": "Umweltschutz ist heute sehr wichtig.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Umwelt",
+    "plural": "(無複數)",
+    "meaning": "環境",
+    "example": "Wir müssen die Umwelt schützen.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Energie",
+    "plural": "die Energien",
+    "meaning": "能源",
+    "example": "Wir müssen alle Energie sparen.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Natur",
+    "plural": "(無複數)",
+    "meaning": "大自然",
+    "example": "Ich verbringe gern Zeit in der Natur.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Klima",
+    "plural": "die Klimata",
+    "meaning": "氣候",
+    "example": "Das Klima ändert sich schnell.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Benzin",
+    "plural": "(無複數)",
+    "meaning": "汽油",
+    "example": "Das Benzin ist wieder teurer geworden.",
+    "category": "♻️ 環境與交通",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bildschirm",
+    "plural": "die Bildschirme",
+    "meaning": "螢幕",
+    "example": "Mein Bildschirm ist kaputt.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Drucker",
+    "plural": "die Drucker",
+    "meaning": "印表機",
+    "example": "Der Drucker hat kein Papier mehr.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Zuschauer",
+    "plural": "die Zuschauer",
+    "meaning": "觀眾",
+    "example": "Die Zuschauer klatschen laut.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Werbung",
+    "plural": "die Werbungen",
+    "meaning": "廣告",
+    "example": "Ich hasse Werbung im Fernsehen.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Diskussion",
+    "plural": "die Diskussionen",
+    "meaning": "討論",
+    "example": "Das war eine interessante Diskussion.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tastatur",
+    "plural": "die Tastaturen",
+    "meaning": "鍵盤",
+    "example": "Die Tastatur von meinem Laptop ist neu.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Passwort",
+    "plural": "die Passwörter",
+    "meaning": "密碼",
+    "example": "Bitte geben Sie Ihr Passwort ein.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Internet",
+    "plural": "(無複數)",
+    "meaning": "網路",
+    "example": "Ich suche die Information im Internet.",
+    "category": "💻 媒體與科技",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Streit",
+    "plural": "die Streite",
+    "meaning": "爭吵",
+    "example": "Wir hatten gestern einen heftigen Streit.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Ärger",
+    "plural": "(無複數)",
+    "meaning": "麻煩/生氣",
+    "example": "Ich will keinen Ärger machen.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Witz",
+    "plural": "die Witze",
+    "meaning": "笑話",
+    "example": "Er erzählt immer lustige Witze.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Liebe",
+    "plural": "(無複數)",
+    "meaning": "愛",
+    "example": "Die Liebe ist das Wichtigste im Leben.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Freude",
+    "plural": "die Freuden",
+    "meaning": "喜悅",
+    "example": "Er weint vor Freude.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Angst",
+    "plural": "die Ängste",
+    "meaning": "害怕/恐懼",
+    "example": "Hast du Angst vor Spinnen?",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gefühl",
+    "plural": "die Gefühle",
+    "meaning": "感覺/感情",
+    "example": "Ich habe ein schlechtes Gefühl.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Verhältnis",
+    "plural": "die Verhältnisse",
+    "meaning": "關係/比例",
+    "example": "Wir haben ein gutes Verhältnis.",
+    "category": "❤️ 情緒與人際",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Aufzug",
+    "plural": "die Aufzüge",
+    "meaning": "電梯",
+    "example": "Der Aufzug ist leider kaputt.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Strom",
+    "plural": "(無複數)",
+    "meaning": "電",
+    "example": "Der Strom ist ausgefallen.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schlüssel",
+    "plural": "die Schlüssel",
+    "meaning": "鑰匙",
+    "example": "Ich habe meinen Schlüssel vergessen.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Abfall",
+    "plural": "die Abfälle",
+    "meaning": "廢棄物/垃圾",
+    "example": "Bitte trennen Sie den Abfall.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Heizung",
+    "plural": "die Heizungen",
+    "meaning": "暖氣",
+    "example": "Mach bitte die Heizung an es ist kalt.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Decke",
+    "plural": "die Decken",
+    "meaning": "天花板/毯子",
+    "example": "Mir ist kalt gib mir bitte eine Decke.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Treppe",
+    "plural": "die Treppen",
+    "meaning": "樓梯",
+    "example": "Wir müssen die Treppe nehmen.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gerät",
+    "plural": "die Geräte",
+    "meaning": "設備/儀器",
+    "example": "Das ist ein sehr teures Gerät.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Dach",
+    "plural": "die Dächer",
+    "meaning": "屋頂",
+    "example": "Der Vogel sitzt auf dem Dach.",
+    "category": "🛋️ 居家與生活",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Teilnehmer",
+    "plural": "die Teilnehmer",
+    "meaning": "參加者",
+    "example": "Die Teilnehmer kommen aus aller Welt.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Unterricht",
+    "plural": "(無複數)",
+    "meaning": "課程/上課",
+    "example": "Der Unterricht beginnt um acht Uhr.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fehler",
+    "plural": "die Fehler",
+    "meaning": "錯誤",
+    "example": "Ich habe einen großen Fehler gemacht.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Test",
+    "plural": "die Tests",
+    "meaning": "測驗",
+    "example": "Der Test war heute sehr schwer.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Ausbildung",
+    "plural": "die Ausbildungen",
+    "meaning": "職業訓練",
+    "example": "Er macht eine Ausbildung als Koch.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Universität",
+    "plural": "die Universitäten",
+    "meaning": "大學",
+    "example": "Sie studiert Medizin an der Universität.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Zeugnis",
+    "plural": "die Zeugnisse",
+    "meaning": "成績單",
+    "example": "Sein Zeugnis ist in diesem Jahr sehr gut.",
+    "category": "🏫 學習與教育",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Termin",
+    "plural": "die Termine",
+    "meaning": "預約/行程",
+    "example": "Ich habe heute einen Termin beim Arzt.",
+    "category": "📆 時間與計畫",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kalender",
+    "plural": "die Kalender",
+    "meaning": "日曆",
+    "example": "Ich trage den Termin in den Kalender ein.",
+    "category": "📆 時間與計畫",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Feierabend",
+    "plural": "die Feierabende",
+    "meaning": "下班時間",
+    "example": "Endlich Feierabend!",
+    "category": "📆 時間與計畫",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Verabredung",
+    "plural": "die Verabredungen",
+    "meaning": "約會/約定",
+    "example": "Ich habe eine Verabredung mit Maria.",
+    "category": "📆 時間與計畫",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Einladung",
+    "plural": "die Einladungen",
+    "meaning": "邀請",
+    "example": "Danke für die tolle Einladung!",
+    "category": "📆 時間與計畫",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Datum",
+    "plural": "die Daten",
+    "meaning": "日期",
+    "example": "Welches Datum haben wir heute?",
+    "category": "📆 時間與計畫",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kunde",
+    "plural": "die Kunden",
+    "meaning": "顧客(男)",
+    "example": "Der Kunde wartet an der Kasse.",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Rabatt",
+    "plural": "die Rabatte",
+    "meaning": "折扣",
+    "example": "Wir bekommen zehn Prozent Rabatt.",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kundin",
+    "plural": "die Kundinnen",
+    "meaning": "顧客(女)",
+    "example": "Die Kundin bezahlt heute bar.",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Qualität",
+    "plural": "die Qualitäten",
+    "meaning": "品質",
+    "example": "Die Qualität von diesem Produkt ist super.",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Garantie",
+    "plural": "die Garantien",
+    "meaning": "保固",
+    "example": "Auf den Fernseher gibt es zwei Jahre Garantie.",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Quittung",
+    "plural": "die Quittungen",
+    "meaning": "收據",
+    "example": "Brauchen Sie eine Quittung für die Firma?",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Produkt",
+    "plural": "die Produkte",
+    "meaning": "產品",
+    "example": "Wir haben ein ganz neues Produkt.",
+    "category": "🛍️ 商業與服務",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Ausweis",
+    "plural": "die Ausweise",
+    "meaning": "身分證件",
+    "example": "Zeigen Sie mir bitte Ihren Ausweis.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Flug",
+    "plural": "die Flüge",
+    "meaning": "航班",
+    "example": "Der Flug nach Berlin dauert eine Stunde.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Strand",
+    "plural": "die Strände",
+    "meaning": "海灘",
+    "example": "Wir liegen den ganzen Tag am Strand.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Tourist",
+    "plural": "die Touristen",
+    "meaning": "遊客",
+    "example": "Viele Touristen besuchen das Museum.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Grenze",
+    "plural": "die Grenzen",
+    "meaning": "國界",
+    "example": "Wir müssen an der Grenze warten.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Kultur",
+    "plural": "die Kulturen",
+    "meaning": "文化",
+    "example": "Ich interessiere mich für fremde Kulturen.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Sehenswürdigkeit",
+    "plural": "die Sehenswürdigkeiten",
+    "meaning": "景點",
+    "example": "Das ist eine bekannte Sehenswürdigkeit.",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Visum",
+    "plural": "die Visa",
+    "meaning": "簽證",
+    "example": "Brauche ich ein Visum für dieses Land?",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gepäck",
+    "plural": "(無複數)",
+    "meaning": "行李",
+    "example": "Wo kann ich mein Gepäck abgeben?",
+    "category": "🌍 國家與旅行",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Körper",
+    "plural": "die Körper",
+    "meaning": "身體",
+    "example": "Sport ist gut für den Körper.",
+    "category": "🤧 健康與醫療",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Patient",
+    "plural": "die Patienten",
+    "meaning": "病人(男)",
+    "example": "Der Arzt untersucht den Patienten sofort.",
+    "category": "🤧 健康與醫療",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Unfall",
+    "plural": "die Unfälle",
+    "meaning": "意外/車禍",
+    "example": "Es gab einen schweren Unfall auf der Autobahn.",
+    "category": "🤧 健康與醫療",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Medizin",
+    "plural": "(無複數)",
+    "meaning": "醫學/藥物",
+    "example": "Er studiert Medizin an der Uni.",
+    "category": "🤧 健康與醫療",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Operation",
+    "plural": "die Operationen",
+    "meaning": "手術",
+    "example": "Die Operation war sehr erfolgreich.",
+    "category": "🤧 健康與醫療",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Blut",
+    "plural": "(無複數)",
+    "meaning": "血液",
+    "example": "Ich kann kein Blut sehen!",
+    "category": "🤧 健康與醫療",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Teller",
+    "plural": "die Teller",
+    "meaning": "盤子",
+    "example": "Stell den Teller auf den Tisch.",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Topf",
+    "plural": "die Töpfe",
+    "meaning": "鍋子",
+    "example": "Die Suppe kocht im heißen Topf.",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Löffel",
+    "plural": "die Löffel",
+    "meaning": "湯匙",
+    "example": "Ich esse die Suppe mit einem Löffel.",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Gabel",
+    "plural": "die Gabeln",
+    "meaning": "叉子",
+    "example": "Wo ist meine Gabel für den Salat?",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Pfanne",
+    "plural": "die Pfannen",
+    "meaning": "平底鍋",
+    "example": "Er brät das Fleisch in der Pfanne.",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Messer",
+    "plural": "die Messer",
+    "meaning": "刀子",
+    "example": "Das Messer hier ist nicht scharf.",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Rezept",
+    "plural": "die Rezepte",
+    "meaning": "食譜/處方",
+    "example": "Das Rezept für den Kuchen ist einfach.",
+    "category": "🍽️ 飲食與餐具",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kiosk",
+    "plural": "die Kioske",
+    "meaning": "書報攤",
+    "example": "Ich kaufe eine Zeitung am Kiosk.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Eintritt",
+    "plural": "die Eintritte",
+    "meaning": "入場/入場費",
+    "example": "Der Eintritt ist für Kinder heute frei.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Ausgang",
+    "plural": "die Ausgänge",
+    "meaning": "出口",
+    "example": "Entschuldigung wo ist der Ausgang?",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Eingang",
+    "plural": "die Eingänge",
+    "meaning": "入口",
+    "example": "Wir treffen uns direkt am Eingang.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Halle",
+    "plural": "die Hallen",
+    "meaning": "大廳/會場",
+    "example": "Das Konzert findet in der großen Halle statt.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Richtung",
+    "plural": "die Richtungen",
+    "meaning": "方向",
+    "example": "In welche Richtung müssen wir fahren?",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gebäude",
+    "plural": "die Gebäude",
+    "meaning": "建築物",
+    "example": "Das Gebäude vor uns ist sehr hoch.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Schloss",
+    "plural": "die Schlösser",
+    "meaning": "城堡/鎖",
+    "example": "Das Schloss ist wunderschön und alt.",
+    "category": "🏢 城市與建築",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Satz",
+    "plural": "die Sätze",
+    "meaning": "句子",
+    "example": "Bitte lesen Sie den nächsten Satz vor.",
+    "category": "📖 語言與文學",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Bedeutung",
+    "plural": "die Bedeutungen",
+    "meaning": "意思/意義",
+    "example": "Was ist die Bedeutung von diesem Wort?",
+    "category": "📖 語言與文學",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Grammatik",
+    "plural": "die Grammatiken",
+    "meaning": "文法",
+    "example": "Die deutsche Grammatik ist oft schwer.",
+    "category": "📖 語言與文學",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Regel",
+    "plural": "die Regeln",
+    "meaning": "規則",
+    "example": "Es gibt leider Ausnahmen für diese Regel.",
+    "category": "📖 語言與文學",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gespräch",
+    "plural": "die Gespräche",
+    "meaning": "對話/談話",
+    "example": "Wir hatten gestern ein langes Gespräch.",
+    "category": "📖 語言與文學",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Traum",
+    "plural": "die Träume",
+    "meaning": "夢想/夢",
+    "example": "Mein Traum ist es um die Welt zu reisen.",
+    "category": "💭 思想與人生",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Wunsch",
+    "plural": "die Wünsche",
+    "meaning": "願望",
+    "example": "Ich habe nur einen einzigen Wunsch.",
+    "category": "💭 思想與人生",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hoffnung",
+    "plural": "die Hoffnungen",
+    "meaning": "希望",
+    "example": "Wir dürfen die Hoffnung nicht aufgeben.",
+    "category": "💭 思想與人生",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Lust",
+    "plural": "(無複數)",
+    "meaning": "興致/意願",
+    "example": "Ich habe heute gar keine Lust zu arbeiten.",
+    "category": "💭 思想與人生",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Leben",
+    "plural": "die Leben",
+    "meaning": "生活/生命",
+    "example": "Das Leben in dieser Stadt ist schön.",
+    "category": "💭 思想與人生",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Alter",
+    "plural": "die Alter",
+    "meaning": "年齡",
+    "example": "In welchem Alter darf man Auto fahren?",
+    "category": "💭 思想與人生",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Geldautomat",
+    "plural": "die Geldautomaten",
+    "meaning": "提款機",
+    "example": "Ich hole Geld am Geldautomaten.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Konto",
+    "plural": "die Konten",
+    "meaning": "帳戶",
+    "example": "Ich möchte ein Konto eröffnen.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Briefmarke",
+    "plural": "die Briefmarken",
+    "meaning": "郵票",
+    "example": "Ich brauche eine Briefmarke für den Brief.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Schalter",
+    "plural": "die Schalter",
+    "meaning": "櫃檯",
+    "example": "Gehen Sie bitte zu Schalter drei.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kredit",
+    "plural": "die Kredite",
+    "meaning": "貸款",
+    "example": "Er braucht einen Kredit für das Auto.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zinsen",
+    "plural": "(只有複數)",
+    "meaning": "利息",
+    "example": "Die Zinsen bei der Bank sind niedrig.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "EC-Karte",
+    "plural": "die EC-Karten",
+    "meaning": "金融卡",
+    "example": "Ich zahle mit der EC-Karte.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Formular",
+    "plural": "die Formulare",
+    "meaning": "表格",
+    "example": "Bitte füllen Sie das Formular aus.",
+    "category": "🏦 銀行與郵局",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Hochzeit",
+    "plural": "die Hochzeiten",
+    "meaning": "婚禮",
+    "example": "Wir sind auf einer Hochzeit eingeladen.",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Fest",
+    "plural": "die Feste",
+    "meaning": "節慶",
+    "example": "Ostern ist ein wichtiges Fest.",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Feier",
+    "plural": "die Feiern",
+    "meaning": "慶祝會",
+    "example": "Die Feier gestern war toll.",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Gast",
+    "plural": "die Gäste",
+    "meaning": "客人",
+    "example": "Wir haben heute viele Gäste.",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Glückwunsch",
+    "plural": "die Glückwünsche",
+    "meaning": "祝賀",
+    "example": "Herzlichen Glückwunsch zum Geburtstag!",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Jubiläum",
+    "plural": "die Jubiläen",
+    "meaning": "週年紀念",
+    "example": "Die Firma feiert ihr Jubiläum.",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Überraschung",
+    "plural": "die Überraschungen",
+    "meaning": "驚喜",
+    "example": "Das ist eine schöne Überraschung.",
+    "category": "🎉 節慶與活動",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Ingenieur",
+    "plural": "die Ingenieure",
+    "meaning": "工程師",
+    "example": "Er arbeitet als Ingenieur.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Friseur",
+    "plural": "die Friseure",
+    "meaning": "理髮師",
+    "example": "Ich muss zum Friseur gehen.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Polizist",
+    "plural": "die Polizisten",
+    "meaning": "警察",
+    "example": "Der Polizist regelt den Verkehr.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Verkäufer",
+    "plural": "die Verkäufer",
+    "meaning": "售貨員",
+    "example": "Der Verkäufer ist sehr freundlich.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Handwerker",
+    "plural": "die Handwerker",
+    "meaning": "工匠/技工",
+    "example": "Der Handwerker repariert die Heizung.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bauer",
+    "plural": "die Bauern",
+    "meaning": "農夫",
+    "example": "Der Bauer hat viele Tiere.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Krankenschwester",
+    "plural": "die Krankenschwestern",
+    "meaning": "護士",
+    "example": "Sie arbeitet als Krankenschwester.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Künstler",
+    "plural": "die Künstler",
+    "meaning": "藝術家",
+    "example": "Der Künstler malt ein Bild.",
+    "category": "👷 職業與百工",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Fluss",
+    "plural": "die Flüsse",
+    "meaning": "河流",
+    "example": "Wir schwimmen im Fluss.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Tal",
+    "plural": "die Täler",
+    "meaning": "山谷",
+    "example": "Das Dorf liegt in einem Tal.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Wiese",
+    "plural": "die Wiesen",
+    "meaning": "草地",
+    "example": "Die Kinder spielen auf der Wiese.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Pflanze",
+    "plural": "die Pflanzen",
+    "meaning": "植物",
+    "example": "Ich muss die Pflanzen gießen.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Stern",
+    "plural": "die Sterne",
+    "meaning": "星星",
+    "example": "Die Sterne leuchten am Himmel.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Himmel",
+    "plural": "die Himmel",
+    "meaning": "天空",
+    "example": "Der Himmel ist heute sehr blau.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Mond",
+    "plural": "die Monde",
+    "meaning": "月亮",
+    "example": "Der Mond scheint hell.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Luft",
+    "plural": "(無複數)",
+    "meaning": "空氣",
+    "example": "Die Luft hier ist sehr frisch.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Holz",
+    "plural": "(無複數)",
+    "meaning": "木材",
+    "example": "Der Tisch ist aus Holz.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Stein",
+    "plural": "die Steine",
+    "meaning": "石頭",
+    "example": "Das Haus ist aus Stein gebaut.",
+    "category": "🌲 自然與地理",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Spiegel",
+    "plural": "die Spiegel",
+    "meaning": "鏡子",
+    "example": "Sie schaut in den Spiegel.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Handtuch",
+    "plural": "die Handtücher",
+    "meaning": "毛巾",
+    "example": "Ich brauche ein sauberes Handtuch.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Seife",
+    "plural": "die Seifen",
+    "meaning": "肥皂",
+    "example": "Wasch dir die Hände mit Seife.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zahnbürste",
+    "plural": "die Zahnbürsten",
+    "meaning": "牙刷",
+    "example": "Meine Zahnbürste ist blau.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zahnpasta",
+    "plural": "die Zahnpasten",
+    "meaning": "牙膏",
+    "example": "Die Zahnpasta ist fast leer.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Kamm",
+    "plural": "die Kämme",
+    "meaning": "梳子",
+    "example": "Ich suche meinen Kamm.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Shampoo",
+    "plural": "die Shampoos",
+    "meaning": "洗髮精",
+    "example": "Das Shampoo riecht gut.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Dusche",
+    "plural": "die Duschen",
+    "meaning": "淋浴",
+    "example": "Ich stehe gerade unter der Dusche.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Toilette",
+    "plural": "die Toiletten",
+    "meaning": "廁所",
+    "example": "Wo ist hier die Toilette?",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Klopapier",
+    "plural": "(無複數)",
+    "meaning": "衛生紙",
+    "example": "Wir haben kein Klopapier mehr.",
+    "category": "🛁 衛浴與清潔",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Meinung",
+    "plural": "die Meinungen",
+    "meaning": "意見",
+    "example": "Das ist meine persönliche Meinung.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Unterschied",
+    "plural": "die Unterschiede",
+    "meaning": "差異",
+    "example": "Es gibt keinen großen Unterschied.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Vorteil",
+    "plural": "die Vorteile",
+    "meaning": "優點",
+    "example": "Das hat viele Vorteile.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Nachteil",
+    "plural": "die Nachteile",
+    "meaning": "缺點",
+    "example": "Ich sehe hier nur Nachteile.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Entscheidung",
+    "plural": "die Entscheidungen",
+    "meaning": "決定",
+    "example": "Das war eine gute Entscheidung.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Zukunft",
+    "plural": "(無複數)",
+    "meaning": "未來",
+    "example": "Wir planen unsere Zukunft.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Vergangenheit",
+    "plural": "(無複數)",
+    "meaning": "過去",
+    "example": "Das gehört zur Vergangenheit.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Situation",
+    "plural": "die Situationen",
+    "meaning": "情況",
+    "example": "Die Situation ist sehr schwierig.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Gefahr",
+    "plural": "die Gefahren",
+    "meaning": "危險",
+    "example": "Das ist eine große Gefahr.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Interesse",
+    "plural": "die Interessen",
+    "meaning": "興趣",
+    "example": "Er hat kein Interesse daran.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Thema",
+    "plural": "die Themen",
+    "meaning": "主題",
+    "example": "Das Thema ist sehr aktuell.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Einfluss",
+    "plural": "die Einflüsse",
+    "meaning": "影響",
+    "example": "Das Wetter hat großen Einfluss.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Entwicklung",
+    "plural": "die Entwicklungen",
+    "meaning": "發展",
+    "example": "Die Entwicklung ist positiv.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Sicherheit",
+    "plural": "die Sicherheiten",
+    "meaning": "安全",
+    "example": "Sicherheit geht immer vor.",
+    "category": "💡 抽象概念",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Gespräch",
+    "plural": "die Gespräche",
+    "meaning": "對話",
+    "example": "Wir hatten ein gutes Gespräch.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Anruf",
+    "plural": "die Anrufe",
+    "meaning": "來電",
+    "example": "Ich erwarte einen wichtigen Anruf.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Telefon",
+    "plural": "die Telefone",
+    "meaning": "電話",
+    "example": "Das Telefon klingelt.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Information",
+    "plural": "die Informationen",
+    "meaning": "資訊",
+    "example": "Wir brauchen mehr Informationen.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bericht",
+    "plural": "die Berichte",
+    "meaning": "報告/報導",
+    "example": "Der Bericht in der Zeitung ist lang.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Umschlag",
+    "plural": "die Umschläge",
+    "meaning": "信封",
+    "example": "Der Umschlag ist weiß.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Paket",
+    "plural": "die Pakete",
+    "meaning": "包裹",
+    "example": "Der Postbote bringt ein Paket.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Bildschirm",
+    "plural": "die Bildschirme",
+    "meaning": "螢幕",
+    "example": "Mein Bildschirm ist zu klein.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Datei",
+    "plural": "die Dateien",
+    "meaning": "檔案",
+    "example": "Ich habe die Datei gelöscht.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Programm",
+    "plural": "die Programme",
+    "meaning": "程式/節目",
+    "example": "Das Programm ist sehr nützlich.",
+    "category": "📡 通訊與媒體",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Schere",
+    "plural": "die Scheren",
+    "meaning": "剪刀",
+    "example": "Ich schneide das Papier mit der Schere.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Mülleimer",
+    "plural": "die Mülleimer",
+    "meaning": "垃圾桶",
+    "example": "Wirf das in den Mülleimer.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Feuerzeug",
+    "plural": "die Feuerzeuge",
+    "meaning": "打火機",
+    "example": "Hast du ein Feuerzeug?",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Streichholz",
+    "plural": "die Streichhölzer",
+    "meaning": "火柴",
+    "example": "Ich brauche ein Streichholz.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Regenschirm",
+    "plural": "die Regenschirme",
+    "meaning": "雨傘",
+    "example": "Vergiss deinen Regenschirm nicht.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Batterie",
+    "plural": "die Batterien",
+    "meaning": "電池",
+    "example": "Die Batterie ist leider leer.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Kabel",
+    "plural": "die Kabel",
+    "meaning": "電線/線材",
+    "example": "Das Kabel ist zu kurz.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Steckdose",
+    "plural": "die Steckdosen",
+    "meaning": "插座",
+    "example": "Wo ist die nächste Steckdose?",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Stecker",
+    "plural": "die Stecker",
+    "meaning": "插頭",
+    "example": "Zieh den Stecker aus der Steckdose.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Maschine",
+    "plural": "die Maschinen",
+    "meaning": "機器",
+    "example": "Die Maschine läuft sehr laut.",
+    "category": "✂️ 日常雜物",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Motor",
+    "plural": "die Motoren",
+    "meaning": "引擎",
+    "example": "Der Motor ist kaputt.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Reifen",
+    "plural": "die Reifen",
+    "meaning": "輪胎",
+    "example": "Mein Fahrrad braucht neue Reifen.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Benzin",
+    "plural": "(無複數)",
+    "meaning": "汽油",
+    "example": "Wir müssen Benzin tanken.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Tankstelle",
+    "plural": "die Tankstellen",
+    "meaning": "加油站",
+    "example": "Wo ist die nächste Tankstelle?",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Führerschein",
+    "plural": "die Führerscheine",
+    "meaning": "駕照",
+    "example": "Ich habe meinen Führerschein bestanden.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Stau",
+    "plural": "die Staus",
+    "meaning": "塞車",
+    "example": "Wir stehen leider im Stau.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Unfall",
+    "plural": "die Unfälle",
+    "meaning": "車禍/意外",
+    "example": "Es gab einen schweren Unfall.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Schild",
+    "plural": "die Schilder",
+    "meaning": "標誌/牌子",
+    "example": "Achte auf das Schild.",
+    "category": "🚗 交通擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Verein",
+    "plural": "die Vereine",
+    "meaning": "協會/俱樂部",
+    "example": "Er spielt in einem Verein.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Mannschaft",
+    "plural": "die Mannschaften",
+    "meaning": "隊伍",
+    "example": "Unsere Mannschaft hat gewonnen.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Training",
+    "plural": "die Trainings",
+    "meaning": "訓練",
+    "example": "Das Training beginnt um acht.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "das",
+    "word": "Stadion",
+    "plural": "die Stadien",
+    "meaning": "體育場",
+    "example": "Das Stadion ist voll.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Zuschauer",
+    "plural": "die Zuschauer",
+    "meaning": "觀眾",
+    "example": "Die Zuschauer jubeln laut.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "der",
+    "word": "Sportplatz",
+    "plural": "die Sportplätze",
+    "meaning": "運動場",
+    "example": "Wir treffen uns am Sportplatz.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  },
+  {
+    "article": "die",
+    "word": "Halle",
+    "plural": "die Hallen",
+    "meaning": "體育館/大廳",
+    "example": "Das Spiel findet in der Halle statt.",
+    "category": "⚽ 運動擴充",
+    "errors": 0,
+    "starred": false
+  }
+]

@@ -238,6 +238,21 @@
                 </div>
             </div>
 
+            <div class="w-full bg-white p-6 rounded-[2rem] border border-slate-200 mb-6">
+                <h3 class="font-black text-slate-800 mb-4 flex items-center gap-2">📚 內建字庫</h3>
+                <div class="grid gap-3 md:grid-cols-[1fr_auto]">
+                    <select id="preset-vocab-select" class="w-full p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-sm outline-none">
+                        <option value="">載入內建字庫中...</option>
+                    </select>
+                    <button onclick="window.loadPresetVocabulary()" class="bg-indigo-600 text-white px-5 py-3 rounded-xl font-bold hover:bg-indigo-700">
+                        套用字庫
+                    </button>
+                </div>
+                <p id="preset-vocab-description" class="mt-3 text-xs font-bold text-slate-400">
+                    會取代目前字庫。需要保留目前資料時，請先匯出備份。
+                </p>
+            </div>
+
             <div class="w-full flex flex-col gap-3">
                 <input type="file" id="file-import" accept=".json,.txt,.csv" class="hidden" onchange="window.handleFileImport(event)">
                 <div class="flex gap-3">
@@ -303,10 +318,12 @@
         window.isFlipped = false;
         window.voices = [];
         window.user = null;
+        window.presetVocabularyLists = [];
 
         async function init() {
             setupVoices();
             setupGestures();
+            setupPresetVocabulary();
             loadLocalData();
 
             if (auth) {
@@ -343,6 +360,115 @@
             if (s) window.userStats = JSON.parse(s);
             refreshUI();
         }
+
+        function normalizeWordList(items) {
+            if (!Array.isArray(items)) return [];
+
+            return items
+                .map((item) => ({
+                    article: String(item.article || '').trim().toLowerCase(),
+                    word: String(item.word || '').trim(),
+                    plural: String(item.plural || '-').trim(),
+                    meaning: String(item.meaning || '').trim(),
+                    example: String(item.example || '').trim(),
+                    category: String(item.category || '未分類').trim(),
+                    errors: Number(item.errors || 0),
+                    starred: Boolean(item.starred)
+                }))
+                .filter((item) =>
+                    ['der', 'die', 'das'].includes(item.article) &&
+                    item.word &&
+                    item.meaning
+                );
+        }
+
+        function parseWordListContent(content) {
+            const trimmed = content.trim();
+            if (!trimmed) return [];
+
+            if (trimmed.startsWith('[')) {
+                return normalizeWordList(JSON.parse(trimmed));
+            }
+
+            const lines = trimmed.split('\n');
+            const newDB = [];
+            for (let line of lines) {
+                line = line.trim();
+                if (!line || (line.includes("詞性") && line.includes("單字"))) continue;
+                const sep = line.includes('\t') ? '\t' : ',';
+                const parts = line.split(sep).map(s => s.trim());
+                if (parts.length >= 6) {
+                    const category = parts.pop();
+                    const article = parts.shift().toLowerCase();
+                    const word = parts.shift();
+                    const plural = parts.shift();
+                    const meaning = parts.shift();
+                    const example = parts.join(sep);
+                    newDB.push({ article, word, plural, meaning, example, category, errors: 0, starred: false });
+                }
+            }
+            return normalizeWordList(newDB);
+        }
+
+        function applyWordList(wordList, message) {
+            const normalized = normalizeWordList(wordList);
+            if (normalized.length === 0) {
+                window.showToast('⚠️ 字庫格式不正確或沒有有效單字', true);
+                return;
+            }
+
+            window.wordDatabase = normalized;
+            localStorage.setItem('deutschLernkartenDB_vPro', JSON.stringify(window.wordDatabase));
+            window.saveDatabaseToCloud();
+            window.showToast(message || `✅ 已載入 ${normalized.length} 個單字`);
+            refreshUI();
+        }
+
+        async function setupPresetVocabulary() {
+            const select = document.getElementById('preset-vocab-select');
+            const description = document.getElementById('preset-vocab-description');
+            if (!select) return;
+
+            try {
+                const res = await fetch('/vocab/index.json');
+                if (!res.ok) throw new Error('preset index not found');
+                window.presetVocabularyLists = await res.json();
+
+                select.innerHTML = window.presetVocabularyLists
+                    .map((item) => `<option value="${item.id}">${item.label} (${item.count} 個)</option>`)
+                    .join('');
+
+                const first = window.presetVocabularyLists[0];
+                if (description && first) description.innerText = first.description;
+
+                select.addEventListener('change', () => {
+                    const selected = window.presetVocabularyLists.find((item) => item.id === select.value);
+                    if (description && selected) description.innerText = selected.description;
+                });
+            } catch (error) {
+                console.error(error);
+                select.innerHTML = '<option value="">目前沒有可用的內建字庫</option>';
+            }
+        }
+
+        window.loadPresetVocabulary = async function() {
+            const select = document.getElementById('preset-vocab-select');
+            const selected = window.presetVocabularyLists.find((item) => item.id === select?.value);
+            if (!selected) {
+                window.showToast('⚠️ 請先選擇字庫', true);
+                return;
+            }
+
+            try {
+                const res = await fetch(selected.path);
+                if (!res.ok) throw new Error(`Failed to load ${selected.path}`);
+                const words = await res.json();
+                applyWordList(words, `✅ 已載入「${selected.label}」${words.length} 個單字`);
+            } catch (error) {
+                console.error(error);
+                window.showToast('⚠️ 載入內建字庫失敗', true);
+            }
+        };
 
         function setupCloudSync(uid) {
             if (!db) return;
@@ -487,29 +613,12 @@
             if (!file) return;
             const reader = new FileReader();
             reader.onload = evt => {
-                const content = evt.target.result;
-                const lines = content.split('\n');
-                const newDB = [];
-                for (let line of lines) {
-                    line = line.trim();
-                    if (!line || (line.includes("詞性") && line.includes("單字"))) continue;
-                    const sep = line.includes('\t') ? '\t' : ',';
-                    const parts = line.split(sep).map(s => s.trim());
-                    if (parts.length >= 6) {
-                        const category = parts.pop();
-                        const article = parts.shift().toLowerCase();
-                        const word = parts.shift();
-                        const plural = parts.shift();
-                        const meaning = parts.shift();
-                        const example = parts.join(sep);
-                        newDB.push({ article, word, plural, meaning, example, category, errors: 0, starred: false });
-                    }
-                }
-                if (newDB.length > 0) {
-                    window.wordDatabase = newDB;
-                    window.saveDatabaseToCloud();
-                    window.showToast(`✅ 成功匯入 ${newDB.length} 個單字`);
-                    refreshUI();
+                try {
+                    const newDB = parseWordListContent(evt.target.result);
+                    applyWordList(newDB, `✅ 成功匯入 ${newDB.length} 個單字`);
+                } catch (error) {
+                    console.error(error);
+                    window.showToast('⚠️ 匯入失敗，請檢查檔案格式', true);
                 }
                 e.target.value = "";
             };
@@ -748,7 +857,8 @@
             window.wordDatabase = [...defaultDatabase];
             window.userStats = { streak: 0, lastDate: null, history: {}, voices: { rate: 0.9, pitch: 1.0, selectedURI: null } };
             await window.saveDatabaseToCloud();
-            localStorage.clear();
+            localStorage.removeItem('deutschLernkartenDB_vPro');
+            localStorage.removeItem('deutschLernkartenStats');
             location.reload();
         };
 

@@ -1,71 +1,33 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LessonShell from '../components/LessonShell.astro';
 import IrregularVerbTrainer from '../components/IrregularVerbTrainer.jsx';
 
 export const frontmatter = {
   title: "Lektion 3: 不規則動詞特訓",
   description: "練習德語強變化與不規則動詞的三態、haben/sein、情態動詞與錯題重練。",
   category: "德語文法特訓",
-  tags: ["A1-C1", "不規則動詞", "Perfekt", "Modalverben", "語音"]
+  tags: ["A1-C1", "不規則動詞", "Perfekt", "Modalverben", "語音"],
+  order: 3,
+  level: "A1-C1",
+  estimatedMinutes: 20
 };
 ---
 
-<Layout title={frontmatter.title}>
-  <main class="min-h-screen bg-[#FDFBF7] text-slate-800 flex flex-col">
-    <div class="w-full px-4 pt-8 pb-2">
-      <div class="max-w-4xl mx-auto">
-        <a
-          href="/"
-          class="text-amber-600 font-black mb-6 inline-flex items-center gap-2 hover:bg-amber-50 px-4 py-2 rounded-xl transition-all"
-        >
-          ← 返回課程總覽
-        </a>
+<LessonShell frontmatter={frontmatter}>
+  <div class="max-w-6xl mx-auto">
+    <IrregularVerbTrainer client:only="react" />
+  </div>
 
-        <h1 class="text-3xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight leading-tight">
-          {frontmatter.title}
-        </h1>
-
-        <div class="flex flex-wrap gap-2 mb-6">
-          {frontmatter.tags.map((tag) => (
-            <span class="px-3 py-1 bg-amber-50 text-amber-600 text-xs font-black rounded-full border border-amber-100 shadow-sm">
-              #{tag}
-            </span>
-          ))}
-        </div>
-
-        <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base">
-          {frontmatter.description}
-        </p>
-      </div>
-    </div>
-
-    <div class="w-full flex-grow relative z-10 px-4 pb-10">
-      <div class="max-w-6xl mx-auto">
-        <IrregularVerbTrainer client:only="react" />
-      </div>
-    </div>
-
-    <div class="w-full px-4 pb-12 mt-2 mb-8 relative z-0">
-      <div class="max-w-4xl mx-auto bg-amber-50 p-6 rounded-[2rem] border border-amber-100 shadow-sm">
-        <h3 class="text-lg font-black text-amber-800 mb-4 flex items-center gap-2">
-          <span class="text-2xl">💡</span> 學習小撇步
-        </h3>
-
-        <ul class="space-y-4 text-sm text-amber-700 font-bold">
-          <li class="flex items-start gap-2">
-            <span class="text-amber-400 mt-0.5">•</span>
-            <span>背不規則動詞時，建議一起記 Infinitiv、Präteritum、Perfekt 三態，而不是分開記。</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-amber-400 mt-0.5">•</span>
-            <span>同時注意 Perfekt 用 haben 還是 sein，這是實際使用時最容易錯的地方之一。</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-amber-400 mt-0.5">•</span>
-            <span>先把高頻動詞練熟，再慢慢擴充到較少見的變化，記憶會穩很多。</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </main>
-</Layout>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-amber-400 mt-0.5">•</span>
+    <span>背不規則動詞時，建議一起記 Infinitiv、Präteritum、Perfekt 三態，而不是分開記。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-amber-400 mt-0.5">•</span>
+    <span>同時注意 Perfekt 用 haben 還是 sein，這是實際使用時最容易錯的地方之一。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-amber-400 mt-0.5">•</span>
+    <span>先把高頻動詞練熟，再慢慢擴充到較少見的變化，記憶會穩很多。</span>
+  </li>
+</LessonShell>
