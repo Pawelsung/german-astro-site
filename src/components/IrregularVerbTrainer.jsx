@@ -384,7 +384,7 @@ function FixedCardFrame({
             {topRight && <div className="absolute right-3 top-3 z-10 flex gap-2">{topRight}</div>}
 
             <div
-              className={`min-h-[520px] rounded-[28px] border ${toneStyles.inner} flex flex-col justify-center px-6 py-12 md:px-10`}
+              className={`min-h-[390px] sm:min-h-[460px] md:min-h-[520px] rounded-[28px] border ${toneStyles.inner} flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 overflow-hidden`}
             >
               {children}
             </div>
@@ -392,7 +392,7 @@ function FixedCardFrame({
             <div className="mt-4 flex justify-between gap-3 md:hidden">
               <button
                 onClick={onPrev}
-                className="px-5 py-3 rounded-2xl bg-white border border-slate-200 font-black"
+                className="flex-1 px-3 py-3 rounded-2xl bg-white border border-slate-200 font-black text-sm"
                 type="button"
               >
                 ← 上一個
@@ -400,7 +400,7 @@ function FixedCardFrame({
 
               <button
                 onClick={onNext}
-                className={`px-5 py-3 rounded-2xl font-black ${toneStyles.next}`}
+                className={`flex-1 px-3 py-3 rounded-2xl font-black text-sm ${toneStyles.next}`}
                 type="button"
               >
                 下一個 →
@@ -455,7 +455,7 @@ function FlashcardLikeMode({
     >
       <div onClick={onFlip} className="cursor-pointer w-full max-w-3xl mx-auto">
         {!showBack ? (
-          <div className="min-h-[420px] flex flex-col justify-center items-center text-center">
+          <div className="min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center items-center text-center min-w-0">
             {frontBadge && (
               <div className="mb-3 flex justify-center">
                 <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
@@ -465,7 +465,7 @@ function FlashcardLikeMode({
             )}
 
             <div className="flex items-center justify-center gap-3 flex-wrap mb-4">
-              <div className="text-6xl md:text-7xl font-black leading-none">
+              <div className="text-[clamp(2.5rem,15vw,4.5rem)] font-black leading-none break-words max-w-full">
                 {currentVerb.infinitive}
               </div>
               <AudioPill
@@ -477,7 +477,7 @@ function FlashcardLikeMode({
               />
             </div>
 
-            <div className="text-xl md:text-2xl text-slate-500 font-bold mb-2">
+            <div className="text-base sm:text-xl md:text-2xl text-slate-500 font-bold mb-2 break-words">
               {currentVerb.meaningZh}
             </div>
 
@@ -486,12 +486,12 @@ function FlashcardLikeMode({
             </div>
           </div>
         ) : (
-          <div className="min-h-[420px] flex flex-col justify-center">
+          <div className="min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center">
             <div className="grid sm:grid-cols-2 gap-4 text-left auto-rows-fr">
               <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
                 <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>
                 <div className="flex items-center justify-between gap-3">
-                  <div className="text-2xl font-black">{currentVerb.infinitive}</div>
+                  <div className="text-xl sm:text-2xl font-black break-words min-w-0">{currentVerb.infinitive}</div>
                   <AudioPill
                     onClick={(e) => {
                       e.stopPropagation();
@@ -504,7 +504,7 @@ function FlashcardLikeMode({
 
               <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
                 <div className="text-xs font-black text-slate-400 mb-2">3. Person</div>
-                <div className="text-2xl font-black">
+                <div className="text-xl sm:text-2xl font-black break-words">
                   {highlightChangedVowel(currentVerb.infinitive, currentVerb.present3rd)}
                 </div>
               </div>
@@ -512,7 +512,7 @@ function FlashcardLikeMode({
               <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
                 <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
                 <div className="flex items-center justify-between gap-3">
-                  <div className="text-2xl font-black">
+                  <div className="text-xl sm:text-2xl font-black break-words min-w-0">
                     {highlightChangedVowel(currentVerb.infinitive, currentVerb.praeteritum)}
                   </div>
                   <AudioPill
@@ -528,7 +528,7 @@ function FlashcardLikeMode({
               <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
                 <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
                 <div className="flex items-center justify-between gap-3">
-                  <div className="text-2xl font-black">
+                  <div className="text-xl sm:text-2xl font-black break-words min-w-0">
                     {renderPerfektWithAuxHighlight(currentVerb.perfekt)}
                   </div>
                   <AudioPill
@@ -546,7 +546,7 @@ function FlashcardLikeMode({
               <div className="w-full">
                 <div className="text-xs font-black text-slate-400 mb-2">例句</div>
                 <div className="flex items-start justify-between gap-3">
-                  <div className="text-lg font-bold flex-1">{currentVerb.example}</div>
+                  <div className="text-base sm:text-lg font-bold flex-1 break-words min-w-0">{currentVerb.example}</div>
                   <AudioPill
                     onClick={(e) => {
                       e.stopPropagation();
@@ -1341,14 +1341,14 @@ export default function IrregularVerbTrainer() {
       {currentVerb && mode === MODES.TYPING && (
         <div className="space-y-4">
           <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
-            <div className="w-full max-w-2xl mx-auto min-h-[420px] flex flex-col justify-center">
+            <div className="w-full max-w-2xl mx-auto min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center min-w-0">
               <div className="text-center mb-8">
                 <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                  <div className="text-5xl font-black">{currentVerb.infinitive}</div>
+                  <div className="text-[clamp(2rem,12vw,3rem)] font-black break-words max-w-full">{currentVerb.infinitive}</div>
                   <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
                 </div>
 
-                <div className="text-xl font-bold text-slate-500">{currentVerb.meaningZh}</div>
+                <div className="text-base sm:text-xl font-bold text-slate-500 break-words">{currentVerb.meaningZh}</div>
               </div>
 
               <form onSubmit={handleTypingSubmit} className="space-y-4">
@@ -1399,13 +1399,13 @@ export default function IrregularVerbTrainer() {
       {currentVerb && mode === MODES.HABEN_SEIN && (
         <div className="space-y-4">
           <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
-            <div className="w-full max-w-2xl mx-auto min-h-[420px] flex flex-col justify-center text-center">
+            <div className="w-full max-w-2xl mx-auto min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center text-center min-w-0">
               <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                <div className="text-5xl font-black">{currentVerb.infinitive}</div>
+                <div className="text-[clamp(2rem,12vw,3rem)] font-black break-words max-w-full">{currentVerb.infinitive}</div>
                 <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
               </div>
 
-              <div className="text-xl font-bold text-slate-500 mb-6">{currentVerb.meaningZh}</div>
+              <div className="text-base sm:text-xl font-bold text-slate-500 mb-6 break-words">{currentVerb.meaningZh}</div>
 
               <div className="text-sm font-black text-slate-400 mb-2">
                 請選擇 Perfekt 要用的 Hilfsverb
@@ -1421,10 +1421,10 @@ export default function IrregularVerbTrainer() {
                 />
               </div>
 
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center gap-3 sm:gap-4">
                 <button
                   onClick={() => handleAuxAnswer('hat')}
-                  className={`px-8 py-4 rounded-2xl font-black text-xl border ${
+                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border ${
                     auxAnswer === 'hat'
                       ? 'bg-amber-600 text-white border-amber-600'
                       : 'bg-white text-slate-700 border-slate-200'
@@ -1435,7 +1435,7 @@ export default function IrregularVerbTrainer() {
                 </button>
                 <button
                   onClick={() => handleAuxAnswer('ist')}
-                  className={`px-8 py-4 rounded-2xl font-black text-xl border ${
+                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border ${
                     auxAnswer === 'ist'
                       ? 'bg-amber-600 text-white border-amber-600'
                       : 'bg-white text-slate-700 border-slate-200'
@@ -1465,17 +1465,17 @@ export default function IrregularVerbTrainer() {
       {currentVerb && mode === MODES.MODAL && (
         <div className="space-y-4">
           <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
-            <div className="w-full max-w-3xl mx-auto min-h-[420px] flex flex-col justify-center text-center">
+            <div className="w-full max-w-3xl mx-auto min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center text-center min-w-0">
               <div className="mb-3 px-3 py-1 rounded-full inline-block self-center bg-indigo-50 text-indigo-600 text-sm font-black border border-indigo-200">
                 情態動詞專練
               </div>
 
               <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                <div className="text-5xl font-black">{currentVerb.infinitive}</div>
+                <div className="text-[clamp(2rem,12vw,3rem)] font-black break-words max-w-full">{currentVerb.infinitive}</div>
                 <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
               </div>
 
-              <div className="text-xl font-bold text-slate-500 mb-2">{currentVerb.meaningZh}</div>
+              <div className="text-base sm:text-xl font-bold text-slate-500 mb-2 break-words">{currentVerb.meaningZh}</div>
               <div className="text-sm text-slate-400 font-black mb-8">請選第三人稱現在式</div>
 
               <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto w-full">
@@ -1483,7 +1483,7 @@ export default function IrregularVerbTrainer() {
                   <button
                     key={option}
                     onClick={() => handleModalSubmit(option)}
-                    className={`px-6 py-4 rounded-2xl font-black text-xl border ${
+                    className={`px-4 sm:px-6 py-4 rounded-2xl font-black text-lg sm:text-xl border break-words ${
                       modalAnswer === option
                         ? 'bg-indigo-600 text-white border-indigo-600'
                         : 'bg-white text-slate-700 border-slate-200'

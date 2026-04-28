@@ -87,9 +87,9 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto min-h-[380px] mb-4">
+    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto min-h-[320px] sm:min-h-[380px] mb-4">
       <div 
-        className="relative w-full min-h-[400px] cursor-pointer group perspective-1000 touch-pan-y"
+        className="relative w-full min-h-[340px] sm:min-h-[400px] cursor-pointer group perspective-1000 touch-pan-y"
         onClick={(e) => {
             if (e.target.closest('button')) return;
             setIsFlipped(!isFlipped)
@@ -109,8 +109,8 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
             <div className="text-amber-400 mb-4 opacity-50 md:group-hover:opacity-100 transition-opacity">
               <RotateCw size={28} />
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-3 text-center tracking-tight leading-tight px-4">{card.verb}</h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-amber-700 font-medium mb-6">{card.verbTrans}</p>
+            <h2 className="text-[clamp(2rem,12vw,3rem)] md:text-5xl font-extrabold text-gray-800 mb-3 text-center tracking-tight leading-tight px-2 break-words max-w-full">{card.verb}</h2>
+            <p className="text-base sm:text-xl md:text-2xl text-amber-700 font-medium mb-6 break-words text-center">{card.verbTrans}</p>
             <button 
               onClick={(e) => { e.stopPropagation(); speak(card.verb); }}
               className="p-4 sm:p-5 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 active:scale-95 transition-all mb-4 shadow-sm"
@@ -123,21 +123,21 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
           </div>
 
           <div className="absolute w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg border border-amber-200 p-4 sm:p-5 flex flex-col items-center justify-between [transform:rotateY(180deg)] backface-hidden overflow-hidden">
-            <div className="w-full text-center flex-1 overflow-y-auto hide-scrollbar pb-2">
+            <div className="w-full text-center flex-1 overflow-y-auto hide-scrollbar pb-2 min-w-0">
               <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2 mt-2">
-                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">{card.verb}</h2>
-                 <span className="text-xl sm:text-2xl md:text-3xl font-extrabold text-amber-600">+ {card.prep}</span>
+                 <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800 break-words">{card.verb}</h2>
+                 <span className="text-lg sm:text-2xl md:text-3xl font-extrabold text-amber-600">+ {card.prep}</span>
               </div>
               <div className="inline-block px-3 py-1 rounded-full bg-amber-200 text-amber-900 text-[10px] sm:text-xs font-bold mb-3 shadow-sm">
                 + {card.case === 'A' ? 'Akkusativ' : 'Dativ'}
               </div>
               <div className="w-full bg-white/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-100/50 mb-2.5 text-left">
                 <p className="text-amber-600/80 uppercase text-[9px] sm:text-[10px] font-bold tracking-wider mb-1">Perfekt Form</p>
-                <p className="text-gray-800 font-medium text-sm sm:text-base">{card.forms}</p>
+                <p className="text-gray-800 font-medium text-sm sm:text-base break-words">{card.forms}</p>
               </div>
               <div className="w-full bg-white/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-100/50 text-left relative">
                 <div className="flex justify-between items-start mb-1 gap-2">
-                   <p className="text-gray-800 text-sm sm:text-base leading-snug font-medium">{card.example}</p>
+                   <p className="text-gray-800 text-sm sm:text-base leading-snug font-medium break-words min-w-0">{card.example}</p>
                    <button 
                     onClick={(e) => { e.stopPropagation(); speak(card.example); }}
                     className="p-1.5 sm:p-2 rounded-xl text-amber-500 bg-amber-50 hover:bg-amber-100 active:scale-95 transition-colors shrink-0"
@@ -296,17 +296,17 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
         ))}
       </div>
 
-      <div className="text-center mb-6 min-h-[120px] flex flex-col items-center justify-center px-1">
+      <div className="text-center mb-6 min-h-[110px] sm:min-h-[120px] flex flex-col items-center justify-center px-1 min-w-0">
         {mode === 'word' && (
           <>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-2">{question.verb}</h2>
-            <p className="text-base sm:text-lg text-amber-700 font-medium">{question.verbTrans}</p>
+            <h2 className="text-[clamp(1.9rem,11vw,2.75rem)] sm:text-4xl font-extrabold text-gray-800 mb-2 break-words max-w-full">{question.verb}</h2>
+            <p className="text-base sm:text-lg text-amber-700 font-medium break-words">{question.verbTrans}</p>
             {showHint && <p className="mt-4 text-xs sm:text-sm text-gray-500 font-medium bg-gray-50 p-3 rounded-xl border border-gray-100">提示：{question.example.replace(new RegExp(`\\b${question.prep}\\b`, 'i'), '___')}</p>}
           </>
         )}
         {mode === 'sentence' && (
           <>
-            <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">
               {question.example.split(new RegExp(`\\b${question.prep}\\b`, 'i')).map((part, i, arr) => (
                 <React.Fragment key={i}>
                   {part}
@@ -319,7 +319,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
         )}
         {mode === 'case' && (
           <>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
+            <h2 className="text-[clamp(1.5rem,8vw,2.5rem)] md:text-4xl font-extrabold text-gray-800 mb-3 break-words">
               {question.verb} <span className="text-amber-600">+ {question.prep}</span>
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 font-medium bg-gray-50 px-4 py-2 rounded-full">後面應該接什麼格位？</p>
