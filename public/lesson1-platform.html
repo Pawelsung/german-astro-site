@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base target="_top" />
-    <title>德語磚家 Wort-Meister | 語音修復版</title>
+    <title>德語單字訓練 Wort-Meister</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -72,19 +72,22 @@
                     ←
                 </a>
                 <h1 class="text-2xl font-black text-slate-800 tracking-tight flex items-center gap-2">
-                    <span class="text-2xl">🇩🇪</span> 德語磚家
+                    <span class="text-2xl">🇩🇪</span> 德語單字訓練
                 </h1>
                 <div id="cloud-status-icon" class="text-slate-300" title="雲端同步狀態">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" /></svg>
                 </div>
             </div>
 
-            <div class="flex bg-slate-100/80 p-1 rounded-2xl w-full sm:w-auto overflow-x-auto no-scrollbar shadow-inner border border-slate-200/50">
-                <button id="btn-mode-learn" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('learn')">📖 閃卡</button>
-                <button id="btn-mode-quiz" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('quiz')">🧠 詞性</button>
-                <button id="btn-mode-spell" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('spell')">✍️ 聽寫</button>
-                <button id="btn-mode-list" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('list')">🔍 字典</button>
-                <button id="btn-mode-db" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('db')">⚙️ 儀表板</button>
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <div class="flex bg-slate-100/80 p-1 rounded-2xl flex-1 sm:flex-none overflow-x-auto no-scrollbar shadow-inner border border-slate-200/50">
+                    <button id="btn-mode-learn" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('learn')">📖 閃卡</button>
+                    <button id="btn-mode-quiz" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('quiz')">🏷️ 冠詞</button>
+                    <button id="btn-mode-spell" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('spell')">✍️ 聽寫</button>
+                    <button id="btn-mode-pos" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('pos')">🧩 詞性</button>
+                    <button id="btn-mode-list" class="flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all" onclick="window.setMode('list')">🔍 字典</button>
+                </div>
+                <button id="btn-mode-db" onclick="window.setMode('db')" class="w-10 h-10 shrink-0 rounded-2xl bg-white border border-slate-200 text-slate-500 font-bold shadow-sm hover:bg-slate-50" aria-label="設定">⚙️</button>
             </div>
         </div>
     </header>
@@ -163,7 +166,7 @@
             </div>
         </div>
 
-        <!-- Quiz View -->
+        <!-- Article Quiz View -->
         <div id="quiz-view" class="w-full hidden flex-col items-center mb-6">
             <div class="bg-white rounded-[2rem] shadow-xl w-full p-10 text-center mb-8 border border-slate-100 relative">
                 <button onclick="window.playAudio(event, window.filteredWords[window.currentIndex]?.word)" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-slate-50 rounded-full">🔊</button>
@@ -176,6 +179,24 @@
                 <button onclick="window.submitQuiz('das')" class="py-6 rounded-3xl bg-white border-2 border-slate-100 font-black text-3xl text-emerald-600">das</button>
             </div>
             <div id="quiz-feedback-container" class="w-full h-0 overflow-hidden opacity-0 mt-0"><div id="quiz-feedback" class="h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl"></div></div>
+        </div>
+
+        <!-- Part of Speech View -->
+        <div id="pos-view" class="w-full hidden flex-col items-center mb-6">
+            <div class="bg-white rounded-[2rem] shadow-xl w-full p-8 md:p-10 text-center mb-8 border border-slate-100 relative">
+                <button onclick="window.playAudio(event, window.filteredWords[window.currentIndex]?.word)" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-slate-50 rounded-full">🔊</button>
+                <span id="pos-word" class="text-5xl font-black text-slate-800 mb-4 block"></span>
+                <span id="pos-meaning" class="text-xl font-bold text-slate-400 block"></span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 w-full" id="pos-btn-container">
+                <button onclick="window.submitPos('noun')" class="py-5 rounded-3xl bg-white border-2 border-slate-100 font-black text-lg text-slate-700">名詞</button>
+                <button onclick="window.submitPos('verb')" class="py-5 rounded-3xl bg-white border-2 border-slate-100 font-black text-lg text-slate-700">動詞</button>
+                <button onclick="window.submitPos('adjective')" class="py-5 rounded-3xl bg-white border-2 border-slate-100 font-black text-lg text-slate-700">形容詞</button>
+                <button onclick="window.submitPos('adverb/connector')" class="py-5 rounded-3xl bg-white border-2 border-slate-100 font-black text-lg text-slate-700">副詞/連接詞</button>
+                <button onclick="window.submitPos('phrase')" class="py-5 rounded-3xl bg-white border-2 border-slate-100 font-black text-lg text-slate-700">片語</button>
+                <button onclick="window.submitPos('other')" class="py-5 rounded-3xl bg-white border-2 border-slate-100 font-black text-lg text-slate-700">其他</button>
+            </div>
+            <div id="pos-feedback-container" class="w-full h-0 overflow-hidden opacity-0 mt-0"><div id="pos-feedback" class="h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl"></div></div>
         </div>
 
         <!-- Spell View -->
@@ -319,11 +340,35 @@
         window.voices = [];
         window.user = null;
         window.presetVocabularyLists = [];
+        window.preferredPresetVocabularyId = 'schritte-b1-1';
+
+        const posLabels = {
+            noun: '名詞',
+            verb: '動詞',
+            adjective: '形容詞',
+            'adverb/connector': '副詞/連接詞',
+            phrase: '片語',
+            other: '其他'
+        };
+
+        function getPosLabel(pos) {
+            return posLabels[pos] || '其他';
+        }
+
+        function inferPos(item) {
+            const raw = String(item.pos || '').trim().toLowerCase();
+            if (raw) return raw;
+            return ['der', 'die', 'das'].includes(String(item.article || '').trim().toLowerCase()) ? 'noun' : 'other';
+        }
+
+        function isNoun(item) {
+            return item.pos === 'noun' && ['der', 'die', 'das'].includes(item.article);
+        }
 
         async function init() {
             setupVoices();
             setupGestures();
-            setupPresetVocabulary();
+            await setupPresetVocabulary();
             loadLocalData();
 
             if (auth) {
@@ -356,27 +401,62 @@
         function loadLocalData() {
             const d = localStorage.getItem('deutschLernkartenDB_vPro');
             const s = localStorage.getItem('deutschLernkartenStats');
-            window.wordDatabase = d ? JSON.parse(d) : [...defaultDatabase];
+            window.wordDatabase = normalizeWordList(d ? JSON.parse(d) : defaultDatabase);
             if (s) window.userStats = JSON.parse(s);
             refreshUI();
+            autoUpgradeDefaultVocabulary();
+        }
+
+        function isLegacyDefaultDatabase(words) {
+            if (!Array.isArray(words) || words.length !== defaultDatabase.length) return false;
+            const defaultKeys = new Set(defaultDatabase.map((item) => `${item.article}:${item.word}`));
+            return words.every((item) => defaultKeys.has(`${item.article}:${item.word}`));
+        }
+
+        async function autoUpgradeDefaultVocabulary() {
+            if (!isLegacyDefaultDatabase(window.wordDatabase)) return;
+            const preset = window.presetVocabularyLists.find((item) => item.id === window.preferredPresetVocabularyId);
+            if (!preset) return;
+
+            try {
+                const res = await fetch(preset.path);
+                if (!res.ok) throw new Error(`Failed to load ${preset.path}`);
+                const words = normalizeWordList(await res.json());
+                if (words.length === 0) return;
+                window.wordDatabase = words;
+                localStorage.setItem('deutschLernkartenDB_vPro', JSON.stringify(window.wordDatabase));
+                refreshUI();
+                window.showToast(`✅ 已自動更新為「${preset.label}」${words.length} 個單字`);
+                window.saveDatabaseToCloud();
+            } catch (error) {
+                console.error(error);
+            }
         }
 
         function normalizeWordList(items) {
             if (!Array.isArray(items)) return [];
 
             return items
-                .map((item) => ({
-                    article: String(item.article || '').trim().toLowerCase(),
-                    word: String(item.word || '').trim(),
-                    plural: String(item.plural || '-').trim(),
-                    meaning: String(item.meaning || '').trim(),
-                    example: String(item.example || '').trim(),
-                    category: String(item.category || '未分類').trim(),
-                    errors: Number(item.errors || 0),
-                    starred: Boolean(item.starred)
-                }))
+                .map((item) => {
+                    const article = String(item.article || '').trim().toLowerCase();
+                    const pos = inferPos(item);
+                    return {
+                        id: String(item.id || '').trim(),
+                        article,
+                        word: String(item.word || '').trim(),
+                        plural: String(item.plural || '-').trim() || '-',
+                        meaning: String(item.meaning || item.translationZh || '').trim(),
+                        example: String(item.example || item.exampleDe || '').trim(),
+                        category: String(item.category || item.lessonTag || '未分類').trim(),
+                        pos,
+                        lesson: item.lesson || null,
+                        lessonTitle: item.lessonTitle || '',
+                        source: item.source || '',
+                        errors: Number(item.errors || 0),
+                        starred: Boolean(item.starred)
+                    };
+                })
                 .filter((item) =>
-                    ['der', 'die', 'das'].includes(item.article) &&
                     item.word &&
                     item.meaning
                 );
@@ -388,6 +468,23 @@
 
             if (trimmed.startsWith('[')) {
                 return normalizeWordList(JSON.parse(trimmed));
+            }
+
+            if (trimmed.startsWith('{')) {
+                const parsed = JSON.parse(trimmed);
+                if (Array.isArray(parsed.lessons)) {
+                    return normalizeWordList(parsed.lessons.flatMap((lesson) =>
+                        (lesson.vocabulary || []).map((item) => ({
+                            ...item,
+                            meaning: item.meaning || item.translationZh,
+                            example: item.example || item.exampleDe,
+                            category: item.category || lesson.lessonTag || `Lektion ${lesson.lesson || ''}｜${lesson.title || ''}`.trim(),
+                            lesson: lesson.lesson || item.lesson || null,
+                            lessonTitle: lesson.title || item.lessonTitle || ''
+                        }))
+                    ));
+                }
+                return normalizeWordList(parsed.vocabulary || parsed.words || []);
             }
 
             const lines = trimmed.split('\n');
@@ -438,7 +535,9 @@
                     .map((item) => `<option value="${item.id}">${item.label} (${item.count} 個)</option>`)
                     .join('');
 
-                const first = window.presetVocabularyLists[0];
+                const preferred = window.presetVocabularyLists.find((item) => item.id === window.preferredPresetVocabularyId);
+                const first = preferred || window.presetVocabularyLists[0];
+                if (first) select.value = first.id;
                 if (description && first) description.innerText = first.description;
 
                 select.addEventListener('change', () => {
@@ -463,7 +562,8 @@
                 const res = await fetch(selected.path);
                 if (!res.ok) throw new Error(`Failed to load ${selected.path}`);
                 const words = await res.json();
-                applyWordList(words, `✅ 已載入「${selected.label}」${words.length} 個單字`);
+                const normalized = normalizeWordList(words);
+                applyWordList(normalized, `✅ 已載入「${selected.label}」${normalized.length} 個單字`);
             } catch (error) {
                 console.error(error);
                 window.showToast('⚠️ 載入內建字庫失敗', true);
@@ -477,11 +577,12 @@
                 if (snap.exists()) {
                     const data = snap.data();
                     if (data.wordDatabase?.length > 0) {
-                        window.wordDatabase = data.wordDatabase;
+                        window.wordDatabase = normalizeWordList(data.wordDatabase);
                         window.userStats = data.userStats || window.userStats;
                         localStorage.setItem('deutschLernkartenDB_vPro', JSON.stringify(window.wordDatabase));
                         localStorage.setItem('deutschLernkartenStats', JSON.stringify(window.userStats));
                         refreshUI();
+                        autoUpgradeDefaultVocabulary();
                     }
                 } else {
                     window.saveDatabaseToCloud();
@@ -509,12 +610,18 @@
 
         window.setMode = function(mode) {
             window.currentMode = mode;
-            ['learn','quiz','spell','list','db'].forEach(m => {
+            ['learn','quiz','spell','pos','list','db'].forEach(m => {
                 const btn = document.getElementById(`btn-mode-${m}`);
                 if (btn) {
-                    btn.className = m === mode
-                        ? "flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold bg-white text-indigo-600 shadow-sm"
-                        : "flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-200/50";
+                    if (m === 'db') {
+                        btn.className = mode === 'db'
+                            ? "w-10 h-10 shrink-0 rounded-2xl bg-indigo-600 border border-indigo-600 text-white font-bold shadow-sm"
+                            : "w-10 h-10 shrink-0 rounded-2xl bg-white border border-slate-200 text-slate-500 font-bold shadow-sm hover:bg-slate-50";
+                    } else {
+                        btn.className = m === mode
+                            ? "flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold bg-white text-indigo-600 shadow-sm"
+                            : "flex-1 sm:flex-none px-3 py-2 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-200/50";
+                    }
                 }
                 const view = document.getElementById(`${m}-view`);
                 if (view) view.classList.toggle('hidden', m !== mode);
@@ -536,10 +643,15 @@
         }
 
         function setupCategories() {
-            let cats = [...new Set(window.wordDatabase.map(w => w.category))];
+            let cats = [];
             if (window.wordDatabase.some(w => (w.errors || 0) > 0)) cats.unshift("⚠️ 錯題複議");
             if (window.wordDatabase.some(w => w.starred)) cats.unshift("⭐ 我的收藏");
-            if (cats.length > 1) cats.unshift("🗂️ 全部單字");
+            cats.push("🗂️ 全部單字");
+            const posCats = [...new Set(window.wordDatabase.map(w => w.pos))]
+                .filter(Boolean)
+                .map(pos => `詞性｜${getPosLabel(pos)}`);
+            cats.push(...posCats);
+            cats.push(...[...new Set(window.wordDatabase.map(w => w.category))]);
             window.categories = cats;
             if (!window.currentCategory || !cats.includes(window.currentCategory)) window.currentCategory = cats[0] || '';
             window.setCategory(window.currentCategory, false);
@@ -550,16 +662,21 @@
             const textEl = document.getElementById('current-category-text');
             if (textEl) textEl.innerText = cat || '無單字';
 
+            let baseWords;
             if (cat === "🗂️ 全部單字") {
-                window.filteredWords = [...window.wordDatabase];
+                baseWords = [...window.wordDatabase];
             } else if (cat === "⚠️ 錯題複議") {
-                window.filteredWords = window.wordDatabase.filter(w => (w.errors || 0) > 0).sort((a, b) => b.errors - a.errors);
+                baseWords = window.wordDatabase.filter(w => (w.errors || 0) > 0).sort((a, b) => b.errors - a.errors);
             } else if (cat === "⭐ 我的收藏") {
-                window.filteredWords = window.wordDatabase.filter(w => w.starred);
+                baseWords = window.wordDatabase.filter(w => w.starred);
+            } else if (cat.startsWith("詞性｜")) {
+                const label = cat.replace("詞性｜", "");
+                baseWords = window.wordDatabase.filter(w => getPosLabel(w.pos) === label);
             } else {
-                window.filteredWords = window.wordDatabase.filter(w => w.category === cat);
+                baseWords = window.wordDatabase.filter(w => w.category === cat);
             }
 
+            window.filteredWords = baseWords.filter(w => window.currentMode === 'quiz' ? isNoun(w) : true);
             if (!cat.includes("⚠️") && !cat.includes("⭐")) {
                 window.filteredWords.sort(() => Math.random() - 0.5);
             }
@@ -580,7 +697,13 @@
 
             if (count === 0) {
                 if (window.currentMode === 'learn') {
-                    document.getElementById('word-main').innerText = "📭";
+                    document.getElementById('word-main').innerText = "沒有可練習的單字";
+                } else if (window.currentMode === 'quiz') {
+                    document.getElementById('quiz-word').innerText = "此範圍沒有名詞";
+                    document.getElementById('quiz-meaning').innerText = "請切換到包含 der / die / das 的分類";
+                } else if (window.currentMode === 'pos') {
+                    document.getElementById('pos-word').innerText = "沒有可練習的單字";
+                    document.getElementById('pos-meaning').innerText = "";
                 }
                 return;
             }
@@ -590,20 +713,26 @@
 
             if (window.currentMode === 'learn') {
                 document.getElementById('card-front').className = `card-front flex flex-col items-center p-8 text-center transition-colors theme-${art}-bg theme-${art}-border`;
-                document.getElementById('word-article-badge').innerText = w.article;
+                document.getElementById('word-article-badge').innerText = isNoun(w) ? w.article : getPosLabel(w.pos);
                 document.getElementById('word-article-badge').className = `px-4 py-1.5 rounded-full text-white font-black text-sm uppercase mb-6 theme-${art}-badge`;
                 document.getElementById('word-main').innerText = w.word;
                 document.getElementById('word-meaning').innerText = w.meaning;
-                document.getElementById('word-plural').innerText = `複數: ${w.plural || '-'}`;
+                document.getElementById('word-plural').innerText = isNoun(w)
+                    ? `複數: ${w.plural || '-'}`
+                    : `詞性: ${getPosLabel(w.pos)}`;
                 document.getElementById('word-example').innerText = w.example || '';
                 updateStarUI();
             } else if (window.currentMode === 'quiz') {
                 document.getElementById('quiz-word').innerText = w.word;
                 document.getElementById('quiz-meaning').innerText = w.meaning;
                 resetFeedback('quiz');
+            } else if (window.currentMode === 'pos') {
+                document.getElementById('pos-word').innerText = w.word;
+                document.getElementById('pos-meaning').innerText = w.meaning;
+                resetFeedback('pos');
             } else if (window.currentMode === 'spell') {
                 document.getElementById('spell-meaning').innerText = w.meaning;
-                document.getElementById('spell-article').innerText = w.article;
+                document.getElementById('spell-article').innerText = isNoun(w) ? w.article : getPosLabel(w.pos);
                 resetFeedback('spell');
             }
         }
@@ -655,6 +784,7 @@
         window.updateVoiceParam = function(p, v) {
             const label = document.getElementById(`${p}-value`);
             if (label) label.innerText = p === 'rate' ? v + 'x' : v;
+            if (!window.userStats.voices) window.userStats.voices = {};
             window.userStats.voices[p] = parseFloat(v);
         };
 
@@ -697,6 +827,7 @@
 
         window.submitQuiz = function(ans) {
             const w = window.filteredWords[window.currentIndex];
+            if (!w) return;
             const correct = w.article.toLowerCase();
             const fb = document.getElementById('quiz-feedback');
             const container = document.getElementById('quiz-feedback-container');
@@ -717,12 +848,35 @@
             }
         };
 
+        window.submitPos = function(ans) {
+            const w = window.filteredWords[window.currentIndex];
+            if (!w) return;
+            const correct = w.pos || 'other';
+            const fb = document.getElementById('pos-feedback');
+            const container = document.getElementById('pos-feedback-container');
+            if (container) container.className = "w-full h-14 opacity-100 mt-6";
+
+            if (ans === correct) {
+                if (w.errors > 0) w.errors--;
+                fb.innerText = "✓ 答對了！";
+                fb.className = "h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl text-emerald-700 bg-emerald-100";
+                window.saveDatabaseToCloud();
+                setTimeout(window.nextWord, 1000);
+            } else {
+                w.errors = (w.errors || 0) + 1;
+                fb.innerText = `✗ 正確是 ${getPosLabel(correct)}`;
+                fb.className = "h-14 w-full rounded-2xl flex items-center justify-center font-black text-xl text-rose-700 bg-rose-100";
+                window.saveDatabaseToCloud();
+                setTimeout(window.nextWord, 2000);
+            }
+        };
+
         window.submitSpell = function() {
             const input = document.getElementById('spell-input');
             const w = window.filteredWords[window.currentIndex];
             const fb = document.getElementById('spell-feedback');
             const container = document.getElementById('spell-feedback-container');
-            if (!input || !input.value.trim()) return;
+            if (!w || !input || !input.value.trim()) return;
             if (container) container.className = "w-full h-14 opacity-100 mb-4";
 
             if (input.value.trim().toLowerCase() === w.word.toLowerCase()) {
@@ -767,7 +921,15 @@
 
         window.openCategoryModal = function() {
             const grid = document.getElementById('category-grid');
-            grid.innerHTML = window.categories.map(c => `<button onclick="window.setCategory('${c}')" class="px-4 py-3 rounded-2xl text-sm font-bold border ${c === window.currentCategory ? 'bg-indigo-600 text-white border-indigo-600 shadow-md' : 'bg-slate-50 border-slate-200 text-slate-600'}">${c}</button>`).join('');
+            grid.innerHTML = '';
+            window.categories.forEach((category) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.innerText = category;
+                button.className = `px-4 py-3 rounded-2xl text-sm font-bold border ${category === window.currentCategory ? 'bg-indigo-600 text-white border-indigo-600 shadow-md' : 'bg-slate-50 border-slate-200 text-slate-600'}`;
+                button.addEventListener('click', () => window.setCategory(category));
+                grid.appendChild(button);
+            });
             const modal = document.getElementById('category-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -801,17 +963,23 @@
             const container = document.getElementById('verb-list-container');
             if (!container) return;
             const search = document.getElementById('list-search')?.value.toLowerCase() || '';
-            const list = window.wordDatabase.filter(w => w.word.toLowerCase().includes(search) || w.meaning.includes(search));
+            const list = window.wordDatabase.filter(w =>
+                w.word.toLowerCase().includes(search) ||
+                w.meaning.includes(search) ||
+                w.category.toLowerCase().includes(search) ||
+                getPosLabel(w.pos).includes(search)
+            );
             container.innerHTML = list.map(w => {
                 const art = ['der','die','das'].includes(w.article) ? w.article : 'das';
+                const badgeText = isNoun(w) ? w.article : getPosLabel(w.pos);
                 return `
                 <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col gap-3 shadow-sm">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-xs theme-${art}-badge text-white">${w.article}</span>
+                            <span class="min-w-10 h-10 px-2 rounded-xl flex items-center justify-center font-black text-xs theme-${art}-badge text-white">${badgeText}</span>
                             <div>
                                 <div class="font-black text-slate-800 text-lg">${w.word}</div>
-                                <div class="text-xs text-slate-400 font-bold">${w.meaning}</div>
+                                <div class="text-xs text-slate-400 font-bold">${w.meaning} · ${w.category}</div>
                             </div>
                         </div>
                         <button onclick="window.playAudio(null, \`${w.word.replace(/'/g, "\\'")}\`)" class="w-10 h-10 bg-slate-50 rounded-full hover:bg-indigo-50 text-indigo-600 font-bold">🔊</button>
@@ -854,7 +1022,7 @@
         };
 
         window.executeRestore = async function() {
-            window.wordDatabase = [...defaultDatabase];
+            window.wordDatabase = normalizeWordList(defaultDatabase);
             window.userStats = { streak: 0, lastDate: null, history: {}, voices: { rate: 0.9, pitch: 1.0, selectedURI: null } };
             await window.saveDatabaseToCloud();
             localStorage.removeItem('deutschLernkartenDB_vPro');

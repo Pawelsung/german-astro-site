@@ -1,0 +1,3597 @@
+{
+  "meta": {
+    "name": "Schritte International Neu 5 B1.1 Lernwortschatz",
+    "formatVersion": "2.0-lesson-structure",
+    "structure": "grouped-by-lesson, not grouped-by-word-type",
+    "fields": [
+      "article",
+      "word",
+      "plural",
+      "translationZh",
+      "exampleDe",
+      "lessonTag"
+    ],
+    "sourceFile": "schritte_b1_1_lernwortschatz_lessons_cleaned.json",
+    "note": "每一課獨立一組 vocabulary；每筆單字維持 article, word, plural, translationZh, exampleDe, lessonTag 的匯入結構。非名詞的 article/plural 留空。",
+    "totalLessons": 7,
+    "totalItems": 352
+  },
+  "lessons": [
+    {
+      "lessonId": "b1_1_l01",
+      "lesson": 1,
+      "title": "Glück im Alltag",
+      "lessonTag": "Lektion 1｜Glück im Alltag",
+      "vocabulary": [
+        {
+          "id": "b1_1_l01_w001",
+          "article": "das",
+          "word": "Erlebnis",
+          "plural": "die Erlebnisse",
+          "translationZh": "經歷；體驗",
+          "exampleDe": "Das Erlebnis hat mich sehr glücklich gemacht.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w002",
+          "article": "die",
+          "word": "Überraschung",
+          "plural": "die Überraschungen",
+          "translationZh": "驚喜；意外",
+          "exampleDe": "Die Überraschung war wirklich schön.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w003",
+          "article": "",
+          "word": "verrückt",
+          "plural": "",
+          "translationZh": "瘋狂的；奇怪的",
+          "exampleDe": "Das klingt verrückt, aber es ist wahr.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w004",
+          "article": "der",
+          "word": "Gewinn",
+          "plural": "die Gewinne",
+          "translationZh": "獎金；收益；獲利",
+          "exampleDe": "Er hat den Gewinn mit seiner Familie geteilt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w005",
+          "article": "die",
+          "word": "Steuer",
+          "plural": "die Steuern",
+          "translationZh": "稅；稅金",
+          "exampleDe": "Auf den Gewinn muss man Steuern zahlen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w006",
+          "article": "",
+          "word": "mutig",
+          "plural": "",
+          "translationZh": "勇敢的",
+          "exampleDe": "Sie war sehr mutig und hat sofort geholfen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w007",
+          "article": "",
+          "word": "weg sein",
+          "plural": "",
+          "translationZh": "不在；消失了",
+          "exampleDe": "Mein Schlüssel ist plötzlich weg gewesen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w008",
+          "article": "die",
+          "word": "Religion",
+          "plural": "die Religionen",
+          "translationZh": "宗教",
+          "exampleDe": "Religion spielt für manche Menschen eine wichtige Rolle.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w009",
+          "article": "die",
+          "word": "Meldung",
+          "plural": "die Meldungen",
+          "translationZh": "消息；報導；通報",
+          "exampleDe": "Die Meldung stand heute Morgen in der Zeitung.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w010",
+          "article": "die",
+          "word": "Überschrift",
+          "plural": "die Überschriften",
+          "translationZh": "標題",
+          "exampleDe": "Die Überschrift macht neugierig.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w011",
+          "article": "",
+          "word": "während",
+          "plural": "",
+          "translationZh": "在……期間；當……的時候",
+          "exampleDe": "Während der Reise habe ich viel erlebt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l01_w012",
+          "article": "",
+          "word": "verschwinden",
+          "plural": "",
+          "translationZh": "消失",
+          "exampleDe": "Der Rentner ist plötzlich verschwunden.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w013",
+          "article": "der",
+          "word": "Rentner",
+          "plural": "die Rentner",
+          "translationZh": "退休男性",
+          "exampleDe": "Der Rentner wohnt allein in der Stadt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w014",
+          "article": "die",
+          "word": "Rentnerin",
+          "plural": "die Rentnerinnen",
+          "translationZh": "退休女性",
+          "exampleDe": "Die Rentnerin reist gern.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w015",
+          "article": "",
+          "word": "mehrere",
+          "plural": "",
+          "translationZh": "好幾個；多個",
+          "exampleDe": "Mehrere Leute haben die Meldung gelesen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w016",
+          "article": "",
+          "word": "vergeblich",
+          "plural": "",
+          "translationZh": "徒勞的；沒有結果的",
+          "exampleDe": "Wir haben vergeblich nach dem Schlüssel gesucht.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w017",
+          "article": "",
+          "word": "einsteigen",
+          "plural": "",
+          "translationZh": "上車；進入",
+          "exampleDe": "Sie ist in den Bus eingestiegen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w018",
+          "article": "",
+          "word": "sich wundern",
+          "plural": "",
+          "translationZh": "感到驚訝；納悶",
+          "exampleDe": "Ich habe mich über die Nachricht gewundert.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w019",
+          "article": "",
+          "word": "zwar",
+          "plural": "",
+          "translationZh": "雖然；的確",
+          "exampleDe": "Er ist zwar müde, aber sehr glücklich.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l01_w020",
+          "article": "der",
+          "word": "Mut",
+          "plural": "(無複數)",
+          "translationZh": "勇氣",
+          "exampleDe": "Man braucht Mut, um etwas Neues zu beginnen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w021",
+          "article": "",
+          "word": "beide",
+          "plural": "",
+          "translationZh": "兩者都",
+          "exampleDe": "Beide Geschichten sind interessant.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w022",
+          "article": "",
+          "word": "tief",
+          "plural": "",
+          "translationZh": "深的；深刻的",
+          "exampleDe": "Er hat tief Luft geholt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w023",
+          "article": "",
+          "word": "verwechseln",
+          "plural": "",
+          "translationZh": "弄錯；混淆",
+          "exampleDe": "Ich habe die beiden Namen verwechselt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w024",
+          "article": "das",
+          "word": "Mittel",
+          "plural": "die Mittel",
+          "translationZh": "方法；手段；藥品",
+          "exampleDe": "Dieses Mittel hilft gegen Schmerzen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w025",
+          "article": "",
+          "word": "einige",
+          "plural": "",
+          "translationZh": "一些；幾個",
+          "exampleDe": "Einige Leute waren sehr überrascht.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w026",
+          "article": "",
+          "word": "sich befinden",
+          "plural": "",
+          "translationZh": "位於；處於",
+          "exampleDe": "Das Hotel befindet sich im Zentrum.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w027",
+          "article": "",
+          "word": "nachdenken",
+          "plural": "",
+          "translationZh": "思考",
+          "exampleDe": "Ich muss über die Entscheidung nachdenken.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w028",
+          "article": "die",
+          "word": "Angabe",
+          "plural": "die Angaben",
+          "translationZh": "資料；說明；陳述",
+          "exampleDe": "Bitte prüfen Sie Ihre Angaben.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w029",
+          "article": "",
+          "word": "retten",
+          "plural": "",
+          "translationZh": "救；拯救",
+          "exampleDe": "Der Mann hat ein Kind gerettet.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w030",
+          "article": "",
+          "word": "ausreichen",
+          "plural": "",
+          "translationZh": "足夠",
+          "exampleDe": "Das Geld hat für die Reise ausgereicht.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w031",
+          "article": "",
+          "word": "folgen",
+          "plural": "",
+          "translationZh": "跟隨；遵從",
+          "exampleDe": "Viele Menschen sind dem Rat gefolgt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w032",
+          "article": "",
+          "word": "zumindest",
+          "plural": "",
+          "translationZh": "至少",
+          "exampleDe": "Zumindest haben wir es versucht.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l01_w033",
+          "article": "",
+          "word": "sozial",
+          "plural": "",
+          "translationZh": "社會的；社交的",
+          "exampleDe": "Soziale Kontakte sind wichtig.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w034",
+          "article": "",
+          "word": "dabei",
+          "plural": "",
+          "translationZh": "在此；同時；其中",
+          "exampleDe": "Ich habe viel gelernt und dabei Spaß gehabt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l01_w035",
+          "article": "",
+          "word": "rufen",
+          "plural": "",
+          "translationZh": "呼叫；喊",
+          "exampleDe": "Sie hat sofort die Polizei gerufen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w036",
+          "article": "",
+          "word": "absperren",
+          "plural": "",
+          "translationZh": "封鎖；鎖住",
+          "exampleDe": "Die Polizei hat die Straße abgesperrt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w037",
+          "article": "",
+          "word": "festnehmen",
+          "plural": "",
+          "translationZh": "逮捕",
+          "exampleDe": "Die Polizei hat den Einbrecher festgenommen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w038",
+          "article": "",
+          "word": "betrunken",
+          "plural": "",
+          "translationZh": "喝醉的",
+          "exampleDe": "Der Mann war betrunken.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w039",
+          "article": "der",
+          "word": "Einbrecher",
+          "plural": "die Einbrecher",
+          "translationZh": "闖空門者；竊賊",
+          "exampleDe": "Der Einbrecher kam durch das Fenster.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w040",
+          "article": "die",
+          "word": "Einbrecherin",
+          "plural": "die Einbrecherinnen",
+          "translationZh": "女竊賊",
+          "exampleDe": "Die Einbrecherin wurde festgenommen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w041",
+          "article": "der",
+          "word": "Brief",
+          "plural": "die Briefe",
+          "translationZh": "信",
+          "exampleDe": "Ich habe einen langen Brief geschrieben.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w042",
+          "article": "",
+          "word": "aufregend",
+          "plural": "",
+          "translationZh": "令人興奮的；刺激的",
+          "exampleDe": "Die Geschichte ist sehr aufregend.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w043",
+          "article": "",
+          "word": "witzig",
+          "plural": "",
+          "translationZh": "有趣的；好笑的",
+          "exampleDe": "Der Film war wirklich witzig.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w044",
+          "article": "der",
+          "word": "Motorroller",
+          "plural": "die Motorroller",
+          "translationZh": "機車；速克達",
+          "exampleDe": "Er fährt mit dem Motorroller zur Arbeit.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w045",
+          "article": "",
+          "word": "verliebt sein",
+          "plural": "",
+          "translationZh": "戀愛；愛上",
+          "exampleDe": "Sie ist in ihren Kollegen verliebt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "phrase"
+        },
+        {
+          "id": "b1_1_l01_w046",
+          "article": "",
+          "word": "brechen",
+          "plural": "",
+          "translationZh": "打破；斷裂",
+          "exampleDe": "Er hat sich den Arm gebrochen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w047",
+          "article": "das",
+          "word": "Feld",
+          "plural": "die Felder",
+          "translationZh": "田地；場地",
+          "exampleDe": "Die Kinder spielen auf dem Feld.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w048",
+          "article": "das",
+          "word": "Tor",
+          "plural": "die Tore",
+          "translationZh": "球門；大門",
+          "exampleDe": "Er hat ein Tor geschossen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w049",
+          "article": "",
+          "word": "schießen",
+          "plural": "",
+          "translationZh": "射門；射擊",
+          "exampleDe": "Sie hat den Ball ins Tor geschossen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w050",
+          "article": "das",
+          "word": "Leben",
+          "plural": "die Leben",
+          "translationZh": "生活；生命",
+          "exampleDe": "Das Leben ist manchmal überraschend.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w051",
+          "article": "das",
+          "word": "Standesamt",
+          "plural": "die Standesämter",
+          "translationZh": "戶政事務所；婚姻登記處",
+          "exampleDe": "Sie haben im Standesamt geheiratet.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w052",
+          "article": "der",
+          "word": "Bedarf",
+          "plural": "(無複數)",
+          "translationZh": "需求；需要",
+          "exampleDe": "Bei Bedarf rufen Sie bitte an.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w053",
+          "article": "die",
+          "word": "Vermittlung",
+          "plural": "(無複數)",
+          "translationZh": "介紹；仲介；協調",
+          "exampleDe": "Die Vermittlung von Wohnungen ist schwierig.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w054",
+          "article": "",
+          "word": "in Rente gehen",
+          "plural": "",
+          "translationZh": "退休",
+          "exampleDe": "Mein Vater geht nächstes Jahr in Rente.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "phrase"
+        },
+        {
+          "id": "b1_1_l01_w055",
+          "article": "",
+          "word": "deutlich",
+          "plural": "",
+          "translationZh": "明顯的；清楚的",
+          "exampleDe": "Der Unterschied ist deutlich.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w056",
+          "article": "das",
+          "word": "Verhältnis",
+          "plural": "die Verhältnisse",
+          "translationZh": "關係；比例",
+          "exampleDe": "Das Verhältnis zwischen ihnen ist gut.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w057",
+          "article": "die",
+          "word": "Metropole",
+          "plural": "die Metropolen",
+          "translationZh": "大城市；都會",
+          "exampleDe": "Berlin ist eine große Metropole.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w058",
+          "article": "",
+          "word": "unterstützen",
+          "plural": "",
+          "translationZh": "支持；協助",
+          "exampleDe": "Meine Freunde haben mich unterstützt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l01_w059",
+          "article": "",
+          "word": "unbekannt",
+          "plural": "",
+          "translationZh": "不知名的；陌生的",
+          "exampleDe": "Der Autor ist noch unbekannt.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l01_w060",
+          "article": "der",
+          "word": "Bericht",
+          "plural": "die Berichte",
+          "translationZh": "報告；報導",
+          "exampleDe": "Ich habe den Bericht gelesen.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w061",
+          "article": "die",
+          "word": "Mitternacht",
+          "plural": "(無複數)",
+          "translationZh": "午夜",
+          "exampleDe": "Um Mitternacht war es sehr ruhig.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w062",
+          "article": "der",
+          "word": "Stein",
+          "plural": "die Steine",
+          "translationZh": "石頭",
+          "exampleDe": "Auf dem Weg lag ein Stein.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w063",
+          "article": "der",
+          "word": "Löwe",
+          "plural": "die Löwen",
+          "translationZh": "獅子",
+          "exampleDe": "Der Löwe schläft im Schatten.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l01_w064",
+          "article": "der",
+          "word": "Artikel",
+          "plural": "die Artikel",
+          "translationZh": "文章；冠詞；商品",
+          "exampleDe": "Der Artikel war sehr interessant.",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "pos": "noun"
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l02",
+      "lesson": 2,
+      "title": "Unterhaltung",
+      "lessonTag": "Lektion 2｜Unterhaltung",
+      "vocabulary": [
+        {
+          "id": "b1_1_l02_w001",
+          "article": "die",
+          "word": "Serie",
+          "plural": "die Serien",
+          "translationZh": "影集；系列",
+          "exampleDe": "Diese Serie hat viele Folgen.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w002",
+          "article": "die",
+          "word": "Folge",
+          "plural": "die Folgen",
+          "translationZh": "一集；後果",
+          "exampleDe": "Die neue Folge kommt heute Abend.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w003",
+          "article": "der",
+          "word": "Charakter",
+          "plural": "die Charaktere",
+          "translationZh": "角色；個性",
+          "exampleDe": "Der Charakter ist sympathisch.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w004",
+          "article": "",
+          "word": "obwohl",
+          "plural": "",
+          "translationZh": "雖然",
+          "exampleDe": "Obwohl er müde ist, sieht er die Serie weiter.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w005",
+          "article": "",
+          "word": "dauernd",
+          "plural": "",
+          "translationZh": "一直；老是",
+          "exampleDe": "Er redet dauernd über Filme.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w006",
+          "article": "der",
+          "word": "Verlierer",
+          "plural": "die Verlierer",
+          "translationZh": "輸家；失敗者",
+          "exampleDe": "Niemand möchte als Verlierer gelten.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w007",
+          "article": "der",
+          "word": "Typ",
+          "plural": "die Typen",
+          "translationZh": "類型；傢伙",
+          "exampleDe": "Er ist ein optimistischer Typ.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w008",
+          "article": "",
+          "word": "optimistisch",
+          "plural": "",
+          "translationZh": "樂觀的",
+          "exampleDe": "Sie bleibt optimistisch.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w009",
+          "article": "die",
+          "word": "Figur",
+          "plural": "die Figuren",
+          "translationZh": "人物；角色；身材",
+          "exampleDe": "Die Figur im Film ist sehr lustig.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w010",
+          "article": "",
+          "word": "unglaublich",
+          "plural": "",
+          "translationZh": "難以置信的",
+          "exampleDe": "Die Geschichte ist unglaublich.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w011",
+          "article": "",
+          "word": "erfinden",
+          "plural": "",
+          "translationZh": "發明；編造",
+          "exampleDe": "Der Autor hat eine spannende Figur erfunden.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w012",
+          "article": "die",
+          "word": "Operation",
+          "plural": "die Operationen",
+          "translationZh": "手術；行動",
+          "exampleDe": "Die Operation war erfolgreich.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w013",
+          "article": "das",
+          "word": "Blut",
+          "plural": "(無複數)",
+          "translationZh": "血",
+          "exampleDe": "Ich kann kein Blut sehen.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w014",
+          "article": "",
+          "word": "Kriminal-",
+          "plural": "",
+          "translationZh": "犯罪的；刑事的",
+          "exampleDe": "Ich sehe gern Kriminalfilme.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w015",
+          "article": "",
+          "word": "veröffentlichen",
+          "plural": "",
+          "translationZh": "出版；公開發表",
+          "exampleDe": "Sie hat einen neuen Roman veröffentlicht.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w016",
+          "article": "der",
+          "word": "Fall",
+          "plural": "die Fälle",
+          "translationZh": "案件；情況；格",
+          "exampleDe": "Der Fall ist sehr kompliziert.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w017",
+          "article": "der",
+          "word": "Titel",
+          "plural": "die Titel",
+          "translationZh": "標題；片名；書名",
+          "exampleDe": "Der Titel gefällt mir.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w018",
+          "article": "die",
+          "word": "Vergangenheit",
+          "plural": "(無複數)",
+          "translationZh": "過去",
+          "exampleDe": "Die Geschichte spielt in der Vergangenheit.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w019",
+          "article": "",
+          "word": "heutig",
+          "plural": "",
+          "translationZh": "今天的；現今的",
+          "exampleDe": "Die heutige Folge war spannend.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w020",
+          "article": "",
+          "word": "handeln",
+          "plural": "",
+          "translationZh": "講述；行動；交易",
+          "exampleDe": "Der Film handelt von einer Familie.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w021",
+          "article": "der",
+          "word": "Musiker",
+          "plural": "die Musiker",
+          "translationZh": "音樂家；男音樂人",
+          "exampleDe": "Der Musiker spielt Gitarre.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w022",
+          "article": "die",
+          "word": "Musikerin",
+          "plural": "die Musikerinnen",
+          "translationZh": "女音樂家",
+          "exampleDe": "Die Musikerin singt sehr gut.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w023",
+          "article": "der",
+          "word": "Sänger",
+          "plural": "die Sänger",
+          "translationZh": "男歌手",
+          "exampleDe": "Der Sänger ist sehr bekannt.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w024",
+          "article": "die",
+          "word": "Sängerin",
+          "plural": "die Sängerinnen",
+          "translationZh": "女歌手",
+          "exampleDe": "Die Sängerin hat einen neuen Song.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w025",
+          "article": "",
+          "word": "entstehen",
+          "plural": "",
+          "translationZh": "產生；形成",
+          "exampleDe": "Der Song ist in Berlin entstanden.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w026",
+          "article": "",
+          "word": "elektronisch",
+          "plural": "",
+          "translationZh": "電子的",
+          "exampleDe": "Elektronische Musik ist sehr beliebt.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w027",
+          "article": "die",
+          "word": "Großstadt",
+          "plural": "die Großstädte",
+          "translationZh": "大城市",
+          "exampleDe": "In der Großstadt gibt es viele Clubs.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w028",
+          "article": "",
+          "word": "produzieren",
+          "plural": "",
+          "translationZh": "製作；生產",
+          "exampleDe": "Die Band hat ein neues Album produziert.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w029",
+          "article": "",
+          "word": "anfangs",
+          "plural": "",
+          "translationZh": "起初",
+          "exampleDe": "Anfangs war der Song nicht bekannt.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w030",
+          "article": "",
+          "word": "sich ändern",
+          "plural": "",
+          "translationZh": "改變",
+          "exampleDe": "Der Stil hat sich stark geändert.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w031",
+          "article": "",
+          "word": "fantastisch",
+          "plural": "",
+          "translationZh": "極好的；夢幻的",
+          "exampleDe": "Das Konzert war fantastisch.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w032",
+          "article": "der",
+          "word": "Song",
+          "plural": "die Songs",
+          "translationZh": "歌曲",
+          "exampleDe": "Der Song läuft im Radio.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w033",
+          "article": "der",
+          "word": "Hit",
+          "plural": "die Hits",
+          "translationZh": "熱門歌曲；成功作品",
+          "exampleDe": "Das Lied wurde ein großer Hit.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w034",
+          "article": "",
+          "word": "völlig",
+          "plural": "",
+          "translationZh": "完全地",
+          "exampleDe": "Das ist völlig neu für mich.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w035",
+          "article": "der",
+          "word": "Humor",
+          "plural": "(無複數)",
+          "translationZh": "幽默",
+          "exampleDe": "Sein Humor gefällt mir.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w036",
+          "article": "",
+          "word": "alltäglich",
+          "plural": "",
+          "translationZh": "日常的；平常的",
+          "exampleDe": "Die Serie zeigt alltägliche Probleme.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w037",
+          "article": "die",
+          "word": "Gewalt",
+          "plural": "(無複數)",
+          "translationZh": "暴力",
+          "exampleDe": "Im Film gibt es zu viel Gewalt.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w038",
+          "article": "",
+          "word": "dafür",
+          "plural": "",
+          "translationZh": "為此；相對地；支持",
+          "exampleDe": "Ich habe keine Zeit dafür.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w039",
+          "article": "",
+          "word": "kritisieren",
+          "plural": "",
+          "translationZh": "批評",
+          "exampleDe": "Viele Zuschauer haben die Serie kritisiert.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w040",
+          "article": "der",
+          "word": "Star",
+          "plural": "die Stars",
+          "translationZh": "明星",
+          "exampleDe": "Der Star gibt ein Interview.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w041",
+          "article": "die",
+          "word": "Szene",
+          "plural": "die Szenen",
+          "translationZh": "場景；圈子",
+          "exampleDe": "Diese Szene ist sehr bekannt.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w042",
+          "article": "",
+          "word": "erfolgreich",
+          "plural": "",
+          "translationZh": "成功的",
+          "exampleDe": "Die Sängerin ist sehr erfolgreich.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l02_w043",
+          "article": "die",
+          "word": "Arbeitslosigkeit",
+          "plural": "(無複數)",
+          "translationZh": "失業",
+          "exampleDe": "Der Film spricht über Arbeitslosigkeit.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w044",
+          "article": "der",
+          "word": "Migrant",
+          "plural": "die Migranten",
+          "translationZh": "男性移民",
+          "exampleDe": "Der Migrant erzählt seine Geschichte.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w045",
+          "article": "die",
+          "word": "Migrantin",
+          "plural": "die Migrantinnen",
+          "translationZh": "女性移民",
+          "exampleDe": "Die Migrantin lernt Deutsch.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w046",
+          "article": "",
+          "word": "gelingen",
+          "plural": "",
+          "translationZh": "成功做到",
+          "exampleDe": "Der Auftritt ist ihr gut gelungen.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w047",
+          "article": "die",
+          "word": "Person",
+          "plural": "die Personen",
+          "translationZh": "人；人物",
+          "exampleDe": "Diese Person kenne ich nicht.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w048",
+          "article": "der",
+          "word": "Rat",
+          "plural": "(無複數)",
+          "translationZh": "建議",
+          "exampleDe": "Ich brauche deinen Rat.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w049",
+          "article": "der",
+          "word": "Gegenstand",
+          "plural": "die Gegenstände",
+          "translationZh": "物品；對象",
+          "exampleDe": "Beschreiben Sie den Gegenstand.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w050",
+          "article": "die",
+          "word": "Aufgabe",
+          "plural": "die Aufgaben",
+          "translationZh": "任務；作業",
+          "exampleDe": "Die Aufgabe ist nicht einfach.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w051",
+          "article": "",
+          "word": "verlassen",
+          "plural": "",
+          "translationZh": "離開；拋棄",
+          "exampleDe": "Er hat die Stadt verlassen.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w052",
+          "article": "",
+          "word": "begleiten",
+          "plural": "",
+          "translationZh": "陪伴",
+          "exampleDe": "Musik begleitet mich jeden Tag.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w053",
+          "article": "",
+          "word": "außen",
+          "plural": "",
+          "translationZh": "外面",
+          "exampleDe": "Außen sieht das Haus alt aus.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w054",
+          "article": "",
+          "word": "innen",
+          "plural": "",
+          "translationZh": "裡面",
+          "exampleDe": "Innen ist es sehr modern.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w055",
+          "article": "",
+          "word": "begegnen",
+          "plural": "",
+          "translationZh": "遇見",
+          "exampleDe": "Ich bin dem Sänger zufällig begegnet.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w056",
+          "article": "das",
+          "word": "Abenteuer",
+          "plural": "die Abenteuer",
+          "translationZh": "冒險",
+          "exampleDe": "Die Reise war ein großes Abenteuer.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w057",
+          "article": "",
+          "word": "sich erfüllen",
+          "plural": "",
+          "translationZh": "實現",
+          "exampleDe": "Ihr Traum hat sich erfüllt.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w058",
+          "article": "",
+          "word": "zustimmen",
+          "plural": "",
+          "translationZh": "同意",
+          "exampleDe": "Ich stimme dir zu.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l02_w059",
+          "article": "die",
+          "word": "Medien",
+          "plural": "(只有複數)",
+          "translationZh": "媒體",
+          "exampleDe": "Die Medien berichten über den Star.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w060",
+          "article": "",
+          "word": "knapp",
+          "plural": "",
+          "translationZh": "差一點；簡短地；不足",
+          "exampleDe": "Die Antwort war knapp.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l02_w061",
+          "article": "der",
+          "word": "Rundfunk",
+          "plural": "(無複數)",
+          "translationZh": "廣播電視；廣播",
+          "exampleDe": "Der Rundfunk spielt eine wichtige Rolle.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l02_w062",
+          "article": "",
+          "word": "relativ",
+          "plural": "",
+          "translationZh": "相對地",
+          "exampleDe": "Der Film ist relativ kurz.",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "pos": "adverb/connector"
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l03",
+      "lesson": 3,
+      "title": "Gesund bleiben",
+      "lessonTag": "Lektion 3｜Gesund bleiben",
+      "vocabulary": [
+        {
+          "id": "b1_1_l03_w001",
+          "article": "der",
+          "word": "Magen",
+          "plural": "die Mägen",
+          "translationZh": "胃",
+          "exampleDe": "Mein Magen tut weh.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w002",
+          "article": "",
+          "word": "meinen",
+          "plural": "",
+          "translationZh": "認為；意思是",
+          "exampleDe": "Was meinst du damit?",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w003",
+          "article": "",
+          "word": "überreden",
+          "plural": "",
+          "translationZh": "說服",
+          "exampleDe": "Meine Freundin hat mich zum Sport überredet.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w004",
+          "article": "das",
+          "word": "Mittel",
+          "plural": "die Mittel",
+          "translationZh": "藥物；方法",
+          "exampleDe": "Dieses Mittel hilft gegen Husten.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w005",
+          "article": "der",
+          "word": "Faktor",
+          "plural": "die Faktoren",
+          "translationZh": "因素",
+          "exampleDe": "Stress ist ein wichtiger Faktor.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w006",
+          "article": "die",
+          "word": "Grundlage",
+          "plural": "die Grundlagen",
+          "translationZh": "基礎；根據",
+          "exampleDe": "Gesunde Ernährung ist die Grundlage.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w007",
+          "article": "",
+          "word": "ausreichend",
+          "plural": "",
+          "translationZh": "足夠的",
+          "exampleDe": "Ausreichend Schlaf ist wichtig.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w008",
+          "article": "",
+          "word": "achten",
+          "plural": "",
+          "translationZh": "注意；重視",
+          "exampleDe": "Ich achte auf meine Ernährung.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w009",
+          "article": "das",
+          "word": "Fett",
+          "plural": "die Fette",
+          "translationZh": "脂肪；油脂",
+          "exampleDe": "Zu viel Fett ist ungesund.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w010",
+          "article": "",
+          "word": "ideal",
+          "plural": "",
+          "translationZh": "理想的",
+          "exampleDe": "Das ist die ideale Lösung.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w011",
+          "article": "",
+          "word": "ebenfalls",
+          "plural": "",
+          "translationZh": "同樣地；也",
+          "exampleDe": "Bewegung ist ebenfalls wichtig.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l03_w012",
+          "article": "",
+          "word": "atmen",
+          "plural": "",
+          "translationZh": "呼吸",
+          "exampleDe": "Atme bitte langsam und ruhig.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w013",
+          "article": "",
+          "word": "flach",
+          "plural": "",
+          "translationZh": "淺的；平的",
+          "exampleDe": "Sie atmet sehr flach.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w014",
+          "article": "die",
+          "word": "Wirkung",
+          "plural": "die Wirkungen",
+          "translationZh": "效果；作用",
+          "exampleDe": "Das Medikament zeigt schnell Wirkung.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w015",
+          "article": "",
+          "word": "gleichzeitig",
+          "plural": "",
+          "translationZh": "同時",
+          "exampleDe": "Ich bin müde und gleichzeitig nervös.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l03_w016",
+          "article": "",
+          "word": "umgehen",
+          "plural": "",
+          "translationZh": "處理；應對",
+          "exampleDe": "Wie gehst du mit Stress um?",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w017",
+          "article": "",
+          "word": "aufwachen",
+          "plural": "",
+          "translationZh": "醒來",
+          "exampleDe": "Ich bin heute früh aufgewacht.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w018",
+          "article": "der",
+          "word": "Mangel",
+          "plural": "die Mängel",
+          "translationZh": "缺乏；不足",
+          "exampleDe": "Schlafmangel macht müde.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w019",
+          "article": "",
+          "word": "tagsüber",
+          "plural": "",
+          "translationZh": "白天",
+          "exampleDe": "Tagsüber bin ich oft müde.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l03_w020",
+          "article": "",
+          "word": "extrem",
+          "plural": "",
+          "translationZh": "極端的；非常",
+          "exampleDe": "Der Schmerz ist extrem stark.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w021",
+          "article": "die",
+          "word": "Wunde",
+          "plural": "die Wunden",
+          "translationZh": "傷口",
+          "exampleDe": "Die Wunde muss sauber bleiben.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w022",
+          "article": "der",
+          "word": "Verband",
+          "plural": "die Verbände",
+          "translationZh": "繃帶",
+          "exampleDe": "Ich brauche einen Verband.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w023",
+          "article": "das",
+          "word": "Insekt",
+          "plural": "die Insekten",
+          "translationZh": "昆蟲",
+          "exampleDe": "Ein Insekt hat mich gestochen.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w024",
+          "article": "",
+          "word": "behandeln",
+          "plural": "",
+          "translationZh": "治療；處理",
+          "exampleDe": "Der Arzt behandelt die Wunde.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w025",
+          "article": "der",
+          "word": "Abfalleimer",
+          "plural": "die Abfalleimer",
+          "translationZh": "垃圾桶",
+          "exampleDe": "Wirf den Verband in den Abfalleimer.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w026",
+          "article": "",
+          "word": "zu viel",
+          "plural": "",
+          "translationZh": "太多",
+          "exampleDe": "Ich habe heute zu viel gegessen.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "phrase"
+        },
+        {
+          "id": "b1_1_l03_w027",
+          "article": "die",
+          "word": "Verbesserung",
+          "plural": "die Verbesserungen",
+          "translationZh": "改善；好轉",
+          "exampleDe": "Ich wünsche dir gute Verbesserung.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w028",
+          "article": "",
+          "word": "sich erhöhen",
+          "plural": "",
+          "translationZh": "增加；升高",
+          "exampleDe": "Die Temperatur hat sich erhöht.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w029",
+          "article": "die",
+          "word": "Einnahme",
+          "plural": "die Einnahmen",
+          "translationZh": "服用；收入",
+          "exampleDe": "Die Einnahme des Medikaments ist wichtig.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w030",
+          "article": "das",
+          "word": "Medikament",
+          "plural": "die Medikamente",
+          "translationZh": "藥物",
+          "exampleDe": "Nehmen Sie das Medikament nach dem Essen.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w031",
+          "article": "die",
+          "word": "Fachfrau",
+          "plural": "die Fachfrauen",
+          "translationZh": "女專家",
+          "exampleDe": "Fragen Sie eine Fachfrau.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w032",
+          "article": "der",
+          "word": "Fachmann",
+          "plural": "die Fachmänner",
+          "translationZh": "男專家",
+          "exampleDe": "Der Fachmann gibt einen Rat.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w033",
+          "article": "",
+          "word": "drücken",
+          "plural": "",
+          "translationZh": "按；壓",
+          "exampleDe": "Drücken Sie bitte hier.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w034",
+          "article": "",
+          "word": "rechts",
+          "plural": "",
+          "translationZh": "右邊的；在右邊",
+          "exampleDe": "Die rechte Schulter tut weh.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w035",
+          "article": "",
+          "word": "links",
+          "plural": "",
+          "translationZh": "左邊的；在左邊",
+          "exampleDe": "Mein linker Arm ist schwach.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w036",
+          "article": "die",
+          "word": "Schulter",
+          "plural": "die Schultern",
+          "translationZh": "肩膀",
+          "exampleDe": "Meine Schulter tut weh.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w037",
+          "article": "die",
+          "word": "Sprechstunde",
+          "plural": "die Sprechstunden",
+          "translationZh": "看診時間；諮詢時間",
+          "exampleDe": "Die Sprechstunde beginnt um neun.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w038",
+          "article": "",
+          "word": "vermuten",
+          "plural": "",
+          "translationZh": "推測；懷疑",
+          "exampleDe": "Der Arzt vermutet eine Entzündung.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w039",
+          "article": "das",
+          "word": "Schmerzmittel",
+          "plural": "die Schmerzmittel",
+          "translationZh": "止痛藥",
+          "exampleDe": "Ich nehme ein Schmerzmittel.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w040",
+          "article": "",
+          "word": "führen",
+          "plural": "",
+          "translationZh": "帶領；導致",
+          "exampleDe": "Stress kann zu Schlafproblemen führen.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w041",
+          "article": "",
+          "word": "verschreiben",
+          "plural": "",
+          "translationZh": "開處方",
+          "exampleDe": "Der Arzt hat mir Tabletten verschrieben.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w042",
+          "article": "",
+          "word": "erhalten",
+          "plural": "",
+          "translationZh": "收到；取得",
+          "exampleDe": "Ich habe ein Rezept erhalten.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w043",
+          "article": "die",
+          "word": "Realität",
+          "plural": "die Realitäten",
+          "translationZh": "現實",
+          "exampleDe": "In der Realität ist es oft schwieriger.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w044",
+          "article": "",
+          "word": "stressig",
+          "plural": "",
+          "translationZh": "有壓力的",
+          "exampleDe": "Mein Alltag ist sehr stressig.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w045",
+          "article": "",
+          "word": "greifen",
+          "plural": "",
+          "translationZh": "抓；伸手拿",
+          "exampleDe": "Er greift nach dem Glas.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w046",
+          "article": "",
+          "word": "schieben",
+          "plural": "",
+          "translationZh": "推",
+          "exampleDe": "Schieben Sie den Stuhl zur Seite.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w047",
+          "article": "der",
+          "word": "Backofen",
+          "plural": "die Backöfen",
+          "translationZh": "烤箱",
+          "exampleDe": "Der Backofen ist heiß.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w048",
+          "article": "",
+          "word": "schwach",
+          "plural": "",
+          "translationZh": "虛弱的",
+          "exampleDe": "Nach der Krankheit war ich schwach.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l03_w049",
+          "article": "",
+          "word": "abnehmen",
+          "plural": "",
+          "translationZh": "減重；取下；減少",
+          "exampleDe": "Ich habe zwei Kilo abgenommen.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w050",
+          "article": "",
+          "word": "integrieren",
+          "plural": "",
+          "translationZh": "融入；整合",
+          "exampleDe": "Ich integriere Sport in meinen Alltag.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w051",
+          "article": "",
+          "word": "Sport treiben",
+          "plural": "",
+          "translationZh": "運動",
+          "exampleDe": "Ich treibe zweimal pro Woche Sport.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "phrase"
+        },
+        {
+          "id": "b1_1_l03_w052",
+          "article": "die",
+          "word": "Hälfte",
+          "plural": "die Hälften",
+          "translationZh": "一半",
+          "exampleDe": "Die Hälfte der Gruppe macht Sport.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w053",
+          "article": "das",
+          "word": "Viertel",
+          "plural": "die Viertel",
+          "translationZh": "四分之一；一刻鐘",
+          "exampleDe": "Ein Viertel der Menschen schläft zu wenig.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w054",
+          "article": "das",
+          "word": "Drittel",
+          "plural": "die Drittel",
+          "translationZh": "三分之一",
+          "exampleDe": "Ein Drittel isst zu viel Zucker.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w055",
+          "article": "",
+          "word": "grundsätzlich",
+          "plural": "",
+          "translationZh": "基本上；原則上",
+          "exampleDe": "Grundsätzlich ist Bewegung gesund.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l03_w056",
+          "article": "die",
+          "word": "Frucht",
+          "plural": "die Früchte",
+          "translationZh": "水果；果實",
+          "exampleDe": "Ich esse jeden Tag eine Frucht.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w057",
+          "article": "der",
+          "word": "Quark",
+          "plural": "(無複數)",
+          "translationZh": "凝乳；夸克乳酪",
+          "exampleDe": "Quark enthält viel Eiweiß.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w058",
+          "article": "das",
+          "word": "Vitamin",
+          "plural": "die Vitamine",
+          "translationZh": "維他命",
+          "exampleDe": "Obst enthält viele Vitamine.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w059",
+          "article": "der",
+          "word": "Unsinn",
+          "plural": "(無複數)",
+          "translationZh": "胡說；沒道理的事",
+          "exampleDe": "Das ist doch Unsinn.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w060",
+          "article": "das",
+          "word": "Gewicht",
+          "plural": "die Gewichte",
+          "translationZh": "體重；重量",
+          "exampleDe": "Mein Gewicht bleibt stabil.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w061",
+          "article": "",
+          "word": "verbrauchen",
+          "plural": "",
+          "translationZh": "消耗",
+          "exampleDe": "Beim Sport verbraucht man Energie.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w062",
+          "article": "",
+          "word": "untersuchen",
+          "plural": "",
+          "translationZh": "檢查；研究",
+          "exampleDe": "Der Arzt hat den Patienten untersucht.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l03_w063",
+          "article": "der",
+          "word": "Schnupfen",
+          "plural": "(無複數)",
+          "translationZh": "鼻塞；感冒",
+          "exampleDe": "Ich habe Schnupfen.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l03_w064",
+          "article": "das",
+          "word": "Fieber",
+          "plural": "(無複數)",
+          "translationZh": "發燒",
+          "exampleDe": "Das Kind hat Fieber.",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "pos": "noun"
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l04",
+      "lesson": 4,
+      "title": "Sprachen",
+      "lessonTag": "Lektion 4｜Sprachen",
+      "vocabulary": [
+        {
+          "id": "b1_1_l04_w001",
+          "article": "",
+          "word": "worüber",
+          "plural": "",
+          "translationZh": "關於什麼",
+          "exampleDe": "Worüber sprichst du?",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w002",
+          "article": "die",
+          "word": "Eile",
+          "plural": "(無複數)",
+          "translationZh": "匆忙",
+          "exampleDe": "Ich bin in Eile.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w003",
+          "article": "der",
+          "word": "Keller",
+          "plural": "die Keller",
+          "translationZh": "地下室",
+          "exampleDe": "Die Kisten stehen im Keller.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w004",
+          "article": "der",
+          "word": "Satz",
+          "plural": "die Sätze",
+          "translationZh": "句子",
+          "exampleDe": "Dieser Satz ist schwer zu verstehen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w005",
+          "article": "",
+          "word": "gar",
+          "plural": "",
+          "translationZh": "完全；根本",
+          "exampleDe": "Ich verstehe das gar nicht.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w006",
+          "article": "",
+          "word": "jedenfalls",
+          "plural": "",
+          "translationZh": "無論如何；反正",
+          "exampleDe": "Jedenfalls möchte ich weiterlernen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w007",
+          "article": "",
+          "word": "lächeln",
+          "plural": "",
+          "translationZh": "微笑",
+          "exampleDe": "Sie hat freundlich gelächelt.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w008",
+          "article": "",
+          "word": "halt",
+          "plural": "",
+          "translationZh": "就是；只好",
+          "exampleDe": "Das ist halt so.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w009",
+          "article": "",
+          "word": "etwas",
+          "plural": "",
+          "translationZh": "有點；某物",
+          "exampleDe": "Kannst du etwas langsamer sprechen?",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w010",
+          "article": "",
+          "word": "so viel",
+          "plural": "",
+          "translationZh": "這麼多",
+          "exampleDe": "Ich habe heute so viel gelernt.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "phrase"
+        },
+        {
+          "id": "b1_1_l04_w011",
+          "article": "",
+          "word": "vorhaben",
+          "plural": "",
+          "translationZh": "打算",
+          "exampleDe": "Was hast du am Wochenende vor?",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w012",
+          "article": "",
+          "word": "sich bedanken",
+          "plural": "",
+          "translationZh": "道謝",
+          "exampleDe": "Ich bedanke mich für Ihre Hilfe.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w013",
+          "article": "die",
+          "word": "Wahrheit",
+          "plural": "die Wahrheiten",
+          "translationZh": "真相；事實",
+          "exampleDe": "Sag bitte die Wahrheit.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w014",
+          "article": "",
+          "word": "lügen",
+          "plural": "",
+          "translationZh": "說謊",
+          "exampleDe": "Ich möchte nicht lügen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w015",
+          "article": "der",
+          "word": "Präsident",
+          "plural": "die Präsidenten",
+          "translationZh": "男總統；男主席",
+          "exampleDe": "Der Präsident hält eine Rede.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w016",
+          "article": "die",
+          "word": "Präsidentin",
+          "plural": "die Präsidentinnen",
+          "translationZh": "女總統；女主席",
+          "exampleDe": "Die Präsidentin spricht drei Sprachen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w017",
+          "article": "das",
+          "word": "Portemonnaie",
+          "plural": "die Portemonnaies",
+          "translationZh": "錢包",
+          "exampleDe": "Ich habe mein Portemonnaie vergessen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w018",
+          "article": "",
+          "word": "fließend",
+          "plural": "",
+          "translationZh": "流利的",
+          "exampleDe": "Er spricht fließend Deutsch.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l04_w019",
+          "article": "die",
+          "word": "Fremdsprache",
+          "plural": "die Fremdsprachen",
+          "translationZh": "外語",
+          "exampleDe": "Deutsch ist für mich eine Fremdsprache.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w020",
+          "article": "",
+          "word": "darum",
+          "plural": "",
+          "translationZh": "因此；關於這件事",
+          "exampleDe": "Darum lerne ich jeden Tag.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w021",
+          "article": "",
+          "word": "übersetzen",
+          "plural": "",
+          "translationZh": "翻譯",
+          "exampleDe": "Kannst du den Satz übersetzen?",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w022",
+          "article": "die",
+          "word": "Muttersprache",
+          "plural": "die Muttersprachen",
+          "translationZh": "母語",
+          "exampleDe": "Chinesisch ist meine Muttersprache.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w023",
+          "article": "",
+          "word": "irgendwann",
+          "plural": "",
+          "translationZh": "總有一天；某個時候",
+          "exampleDe": "Irgendwann möchte ich fließend Deutsch sprechen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w024",
+          "article": "",
+          "word": "daher",
+          "plural": "",
+          "translationZh": "因此；由此",
+          "exampleDe": "Ich hatte wenig Zeit, daher bin ich spät gekommen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w025",
+          "article": "",
+          "word": "deswegen",
+          "plural": "",
+          "translationZh": "所以；因此",
+          "exampleDe": "Ich war krank, deswegen bin ich zu Hause geblieben.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w026",
+          "article": "",
+          "word": "wieso",
+          "plural": "",
+          "translationZh": "為什麼",
+          "exampleDe": "Wieso lernst du Deutsch?",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w027",
+          "article": "der",
+          "word": "Ausdruck",
+          "plural": "die Ausdrücke",
+          "translationZh": "表達；用語",
+          "exampleDe": "Diesen Ausdruck kenne ich nicht.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w028",
+          "article": "",
+          "word": "noch mal",
+          "plural": "",
+          "translationZh": "再一次",
+          "exampleDe": "Kannst du das noch mal sagen?",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w029",
+          "article": "die",
+          "word": "Wiederholung",
+          "plural": "die Wiederholungen",
+          "translationZh": "重複；複習",
+          "exampleDe": "Wiederholung hilft beim Lernen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w030",
+          "article": "",
+          "word": "jahrelang",
+          "plural": "",
+          "translationZh": "多年來",
+          "exampleDe": "Er hat jahrelang Englisch gelernt.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w031",
+          "article": "",
+          "word": "sich anstrengen",
+          "plural": "",
+          "translationZh": "努力",
+          "exampleDe": "Ich habe mich beim Sprechen angestrengt.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w032",
+          "article": "die",
+          "word": "Aussprache",
+          "plural": "die Aussprachen",
+          "translationZh": "發音",
+          "exampleDe": "Meine Aussprache wird besser.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w033",
+          "article": "der",
+          "word": "Spiegel",
+          "plural": "die Spiegel",
+          "translationZh": "鏡子",
+          "exampleDe": "Ich übe die Aussprache vor dem Spiegel.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w034",
+          "article": "die",
+          "word": "Trennung",
+          "plural": "die Trennungen",
+          "translationZh": "分開；分離",
+          "exampleDe": "Die Trennung war schwer für ihn.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w035",
+          "article": "",
+          "word": "ausschließlich",
+          "plural": "",
+          "translationZh": "只；僅僅",
+          "exampleDe": "Im Kurs sprechen wir fast ausschließlich Deutsch.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l04_w036",
+          "article": "der",
+          "word": "Autor",
+          "plural": "die Autoren",
+          "translationZh": "男作者",
+          "exampleDe": "Der Autor schreibt über Sprachen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w037",
+          "article": "die",
+          "word": "Autorin",
+          "plural": "die Autorinnen",
+          "translationZh": "女作者",
+          "exampleDe": "Die Autorin kommt aus Österreich.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w038",
+          "article": "",
+          "word": "erziehen",
+          "plural": "",
+          "translationZh": "教育；養育",
+          "exampleDe": "Sie erzieht ihr Kind zweisprachig.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w039",
+          "article": "",
+          "word": "unterscheiden",
+          "plural": "",
+          "translationZh": "區分",
+          "exampleDe": "Ich kann die Dialekte kaum unterscheiden.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w040",
+          "article": "der",
+          "word": "Dialekt",
+          "plural": "die Dialekte",
+          "translationZh": "方言",
+          "exampleDe": "In Bayern hört man viele Dialekte.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w041",
+          "article": "",
+          "word": "vergleichen",
+          "plural": "",
+          "translationZh": "比較",
+          "exampleDe": "Wir vergleichen zwei Ausdrücke.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w042",
+          "article": "",
+          "word": "stammen",
+          "plural": "",
+          "translationZh": "來自；源自",
+          "exampleDe": "Das Wort stammt aus dem Lateinischen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l04_w043",
+          "article": "die",
+          "word": "Schrift",
+          "plural": "die Schriften",
+          "translationZh": "文字；字體",
+          "exampleDe": "Diese Schrift kann ich nicht lesen.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l04_w044",
+          "article": "die",
+          "word": "Kenntnisse",
+          "plural": "(只有複數)",
+          "translationZh": "知識；能力",
+          "exampleDe": "Gute Deutschkenntnisse sind wichtig.",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "pos": "noun"
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l05",
+      "lesson": 5,
+      "title": "Eine Arbeit finden",
+      "lessonTag": "Lektion 5｜Eine Arbeit finden",
+      "vocabulary": [
+        {
+          "id": "b1_1_l05_w001",
+          "article": "der",
+          "word": "Ausbildungsplatz",
+          "plural": "die Ausbildungsplätze",
+          "translationZh": "職訓名額；培訓職位",
+          "exampleDe": "Sie sucht einen Ausbildungsplatz.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w002",
+          "article": "das",
+          "word": "Talent",
+          "plural": "die Talente",
+          "translationZh": "天分；才能",
+          "exampleDe": "Er hat ein Talent für Sprachen.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w003",
+          "article": "",
+          "word": "etwa",
+          "plural": "",
+          "translationZh": "大約；例如",
+          "exampleDe": "Das dauert etwa eine Stunde.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w004",
+          "article": "",
+          "word": "genügen",
+          "plural": "",
+          "translationZh": "足夠；符合",
+          "exampleDe": "Diese Erfahrung genügt für die Stelle.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w005",
+          "article": "der",
+          "word": "Bau",
+          "plural": "die Bauten",
+          "translationZh": "建築；建造",
+          "exampleDe": "Er arbeitet auf dem Bau.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w006",
+          "article": "die",
+          "word": "Forschung",
+          "plural": "die Forschungen",
+          "translationZh": "研究",
+          "exampleDe": "Sie arbeitet in der Forschung.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w007",
+          "article": "",
+          "word": "befristet",
+          "plural": "",
+          "translationZh": "有期限的",
+          "exampleDe": "Der Vertrag ist befristet.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w008",
+          "article": "die",
+          "word": "Unterstützung",
+          "plural": "die Unterstützungen",
+          "translationZh": "支持；協助",
+          "exampleDe": "Ich brauche Unterstützung bei der Bewerbung.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w009",
+          "article": "der",
+          "word": "Haushalt",
+          "plural": "die Haushalte",
+          "translationZh": "家務；家庭；預算",
+          "exampleDe": "Sie hilft im Haushalt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w010",
+          "article": "der",
+          "word": "Vorteil",
+          "plural": "die Vorteile",
+          "translationZh": "優點；好處",
+          "exampleDe": "Flexibilität ist ein großer Vorteil.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w011",
+          "article": "die",
+          "word": "Aushilfe",
+          "plural": "die Aushilfen",
+          "translationZh": "臨時工；幫手",
+          "exampleDe": "Wir suchen eine Aushilfe für den Sommer.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w012",
+          "article": "",
+          "word": "feststellen",
+          "plural": "",
+          "translationZh": "確認；發現",
+          "exampleDe": "Ich habe festgestellt, dass mir die Arbeit gefällt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w013",
+          "article": "die",
+          "word": "Verantwortung",
+          "plural": "(無複數)",
+          "translationZh": "責任",
+          "exampleDe": "In diesem Beruf trägt man viel Verantwortung.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w014",
+          "article": "das",
+          "word": "Projekt",
+          "plural": "die Projekte",
+          "translationZh": "專案；計畫",
+          "exampleDe": "Ich arbeite an einem neuen Projekt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w015",
+          "article": "",
+          "word": "gewohnt",
+          "plural": "",
+          "translationZh": "習慣的；熟悉的",
+          "exampleDe": "Ich bin frühes Aufstehen gewohnt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w016",
+          "article": "",
+          "word": "einstellen",
+          "plural": "",
+          "translationZh": "雇用；調整",
+          "exampleDe": "Die Firma hat drei neue Mitarbeiter eingestellt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w017",
+          "article": "",
+          "word": "üblich",
+          "plural": "",
+          "translationZh": "常見的；通常的",
+          "exampleDe": "Das ist in dieser Branche üblich.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w018",
+          "article": "die",
+          "word": "Anlage",
+          "plural": "die Anlagen",
+          "translationZh": "附件；設備；投資",
+          "exampleDe": "Der Lebenslauf ist in der Anlage.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w019",
+          "article": "der",
+          "word": "Lebenslauf",
+          "plural": "die Lebensläufe",
+          "translationZh": "履歷",
+          "exampleDe": "Bitte schicken Sie uns Ihren Lebenslauf.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w020",
+          "article": "",
+          "word": "herstellen",
+          "plural": "",
+          "translationZh": "製造；建立",
+          "exampleDe": "Die Firma stellt Maschinen her.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w021",
+          "article": "",
+          "word": "entwickeln",
+          "plural": "",
+          "translationZh": "開發；發展",
+          "exampleDe": "Wir entwickeln eine neue App.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w022",
+          "article": "die",
+          "word": "Tätigkeit",
+          "plural": "die Tätigkeiten",
+          "translationZh": "工作內容；活動",
+          "exampleDe": "Die Tätigkeit ist sehr abwechslungsreich.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w023",
+          "article": "",
+          "word": "gleich",
+          "plural": "",
+          "translationZh": "相同的；立刻",
+          "exampleDe": "Wir haben die gleiche Meinung.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w024",
+          "article": "",
+          "word": "außerhalb",
+          "plural": "",
+          "translationZh": "在……之外",
+          "exampleDe": "Außerhalb der Arbeitszeit lerne ich Deutsch.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w025",
+          "article": "",
+          "word": "innerhalb",
+          "plural": "",
+          "translationZh": "在……之內",
+          "exampleDe": "Innerhalb einer Woche bekomme ich eine Antwort.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w026",
+          "article": "",
+          "word": "spätestens",
+          "plural": "",
+          "translationZh": "最晚",
+          "exampleDe": "Schicken Sie die Bewerbung spätestens am Freitag.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w027",
+          "article": "die",
+          "word": "Vorbereitung",
+          "plural": "die Vorbereitungen",
+          "translationZh": "準備",
+          "exampleDe": "Eine gute Vorbereitung ist wichtig.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w028",
+          "article": "die",
+          "word": "Sicherheit",
+          "plural": "die Sicherheiten",
+          "translationZh": "安全；穩定；確定性",
+          "exampleDe": "Ein fester Job gibt Sicherheit.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w029",
+          "article": "der",
+          "word": "Zeitpunkt",
+          "plural": "die Zeitpunkte",
+          "translationZh": "時間點",
+          "exampleDe": "Der Zeitpunkt ist ungünstig.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w030",
+          "article": "",
+          "word": "rechnen",
+          "plural": "",
+          "translationZh": "計算；預期",
+          "exampleDe": "Ich rechne mit einer Antwort.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w031",
+          "article": "",
+          "word": "sich beruhigen",
+          "plural": "",
+          "translationZh": "冷靜下來",
+          "exampleDe": "Vor dem Gespräch habe ich mich beruhigt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w032",
+          "article": "",
+          "word": "technisch",
+          "plural": "",
+          "translationZh": "技術的",
+          "exampleDe": "Ich interessiere mich für technische Berufe.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w033",
+          "article": "",
+          "word": "herein",
+          "plural": "",
+          "translationZh": "進來",
+          "exampleDe": "Kommen Sie bitte herein.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w034",
+          "article": "",
+          "word": "rein",
+          "plural": "",
+          "translationZh": "進去；進來",
+          "exampleDe": "Ich gehe kurz rein.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w035",
+          "article": "",
+          "word": "zuständig",
+          "plural": "",
+          "translationZh": "負責的",
+          "exampleDe": "Wer ist dafür zuständig?",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w036",
+          "article": "",
+          "word": "sich melden",
+          "plural": "",
+          "translationZh": "聯絡；報到；回覆",
+          "exampleDe": "Ich melde mich morgen bei Ihnen.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w037",
+          "article": "",
+          "word": "zunächst",
+          "plural": "",
+          "translationZh": "首先；一開始",
+          "exampleDe": "Zunächst möchte ich mich vorstellen.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w038",
+          "article": "der",
+          "word": "Dienst",
+          "plural": "die Dienste",
+          "translationZh": "勤務；服務",
+          "exampleDe": "Ich habe heute Dienst.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w039",
+          "article": "die",
+          "word": "Webseite",
+          "plural": "die Webseiten",
+          "translationZh": "網站；網頁",
+          "exampleDe": "Die Informationen stehen auf der Webseite.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w040",
+          "article": "der",
+          "word": "Wissenschaftler",
+          "plural": "die Wissenschaftler",
+          "translationZh": "男科學家",
+          "exampleDe": "Der Wissenschaftler arbeitet im Labor.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w041",
+          "article": "die",
+          "word": "Wissenschaftlerin",
+          "plural": "die Wissenschaftlerinnen",
+          "translationZh": "女科學家",
+          "exampleDe": "Die Wissenschaftlerin leitet ein Projekt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w042",
+          "article": "",
+          "word": "quer",
+          "plural": "",
+          "translationZh": "橫向；跨越",
+          "exampleDe": "Ich lese den Text einmal quer.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l05_w043",
+          "article": "",
+          "word": "nützlich",
+          "plural": "",
+          "translationZh": "有用的",
+          "exampleDe": "Diese Methode ist sehr nützlich.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w044",
+          "article": "die",
+          "word": "Reihe",
+          "plural": "die Reihen",
+          "translationZh": "一排；系列",
+          "exampleDe": "Eine Reihe von Tipps hilft bei der Bewerbung.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w045",
+          "article": "",
+          "word": "sich verändern",
+          "plural": "",
+          "translationZh": "改變",
+          "exampleDe": "Der Arbeitsmarkt hat sich verändert.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w046",
+          "article": "",
+          "word": "sich eignen",
+          "plural": "",
+          "translationZh": "適合",
+          "exampleDe": "Diese Methode eignet sich gut für Anfänger.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w047",
+          "article": "",
+          "word": "aufmerksam",
+          "plural": "",
+          "translationZh": "專心的；注意到的",
+          "exampleDe": "Im Gespräch war sie sehr aufmerksam.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w048",
+          "article": "die",
+          "word": "Runde",
+          "plural": "die Runden",
+          "translationZh": "一輪；圈子",
+          "exampleDe": "In der zweiten Runde gibt es ein Gespräch.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w049",
+          "article": "die",
+          "word": "Methode",
+          "plural": "die Methoden",
+          "translationZh": "方法",
+          "exampleDe": "Diese Methode hilft beim Lernen.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w050",
+          "article": "",
+          "word": "sich überlegen",
+          "plural": "",
+          "translationZh": "考慮；想好",
+          "exampleDe": "Ich habe mir eine Antwort überlegt.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w051",
+          "article": "",
+          "word": "anwenden",
+          "plural": "",
+          "translationZh": "應用；使用",
+          "exampleDe": "Ich kann diese Strategie anwenden.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l05_w052",
+          "article": "",
+          "word": "sinnvoll",
+          "plural": "",
+          "translationZh": "有意義的；合理的",
+          "exampleDe": "Eine kurze Pause ist sinnvoll.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l05_w053",
+          "article": "die",
+          "word": "Wanderung",
+          "plural": "die Wanderungen",
+          "translationZh": "健行；遠足",
+          "exampleDe": "Die Wanderung war anstrengend.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w054",
+          "article": "der",
+          "word": "Lehrer",
+          "plural": "die Lehrer",
+          "translationZh": "男老師",
+          "exampleDe": "Der Lehrer erklärt die Aufgabe.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w055",
+          "article": "die",
+          "word": "Lehrerin",
+          "plural": "die Lehrerinnen",
+          "translationZh": "女老師",
+          "exampleDe": "Die Lehrerin hilft den Schülern.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w056",
+          "article": "der",
+          "word": "Architekt",
+          "plural": "die Architekten",
+          "translationZh": "男建築師",
+          "exampleDe": "Der Architekt plant ein Haus.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w057",
+          "article": "die",
+          "word": "Architektin",
+          "plural": "die Architektinnen",
+          "translationZh": "女建築師",
+          "exampleDe": "Die Architektin arbeitet im Büro.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w058",
+          "article": "der",
+          "word": "Krankenpfleger",
+          "plural": "die Krankenpfleger",
+          "translationZh": "男護理師",
+          "exampleDe": "Der Krankenpfleger arbeitet im Krankenhaus.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l05_w059",
+          "article": "die",
+          "word": "Krankenschwester",
+          "plural": "die Krankenschwestern",
+          "translationZh": "女護理師",
+          "exampleDe": "Die Krankenschwester misst den Blutdruck.",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "pos": "noun"
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l06",
+      "lesson": 6,
+      "title": "Dienstleistung",
+      "lessonTag": "Lektion 6｜Dienstleistung",
+      "vocabulary": [
+        {
+          "id": "b1_1_l06_w001",
+          "article": "",
+          "word": "deprimiert",
+          "plural": "",
+          "translationZh": "沮喪的；憂鬱的",
+          "exampleDe": "Nach der Absage war er deprimiert.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l06_w002",
+          "article": "das",
+          "word": "Heimweh",
+          "plural": "(無複數)",
+          "translationZh": "想家；思鄉",
+          "exampleDe": "Im Ausland hatte ich oft Heimweh.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w003",
+          "article": "der",
+          "word": "Wettbewerb",
+          "plural": "die Wettbewerbe",
+          "translationZh": "比賽；競爭",
+          "exampleDe": "Sie hat den Wettbewerb gewonnen.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w004",
+          "article": "das",
+          "word": "Sandwich",
+          "plural": "die Sandwichs",
+          "translationZh": "三明治",
+          "exampleDe": "Ich kaufe mir ein Sandwich.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w005",
+          "article": "das",
+          "word": "Gewürz",
+          "plural": "die Gewürze",
+          "translationZh": "香料",
+          "exampleDe": "Dieses Gewürz riecht sehr gut.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w006",
+          "article": "",
+          "word": "mittlerweile",
+          "plural": "",
+          "translationZh": "如今；現在已經",
+          "exampleDe": "Mittlerweile wohne ich in Berlin.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l06_w007",
+          "article": "",
+          "word": "stolz",
+          "plural": "",
+          "translationZh": "驕傲的",
+          "exampleDe": "Ich bin stolz auf dich.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l06_w008",
+          "article": "das",
+          "word": "Getreide",
+          "plural": "die Getreide",
+          "translationZh": "穀物",
+          "exampleDe": "Brot wird aus Getreide gemacht.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w009",
+          "article": "der",
+          "word": "Zweifel",
+          "plural": "die Zweifel",
+          "translationZh": "懷疑；疑慮",
+          "exampleDe": "Ich habe keine Zweifel.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w010",
+          "article": "",
+          "word": "spüren",
+          "plural": "",
+          "translationZh": "感覺到",
+          "exampleDe": "Ich spüre den Unterschied.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w011",
+          "article": "",
+          "word": "finanziell",
+          "plural": "",
+          "translationZh": "財務上的",
+          "exampleDe": "Finanziell ist die Situation schwierig.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l06_w012",
+          "article": "",
+          "word": "eng",
+          "plural": "",
+          "translationZh": "狹窄的；密切的",
+          "exampleDe": "Die Wohnung ist eng, aber gemütlich.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l06_w013",
+          "article": "",
+          "word": "unterrichten",
+          "plural": "",
+          "translationZh": "教學",
+          "exampleDe": "Sie unterrichtet Deutsch.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w014",
+          "article": "",
+          "word": "momentan",
+          "plural": "",
+          "translationZh": "目前；此刻",
+          "exampleDe": "Momentan habe ich viel zu tun.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l06_w015",
+          "article": "",
+          "word": "kürzlich",
+          "plural": "",
+          "translationZh": "最近；不久前",
+          "exampleDe": "Kürzlich habe ich einen neuen Kurs begonnen.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l06_w016",
+          "article": "",
+          "word": "sparsam",
+          "plural": "",
+          "translationZh": "節省的；節約的",
+          "exampleDe": "Wir müssen sparsam sein.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l06_w017",
+          "article": "",
+          "word": "gründen",
+          "plural": "",
+          "translationZh": "創立；成立",
+          "exampleDe": "Sie hat eine Firma gegründet.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w018",
+          "article": "",
+          "word": "überzeugen",
+          "plural": "",
+          "translationZh": "說服；使信服",
+          "exampleDe": "Das Konzept hat mich überzeugt.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w019",
+          "article": "das",
+          "word": "Studio",
+          "plural": "die Studios",
+          "translationZh": "工作室；錄音室",
+          "exampleDe": "Das Studio ist gut ausgestattet.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w020",
+          "article": "",
+          "word": "um ... zu",
+          "plural": "",
+          "translationZh": "為了……",
+          "exampleDe": "Ich lerne Deutsch, um in Deutschland zu arbeiten.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "phrase"
+        },
+        {
+          "id": "b1_1_l06_w021",
+          "article": "",
+          "word": "möglichst",
+          "plural": "",
+          "translationZh": "盡可能地",
+          "exampleDe": "Bitte kommen Sie möglichst früh.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l06_w022",
+          "article": "die",
+          "word": "Rede",
+          "plural": "die Reden",
+          "translationZh": "演說；談話",
+          "exampleDe": "Sie hält eine kurze Rede.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w023",
+          "article": "der",
+          "word": "Kompromiss",
+          "plural": "die Kompromisse",
+          "translationZh": "妥協",
+          "exampleDe": "Wir müssen einen Kompromiss finden.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w024",
+          "article": "",
+          "word": "kündigen",
+          "plural": "",
+          "translationZh": "辭職；解約",
+          "exampleDe": "Er hat seine Stelle gekündigt.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w025",
+          "article": "",
+          "word": "wiederkommen",
+          "plural": "",
+          "translationZh": "再回來",
+          "exampleDe": "Sie ist nach zwei Jahren wiedergekommen.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w026",
+          "article": "die",
+          "word": "Mühe",
+          "plural": "die Mühen",
+          "translationZh": "努力；辛苦",
+          "exampleDe": "Das hat viel Mühe gekostet.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w027",
+          "article": "die",
+          "word": "Zahncreme",
+          "plural": "die Zahncremes",
+          "translationZh": "牙膏",
+          "exampleDe": "Die Zahncreme ist fast leer.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w028",
+          "article": "die",
+          "word": "Bürste",
+          "plural": "die Bürsten",
+          "translationZh": "刷子",
+          "exampleDe": "Ich brauche eine neue Bürste.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l06_w029",
+          "article": "",
+          "word": "begrüßen",
+          "plural": "",
+          "translationZh": "問候；迎接",
+          "exampleDe": "Der Chef begrüßt die Gäste.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w030",
+          "article": "",
+          "word": "sich verabschieden",
+          "plural": "",
+          "translationZh": "道別",
+          "exampleDe": "Ich verabschiede mich von meinen Kollegen.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w031",
+          "article": "",
+          "word": "ärgerlich",
+          "plural": "",
+          "translationZh": "令人惱火的；生氣的",
+          "exampleDe": "Das ist wirklich ärgerlich.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l06_w032",
+          "article": "",
+          "word": "bestätigen",
+          "plural": "",
+          "translationZh": "確認",
+          "exampleDe": "Können Sie den Termin bestätigen?",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l06_w033",
+          "article": "",
+          "word": "allerdings",
+          "plural": "",
+          "translationZh": "然而；不過",
+          "exampleDe": "Der Plan ist gut, allerdings teuer.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l06_w034",
+          "article": "",
+          "word": "bereits",
+          "plural": "",
+          "translationZh": "已經",
+          "exampleDe": "Ich habe die E-Mail bereits geschickt.",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "pos": "adverb/connector"
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l07",
+      "lesson": 7,
+      "title": "Rund ums Wohnen",
+      "lessonTag": "Lektion 7｜Rund ums Wohnen",
+      "vocabulary": [
+        {
+          "id": "b1_1_l07_w001",
+          "article": "",
+          "word": "weg",
+          "plural": "",
+          "translationZh": "離開；不見",
+          "exampleDe": "Mein Handy ist weg.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l07_w002",
+          "article": "",
+          "word": "voneinander",
+          "plural": "",
+          "translationZh": "彼此；互相",
+          "exampleDe": "Wir können viel voneinander lernen.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l07_w003",
+          "article": "",
+          "word": "meist",
+          "plural": "",
+          "translationZh": "大多數的；通常",
+          "exampleDe": "Die meisten Wohnungen sind teuer.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l07_w004",
+          "article": "",
+          "word": "trotz",
+          "plural": "",
+          "translationZh": "儘管",
+          "exampleDe": "Trotz des Regens gehen wir spazieren.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l07_w005",
+          "article": "",
+          "word": "verständlich",
+          "plural": "",
+          "translationZh": "可理解的；可以理解的",
+          "exampleDe": "Deine Reaktion ist verständlich.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l07_w006",
+          "article": "das",
+          "word": "Wiedersehen",
+          "plural": "(無複數)",
+          "translationZh": "再見；重逢",
+          "exampleDe": "Beim Wiedersehen haben wir uns sehr gefreut.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w007",
+          "article": "die",
+          "word": "Distanz",
+          "plural": "die Distanzen",
+          "translationZh": "距離",
+          "exampleDe": "Die Distanz zwischen den Städten ist groß.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w008",
+          "article": "die",
+          "word": "Schwierigkeit",
+          "plural": "die Schwierigkeiten",
+          "translationZh": "困難",
+          "exampleDe": "Bei der Wohnungssuche gibt es viele Schwierigkeiten.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w009",
+          "article": "",
+          "word": "abhängen",
+          "plural": "",
+          "translationZh": "取決於",
+          "exampleDe": "Das hängt vom Preis ab.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l07_w010",
+          "article": "der",
+          "word": "Nachteil",
+          "plural": "die Nachteile",
+          "translationZh": "缺點；不利之處",
+          "exampleDe": "Ein Nachteil ist der lange Weg.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w011",
+          "article": "",
+          "word": "erfordern",
+          "plural": "",
+          "translationZh": "需要；要求",
+          "exampleDe": "Diese Arbeit erfordert viel Geduld.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l07_w012",
+          "article": "das",
+          "word": "Griechenland",
+          "plural": "(無複數)",
+          "translationZh": "希臘",
+          "exampleDe": "Sie wohnt jetzt in Griechenland.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w013",
+          "article": "",
+          "word": "neulich",
+          "plural": "",
+          "translationZh": "前陣子；最近某天",
+          "exampleDe": "Neulich habe ich meine Nachbarin getroffen.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l07_w014",
+          "article": "das",
+          "word": "Zuhause",
+          "plural": "die Zuhause",
+          "translationZh": "家；住所",
+          "exampleDe": "Mein Zuhause ist klein, aber schön.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w015",
+          "article": "",
+          "word": "umso",
+          "plural": "",
+          "translationZh": "更加；越發",
+          "exampleDe": "Je länger ich hier wohne, umso wohler fühle ich mich.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adverb/connector"
+        },
+        {
+          "id": "b1_1_l07_w016",
+          "article": "die",
+          "word": "Planung",
+          "plural": "die Planungen",
+          "translationZh": "規劃",
+          "exampleDe": "Die Planung der Wohnung war schwierig.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w017",
+          "article": "die",
+          "word": "Seite",
+          "plural": "die Seiten",
+          "translationZh": "頁；側邊；方面",
+          "exampleDe": "Auf der linken Seite steht ein Regal.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w018",
+          "article": "",
+          "word": "sich gewöhnen",
+          "plural": "",
+          "translationZh": "習慣",
+          "exampleDe": "Ich habe mich an die neue Wohnung gewöhnt.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l07_w019",
+          "article": "",
+          "word": "gemütlich",
+          "plural": "",
+          "translationZh": "舒適的",
+          "exampleDe": "Das Wohnzimmer ist sehr gemütlich.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "adjective"
+        },
+        {
+          "id": "b1_1_l07_w020",
+          "article": "",
+          "word": "verteilen",
+          "plural": "",
+          "translationZh": "分配；分散",
+          "exampleDe": "Die Zimmer sind gut verteilt.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "verb"
+        },
+        {
+          "id": "b1_1_l07_w021",
+          "article": "das",
+          "word": "Dach",
+          "plural": "die Dächer",
+          "translationZh": "屋頂",
+          "exampleDe": "Das Dach muss repariert werden.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w022",
+          "article": "das",
+          "word": "Haus",
+          "plural": "die Häuser",
+          "translationZh": "房子",
+          "exampleDe": "Das Haus hat einen großen Garten.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w023",
+          "article": "die",
+          "word": "Treppe",
+          "plural": "die Treppen",
+          "translationZh": "樓梯",
+          "exampleDe": "Die Treppe ist sehr steil.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w024",
+          "article": "die",
+          "word": "Terrasse",
+          "plural": "die Terrassen",
+          "translationZh": "露臺",
+          "exampleDe": "Wir frühstücken auf der Terrasse.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        },
+        {
+          "id": "b1_1_l07_w025",
+          "article": "der",
+          "word": "Garten",
+          "plural": "die Gärten",
+          "translationZh": "花園",
+          "exampleDe": "Im Garten wachsen viele Blumen.",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "pos": "noun"
+        }
+      ]
+    }
+  ]
+}

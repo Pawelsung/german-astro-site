@@ -5,5 +5,19 @@
     "description": "依主題分類的 A1-B1 德語名詞字庫",
     "path": "/vocab/a1-b1-part1.json",
     "count": 466
+  },
+  {
+    "id": "schritte-b1-1-nouns",
+    "label": "Schritte B1.1 名詞",
+    "description": "Schritte International Neu 5 B1.1，依 Lektion 分類的名詞冠詞練習字庫",
+    "path": "/vocab/schritte-b1-1-nouns.json",
+    "count": 166
+  },
+  {
+    "id": "schritte-b1-1",
+    "label": "Schritte B1.1 全單字",
+    "description": "Schritte International Neu 5 B1.1，352 筆全詞性單字，適合閃卡、聽寫、詞性與冠詞模式",
+    "path": "/vocab/schritte-b1-1.json",
+    "count": 352
   }
 ]
