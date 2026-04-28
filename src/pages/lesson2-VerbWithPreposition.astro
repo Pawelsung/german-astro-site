@@ -13,8 +13,10 @@ export const frontmatter = {
 };
 ---
 
-<LessonShell frontmatter={frontmatter} contentClass="w-full flex-grow relative z-10 px-0">
-  <VerbWithPreposition client:only="react" />
+<LessonShell frontmatter={frontmatter}>
+  <div class="max-w-6xl mx-auto">
+    <VerbWithPreposition client:load />
+  </div>
 
   <li slot="tips" class="flex items-start gap-2">
     <span class="text-amber-400 mt-0.5">•</span>

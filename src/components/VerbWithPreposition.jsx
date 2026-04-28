@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { 
-  BookOpen, Brain, GraduationCap, Settings, List, Volume2, RotateCw, 
-  CheckCircle, XCircle, Trophy, History, Search, ChevronDown, ChevronUp, 
+  Brain, Settings, List, Volume2, RotateCw, 
+  CheckCircle, XCircle, Trophy, Search, ChevronDown, ChevronUp, 
   Play, Star, Cloud, CloudOff, Calendar
 } from 'lucide-react';
 
@@ -64,65 +64,72 @@ const useSpeech = () => {
 // --- 3.1 Flashcard Component ---
 const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, prevCard }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const touchStartX = useRef(null);
-
   useEffect(() => {
     setIsFlipped(false);
   }, [card]);
 
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
-
-    if (Math.abs(diff) > 50) { 
-      if (diff > 0) nextCard(); 
-      else prevCard(); 
-    }
-    touchStartX.current = null;
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto min-h-[320px] sm:min-h-[380px] mb-4">
+    <div className="flex flex-col items-center justify-center w-full max-w-3xl mx-auto mb-4">
+      <div className="relative w-full px-0 md:px-6">
+        <button
+          onClick={prevCard}
+          className="absolute left-2 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-xl border border-amber-200 bg-white/95 text-2xl font-black text-amber-600 shadow-sm hover:bg-amber-50 active:scale-95 md:flex"
+          type="button"
+          aria-label="上一張"
+          title="上一張"
+        >
+          ←
+        </button>
+        <button
+          onClick={nextCard}
+          className="absolute right-2 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-xl border border-amber-200 bg-white/95 text-2xl font-black text-amber-600 shadow-sm hover:bg-amber-50 active:scale-95 md:flex"
+          type="button"
+          aria-label="下一張"
+          title="下一張"
+        >
+          →
+        </button>
       <div 
-        className="relative w-full min-h-[340px] sm:min-h-[400px] cursor-pointer group perspective-1000 touch-pan-y"
-        onClick={(e) => {
-            if (e.target.closest('button')) return;
-            setIsFlipped(!isFlipped)
-        }}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        className="relative w-full min-h-[390px] sm:min-h-[460px] md:min-h-[520px] cursor-pointer group perspective-1000 touch-pan-y"
       >
         <div className={`absolute w-full h-full duration-500 preserve-3d transition-all ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
           
-          <div className="absolute w-full h-full bg-white rounded-3xl shadow-lg border border-amber-100 p-5 md:p-6 flex flex-col items-center justify-center backface-hidden transition-shadow">
-            <button 
+          <div
+            className="absolute w-full h-full bg-white rounded-[32px] shadow-sm border border-amber-100 p-5 md:p-8 flex flex-col items-center justify-center backface-hidden transition-shadow"
+            onClick={(e) => {
+              if (e.target.closest('button')) return;
+              setIsFlipped(true);
+            }}
+          >
+            <button
                 onClick={(e) => { e.stopPropagation(); toggleStar(card.id); }}
-                className="absolute top-4 right-4 p-3 z-10"
+                className="absolute top-4 right-4 w-11 h-11 flex items-center justify-center rounded-xl z-10 bg-white/80 border border-amber-100 shadow-sm"
             >
-                <Star size={28} className={isStarred ? "fill-amber-400 text-amber-400" : "text-gray-300"} />
+                <Star size={24} className={isStarred ? "fill-amber-400 text-amber-400" : "text-gray-300"} />
             </button>
             <div className="text-amber-400 mb-4 opacity-50 md:group-hover:opacity-100 transition-opacity">
               <RotateCw size={28} />
             </div>
-            <h2 className="text-[clamp(2rem,12vw,3rem)] md:text-5xl font-extrabold text-gray-800 mb-3 text-center tracking-tight leading-tight px-2 break-words max-w-full">{card.verb}</h2>
+            <h2 className="text-[clamp(2rem,12vw,4.5rem)] font-extrabold text-gray-800 mb-3 text-center tracking-tight leading-tight px-2 break-words max-w-full">{card.verb}</h2>
             <p className="text-base sm:text-xl md:text-2xl text-amber-700 font-medium mb-6 break-words text-center">{card.verbTrans}</p>
             <button 
               onClick={(e) => { e.stopPropagation(); speak(card.verb); }}
-              className="p-4 sm:p-5 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 active:scale-95 transition-all mb-4 shadow-sm"
+              className="p-4 sm:p-5 rounded-xl bg-amber-50 text-amber-600 hover:bg-amber-100 active:scale-95 transition-all mb-4 shadow-sm"
             >
               <Volume2 size={24} className="sm:w-7 sm:h-7" />
             </button>
             <span className="text-[11px] text-gray-400 font-medium mt-auto bg-gray-50 px-3 py-1.5 rounded-full">
-              點擊翻面 • 左右滑動切換
+              點擊翻面
             </span>
           </div>
 
-          <div className="absolute w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg border border-amber-200 p-4 sm:p-5 flex flex-col items-center justify-between [transform:rotateY(180deg)] backface-hidden overflow-hidden">
+          <div
+            className="absolute w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-[32px] shadow-sm border border-amber-200 p-4 sm:p-5 md:p-8 flex flex-col items-center justify-between [transform:rotateY(180deg)] backface-hidden overflow-hidden"
+            onClick={(e) => {
+              if (e.target.closest('button') || e.target.closest('[data-no-flip]')) return;
+              setIsFlipped(false);
+            }}
+          >
             <div className="w-full text-center flex-1 overflow-y-auto hide-scrollbar pb-2 min-w-0">
               <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2 mt-2">
                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800 break-words">{card.verb}</h2>
@@ -149,7 +156,11 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
               </div>
             </div>
             
-            <div className="w-full pt-2 sm:pt-3 mt-1 border-t border-amber-200/50 shrink-0">
+            <div
+              className="w-full pt-2 sm:pt-3 mt-1 border-t border-amber-200/50 shrink-0"
+              data-no-flip
+              onClick={(e) => e.stopPropagation()}
+            >
               <p className="text-[9px] sm:text-[10px] text-center text-amber-700 font-bold mb-1.5 sm:mb-2 tracking-widest uppercase">記憶程度評估</p>
               <div className="flex gap-1.5 sm:gap-2 w-full justify-center">
                 <button 
@@ -175,6 +186,24 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
           </div>
 
         </div>
+      </div>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-3 w-full md:hidden">
+        <button
+          onClick={prevCard}
+          className="rounded-2xl bg-white border border-amber-100 px-4 py-3 text-sm font-black text-amber-700 shadow-sm active:scale-95"
+          type="button"
+        >
+          ← 上一張
+        </button>
+        <button
+          onClick={nextCard}
+          className="rounded-2xl bg-amber-600 px-4 py-3 text-sm font-black text-white shadow-sm active:scale-95"
+          type="button"
+        >
+          下一張 →
+        </button>
       </div>
     </div>
   );
@@ -699,8 +728,8 @@ export default function VerbWithPreposition() {
   return (
     <div className="w-full relative pb-24 md:pb-8 text-gray-800 font-sans selection:bg-amber-200">
 
-      {/* 電腦版/平板版專用的「頂部選單」(去除原本的背景，改成透明底線) */}
-      <div className="hidden md:flex justify-center items-center gap-4 mb-6 border-b border-amber-200/50 pb-4">
+      {/* 電腦版/平板版專用的頂部工具列 */}
+      <div className="hidden md:grid grid-cols-4 gap-2 mb-3 rounded-[20px] bg-white shadow-sm border border-slate-200 p-3">
         {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {
               const icons = { 'flashcards': RotateCw, 'quiz': Brain, 'list': List, 'settings': Settings };
               const labels = { 'flashcards': '字卡', 'quiz': '測驗', 'list': '列表', 'settings': '設定' };
@@ -708,7 +737,7 @@ export default function VerbWithPreposition() {
               const isActive = activeTab === tab;
               
               return (
-                  <button key={tab} onClick={() => setActiveTab(tab)} className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm transition-all ${isActive ? 'bg-amber-100 text-amber-700 shadow-sm' : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'}`}>
+                  <button key={tab} onClick={() => setActiveTab(tab)} className={`min-h-10 flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl font-black text-sm border transition-all ${isActive ? 'bg-amber-600 text-white border-amber-600 shadow-sm' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'}`}>
                       <Icon size={18} strokeWidth={isActive ? 2.5 : 2} />
                       {labels[tab]}
                   </button>
@@ -721,9 +750,7 @@ export default function VerbWithPreposition() {
         {activeTab === 'flashcards' && currentCard && (
           <div className="flex flex-col items-center">
             
-            <div className="w-full flex justify-between items-center mb-4 sm:mb-6 max-w-md px-1">
-              <button onClick={prevCard} className="p-3 rounded-full bg-white shadow-sm border border-gray-100 hover:bg-amber-50 active:scale-95 text-amber-600 transition-all"><ChevronDown className="rotate-90" size={20} /></button>
-              
+            <div className="w-full flex justify-center items-center mb-3 max-w-3xl px-1">
               <div className="flex flex-col items-center">
                   <span className="text-gray-500 font-black font-mono bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 text-base sm:text-lg">
                       {flashcardIndex + 1} / {deck.length}
@@ -738,8 +765,6 @@ export default function VerbWithPreposition() {
                       </button>
                   )}
               </div>
-
-              <button onClick={nextCard} className="p-3 rounded-full bg-white shadow-sm border border-gray-100 hover:bg-amber-50 active:scale-95 text-amber-600 transition-all"><ChevronDown className="-rotate-90" size={20} /></button>
             </div>
             
             <Flashcard 

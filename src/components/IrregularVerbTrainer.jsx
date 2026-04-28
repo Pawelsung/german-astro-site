@@ -203,19 +203,6 @@ function getModeTone(mode) {
   return 'amber';
 }
 
-function getModeLabel(mode) {
-  return {
-    flashcard: '字卡',
-    typing: '三態拼寫',
-    habenSein: 'haben / sein',
-    modal: '情態專練',
-    list: '列表',
-    wrong: '錯題',
-    hard: '不熟',
-    starred: '收藏'
-  }[mode];
-}
-
 function getToneClasses(tone) {
   if (tone === 'rose') {
     return {
@@ -247,7 +234,7 @@ function AudioPill({ onClick, label }) {
   return (
     <button
       onClick={onClick}
-      className="shrink-0 w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:scale-95 transition-all flex items-center justify-center"
+      className="shrink-0 w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:scale-95 transition-all flex items-center justify-center"
       aria-label={label}
       title={label}
       type="button"
@@ -261,7 +248,7 @@ function MainModeButton({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-full font-black border transition-all ${
+      className={`min-h-10 px-3 py-2 md:px-3.5 rounded-xl text-xs sm:text-sm font-black border transition-all whitespace-nowrap ${
         active
           ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
@@ -277,7 +264,7 @@ function FilterChip({ active, onClick, children, activeClass }) {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-full text-sm font-black border transition-all ${
+      className={`px-3 py-1.5 rounded-xl text-sm font-black border transition-all ${
         active
           ? activeClass
           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
@@ -293,7 +280,7 @@ function ActionToggle({ active, onClick, activeClass, inactiveClass, children })
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-full text-sm font-black border transition-all ${
+      className={`px-3 py-1.5 rounded-xl text-sm font-black border transition-all ${
         active ? activeClass : inactiveClass
       }`}
       type="button"
@@ -314,9 +301,9 @@ function SideNavButton({ direction, onClick, label, tone = 'amber' }) {
       aria-label={label}
       title={label}
       className={`absolute top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center
-        w-14 h-14 rounded-full border shadow-sm hover:bg-white active:scale-95 transition-all
+        w-12 h-12 rounded-xl border shadow-sm hover:bg-white active:scale-95 transition-all
         ${toneClass}
-        ${isPrev ? '-left-7' : '-right-7'}`}
+        ${isPrev ? 'left-2' : 'right-2'}`}
     >
       <span className="text-2xl font-black">{isPrev ? '←' : '→'}</span>
     </button>
@@ -375,9 +362,9 @@ function FixedCardFrame({
 
   return (
     <div className="space-y-4">
-      <div className="relative px-0 md:px-8">
-        <SideNavButton direction="prev" onClick={onPrev} label="上一個" tone={tone} />
-        <SideNavButton direction="next" onClick={onNext} label="下一個" tone={tone} />
+      <div className="relative mx-auto w-full max-w-3xl px-0 md:px-6">
+        <SideNavButton direction="prev" onClick={onPrev} label="上一張" tone={tone} />
+        <SideNavButton direction="next" onClick={onNext} label="下一張" tone={tone} />
 
         <div className={`bg-white rounded-[32px] shadow-sm border ${toneStyles.outer} p-3.5 md:p-4`}>
           <div className="relative">
@@ -395,7 +382,7 @@ function FixedCardFrame({
                 className="flex-1 px-3 py-3 rounded-2xl bg-white border border-slate-200 font-black text-sm"
                 type="button"
               >
-                ← 上一個
+                ← 上一張
               </button>
 
               <button
@@ -403,7 +390,7 @@ function FixedCardFrame({
                 className={`flex-1 px-3 py-3 rounded-2xl font-black text-sm ${toneStyles.next}`}
                 type="button"
               >
-                下一個 →
+                下一張 →
               </button>
             </div>
           </div>
@@ -481,8 +468,8 @@ function FlashcardLikeMode({
               {currentVerb.meaningZh}
             </div>
 
-            <div className="text-sm text-slate-400 font-bold mt-6">
-              點一下翻面看變化
+            <div className="mt-6 rounded-full bg-white/70 px-3 py-1.5 text-xs text-slate-400 font-bold">
+              點擊翻面
             </div>
           </div>
         ) : (
@@ -569,8 +556,8 @@ export default function IrregularVerbTrainer() {
   const [level, setLevel] = useState('ALL');
   const [search, setSearch] = useState('');
   const [showBack, setShowBack] = useState(false);
-  const [progress, setProgress] = useState({});
-  const [deck, setDeck] = useState([]);
+  const [progress, setProgress] = useState(loadProgress);
+  const [deck, setDeck] = useState(irregularVerbs);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAudioPanel, setShowAudioPanel] = useState(false);
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
@@ -594,10 +581,6 @@ export default function IrregularVerbTrainer() {
   const [pitch, setPitch] = useState(1.0);
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    setProgress(loadProgress());
-  }, []);
 
   useEffect(() => {
     saveProgress(progress);
@@ -996,33 +979,28 @@ export default function IrregularVerbTrainer() {
 
   return (
     <div className="text-slate-800">
-      <div className="mb-3">
-        <div className="text-sm font-black text-amber-600 mb-1">Lektion 3</div>
-        <h1 className="text-3xl md:text-4xl font-black leading-tight">🇩🇪 不規則動詞特訓</h1>
-      </div>
-
-      <div className="mb-4 rounded-[22px] bg-white shadow-sm border border-slate-200 p-3.5">
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-wrap gap-2">
+      <div className="mb-3 rounded-[18px] md:rounded-[20px] bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
+        <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
             <MainModeButton active={mode === MODES.FLASHCARD} onClick={() => setMode(MODES.FLASHCARD)}>
               📖 字卡
             </MainModeButton>
             <MainModeButton active={mode === MODES.TYPING} onClick={() => setMode(MODES.TYPING)}>
-              ✍️ 三態拼寫
+              ✍️ 拼寫
             </MainModeButton>
             <MainModeButton active={mode === MODES.HABEN_SEIN} onClick={() => setMode(MODES.HABEN_SEIN)}>
-              ⚡ haben / sein
+              ⚡ 助動詞
             </MainModeButton>
             <MainModeButton active={mode === MODES.LIST} onClick={() => setMode(MODES.LIST)}>
               📚 列表
             </MainModeButton>
           </div>
 
-          <div className="grid lg:grid-cols-[150px_1fr_auto_auto] gap-2.5">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-[128px_minmax(0,1fr)_auto_auto] md:items-center">
             <select
               value={level}
               onChange={(e) => setLevel(e.target.value)}
-              className="bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 font-bold outline-none"
+              className="min-h-10 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm font-bold outline-none"
             >
               <option value="ALL">全部等級</option>
               <option value="A1">A1</option>
@@ -1036,12 +1014,12 @@ export default function IrregularVerbTrainer() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="搜尋動詞、中文、時態..."
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 font-bold outline-none"
+              className="col-span-2 md:col-span-1 min-h-10 w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm font-bold outline-none"
             />
 
             <button
               onClick={() => setShowAdvancedFilters((prev) => !prev)}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
+              className={`min-h-10 px-3 py-2 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
                 showAdvancedFilters
                   ? 'bg-slate-800 text-white border-slate-800'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
@@ -1053,7 +1031,7 @@ export default function IrregularVerbTrainer() {
 
             <button
               onClick={() => setShowAudioPanel((prev) => !prev)}
-              className={`px-3.5 py-2.5 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
+              className={`min-h-10 px-3 py-2 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
                 showAudioPanel
                   ? 'bg-indigo-600 text-white border-indigo-600'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
@@ -1064,30 +1042,8 @@ export default function IrregularVerbTrainer() {
             </button>
           </div>
 
-          <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-400">
-            <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
-              模式：{getModeLabel(mode)}
-            </span>
-            <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
-              ← / → 切換
-            </span>
-            {(mode === MODES.FLASHCARD ||
-              mode === MODES.WRONG ||
-              mode === MODES.HARD ||
-              mode === MODES.STARRED) && (
-              <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
-                Space 翻卡
-              </span>
-            )}
-            {mode === MODES.TYPING && (
-              <span className="px-2 py-1 rounded-lg bg-slate-100 text-slate-500">
-                Enter 送出
-              </span>
-            )}
-          </div>
-
           {showAdvancedFilters && (
-            <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-3.5 space-y-4">
+            <div className="rounded-[18px] border border-slate-200 bg-slate-50 p-3 space-y-4">
               <div>
                 <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
                   專項與清單
@@ -1223,10 +1179,10 @@ export default function IrregularVerbTrainer() {
           )}
 
           {showAudioPanel && (
-            <div className="rounded-[20px] border border-slate-200 bg-slate-50 p-3.5">
-              <div className="text-sm font-black text-slate-500 mb-4">德語語音設定</div>
+            <div className="rounded-[18px] border border-slate-200 bg-slate-50 p-3">
+              <div className="text-sm font-black text-slate-500 mb-3">德語語音設定</div>
 
-              <div className="grid md:grid-cols-4 gap-4">
+              <div className="grid md:grid-cols-4 gap-3">
                 <div>
                   <label className="block text-xs font-black text-slate-400 mb-2">德語人聲</label>
                   <select
