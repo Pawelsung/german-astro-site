@@ -12,6 +12,7 @@ import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
 import { collectLocalProgress, mergeRemoteProgress } from '../lib/progressStorage';
 
 const provider = new GoogleAuthProvider();
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4'];
 
 function getAuthErrorMessage(error) {
   const code = error?.code || '';
@@ -33,9 +34,66 @@ function getAuthErrorMessage(error) {
   return messages[code] || error?.message || '登入失敗，請稍後再試。';
 }
 
+function getSyncErrorMessage(error) {
+  const code = error?.code || '';
+
+  const messages = {
+    'permission-denied': '同步失敗：Firestore 權限不足',
+    'unauthenticated': '同步失敗：尚未完成登入',
+    'resource-exhausted': '同步失敗：資料太大或超過限制',
+    'unavailable': '同步失敗：Firestore 暫時無法連線',
+    'not-found': '同步失敗：Firestore 尚未初始化'
+  };
+
+  return messages[code] || `同步失敗${code ? `：${code}` : ''}`;
+}
+
+async function loadRemoteProgress(db, uid) {
+  const legacyRef = doc(db, 'users', uid, 'learning', 'progress');
+  const legacySnap = await getDoc(legacyRef);
+  const remote = legacySnap.exists() ? legacySnap.data() : {};
+
+  const docs = await Promise.all(
+    PROGRESS_DOCS.map(async (key) => {
+      const snap = await getDoc(doc(db, 'users', uid, 'learning', key));
+      return [key, snap.exists() ? snap.data()?.value : undefined];
+    })
+  );
+
+  docs.forEach(([key, value]) => {
+    if (value !== undefined) remote[key] = value;
+  });
+
+  return remote;
+}
+
+async function saveRemoteProgress(db, uid, progress) {
+  await Promise.all(
+    PROGRESS_DOCS.map((key) =>
+      setDoc(
+        doc(db, 'users', uid, 'learning', key),
+        {
+          value: progress[key] ?? null,
+          updatedAt: progress.updatedAt
+        },
+        { merge: true }
+      )
+    )
+  );
+
+  await setDoc(
+    doc(db, 'users', uid, 'learning', 'progressMeta'),
+    {
+      updatedAt: progress.updatedAt,
+      schema: 'split-progress-v1'
+    },
+    { merge: true }
+  );
+}
+
 export default function UserAccount({ compact = false }) {
   const [user, setUser] = useState(null);
-  const [status, setStatus] = useState(hasFirebaseConfig ? '同步未啟用' : '本機模式');
+  const [status, setStatus] = useState(hasFirebaseConfig ? '尚未登入' : '本機紀錄');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -48,12 +106,11 @@ export default function UserAccount({ compact = false }) {
     if (!services || !currentUser) return;
 
     try {
-      const ref = doc(services.db, 'users', currentUser.uid, 'learning', 'progress');
-      await setDoc(ref, collectLocalProgress(), { merge: true });
+      await saveRemoteProgress(services.db, currentUser.uid, collectLocalProgress());
       setStatus(nextStatus);
     } catch (error) {
       console.error(error);
-      setStatus('同步失敗');
+      setStatus(getSyncErrorMessage(error));
     }
   }, []);
 
@@ -73,15 +130,14 @@ export default function UserAccount({ compact = false }) {
       setStatus('同步中...');
 
       try {
-        const ref = doc(services.db, 'users', nextUser.uid, 'learning', 'progress');
-        const snap = await getDoc(ref);
-        const merged = mergeRemoteProgress(snap.exists() ? snap.data() : {});
-        await setDoc(ref, merged, { merge: true });
+        const remoteProgress = await loadRemoteProgress(services.db, nextUser.uid);
+        const merged = mergeRemoteProgress(remoteProgress);
+        await saveRemoteProgress(services.db, nextUser.uid, merged);
         window.dispatchEvent(new CustomEvent('learning-progress-updated'));
         setStatus('已同步');
       } catch (error) {
         console.error(error);
-        setStatus('同步失敗');
+        setStatus(getSyncErrorMessage(error));
       }
     });
   }, []);
@@ -173,7 +229,7 @@ export default function UserAccount({ compact = false }) {
           </>
         ) : (
           <button onClick={handleGoogleLogin} className="rounded-full bg-amber-600 px-3 py-1.5 text-xs font-black text-white disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
-            登入同步
+            登入同步紀錄
           </button>
         )}
       </div>
@@ -184,9 +240,9 @@ export default function UserAccount({ compact = false }) {
     <div className="rounded-2xl border border-amber-100 bg-amber-50/80 p-4">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-xs font-black uppercase tracking-widest text-amber-500">Account Sync</p>
+          <p className="text-xs font-black tracking-widest text-amber-500">學習紀錄同步</p>
           <h3 className="mt-1 text-base md:text-lg font-black text-slate-800">
-            {user ? user.email || '已登入帳號' : '登入後跨裝置保存進度'}
+            {user ? user.email || '已登入帳號' : '登入後同步學習紀錄'}
           </h3>
           <p className="mt-1 text-xs md:text-sm font-bold text-slate-500">{status}</p>
         </div>
