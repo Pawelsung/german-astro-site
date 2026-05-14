@@ -187,11 +187,11 @@ function deriveLearningState(item = {}) {
   }
 
   if (hard || wrong >= 3) {
-    return { label: '待加強', cls: 'bg-rose-100 text-rose-600 border-rose-200' };
+    return { label: '需要複習', cls: 'bg-rose-100 text-rose-600 border-rose-200' };
   }
 
   if (seen > 0) {
-    return { label: '學習中', cls: 'bg-amber-100 text-amber-700 border-amber-200' };
+    return { label: '學習中', cls: 'bg-violet-100 text-violet-700 border-violet-200' };
   }
 
   return { label: '未開始', cls: 'bg-slate-100 text-slate-600 border-slate-200' };
@@ -200,33 +200,33 @@ function deriveLearningState(item = {}) {
 function getModeTone(mode) {
   if (mode === MODES.MODAL) return 'indigo';
   if (mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) return 'rose';
-  return 'amber';
+  return 'violet';
 }
 
 function getToneClasses(tone) {
   if (tone === 'rose') {
     return {
-      outer: 'border-rose-200',
-      inner: 'border-rose-100 bg-rose-50/80',
+      outer: 'border-rose-200 dark:border-rose-900/60',
+      inner: 'border-rose-100 bg-rose-50/80 dark:border-rose-900/60 dark:bg-rose-950/30',
       next: 'bg-rose-500 text-white',
-      nav: 'bg-white/95 border-rose-200 text-rose-600'
+      nav: 'bg-white/95 border-rose-200 text-rose-600 dark:bg-slate-900 dark:border-rose-900/60 dark:text-rose-200'
     };
   }
 
   if (tone === 'indigo') {
     return {
-      outer: 'border-indigo-200',
-      inner: 'border-indigo-100 bg-indigo-50/70',
+      outer: 'border-indigo-200 dark:border-indigo-900/60',
+      inner: 'border-indigo-100 bg-indigo-50/70 dark:border-indigo-900/60 dark:bg-indigo-950/30',
       next: 'bg-indigo-600 text-white',
-      nav: 'bg-white/95 border-indigo-200 text-indigo-600'
+      nav: 'bg-white/95 border-indigo-200 text-indigo-600 dark:bg-slate-900 dark:border-indigo-900/60 dark:text-indigo-200'
     };
   }
 
   return {
-    outer: 'border-slate-200',
-    inner: 'border-amber-100 bg-amber-50/80',
-    next: 'bg-amber-600 text-white',
-    nav: 'bg-white/95 border-slate-200 text-slate-700'
+    outer: 'border-slate-200 dark:border-violet-900/60',
+    inner: 'border-violet-100 bg-violet-50/80 dark:border-violet-900/60 dark:bg-violet-950/30',
+    next: 'bg-violet-600 text-white',
+    nav: 'bg-white/95 border-slate-200 text-slate-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-200'
   };
 }
 
@@ -250,7 +250,7 @@ function MainModeButton({ active, onClick, children }) {
       onClick={onClick}
       className={`min-h-10 px-3 py-2 md:px-3.5 rounded-xl text-xs sm:text-sm font-black border transition-all whitespace-nowrap ${
         active
-          ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
+          ? 'bg-violet-600 text-white border-violet-600 shadow-sm'
           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
       }`}
       type="button"
@@ -290,7 +290,7 @@ function ActionToggle({ active, onClick, activeClass, inactiveClass, children })
   );
 }
 
-function SideNavButton({ direction, onClick, label, tone = 'amber' }) {
+function SideNavButton({ direction, onClick, label, tone = 'violet' }) {
   const isPrev = direction === 'prev';
   const toneClass = getToneClasses(tone).nav;
 
@@ -340,7 +340,7 @@ function MetaPills({
         </span>
       )}
 
-      <span className="px-2.5 py-1 rounded-full text-xs font-black border bg-white text-amber-600 border-amber-200 opacity-80">
+      <span className="px-2.5 py-1 rounded-full text-xs font-black border bg-white text-violet-600 border-violet-200 opacity-80">
         {currentVerb.level}
       </span>
 
@@ -352,7 +352,7 @@ function MetaPills({
 }
 
 function FixedCardFrame({
-  tone = 'amber',
+  tone = 'violet',
   children,
   topRight,
   onPrev,
@@ -366,12 +366,12 @@ function FixedCardFrame({
         <SideNavButton direction="prev" onClick={onPrev} label="上一張" tone={tone} />
         <SideNavButton direction="next" onClick={onNext} label="下一張" tone={tone} />
 
-        <div className={`bg-white rounded-[32px] shadow-sm border ${toneStyles.outer} p-3.5 md:p-4`}>
+        <div className={`bg-violet-50/70 rounded-2xl shadow-md shadow-violet-900/10 border ${toneStyles.outer} p-3.5 md:p-4 dark:bg-slate-900 dark:shadow-black/20`}>
           <div className="relative">
             {topRight && <div className="absolute right-3 top-3 z-10 flex gap-2">{topRight}</div>}
 
             <div
-              className={`min-h-[390px] sm:min-h-[460px] md:min-h-[520px] rounded-[28px] border ${toneStyles.inner} flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 overflow-hidden`}
+              className={`min-h-[390px] sm:min-h-[460px] md:min-h-[520px] rounded-2xl border ${toneStyles.inner} flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 overflow-hidden`}
             >
               {children}
             </div>
@@ -426,7 +426,7 @@ function FlashcardLikeMode({
             activeClass="bg-yellow-500 text-white border-yellow-500"
             inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
           >
-            ⭐ 收藏
+            ⭐ 已收藏
           </ActionToggle>
 
           <ActionToggle
@@ -435,14 +435,21 @@ function FlashcardLikeMode({
             activeClass="bg-orange-500 text-white border-orange-500"
             inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
           >
-            🔥 不熟
+            需要複習
           </ActionToggle>
         </>
       }
     >
-      <div onClick={onFlip} className="cursor-pointer w-full max-w-3xl mx-auto">
-        {!showBack ? (
-          <div className="min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center items-center text-center min-w-0">
+      <div
+        onClick={onFlip}
+        className="cursor-pointer w-full max-w-3xl mx-auto [perspective:1200px]"
+      >
+        <div
+          className={`relative min-h-[310px] sm:min-h-[380px] md:min-h-[420px] transition-transform duration-500 [transform-style:preserve-3d] ${
+            showBack ? '[transform:rotateY(180deg)]' : ''
+          }`}
+        >
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center min-w-0 [backface-visibility:hidden]">
             {frontBadge && (
               <div className="mb-3 flex justify-center">
                 <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
@@ -472,10 +479,10 @@ function FlashcardLikeMode({
               點擊翻面
             </div>
           </div>
-        ) : (
-          <div className="min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center">
+
+          <div className="absolute inset-0 flex flex-col justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
             <div className="grid sm:grid-cols-2 gap-4 text-left auto-rows-fr">
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
                 <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>
                 <div className="flex items-center justify-between gap-3">
                   <div className="text-xl sm:text-2xl font-black break-words min-w-0">{currentVerb.infinitive}</div>
@@ -489,14 +496,14 @@ function FlashcardLikeMode({
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
                 <div className="text-xs font-black text-slate-400 mb-2">3. Person</div>
                 <div className="text-xl sm:text-2xl font-black break-words">
                   {highlightChangedVowel(currentVerb.infinitive, currentVerb.present3rd)}
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
                 <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
                 <div className="flex items-center justify-between gap-3">
                   <div className="text-xl sm:text-2xl font-black break-words min-w-0">
@@ -512,7 +519,7 @@ function FlashcardLikeMode({
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 min-h-[112px]">
+              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
                 <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
                 <div className="flex items-center justify-between gap-3">
                   <div className="text-xl sm:text-2xl font-black break-words min-w-0">
@@ -529,11 +536,11 @@ function FlashcardLikeMode({
               </div>
             </div>
 
-            <div className="mt-4 bg-white rounded-2xl p-4 border border-slate-100 text-left min-h-[116px] flex items-start">
+            <div className="mt-4 bg-violet-50/80 rounded-2xl p-4 border border-violet-100 text-left min-h-[116px] flex items-start dark:bg-slate-900/75 dark:border-violet-900/50">
               <div className="w-full">
                 <div className="text-xs font-black text-slate-400 mb-2">例句</div>
                 <div className="flex items-start justify-between gap-3">
-                  <div className="text-base sm:text-lg font-bold flex-1 break-words min-w-0">{currentVerb.example}</div>
+                <div className="text-base sm:text-lg font-bold flex-1 break-words min-w-0">{currentVerb.example}</div>
                   <AudioPill
                     onClick={(e) => {
                       e.stopPropagation();
@@ -545,7 +552,7 @@ function FlashcardLikeMode({
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </FixedCardFrame>
   );
@@ -598,11 +605,11 @@ export default function IrregularVerbTrainer() {
     const services = getFirebaseServices();
     if (!services || !user) return;
 
-    const docRef = doc(services.db, 'users', user.uid, 'learning', 'progress');
+    const docRef = doc(services.db, 'users', user.uid, 'learning', 'lesson3');
     const unsubscribe = onSnapshot(docRef, (snapshot) => {
-      const remoteLesson3 = snapshot.exists() ? snapshot.data().lesson3 : null;
+      const remoteLesson3 = snapshot.exists() ? snapshot.data().value : null;
       if (!remoteLesson3) {
-        setDoc(docRef, { lesson3: progress, updatedAt: new Date().toISOString() }, { merge: true });
+        setDoc(docRef, { value: progress, updatedAt: new Date().toISOString() }, { merge: true });
         return;
       }
 
@@ -620,8 +627,8 @@ export default function IrregularVerbTrainer() {
     const services = getFirebaseServices();
     if (!services || !user) return;
 
-    const docRef = doc(services.db, 'users', user.uid, 'learning', 'progress');
-    setDoc(docRef, { lesson3: progress, updatedAt: new Date().toISOString() }, { merge: true }).catch(
+    const docRef = doc(services.db, 'users', user.uid, 'learning', 'lesson3');
+    setDoc(docRef, { value: progress, updatedAt: new Date().toISOString() }, { merge: true }).catch(
       console.error
     );
   }, [progress, user]);
@@ -979,20 +986,20 @@ export default function IrregularVerbTrainer() {
 
   return (
     <div className="text-slate-800">
-      <div className="mb-3 rounded-[18px] md:rounded-[20px] bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
+      <div className="mb-3 rounded-xl md:rounded-2xl bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
         <div className="flex flex-col gap-2">
           <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
             <MainModeButton active={mode === MODES.FLASHCARD} onClick={() => setMode(MODES.FLASHCARD)}>
-              📖 字卡
+              字卡
             </MainModeButton>
             <MainModeButton active={mode === MODES.TYPING} onClick={() => setMode(MODES.TYPING)}>
-              ✍️ 拼寫
+              拼寫
             </MainModeButton>
             <MainModeButton active={mode === MODES.HABEN_SEIN} onClick={() => setMode(MODES.HABEN_SEIN)}>
-              ⚡ 助動詞
+              助動詞
             </MainModeButton>
             <MainModeButton active={mode === MODES.LIST} onClick={() => setMode(MODES.LIST)}>
-              📚 列表
+              列表
             </MainModeButton>
           </div>
 
@@ -1043,7 +1050,7 @@ export default function IrregularVerbTrainer() {
           </div>
 
           {showAdvancedFilters && (
-            <div className="rounded-[18px] border border-slate-200 bg-slate-50 p-3 space-y-4">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-4">
               <div>
                 <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
                   專項與清單
@@ -1054,28 +1061,28 @@ export default function IrregularVerbTrainer() {
                     onClick={() => setMode(MODES.MODAL)}
                     activeClass="bg-indigo-600 text-white border-indigo-600"
                   >
-                    🧩 情態專練
+                    情態專練
                   </FilterChip>
                   <FilterChip
                     active={mode === MODES.WRONG}
                     onClick={() => setMode(MODES.WRONG)}
                     activeClass="bg-rose-500 text-white border-rose-500"
                   >
-                    ⚠️ 錯題
+                    錯誤紀錄
                   </FilterChip>
                   <FilterChip
                     active={mode === MODES.HARD}
                     onClick={() => setMode(MODES.HARD)}
                     activeClass="bg-orange-500 text-white border-orange-500"
                   >
-                    🔥 不熟
+                    需要複習
                   </FilterChip>
                   <FilterChip
                     active={mode === MODES.STARRED}
                     onClick={() => setMode(MODES.STARRED)}
                     activeClass="bg-yellow-500 text-white border-yellow-500"
                   >
-                    ⭐ 收藏
+                    已收藏
                   </FilterChip>
                 </div>
               </div>
@@ -1179,7 +1186,7 @@ export default function IrregularVerbTrainer() {
           )}
 
           {showAudioPanel && (
-            <div className="rounded-[18px] border border-slate-200 bg-slate-50 p-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
               <div className="text-sm font-black text-slate-500 mb-3">德語語音設定</div>
 
               <div className="grid md:grid-cols-4 gap-3">
@@ -1245,7 +1252,7 @@ export default function IrregularVerbTrainer() {
       </div>
 
       {!currentVerb && (
-        <div className="bg-white rounded-[30px] p-10 text-center shadow-sm border border-slate-200">
+        <div className="bg-white rounded-2xl p-10 text-center shadow-sm border border-slate-200">
           <div className="text-5xl mb-4">📭</div>
           <div className="text-2xl font-black mb-2">目前沒有資料</div>
           <p className="text-slate-500 font-medium">請切換等級、搜尋條件，或調整進階篩選。</p>
@@ -1265,7 +1272,7 @@ export default function IrregularVerbTrainer() {
 
       {currentVerb && mode === MODES.FLASHCARD && (
         <FlashcardLikeMode
-          tone="amber"
+          tone="violet"
           currentVerb={currentVerb}
           currentStats={currentStats}
           onToggleStar={toggleStar}
@@ -1290,7 +1297,7 @@ export default function IrregularVerbTrainer() {
           onNext={nextCard}
           showBack={showBack}
           speak={speak}
-          frontBadge={mode === MODES.WRONG ? '錯題重練' : mode === MODES.HARD ? '不熟清單' : '收藏清單'}
+          frontBadge={mode === MODES.WRONG ? '錯誤紀錄' : mode === MODES.HARD ? '需要複習' : '已收藏'}
         />
       )}
 
@@ -1330,7 +1337,7 @@ export default function IrregularVerbTrainer() {
 
                 <button
                   type="submit"
-                  className="w-full bg-amber-600 text-white py-4 rounded-2xl font-black text-lg"
+                  className="w-full bg-violet-600 text-white py-4 rounded-2xl font-black text-lg"
                 >
                   檢查答案
                 </button>
@@ -1382,7 +1389,7 @@ export default function IrregularVerbTrainer() {
                   onClick={() => handleAuxAnswer('hat')}
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border ${
                     auxAnswer === 'hat'
-                      ? 'bg-amber-600 text-white border-amber-600'
+                      ? 'bg-violet-600 text-white border-violet-600'
                       : 'bg-white text-slate-700 border-slate-200'
                   }`}
                   type="button"
@@ -1393,7 +1400,7 @@ export default function IrregularVerbTrainer() {
                   onClick={() => handleAuxAnswer('ist')}
                   className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border ${
                     auxAnswer === 'ist'
-                      ? 'bg-amber-600 text-white border-amber-600'
+                      ? 'bg-violet-600 text-white border-violet-600'
                       : 'bg-white text-slate-700 border-slate-200'
                   }`}
                   type="button"
@@ -1496,7 +1503,7 @@ export default function IrregularVerbTrainer() {
             return (
               <div
                 key={verb.id}
-                className="bg-white rounded-[28px] shadow-sm border border-slate-200 p-5"
+                className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                   <div className="flex-1">
@@ -1505,7 +1512,7 @@ export default function IrregularVerbTrainer() {
                       <AudioPill onClick={() => speak(verb.infinitive)} label="播放動詞發音" />
 
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-sm font-black border border-amber-200">
+                        <span className="px-3 py-1 rounded-full bg-violet-50 text-violet-600 text-sm font-black border border-violet-200">
                           {verb.level}
                         </span>
                         <span className={`px-3 py-1 rounded-full text-sm font-black border ${learningState.cls}`}>
@@ -1568,8 +1575,8 @@ export default function IrregularVerbTrainer() {
                     <div className="text-sm font-bold text-slate-700">看過：{stats.seen}</div>
                     <div className="text-sm font-bold text-slate-700">答對：{stats.correct}</div>
                     <div className="text-sm font-bold text-slate-700">答錯：{stats.wrong}</div>
-                    <div className="text-sm font-bold text-slate-700">收藏：{stats.starred ? '是' : '否'}</div>
-                    <div className="text-sm font-bold text-slate-700">不熟：{stats.hard ? '是' : '否'}</div>
+                    <div className="text-sm font-bold text-slate-700">已收藏：{stats.starred ? '是' : '否'}</div>
+                    <div className="text-sm font-bold text-slate-700">需要複習：{stats.hard ? '是' : '否'}</div>
                   </div>
                 </div>
               </div>

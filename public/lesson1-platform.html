@@ -554,19 +554,25 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         let firebaseConfig = {};
         try {
             if (typeof __firebase_config !== 'undefined') {
                 firebaseConfig = JSON.parse(__firebase_config);
+            } else if (window.parent && window.parent !== window && window.parent.__firebase_config) {
+                firebaseConfig = JSON.parse(window.parent.__firebase_config);
             }
         } catch (e) {
             console.warn("使用本地離線模式運行");
         }
 
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'german-brick-pro-v3';
+        const appId = typeof __app_id !== 'undefined'
+            ? __app_id
+            : (window.parent && window.parent !== window && window.parent.__app_id)
+                ? window.parent.__app_id
+                : 'german-astro-site';
 
         let app, auth, db;
         try {
@@ -714,8 +720,6 @@
                 try {
                     if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                         await signInWithCustomToken(auth, __initial_auth_token);
-                    } else {
-                        await signInAnonymously(auth);
                     }
                 } catch (e) {
                     console.error("Auth Fail", e);
@@ -944,15 +948,15 @@
 
         function setupCloudSync(uid) {
             if (!db) return;
-            const docRef = doc(db, 'artifacts', appId, 'users', uid, 'userData', 'main');
-            onSnapshot(docRef, (snap) => {
+            const wordsRef = doc(db, 'users', uid, 'learning', 'lesson1Words');
+            const statsRef = doc(db, 'users', uid, 'learning', 'lesson1Stats');
+
+            onSnapshot(wordsRef, (snap) => {
                 if (snap.exists()) {
                     const data = snap.data();
-                    if (data.wordDatabase?.length > 0) {
-                        window.wordDatabase = normalizeWordList(data.wordDatabase);
-                        window.userStats = data.userStats || window.userStats;
+                    if (data.value?.length > 0) {
+                        window.wordDatabase = normalizeWordList(data.value);
                         localStorage.setItem('deutschLernkartenDB_vPro', JSON.stringify(window.wordDatabase));
-                        localStorage.setItem('deutschLernkartenStats', JSON.stringify(window.userStats));
                         refreshUI();
                         autoUpgradeDefaultVocabulary();
                     }
@@ -960,19 +964,29 @@
                     window.saveDatabaseToCloud();
                 }
             });
+
+            onSnapshot(statsRef, (snap) => {
+                if (!snap.exists()) return;
+                const data = snap.data();
+                if (!data.value) return;
+                window.userStats = data.value;
+                localStorage.setItem('deutschLernkartenStats', JSON.stringify(window.userStats));
+                refreshUI();
+            });
         }
 
         window.saveDatabaseToCloud = async function() {
             if (!window.user || !db) return;
-            const docRef = doc(db, 'artifacts', appId, 'users', window.user.uid, 'userData', 'main');
+            const wordsRef = doc(db, 'users', window.user.uid, 'learning', 'lesson1Words');
+            const statsRef = doc(db, 'users', window.user.uid, 'learning', 'lesson1Stats');
             const icon = document.getElementById('cloud-status-icon');
             icon?.classList.add('sync-active');
             try {
-                await setDoc(docRef, {
-                    wordDatabase: window.wordDatabase,
-                    userStats: window.userStats,
-                    updatedAt: Date.now()
-                }, { merge: true });
+                const updatedAt = new Date().toISOString();
+                await Promise.all([
+                    setDoc(wordsRef, { value: window.wordDatabase, updatedAt }, { merge: true }),
+                    setDoc(statsRef, { value: window.userStats, updatedAt }, { merge: true })
+                ]);
             } catch (e) {
                 console.error(e);
             } finally {

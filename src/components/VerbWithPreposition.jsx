@@ -95,7 +95,7 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
         <div className={`absolute w-full h-full duration-500 preserve-3d transition-all ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
           
           <div
-            className="absolute w-full h-full bg-white rounded-[32px] shadow-sm border border-amber-100 p-5 md:p-8 flex flex-col items-center justify-center backface-hidden transition-shadow"
+            className="absolute w-full h-full bg-gradient-to-br from-amber-50 via-orange-50/50 to-white rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-5 md:p-8 flex flex-col items-center justify-center backface-hidden transition-shadow dark:from-slate-900 dark:via-amber-950/25 dark:to-slate-950 dark:shadow-black/20"
             onClick={(e) => {
               if (e.target.closest('button')) return;
               setIsFlipped(true);
@@ -124,7 +124,7 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
           </div>
 
           <div
-            className="absolute w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-[32px] shadow-sm border border-amber-200 p-4 sm:p-5 md:p-8 flex flex-col items-center justify-between [transform:rotateY(180deg)] backface-hidden overflow-hidden"
+            className="absolute w-full h-full bg-gradient-to-br from-amber-100 via-orange-50 to-amber-50 rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-4 sm:p-5 md:p-8 flex flex-col items-center justify-between [transform:rotateY(180deg)] backface-hidden overflow-hidden dark:from-amber-950/35 dark:via-orange-950/25 dark:to-slate-900 dark:shadow-black/20"
             onClick={(e) => {
               if (e.target.closest('button') || e.target.closest('[data-no-flip]')) return;
               setIsFlipped(false);
@@ -138,11 +138,11 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
               <div className="inline-block px-3 py-1 rounded-full bg-amber-200 text-amber-900 text-[10px] sm:text-xs font-bold mb-3 shadow-sm">
                 + {card.case === 'A' ? 'Akkusativ' : 'Dativ'}
               </div>
-              <div className="w-full bg-white/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-100/50 mb-2.5 text-left">
+              <div className="w-full bg-amber-50/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-200/70 mb-2.5 text-left dark:bg-slate-900/75 dark:border-amber-900/50">
                 <p className="text-amber-600/80 uppercase text-[9px] sm:text-[10px] font-bold tracking-wider mb-1">Perfekt Form</p>
                 <p className="text-gray-800 font-medium text-sm sm:text-base break-words">{card.forms}</p>
               </div>
-              <div className="w-full bg-white/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-100/50 text-left relative">
+              <div className="w-full bg-amber-50/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-200/70 text-left relative dark:bg-slate-900/75 dark:border-amber-900/50">
                 <div className="flex justify-between items-start mb-1 gap-2">
                    <p className="text-gray-800 text-sm sm:text-base leading-snug font-medium break-words min-w-0">{card.example}</p>
                    <button 
@@ -289,7 +289,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
   if (!question) return <div className="p-8 text-center text-gray-500">準備測驗中...</div>;
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-white rounded-3xl shadow-lg border border-amber-100 p-4 sm:p-5 md:p-6">
+    <div className="w-full max-w-xl mx-auto bg-white rounded-3xl shadow-lg border border-amber-100 p-4 sm:p-5 md:p-6">
       
       {onlyStarred && quizPool.length < data.length && (
           <div className="mb-4 bg-amber-100 text-amber-800 px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 font-bold text-center">
@@ -392,22 +392,22 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
         })}
       </div>
 
-      {answered && (
-        <div className={`p-3 sm:p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mt-5 ${isCorrect ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
-          <div className="flex items-center gap-2">
-            {isCorrect ? <CheckCircle size={20} className="sm:w-6 sm:h-6" /> : <XCircle size={20} className="sm:w-6 sm:h-6" />}
-            <span className="font-extrabold text-sm sm:text-base">
-              {isCorrect ? '答對了！非常棒！' : `正確答案: ${mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`}
-            </span>
-          </div>
-          <button 
-            onClick={generateQuestion}
-            className="w-full md:w-auto px-5 py-2.5 sm:py-3 bg-white rounded-xl shadow font-extrabold text-sm border hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 active:scale-95"
-          >
-            下一題 <Play size={16} className="fill-current" />
-          </button>
+      <div className={`p-3 sm:p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mt-5 ${answered ? (isCorrect ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200') : 'bg-slate-50 text-slate-600 border border-slate-100'}`}>
+        <div className="flex items-center gap-2">
+          {answered && (isCorrect ? <CheckCircle size={20} className="sm:w-6 sm:h-6" /> : <XCircle size={20} className="sm:w-6 sm:h-6" />)}
+          <span className="font-extrabold text-sm sm:text-base">
+            {answered
+              ? (isCorrect ? '正確' : `正確答案: ${mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`)
+              : '可以作答，也可以先看下一題'}
+          </span>
         </div>
-      )}
+        <button
+          onClick={generateQuestion}
+          className="w-full md:w-auto px-5 py-2.5 sm:py-3 bg-white rounded-xl shadow font-extrabold text-sm border hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 active:scale-95"
+        >
+          {answered ? '下一題' : '跳過'} <Play size={16} className="fill-current" />
+        </button>
+      </div>
     </div>
   );
 };
@@ -448,7 +448,7 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
                 className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-colors ${showOnlyStarred ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-600'}`}
             >
                 <Star size={14} className={showOnlyStarred ? "fill-amber-500 text-amber-500" : ""} />
-                收藏
+                已收藏
             </button>
         </div>
       </div>
@@ -536,15 +536,15 @@ const SettingsView = ({ voiceData, userData, user }) => {
       <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-5 sm:p-6 rounded-3xl shadow-lg text-white">
         <div className="flex items-center gap-2.5 sm:gap-3 mb-2">
             {user ? <Cloud size={24} className="text-blue-200" /> : <CloudOff size={24} className="text-blue-200" />}
-            <h2 className="text-xl sm:text-2xl font-extrabold">雲端同步狀態</h2>
+            <h2 className="text-xl sm:text-2xl font-extrabold">學習紀錄同步</h2>
         </div>
         <p className="text-blue-100 text-xs sm:text-sm font-medium mb-4">
-            {user ? `已連線 (ID: ${user.uid.slice(0,6)}...)` : '目前為本地模式'}
+            {user ? `已連線 (ID: ${user.uid.slice(0,6)}...)` : '目前使用本機紀錄'}
         </p>
         <div className="bg-white/20 backdrop-blur rounded-2xl p-3 sm:p-4 flex justify-between items-center">
             <div className="text-center">
                 <div className="text-xl sm:text-2xl font-black">{userData.starred.length}</div>
-                <div className="text-[10px] sm:text-xs text-blue-100 font-bold">收藏單字</div>
+                <div className="text-[10px] sm:text-xs text-blue-100 font-bold">已收藏單字</div>
             </div>
             <div className="text-center">
                 <div className="text-xl sm:text-2xl font-black">{Object.keys(userData.srs).length}</div>
@@ -633,17 +633,17 @@ export default function VerbWithPreposition() {
     const services = getFirebaseServices();
     if (!services || !user) return;
 
-    const docRef = doc(services.db, 'users', user.uid, 'learning', 'progress');
+    const docRef = doc(services.db, 'users', user.uid, 'learning', 'lesson2');
     
     const unsubscribe = onSnapshot(docRef, (document) => {
         if (document.exists()) {
             const data = document.data();
-            if (data.lesson2) {
-              setUserData(data.lesson2);
-              saveLesson2Progress(data.lesson2);
+            if (data.value) {
+              setUserData(data.value);
+              saveLesson2Progress(data.value);
             }
         } else {
-            setDoc(docRef, { lesson2: userData, updatedAt: new Date().toISOString() }, { merge: true });
+            setDoc(docRef, { value: userData, updatedAt: new Date().toISOString() }, { merge: true });
         }
     }, (error) => {
         console.error("Firestore Listen Error:", error);
@@ -660,8 +660,8 @@ export default function VerbWithPreposition() {
       const services = getFirebaseServices();
       if (services && user) {
           try {
-            const docRef = doc(services.db, 'users', user.uid, 'learning', 'progress');
-            await setDoc(docRef, { lesson2: updated, updatedAt: new Date().toISOString() }, { merge: true });
+            const docRef = doc(services.db, 'users', user.uid, 'learning', 'lesson2');
+            await setDoc(docRef, { value: updated, updatedAt: new Date().toISOString() }, { merge: true });
           } catch(e) { console.error(e) }
       }
   };
@@ -729,7 +729,7 @@ export default function VerbWithPreposition() {
     <div className="w-full relative pb-24 md:pb-8 text-gray-800 font-sans selection:bg-amber-200">
 
       {/* 電腦版/平板版專用的頂部工具列 */}
-      <div className="hidden md:grid grid-cols-4 gap-2 mb-3 rounded-[20px] bg-white shadow-sm border border-slate-200 p-3">
+      <div className="hidden md:grid grid-cols-4 gap-2 mb-3 rounded-2xl bg-white shadow-sm border border-slate-200 p-3">
         {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {
               const icons = { 'flashcards': RotateCw, 'quiz': Brain, 'list': List, 'settings': Settings };
               const labels = { 'flashcards': '字卡', 'quiz': '測驗', 'list': '列表', 'settings': '設定' };
@@ -761,7 +761,7 @@ export default function VerbWithPreposition() {
                           className="text-[10px] sm:text-xs mt-1.5 font-bold flex items-center gap-1 text-gray-400 hover:text-amber-500"
                       >
                           <Star size={12} className={onlyStarredFlashcards ? "fill-amber-400 text-amber-400" : ""} /> 
-                          {onlyStarredFlashcards ? '顯示全部' : '僅顯示收藏'}
+                          {onlyStarredFlashcards ? '顯示全部' : '僅顯示已收藏'}
                       </button>
                   )}
               </div>

@@ -6,6 +6,7 @@ interface Frontmatter {
   title: string;
   description: string;
   tags?: string[];
+  theme?: string;
 }
 
 interface Props {
@@ -15,18 +16,56 @@ interface Props {
 
 const { frontmatter, contentClass = 'w-full flex-grow relative z-10 px-4 pb-10' } = Astro.props;
 const hasTips = await Astro.slots.has('tips');
+const themes = {
+  sky: {
+    page: 'bg-sky-50/45',
+    link: 'text-sky-700 hover:bg-sky-50',
+    chip: 'bg-sky-50 text-sky-700 border-sky-100',
+    tips: 'bg-sky-50 border-sky-100 text-sky-800',
+    bullet: 'text-sky-500'
+  },
+  emerald: {
+    page: 'bg-emerald-50/45',
+    link: 'text-emerald-700 hover:bg-emerald-50',
+    chip: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+    tips: 'bg-emerald-50 border-emerald-100 text-emerald-800',
+    bullet: 'text-emerald-500'
+  },
+  amber: {
+    page: 'bg-amber-50/45',
+    link: 'text-amber-700 hover:bg-amber-50',
+    chip: 'bg-amber-50 text-amber-700 border-amber-100',
+    tips: 'bg-amber-50 border-amber-100 text-amber-800',
+    bullet: 'text-amber-500'
+  },
+  violet: {
+    page: 'bg-violet-50/40',
+    link: 'text-violet-700 hover:bg-violet-50',
+    chip: 'bg-violet-50 text-violet-700 border-violet-100',
+    tips: 'bg-violet-50 border-violet-100 text-violet-800',
+    bullet: 'text-violet-500'
+  },
+  teal: {
+    page: 'bg-teal-50/45',
+    link: 'text-teal-700 hover:bg-teal-50',
+    chip: 'bg-teal-50 text-teal-700 border-teal-100',
+    tips: 'bg-teal-50 border-teal-100 text-teal-800',
+    bullet: 'text-teal-500'
+  }
+};
+const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
 ---
 
 <Layout title={frontmatter.title}>
-  <main class="min-h-screen bg-[#FDFBF7] text-slate-800 flex flex-col">
+  <main class={`min-h-screen ${theme.page} text-slate-800 flex flex-col`}>
     <div class="w-full px-4 pt-5 md:pt-4 pb-3">
       <div class="max-w-6xl mx-auto">
         <div class="mb-4 md:mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <a
             href="/"
-            class="text-amber-600 font-black inline-flex items-center gap-2 hover:bg-amber-50 px-3 py-2 rounded-xl transition-all w-fit text-sm"
+            class={`${theme.link} font-black inline-flex items-center gap-2 px-3 py-2 rounded-lg transition-all w-fit text-sm`}
           >
-            ← 返回課程總覽
+            ← 返回學習工作台
           </a>
           <UserAccount client:only="react" compact />
         </div>
@@ -45,7 +84,7 @@ const hasTips = await Astro.slots.has('tips');
           {frontmatter.tags?.length && (
             <div class="flex flex-wrap gap-2 md:max-w-sm md:justify-end">
               {frontmatter.tags.slice(0, 4).map((tag) => (
-                <span class="px-2.5 py-1 bg-amber-50 text-amber-600 text-[11px] font-black rounded-full border border-amber-100 shadow-sm">
+                <span class={`px-2.5 py-1 ${theme.chip} text-[11px] font-black rounded-full border`}>
                   #{tag}
                 </span>
               ))}
@@ -61,12 +100,12 @@ const hasTips = await Astro.slots.has('tips');
 
     {hasTips && (
       <div class="w-full px-4 pb-12 mt-2 mb-8 relative z-0">
-        <div class="max-w-4xl mx-auto bg-amber-50 p-6 rounded-[2rem] border border-amber-100 shadow-sm">
-          <h3 class="text-lg font-black text-amber-800 mb-4 flex items-center gap-2">
-            <span class="text-2xl">💡</span> 學習小撇步
+        <div class={`max-w-4xl mx-auto ${theme.tips} p-5 rounded-2xl border`}>
+          <h3 class="text-base font-black mb-4 flex items-center gap-2">
+            學習提示
           </h3>
 
-          <ul class="space-y-4 text-sm text-amber-700 font-bold">
+          <ul class="space-y-4 text-sm font-bold">
             <slot name="tips" />
           </ul>
         </div>

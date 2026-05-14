@@ -219,7 +219,8 @@ function ChoiceQuestion({ question, value, onChange, locked }) {
 
 function OrderQuestion({ question, value, onChange, locked }) {
   const selected = Array.isArray(value) ? value : [];
-  const remaining = question.tokens.filter((token, index) => !selected.some((item) => item.token === token && item.index === index));
+  const tokenItems = question.tokens.map((token, index) => ({ token, index }));
+  const remaining = tokenItems.filter((item) => !selected.some((selectedItem) => selectedItem.index === item.index));
 
   return (
     <div className="space-y-3">
@@ -240,8 +241,7 @@ function OrderQuestion({ question, value, onChange, locked }) {
         </div>
       </div>
       <div className="flex flex-wrap gap-2">
-        {remaining.map((token) => {
-          const index = question.tokens.findIndex((item, itemIndex) => item === token && !selected.some((part) => part.index === itemIndex));
+        {remaining.map(({ token, index }) => {
           return (
             <button
               key={`${token}-${index}`}

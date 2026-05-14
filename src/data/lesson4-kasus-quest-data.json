@@ -1,0 +1,4317 @@
+{
+  "meta": {
+    "id": "lesson-4-kasus-quest",
+    "title": "Lesson 4: Kasus Quest V2",
+    "subtitle": "Wer? Wen? Wem?｜從 A1 複習到 B1 的德文格位推理練習",
+    "version": "2.0.0",
+    "targetLevel": [
+      "A1",
+      "A2",
+      "B1"
+    ],
+    "primaryLanguage": "zh-TW",
+    "learningGoal": "讓學習者能從句子角色判斷 Nominativ, Akkusativ, Dativ，並能正確選擇冠詞、代名詞、介系詞後格位、關係代名詞與反身代名詞。",
+    "designConcept": "把格位練習設計成偵探任務：先找動詞，再問 Wer/Wen/Wem，最後選擇正確格位與詞形。",
+    "recommendedFirstRelease": [
+      "Case First Aid 格位急救站",
+      "A1 Nominativ vs Akkusativ",
+      "A2 Akkusativ vs Dativ",
+      "A2+ Preposition Map",
+      "B1 Relative Pronoun Case",
+      "B1 Reflexive mich/mir",
+      "Mistake Case File 錯題案件檔案"
+    ],
+    "createdAt": "2026-04-29",
+    "updatedAt": "2026-04-29",
+    "secondReleaseFocus": [
+      "擴充題庫到可正式開發第二版",
+      "加入更多 A1-A2 基礎復健題",
+      "加入 A2+ 介系詞地圖分類與固定格位題",
+      "加入 B1 Wo/Wohin 雙向介系詞題",
+      "加入 B1 關係代名詞完整四性/複數練習",
+      "加入 B1 反身代名詞 mich/mir 題型",
+      "加入 Sentence Repair 錯句修正題",
+      "加入 Boss Challenge 綜合破案題"
+    ],
+    "exerciseCount": 116,
+    "exerciseCountByLevel": {
+      "A1": 22,
+      "A2": 42,
+      "B1": 52
+    },
+    "exerciseCountByMode": {
+      "article-builder": 13,
+      "case-detective": 6,
+      "pronoun-switch": 10,
+      "verb-case-trainer": 15,
+      "preposition-map": 18,
+      "relative-pronoun-case": 16,
+      "reflexive-choice": 10,
+      "boss-challenge": 10,
+      "preposition-classify": 9,
+      "sentence-repair": 9
+    }
+  },
+  "caseGuide": [
+    {
+      "case": "Nominativ",
+      "questionWords": [
+        "Wer?",
+        "Was?"
+      ],
+      "zh": "主格：誰是主角？誰做動作？",
+      "simpleRule": "找出句子中做動作或被描述的人/物。",
+      "example": "Der Mann schläft.",
+      "exampleZh": "那個男人在睡覺。",
+      "highlight": "Der Mann"
+    },
+    {
+      "case": "Akkusativ",
+      "questionWords": [
+        "Wen?",
+        "Was?"
+      ],
+      "zh": "受格：動作直接影響誰/什麼？",
+      "simpleRule": "很多動詞如 sehen, kaufen, haben, brauchen 後面的直接受詞用 Akkusativ。",
+      "example": "Ich sehe den Mann.",
+      "exampleZh": "我看到那個男人。",
+      "highlight": "den Mann"
+    },
+    {
+      "case": "Dativ",
+      "questionWords": [
+        "Wem?"
+      ],
+      "zh": "與格：給誰？幫誰？對誰？屬於誰？",
+      "simpleRule": "常見於 helfen, danken, gehören, gefallen，以及 mit, zu, bei, von 等介系詞後。",
+      "example": "Ich helfe dem Mann.",
+      "exampleZh": "我幫那個男人。",
+      "highlight": "dem Mann"
+    },
+    {
+      "case": "Genitiv",
+      "questionWords": [
+        "Wessen?"
+      ],
+      "zh": "屬格：誰的？",
+      "simpleRule": "B1 先認識即可，B2 再大量練習。Lesson 4 第一版不當主線。",
+      "example": "Das ist das Auto des Mannes.",
+      "exampleZh": "這是那個男人的車。",
+      "highlight": "des Mannes"
+    }
+  ],
+  "articleTables": {
+    "definiteArticle": {
+      "m": {
+        "Nominativ": "der",
+        "Akkusativ": "den",
+        "Dativ": "dem",
+        "Genitiv": "des"
+      },
+      "f": {
+        "Nominativ": "die",
+        "Akkusativ": "die",
+        "Dativ": "der",
+        "Genitiv": "der"
+      },
+      "n": {
+        "Nominativ": "das",
+        "Akkusativ": "das",
+        "Dativ": "dem",
+        "Genitiv": "des"
+      },
+      "pl": {
+        "Nominativ": "die",
+        "Akkusativ": "die",
+        "Dativ": "den",
+        "Genitiv": "der"
+      }
+    },
+    "indefiniteArticle": {
+      "m": {
+        "Nominativ": "ein",
+        "Akkusativ": "einen",
+        "Dativ": "einem",
+        "Genitiv": "eines"
+      },
+      "f": {
+        "Nominativ": "eine",
+        "Akkusativ": "eine",
+        "Dativ": "einer",
+        "Genitiv": "einer"
+      },
+      "n": {
+        "Nominativ": "ein",
+        "Akkusativ": "ein",
+        "Dativ": "einem",
+        "Genitiv": "eines"
+      },
+      "pl": {
+        "Nominativ": "keine",
+        "Akkusativ": "keine",
+        "Dativ": "keinen",
+        "Genitiv": "keiner"
+      }
+    },
+    "possessiveMein": {
+      "m": {
+        "Nominativ": "mein",
+        "Akkusativ": "meinen",
+        "Dativ": "meinem",
+        "Genitiv": "meines"
+      },
+      "f": {
+        "Nominativ": "meine",
+        "Akkusativ": "meine",
+        "Dativ": "meiner",
+        "Genitiv": "meiner"
+      },
+      "n": {
+        "Nominativ": "mein",
+        "Akkusativ": "mein",
+        "Dativ": "meinem",
+        "Genitiv": "meines"
+      },
+      "pl": {
+        "Nominativ": "meine",
+        "Akkusativ": "meine",
+        "Dativ": "meinen",
+        "Genitiv": "meiner"
+      }
+    }
+  },
+  "pronounTables": {
+    "personalPronouns": {
+      "ich": {
+        "Nominativ": "ich",
+        "Akkusativ": "mich",
+        "Dativ": "mir"
+      },
+      "du": {
+        "Nominativ": "du",
+        "Akkusativ": "dich",
+        "Dativ": "dir"
+      },
+      "er": {
+        "Nominativ": "er",
+        "Akkusativ": "ihn",
+        "Dativ": "ihm"
+      },
+      "sie_sg": {
+        "Nominativ": "sie",
+        "Akkusativ": "sie",
+        "Dativ": "ihr"
+      },
+      "es": {
+        "Nominativ": "es",
+        "Akkusativ": "es",
+        "Dativ": "ihm"
+      },
+      "wir": {
+        "Nominativ": "wir",
+        "Akkusativ": "uns",
+        "Dativ": "uns"
+      },
+      "ihr": {
+        "Nominativ": "ihr",
+        "Akkusativ": "euch",
+        "Dativ": "euch"
+      },
+      "sie_pl": {
+        "Nominativ": "sie",
+        "Akkusativ": "sie",
+        "Dativ": "ihnen"
+      },
+      "Sie": {
+        "Nominativ": "Sie",
+        "Akkusativ": "Sie",
+        "Dativ": "Ihnen"
+      }
+    },
+    "relativePronouns": {
+      "m": {
+        "Nominativ": "der",
+        "Akkusativ": "den",
+        "Dativ": "dem",
+        "Genitiv": "dessen"
+      },
+      "f": {
+        "Nominativ": "die",
+        "Akkusativ": "die",
+        "Dativ": "der",
+        "Genitiv": "deren"
+      },
+      "n": {
+        "Nominativ": "das",
+        "Akkusativ": "das",
+        "Dativ": "dem",
+        "Genitiv": "dessen"
+      },
+      "pl": {
+        "Nominativ": "die",
+        "Akkusativ": "die",
+        "Dativ": "denen",
+        "Genitiv": "deren"
+      }
+    },
+    "reflexivePronouns": {
+      "ich": {
+        "Akkusativ": "mich",
+        "Dativ": "mir"
+      },
+      "du": {
+        "Akkusativ": "dich",
+        "Dativ": "dir"
+      },
+      "er_sie_es": {
+        "Akkusativ": "sich",
+        "Dativ": "sich"
+      },
+      "wir": {
+        "Akkusativ": "uns",
+        "Dativ": "uns"
+      },
+      "ihr": {
+        "Akkusativ": "euch",
+        "Dativ": "euch"
+      },
+      "Sie_sie": {
+        "Akkusativ": "sich",
+        "Dativ": "sich"
+      }
+    }
+  },
+  "verbPatterns": {
+    "accusativeVerbs": [
+      {
+        "verb": "sehen",
+        "pattern": "sehen + Akkusativ",
+        "example": "Ich sehe den Mann.",
+        "zh": "我看到那個男人。"
+      },
+      {
+        "verb": "haben",
+        "pattern": "haben + Akkusativ",
+        "example": "Ich habe einen Bruder.",
+        "zh": "我有一個哥哥。"
+      },
+      {
+        "verb": "kaufen",
+        "pattern": "kaufen + Akkusativ",
+        "example": "Ich kaufe einen Kaffee.",
+        "zh": "我買一杯咖啡。"
+      },
+      {
+        "verb": "brauchen",
+        "pattern": "brauchen + Akkusativ",
+        "example": "Ich brauche einen Stift.",
+        "zh": "我需要一支筆。"
+      },
+      {
+        "verb": "besuchen",
+        "pattern": "besuchen + Akkusativ",
+        "example": "Ich besuche meine Freundin.",
+        "zh": "我拜訪我的朋友。"
+      },
+      {
+        "verb": "fragen",
+        "pattern": "fragen + Akkusativ",
+        "example": "Ich frage den Lehrer.",
+        "zh": "我問老師。"
+      }
+    ],
+    "dativeVerbs": [
+      {
+        "verb": "helfen",
+        "pattern": "helfen + Dativ",
+        "example": "Ich helfe dem Mann.",
+        "zh": "我幫那個男人。"
+      },
+      {
+        "verb": "danken",
+        "pattern": "danken + Dativ",
+        "example": "Ich danke meiner Mutter.",
+        "zh": "我感謝我媽媽。"
+      },
+      {
+        "verb": "gefallen",
+        "pattern": "gefallen + Dativ",
+        "example": "Das Buch gefällt mir.",
+        "zh": "我喜歡這本書。"
+      },
+      {
+        "verb": "gehören",
+        "pattern": "gehören + Dativ",
+        "example": "Das Auto gehört meinem Vater.",
+        "zh": "這台車屬於我爸爸。"
+      },
+      {
+        "verb": "antworten",
+        "pattern": "antworten + Dativ",
+        "example": "Ich antworte dem Lehrer.",
+        "zh": "我回答老師。"
+      }
+    ],
+    "doubleObjectVerbs": [
+      {
+        "verb": "geben",
+        "pattern": "geben + Dativ + Akkusativ",
+        "example": "Ich gebe dem Kind ein Buch.",
+        "zh": "我給那個孩子一本書。"
+      },
+      {
+        "verb": "schenken",
+        "pattern": "schenken + Dativ + Akkusativ",
+        "example": "Sie schenkt ihrer Mutter Blumen.",
+        "zh": "她送媽媽花。"
+      },
+      {
+        "verb": "zeigen",
+        "pattern": "zeigen + Dativ + Akkusativ",
+        "example": "Wir zeigen dem Lehrer die Aufgabe.",
+        "zh": "我們給老師看作業。"
+      },
+      {
+        "verb": "schreiben",
+        "pattern": "schreiben + Dativ + Akkusativ",
+        "example": "Er schreibt seinem Freund eine E-Mail.",
+        "zh": "他寫一封電子郵件給朋友。"
+      }
+    ]
+  },
+  "prepositions": {
+    "accusative": [
+      {
+        "prep": "für",
+        "example": "Das Geschenk ist für den Lehrer.",
+        "zh": "這禮物是給老師的。"
+      },
+      {
+        "prep": "ohne",
+        "example": "Ich gehe ohne meinen Bruder.",
+        "zh": "我沒有跟我哥哥去。"
+      },
+      {
+        "prep": "durch",
+        "example": "Wir gehen durch den Park.",
+        "zh": "我們穿過公園。"
+      },
+      {
+        "prep": "gegen",
+        "example": "Das Auto fährt gegen den Baum.",
+        "zh": "車撞到樹。"
+      },
+      {
+        "prep": "um",
+        "example": "Wir sitzen um den Tisch.",
+        "zh": "我們圍坐在桌子旁。"
+      }
+    ],
+    "dative": [
+      {
+        "prep": "mit",
+        "example": "Ich fahre mit dem Bus.",
+        "zh": "我搭公車。"
+      },
+      {
+        "prep": "nach",
+        "example": "Ich fahre nach Deutschland.",
+        "zh": "我去德國。"
+      },
+      {
+        "prep": "bei",
+        "example": "Ich wohne bei meiner Mutter.",
+        "zh": "我住在我媽媽那裡。"
+      },
+      {
+        "prep": "von",
+        "example": "Das Geschenk ist von meinem Freund.",
+        "zh": "這禮物是我朋友送的。"
+      },
+      {
+        "prep": "zu",
+        "example": "Ich gehe zum Arzt.",
+        "zh": "我去看醫生。"
+      },
+      {
+        "prep": "aus",
+        "example": "Ich komme aus Taiwan.",
+        "zh": "我來自台灣。"
+      },
+      {
+        "prep": "seit",
+        "example": "Ich lerne seit einem Jahr Deutsch.",
+        "zh": "我學德文一年了。"
+      }
+    ],
+    "twoWay": [
+      {
+        "prep": "in",
+        "woExample": "Ich bin in der Schule.",
+        "wohinExample": "Ich gehe in die Schule.",
+        "zh": "在學校 / 去學校"
+      },
+      {
+        "prep": "an",
+        "woExample": "Das Bild hängt an der Wand.",
+        "wohinExample": "Ich hänge das Bild an die Wand.",
+        "zh": "掛在牆上 / 掛到牆上"
+      },
+      {
+        "prep": "auf",
+        "woExample": "Das Buch liegt auf dem Tisch.",
+        "wohinExample": "Ich lege das Buch auf den Tisch.",
+        "zh": "在桌上 / 放到桌上"
+      },
+      {
+        "prep": "unter",
+        "woExample": "Die Katze liegt unter dem Stuhl.",
+        "wohinExample": "Die Katze läuft unter den Stuhl.",
+        "zh": "在椅子下 / 跑到椅子下"
+      },
+      {
+        "prep": "vor",
+        "woExample": "Ich stehe vor dem Haus.",
+        "wohinExample": "Ich gehe vor das Haus.",
+        "zh": "在房子前 / 走到房子前"
+      }
+    ]
+  },
+  "modes": [
+    {
+      "id": "case-first-aid",
+      "title": "格位急救站",
+      "levelRange": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "description": "用 Wer/Wen/Wem 重新建立格位判斷直覺。"
+    },
+    {
+      "id": "case-detective",
+      "title": "Case Detective",
+      "levelRange": [
+        "A1",
+        "A2"
+      ],
+      "description": "判斷畫線或指定名詞在句中的格位。"
+    },
+    {
+      "id": "article-builder",
+      "title": "Article Builder",
+      "levelRange": [
+        "A1",
+        "A2"
+      ],
+      "description": "依照格位與性別選擇正確冠詞。"
+    },
+    {
+      "id": "pronoun-switch",
+      "title": "Pronoun Switch",
+      "levelRange": [
+        "A1",
+        "A2"
+      ],
+      "description": "把名詞片語改成正確的人稱代名詞。"
+    },
+    {
+      "id": "verb-case-trainer",
+      "title": "Verb Case Trainer",
+      "levelRange": [
+        "A2",
+        "B1"
+      ],
+      "description": "練習動詞支配格位，如 helfen + Dativ, sehen + Akkusativ。"
+    },
+    {
+      "id": "preposition-map",
+      "title": "Preposition Map",
+      "levelRange": [
+        "A2",
+        "B1"
+      ],
+      "description": "練習固定 Akkusativ/Dativ 介系詞與雙向介系詞。"
+    },
+    {
+      "id": "relative-pronoun-case",
+      "title": "Relative Pronoun Case",
+      "levelRange": [
+        "B1"
+      ],
+      "description": "練習關係代名詞 der/den/dem/die/der/denen。"
+    },
+    {
+      "id": "reflexive-choice",
+      "title": "mich oder mir?",
+      "levelRange": [
+        "B1"
+      ],
+      "description": "練習反身代名詞 Akkusativ vs Dativ。"
+    },
+    {
+      "id": "boss-challenge",
+      "title": "Boss Challenge",
+      "levelRange": [
+        "B1"
+      ],
+      "description": "綜合格位、冠詞、代名詞、介系詞與關係子句。"
+    },
+    {
+      "id": "sentence-repair",
+      "title": "Sentence Repair",
+      "levelRange": [
+        "A2",
+        "B1"
+      ],
+      "description": "修正錯誤句子，練習找出格位錯誤原因。"
+    },
+    {
+      "id": "preposition-classify",
+      "title": "Preposition Classification",
+      "levelRange": [
+        "A2",
+        "B1"
+      ],
+      "description": "把介系詞分類到 Akkusativ / Dativ / Two-way 區域。"
+    }
+  ],
+  "mistakeTypes": [
+    {
+      "id": "case-error",
+      "name": "Case Error",
+      "zh": "格位判斷錯"
+    },
+    {
+      "id": "gender-error",
+      "name": "Gender Error",
+      "zh": "名詞性別判斷錯"
+    },
+    {
+      "id": "article-error",
+      "name": "Article Error",
+      "zh": "冠詞變化錯"
+    },
+    {
+      "id": "pronoun-error",
+      "name": "Pronoun Error",
+      "zh": "代名詞格位錯"
+    },
+    {
+      "id": "verb-pattern-error",
+      "name": "Verb Pattern Error",
+      "zh": "動詞支配格位錯"
+    },
+    {
+      "id": "preposition-error",
+      "name": "Preposition Error",
+      "zh": "介系詞支配格位錯"
+    },
+    {
+      "id": "relative-clause-error",
+      "name": "Relative Clause Error",
+      "zh": "關係子句格位錯"
+    },
+    {
+      "id": "reflexive-error",
+      "name": "Reflexive Error",
+      "zh": "反身代名詞 mich/mir 錯"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "kasus-a1-nom-001",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "___ Mann trinkt Kaffee.",
+      "translation": "那個男人喝咖啡。",
+      "options": [
+        "Der",
+        "Den",
+        "Dem",
+        "Die"
+      ],
+      "answer": "Der",
+      "fullSentence": "Der Mann trinkt Kaffee.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "subject",
+      "explanationZh": "Mann 是做動作的人，所以用 Nominativ。der Mann 在主格是 der Mann。",
+      "tags": [
+        "A1",
+        "Nominativ",
+        "article"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-001",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich sehe ___ Mann.",
+      "translation": "我看到那個男人。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "den",
+      "fullSentence": "Ich sehe den Mann.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "sehen 後面的直接受詞用 Akkusativ。der Mann 在 Akkusativ 變成 den Mann。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-002",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich kaufe ___ Kaffee.",
+      "translation": "我買一杯咖啡。",
+      "options": [
+        "ein",
+        "einen",
+        "einem",
+        "eine"
+      ],
+      "answer": "einen",
+      "fullSentence": "Ich kaufe einen Kaffee.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "der Kaffee",
+      "gender": "m",
+      "trigger": "kaufen + Akkusativ",
+      "explanationZh": "kaufen 後面買的東西是直接受詞，用 Akkusativ。der Kaffee 是陽性，所以 ein 變 einen。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "indefinite"
+      ],
+      "mistakeTypes": [
+        "article-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-003",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich habe ___ Bruder.",
+      "translation": "我有一個哥哥/弟弟。",
+      "options": [
+        "ein",
+        "einen",
+        "einem",
+        "eine"
+      ],
+      "answer": "einen",
+      "fullSentence": "Ich habe einen Bruder.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Bruder",
+      "gender": "m",
+      "trigger": "haben + Akkusativ",
+      "explanationZh": "haben 後面擁有的人或物通常用 Akkusativ。der Bruder 是陽性，所以 ein 變 einen。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "haben"
+      ],
+      "mistakeTypes": [
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-nom-002",
+      "level": "A1",
+      "mode": "case-detective",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Frau arbeitet heute.",
+      "translation": "那位女士今天工作。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ"
+      ],
+      "answer": "Nominativ",
+      "fullSentence": "Die Frau arbeitet heute.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "subject",
+      "explanationZh": "Die Frau 是做動作的人，回答 Wer arbeitet? 所以是 Nominativ。",
+      "tags": [
+        "A1",
+        "case-detective"
+      ],
+      "mistakeTypes": [
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-004",
+      "level": "A1",
+      "mode": "case-detective",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir besuchen unsere Freunde.",
+      "translation": "我們拜訪我們的朋友。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ"
+      ],
+      "answer": "Akkusativ",
+      "fullSentence": "Wir besuchen unsere Freunde.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "die Freunde",
+      "gender": "pl",
+      "trigger": "besuchen + Akkusativ",
+      "explanationZh": "besuchen 後面被拜訪的人用 Akkusativ。unsere Freunde 回答 Wen besuchen wir?",
+      "tags": [
+        "A1",
+        "case-detective"
+      ],
+      "mistakeTypes": [
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-pron-001",
+      "level": "A1",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich sehe den Lehrer. → Ich sehe ___.",
+      "translation": "我看到那位老師。→ 我看到他。",
+      "options": [
+        "er",
+        "ihn",
+        "ihm",
+        "sein"
+      ],
+      "answer": "ihn",
+      "fullSentence": "Ich sehe ihn.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "der Lehrer 是陽性名詞；在 Akkusativ 中 er 變成 ihn。",
+      "tags": [
+        "A1",
+        "pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-pron-002",
+      "level": "A1",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich kenne die Frau. → Ich kenne ___.",
+      "translation": "我認識那位女士。→ 我認識她。",
+      "options": [
+        "sie",
+        "ihr",
+        "ihn",
+        "er"
+      ],
+      "answer": "sie",
+      "fullSentence": "Ich kenne sie.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "kennen + Akkusativ",
+      "explanationZh": "die Frau 是陰性名詞；在 Akkusativ 中 sie 仍然是 sie。",
+      "tags": [
+        "A1",
+        "pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "pronoun-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-pron-003",
+      "level": "A1",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich brauche das Buch. → Ich brauche ___.",
+      "translation": "我需要那本書。→ 我需要它。",
+      "options": [
+        "es",
+        "ihm",
+        "er",
+        "das"
+      ],
+      "answer": "es",
+      "fullSentence": "Ich brauche es.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "das Buch",
+      "gender": "n",
+      "trigger": "brauchen + Akkusativ",
+      "explanationZh": "das Buch 是中性名詞；在 Akkusativ 中 es 仍然是 es。",
+      "tags": [
+        "A1",
+        "pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "pronoun-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-001",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich helfe ___ Mann.",
+      "translation": "我幫那個男人。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich helfe dem Mann.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen 後面的人用 Dativ。der Mann 在 Dativ 變成 dem Mann。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "helfen"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-002",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich danke ___ Mutter.",
+      "translation": "我感謝我的媽媽。",
+      "options": [
+        "meine",
+        "meiner",
+        "meinem",
+        "meinen"
+      ],
+      "answer": "meiner",
+      "fullSentence": "Ich danke meiner Mutter.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Mutter",
+      "gender": "f",
+      "trigger": "danken + Dativ",
+      "explanationZh": "danken 後面的人用 Dativ。die Mutter 是陰性，meine 在 Dativ 變 meiner。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "possessive"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-003",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Buch gehört ___ Kind.",
+      "translation": "這本書屬於那個孩子。",
+      "options": [
+        "das",
+        "dem",
+        "den",
+        "der"
+      ],
+      "answer": "dem",
+      "fullSentence": "Das Buch gehört dem Kind.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "das Kind",
+      "gender": "n",
+      "trigger": "gehören + Dativ",
+      "explanationZh": "gehören 後面的擁有者用 Dativ。das Kind 在 Dativ 變 dem Kind。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "gehören"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-004",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Musik gefällt ___.",
+      "translation": "我喜歡這個音樂。",
+      "options": [
+        "ich",
+        "mich",
+        "mir",
+        "mein"
+      ],
+      "answer": "mir",
+      "fullSentence": "Die Musik gefällt mir.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "gefallen + Dativ",
+      "explanationZh": "gefallen 的句型是 etwas gefällt jemandem。喜歡的人用 Dativ，所以 ich 變 mir。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "pronoun"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-005",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich antworte ___ Lehrer.",
+      "translation": "我回答老師。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich antworte dem Lehrer.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "antworten + Dativ",
+      "explanationZh": "antworten 後面回答的對象用 Dativ。der Lehrer → dem Lehrer。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "antworten"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-double-001",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gebe ___ Kind ein Buch.",
+      "translation": "我給那個孩子一本書。",
+      "options": [
+        "das",
+        "dem",
+        "den",
+        "der"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich gebe dem Kind ein Buch.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "das Kind",
+      "gender": "n",
+      "trigger": "geben + Dativ + Akkusativ",
+      "explanationZh": "geben 有兩個受詞：給誰是 Dativ，給什麼是 Akkusativ。dem Kind = 給誰。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "double-object"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-double-002",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Sie schenkt ___ Mutter Blumen.",
+      "translation": "她送媽媽花。",
+      "options": [
+        "ihre",
+        "ihrer",
+        "ihrem",
+        "ihren"
+      ],
+      "answer": "ihrer",
+      "fullSentence": "Sie schenkt ihrer Mutter Blumen.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Mutter",
+      "gender": "f",
+      "trigger": "schenken + Dativ + Akkusativ",
+      "explanationZh": "schenken：送給誰用 Dativ。die Mutter 是陰性，所以 ihre 變 ihrer。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "possessive"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-double-003",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir zeigen ___ Lehrer die Aufgabe.",
+      "translation": "我們給老師看作業。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "dem",
+      "fullSentence": "Wir zeigen dem Lehrer die Aufgabe.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "zeigen + Dativ + Akkusativ",
+      "explanationZh": "zeigen：給誰看用 Dativ；看的東西 die Aufgabe 是 Akkusativ。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "double-object"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-pron-001",
+      "level": "A2",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich helfe dem Mann. → Ich helfe ___.",
+      "translation": "我幫那個男人。→ 我幫他。",
+      "options": [
+        "er",
+        "ihn",
+        "ihm",
+        "sein"
+      ],
+      "answer": "ihm",
+      "fullSentence": "Ich helfe ihm.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "der Mann 是陽性名詞；在 Dativ 中 er 變 ihm。",
+      "tags": [
+        "A2",
+        "pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-pron-002",
+      "level": "A2",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich helfe der Frau. → Ich helfe ___.",
+      "translation": "我幫那位女士。→ 我幫她。",
+      "options": [
+        "sie",
+        "ihr",
+        "ihn",
+        "ihm"
+      ],
+      "answer": "ihr",
+      "fullSentence": "Ich helfe ihr.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "die Frau 是陰性名詞；在 Dativ 中 sie 變 ihr。",
+      "tags": [
+        "A2",
+        "pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-pron-003",
+      "level": "A2",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Buch gehört den Kindern. → Das Buch gehört ___.",
+      "translation": "這本書屬於孩子們。→ 這本書屬於他們。",
+      "options": [
+        "sie",
+        "ihnen",
+        "ihr",
+        "uns"
+      ],
+      "answer": "ihnen",
+      "fullSentence": "Das Buch gehört ihnen.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Kinder",
+      "gender": "pl",
+      "trigger": "gehören + Dativ",
+      "explanationZh": "複數 die Kinder 在 Dativ 的代名詞是 ihnen。",
+      "tags": [
+        "A2",
+        "pronoun",
+        "Dativ",
+        "plural"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-001",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich fahre mit ___ Bus.",
+      "translation": "我搭公車。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich fahre mit dem Bus.",
+      "case": "Dativ",
+      "questionWord": "Womit?",
+      "targetNoun": "der Bus",
+      "gender": "m",
+      "trigger": "mit + Dativ",
+      "explanationZh": "mit 永遠接 Dativ。der Bus 在 Dativ 變 dem Bus。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-002",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Geschenk ist für ___ Bruder.",
+      "translation": "這個禮物是給我哥哥/弟弟的。",
+      "options": [
+        "mein",
+        "meinen",
+        "meinem",
+        "meiner"
+      ],
+      "answer": "meinen",
+      "fullSentence": "Das Geschenk ist für meinen Bruder.",
+      "case": "Akkusativ",
+      "questionWord": "Für wen?",
+      "targetNoun": "der Bruder",
+      "gender": "m",
+      "trigger": "für + Akkusativ",
+      "explanationZh": "für 永遠接 Akkusativ。der Bruder 是陽性，所以 mein 變 meinen。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-003",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gehe ohne ___ Freundin.",
+      "translation": "我沒有跟我的朋友去。",
+      "options": [
+        "meine",
+        "meiner",
+        "meinem",
+        "meinen"
+      ],
+      "answer": "meine",
+      "fullSentence": "Ich gehe ohne meine Freundin.",
+      "case": "Akkusativ",
+      "questionWord": "Ohne wen?",
+      "targetNoun": "die Freundin",
+      "gender": "f",
+      "trigger": "ohne + Akkusativ",
+      "explanationZh": "ohne 永遠接 Akkusativ。die Freundin 在 Akkusativ 仍然是 meine Freundin。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-004",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich wohne bei ___ Mutter.",
+      "translation": "我住在我媽媽那裡。",
+      "options": [
+        "meine",
+        "meiner",
+        "meinem",
+        "meinen"
+      ],
+      "answer": "meiner",
+      "fullSentence": "Ich wohne bei meiner Mutter.",
+      "case": "Dativ",
+      "questionWord": "Bei wem?",
+      "targetNoun": "die Mutter",
+      "gender": "f",
+      "trigger": "bei + Dativ",
+      "explanationZh": "bei 永遠接 Dativ。die Mutter 是陰性，所以 meine 變 meiner。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-005",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir gehen durch ___ Park.",
+      "translation": "我們穿過那個公園。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Wir gehen durch den Park.",
+      "case": "Akkusativ",
+      "questionWord": "Durch was?",
+      "targetNoun": "der Park",
+      "gender": "m",
+      "trigger": "durch + Akkusativ",
+      "explanationZh": "durch 永遠接 Akkusativ。der Park 在 Akkusativ 變 den Park。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-006",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gehe zu ___ Arzt.",
+      "translation": "我去看醫生。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich gehe zu dem Arzt.",
+      "case": "Dativ",
+      "questionWord": "Zu wem?",
+      "targetNoun": "der Arzt",
+      "gender": "m",
+      "trigger": "zu + Dativ",
+      "explanationZh": "zu 永遠接 Dativ。der Arzt 在 Dativ 變 dem Arzt。口語常縮寫成 zum Arzt。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-001",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gehe in ___ Park.",
+      "translation": "我走進公園。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "den",
+      "fullSentence": "Ich gehe in den Park.",
+      "case": "Akkusativ",
+      "questionWord": "Wohin?",
+      "targetNoun": "der Park",
+      "gender": "m",
+      "trigger": "in + Akkusativ (Wohin?)",
+      "explanationZh": "in 是雙向介系詞。gehen 表示方向，問 Wohin? 所以用 Akkusativ。der Park → den Park。",
+      "tags": [
+        "B1",
+        "two-way",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-002",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich sitze in ___ Park.",
+      "translation": "我坐在公園裡。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich sitze in dem Park.",
+      "case": "Dativ",
+      "questionWord": "Wo?",
+      "targetNoun": "der Park",
+      "gender": "m",
+      "trigger": "in + Dativ (Wo?)",
+      "explanationZh": "in 是雙向介系詞。sitzen 表示位置，問 Wo? 所以用 Dativ。der Park → dem Park。",
+      "tags": [
+        "B1",
+        "two-way",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-003",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich lege das Buch auf ___ Tisch.",
+      "translation": "我把書放到桌上。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Ich lege das Buch auf den Tisch.",
+      "case": "Akkusativ",
+      "questionWord": "Wohin?",
+      "targetNoun": "der Tisch",
+      "gender": "m",
+      "trigger": "auf + Akkusativ (Wohin?)",
+      "explanationZh": "auf 是雙向介系詞。legen 表示放到某處，有方向變化，問 Wohin? 用 Akkusativ。",
+      "tags": [
+        "B1",
+        "two-way",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-004",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Buch liegt auf ___ Tisch.",
+      "translation": "書在桌上。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "dem",
+      "fullSentence": "Das Buch liegt auf dem Tisch.",
+      "case": "Dativ",
+      "questionWord": "Wo?",
+      "targetNoun": "der Tisch",
+      "gender": "m",
+      "trigger": "auf + Dativ (Wo?)",
+      "explanationZh": "auf 是雙向介系詞。liegen 表示位置，問 Wo? 用 Dativ。",
+      "tags": [
+        "B1",
+        "two-way",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-001",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Mann, ___ dort steht, ist mein Lehrer.",
+      "translation": "站在那裡的那個男人是我的老師。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "answer": "der",
+      "fullSentence": "Der Mann, der dort steht, ist mein Lehrer.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "relative pronoun as subject",
+      "explanationZh": "關係代名詞要看它在子句中的角色：___ steht dort. 誰站在那裡？der Mann，所以用 Nominativ der。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Nominativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-002",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Mann, ___ ich gesehen habe, ist nett.",
+      "translation": "我看到的那個男人很親切。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "answer": "den",
+      "fullSentence": "Der Mann, den ich gesehen habe, ist nett.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "看關係子句：ich habe ___ gesehen。看到誰？den Mann，所以用 Akkusativ den。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-003",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Mann, ___ ich geholfen habe, ist mein Nachbar.",
+      "translation": "我幫過的那個男人是我的鄰居。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "answer": "dem",
+      "fullSentence": "Der Mann, dem ich geholfen habe, ist mein Nachbar.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "看關係子句：ich habe ___ geholfen。helfen + Dativ，所以用 dem。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-004",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Frau, ___ dort sitzt, ist meine Kollegin.",
+      "translation": "坐在那裡的那位女士是我的同事。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "deren"
+      ],
+      "answer": "die",
+      "fullSentence": "Die Frau, die dort sitzt, ist meine Kollegin.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "relative pronoun as subject",
+      "explanationZh": "關係子句中 die Frau 是主詞：die dort sitzt，所以用 Nominativ die。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Nominativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-005",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Frau, ___ ich geholfen habe, ist sehr nett.",
+      "translation": "我幫過的那位女士很親切。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "deren"
+      ],
+      "answer": "der",
+      "fullSentence": "Die Frau, der ich geholfen habe, ist sehr nett.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen + Dativ。die Frau 在 Dativ 的關係代名詞是 der。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-006",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Buch, ___ ich gestern gekauft habe, ist interessant.",
+      "translation": "我昨天買的那本書很有趣。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "das",
+      "fullSentence": "Das Buch, das ich gestern gekauft habe, ist interessant.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "das Buch",
+      "gender": "n",
+      "trigger": "kaufen + Akkusativ",
+      "explanationZh": "看關係子句：ich habe ___ gekauft。kaufen + Akkusativ；das Buch 是中性，Akkusativ 關係代名詞仍然是 das。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-007",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Kinder, ___ ich geholfen habe, waren freundlich.",
+      "translation": "我幫過的那些孩子很友善。",
+      "options": [
+        "die",
+        "den",
+        "denen",
+        "deren"
+      ],
+      "answer": "denen",
+      "fullSentence": "Die Kinder, denen ich geholfen habe, waren freundlich.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Kinder",
+      "gender": "pl",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen + Dativ。複數 Dativ 的關係代名詞是 denen。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ",
+        "plural"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-008",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die E-Mail, ___ ich geschrieben habe, war sehr lang.",
+      "translation": "我寫的那封電子郵件很長。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "die",
+      "fullSentence": "Die E-Mail, die ich geschrieben habe, war sehr lang.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "die E-Mail",
+      "gender": "f",
+      "trigger": "schreiben + Akkusativ",
+      "explanationZh": "schreiben + Akkusativ；die E-Mail 是陰性，Akkusativ 關係代名詞仍然是 die。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-001",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich wasche ___.",
+      "translation": "我洗澡/我洗自己。",
+      "options": [
+        "mich",
+        "mir",
+        "ich",
+        "mein"
+      ],
+      "answer": "mich",
+      "fullSentence": "Ich wasche mich.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "sich waschen + Akkusativ",
+      "explanationZh": "這裡沒有另一個 Akkusativ 受詞，所以反身代名詞本身是 Akkusativ：mich。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-002",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich wasche ___ die Hände.",
+      "translation": "我洗手。",
+      "options": [
+        "mich",
+        "mir",
+        "ich",
+        "mein"
+      ],
+      "answer": "mir",
+      "fullSentence": "Ich wasche mir die Hände.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "sich die Hände waschen",
+      "explanationZh": "die Hände 已經是 Akkusativ，所以反身代名詞改用 Dativ：mir。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-003",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Du putzt ___ die Zähne.",
+      "translation": "你刷牙。",
+      "options": [
+        "dich",
+        "dir",
+        "du",
+        "dein"
+      ],
+      "answer": "dir",
+      "fullSentence": "Du putzt dir die Zähne.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "du",
+      "gender": null,
+      "trigger": "sich die Zähne putzen",
+      "explanationZh": "die Zähne 是 Akkusativ，所以反身代名詞用 Dativ：dir。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-004",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich erinnere ___ an meine Reise.",
+      "translation": "我想起我的旅行。",
+      "options": [
+        "mich",
+        "mir",
+        "ich",
+        "mein"
+      ],
+      "answer": "mich",
+      "fullSentence": "Ich erinnere mich an meine Reise.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "sich erinnern an + Akkusativ",
+      "explanationZh": "sich erinnern an 是反身動詞，反身代名詞用 Akkusativ：mich。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-005",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Er interessiert ___ für Kunst.",
+      "translation": "他對藝術感興趣。",
+      "options": [
+        "ihn",
+        "ihm",
+        "sich",
+        "sein"
+      ],
+      "answer": "sich",
+      "fullSentence": "Er interessiert sich für Kunst.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "er",
+      "gender": null,
+      "trigger": "sich interessieren für + Akkusativ",
+      "explanationZh": "sich interessieren für 是固定反身動詞。第三人稱反身代名詞是 sich。",
+      "tags": [
+        "B1",
+        "reflexive"
+      ],
+      "mistakeTypes": [
+        "reflexive-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-001",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich habe ___ Freund ein Buch gegeben, ___ ich gestern gekauft habe.",
+      "translation": "我給朋友一本我昨天買的書。",
+      "options": [
+        "meinem / das",
+        "meinen / das",
+        "mein / den",
+        "meinem / dem"
+      ],
+      "answer": "meinem / das",
+      "fullSentence": "Ich habe meinem Freund ein Buch gegeben, das ich gestern gekauft habe.",
+      "case": "Dativ + Akkusativ",
+      "questionWord": "Wem? / Was?",
+      "targetNoun": "der Freund / das Buch",
+      "gender": "m/n",
+      "trigger": "geben + Dativ + Akkusativ; relative pronoun",
+      "explanationZh": "geben：給誰用 Dativ，所以 meinem Freund。關係子句中 ich habe das Buch gekauft，das Buch 是中性 Akkusativ，關係代名詞用 das。",
+      "tags": [
+        "B1",
+        "boss",
+        "relative-pronoun",
+        "double-object"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-002",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Frau, ___ ich gestern geholfen habe, fährt heute mit ___ Bus.",
+      "translation": "我昨天幫過的那位女士今天搭公車。",
+      "options": [
+        "der / dem",
+        "die / den",
+        "der / den",
+        "den / dem"
+      ],
+      "answer": "der / dem",
+      "fullSentence": "Die Frau, der ich gestern geholfen habe, fährt heute mit dem Bus.",
+      "case": "Dativ + Dativ",
+      "questionWord": "Wem? / Womit?",
+      "targetNoun": "die Frau / der Bus",
+      "gender": "f/m",
+      "trigger": "helfen + Dativ; mit + Dativ",
+      "explanationZh": "helfen + Dativ，所以關係代名詞是 der。mit + Dativ，所以 der Bus 變 dem Bus。",
+      "tags": [
+        "B1",
+        "boss",
+        "relative-pronoun",
+        "preposition"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-003",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gehe in ___ Café, in ___ meine Freundin arbeitet.",
+      "translation": "我要去我朋友工作的那間咖啡館。",
+      "options": [
+        "das / dem",
+        "dem / das",
+        "den / dem",
+        "das / das"
+      ],
+      "answer": "das / dem",
+      "fullSentence": "Ich gehe in das Café, in dem meine Freundin arbeitet.",
+      "case": "Akkusativ + Dativ",
+      "questionWord": "Wohin? / Wo?",
+      "targetNoun": "das Café",
+      "gender": "n",
+      "trigger": "two-way preposition + relative clause",
+      "explanationZh": "第一個 in 表示方向：去咖啡館，Wohin? 用 Akkusativ，所以 das Café。第二個 in dem 表示在那裡工作，Wo? 用 Dativ。",
+      "tags": [
+        "B1",
+        "boss",
+        "two-way",
+        "relative-pronoun"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-004",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Er hat ___ Kind ___ Ball geschenkt.",
+      "translation": "他送那個孩子一顆球。",
+      "options": [
+        "dem / einen",
+        "das / einen",
+        "den / einem",
+        "dem / einem"
+      ],
+      "answer": "dem / einen",
+      "fullSentence": "Er hat dem Kind einen Ball geschenkt.",
+      "case": "Dativ + Akkusativ",
+      "questionWord": "Wem? / Was?",
+      "targetNoun": "das Kind / der Ball",
+      "gender": "n/m",
+      "trigger": "schenken + Dativ + Akkusativ",
+      "explanationZh": "schenken：送給誰用 Dativ，送什麼用 Akkusativ。das Kind → dem Kind；der Ball → einen Ball。",
+      "tags": [
+        "B1",
+        "boss",
+        "double-object"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-nom-003",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "___ Kind spielt im Garten.",
+      "translation": "那個孩子在花園裡玩。",
+      "options": [
+        "Der",
+        "Die",
+        "Das",
+        "Den"
+      ],
+      "answer": "Das",
+      "fullSentence": "Das Kind spielt im Garten.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "das Kind",
+      "gender": "n",
+      "trigger": "subject",
+      "explanationZh": "Kind 是做動作的人/物，das Kind 是中性名詞，主格用 das。",
+      "tags": [
+        "A1",
+        "Nominativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-nom-004",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "___ Kinder spielen im Park.",
+      "translation": "那些孩子們在公園玩。",
+      "options": [
+        "Der",
+        "Die",
+        "Das",
+        "Den"
+      ],
+      "answer": "Die",
+      "fullSentence": "Die Kinder spielen im Park.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "die Kinder",
+      "gender": "pl",
+      "trigger": "subject",
+      "explanationZh": "Kinder 是複數主詞，複數 Nominativ 定冠詞是 die。",
+      "tags": [
+        "A1",
+        "Nominativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-005",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich lese ___ Buch.",
+      "translation": "我讀那本書。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "das",
+      "fullSentence": "Ich lese das Buch.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "das Buch",
+      "gender": "n",
+      "trigger": "lesen + Akkusativ",
+      "explanationZh": "lesen 後面讀的東西是 Akkusativ。das Buch 是中性，Akkusativ 仍然是 das。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-006",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Sie trinkt ___ Tee.",
+      "translation": "她喝那杯茶。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Sie trinkt den Tee.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "der Tee",
+      "gender": "m",
+      "trigger": "trinken + Akkusativ",
+      "explanationZh": "trinken 後面喝的東西是 Akkusativ。der Tee 是陽性，所以 der 變 den。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-007",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir essen ___ Suppe.",
+      "translation": "我們喝/吃那碗湯。",
+      "options": [
+        "der",
+        "die",
+        "den",
+        "dem"
+      ],
+      "answer": "die",
+      "fullSentence": "Wir essen die Suppe.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "die Suppe",
+      "gender": "f",
+      "trigger": "essen + Akkusativ",
+      "explanationZh": "essen 後面吃的東西是 Akkusativ。die Suppe 是陰性，Akkusativ 仍然是 die。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-akk-008",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Er sucht ___ Schlüssel.",
+      "translation": "他找那把鑰匙。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Er sucht den Schlüssel.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "der Schlüssel",
+      "gender": "m",
+      "trigger": "suchen + Akkusativ",
+      "explanationZh": "suchen 後面找的東西是 Akkusativ。der Schlüssel 是陽性，所以 der 變 den。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-indef-001",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich brauche ___ Tasche.",
+      "translation": "我需要一個包包。",
+      "options": [
+        "ein",
+        "eine",
+        "einen",
+        "einem"
+      ],
+      "answer": "eine",
+      "fullSentence": "Ich brauche eine Tasche.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "die Tasche",
+      "gender": "f",
+      "trigger": "brauchen + Akkusativ",
+      "explanationZh": "brauchen + Akkusativ。die Tasche 是陰性，Akkusativ 不定冠詞是 eine。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-indef-002",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Er hat ___ Problem.",
+      "translation": "他有一個問題。",
+      "options": [
+        "ein",
+        "eine",
+        "einen",
+        "einem"
+      ],
+      "answer": "ein",
+      "fullSentence": "Er hat ein Problem.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "das Problem",
+      "gender": "n",
+      "trigger": "haben + Akkusativ",
+      "explanationZh": "haben + Akkusativ。das Problem 是中性，Akkusativ 不定冠詞仍然是 ein。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-indef-003",
+      "level": "A1",
+      "mode": "article-builder",
+      "prompt": "請選出正確答案。",
+      "sentence": "Sie kauft ___ Stuhl.",
+      "translation": "她買一張椅子。",
+      "options": [
+        "ein",
+        "eine",
+        "einen",
+        "einem"
+      ],
+      "answer": "einen",
+      "fullSentence": "Sie kauft einen Stuhl.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "der Stuhl",
+      "gender": "m",
+      "trigger": "kaufen + Akkusativ",
+      "explanationZh": "kaufen + Akkusativ。der Stuhl 是陽性，所以 ein 變 einen。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "article-builder"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-pron-004",
+      "level": "A1",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich sehe die Kinder. → Ich sehe ___.",
+      "translation": "我看到那些孩子。→ 我看到他們。",
+      "options": [
+        "sie",
+        "ihnen",
+        "ihr",
+        "uns"
+      ],
+      "answer": "sie",
+      "fullSentence": "Ich sehe sie.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "die Kinder",
+      "gender": "pl",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "die Kinder 是複數；在 Akkusativ 中 sie 仍然是 sie。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "pronoun-switch"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-pron-005",
+      "level": "A1",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich brauche den Schlüssel. → Ich brauche ___.",
+      "translation": "我需要那把鑰匙。→ 我需要它。",
+      "options": [
+        "er",
+        "ihn",
+        "ihm",
+        "sie"
+      ],
+      "answer": "ihn",
+      "fullSentence": "Ich brauche ihn.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "der Schlüssel",
+      "gender": "m",
+      "trigger": "brauchen + Akkusativ",
+      "explanationZh": "der Schlüssel 是陽性名詞；Akkusativ 代名詞是 ihn。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "pronoun-switch"
+      ],
+      "mistakeTypes": [
+        "pronoun-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-case-001",
+      "level": "A1",
+      "mode": "case-detective",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Student lernt Deutsch.",
+      "translation": "那位學生學德文。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ"
+      ],
+      "answer": "Nominativ",
+      "fullSentence": "Der Student lernt Deutsch.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "der Student",
+      "gender": "m",
+      "trigger": "subject",
+      "explanationZh": "Der Student 回答 Wer lernt Deutsch? 所以是 Nominativ。",
+      "tags": [
+        "A1",
+        "Nominativ",
+        "case-detective"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a1-case-002",
+      "level": "A1",
+      "mode": "case-detective",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich kaufe eine Kamera.",
+      "translation": "我買一台相機。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ"
+      ],
+      "answer": "Akkusativ",
+      "fullSentence": "Ich kaufe eine Kamera.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "die Kamera",
+      "gender": "f",
+      "trigger": "kaufen + Akkusativ",
+      "explanationZh": "eine Kamera 是被買的東西，回答 Was kaufe ich? 所以是 Akkusativ。",
+      "tags": [
+        "A1",
+        "Akkusativ",
+        "case-detective"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-006",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich folge ___ Frau.",
+      "translation": "我跟著那位女士。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "der",
+      "fullSentence": "Ich folge der Frau.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "folgen + Dativ",
+      "explanationZh": "folgen 後面的人用 Dativ。die Frau 在 Dativ 變 der Frau。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-007",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Handy gehört ___ Bruder.",
+      "translation": "這支手機是我哥哥/弟弟的。",
+      "options": [
+        "mein",
+        "meinen",
+        "meinem",
+        "meiner"
+      ],
+      "answer": "meinem",
+      "fullSentence": "Das Handy gehört meinem Bruder.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Bruder",
+      "gender": "m",
+      "trigger": "gehören + Dativ",
+      "explanationZh": "gehören + Dativ。der Bruder 是陽性，mein 在 Dativ 變 meinem。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-008",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich vertraue ___ Freundin.",
+      "translation": "我信任我的女性朋友。",
+      "options": [
+        "meine",
+        "meiner",
+        "meinem",
+        "meinen"
+      ],
+      "answer": "meiner",
+      "fullSentence": "Ich vertraue meiner Freundin.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Freundin",
+      "gender": "f",
+      "trigger": "vertrauen + Dativ",
+      "explanationZh": "vertrauen 後面的人用 Dativ。die Freundin → meiner Freundin。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-dat-009",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir helfen ___ Kindern.",
+      "translation": "我們幫那些孩子。",
+      "options": [
+        "die",
+        "den",
+        "dem",
+        "der"
+      ],
+      "answer": "den",
+      "fullSentence": "Wir helfen den Kindern.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Kinder",
+      "gender": "pl",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen + Dativ。複數 Dativ 定冠詞是 den，名詞通常加 -n：den Kindern。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-pron-004",
+      "level": "A2",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich danke meiner Mutter. → Ich danke ___.",
+      "translation": "我感謝我的媽媽。→ 我感謝她。",
+      "options": [
+        "sie",
+        "ihr",
+        "ihnen",
+        "mich"
+      ],
+      "answer": "ihr",
+      "fullSentence": "Ich danke ihr.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Mutter",
+      "gender": "f",
+      "trigger": "danken + Dativ",
+      "explanationZh": "die Mutter 是陰性名詞；Dativ 代名詞是 ihr。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "pronoun-switch"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-pron-005",
+      "level": "A2",
+      "mode": "pronoun-switch",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich antworte dem Lehrer. → Ich antworte ___.",
+      "translation": "我回答老師。→ 我回答他。",
+      "options": [
+        "er",
+        "ihn",
+        "ihm",
+        "sein"
+      ],
+      "answer": "ihm",
+      "fullSentence": "Ich antworte ihm.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "antworten + Dativ",
+      "explanationZh": "der Lehrer 是陽性名詞；Dativ 代名詞是 ihm。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "pronoun-switch"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-double-004",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Er schreibt ___ Freundin eine Nachricht.",
+      "translation": "他寫訊息給他的女性朋友。",
+      "options": [
+        "seine",
+        "seiner",
+        "seinem",
+        "seinen"
+      ],
+      "answer": "seiner",
+      "fullSentence": "Er schreibt seiner Freundin eine Nachricht.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Freundin",
+      "gender": "f",
+      "trigger": "schreiben + Dativ + Akkusativ",
+      "explanationZh": "schreiben：寫給誰用 Dativ。die Freundin 是陰性，所以 seine 變 seiner。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-double-005",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich erkläre ___ Schüler die Grammatik.",
+      "translation": "我向學生解釋文法。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "die"
+      ],
+      "answer": "dem",
+      "fullSentence": "Ich erkläre dem Schüler die Grammatik.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Schüler",
+      "gender": "m",
+      "trigger": "erklären + Dativ + Akkusativ",
+      "explanationZh": "erklären：向誰解釋用 Dativ；解釋的內容是 Akkusativ。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-double-006",
+      "level": "A2",
+      "mode": "verb-case-trainer",
+      "prompt": "請選出正確答案。",
+      "sentence": "Sie bringt ___ Vater einen Kaffee.",
+      "translation": "她帶一杯咖啡給爸爸。",
+      "options": [
+        "ihr",
+        "ihren",
+        "ihrem",
+        "ihre"
+      ],
+      "answer": "ihrem",
+      "fullSentence": "Sie bringt ihrem Vater einen Kaffee.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Vater",
+      "gender": "m",
+      "trigger": "bringen + Dativ + Akkusativ",
+      "explanationZh": "bringen：帶給誰用 Dativ。der Vater 是陽性，所以 ihr 變 ihrem。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "verb-case-trainer"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-case-003",
+      "level": "A2",
+      "mode": "case-detective",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gebe dem Kind einen Apfel.",
+      "translation": "我給那個孩子一顆蘋果。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ"
+      ],
+      "answer": "Dativ",
+      "fullSentence": "Ich gebe dem Kind einen Apfel.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "das Kind",
+      "gender": "n",
+      "trigger": "geben + Dativ + Akkusativ",
+      "explanationZh": "dem Kind 回答 Wem gebe ich einen Apfel? 所以是 Dativ。",
+      "tags": [
+        "A2",
+        "Dativ",
+        "case-detective"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-case-004",
+      "level": "A2",
+      "mode": "case-detective",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gebe dem Kind einen Apfel.",
+      "translation": "我給那個孩子一顆蘋果。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ"
+      ],
+      "answer": "Akkusativ",
+      "fullSentence": "Ich gebe dem Kind einen Apfel.",
+      "case": "Akkusativ",
+      "questionWord": "Was?",
+      "targetNoun": "der Apfel",
+      "gender": "m",
+      "trigger": "geben + Dativ + Akkusativ",
+      "explanationZh": "einen Apfel 是被給出的東西，回答 Was gebe ich? 所以是 Akkusativ。",
+      "tags": [
+        "A2",
+        "Akkusativ",
+        "case-detective"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "verb-pattern-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-class-001",
+      "level": "A2",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "mit → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Dativ Zone",
+      "fullSentence": "mit: Dativ Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "mit",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "mit 永遠接 Dativ。例：mit dem Bus。",
+      "tags": [
+        "A2",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-class-002",
+      "level": "A2",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "für → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Akkusativ Zone",
+      "fullSentence": "für: Akkusativ Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "für",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "für 永遠接 Akkusativ。例：für den Lehrer。",
+      "tags": [
+        "A2",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-class-003",
+      "level": "A2",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "ohne → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Akkusativ Zone",
+      "fullSentence": "ohne: Akkusativ Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "ohne",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "ohne 永遠接 Akkusativ。例：ohne meinen Bruder。",
+      "tags": [
+        "A2",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-class-004",
+      "level": "A2",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "bei → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Dativ Zone",
+      "fullSentence": "bei: Dativ Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "bei",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "bei 永遠接 Dativ。例：bei meiner Mutter。",
+      "tags": [
+        "A2",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-class-005",
+      "level": "A2",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "zu → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Dativ Zone",
+      "fullSentence": "zu: Dativ Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "zu",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "zu 永遠接 Dativ。例：zum Arzt。",
+      "tags": [
+        "A2",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-class-006",
+      "level": "A2",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "durch → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Akkusativ Zone",
+      "fullSentence": "durch: Akkusativ Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "durch",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "durch 永遠接 Akkusativ。例：durch den Park。",
+      "tags": [
+        "A2",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-prep-class-007",
+      "level": "B1",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "in → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Two-way Zone",
+      "fullSentence": "in: Two-way Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "in",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "in 是雙向介系詞：Wo? + Dativ；Wohin? + Akkusativ。",
+      "tags": [
+        "B1",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-prep-class-008",
+      "level": "B1",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "auf → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Two-way Zone",
+      "fullSentence": "auf: Two-way Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "auf",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "auf 是雙向介系詞：Wo? + Dativ；Wohin? + Akkusativ。",
+      "tags": [
+        "B1",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-prep-class-009",
+      "level": "B1",
+      "mode": "preposition-classify",
+      "prompt": "請判斷這個介系詞屬於哪一區。",
+      "sentence": "an → ?",
+      "translation": "請把介系詞分類到正確區域。",
+      "options": [
+        "Akkusativ Zone",
+        "Dativ Zone",
+        "Two-way Zone"
+      ],
+      "answer": "Two-way Zone",
+      "fullSentence": "an: Two-way Zone",
+      "case": "Dativ/Akkusativ",
+      "questionWord": "Welche Zone?",
+      "targetNoun": "an",
+      "gender": null,
+      "trigger": "preposition classification",
+      "explanationZh": "an 是雙向介系詞：Wo? + Dativ；Wohin? + Akkusativ。",
+      "tags": [
+        "B1",
+        "preposition-classify"
+      ],
+      "mistakeTypes": [
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-007",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich komme aus ___ Schweiz.",
+      "translation": "我來自瑞士。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "der",
+      "fullSentence": "Ich komme aus der Schweiz.",
+      "case": "Dativ",
+      "questionWord": "Woher?",
+      "targetNoun": "die Schweiz",
+      "gender": "f",
+      "trigger": "aus + Dativ",
+      "explanationZh": "aus 永遠接 Dativ。die Schweiz 是陰性，Dativ 是 der Schweiz。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-008",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Seit ___ Monat lerne ich Deutsch.",
+      "translation": "我學德文一個月了。",
+      "options": [
+        "ein",
+        "einen",
+        "einem",
+        "eine"
+      ],
+      "answer": "einem",
+      "fullSentence": "Seit einem Monat lerne ich Deutsch.",
+      "case": "Dativ",
+      "questionWord": "Seit wann?",
+      "targetNoun": "der Monat",
+      "gender": "m",
+      "trigger": "seit + Dativ",
+      "explanationZh": "seit 永遠接 Dativ。der Monat 是陽性，ein 變 einem。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-009",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Auto fährt gegen ___ Baum.",
+      "translation": "車撞到那棵樹。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Das Auto fährt gegen den Baum.",
+      "case": "Akkusativ",
+      "questionWord": "Gegen was?",
+      "targetNoun": "der Baum",
+      "gender": "m",
+      "trigger": "gegen + Akkusativ",
+      "explanationZh": "gegen 永遠接 Akkusativ。der Baum → den Baum。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-prep-010",
+      "level": "A2",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir sitzen um ___ Tisch.",
+      "translation": "我們圍坐在那張桌子旁。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Wir sitzen um den Tisch.",
+      "case": "Akkusativ",
+      "questionWord": "Um was?",
+      "targetNoun": "der Tisch",
+      "gender": "m",
+      "trigger": "um + Akkusativ",
+      "explanationZh": "um 永遠接 Akkusativ。der Tisch → den Tisch。",
+      "tags": [
+        "A2",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-005",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Bild hängt an ___ Wand.",
+      "translation": "那幅畫掛在牆上。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "der",
+      "fullSentence": "Das Bild hängt an der Wand.",
+      "case": "Dativ",
+      "questionWord": "Wo?",
+      "targetNoun": "die Wand",
+      "gender": "f",
+      "trigger": "an + Dativ (Wo?)",
+      "explanationZh": "an 是雙向介系詞。hängen 表示位置，問 Wo?，所以用 Dativ。die Wand → der Wand。",
+      "tags": [
+        "B1",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-006",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich hänge das Bild an ___ Wand.",
+      "translation": "我把畫掛到牆上。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "die",
+      "fullSentence": "Ich hänge das Bild an die Wand.",
+      "case": "Akkusativ",
+      "questionWord": "Wohin?",
+      "targetNoun": "die Wand",
+      "gender": "f",
+      "trigger": "an + Akkusativ (Wohin?)",
+      "explanationZh": "an 是雙向介系詞。hängen 作為動作表示放到某處，問 Wohin?，所以用 Akkusativ。die Wand 在 Akkusativ 仍是 die。",
+      "tags": [
+        "B1",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-007",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Katze liegt unter ___ Stuhl.",
+      "translation": "貓躺在椅子下。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "dem",
+      "fullSentence": "Die Katze liegt unter dem Stuhl.",
+      "case": "Dativ",
+      "questionWord": "Wo?",
+      "targetNoun": "der Stuhl",
+      "gender": "m",
+      "trigger": "unter + Dativ (Wo?)",
+      "explanationZh": "under/unter 是雙向介系詞。liegen 表示位置，問 Wo?，用 Dativ。der Stuhl → dem Stuhl。",
+      "tags": [
+        "B1",
+        "preposition",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-two-way-008",
+      "level": "B1",
+      "mode": "preposition-map",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Katze läuft unter ___ Stuhl.",
+      "translation": "貓跑到椅子下。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "das"
+      ],
+      "answer": "den",
+      "fullSentence": "Die Katze läuft unter den Stuhl.",
+      "case": "Akkusativ",
+      "questionWord": "Wohin?",
+      "targetNoun": "der Stuhl",
+      "gender": "m",
+      "trigger": "unter + Akkusativ (Wohin?)",
+      "explanationZh": "unter 是雙向介系詞。laufen 表示移動到某處，問 Wohin?，用 Akkusativ。der Stuhl → den Stuhl。",
+      "tags": [
+        "B1",
+        "preposition",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-009",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Kollege, ___ ich eine E-Mail geschickt habe, antwortet schnell.",
+      "translation": "我寄信給他的那位同事很快回覆。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "answer": "dem",
+      "fullSentence": "Der Kollege, dem ich eine E-Mail geschickt habe, antwortet schnell.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Kollege",
+      "gender": "m",
+      "trigger": "schicken + Dativ + Akkusativ",
+      "explanationZh": "schicken：寄給誰用 Dativ。der Kollege 在 Dativ 關係代名詞是 dem。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-010",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Kollegin, ___ ich angerufen habe, ist nicht da.",
+      "translation": "我打電話給她的那位女同事不在。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "die",
+      "fullSentence": "Die Kollegin, die ich angerufen habe, ist nicht da.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "die Kollegin",
+      "gender": "f",
+      "trigger": "anrufen + Akkusativ",
+      "explanationZh": "anrufen 後面的人用 Akkusativ。die Kollegin 在 Akkusativ 關係代名詞仍是 die。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-011",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Mädchen, ___ das Spiel gefällt, ist meine Nichte.",
+      "translation": "喜歡這個遊戲的那個女孩是我的姪女。",
+      "options": [
+        "das",
+        "dem",
+        "den",
+        "der"
+      ],
+      "answer": "dem",
+      "fullSentence": "Das Mädchen, dem das Spiel gefällt, ist meine Nichte.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "das Mädchen",
+      "gender": "n",
+      "trigger": "gefallen + Dativ",
+      "explanationZh": "gefallen：某物讓誰喜歡，喜歡的人用 Dativ。das Mädchen 在 Dativ 關係代名詞是 dem。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-012",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Leute, ___ ich oft sehe, wohnen hier.",
+      "translation": "我常看到的那些人住在這裡。",
+      "options": [
+        "die",
+        "den",
+        "denen",
+        "deren"
+      ],
+      "answer": "die",
+      "fullSentence": "Die Leute, die ich oft sehe, wohnen hier.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "die Leute",
+      "gender": "pl",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "sehen + Akkusativ。複數 Akkusativ 關係代名詞是 die。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-013",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Freunde, mit ___ ich reise, kommen aus Taiwan.",
+      "translation": "和我一起旅行的朋友來自台灣。",
+      "options": [
+        "die",
+        "den",
+        "denen",
+        "deren"
+      ],
+      "answer": "denen",
+      "fullSentence": "Die Freunde, mit denen ich reise, kommen aus Taiwan.",
+      "case": "Dativ",
+      "questionWord": "Mit wem?",
+      "targetNoun": "die Freunde",
+      "gender": "pl",
+      "trigger": "mit + Dativ",
+      "explanationZh": "mit 永遠接 Dativ。複數 Dativ 關係代名詞是 denen。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-014",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Film, über ___ wir gesprochen haben, war lang.",
+      "translation": "我們討論過的那部電影很長。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "answer": "den",
+      "fullSentence": "Der Film, über den wir gesprochen haben, war lang.",
+      "case": "Akkusativ",
+      "questionWord": "Über was?",
+      "targetNoun": "der Film",
+      "gender": "m",
+      "trigger": "sprechen über + Akkusativ",
+      "explanationZh": "sprechen über + Akkusativ。der Film 在 Akkusativ 關係代名詞是 den。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-015",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Stadt, in ___ ich wohne, ist sehr schön.",
+      "translation": "我居住的城市很美。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "der",
+      "fullSentence": "Die Stadt, in der ich wohne, ist sehr schön.",
+      "case": "Dativ",
+      "questionWord": "Wo?",
+      "targetNoun": "die Stadt",
+      "gender": "f",
+      "trigger": "in + Dativ (Wo?)",
+      "explanationZh": "in 表示位置，問 Wo? 用 Dativ。die Stadt 在 Dativ 關係代名詞是 der。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-rel-016",
+      "level": "B1",
+      "mode": "relative-pronoun-case",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Café, in ___ ich gehe, ist neu.",
+      "translation": "我要去的那間咖啡館是新的。",
+      "options": [
+        "das",
+        "dem",
+        "den",
+        "der"
+      ],
+      "answer": "das",
+      "fullSentence": "Das Café, in das ich gehe, ist neu.",
+      "case": "Akkusativ",
+      "questionWord": "Wohin?",
+      "targetNoun": "das Café",
+      "gender": "n",
+      "trigger": "in + Akkusativ (Wohin?)",
+      "explanationZh": "in 表示方向，問 Wohin? 用 Akkusativ。das Café 在 Akkusativ 關係代名詞是 das。",
+      "tags": [
+        "B1",
+        "relative-pronoun",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "relative-clause-error",
+        "case-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-006",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Du rasierst ___.",
+      "translation": "你刮鬍子/你刮自己。",
+      "options": [
+        "dich",
+        "dir",
+        "du",
+        "dein"
+      ],
+      "answer": "dich",
+      "fullSentence": "Du rasierst dich.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "du",
+      "gender": null,
+      "trigger": "sich rasieren",
+      "explanationZh": "rasieren 這裡沒有另一個 Akkusativ 受詞，所以反身代名詞用 Akkusativ：dich。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-007",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Sie zieht ___ eine Jacke an.",
+      "translation": "她穿上一件外套。",
+      "options": [
+        "sie",
+        "ihr",
+        "sich",
+        "ihnen"
+      ],
+      "answer": "sich",
+      "fullSentence": "Sie zieht sich eine Jacke an.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "sie",
+      "gender": null,
+      "trigger": "sich etwas anziehen",
+      "explanationZh": "eine Jacke 是 Akkusativ，所以反身代名詞是 Dativ。第三人稱 Dativ/Akkusativ 反身形式都是 sich。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-008",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich kaufe ___ einen Kaffee.",
+      "translation": "我給自己買一杯咖啡。",
+      "options": [
+        "mich",
+        "mir",
+        "ich",
+        "mein"
+      ],
+      "answer": "mir",
+      "fullSentence": "Ich kaufe mir einen Kaffee.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "sich etwas kaufen",
+      "explanationZh": "einen Kaffee 是 Akkusativ；給自己買，受益者用 Dativ：mir。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-009",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir freuen ___ auf die Reise.",
+      "translation": "我們期待這趟旅行。",
+      "options": [
+        "uns",
+        "wir",
+        "sich",
+        "euch"
+      ],
+      "answer": "uns",
+      "fullSentence": "Wir freuen uns auf die Reise.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "wir",
+      "gender": null,
+      "trigger": "sich freuen auf + Akkusativ",
+      "explanationZh": "sich freuen auf 是固定反身動詞；wir 的反身代名詞是 uns。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ref-010",
+      "level": "B1",
+      "mode": "reflexive-choice",
+      "prompt": "請選出正確答案。",
+      "sentence": "Er merkt ___ die Regel.",
+      "translation": "他記住這條規則。",
+      "options": [
+        "ihn",
+        "ihm",
+        "sich",
+        "sein"
+      ],
+      "answer": "sich",
+      "fullSentence": "Er merkt sich die Regel.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "er",
+      "gender": null,
+      "trigger": "sich etwas merken",
+      "explanationZh": "die Regel 是 Akkusativ；sich etwas merken 中反身代名詞是 Dativ。第三人稱形式仍是 sich。",
+      "tags": [
+        "B1",
+        "reflexive",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "reflexive-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-repair-001",
+      "level": "A2",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Ich helfe den Mann.",
+      "translation": "我幫那個男人。",
+      "options": [
+        "Ich helfe den Mann.",
+        "Ich helfe dem Mann.",
+        "Ich helfe der Mann.",
+        "Ich helfe die Mann."
+      ],
+      "answer": "Ich helfe dem Mann.",
+      "fullSentence": "Ich helfe dem Mann.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen 後面的人用 Dativ，所以 der Mann 變 dem Mann。",
+      "tags": [
+        "A2",
+        "sentence-repair",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-repair-002",
+      "level": "A2",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Ich fahre mit den Bus.",
+      "translation": "我搭公車。",
+      "options": [
+        "Ich fahre mit den Bus.",
+        "Ich fahre mit dem Bus.",
+        "Ich fahre mit der Bus.",
+        "Ich fahre mit die Bus."
+      ],
+      "answer": "Ich fahre mit dem Bus.",
+      "fullSentence": "Ich fahre mit dem Bus.",
+      "case": "Dativ",
+      "questionWord": "Womit?",
+      "targetNoun": "der Bus",
+      "gender": "m",
+      "trigger": "mit + Dativ",
+      "explanationZh": "mit 永遠接 Dativ。der Bus → dem Bus。",
+      "tags": [
+        "A2",
+        "sentence-repair",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-repair-003",
+      "level": "A2",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Das gefällt mich.",
+      "translation": "我喜歡這個。",
+      "options": [
+        "Das gefällt mich.",
+        "Das gefällt ich.",
+        "Das gefällt mir.",
+        "Das gefällt mein."
+      ],
+      "answer": "Das gefällt mir.",
+      "fullSentence": "Das gefällt mir.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "gefallen + Dativ",
+      "explanationZh": "gefallen 的人用 Dativ。ich 的 Dativ 是 mir。",
+      "tags": [
+        "A2",
+        "sentence-repair",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-a2-repair-004",
+      "level": "A2",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Ich sehe dem Lehrer.",
+      "translation": "我看到老師。",
+      "options": [
+        "Ich sehe dem Lehrer.",
+        "Ich sehe den Lehrer.",
+        "Ich sehe der Lehrer.",
+        "Ich sehe das Lehrer."
+      ],
+      "answer": "Ich sehe den Lehrer.",
+      "fullSentence": "Ich sehe den Lehrer.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "sehen 後面的人是 Akkusativ。der Lehrer → den Lehrer。",
+      "tags": [
+        "A2",
+        "sentence-repair",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-repair-005",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Der Mann, der ich gesehen habe, ist nett.",
+      "translation": "我看到的那個男人很親切。",
+      "options": [
+        "Der Mann, der ich gesehen habe, ist nett.",
+        "Der Mann, den ich gesehen habe, ist nett.",
+        "Der Mann, dem ich gesehen habe, ist nett.",
+        "Der Mann, dessen ich gesehen habe, ist nett."
+      ],
+      "answer": "Der Mann, den ich gesehen habe, ist nett.",
+      "fullSentence": "Der Mann, den ich gesehen habe, ist nett.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Mann",
+      "gender": "m",
+      "trigger": "relative pronoun + sehen",
+      "explanationZh": "關係子句中：ich habe den Mann gesehen。sehen + Akkusativ，所以用 den。",
+      "tags": [
+        "B1",
+        "sentence-repair",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-repair-006",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Die Frau, die ich geholfen habe, ist nett.",
+      "translation": "我幫過的那位女士很親切。",
+      "options": [
+        "Die Frau, die ich geholfen habe, ist nett.",
+        "Die Frau, der ich geholfen habe, ist nett.",
+        "Die Frau, den ich geholfen habe, ist nett.",
+        "Die Frau, dem ich geholfen habe, ist nett."
+      ],
+      "answer": "Die Frau, der ich geholfen habe, ist nett.",
+      "fullSentence": "Die Frau, der ich geholfen habe, ist nett.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Frau",
+      "gender": "f",
+      "trigger": "relative pronoun + helfen",
+      "explanationZh": "關係子句中：ich habe der Frau geholfen。helfen + Dativ；die Frau 的 Dativ 關係代名詞是 der。",
+      "tags": [
+        "B1",
+        "sentence-repair",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-repair-007",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Ich wasche mich die Hände.",
+      "translation": "我洗手。",
+      "options": [
+        "Ich wasche mich die Hände.",
+        "Ich wasche mir die Hände.",
+        "Ich wasche ich die Hände.",
+        "Ich wasche meine die Hände."
+      ],
+      "answer": "Ich wasche mir die Hände.",
+      "fullSentence": "Ich wasche mir die Hände.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "ich",
+      "gender": null,
+      "trigger": "reflexive + body part",
+      "explanationZh": "die Hände 已經是 Akkusativ，所以反身代名詞用 Dativ：mir。",
+      "tags": [
+        "B1",
+        "sentence-repair",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "reflexive-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-repair-008",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Ich bin in den Park.",
+      "translation": "我在公園裡。",
+      "options": [
+        "Ich bin in den Park.",
+        "Ich bin in dem Park.",
+        "Ich bin in der Park.",
+        "Ich bin in die Park."
+      ],
+      "answer": "Ich bin in dem Park.",
+      "fullSentence": "Ich bin in dem Park.",
+      "case": "Dativ",
+      "questionWord": "Wo?",
+      "targetNoun": "der Park",
+      "gender": "m",
+      "trigger": "in + Dativ (Wo?)",
+      "explanationZh": "sein 表示位置，問 Wo? 用 Dativ。der Park → dem Park。",
+      "tags": [
+        "B1",
+        "sentence-repair",
+        "Dativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-repair-009",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出修正後正確的句子。",
+      "sentence": "Ich gehe in dem Park.",
+      "translation": "我走進公園。",
+      "options": [
+        "Ich gehe in dem Park.",
+        "Ich gehe in den Park.",
+        "Ich gehe in der Park.",
+        "Ich gehe in die Park."
+      ],
+      "answer": "Ich gehe in den Park.",
+      "fullSentence": "Ich gehe in den Park.",
+      "case": "Akkusativ",
+      "questionWord": "Wohin?",
+      "targetNoun": "der Park",
+      "gender": "m",
+      "trigger": "in + Akkusativ (Wohin?)",
+      "explanationZh": "gehen 表示方向，問 Wohin? 用 Akkusativ。der Park → den Park。",
+      "tags": [
+        "B1",
+        "sentence-repair",
+        "Akkusativ"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-005",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich schreibe ___ Freundin eine Nachricht, ___ sie morgen lesen kann.",
+      "translation": "我寫一則她明天可以讀的訊息給我的女性朋友。",
+      "options": [
+        "meiner / die",
+        "meine / der",
+        "meinem / das",
+        "meiner / der"
+      ],
+      "answer": "meiner / die",
+      "fullSentence": "Ich schreibe meiner Freundin eine Nachricht, die sie morgen lesen kann.",
+      "case": "Dativ + Akkusativ",
+      "questionWord": "Wem? / Was?",
+      "targetNoun": "die Freundin / die Nachricht",
+      "gender": "f/f",
+      "trigger": "schreiben + Dativ; relative pronoun",
+      "explanationZh": "schreiben：寫給誰用 Dativ，所以 meiner Freundin。eine Nachricht 是陰性；關係子句中 sie kann die Nachricht lesen，Akkusativ 陰性用 die。",
+      "tags": [
+        "B1",
+        "boss-challenge"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-006",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das ist der Bus, mit ___ ich jeden Tag zur Schule fahre.",
+      "translation": "這是我每天搭去學校的公車。",
+      "options": [
+        "der",
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "answer": "dem",
+      "fullSentence": "Das ist der Bus, mit dem ich jeden Tag zur Schule fahre.",
+      "case": "Dativ",
+      "questionWord": "Womit?",
+      "targetNoun": "der Bus",
+      "gender": "m",
+      "trigger": "mit + Dativ relative",
+      "explanationZh": "mit 永遠接 Dativ。der Bus 在 Dativ 關係代名詞是 dem。",
+      "tags": [
+        "B1",
+        "boss-challenge"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-007",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Lehrerin, ___ wir die Aufgabe gezeigt haben, war zufrieden.",
+      "translation": "我們給她看作業的那位老師很滿意。",
+      "options": [
+        "die",
+        "der",
+        "den",
+        "dem"
+      ],
+      "answer": "der",
+      "fullSentence": "Die Lehrerin, der wir die Aufgabe gezeigt haben, war zufrieden.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "die Lehrerin",
+      "gender": "f",
+      "trigger": "zeigen + Dativ + Akkusativ",
+      "explanationZh": "zeigen：給誰看用 Dativ。die Lehrerin 的 Dativ 關係代名詞是 der。",
+      "tags": [
+        "B1",
+        "boss-challenge"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-008",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich habe ___ Bruder ___ Film empfohlen, über ___ wir gesprochen haben.",
+      "translation": "我把我們談過的電影推薦給我哥哥/弟弟。",
+      "options": [
+        "meinem / den / den",
+        "meinen / der / dem",
+        "meinem / der / der",
+        "mein / den / dem"
+      ],
+      "answer": "meinem / den / den",
+      "fullSentence": "Ich habe meinem Bruder den Film empfohlen, über den wir gesprochen haben.",
+      "case": "Dativ + Akkusativ + Akkusativ",
+      "questionWord": "Wem? / Was? / Über was?",
+      "targetNoun": "der Bruder / der Film",
+      "gender": "m/m",
+      "trigger": "empfehlen + Dativ + Akkusativ; sprechen über + Akkusativ",
+      "explanationZh": "empfehlen：推薦給誰用 Dativ，所以 meinem Bruder；推薦什麼用 Akkusativ，所以 den Film；sprechen über + Akkusativ，der Film 的關係代名詞是 den。",
+      "tags": [
+        "B1",
+        "boss-challenge"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-009",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich wasche ___ die Hände, bevor ich ___ Kaffee trinke.",
+      "translation": "我喝咖啡前先洗手。",
+      "options": [
+        "mir / den",
+        "mich / den",
+        "mir / dem",
+        "mich / der"
+      ],
+      "answer": "mir / den",
+      "fullSentence": "Ich wasche mir die Hände, bevor ich den Kaffee trinke.",
+      "case": "Dativ + Akkusativ",
+      "questionWord": "Wem? / Was?",
+      "targetNoun": "ich / der Kaffee",
+      "gender": "m",
+      "trigger": "reflexive + trinken",
+      "explanationZh": "die Hände 已經是 Akkusativ，所以反身代名詞用 Dativ：mir。trinken + Akkusativ；der Kaffee → den Kaffee。",
+      "tags": [
+        "B1",
+        "boss-challenge"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-boss-010",
+      "level": "B1",
+      "mode": "boss-challenge",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Kind, ___ der Film gefallen hat, sitzt neben ___ Mutter.",
+      "translation": "喜歡那部電影的孩子坐在媽媽旁邊。",
+      "options": [
+        "dem / seiner",
+        "das / seine",
+        "den / seiner",
+        "dem / seinen"
+      ],
+      "answer": "dem / seiner",
+      "fullSentence": "Das Kind, dem der Film gefallen hat, sitzt neben seiner Mutter.",
+      "case": "Dativ + Dativ",
+      "questionWord": "Wem? / Wo?",
+      "targetNoun": "das Kind / die Mutter",
+      "gender": "n/f",
+      "trigger": "gefallen + Dativ; neben + Dativ",
+      "explanationZh": "gefallen 的人用 Dativ，所以 das Kind 的關係代名詞是 dem。neben 這裡表示位置，問 Wo? 用 Dativ；die Mutter → seiner Mutter。",
+      "tags": [
+        "B1",
+        "boss-challenge"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error",
+        "relative-clause-error",
+        "preposition-error"
+      ]
+    }
+  ],
+  "learningPath": [
+    {
+      "level": "Level 0",
+      "title": "格位急救站",
+      "targetCEFR": "A1-B1 review",
+      "goals": [
+        "建立 Wer/Wen/Wem 判斷流程",
+        "先理解句子角色，不急著背表格"
+      ],
+      "recommendedModes": [
+        "case-first-aid"
+      ]
+    },
+    {
+      "level": "Level 1",
+      "title": "A1 復健關：Nominativ vs Akkusativ",
+      "targetCEFR": "A1",
+      "goals": [
+        "找主詞",
+        "找直接受詞",
+        "熟悉 der→den, ein→einen, er→ihn"
+      ],
+      "recommendedModes": [
+        "case-detective",
+        "article-builder",
+        "pronoun-switch"
+      ]
+    },
+    {
+      "level": "Level 2",
+      "title": "A2 核心關：Akkusativ vs Dativ",
+      "targetCEFR": "A2",
+      "goals": [
+        "熟悉 Dativ 動詞",
+        "理解 geben/schenken/zeigen 雙受詞句型",
+        "練習 ihm/ihr/ihnen"
+      ],
+      "recommendedModes": [
+        "verb-case-trainer",
+        "pronoun-switch"
+      ]
+    },
+    {
+      "level": "Level 3",
+      "title": "A2+ 介系詞地圖",
+      "targetCEFR": "A2-B1",
+      "goals": [
+        "固定 Akkusativ 介系詞",
+        "固定 Dativ 介系詞",
+        "雙向介系詞 Wo/Wohin"
+      ],
+      "recommendedModes": [
+        "preposition-map"
+      ]
+    },
+    {
+      "level": "Level 4",
+      "title": "B1 關係代名詞關",
+      "targetCEFR": "B1",
+      "goals": [
+        "看關係代名詞在子句中的角色",
+        "練 der/den/dem/die/der/denen"
+      ],
+      "recommendedModes": [
+        "relative-pronoun-case"
+      ]
+    },
+    {
+      "level": "Level 5",
+      "title": "B1 反身代名詞關",
+      "targetCEFR": "B1",
+      "goals": [
+        "分辨 mich/mir, dich/dir",
+        "理解已有 Akkusativ 受詞時反身代名詞常用 Dativ"
+      ],
+      "recommendedModes": [
+        "reflexive-choice"
+      ]
+    },
+    {
+      "level": "Boss",
+      "title": "B1 綜合破案",
+      "targetCEFR": "B1",
+      "goals": [
+        "整合格位、冠詞、代名詞、介系詞與關係子句"
+      ],
+      "recommendedModes": [
+        "boss-challenge"
+      ]
+    }
+  ]
+}

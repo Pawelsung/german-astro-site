@@ -2,19 +2,20 @@
 import LessonShell from '../components/LessonShell.astro';
 
 export const frontmatter = {
-  title: "Lektion 1: 德語單字訓練",
-  description: "包含閃卡、冠詞、聽寫、詞性與字典的完整單字練習平台。可載入內建字庫或自製 JSON 字卡。",
-  category: "德語文法特訓",
-  tags: ["全功能", "聽寫", "雲端同步"],
+  title: "Lektion 1｜單字練習",
+  description: "以單字卡整理詞彙、詞性、例句與複習紀錄。可載入內建字庫或自製 JSON 字卡。",
+  category: "文法練習",
+  tags: ["詞彙整理", "聽寫", "學習紀錄"],
   order: 1,
   level: "A1-B1",
-  estimatedMinutes: 15
+  estimatedMinutes: 15,
+  theme: "sky"
 };
 ---
 
 <LessonShell frontmatter={frontmatter} contentClass="w-full flex-grow px-4 pb-10">
   <div class="max-w-6xl mx-auto">
-    <div class="bg-white border border-slate-200 rounded-[2rem] shadow-sm overflow-hidden">
+    <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
       <iframe
         id="lesson1-frame"
         src="/lesson1-platform.html"

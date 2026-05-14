@@ -14,69 +14,110 @@ const allLessons = Object.entries(allFiles)
   .sort((a: any, b: any) => (a.frontmatter.order ?? 999) - (b.frontmatter.order ?? 999));
 
 const categories = [...new Set(allLessons.map((lesson: any) => lesson.frontmatter.category))].filter(Boolean);
+const themeClasses = {
+  sky: {
+    card: 'border-sky-100 hover:border-sky-200 hover:bg-sky-50/45',
+    number: 'bg-sky-50 text-sky-700 border-sky-100',
+    title: 'group-hover:text-sky-700',
+    chip: 'bg-sky-50 text-sky-700 border-sky-100'
+  },
+  emerald: {
+    card: 'border-emerald-100 hover:border-emerald-200 hover:bg-emerald-50/45',
+    number: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+    title: 'group-hover:text-emerald-700',
+    chip: 'bg-emerald-50 text-emerald-700 border-emerald-100'
+  },
+  amber: {
+    card: 'border-amber-100 hover:border-amber-200 hover:bg-amber-50/45',
+    number: 'bg-amber-50 text-amber-700 border-amber-100',
+    title: 'group-hover:text-amber-700',
+    chip: 'bg-amber-50 text-amber-700 border-amber-100'
+  },
+  violet: {
+    card: 'border-violet-100 hover:border-violet-200 hover:bg-violet-50/45',
+    number: 'bg-violet-50 text-violet-700 border-violet-100',
+    title: 'group-hover:text-violet-700',
+    chip: 'bg-violet-50 text-violet-700 border-violet-100'
+  },
+  teal: {
+    card: 'border-teal-100 hover:border-teal-200 hover:bg-teal-50/45',
+    number: 'bg-teal-50 text-teal-700 border-teal-100',
+    title: 'group-hover:text-teal-700',
+    chip: 'bg-teal-50 text-teal-700 border-teal-100'
+  }
+};
 ---
 
-<Layout title="德語學習中心 | German Hub">
-  <header class="bg-amber-600 text-white py-16 px-4 text-center rounded-b-[60px] shadow-2xl">
-    <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">🇩🇪 德語特訓營</h1>
-    <p class="text-amber-100 text-lg font-medium">系統化標籤分類，攻克德文</p>
+<Layout title="德語學習工作台 | German Learning Workspace">
+  <header class="bg-white border-b border-slate-200 px-4 py-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="mb-2 text-xs font-black tracking-[0.18em] text-slate-400">GERMAN LEARNING WORKSPACE</p>
+      <h1 class="text-3xl md:text-4xl font-black leading-tight text-slate-900">德語學習工作台</h1>
+      <p class="mt-2 text-slate-500 text-base md:text-lg font-medium">詞彙、動詞與文法的系統化練習</p>
+    </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 -mt-10 pb-20">
+  <main class="max-w-6xl mx-auto px-4 py-6 pb-20">
     <LearningDashboard client:only="react" />
 
     {categories.length === 0 && (
-      <div class="bg-white p-20 rounded-[40px] text-center border-2 border-dashed border-amber-200 shadow-xl">
+      <div class="bg-white p-12 rounded-2xl text-center border border-dashed border-slate-200">
         <p class="text-gray-400 font-bold text-xl">目前還沒有符合條件的課程檔案</p>
         <p class="text-gray-400 text-sm mt-2">請檢查檔案頂部是否有正確的 title 與 category 設定</p>
       </div>
     )}
 
     {categories.map((category) => (
-      <section class="mb-12">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="h-8 w-2 bg-amber-500 rounded-full"></div>
-          <h2 class="text-2xl font-black text-gray-800">{category}</h2>
+      <section class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-5 w-1.5 bg-slate-800 rounded-full"></div>
+          <h2 class="text-xl font-black text-gray-800">{category}</h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {allLessons
             .filter((lesson: any) => lesson.frontmatter.category === category)
-            .map((lesson: any) => (
-              <a
-                href={lesson.url}
-                class="group bg-white rounded-[40px] p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-amber-50 flex flex-col h-full"
-              >
-                <h3 class="text-2xl font-black text-gray-800 group-hover:text-amber-600 mb-4 leading-tight transition-colors">
-                  {lesson.frontmatter.title}
-                </h3>
+            .map((lesson: any) => {
+              const theme = themeClasses[lesson.frontmatter.theme ?? ''] ?? themeClasses.sky;
+              return (
+                <a
+                  href={lesson.url}
+                  class={`group grid grid-cols-[auto_1fr] gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-200 border ${theme.card}`}
+                >
+                  <div class={`flex h-11 w-11 items-center justify-center rounded-xl border text-base font-black ${theme.number}`}>
+                    {lesson.frontmatter.order}
+                  </div>
 
-                <p class="text-gray-500 text-sm mb-8 flex-grow leading-relaxed font-medium">
-                  {lesson.frontmatter.description}
-                </p>
+                  <div class="min-w-0">
+                    <h3 class={`text-lg font-black text-gray-800 ${theme.title} mb-2 leading-tight transition-colors`}>
+                      {lesson.frontmatter.title}
+                    </h3>
 
-                <div class="flex flex-wrap gap-2 mb-5 text-[11px] font-black text-slate-500">
-                  {lesson.frontmatter.level && (
-                    <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                      {lesson.frontmatter.level}
-                    </span>
-                  )}
-                  {lesson.frontmatter.estimatedMinutes && (
-                    <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                      {lesson.frontmatter.estimatedMinutes} 分鐘
-                    </span>
-                  )}
-                </div>
+                    <p class="text-gray-500 text-sm leading-relaxed font-medium line-clamp-2">
+                      {lesson.frontmatter.description}
+                    </p>
 
-                <div class="flex flex-wrap gap-2 mt-auto">
-                  {lesson.frontmatter.tags?.map((tag: string) => (
-                    <span class="px-3 py-1 bg-amber-50 text-amber-600 text-[10px] font-black rounded-full border border-amber-100 shadow-sm">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
-            ))}
+                    <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-black">
+                      {lesson.frontmatter.level && (
+                        <span class={`px-3 py-1 rounded-full border ${theme.chip}`}>
+                          {lesson.frontmatter.level}
+                        </span>
+                      )}
+                      {lesson.frontmatter.estimatedMinutes && (
+                        <span class="px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500">
+                          {lesson.frontmatter.estimatedMinutes} 分鐘
+                        </span>
+                      )}
+                      {lesson.frontmatter.tags?.slice(0, 2).map((tag: string) => (
+                        <span class="px-3 py-1 bg-white/70 text-slate-500 text-[10px] font-black rounded-full border border-slate-100">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
         </div>
       </section>
     ))}

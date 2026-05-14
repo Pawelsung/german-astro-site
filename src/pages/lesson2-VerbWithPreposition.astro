@@ -3,13 +3,14 @@ import LessonShell from '../components/LessonShell.astro';
 import VerbWithPreposition from '../components/VerbWithPreposition.jsx';
 
 export const frontmatter = {
-  title: "Lektion 2: 基礎動詞介系詞特訓",
-  description: "這是一個專為德語學習者設計的互動式工具。本課將帶領你深入練習動詞與介系詞的搭配，這也是德語學習中最具挑戰性的部分之一。",
-  category: "德語文法特訓",
-  tags: ["B1-B2", "Akkusativ", "Dativ", "互動學習", "SRS系統"],
+  title: "Lektion 2｜動詞與介系詞",
+  description: "整理德語動詞與介系詞搭配，練習格位、例句與複習紀錄。",
+  category: "文法練習",
+  tags: ["B1-B2", "Akkusativ", "Dativ", "系統複習", "學習紀錄"],
   order: 2,
   level: "B1-B2",
-  estimatedMinutes: 20
+  estimatedMinutes: 20,
+  theme: "amber"
 };
 ---
 
@@ -19,15 +20,15 @@ export const frontmatter = {
   </div>
 
   <li slot="tips" class="flex items-start gap-2">
-    <span class="text-amber-400 mt-0.5">•</span>
-    <span>善用收藏功能：遇到老是記不住的動詞，點擊右上角星星收藏，之後可專門針對收藏單字測驗。</span>
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>善用已收藏清單：遇到需要反覆整理的動詞，點擊右上角星星，之後可集中複習。</span>
   </li>
   <li slot="tips" class="flex items-start gap-2">
-    <span class="text-amber-400 mt-0.5">•</span>
+    <span class="text-current opacity-70 mt-0.5">•</span>
     <span>聆聽發音：點擊喇叭按鈕聆聽發音，大聲跟讀模仿語調，能加深記憶。</span>
   </li>
   <li slot="tips" class="flex items-start gap-2">
-    <span class="text-amber-400 mt-0.5">•</span>
+    <span class="text-current opacity-70 mt-0.5">•</span>
     <span>注意格位：德文介系詞後面接 Akkusativ 通常有方向、目標性；接 Dativ 多與狀態、位置有關。</span>
   </li>
 </LessonShell>

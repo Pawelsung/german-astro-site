@@ -95,19 +95,19 @@ export default function NounChallengeApp() {
     <div className="w-full max-w-6xl mx-auto px-4 pb-8">
       {/* 頂部資訊 */}
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div className="rounded-[2rem] border border-slate-200 bg-white px-6 py-5 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
           <p className="mb-2 text-xs font-black uppercase tracking-widest text-slate-400">分數</p>
           <p className="text-4xl font-black text-slate-800">{score}</p>
         </div>
 
-        <div className="rounded-[2rem] border border-slate-200 bg-white px-6 py-5 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm">
           <p className="mb-2 text-xs font-black uppercase tracking-widest text-slate-400">連擊</p>
           <p className={`text-4xl font-black ${streak > 2 ? 'text-orange-500' : 'text-slate-800'}`}>
             {streak > 0 ? `${streak} ✖` : '-'}
           </p>
         </div>
 
-        <div className="rounded-[2rem] border border-slate-200 bg-white px-6 py-5 shadow-sm flex items-center justify-between">
+        <div className="rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm flex items-center justify-between">
           <div>
             <p className="mb-2 text-xs font-black uppercase tracking-widest text-slate-400">發音</p>
             <p className="text-lg font-black text-slate-800">德語朗讀</p>
@@ -122,7 +122,7 @@ export default function NounChallengeApp() {
       </div>
 
       {/* 主卡片 */}
-      <div className={`rounded-[3rem] border shadow-xl overflow-hidden ${theme.card}`}>
+      <div className={`rounded-2xl border shadow-md overflow-hidden ${theme.card}`}>
         <div className="min-h-[420px] md:min-h-[520px] lg:min-h-[580px] flex flex-col justify-center items-center px-6 py-10 md:px-10 text-center relative">
           <div className={`mb-8 rounded-full px-6 py-2 text-lg font-black uppercase shadow-sm ${theme.badge}`}>
             {currentWord.article}
@@ -131,7 +131,7 @@ export default function NounChallengeApp() {
           {feedback ? (
             <div className={feedback.type === 'success' ? 'text-emerald-500' : 'text-rose-500'}>
               <div className="mb-4 text-3xl md:text-4xl font-black">{feedback.text}</div>
-              <div className="text-6xl md:text-7xl font-black opacity-30 tracking-tight">
+              <div className="text-4xl md:text-5xl font-black opacity-30 tracking-tight">
                 {currentWord.word}
               </div>
               <div className="mt-4 text-xl md:text-2xl font-bold text-slate-400">
@@ -140,7 +140,7 @@ export default function NounChallengeApp() {
             </div>
           ) : (
             <div>
-              <div className="mb-6 text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-800">
+              <div className="mb-6 text-4xl md:text-5xl lg:text-8xl font-black tracking-tight text-slate-800">
                 {currentWord.word}
               </div>
               <div className="text-2xl md:text-3xl font-bold text-slate-400">

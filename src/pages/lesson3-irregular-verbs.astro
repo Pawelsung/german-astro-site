@@ -3,13 +3,14 @@ import LessonShell from '../components/LessonShell.astro';
 import IrregularVerbTrainer from '../components/IrregularVerbTrainer.jsx';
 
 export const frontmatter = {
-  title: "Lektion 3: 不規則動詞特訓",
-  description: "練習德語強變化與不規則動詞的三態、haben/sein、情態動詞與錯題重練。",
-  category: "德語文法特訓",
+  title: "Lektion 3｜不規則動詞",
+  description: "整理德語強變化與不規則動詞的三態、haben/sein、情態動詞與錯誤紀錄。",
+  category: "文法練習",
   tags: ["A1-C1", "不規則動詞", "Perfekt", "Modalverben", "語音"],
   order: 3,
   level: "A1-C1",
-  estimatedMinutes: 20
+  estimatedMinutes: 20,
+  theme: "violet"
 };
 ---
 
@@ -19,15 +20,15 @@ export const frontmatter = {
   </div>
 
   <li slot="tips" class="flex items-start gap-2">
-    <span class="text-amber-400 mt-0.5">•</span>
+    <span class="text-current opacity-70 mt-0.5">•</span>
     <span>背不規則動詞時，建議一起記 Infinitiv、Präteritum、Perfekt 三態，而不是分開記。</span>
   </li>
   <li slot="tips" class="flex items-start gap-2">
-    <span class="text-amber-400 mt-0.5">•</span>
+    <span class="text-current opacity-70 mt-0.5">•</span>
     <span>同時注意 Perfekt 用 haben 還是 sein，這是實際使用時最容易錯的地方之一。</span>
   </li>
   <li slot="tips" class="flex items-start gap-2">
-    <span class="text-amber-400 mt-0.5">•</span>
+    <span class="text-current opacity-70 mt-0.5">•</span>
     <span>先把高頻動詞練熟，再慢慢擴充到較少見的變化，記憶會穩很多。</span>
   </li>
 </LessonShell>

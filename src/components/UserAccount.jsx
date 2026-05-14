@@ -14,6 +14,37 @@ import { collectLocalProgress, mergeRemoteProgress } from '../lib/progressStorag
 const provider = new GoogleAuthProvider();
 const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5'];
 
+function mergeUnique(a = [], b = []) {
+  return [...new Set([...(Array.isArray(a) ? a : []), ...(Array.isArray(b) ? b : [])])];
+}
+
+function mergeRemoteValue(key, legacyValue, splitValue) {
+  if (splitValue === undefined) return legacyValue;
+  if (legacyValue === undefined) return splitValue;
+
+  if (key === 'lesson2') {
+    return {
+      starred: mergeUnique(legacyValue.starred, splitValue.starred),
+      srs: { ...(legacyValue.srs || {}), ...(splitValue.srs || {}) },
+      history: [...(legacyValue.history || []), ...(splitValue.history || [])].slice(-250)
+    };
+  }
+
+  if (key === 'lesson1Words') {
+    return Array.isArray(splitValue) && splitValue.length > 0 ? splitValue : legacyValue;
+  }
+
+  if (key === 'lesson1Stats') {
+    return splitValue || legacyValue;
+  }
+
+  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5') {
+    return { ...(legacyValue || {}), ...(splitValue || {}) };
+  }
+
+  return splitValue;
+}
+
 function getAuthErrorMessage(error) {
   const code = error?.code || '';
 
@@ -61,7 +92,7 @@ async function loadRemoteProgress(db, uid) {
   );
 
   docs.forEach(([key, value]) => {
-    if (value !== undefined) remote[key] = value;
+    remote[key] = mergeRemoteValue(key, remote[key], value);
   });
 
   return remote;

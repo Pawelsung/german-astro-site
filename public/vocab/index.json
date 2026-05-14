@@ -15,9 +15,23 @@
   },
   {
     "id": "schritte-b1-1",
-    "label": "Schritte B1.1 全單字",
-    "description": "Schritte International Neu 5 B1.1，352 筆全詞性單字，適合閃卡、聽寫、詞性與冠詞模式",
-    "path": "/vocab/schritte-b1-1.json",
+    "label": "Schritte B1.1 完整單字＋補充",
+    "description": "Schritte B1.1 官方 Lernwortschatz 加精選去重 B1/B1+ 補充詞，共 460 筆，含詞性用法、動詞變化與例句中文翻譯",
+    "path": "/vocab/schritte-b1-1-complete.json",
+    "count": 460
+  },
+  {
+    "id": "schritte-b1-1-enhanced",
+    "label": "Schritte B1.1 官方全單字＋用法",
+    "description": "Schritte International Neu 5 B1.1，352 筆官方 Lernwortschatz，全詞性單字，含用法提示與例句中文翻譯",
+    "path": "/vocab/schritte-b1-1-enhanced.json",
     "count": 352
+  },
+  {
+    "id": "schritte-b1-1-supplement",
+    "label": "Schritte B1.1 精選補充詞",
+    "description": "已排除官方核心字庫重複，精選 B1/B1+ 實用補充詞，共 108 筆，可單獨練習",
+    "path": "/vocab/schritte-b1-1-supplement.json",
+    "count": 108
   }
 ]

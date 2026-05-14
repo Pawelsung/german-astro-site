@@ -26,3 +26,4 @@ A1-B1 part1.json
 
 # jetbrains setting folder
 .idea/
+.vercel

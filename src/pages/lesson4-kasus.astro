@@ -1,0 +1,34 @@
+---
+import LessonShell from '../components/LessonShell.astro';
+import KasusQuestTrainer from '../components/KasusQuestTrainer.jsx';
+
+export const frontmatter = {
+  title: "Lektion 4｜格位練習",
+  description: "從句子角色、動詞搭配與介系詞線索判斷 Nominativ、Akkusativ、Dativ，並整理冠詞與代名詞變化。",
+  category: "文法練習",
+  tags: ["A1-B1", "Kasus", "冠詞", "代名詞", "介系詞"],
+  order: 4,
+  level: "A1-B1",
+  estimatedMinutes: 20,
+  theme: "teal"
+};
+---
+
+<LessonShell frontmatter={frontmatter}>
+  <div class="max-w-6xl mx-auto">
+    <KasusQuestTrainer client:load />
+  </div>
+
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>先判斷句子中的角色：主詞通常是 Nominativ，直接承受動作的名詞多半是 Akkusativ，間接受詞或部分介系詞後常見 Dativ。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>遇到介系詞時先看搭配規則，再確認句子是在表達方向、位置或固定用法。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>答錯的題目會保留在錯誤紀錄，也可以手動標成需要複習，之後集中整理。</span>
+  </li>
+</LessonShell>

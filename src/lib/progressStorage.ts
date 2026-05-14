@@ -106,6 +106,39 @@ function mergeObjects(local: any = {}, remote: any = {}) {
   return { ...remote, ...local };
 }
 
+function getWordKey(word: any) {
+  return String(word?.id || `${word?.article || ''}:${word?.word || ''}:${word?.meaning || ''}`);
+}
+
+function mergeLesson1Words(localWords: any[] = [], remoteWords: any[] = []) {
+  if (!Array.isArray(localWords) || localWords.length === 0) return remoteWords || [];
+  if (!Array.isArray(remoteWords) || remoteWords.length === 0) return localWords;
+
+  const merged = new Map<string, any>();
+
+  remoteWords.forEach((word) => {
+    merged.set(getWordKey(word), word);
+  });
+
+  localWords.forEach((word) => {
+    const key = getWordKey(word);
+    const remoteWord = merged.get(key);
+    if (!remoteWord) {
+      merged.set(key, word);
+      return;
+    }
+
+    merged.set(key, {
+      ...remoteWord,
+      ...word,
+      errors: Math.max(remoteWord.errors || 0, word.errors || 0),
+      starred: Boolean(remoteWord.starred || word.starred)
+    });
+  });
+
+  return [...merged.values()];
+}
+
 function mergeLesson2(local: any = defaultLesson2Progress, remote: any = defaultLesson2Progress) {
   return {
     starred: mergeUnique(local.starred, remote.starred),
@@ -129,10 +162,7 @@ export function collectLocalProgress() {
 export function mergeRemoteProgress(remoteProgress: any = {}) {
   const local = collectLocalProgress();
   const merged = {
-    lesson1Words:
-      Array.isArray(local.lesson1Words) && local.lesson1Words.length > 0
-        ? local.lesson1Words
-        : remoteProgress.lesson1Words || [],
+    lesson1Words: mergeLesson1Words(local.lesson1Words, remoteProgress.lesson1Words),
     lesson1Stats: local.lesson1Stats || remoteProgress.lesson1Stats || null,
     lesson2: mergeLesson2(local.lesson2, remoteProgress.lesson2),
     lesson3: mergeObjects(local.lesson3, remoteProgress.lesson3),
