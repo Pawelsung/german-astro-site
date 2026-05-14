@@ -534,6 +534,36 @@ export default function ConnectorTrainer() {
 
   const answeredCount = Object.keys(progress.answers).length;
   const correctCount = Object.values(progress.answers).filter((answer) => answer.correct).length;
+  const stats = [
+    {
+      label: '卡片',
+      desktopLabel: '連接詞卡片',
+      value: data.connectors.length,
+      icon: BookOpen,
+      className: 'border-violet-100 text-violet-600'
+    },
+    {
+      label: '題目',
+      desktopLabel: '練習題',
+      value: data.questions.length,
+      icon: ListChecks,
+      className: 'border-violet-100 text-violet-600'
+    },
+    {
+      label: '答對',
+      desktopLabel: '答對紀錄',
+      value: `${correctCount}/${answeredCount || 0}`,
+      icon: CheckCircle,
+      className: 'border-emerald-100 text-emerald-600'
+    },
+    {
+      label: '錯題',
+      desktopLabel: '錯題',
+      value: progress.mistakes.length,
+      icon: XCircle,
+      className: 'border-rose-100 text-rose-600'
+    }
+  ];
 
   const toggleBookmark = (id) => {
     setProgress((current) => ({
@@ -546,27 +576,26 @@ export default function ConnectorTrainer() {
 
   return (
     <div className="w-full max-w-full min-w-0 overflow-x-hidden space-y-5">
-      <section className="grid min-w-0 grid-cols-2 gap-3 md:grid-cols-4">
-        <div className="min-w-0 rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
-          <BookOpen className="mb-2 h-5 w-5 text-violet-600" />
-          <p className="text-2xl font-black text-slate-900">{data.connectors.length}</p>
-          <p className="text-xs font-black text-slate-400">連接詞卡片</p>
-        </div>
-        <div className="min-w-0 rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
-          <ListChecks className="mb-2 h-5 w-5 text-violet-600" />
-          <p className="text-2xl font-black text-slate-900">{data.questions.length}</p>
-          <p className="text-xs font-black text-slate-400">練習題</p>
-        </div>
-        <div className="min-w-0 rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm">
-          <CheckCircle className="mb-2 h-5 w-5 text-emerald-600" />
-          <p className="text-2xl font-black text-slate-900">{correctCount}/{answeredCount || 0}</p>
-          <p className="text-xs font-black text-slate-400">答對紀錄</p>
-        </div>
-        <div className="min-w-0 rounded-2xl border border-rose-100 bg-white p-4 shadow-sm">
-          <XCircle className="mb-2 h-5 w-5 text-rose-600" />
-          <p className="text-2xl font-black text-slate-900">{progress.mistakes.length}</p>
-          <p className="text-xs font-black text-slate-400">錯題</p>
-        </div>
+      <section className="grid min-w-0 grid-cols-4 gap-1.5 rounded-2xl border border-slate-100 bg-white p-2 shadow-sm md:gap-3 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        {stats.map((stat) => {
+          const Icon = stat.icon;
+          return (
+            <div
+              key={stat.desktopLabel}
+              className={cx(
+                'min-w-0 rounded-xl border bg-white px-1.5 py-2 text-center md:rounded-2xl md:p-4 md:text-left md:shadow-sm',
+                stat.className
+              )}
+            >
+              <Icon className="mx-auto mb-1 h-4 w-4 md:mx-0 md:mb-2 md:h-5 md:w-5" />
+              <p className="truncate text-base font-black leading-tight text-slate-900 md:text-2xl">{stat.value}</p>
+              <p className="truncate text-[10px] font-black leading-tight text-slate-400 md:text-xs">
+                <span className="md:hidden">{stat.label}</span>
+                <span className="hidden md:inline">{stat.desktopLabel}</span>
+              </p>
+            </div>
+          );
+        })}
       </section>
 
       <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
