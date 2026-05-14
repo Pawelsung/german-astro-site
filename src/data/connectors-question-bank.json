@@ -2,7 +2,7 @@
   "meta": {
     "lessonId": "lesson5-connectors",
     "titleZh": "Lektion 5：德文連接詞與語序題庫",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "createdFor": "german-astro-site",
     "targetPath": "src/data/connectors-question-bank.json",
     "levels": [
@@ -16,7 +16,15 @@
       "第一版重點是語序判斷與句型轉換。",
       "可依錯題紀錄把題目加入 mistakes review。"
     ],
-    "updatedFor": "writer-analysis-and-practice-mvp"
+    "updatedFor": "high-intensity-connector-training",
+    "questionCount": 171,
+    "connectorCount": 37,
+    "intensiveTrainingDesignZh": [
+      "高強度題庫已擴充：分類、選詞、排序、改錯、句型轉換、短文填空、正確句判斷。",
+      "建議網站增加 intensive 模式：每回合 20 題，至少包含 3 題改錯、3 題排序、4 題轉換、2 題短文填空。",
+      "建議錯題在下一輪優先出現，形成 spaced repetition。",
+      "建議加入 timed drill：90 秒語序快問快答。"
+    ]
   },
   "syntaxTypes": [
     {
@@ -1764,6 +1772,3093 @@
       ],
       "answer": "a",
       "explanationZh": "obwohl 子句動詞 bin 在句尾；子句在前時，主句 lerne ich 倒裝；不要再加 trotzdem。"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A1",
+      "promptZh": "高強度分類：看到「und」時，第一反應應該是哪一種語序？",
+      "promptDe": "und",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "coordinating",
+      "explanationZh": "und：不改語序。 例句：Ich lerne Deutsch und ich höre Musik.",
+      "id": "lc5-q049"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A1",
+      "promptZh": "高強度分類：看到「aber」時，第一反應應該是哪一種語序？",
+      "promptDe": "aber",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "coordinating",
+      "explanationZh": "aber：一般轉折，不改語序。 例句：Ich bin müde, aber ich lerne weiter.",
+      "id": "lc5-q050"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「denn」時，第一反應應該是哪一種語序？",
+      "promptDe": "denn",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "coordinating",
+      "explanationZh": "denn：表示原因，但後面維持主句語序。 例句：Ich bleibe zu Hause, denn ich bin krank.",
+      "id": "lc5-q051"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「sondern」時，第一反應應該是哪一種語序？",
+      "promptDe": "sondern",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "coordinating",
+      "explanationZh": "sondern：前面通常有否定，用來修正。 例句：Das ist nicht falsch, sondern ungenau.",
+      "id": "lc5-q052"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「deshalb」時，第一反應應該是哪一種語序？",
+      "promptDe": "deshalb",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "connector_adverb",
+      "explanationZh": "deshalb：句首佔第一位，後面倒裝。 例句：Ich bin krank. Deshalb bleibe ich zu Hause.",
+      "id": "lc5-q053"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「trotzdem」時，第一反應應該是哪一種語序？",
+      "promptDe": "trotzdem",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "connector_adverb",
+      "explanationZh": "trotzdem：句首佔第一位，後面倒裝。 例句：Es regnet. Trotzdem gehe ich spazieren.",
+      "id": "lc5-q054"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「weil」時，第一反應應該是哪一種語序？",
+      "promptDe": "weil",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "weil：子句連接詞，動詞最後。 例句：Ich bleibe zu Hause, weil ich müde bin.",
+      "id": "lc5-q055"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「obwohl」時，第一反應應該是哪一種語序？",
+      "promptDe": "obwohl",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "obwohl：子句動詞最後；不要和 trotzdem 重複。 例句：Obwohl es regnet, gehe ich spazieren.",
+      "id": "lc5-q056"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「wenn」時，第一反應應該是哪一種語序？",
+      "promptDe": "wenn",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "wenn：現在/未來條件或重複事件。 例句：Wenn ich Zeit habe, lerne ich Deutsch.",
+      "id": "lc5-q057"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「als」時，第一反應應該是哪一種語序？",
+      "promptDe": "als",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "als：過去一次性或過去時期。 例句：Als ich ein Kind war, spielte ich viel.",
+      "id": "lc5-q058"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「damit」時，第一反應應該是哪一種語序？",
+      "promptDe": "damit",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "damit：主詞可不同。 例句：Ich spreche langsam, damit du mich verstehst.",
+      "id": "lc5-q059"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「um ... zu」時，第一反應應該是哪一種語序？",
+      "promptDe": "um ... zu",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "infinitive_construction",
+      "explanationZh": "um ... zu：主詞相同時使用。 例句：Ich lerne Deutsch, um in Deutschland zu arbeiten.",
+      "id": "lc5-q060"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「nicht nur ... sondern auch」時，第一反應應該是哪一種語序？",
+      "promptDe": "nicht nur ... sondern auch",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "nicht nur ... sondern auch：補充第二個甚至更進一步的資訊。 例句：Er spricht nicht nur Deutsch, sondern auch Englisch.",
+      "id": "lc5-q061"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「je ... desto」時，第一反應應該是哪一種語序？",
+      "promptDe": "je ... desto",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "je ... desto：使用比較級。 例句：Je mehr ich übe, desto sicherer werde ich.",
+      "id": "lc5-q062"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A1",
+      "promptZh": "高強度分類：看到「oder」時，第一反應應該是哪一種語序？",
+      "promptDe": "oder",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "coordinating",
+      "explanationZh": "oder：選擇關係，不改語序。 例句：Möchtest du Tee oder trinkst du lieber Kaffee?",
+      "id": "lc5-q063"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「dass」時，第一反應應該是哪一種語序？",
+      "promptDe": "dass",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "dass：常接在 wissen, sagen, glauben, hoffen 後面。 例句：Ich weiß, dass Deutsch Zeit braucht.",
+      "id": "lc5-q064"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「da」時，第一反應應該是哪一種語序？",
+      "promptDe": "da",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "da：比 weil 書面或背景原因感更強；子句動詞最後。 例句：Da ich heute müde bin, lerne ich nur kurz.",
+      "id": "lc5-q065"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「deswegen」時，第一反應應該是哪一種語序？",
+      "promptDe": "deswegen",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "connector_adverb",
+      "explanationZh": "deswegen：連接副詞，句首後倒裝。 例句：Ich habe morgen eine Prüfung. Deswegen wiederhole ich die Regeln.",
+      "id": "lc5-q066"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「darum」時，第一反應應該是哪一種語序？",
+      "promptDe": "darum",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "connector_adverb",
+      "explanationZh": "darum：口語常見，功能接近 deshalb。 例句：Der Satz ist lang. Darum markiere ich zuerst das Verb.",
+      "id": "lc5-q067"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「jedoch」時，第一反應應該是哪一種語序？",
+      "promptDe": "jedoch",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "connector_adverb",
+      "explanationZh": "jedoch：較正式；句首時要倒裝。 例句：Die Regel ist einfach. Jedoch machen viele Lernende denselben Fehler.",
+      "id": "lc5-q068"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「dennoch」時，第一反應應該是哪一種語序？",
+      "promptDe": "dennoch",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "connector_adverb",
+      "explanationZh": "dennoch：功能接近 trotzdem，語氣較書面。 例句：Die Aufgabe ist schwer. Dennoch versuche ich es.",
+      "id": "lc5-q069"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「bevor」時，第一反應應該是哪一種語序？",
+      "promptDe": "bevor",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "bevor：時間子句，動詞最後。 例句：Bevor ich antworte, lese ich den Satz noch einmal.",
+      "id": "lc5-q070"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「nachdem」時，第一反應應該是哪一種語序？",
+      "promptDe": "nachdem",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "nachdem：常搭配完成式或時間先後。 例句：Nachdem ich die Regel verstanden habe, übe ich Beispiele.",
+      "id": "lc5-q071"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「während」時，第一反應應該是哪一種語序？",
+      "promptDe": "während",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "während：可表示同時發生，也可表示對比。 例句：Während ich koche, höre ich deutsche Podcasts.",
+      "id": "lc5-q072"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「seitdem」時，第一反應應該是哪一種語序？",
+      "promptDe": "seitdem",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "seitdem：表示從過去某點到現在的持續影響。 例句：Seitdem ich jeden Tag lese, verstehe ich schneller.",
+      "id": "lc5-q073"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "A2",
+      "promptZh": "高強度分類：看到「bis」時，第一反應應該是哪一種語序？",
+      "promptDe": "bis",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "bis：指出動作持續到某個時間點。 例句：Ich warte, bis der Kurs beginnt.",
+      "id": "lc5-q074"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「sobald」時，第一反應應該是哪一種語序？",
+      "promptDe": "sobald",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "sobald：時間條件很明確，子句動詞最後。 例句：Sobald ich Zeit habe, wiederhole ich die Karten.",
+      "id": "lc5-q075"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「falls」時，第一反應應該是哪一種語序？",
+      "promptDe": "falls",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "falls：比 wenn 更像假設或備案。 例句：Falls du unsicher bist, prüfe zuerst die Verbposition.",
+      "id": "lc5-q076"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B2",
+      "promptZh": "高強度分類：看到「sofern」時，第一反應應該是哪一種語序？",
+      "promptDe": "sofern",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "sofern：較正式，表示條件限制。 例句：Du kannst den Satz umbauen, sofern die Bedeutung gleich bleibt.",
+      "id": "lc5-q077"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「indem」時，第一反應應該是哪一種語序？",
+      "promptDe": "indem",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "subordinating",
+      "explanationZh": "indem：表示方法或手段。 例句：Ich lerne Konnektoren, indem ich eigene Sätze schreibe.",
+      "id": "lc5-q078"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「ohne ... zu」時，第一反應應該是哪一種語序？",
+      "promptDe": "ohne ... zu",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "infinitive_construction",
+      "explanationZh": "ohne ... zu：主詞相同時用 ohne ... zu。 例句：Er antwortet, ohne lange nachzudenken.",
+      "id": "lc5-q079"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「anstatt ... zu」時，第一反應應該是哪一種語序？",
+      "promptDe": "anstatt ... zu",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "infinitive_construction",
+      "explanationZh": "anstatt ... zu：主詞相同時用 anstatt ... zu。 例句：Sie schreibt Beispiele, anstatt nur Regeln zu lesen.",
+      "id": "lc5-q080"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「sowohl ... als auch」時，第一反應應該是哪一種語序？",
+      "promptDe": "sowohl ... als auch",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "sowohl ... als auch：並列兩個同等項目。 例句：Er übt sowohl Grammatik als auch Aussprache.",
+      "id": "lc5-q081"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「entweder ... oder」時，第一反應應該是哪一種語序？",
+      "promptDe": "entweder ... oder",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "entweder ... oder：二選一。 例句：Entweder übe ich heute Satzbau oder ich wiederhole Vokabeln.",
+      "id": "lc5-q082"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「weder ... noch」時，第一反應應該是哪一種語序？",
+      "promptDe": "weder ... noch",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "weder ... noch：否定兩個項目；動詞仍依句子結構變化。 例句：Der Satz ist weder natürlich noch korrekt.",
+      "id": "lc5-q083"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B1",
+      "promptZh": "高強度分類：看到「zwar ... aber」時，第一反應應該是哪一種語序？",
+      "promptDe": "zwar ... aber",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "zwar ... aber：承認前半，重點落在 aber 後面。 例句：Die Regel ist zwar kurz, aber sie ist wichtig.",
+      "id": "lc5-q084"
+    },
+    {
+      "type": "classify_syntax",
+      "moduleId": "m1-overview",
+      "level": "B2",
+      "promptZh": "高強度分類：看到「einerseits ... andererseits」時，第一反應應該是哪一種語序？",
+      "promptDe": "einerseits ... andererseits",
+      "options": [
+        {
+          "id": "coordinating",
+          "textZh": "並列連接詞：不改語序"
+        },
+        {
+          "id": "connector_adverb",
+          "textZh": "連接副詞：後面主句倒裝"
+        },
+        {
+          "id": "subordinating",
+          "textZh": "子句連接詞：動詞放最後"
+        },
+        {
+          "id": "infinitive_construction",
+          "textZh": "不定詞結構：zu + 原形"
+        },
+        {
+          "id": "paired_connector",
+          "textZh": "成對連接詞"
+        }
+      ],
+      "answer": "paired_connector",
+      "explanationZh": "einerseits ... andererseits：用來平衡兩個觀點。 例句：Einerseits ist Deutsch logisch, andererseits braucht es viel Übung.",
+      "id": "lc5-q085"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich bleibe zu Hause, ___ ich krank bin.",
+      "options": [
+        {
+          "id": "weil",
+          "text": "weil"
+        },
+        {
+          "id": "deshalb",
+          "text": "deshalb"
+        },
+        {
+          "id": "trotzdem",
+          "text": "trotzdem"
+        },
+        {
+          "id": "aber",
+          "text": "aber"
+        }
+      ],
+      "answer": "weil",
+      "explanationZh": "後面是原因子句，weil 讓動詞放最後。",
+      "id": "lc5-q086"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich bin krank. ___ bleibe ich zu Hause.",
+      "options": [
+        {
+          "id": "Weil",
+          "text": "Weil"
+        },
+        {
+          "id": "Deshalb",
+          "text": "Deshalb"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        },
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        }
+      ],
+      "answer": "Deshalb",
+      "explanationZh": "前因後果，用 deshalb；後面倒裝。",
+      "id": "lc5-q087"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich bleibe zu Hause, ___ ich bin krank.",
+      "options": [
+        {
+          "id": "weil",
+          "text": "weil"
+        },
+        {
+          "id": "denn",
+          "text": "denn"
+        },
+        {
+          "id": "deshalb",
+          "text": "deshalb"
+        },
+        {
+          "id": "obwohl",
+          "text": "obwohl"
+        }
+      ],
+      "answer": "denn",
+      "explanationZh": "denn 後面維持主句語序。",
+      "id": "lc5-q088"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m2-reason-result",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich heute müde bin, lerne ich nur kurz.",
+      "options": [
+        {
+          "id": "Da",
+          "text": "Da"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        },
+        {
+          "id": "Deshalb",
+          "text": "Deshalb"
+        },
+        {
+          "id": "Trotzdem",
+          "text": "Trotzdem"
+        }
+      ],
+      "answer": "Da",
+      "explanationZh": "Da 放句首表示背景原因，動詞 bin 放最後。",
+      "id": "lc5-q089"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m2-reason-result",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Der Satz ist lang. ___ markiere ich zuerst das Verb.",
+      "options": [
+        {
+          "id": "Darum",
+          "text": "Darum"
+        },
+        {
+          "id": "Weil",
+          "text": "Weil"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        },
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        }
+      ],
+      "answer": "Darum",
+      "explanationZh": "darum 是結果連接副詞，後面倒裝。",
+      "id": "lc5-q090"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m2-reason-result",
+      "level": "B2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Die Daten sind unvollständig. ___ ist das Ergebnis unsicher.",
+      "options": [
+        {
+          "id": "Folglich",
+          "text": "Folglich"
+        },
+        {
+          "id": "Weil",
+          "text": "Weil"
+        },
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        }
+      ],
+      "answer": "Folglich",
+      "explanationZh": "folglich 是正式結果副詞，後面倒裝。",
+      "id": "lc5-q091"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich bin müde, ___ ich lerne weiter.",
+      "options": [
+        {
+          "id": "aber",
+          "text": "aber"
+        },
+        {
+          "id": "sondern",
+          "text": "sondern"
+        },
+        {
+          "id": "obwohl",
+          "text": "obwohl"
+        },
+        {
+          "id": "deshalb",
+          "text": "deshalb"
+        }
+      ],
+      "answer": "aber",
+      "explanationZh": "一般轉折，用 aber。",
+      "id": "lc5-q092"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich bin nicht faul, ___ erschöpft.",
+      "options": [
+        {
+          "id": "aber",
+          "text": "aber"
+        },
+        {
+          "id": "sondern",
+          "text": "sondern"
+        },
+        {
+          "id": "obwohl",
+          "text": "obwohl"
+        },
+        {
+          "id": "trotzdem",
+          "text": "trotzdem"
+        }
+      ],
+      "answer": "sondern",
+      "explanationZh": "nicht A, sondern B。",
+      "id": "lc5-q093"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich müde bin, lerne ich weiter.",
+      "options": [
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        },
+        {
+          "id": "Trotzdem",
+          "text": "Trotzdem"
+        },
+        {
+          "id": "Aber",
+          "text": "Aber"
+        },
+        {
+          "id": "Deshalb",
+          "text": "Deshalb"
+        }
+      ],
+      "answer": "Obwohl",
+      "explanationZh": "雖然，用 obwohl 子句。",
+      "id": "lc5-q094"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich bin müde. ___ lerne ich weiter.",
+      "options": [
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        },
+        {
+          "id": "Trotzdem",
+          "text": "Trotzdem"
+        },
+        {
+          "id": "Weil",
+          "text": "Weil"
+        },
+        {
+          "id": "Sondern",
+          "text": "Sondern"
+        }
+      ],
+      "answer": "Trotzdem",
+      "explanationZh": "儘管如此，用 trotzdem；後面倒裝。",
+      "id": "lc5-q095"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m3-contrast-concession",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Die Regel ist einfach. ___ machen viele Lernende Fehler.",
+      "options": [
+        {
+          "id": "Jedoch",
+          "text": "Jedoch"
+        },
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        },
+        {
+          "id": "Sondern",
+          "text": "Sondern"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        }
+      ],
+      "answer": "Jedoch",
+      "explanationZh": "jedoch 放句首，後面倒裝。",
+      "id": "lc5-q096"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m3-contrast-concession",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Die Aufgabe ist schwer. ___ versuche ich es.",
+      "options": [
+        {
+          "id": "Dennoch",
+          "text": "Dennoch"
+        },
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        },
+        {
+          "id": "Weil",
+          "text": "Weil"
+        },
+        {
+          "id": "Sondern",
+          "text": "Sondern"
+        }
+      ],
+      "answer": "Dennoch",
+      "explanationZh": "dennoch 表儘管如此，後面倒裝。",
+      "id": "lc5-q097"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich klein war, habe ich oft Comics gelesen.",
+      "options": [
+        {
+          "id": "Als",
+          "text": "Als"
+        },
+        {
+          "id": "Wenn",
+          "text": "Wenn"
+        },
+        {
+          "id": "Ob",
+          "text": "Ob"
+        },
+        {
+          "id": "Falls",
+          "text": "Falls"
+        }
+      ],
+      "answer": "Als",
+      "explanationZh": "過去一次性/過去時期用 als。",
+      "id": "lc5-q098"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich Zeit habe, lese ich deutsche Texte.",
+      "options": [
+        {
+          "id": "Wenn",
+          "text": "Wenn"
+        },
+        {
+          "id": "Als",
+          "text": "Als"
+        },
+        {
+          "id": "Ob",
+          "text": "Ob"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        }
+      ],
+      "answer": "Wenn",
+      "explanationZh": "現在或未來條件用 wenn。",
+      "id": "lc5-q099"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich lese den Satz, ___ ich antworte.",
+      "options": [
+        {
+          "id": "bevor",
+          "text": "bevor"
+        },
+        {
+          "id": "nachdem",
+          "text": "nachdem"
+        },
+        {
+          "id": "weil",
+          "text": "weil"
+        },
+        {
+          "id": "trotzdem",
+          "text": "trotzdem"
+        }
+      ],
+      "answer": "bevor",
+      "explanationZh": "回答之前先讀句子。",
+      "id": "lc5-q100"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich den Satz gelesen habe, beantworte ich die Frage.",
+      "options": [
+        {
+          "id": "Nachdem",
+          "text": "Nachdem"
+        },
+        {
+          "id": "Bevor",
+          "text": "Bevor"
+        },
+        {
+          "id": "Während",
+          "text": "Während"
+        },
+        {
+          "id": "Obwohl",
+          "text": "Obwohl"
+        }
+      ],
+      "answer": "Nachdem",
+      "explanationZh": "先讀完，再回答。",
+      "id": "lc5-q101"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich koche, höre ich deutsche Podcasts.",
+      "options": [
+        {
+          "id": "Während",
+          "text": "Während"
+        },
+        {
+          "id": "Nachdem",
+          "text": "Nachdem"
+        },
+        {
+          "id": "Bevor",
+          "text": "Bevor"
+        },
+        {
+          "id": "Deshalb",
+          "text": "Deshalb"
+        }
+      ],
+      "answer": "Während",
+      "explanationZh": "兩件事同時發生。",
+      "id": "lc5-q102"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich warte, ___ du fertig bist.",
+      "options": [
+        {
+          "id": "bis",
+          "text": "bis"
+        },
+        {
+          "id": "seitdem",
+          "text": "seitdem"
+        },
+        {
+          "id": "sobald",
+          "text": "sobald"
+        },
+        {
+          "id": "als",
+          "text": "als"
+        }
+      ],
+      "answer": "bis",
+      "explanationZh": "直到你完成。",
+      "id": "lc5-q103"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ich jeden Tag übe, mache ich weniger Fehler.",
+      "options": [
+        {
+          "id": "Seitdem",
+          "text": "Seitdem"
+        },
+        {
+          "id": "Bevor",
+          "text": "Bevor"
+        },
+        {
+          "id": "Als",
+          "text": "Als"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        }
+      ],
+      "answer": "Seitdem",
+      "explanationZh": "自從每天練習以來。",
+      "id": "lc5-q104"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich lerne Deutsch, ___ in Deutschland zu reisen.",
+      "options": [
+        {
+          "id": "um",
+          "text": "um"
+        },
+        {
+          "id": "damit",
+          "text": "damit"
+        },
+        {
+          "id": "weil",
+          "text": "weil"
+        },
+        {
+          "id": "obwohl",
+          "text": "obwohl"
+        }
+      ],
+      "answer": "um",
+      "explanationZh": "主詞相同，用 um ... zu。",
+      "id": "lc5-q105"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich erkläre es langsam, ___ du es verstehst.",
+      "options": [
+        {
+          "id": "damit",
+          "text": "damit"
+        },
+        {
+          "id": "um",
+          "text": "um"
+        },
+        {
+          "id": "deshalb",
+          "text": "deshalb"
+        },
+        {
+          "id": "denn",
+          "text": "denn"
+        }
+      ],
+      "answer": "damit",
+      "explanationZh": "主詞不同，用 damit。",
+      "id": "lc5-q106"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ du Fragen hast, kannst du mir schreiben.",
+      "options": [
+        {
+          "id": "Falls",
+          "text": "Falls"
+        },
+        {
+          "id": "Denn",
+          "text": "Denn"
+        },
+        {
+          "id": "Trotzdem",
+          "text": "Trotzdem"
+        },
+        {
+          "id": "Sondern",
+          "text": "Sondern"
+        }
+      ],
+      "answer": "Falls",
+      "explanationZh": "假設條件。",
+      "id": "lc5-q107"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Du kannst den Satz umbauen, ___ die Bedeutung gleich bleibt.",
+      "options": [
+        {
+          "id": "sofern",
+          "text": "sofern"
+        },
+        {
+          "id": "denn",
+          "text": "denn"
+        },
+        {
+          "id": "jedoch",
+          "text": "jedoch"
+        },
+        {
+          "id": "sondern",
+          "text": "sondern"
+        }
+      ],
+      "answer": "sofern",
+      "explanationZh": "正式條件：前提是。",
+      "id": "lc5-q108"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich verbessere mein Deutsch, ___ ich jeden Tag schreibe.",
+      "options": [
+        {
+          "id": "indem",
+          "text": "indem"
+        },
+        {
+          "id": "damit",
+          "text": "damit"
+        },
+        {
+          "id": "obwohl",
+          "text": "obwohl"
+        },
+        {
+          "id": "aber",
+          "text": "aber"
+        }
+      ],
+      "answer": "indem",
+      "explanationZh": "表示方法：藉由每天寫。",
+      "id": "lc5-q109"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Er antwortete, ___ lange nachzudenken.",
+      "options": [
+        {
+          "id": "ohne",
+          "text": "ohne"
+        },
+        {
+          "id": "damit",
+          "text": "damit"
+        },
+        {
+          "id": "weil",
+          "text": "weil"
+        },
+        {
+          "id": "wenn",
+          "text": "wenn"
+        }
+      ],
+      "answer": "ohne",
+      "explanationZh": "ohne ... zu。",
+      "id": "lc5-q110"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Er übt ___ Grammatik ___ Aussprache.",
+      "options": [
+        {
+          "id": "sowohl...als auch",
+          "text": "sowohl...als auch"
+        },
+        {
+          "id": "weder...noch",
+          "text": "weder...noch"
+        },
+        {
+          "id": "entweder...oder",
+          "text": "entweder...oder"
+        },
+        {
+          "id": "je...desto",
+          "text": "je...desto"
+        }
+      ],
+      "answer": "sowohl...als auch",
+      "explanationZh": "兩者都。",
+      "id": "lc5-q111"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "Ich habe ___ Zeit ___ Energie.",
+      "options": [
+        {
+          "id": "weder...noch",
+          "text": "weder...noch"
+        },
+        {
+          "id": "sowohl...als auch",
+          "text": "sowohl...als auch"
+        },
+        {
+          "id": "je...desto",
+          "text": "je...desto"
+        },
+        {
+          "id": "zwar...aber",
+          "text": "zwar...aber"
+        }
+      ],
+      "answer": "weder...noch",
+      "explanationZh": "既沒有時間，也沒有精力。",
+      "id": "lc5-q112"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ du übst, ___ sicherer wirst du.",
+      "options": [
+        {
+          "id": "Je...desto",
+          "text": "Je...desto"
+        },
+        {
+          "id": "Zwar...aber",
+          "text": "Zwar...aber"
+        },
+        {
+          "id": "Sowohl...als auch",
+          "text": "Sowohl...als auch"
+        },
+        {
+          "id": "Weder...noch",
+          "text": "Weder...noch"
+        }
+      ],
+      "answer": "Je...desto",
+      "explanationZh": "越……越……。",
+      "id": "lc5-q113"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m6-paired",
+      "level": "B2",
+      "promptZh": "高強度選詞：請選出最適合的連接詞或結構。",
+      "sentenceWithBlank": "___ ist die Regel klar, ___ ist die Anwendung schwierig.",
+      "options": [
+        {
+          "id": "Einerseits...andererseits",
+          "text": "Einerseits...andererseits"
+        },
+        {
+          "id": "Nicht nur...sondern auch",
+          "text": "Nicht nur...sondern auch"
+        },
+        {
+          "id": "Weder...noch",
+          "text": "Weder...noch"
+        },
+        {
+          "id": "Entweder...oder",
+          "text": "Entweder...oder"
+        }
+      ],
+      "answer": "Einerseits...andererseits",
+      "explanationZh": "平衡兩個觀點。",
+      "id": "lc5-q114"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "weil",
+        "ich",
+        "heute",
+        "müde",
+        "bin"
+      ],
+      "answer": [
+        "weil",
+        "ich",
+        "heute",
+        "müde",
+        "bin"
+      ],
+      "answerText": "weil ich heute müde bin.",
+      "explanationZh": "weil 子句中 bin 放最後。",
+      "id": "lc5-q115"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Deshalb",
+        "lerne",
+        "ich",
+        "heute",
+        "nur",
+        "kurz"
+      ],
+      "answer": [
+        "Deshalb",
+        "lerne",
+        "ich",
+        "heute",
+        "nur",
+        "kurz"
+      ],
+      "answerText": "Deshalb lerne ich heute nur kurz.",
+      "explanationZh": "deshalb 句首後倒裝。",
+      "id": "lc5-q116"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "denn",
+        "ich",
+        "bin",
+        "heute",
+        "krank"
+      ],
+      "answer": [
+        "denn",
+        "ich",
+        "bin",
+        "heute",
+        "krank"
+      ],
+      "answerText": "denn ich bin heute krank.",
+      "explanationZh": "denn 後面主句語序。",
+      "id": "lc5-q117"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Obwohl",
+        "es",
+        "regnet",
+        "gehe",
+        "ich",
+        "raus"
+      ],
+      "answer": [
+        "Obwohl",
+        "es",
+        "regnet",
+        "gehe",
+        "ich",
+        "raus"
+      ],
+      "answerText": "Obwohl es regnet, gehe ich raus.",
+      "explanationZh": "obwohl 子句在前，主句倒裝。",
+      "id": "lc5-q118"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m3-contrast-concession",
+      "level": "B1",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Jedoch",
+        "verstehe",
+        "ich",
+        "die",
+        "Regel",
+        "nicht"
+      ],
+      "answer": [
+        "Jedoch",
+        "verstehe",
+        "ich",
+        "die",
+        "Regel",
+        "nicht"
+      ],
+      "answerText": "Jedoch verstehe ich die Regel nicht.",
+      "explanationZh": "jedoch 句首後倒裝。",
+      "id": "lc5-q119"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Wenn",
+        "ich",
+        "Zeit",
+        "habe",
+        "lese",
+        "ich",
+        "Deutsch"
+      ],
+      "answer": [
+        "Wenn",
+        "ich",
+        "Zeit",
+        "habe",
+        "lese",
+        "ich",
+        "Deutsch"
+      ],
+      "answerText": "Wenn ich Zeit habe, lese ich Deutsch.",
+      "explanationZh": "wenn 子句在前，主句倒裝。",
+      "id": "lc5-q120"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Nachdem",
+        "ich",
+        "gegessen",
+        "habe",
+        "lerne",
+        "ich",
+        "Deutsch"
+      ],
+      "answer": [
+        "Nachdem",
+        "ich",
+        "gegessen",
+        "habe",
+        "lerne",
+        "ich",
+        "Deutsch"
+      ],
+      "answerText": "Nachdem ich gegessen habe, lerne ich Deutsch.",
+      "explanationZh": "nachdem 子句中 habe 放最後。",
+      "id": "lc5-q121"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Während",
+        "ich",
+        "koche",
+        "höre",
+        "ich",
+        "Musik"
+      ],
+      "answer": [
+        "Während",
+        "ich",
+        "koche",
+        "höre",
+        "ich",
+        "Musik"
+      ],
+      "answerText": "Während ich koche, höre ich Musik.",
+      "explanationZh": "während 子句在前，後面主句倒裝。",
+      "id": "lc5-q122"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "um",
+        "besser",
+        "Deutsch",
+        "zu",
+        "sprechen"
+      ],
+      "answer": [
+        "um",
+        "besser",
+        "Deutsch",
+        "zu",
+        "sprechen"
+      ],
+      "answerText": "um besser Deutsch zu sprechen.",
+      "explanationZh": "um ... zu 結構。",
+      "id": "lc5-q123"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B1",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "indem",
+        "ich",
+        "jeden",
+        "Tag",
+        "übe"
+      ],
+      "answer": [
+        "indem",
+        "ich",
+        "jeden",
+        "Tag",
+        "übe"
+      ],
+      "answerText": "indem ich jeden Tag übe.",
+      "explanationZh": "indem 子句動詞放最後。",
+      "id": "lc5-q124"
+    },
+    {
+      "type": "order_words",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度語序：請把詞塊排成正確句子。",
+      "tokens": [
+        "Je",
+        "mehr",
+        "ich",
+        "übe",
+        "desto",
+        "sicherer",
+        "werde",
+        "ich"
+      ],
+      "answer": [
+        "Je",
+        "mehr",
+        "ich",
+        "übe",
+        "desto",
+        "sicherer",
+        "werde",
+        "ich"
+      ],
+      "answerText": "Je mehr ich übe, desto sicherer werde ich.",
+      "explanationZh": "je 子句＋desto 主句。",
+      "id": "lc5-q125"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich gehe früh schlafen, weil ich bin müde.",
+      "answer": "Ich gehe früh schlafen, weil ich müde bin.",
+      "explanationZh": "weil 子句中 bin 放最後。",
+      "id": "lc5-q126"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich bin müde. Deshalb ich gehe früh schlafen.",
+      "answer": "Ich bin müde. Deshalb gehe ich früh schlafen.",
+      "explanationZh": "deshalb 句首後倒裝。",
+      "id": "lc5-q127"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich bleibe zu Hause, denn ich krank bin.",
+      "answer": "Ich bleibe zu Hause, denn ich bin krank.",
+      "explanationZh": "denn 後面是主句語序。",
+      "id": "lc5-q128"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m2-reason-result",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Da ich bin krank, bleibe ich zu Hause.",
+      "answer": "Da ich krank bin, bleibe ich zu Hause.",
+      "explanationZh": "da 子句動詞放最後。",
+      "id": "lc5-q129"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Obwohl ich bin müde, lerne ich weiter.",
+      "answer": "Obwohl ich müde bin, lerne ich weiter.",
+      "explanationZh": "obwohl 子句動詞放最後。",
+      "id": "lc5-q130"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich bin müde. Trotzdem ich lerne weiter.",
+      "answer": "Ich bin müde. Trotzdem lerne ich weiter.",
+      "explanationZh": "trotzdem 句首後倒裝。",
+      "id": "lc5-q131"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Das ist nicht falsch, aber ungenau.",
+      "answer": "Das ist nicht falsch, sondern ungenau.",
+      "explanationZh": "不是……而是……用 sondern。",
+      "id": "lc5-q132"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m3-contrast-concession",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Jedoch viele Lernende machen Fehler.",
+      "answer": "Jedoch machen viele Lernende Fehler.",
+      "explanationZh": "jedoch 句首後倒裝。",
+      "id": "lc5-q133"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m3-contrast-concession",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Obwohl es regnet, trotzdem gehen wir raus.",
+      "answer": "Obwohl es regnet, gehen wir raus.",
+      "explanationZh": "避免 obwohl + trotzdem 雙重標記。",
+      "id": "lc5-q134"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Als ich Zeit habe, lerne ich Deutsch.",
+      "answer": "Wenn ich Zeit habe, lerne ich Deutsch.",
+      "explanationZh": "現在/未來條件用 wenn。",
+      "id": "lc5-q135"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Wenn ich klein war, wohnte ich in Taichung.",
+      "answer": "Als ich klein war, wohnte ich in Taichung.",
+      "explanationZh": "過去時期用 als。",
+      "id": "lc5-q136"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Nachdem ich habe gegessen, lerne ich Deutsch.",
+      "answer": "Nachdem ich gegessen habe, lerne ich Deutsch.",
+      "explanationZh": "nachdem 子句助動詞放最後。",
+      "id": "lc5-q137"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Während ich koche, ich höre Musik.",
+      "answer": "Während ich koche, höre ich Musik.",
+      "explanationZh": "子句放句首，主句倒裝。",
+      "id": "lc5-q138"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich lerne Deutsch, damit in Deutschland zu arbeiten.",
+      "answer": "Ich lerne Deutsch, um in Deutschland zu arbeiten.",
+      "explanationZh": "主詞相同用 um ... zu。",
+      "id": "lc5-q139"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich spreche langsam, um du mich verstehst.",
+      "answer": "Ich spreche langsam, damit du mich verstehst.",
+      "explanationZh": "主詞不同，用 damit。",
+      "id": "lc5-q140"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich verbessere mich, indem ich schreibe jeden Tag.",
+      "answer": "Ich verbessere mich, indem ich jeden Tag schreibe.",
+      "explanationZh": "indem 子句動詞放最後。",
+      "id": "lc5-q141"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Je mehr ich übe, desto ich werde sicherer.",
+      "answer": "Je mehr ich übe, desto sicherer werde ich.",
+      "explanationZh": "desto 後比較級先出現。",
+      "id": "lc5-q142"
+    },
+    {
+      "type": "error_correction",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度改錯：請找出錯誤並改正。",
+      "wrongSentence": "Ich habe nicht weder Zeit noch Geld.",
+      "answer": "Ich habe weder Zeit noch Geld.",
+      "explanationZh": "weder ... noch 已含否定。",
+      "id": "lc5-q143"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「weil」改寫或合併句子。",
+      "sourceSentence": "Ich bin krank. Deshalb bleibe ich zu Hause.",
+      "targetPattern": "weil",
+      "sampleAnswer": "Ich bleibe zu Hause, weil ich krank bin.",
+      "explanationZh": "結果句改成原因子句。",
+      "id": "lc5-q144"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m2-reason-result",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「denn」改寫或合併句子。",
+      "sourceSentence": "Ich bleibe zu Hause, weil ich krank bin.",
+      "targetPattern": "denn",
+      "sampleAnswer": "Ich bleibe zu Hause, denn ich bin krank.",
+      "explanationZh": "denn 後主句語序。",
+      "id": "lc5-q145"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m2-reason-result",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「deshalb」改寫或合併句子。",
+      "sourceSentence": "Ich komme nicht, weil ich keine Zeit habe.",
+      "targetPattern": "deshalb",
+      "sampleAnswer": "Ich habe keine Zeit. Deshalb komme ich nicht.",
+      "explanationZh": "weil 改 deshalb。",
+      "id": "lc5-q146"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「obwohl」改寫或合併句子。",
+      "sourceSentence": "Es regnet. Trotzdem gehen wir spazieren.",
+      "targetPattern": "obwohl",
+      "sampleAnswer": "Obwohl es regnet, gehen wir spazieren.",
+      "explanationZh": "trotzdem 改 obwohl。",
+      "id": "lc5-q147"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m3-contrast-concession",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「trotzdem」改寫或合併句子。",
+      "sourceSentence": "Obwohl ich müde bin, lerne ich weiter.",
+      "targetPattern": "trotzdem",
+      "sampleAnswer": "Ich bin müde. Trotzdem lerne ich weiter.",
+      "explanationZh": "obwohl 改 trotzdem。",
+      "id": "lc5-q148"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m3-contrast-concession",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「nicht ... sondern」改寫或合併句子。",
+      "sourceSentence": "Das ist nicht falsch. Es ist ungenau.",
+      "targetPattern": "nicht ... sondern",
+      "sampleAnswer": "Das ist nicht falsch, sondern ungenau.",
+      "explanationZh": "不是 A，而是 B。",
+      "id": "lc5-q149"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「als」改寫或合併句子。",
+      "sourceSentence": "Ich war klein. Ich spielte oft draußen.",
+      "targetPattern": "als",
+      "sampleAnswer": "Als ich klein war, spielte ich oft draußen.",
+      "explanationZh": "過去時期用 als。",
+      "id": "lc5-q150"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m4-time",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「wenn」改寫或合併句子。",
+      "sourceSentence": "Ich habe Zeit. Ich lese deutsche Texte.",
+      "targetPattern": "wenn",
+      "sampleAnswer": "Wenn ich Zeit habe, lese ich deutsche Texte.",
+      "explanationZh": "條件用 wenn。",
+      "id": "lc5-q151"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m4-time",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「nachdem」改寫或合併句子。",
+      "sourceSentence": "Ich lese die Regel. Danach mache ich Übungen.",
+      "targetPattern": "nachdem",
+      "sampleAnswer": "Nachdem ich die Regel gelesen habe, mache ich Übungen.",
+      "explanationZh": "danach 改 nachdem。",
+      "id": "lc5-q152"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「um ... zu」改寫或合併句子。",
+      "sourceSentence": "Ich lerne Deutsch. Ich möchte in Deutschland arbeiten.",
+      "targetPattern": "um ... zu",
+      "sampleAnswer": "Ich lerne Deutsch, um in Deutschland zu arbeiten.",
+      "explanationZh": "主詞相同用 um ... zu。",
+      "id": "lc5-q153"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "A2",
+      "promptZh": "高強度轉換：請用「damit」改寫或合併句子。",
+      "sourceSentence": "Ich spreche langsam. Du verstehst mich besser.",
+      "targetPattern": "damit",
+      "sampleAnswer": "Ich spreche langsam, damit du mich besser verstehst.",
+      "explanationZh": "主詞不同用 damit。",
+      "id": "lc5-q154"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m5-purpose-condition-method",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「indem」改寫或合併句子。",
+      "sourceSentence": "Ich schreibe eigene Sätze. So lerne ich die Regel.",
+      "targetPattern": "indem",
+      "sampleAnswer": "Ich lerne die Regel, indem ich eigene Sätze schreibe.",
+      "explanationZh": "indem 表方法。",
+      "id": "lc5-q155"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「sowohl ... als auch」改寫或合併句子。",
+      "sourceSentence": "Ich übe Grammatik. Ich übe Aussprache.",
+      "targetPattern": "sowohl ... als auch",
+      "sampleAnswer": "Ich übe sowohl Grammatik als auch Aussprache.",
+      "explanationZh": "兩者都。",
+      "id": "lc5-q156"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「nicht nur ... sondern auch」改寫或合併句子。",
+      "sourceSentence": "Der Satz ist falsch. Der Satz ist unnatürlich.",
+      "targetPattern": "nicht nur ... sondern auch",
+      "sampleAnswer": "Der Satz ist nicht nur falsch, sondern auch unnatürlich.",
+      "explanationZh": "不只……而且也……。",
+      "id": "lc5-q157"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「weder ... noch」改寫或合併句子。",
+      "sourceSentence": "Ich habe keine Zeit. Ich habe keine Energie.",
+      "targetPattern": "weder ... noch",
+      "sampleAnswer": "Ich habe weder Zeit noch Energie.",
+      "explanationZh": "既不……也不……。",
+      "id": "lc5-q158"
+    },
+    {
+      "type": "transform_sentence",
+      "moduleId": "m6-paired",
+      "level": "B1",
+      "promptZh": "高強度轉換：請用「je ... desto」改寫或合併句子。",
+      "sourceSentence": "Ich übe mehr. Ich werde sicherer.",
+      "targetPattern": "je ... desto",
+      "sampleAnswer": "Je mehr ich übe, desto sicherer werde ich.",
+      "explanationZh": "越……越……。",
+      "id": "lc5-q159"
+    },
+    {
+      "type": "cloze",
+      "moduleId": "m7-mixed-challenge",
+      "level": "A2",
+      "promptZh": "高強度短文填空：請在短文中填入合適的連接詞。",
+      "textWithBlanks": "Ich bin heute müde, ___ ich schlecht geschlafen habe. ___ lerne ich nur zwanzig Minuten.",
+      "blanks": [
+        {
+          "blankIndex": 1,
+          "answer": "weil",
+          "options": [
+            "weil",
+            "deshalb",
+            "trotzdem",
+            "aber"
+          ]
+        },
+        {
+          "blankIndex": 2,
+          "answer": "Deshalb",
+          "options": [
+            "Deshalb",
+            "Weil",
+            "Obwohl",
+            "Denn"
+          ]
+        }
+      ],
+      "fullAnswer": "Ich bin heute müde, weil ich schlecht geschlafen habe. Deshalb lerne ich nur zwanzig Minuten.",
+      "explanationZh": "原因用 weil，結果用 deshalb。",
+      "id": "lc5-q160"
+    },
+    {
+      "type": "cloze",
+      "moduleId": "m7-mixed-challenge",
+      "level": "A2",
+      "promptZh": "高強度短文填空：請在短文中填入合適的連接詞。",
+      "textWithBlanks": "___ es regnet, gehe ich zur Schule. Es regnet stark. ___ nehme ich einen Regenschirm mit.",
+      "blanks": [
+        {
+          "blankIndex": 1,
+          "answer": "Obwohl",
+          "options": [
+            "Obwohl",
+            "Trotzdem",
+            "Weil",
+            "Denn"
+          ]
+        },
+        {
+          "blankIndex": 2,
+          "answer": "Deshalb",
+          "options": [
+            "Deshalb",
+            "Obwohl",
+            "Sondern",
+            "Als"
+          ]
+        }
+      ],
+      "fullAnswer": "Obwohl es regnet, gehe ich zur Schule. Es regnet stark. Deshalb nehme ich einen Regenschirm mit.",
+      "explanationZh": "第一句讓步，第二句結果。",
+      "id": "lc5-q161"
+    },
+    {
+      "type": "cloze",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B1",
+      "promptZh": "高強度短文填空：請在短文中填入合適的連接詞。",
+      "textWithBlanks": "___ ich die Regel gelesen habe, mache ich die Übung. ___ ich unsicher bin, markiere ich zuerst das Verb.",
+      "blanks": [
+        {
+          "blankIndex": 1,
+          "answer": "Nachdem",
+          "options": [
+            "Nachdem",
+            "Bevor",
+            "Während",
+            "Denn"
+          ]
+        },
+        {
+          "blankIndex": 2,
+          "answer": "Wenn",
+          "options": [
+            "Wenn",
+            "Als",
+            "Ob",
+            "Trotzdem"
+          ]
+        }
+      ],
+      "fullAnswer": "Nachdem ich die Regel gelesen habe, mache ich die Übung. Wenn ich unsicher bin, markiere ich zuerst das Verb.",
+      "explanationZh": "先後用 nachdem；條件用 wenn。",
+      "id": "lc5-q162"
+    },
+    {
+      "type": "cloze",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B1",
+      "promptZh": "高強度短文填空：請在短文中填入合適的連接詞。",
+      "textWithBlanks": "Ich schreibe eigene Sätze, ___ ich die Konnektoren besser behalten kann. Ich verbessere mich, ___ ich jeden Tag übe.",
+      "blanks": [
+        {
+          "blankIndex": 1,
+          "answer": "damit",
+          "options": [
+            "damit",
+            "um",
+            "weil",
+            "denn"
+          ]
+        },
+        {
+          "blankIndex": 2,
+          "answer": "indem",
+          "options": [
+            "indem",
+            "obwohl",
+            "trotzdem",
+            "sondern"
+          ]
+        }
+      ],
+      "fullAnswer": "Ich schreibe eigene Sätze, damit ich die Konnektoren besser behalten kann. Ich verbessere mich, indem ich jeden Tag übe.",
+      "explanationZh": "目的用 damit；方法用 indem。",
+      "id": "lc5-q163"
+    },
+    {
+      "type": "cloze",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B1",
+      "promptZh": "高強度短文填空：請在短文中填入合適的連接詞。",
+      "textWithBlanks": "Ich habe ___ Zeit ___ Energie. ___ mache ich heute nur eine kurze Wiederholung.",
+      "blanks": [
+        {
+          "blankIndex": 1,
+          "answer": "weder",
+          "options": [
+            "weder",
+            "sowohl",
+            "je",
+            "zwar"
+          ]
+        },
+        {
+          "blankIndex": 2,
+          "answer": "noch",
+          "options": [
+            "noch",
+            "als auch",
+            "desto",
+            "aber"
+          ]
+        },
+        {
+          "blankIndex": 3,
+          "answer": "Deshalb",
+          "options": [
+            "Deshalb",
+            "Weil",
+            "Obwohl",
+            "Als"
+          ]
+        }
+      ],
+      "fullAnswer": "Ich habe weder Zeit noch Energie. Deshalb mache ich heute nur eine kurze Wiederholung.",
+      "explanationZh": "weder ... noch 否定兩者；結果用 deshalb。",
+      "id": "lc5-q164"
+    },
+    {
+      "type": "cloze",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B2",
+      "promptZh": "高強度短文填空：請在短文中填入合適的連接詞。",
+      "textWithBlanks": "___ die Regel einfach aussieht, ist ihre Anwendung schwierig. ___ sollte man nicht nur die Bedeutung, ___ auch die Satzstellung trainieren.",
+      "blanks": [
+        {
+          "blankIndex": 1,
+          "answer": "Obwohl",
+          "options": [
+            "Obwohl",
+            "Deshalb",
+            "Denn",
+            "Sondern"
+          ]
+        },
+        {
+          "blankIndex": 2,
+          "answer": "Deshalb",
+          "options": [
+            "Deshalb",
+            "Weil",
+            "Trotzdem",
+            "Als"
+          ]
+        },
+        {
+          "blankIndex": 3,
+          "answer": "sondern",
+          "options": [
+            "sondern",
+            "oder",
+            "noch",
+            "desto"
+          ]
+        }
+      ],
+      "fullAnswer": "Obwohl die Regel einfach aussieht, ist ihre Anwendung schwierig. Deshalb sollte man nicht nur die Bedeutung, sondern auch die Satzstellung trainieren.",
+      "explanationZh": "讓步、結果、成對連接詞整合。",
+      "id": "lc5-q165"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m7-mixed-challenge",
+      "level": "A2",
+      "promptZh": "哪一句 weil 語序正確？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ich bleibe zu Hause, weil ich krank bin."
+        },
+        {
+          "id": "b",
+          "text": "Ich bleibe zu Hause, weil ich bin krank."
+        },
+        {
+          "id": "c",
+          "text": "Ich bleibe zu Hause, weil krank bin ich."
+        },
+        {
+          "id": "d",
+          "text": "Ich bleibe zu Hause, weil bin ich krank."
+        }
+      ],
+      "answer": "a",
+      "explanationZh": "weil 子句動詞放最後。",
+      "id": "lc5-q166"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m7-mixed-challenge",
+      "level": "A2",
+      "promptZh": "哪一句 deshalb 語序正確？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deshalb ich bleibe zu Hause."
+        },
+        {
+          "id": "b",
+          "text": "Deshalb bleibe ich zu Hause."
+        },
+        {
+          "id": "c",
+          "text": "Deshalb ich zu Hause bleibe."
+        },
+        {
+          "id": "d",
+          "text": "Deshalb zu Hause ich bleibe."
+        }
+      ],
+      "answer": "b",
+      "explanationZh": "deshalb 句首後變位動詞在第二位。",
+      "id": "lc5-q167"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m7-mixed-challenge",
+      "level": "A2",
+      "promptZh": "哪一句 obwohl 語序正確？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Obwohl ich bin müde, lerne ich weiter."
+        },
+        {
+          "id": "b",
+          "text": "Obwohl ich müde bin, ich lerne weiter."
+        },
+        {
+          "id": "c",
+          "text": "Obwohl ich müde bin, lerne ich weiter."
+        },
+        {
+          "id": "d",
+          "text": "Obwohl ich müde bin, trotzdem lerne ich weiter."
+        }
+      ],
+      "answer": "c",
+      "explanationZh": "obwohl 子句動詞最後，後面主句倒裝。",
+      "id": "lc5-q168"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B1",
+      "promptZh": "哪一句 nachdem 語序正確？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nachdem ich habe gegessen, lerne ich."
+        },
+        {
+          "id": "b",
+          "text": "Nachdem ich gegessen habe, lerne ich."
+        },
+        {
+          "id": "c",
+          "text": "Nachdem ich gegessen habe, ich lerne."
+        },
+        {
+          "id": "d",
+          "text": "Nachdem habe ich gegessen, lerne ich."
+        }
+      ],
+      "answer": "b",
+      "explanationZh": "nachdem 子句中 habe 放最後。",
+      "id": "lc5-q169"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B1",
+      "promptZh": "哪一句 um ... zu 正確？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ich lerne Deutsch, um ich kann reisen."
+        },
+        {
+          "id": "b",
+          "text": "Ich lerne Deutsch, um reisen zu können."
+        },
+        {
+          "id": "c",
+          "text": "Ich lerne Deutsch, damit reisen zu können."
+        },
+        {
+          "id": "d",
+          "text": "Ich lerne Deutsch, um ich reise."
+        }
+      ],
+      "answer": "b",
+      "explanationZh": "um ... zu 後接不定詞結構。",
+      "id": "lc5-q170"
+    },
+    {
+      "type": "choose_connector",
+      "moduleId": "m7-mixed-challenge",
+      "level": "B1",
+      "promptZh": "哪一句 weder ... noch 正確？",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ich habe nicht weder Zeit noch Geld."
+        },
+        {
+          "id": "b",
+          "text": "Ich habe weder Zeit noch Geld."
+        },
+        {
+          "id": "c",
+          "text": "Ich habe weder Zeit oder Geld."
+        },
+        {
+          "id": "d",
+          "text": "Ich habe sowohl Zeit noch Geld."
+        }
+      ],
+      "answer": "b",
+      "explanationZh": "weder ... noch 已經是否定。",
+      "id": "lc5-q171"
+    }
+  ],
+  "trainingModes": [
+    {
+      "id": "warmup",
+      "titleZh": "暖身：語序分類",
+      "questionTypes": [
+        "classify_syntax",
+        "choose_connector"
+      ],
+      "roundSize": 10,
+      "goalZh": "先建立連接詞類型反射。"
+    },
+    {
+      "id": "verb_position_drill",
+      "titleZh": "動詞位置高強度訓練",
+      "questionTypes": [
+        "order_words",
+        "error_correction",
+        "choose_connector"
+      ],
+      "roundSize": 20,
+      "goalZh": "看到 weil/deshalb/trotzdem/obwohl 立刻知道動詞位置。"
+    },
+    {
+      "id": "confusable_pairs",
+      "titleZh": "易混淆組合訓練",
+      "questionTypes": [
+        "choose_connector",
+        "transform_sentence",
+        "error_correction"
+      ],
+      "roundSize": 20,
+      "focusPairs": [
+        [
+          "weil",
+          "denn",
+          "deshalb"
+        ],
+        [
+          "obwohl",
+          "trotzdem",
+          "aber"
+        ],
+        [
+          "wenn",
+          "als",
+          "ob",
+          "falls"
+        ],
+        [
+          "damit",
+          "um ... zu"
+        ],
+        [
+          "nachdem",
+          "danach",
+          "nach"
+        ]
+      ],
+      "goalZh": "訓練意思相近但語序不同的連接詞。"
+    },
+    {
+      "id": "b2_writing_upgrade",
+      "titleZh": "B2 寫作升級",
+      "questionTypes": [
+        "transform_sentence",
+        "cloze",
+        "sentence_builder"
+      ],
+      "roundSize": 15,
+      "goalZh": "把簡單句升級成 B1-B2 寫作句型。"
+    },
+    {
+      "id": "mixed_exam",
+      "titleZh": "混合測驗",
+      "questionTypes": [
+        "classify_syntax",
+        "choose_connector",
+        "order_words",
+        "error_correction",
+        "transform_sentence",
+        "cloze"
+      ],
+      "roundSize": 30,
+      "goalZh": "綜合檢查是否能在不同題型中穩定使用。"
     }
   ]
 }
