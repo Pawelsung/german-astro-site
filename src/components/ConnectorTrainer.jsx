@@ -122,7 +122,7 @@ function FilterButton({ active, children, onClick }) {
       type="button"
       onClick={onClick}
       className={cx(
-        'rounded-xl border px-3 py-2 text-xs font-black transition active:scale-95',
+        'min-w-0 rounded-xl border px-3 py-2 text-xs font-black transition active:scale-95',
         active ? 'border-violet-600 bg-violet-600 text-white shadow-sm' : 'border-slate-200 bg-white text-slate-600 hover:bg-violet-50'
       )}
     >
@@ -133,7 +133,7 @@ function FilterButton({ active, children, onClick }) {
 
 function ConnectorCard({ connector, syntaxType, bookmarked, onBookmark }) {
   return (
-    <article className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
+    <article className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
       <div className="mb-3 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="break-words text-2xl font-black text-slate-900">{connector.word}</p>
@@ -155,13 +155,13 @@ function ConnectorCard({ connector, syntaxType, bookmarked, onBookmark }) {
       </div>
 
       <div className="space-y-3 text-sm">
-        <div className="rounded-xl bg-slate-50 p-3">
-          <p className="font-black text-slate-800">{connector.exampleDe}</p>
-          <p className="mt-1 font-bold text-slate-500">{connector.exampleZh}</p>
+        <div className="min-w-0 rounded-xl bg-slate-50 p-3">
+          <p className="break-words font-black text-slate-800">{connector.exampleDe}</p>
+          <p className="mt-1 break-words font-bold text-slate-500">{connector.exampleZh}</p>
         </div>
-        <p className="font-bold leading-relaxed text-slate-600">{connector.usageNoteZh}</p>
+        <p className="break-words font-bold leading-relaxed text-slate-600">{connector.usageNoteZh}</p>
         {connector.confusableWith?.length > 0 && (
-          <p className="text-xs font-black text-slate-400">
+          <p className="break-words text-xs font-black text-slate-400">
             易混淆：{connector.confusableWith.join(' / ')}
           </p>
         )}
@@ -176,11 +176,11 @@ function LearnView({ connectors, progress, onBookmark }) {
   return (
     <div className="space-y-4">
       {connectors.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
+        <div className="min-w-0 rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
           <p className="font-black text-slate-500">目前篩選沒有連接詞卡片</p>
         </div>
       ) : (
-        <section className="grid gap-4 md:grid-cols-2">
+        <section className="grid min-w-0 gap-4 md:grid-cols-2">
           {connectors.map((connector) => (
             <ConnectorCard
               key={connector.id}
@@ -198,7 +198,7 @@ function LearnView({ connectors, progress, onBookmark }) {
 
 function ChoiceQuestion({ question, value, onChange, locked }) {
   return (
-    <div className="grid gap-2 sm:grid-cols-2">
+    <div className="grid min-w-0 gap-2 sm:grid-cols-2">
       {question.options.map((option) => (
         <button
           key={option.id}
@@ -206,7 +206,7 @@ function ChoiceQuestion({ question, value, onChange, locked }) {
           disabled={locked}
           onClick={() => onChange(option.id)}
           className={cx(
-            'min-h-12 rounded-xl border px-4 py-3 text-left text-sm font-black transition active:scale-[0.98]',
+            'min-h-12 min-w-0 break-words rounded-xl border px-4 py-3 text-left text-sm font-black transition active:scale-[0.98]',
             value === option.id ? 'border-violet-600 bg-violet-600 text-white' : 'border-slate-200 bg-white text-slate-700 hover:bg-violet-50'
           )}
         >
@@ -223,7 +223,7 @@ function OrderQuestion({ question, value, onChange, locked }) {
 
   return (
     <div className="space-y-3">
-      <div className="min-h-16 rounded-xl border border-violet-100 bg-violet-50 p-3">
+      <div className="min-h-16 min-w-0 rounded-xl border border-violet-100 bg-violet-50 p-3">
         <div className="flex flex-wrap gap-2">
           {selected.length === 0 && <span className="text-sm font-bold text-violet-400">依序點選詞塊</span>}
           {selected.map((item) => (
@@ -232,7 +232,7 @@ function OrderQuestion({ question, value, onChange, locked }) {
               type="button"
               disabled={locked}
               onClick={() => onChange(selected.filter((part) => part.index !== item.index))}
-              className="rounded-lg bg-violet-600 px-3 py-2 text-sm font-black text-white"
+              className="min-w-0 break-words rounded-lg bg-violet-600 px-3 py-2 text-sm font-black text-white"
             >
               {item.token}
             </button>
@@ -248,7 +248,7 @@ function OrderQuestion({ question, value, onChange, locked }) {
               type="button"
               disabled={locked}
               onClick={() => onChange([...selected, { token, index }])}
-              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-black text-slate-700 active:scale-95"
+              className="min-w-0 break-words rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-black text-slate-700 active:scale-95"
             >
               {token}
             </button>
@@ -266,7 +266,7 @@ function TextQuestion({ question, value, onChange, locked }) {
       disabled={locked}
       onChange={(event) => onChange(event.target.value)}
       rows={3}
-      className="w-full rounded-xl border border-slate-200 bg-white p-3 text-sm font-bold text-slate-800 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+      className="w-full min-w-0 rounded-xl border border-slate-200 bg-white p-3 text-sm font-bold text-slate-800 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
       placeholder="輸入你的答案"
     />
   );
@@ -278,14 +278,14 @@ function PairQuestion({ question, value, onChange, locked }) {
   return (
     <div className="space-y-3">
       {question.left.map((left) => (
-        <div key={left.id} className="grid gap-2 rounded-xl border border-slate-100 bg-white p-3 sm:grid-cols-[1fr_auto_1.4fr] sm:items-center">
-          <div className="font-black text-slate-800">{left.text}</div>
+        <div key={left.id} className="grid min-w-0 gap-2 rounded-xl border border-slate-100 bg-white p-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.4fr)] sm:items-center">
+          <div className="min-w-0 break-words font-black text-slate-800">{left.text}</div>
           <ArrowRight className="hidden h-4 w-4 text-slate-300 sm:block" />
           <select
             disabled={locked}
             value={pairs[left.id] || ''}
             onChange={(event) => onChange({ ...pairs, [left.id]: event.target.value })}
-            className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700"
+            className="w-full min-w-0 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700"
           >
             <option value="">選擇後半</option>
             {question.right.map((right) => (
@@ -303,7 +303,7 @@ function ClozeQuestion({ question, value, onChange, locked }) {
 
   return (
     <div className="space-y-4">
-      <p className="rounded-xl bg-slate-50 p-3 text-sm font-bold leading-relaxed text-slate-700">{question.textWithBlanks}</p>
+      <p className="min-w-0 break-words rounded-xl bg-slate-50 p-3 text-sm font-bold leading-relaxed text-slate-700">{question.textWithBlanks}</p>
       {question.blanks.map((blank) => (
         <label key={blank.blankIndex} className="block">
           <span className="mb-1 block text-xs font-black text-slate-500">空格 {blank.blankIndex}</span>
@@ -311,7 +311,7 @@ function ClozeQuestion({ question, value, onChange, locked }) {
             disabled={locked}
             value={answers[blank.blankIndex] || ''}
             onChange={(event) => onChange({ ...answers, [blank.blankIndex]: event.target.value })}
-            className="w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black text-slate-700"
+            className="w-full min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black text-slate-700"
           >
             <option value="">選擇答案</option>
             {blank.options.map((option) => (
@@ -336,16 +336,16 @@ function QuestionInput({ question, value, onChange, locked }) {
 
 function QuestionPrompt({ question }) {
   return (
-    <div className="space-y-3">
+    <div className="min-w-0 space-y-3">
       <div className="flex flex-wrap gap-2">
         <span className="rounded-full bg-violet-50 px-3 py-1 text-[11px] font-black text-violet-700">{TYPE_LABELS[question.type] || question.type}</span>
         <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-black text-slate-500">{question.level}</span>
       </div>
-      <h3 className="text-lg font-black leading-snug text-slate-900">{question.promptZh}</h3>
-      {question.promptDe && <p className="text-3xl font-black text-violet-700">{question.promptDe}</p>}
-      {question.sentenceWithBlank && <p className="rounded-xl bg-slate-50 p-3 text-base font-black text-slate-800">{question.sentenceWithBlank}</p>}
-      {question.wrongSentence && <p className="rounded-xl bg-rose-50 p-3 text-base font-black text-rose-800">{question.wrongSentence}</p>}
-      {question.sourceSentence && <p className="rounded-xl bg-slate-50 p-3 text-base font-black text-slate-800">{question.sourceSentence}</p>}
+      <h3 className="break-words text-lg font-black leading-snug text-slate-900">{question.promptZh}</h3>
+      {question.promptDe && <p className="break-words text-3xl font-black text-violet-700">{question.promptDe}</p>}
+      {question.sentenceWithBlank && <p className="min-w-0 break-words rounded-xl bg-slate-50 p-3 text-base font-black text-slate-800">{question.sentenceWithBlank}</p>}
+      {question.wrongSentence && <p className="min-w-0 break-words rounded-xl bg-rose-50 p-3 text-base font-black text-rose-800">{question.wrongSentence}</p>}
+      {question.sourceSentence && <p className="min-w-0 break-words rounded-xl bg-slate-50 p-3 text-base font-black text-slate-800">{question.sourceSentence}</p>}
     </div>
   );
 }
@@ -370,7 +370,7 @@ function QuizView({ questions, progress, setProgress }) {
 
   if (!question) {
     return (
-      <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
+      <div className="min-w-0 rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
         <p className="font-black text-slate-500">目前篩選沒有題目</p>
       </div>
     );
@@ -404,7 +404,7 @@ function QuizView({ questions, progress, setProgress }) {
   };
 
   return (
-    <section className="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm md:p-5">
+    <section className="min-w-0 overflow-hidden rounded-2xl border border-violet-100 bg-white p-4 shadow-sm md:p-5">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="text-sm font-black text-slate-500">
           {index + 1} / {questions.length}
@@ -422,9 +422,9 @@ function QuizView({ questions, progress, setProgress }) {
         </button>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <QuestionPrompt question={question} />
-        <div className="space-y-4">
+        <div className="min-w-0 space-y-4">
           <QuestionInput question={question} value={draft} onChange={setDraft} locked={result !== null} />
 
           {result !== null && (
@@ -435,8 +435,8 @@ function QuizView({ questions, progress, setProgress }) {
                   {result ? '正確' : '需要修正'}
                 </span>
               </div>
-              <p className="text-sm font-black text-slate-800">答案：{getAnswerText(question)}</p>
-              <p className="mt-2 text-sm font-bold leading-relaxed text-slate-600">{question.explanationZh}</p>
+              <p className="break-words text-sm font-black text-slate-800">答案：{getAnswerText(question)}</p>
+              <p className="mt-2 break-words text-sm font-bold leading-relaxed text-slate-600">{question.explanationZh}</p>
             </div>
           )}
 
@@ -475,7 +475,7 @@ function MistakesView({ questions, progress, setMode }) {
   const mistakes = questions.filter((question) => progress.mistakes.includes(question.id));
 
   return (
-    <section className="rounded-2xl border border-rose-100 bg-white p-4 shadow-sm md:p-5">
+    <section className="min-w-0 overflow-hidden rounded-2xl border border-rose-100 bg-white p-4 shadow-sm md:p-5">
       <h2 className="mb-3 text-base font-black text-slate-800">錯題整理</h2>
       {mistakes.length === 0 ? (
         <p className="rounded-xl bg-slate-50 p-4 text-sm font-bold text-slate-500">目前沒有錯題。答錯後會自動收進這裡。</p>
@@ -483,9 +483,9 @@ function MistakesView({ questions, progress, setMode }) {
         <div className="space-y-3">
           {mistakes.map((question) => (
             <div key={question.id} className="rounded-xl border border-rose-100 bg-rose-50 p-3">
-              <p className="text-sm font-black text-rose-900">{question.promptZh}</p>
-              <p className="mt-1 text-sm font-bold text-slate-700">{question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe}</p>
-              <p className="mt-2 text-xs font-bold leading-relaxed text-slate-600">{question.explanationZh}</p>
+              <p className="break-words text-sm font-black text-rose-900">{question.promptZh}</p>
+              <p className="mt-1 break-words text-sm font-bold text-slate-700">{question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe}</p>
+              <p className="mt-2 break-words text-xs font-bold leading-relaxed text-slate-600">{question.explanationZh}</p>
             </div>
           ))}
         </div>
@@ -545,31 +545,31 @@ export default function ConnectorTrainer() {
   };
 
   return (
-    <div className="space-y-5">
-      <section className="grid gap-3 md:grid-cols-4">
-        <div className="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
+    <div className="w-full max-w-full min-w-0 overflow-x-hidden space-y-5">
+      <section className="grid min-w-0 grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="min-w-0 rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
           <BookOpen className="mb-2 h-5 w-5 text-violet-600" />
           <p className="text-2xl font-black text-slate-900">{data.connectors.length}</p>
           <p className="text-xs font-black text-slate-400">連接詞卡片</p>
         </div>
-        <div className="rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
+        <div className="min-w-0 rounded-2xl border border-violet-100 bg-white p-4 shadow-sm">
           <ListChecks className="mb-2 h-5 w-5 text-violet-600" />
           <p className="text-2xl font-black text-slate-900">{data.questions.length}</p>
           <p className="text-xs font-black text-slate-400">練習題</p>
         </div>
-        <div className="rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm">
+        <div className="min-w-0 rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm">
           <CheckCircle className="mb-2 h-5 w-5 text-emerald-600" />
           <p className="text-2xl font-black text-slate-900">{correctCount}/{answeredCount || 0}</p>
           <p className="text-xs font-black text-slate-400">答對紀錄</p>
         </div>
-        <div className="rounded-2xl border border-rose-100 bg-white p-4 shadow-sm">
+        <div className="min-w-0 rounded-2xl border border-rose-100 bg-white p-4 shadow-sm">
           <XCircle className="mb-2 h-5 w-5 text-rose-600" />
           <p className="text-2xl font-black text-slate-900">{progress.mistakes.length}</p>
           <p className="text-xs font-black text-slate-400">錯題</p>
         </div>
       </section>
 
-      <section className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
+      <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
         <div className="mb-4 flex flex-wrap gap-2">
           <FilterButton active={mode === 'learn'} onClick={() => setMode('learn')}>學習卡</FilterButton>
           <FilterButton active={mode === 'quiz'} onClick={() => setMode('quiz')}>練習</FilterButton>
@@ -577,25 +577,25 @@ export default function ConnectorTrainer() {
           <FilterButton active={mode === 'bookmarks'} onClick={() => setMode('bookmarks')}>收藏</FilterButton>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-3">
-          <label className="block">
+        <div className="grid min-w-0 gap-3 md:grid-cols-3">
+          <label className="block min-w-0">
             <span className="mb-1 block text-xs font-black text-slate-400">模組</span>
-            <select value={moduleId} onChange={(event) => setModuleId(event.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
+            <select value={moduleId} onChange={(event) => setModuleId(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
               {MODULES.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
             </select>
           </label>
-          <label className="block">
+          <label className="block min-w-0">
             <span className="mb-1 block text-xs font-black text-slate-400">等級</span>
-            <select value={level} onChange={(event) => setLevel(event.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
+            <select value={level} onChange={(event) => setLevel(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
               <option value="all">全部</option>
               <option value="A2">A2</option>
               <option value="B1">B1</option>
               <option value="B2">B2</option>
             </select>
           </label>
-          <label className="block">
+          <label className="block min-w-0">
             <span className="mb-1 block text-xs font-black text-slate-400">語序類型</span>
-            <select value={syntax} onChange={(event) => setSyntax(event.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
+            <select value={syntax} onChange={(event) => setSyntax(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
               <option value="all">全部</option>
               {data.syntaxTypes.map((item) => <option key={item.id} value={item.id}>{item.labelZh}</option>)}
             </select>
