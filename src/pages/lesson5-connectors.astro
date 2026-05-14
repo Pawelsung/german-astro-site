@@ -1,0 +1,34 @@
+---
+import LessonShell from '../components/LessonShell.astro';
+import ConnectorTrainer from '../components/ConnectorTrainer.jsx';
+
+export const frontmatter = {
+  title: "Lektion 5｜連接詞與語序",
+  description: "從動詞位置判斷德文連接詞：主句不變、倒裝、子句句尾、zu 不定詞與成對連接詞。",
+  category: "文法練習",
+  tags: ["A2-B2", "Konnektoren", "Satzstellung", "Nebensatz", "倒裝"],
+  order: 5,
+  level: "A2-B2",
+  estimatedMinutes: 25,
+  theme: "violet"
+};
+---
+
+<LessonShell frontmatter={frontmatter}>
+  <div class="max-w-6xl mx-auto">
+    <ConnectorTrainer client:load />
+  </div>
+
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>先不要翻中文意思，先判斷連接詞會不會改變動詞位置。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>看到 deshalb、trotzdem、jedoch 這類連接副詞放句首時，立刻檢查後面是否倒裝。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>看到 weil、obwohl、wenn、damit 等子句連接詞，先找變位動詞是否在子句最後。</span>
+  </li>
+</LessonShell>
