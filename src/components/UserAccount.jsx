@@ -12,7 +12,7 @@ import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
 import { collectLocalProgress, mergeRemoteProgress } from '../lib/progressStorage';
 
 const provider = new GoogleAuthProvider();
-const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4'];
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5'];
 
 function getAuthErrorMessage(error) {
   const code = error?.code || '';
