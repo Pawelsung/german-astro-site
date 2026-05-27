@@ -33,5 +33,12 @@
     "description": "已排除官方核心字庫重複，精選 B1/B1+ 實用補充詞，共 108 筆，可單獨練習",
     "path": "/vocab/schritte-b1-1-supplement.json",
     "count": 108
+  },
+  {
+    "id": "schritte-b1-1-hidden-advanced",
+    "label": "Schritte B1.1 隱藏版進階詞",
+    "description": "課文、音檔與補充閱讀中的 B1/B2 進階詞彙；原 100 筆去除既有字庫重複後共 87 筆，含短語與口語表達。",
+    "path": "/vocab/schritte-b1-1-hidden-advanced.json",
+    "count": 87
   }
 ]

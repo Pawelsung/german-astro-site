@@ -69,12 +69,14 @@ export default function LearningDashboard() {
     summary.lesson1ErrorCount +
     summary.lesson3WrongCount +
     summary.lesson4WrongCount +
-    summary.lesson5WrongCount;
+    summary.lesson5WrongCount +
+    summary.lesson6WrongCount;
   const starredCount =
     summary.lesson2StarredCount +
     summary.lesson3StarredCount +
     summary.lesson4StarredCount +
-    summary.lesson5StarredCount;
+    summary.lesson5StarredCount +
+    summary.lesson6StarredCount;
   const primaryAction =
     reviewCount > 0
       ? { href: '/lesson3-irregular-verbs/', label: '複習需要加強的內容' }
@@ -121,6 +123,14 @@ export default function LearningDashboard() {
       primary: { value: summary.lesson5WrongCount, label: '錯題' },
       secondary: `${summary.lesson5AnsweredCount} 題已作答 · ${summary.lesson5StarredCount} 個已收藏`,
       tone: 'violet'
+    },
+    {
+      href: '/lesson6-adjective-declension/',
+      label: '6',
+      title: '形容詞字尾',
+      primary: { value: summary.lesson6WrongCount, label: '需要複習' },
+      secondary: `${summary.lesson6AnsweredCount} 題已作答 · ${summary.lesson6StarredCount} 個已收藏`,
+      tone: 'amber'
     }
   ];
 

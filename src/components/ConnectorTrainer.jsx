@@ -501,6 +501,69 @@ function MistakesView({ questions, progress, setMode }) {
   );
 }
 
+function RecordsView({ questions, progress, setMode }) {
+  const answeredQuestions = questions
+    .filter((question) => progress.answers[question.id])
+    .sort((a, b) => {
+      const aTime = progress.answers[a.id]?.answeredAt || '';
+      const bTime = progress.answers[b.id]?.answeredAt || '';
+      return bTime.localeCompare(aTime);
+    });
+
+  return (
+    <section className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm md:p-5">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-base font-black text-slate-800">答題紀錄</h2>
+        <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700">
+          {answeredQuestions.length} 題已作答
+        </span>
+      </div>
+
+      {answeredQuestions.length === 0 ? (
+        <p className="rounded-xl bg-slate-50 p-4 text-sm font-bold text-slate-500">目前還沒有答題紀錄。</p>
+      ) : (
+        <div className="space-y-3">
+          {answeredQuestions.map((question) => {
+            const answer = progress.answers[question.id];
+            return (
+              <div
+                key={question.id}
+                className={cx(
+                  'rounded-xl border p-3',
+                  answer.correct ? 'border-emerald-100 bg-emerald-50' : 'border-rose-100 bg-rose-50'
+                )}
+              >
+                <div className="mb-2 flex flex-wrap items-center gap-2">
+                  <span className={cx('rounded-full px-2.5 py-1 text-[11px] font-black', answer.correct ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white')}>
+                    {answer.correct ? '答對' : '答錯'}
+                  </span>
+                  <span className="rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-black text-slate-500">
+                    {TYPE_LABELS[question.type] || question.type}
+                  </span>
+                  <span className="text-[11px] font-bold text-slate-400">
+                    {answer.answeredAt ? new Date(answer.answeredAt).toLocaleString('zh-TW') : ''}
+                  </span>
+                </div>
+                <p className="break-words text-sm font-black text-slate-900">{question.promptZh}</p>
+                <p className="mt-1 break-words text-sm font-bold text-slate-700">{question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe}</p>
+                <p className="mt-2 break-words text-xs font-bold leading-relaxed text-slate-600">答案：{getAnswerText(question)}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={() => setMode('quiz')}
+        className="mt-4 rounded-xl bg-emerald-600 px-4 py-3 text-sm font-black text-white"
+      >
+        回到練習
+      </button>
+    </section>
+  );
+}
+
 export default function ConnectorTrainer() {
   const [mode, setMode] = useState('learn');
   const [moduleId, setModuleId] = useState('all');
@@ -602,6 +665,7 @@ export default function ConnectorTrainer() {
         <div className="mb-4 flex flex-wrap gap-2">
           <FilterButton active={mode === 'learn'} onClick={() => setMode('learn')}>學習卡</FilterButton>
           <FilterButton active={mode === 'quiz'} onClick={() => setMode('quiz')}>練習</FilterButton>
+          <FilterButton active={mode === 'records'} onClick={() => setMode('records')}>紀錄</FilterButton>
           <FilterButton active={mode === 'mistakes'} onClick={() => setMode('mistakes')}>錯題</FilterButton>
           <FilterButton active={mode === 'bookmarks'} onClick={() => setMode('bookmarks')}>收藏</FilterButton>
         </div>
@@ -634,6 +698,7 @@ export default function ConnectorTrainer() {
 
       {mode === 'learn' && <LearnView connectors={connectors} progress={progress} onBookmark={toggleBookmark} />}
       {mode === 'quiz' && <QuizView questions={questions} progress={progress} setProgress={setProgress} />}
+      {mode === 'records' && <RecordsView questions={data.questions} progress={progress} setMode={setMode} />}
       {mode === 'mistakes' && <MistakesView questions={data.questions} progress={progress} setMode={setMode} />}
       {mode === 'bookmarks' && (
         <LearnView
