@@ -62,7 +62,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-24：修正手機字卡無法滑動／翻面（已 commit，未部署）
+### 2026-10-24：修正手機字卡無法滑動／翻面（已部署）
 - 使用者回報：手機上字卡滑不動、也翻不了面。
 - **根本原因**：iOS Safari 只支援 `touch-action: auto` 和 `manipulation`，**不支援 `pan-y`**。第 1 課字卡原本用 pointer events 處理滑動，手指一橫移，Safari 就把它當成頁面捲動並送出 `pointercancel`，導致滑動失效；點擊時手指只要稍微移動也會被取消，所以翻不了面。
 - **修正**：新增共用 hook `src/hooks/useSwipe.js`
@@ -74,7 +74,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - **測試陷阱**：Browser pane 在背景執行時會凍結 CSS transition，計算出的 transform 會停在起始值，看起來像「翻面後空白」。驗證翻面時要先注入 `*{transition:none!important}`。
 - 驗證：用 TouchEvent 模擬點擊、垂直拖曳、水平滑動，第 1～3 課都通過：點擊會翻面、背面可以點回來、水平滑動會 `preventDefault` 並換卡、垂直拖曳不會被攔、滑動後不會誤翻面。**尚未在實體 iPhone 上確認。**
 
-### 2026-10-24：第 1 課新增「中→德」與「填空」（已 commit，未部署）
+### 2026-10-24：第 1 課新增「中→德」與「填空」（已部署）
 - 純邏輯放在 `src/lib/vocabPractice.mjs`（測試在 `tests/vocabPractice.test.mjs`）：
   - `findClozeTarget`：在例句中找出該字或它的變化形，例如 gewundert、eingestiegen、可分動詞的 stimme。B1 字庫約 97% 的字可以出填空題
   - `productionAnswer`：名詞要求連同冠詞作答
