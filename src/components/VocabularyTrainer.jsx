@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Download, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
 import { PROGRESS_KEYS, readJSON, writeJSON, isReviewRequested } from '../lib/progressStorage';
 import { useStoredProgress } from '../hooks/useStoredProgress';
+import { useSwipe } from '../hooks/useSwipe';
 import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chaptersFor, filterVocabulary, articleExplanation } from '../lib/vocabulary.mjs';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import { genderKey } from '../lib/grammarColors.mjs';
@@ -43,30 +44,20 @@ function posOptions(word) {
 function FlashCard({ word, flipped, onFlip, onRate, speak }) {
   const [dx, setDx] = useState(0);
   const [leaving, setLeaving] = useState(0);
-  const drag = useRef(null);
-  function down(e) {
-    if (e.button !== undefined && e.button !== 0) return;
-    // Buttons and the conjugation <details> on the back must not flip the card.
-    if (e.target.closest('button, summary, details, a')) return;
-    drag.current = { x: e.clientX, y: e.clientY, moved: false, id: e.pointerId };
-  }
-  function moveDrag(e) {
-    const d = drag.current; if (!d) return;
-    const x = e.clientX - d.x;
-    if (!d.moved && Math.abs(x) < 8) return;
-    if (!d.moved && Math.abs(e.clientY - d.y) > Math.abs(x)) { drag.current = null; return; }
-    if (!d.moved) { d.moved = true; e.currentTarget.setPointerCapture?.(d.id); }
-    setDx(x);
-  }
-  function up() {
-    const d = drag.current; drag.current = null;
-    if (!d) return;
-    if (!d.moved) { onFlip(); return; }
-    if (Math.abs(dx) >= SWIPE_THRESHOLD) {
-      const dir = dx > 0 ? 1 : -1;
+  // Touch-safe swipe (iOS ignores touch-action: pan-y); taps flip through the normal click event.
+  const swipe = useSwipe({
+    threshold: SWIPE_THRESHOLD,
+    onDrag: setDx,
+    onSwipe: (direction) => {
+      const dir = direction === 'right' ? 1 : -1;
       setLeaving(dir);
       setTimeout(() => { setLeaving(0); setDx(0); onRate(dir > 0); }, 180);
-    } else setDx(0);
+    }
+  });
+  function tap(e) {
+    // Buttons and the conjugation <details> on the back must not flip the card.
+    if (e.target.closest('button, summary, details, a')) return;
+    onFlip();
   }
   const offset = leaving ? leaving * 600 : dx;
   const hint = dx > 30 ? 'known' : dx < -30 ? 'unknown' : '';
@@ -74,7 +65,7 @@ function FlashCard({ word, flipped, onFlip, onRate, speak }) {
     <div
       className={`flip-card${dx || leaving ? ' is-dragging' : ''}`}
       style={{ transform: `translateX(${offset}px) rotate(${offset / 18}deg)`, opacity: leaving ? 0 : 1 }}
-      onPointerDown={down} onPointerMove={moveDrag} onPointerUp={up} onPointerCancel={() => { drag.current = null; setDx(0); }}
+      ref={swipe.ref} onClickCapture={swipe.onClickCapture} onClick={tap}
       onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); onFlip(); } }}
       role="button" tabIndex={0} aria-pressed={flipped} aria-label={flipped ? '翻回單字' : '翻面看解釋'}
     >

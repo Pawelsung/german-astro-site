@@ -7,6 +7,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { irregularVerbs } from '../data/irregular-verbs';
 import { getFirebaseServices } from '../lib/firebase';
 import { answerCue, useRevealOnShow } from '../lib/answerFeedback';
+import { useSwipe } from '../hooks/useSwipe';
+import { FLIP_BACK_STYLE, FLIP_FACE_STYLE, flipInnerStyle } from '../lib/flipStyles.mjs';
 
 // Colors a choice button after answering: the right answer pops green, a wrong pick shakes red.
 function choiceTone(option, picked, correct, feedback, pickedClass) {
@@ -414,6 +416,9 @@ function FlashcardLikeMode({
   speak,
   frontBadge
 }) {
+  const [dragX, setDragX] = useState(0);
+  // Swipe left/right to change card; works on iPhone where touch-action: pan-y is ignored.
+  const swipe = useSwipe({ onDrag: setDragX, onSwipe: (direction) => { setDragX(0); (direction === 'left' ? onNext : onPrev)(); } });
   return (
     <FixedCardFrame
       tone={tone}
@@ -443,15 +448,17 @@ function FlashcardLikeMode({
       }
     >
       <div
+        ref={swipe.ref}
+        onClickCapture={swipe.onClickCapture}
         onClick={onFlip}
-        className="cursor-pointer w-full max-w-3xl mx-auto [perspective:1200px]"
+        style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined, transition: dragX ? 'none' : 'transform 200ms ease' }}
+        className="cursor-pointer w-full max-w-3xl mx-auto [perspective:1200px] touch-pan-y select-none"
       >
         <div
-          className={`relative min-h-[310px] sm:min-h-[380px] md:min-h-[420px] transition-transform duration-500 [transform-style:preserve-3d] ${
-            showBack ? '[transform:rotateY(180deg)]' : ''
-          }`}
+          className="relative min-h-[310px] sm:min-h-[380px] md:min-h-[420px]"
+          style={flipInnerStyle(showBack)}
         >
-          <div aria-hidden={showBack} inert={showBack} style={{ visibility: showBack ? 'hidden' : 'visible', WebkitBackfaceVisibility: 'hidden' }} className="absolute inset-0 flex flex-col justify-center items-center text-center min-w-0 [backface-visibility:hidden]">
+          <div aria-hidden={showBack} inert={showBack} style={{ ...FLIP_FACE_STYLE, visibility: showBack ? 'hidden' : 'visible' }} className="absolute inset-0 flex flex-col justify-center items-center text-center min-w-0">
             {frontBadge && (
               <div className="mb-3 flex justify-center">
                 <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
@@ -482,7 +489,7 @@ function FlashcardLikeMode({
             </div>
           </div>
 
-          <div aria-hidden={!showBack} inert={!showBack} style={{ visibility: showBack ? 'visible' : 'hidden', WebkitBackfaceVisibility: 'hidden' }} className="absolute inset-0 flex flex-col justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div aria-hidden={!showBack} inert={!showBack} style={{ ...FLIP_FACE_STYLE, ...FLIP_BACK_STYLE, visibility: showBack ? 'visible' : 'hidden' }} className="absolute inset-0 flex flex-col justify-center">
             <div className="grid sm:grid-cols-2 gap-4 text-left auto-rows-fr">
               <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
                 <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>

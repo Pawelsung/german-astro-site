@@ -14,6 +14,8 @@ import { getFirebaseServices } from '../lib/firebase';
 import { loadLesson2Progress, saveLesson2Progress } from '../lib/progressStorage';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import { blankPreposition } from '../lib/prepositionBlank.mjs';
+import { useSwipe } from '../hooks/useSwipe';
+import { FLIP_BACK_STYLE, FLIP_FACE_STYLE, flipInnerStyle } from '../lib/flipStyles.mjs';
 
 const verbData = verbPrepositions;
 
@@ -27,6 +29,9 @@ const useSpeech = () => {
 // --- 3.1 Flashcard Component ---
 const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, prevCard }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [dragX, setDragX] = useState(0);
+  // Swipe left/right to change card; works on iPhone where touch-action: pan-y is ignored.
+  const swipe = useSwipe({ onDrag: setDragX, onSwipe: (direction) => { setDragX(0); (direction === 'left' ? nextCard : prevCard)(); } });
   useEffect(() => {
     setIsFlipped(false);
   }, [card]);
@@ -53,13 +58,16 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
           →
         </button>
       <div
-        className="relative w-full min-h-[390px] sm:min-h-[460px] md:min-h-[520px] cursor-pointer group perspective-1000 touch-pan-y"
+        ref={swipe.ref}
+        onClickCapture={swipe.onClickCapture}
+        style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined, transition: dragX ? 'none' : 'transform 200ms ease' }}
+        className="relative w-full min-h-[390px] sm:min-h-[460px] md:min-h-[520px] cursor-pointer group perspective-1000 touch-pan-y select-none"
       >
-        <div className={`absolute w-full h-full duration-500 preserve-3d transition-all ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
+        <div className="absolute w-full h-full" style={flipInnerStyle(isFlipped)}>
 
           <div
             aria-hidden={isFlipped} inert={isFlipped}
-            style={{ visibility: isFlipped ? 'hidden' : 'visible', pointerEvents: isFlipped ? 'none' : 'auto' }}
+            style={{ ...FLIP_FACE_STYLE, visibility: isFlipped ? 'hidden' : 'visible', pointerEvents: isFlipped ? 'none' : 'auto' }}
             className="absolute w-full h-full bg-gradient-to-br from-amber-50 via-orange-50/50 to-white rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-5 md:p-8 flex flex-col items-center justify-center backface-hidden transition-shadow dark:from-slate-900 dark:via-amber-950/25 dark:to-slate-950 dark:shadow-black/20"
             onClick={(e) => {
               if (e.target.closest('button')) return;
@@ -90,8 +98,8 @@ const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, pr
 
           <div
             aria-hidden={!isFlipped} inert={!isFlipped}
-            style={{ visibility: isFlipped ? 'visible' : 'hidden', pointerEvents: isFlipped ? 'auto' : 'none' }}
-            className="absolute w-full h-full bg-gradient-to-br from-amber-100 via-orange-50 to-amber-50 rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-4 sm:p-5 md:p-8 flex flex-col items-center justify-between [transform:rotateY(180deg)] backface-hidden overflow-hidden dark:from-amber-950/35 dark:via-orange-950/25 dark:to-slate-900 dark:shadow-black/20"
+            style={{ ...FLIP_FACE_STYLE, ...FLIP_BACK_STYLE, visibility: isFlipped ? 'visible' : 'hidden', pointerEvents: isFlipped ? 'auto' : 'none' }}
+            className="absolute w-full h-full bg-gradient-to-br from-amber-100 via-orange-50 to-amber-50 rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-4 sm:p-5 md:p-8 flex flex-col items-center justify-between backface-hidden overflow-hidden dark:from-amber-950/35 dark:via-orange-950/25 dark:to-slate-900 dark:shadow-black/20"
             onClick={(e) => {
               if (e.target.closest('button') || e.target.closest('[data-no-flip]')) return;
               setIsFlipped(false);
