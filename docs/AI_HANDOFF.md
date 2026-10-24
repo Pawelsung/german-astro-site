@@ -62,7 +62,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-24：視覺化文法——冠詞顏色與格位句子圖解（已 commit，未 push、未部署）
+### 2026-10-24：推上 GitHub 並部署正式站
+- 已 push 到 `origin/main`（GitHub Pawelsung/german-astro-site），並部署到 https://german-astro-site.web.app/ （只部署 Hosting，Firestore rules 未變動）。
+- 本機沒有全域安裝 firebase CLI，部署指令是：`npx -y firebase-tools@14 deploy --only hosting --project german-astro-site --non-interactive`（CLI 已用 gtt.pawel@gmail.com 登入）。部署前務必先執行 `npm run build`。
+- 部署後已驗證：手機尺寸首頁正常；音檔 manifest 2,838 筆，mp3 回應 200、audio/mpeg。
+- 待使用者在實體手機上測試：iPhone 播放音檔、3D 翻卡、滑動評分、格位圖解。
+
+### 2026-10-24：視覺化文法——冠詞顏色與格位句子圖解（已部署）
 - **顏色系統**（`global.css` 的 `--g-*` 與 `--case-*` token，也有深色版本）
   - 性別：der 藍、die 紅、das 綠、複數紫，class 為 `g-der`、`g-die`、`g-das`、`g-pl`，小圓點用 `g-dot`
   - 格位：Nominativ 琥珀、Akkusativ 青、Dativ 洋紅，刻意不和性別撞色；徽章 class 為 `case-tone-*`，圖解用 `case-*`
@@ -82,7 +88,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - 已知限制：句子換行、觸發詞和目標分在不同行時，箭頭會從文字上方穿過。之後可改成在不同行時改用底線加編號的標示方式。
 - 驗證：在瀏覽器中測過第 4 課（桌面淺色主詞題、Akk 動詞題，以及手機深色關係子句題），還有第 1 課冠詞題與字卡的顏色。
 
-### 2026-10-24：Google 自然人聲（已 commit，未 push、未部署）
+### 2026-10-24：Google 自然人聲（已部署）
 - 人聲：`de-DE-Chirp3-HD-Charon`（男聲），由使用者試聽後選定。
 - `npm run audio`（`tools/generate-audio.mjs`）會收集第 1～3 課所有 `speak()` 的文字，共 2,838 段、約 55,000 字元，產生到 `public/audio/de-charon/*.mp3`（約 24MB），對照表在 `public/audio/manifest.json`。
 - 腳本採增量產生；遇到 429 會自動退避重試（Chirp 3 HD 有每分鐘配額）。
@@ -90,7 +96,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - 語速：0.9 對應原速，其他語速用 `playbackRate` 等比換算。
 - 驗證：22 個測試全數通過。在瀏覽器中按第 1 課的喇叭，確認播放 `/audio/de-charon/*.mp3`（200、audio/mpeg）。iPhone 實機尚未測試。
 
-### 2026-10-24：第二階段「介面改版」（已 commit，未 push、未部署）
+### 2026-10-24：第二階段「介面改版」（已部署）
 
 完成項目：
 1. **首頁重做**（`LearningDashboard.jsx`、`index.astro`）
