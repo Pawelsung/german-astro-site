@@ -1,0 +1,3051 @@
+{
+  "meta": {
+    "name": "Schritte International Neu 5 B1.1 supplemental vocabulary by lesson",
+    "source": "Schritte International Neu 5 - B1.1 Kursbuch und Arbeitsbuch",
+    "baseVocabularyFile": "schritte_b1_1_lernwortschatz_by_lesson_enhanced_practice_zh_examples.json",
+    "formatVersion": "0.4-supplement",
+    "descriptionZh": "依照每課主題與課本/習作活動脈絡補充官方 Lernwortschatz 之外仍適合 B1.1 練習的重要詞彙。維持分課結構，不按詞性分類；各詞性在 practice 欄位提供練習資訊。",
+    "itemCount": 139,
+    "lessonCount": 7,
+    "createdAt": "2026-04-28",
+    "fields": [
+      "article",
+      "word",
+      "plural",
+      "translationZh",
+      "exampleDe",
+      "exampleZh",
+      "lessonTag",
+      "pos",
+      "practice"
+    ]
+  },
+  "lessons": [
+    {
+      "lessonId": "b1_1_l01",
+      "lesson": 1,
+      "title": "Glück im Alltag",
+      "lessonTag": "Lektion 1｜Glück im Alltag",
+      "vocabulary": [
+        {
+          "article": "das",
+          "word": "Ereignis",
+          "plural": "die Ereignisse",
+          "translationZh": "事件；重要事情",
+          "exampleDe": "Dieses Ereignis werde ich nie vergessen.",
+          "exampleZh": "我永遠不會忘記這件事。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "das",
+            "plural": "die Ereignisse",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l01_supp_001",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Zufall",
+          "plural": "die Zufälle",
+          "translationZh": "偶然；巧合",
+          "exampleDe": "Das war kein Plan, sondern ein Zufall.",
+          "exampleZh": "那不是計畫，而是巧合。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Zufälle",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l01_supp_002",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Chance",
+          "plural": "die Chancen",
+          "translationZh": "機會",
+          "exampleDe": "Jeder bekommt eine zweite Chance.",
+          "exampleZh": "每個人都有第二次機會。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Chancen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l01_supp_003",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "das",
+          "word": "Schicksal",
+          "plural": "die Schicksale",
+          "translationZh": "命運",
+          "exampleDe": "Manchmal glaubt man an das Schicksal.",
+          "exampleZh": "有時候人會相信命運。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "das",
+            "plural": "die Schicksale",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l01_supp_004",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Augenblick",
+          "plural": "die Augenblicke",
+          "translationZh": "瞬間；片刻",
+          "exampleDe": "In diesem Augenblick war ich sehr glücklich.",
+          "exampleZh": "在那一瞬間我非常幸福。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Augenblicke",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l01_supp_005",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Entscheidung",
+          "plural": "die Entscheidungen",
+          "translationZh": "決定",
+          "exampleDe": "Diese Entscheidung hat mein Leben verändert.",
+          "exampleZh": "這個決定改變了我的人生。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Entscheidungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l01_supp_006",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "erleben",
+          "plural": null,
+          "translationZh": "經歷；體驗",
+          "exampleDe": "Ich habe in Berlin viel erlebt.",
+          "exampleZh": "我在柏林經歷了很多。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "erleben",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "erlebt",
+            "perfekt_3sg": "hat erlebt",
+            "praeteritum_3sg": "erlebte",
+            "present": {
+              "ich": "ich erlebe",
+              "du": "du erlebst",
+              "er/sie/es": "er erlebt",
+              "wir": "wir erleben",
+              "ihr": "ihr erlebt",
+              "sie/Sie": "sie erleben"
+            }
+          },
+          "id": "b1_1_l01_supp_007",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "passieren",
+          "plural": null,
+          "translationZh": "發生",
+          "exampleDe": "Was ist gestern passiert?",
+          "exampleZh": "昨天發生了什麼事？",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "passieren",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "sein",
+            "participleII": "passiert",
+            "perfekt_3sg": "ist passiert",
+            "praeteritum_3sg": "passierte",
+            "present": {
+              "ich": "es passiert",
+              "du": "es passiert",
+              "er/sie/es": "es passiert",
+              "wir": "es passiert",
+              "ihr": "es passiert",
+              "sie/Sie": "es passiert"
+            }
+          },
+          "id": "b1_1_l01_supp_008",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "gewinnen",
+          "plural": null,
+          "translationZh": "贏得；獲勝",
+          "exampleDe": "Sie hat den ersten Preis gewonnen.",
+          "exampleZh": "她贏得了第一名。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "gewinnen",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "gewonnen",
+            "perfekt_3sg": "hat gewonnen",
+            "praeteritum_3sg": "gewann",
+            "present": {
+              "ich": "ich gewinne",
+              "du": "du gewinnst",
+              "er/sie/es": "er gewinnt",
+              "wir": "wir gewinnen",
+              "ihr": "ihr gewinnt",
+              "sie/Sie": "sie gewinnen"
+            }
+          },
+          "id": "b1_1_l01_supp_009",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "verlieren",
+          "plural": null,
+          "translationZh": "失去；輸掉",
+          "exampleDe": "Er hat seine Tasche verloren.",
+          "exampleZh": "他弄丟了他的包包。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "verlieren",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "verloren",
+            "perfekt_3sg": "hat verloren",
+            "praeteritum_3sg": "verlor",
+            "present": {
+              "ich": "ich verliere",
+              "du": "du verlierst",
+              "er/sie/es": "er verliert",
+              "wir": "wir verlieren",
+              "ihr": "ihr verliert",
+              "sie/Sie": "sie verlieren"
+            }
+          },
+          "id": "b1_1_l01_supp_010",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich freuen",
+          "plural": null,
+          "translationZh": "感到高興",
+          "exampleDe": "Ich freue mich über die gute Nachricht.",
+          "exampleZh": "我為這個好消息感到高興。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich freuen",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich gefreut",
+            "perfekt_3sg": "hat sich gefreut",
+            "praeteritum_3sg": "freute sich",
+            "present": {
+              "ich": "ich freue mich",
+              "du": "du freust dich",
+              "er/sie/es": "er freut sich",
+              "wir": "wir freuen uns",
+              "ihr": "ihr freut euch",
+              "sie/Sie": "sie freuen sich"
+            },
+            "pattern": "sich über + Akk. freuen / sich auf + Akk. freuen"
+          },
+          "id": "b1_1_l01_supp_011",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "zufrieden",
+          "plural": null,
+          "translationZh": "滿意的",
+          "exampleDe": "Ich bin mit meinem Alltag zufrieden.",
+          "exampleZh": "我對自己的日常生活感到滿意。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l01_supp_012",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "unerwartet",
+          "plural": null,
+          "translationZh": "出乎意料的",
+          "exampleDe": "Die Nachricht kam völlig unerwartet.",
+          "exampleZh": "這個消息來得完全出乎意料。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l01_supp_013",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "wahrscheinlich",
+          "plural": null,
+          "translationZh": "可能的；大概",
+          "exampleDe": "Wahrscheinlich kommt er später.",
+          "exampleZh": "他大概晚點會來。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l01_supp_014",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "plötzlich",
+          "plural": null,
+          "translationZh": "突然",
+          "exampleDe": "Plötzlich war alles anders.",
+          "exampleZh": "突然間一切都不一樣了。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb",
+            "sentencePosition": "可放句首或中場；句首時動詞第二位。",
+            "usageNoteZh": "描述事情突然發生。"
+          },
+          "id": "b1_1_l01_supp_015",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "trotzdem",
+          "plural": null,
+          "translationZh": "儘管如此；還是",
+          "exampleDe": "Es regnete, trotzdem gingen wir spazieren.",
+          "exampleZh": "下雨了，儘管如此我們還是去散步。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "connector_adverb",
+            "sentencePosition": "Hauptsatz-Konnektor: trotzdem + Verb auf Position 2",
+            "usageNoteZh": "連接兩個主句，後面不是副句語序。"
+          },
+          "id": "b1_1_l01_supp_016",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "deshalb",
+          "plural": null,
+          "translationZh": "因此；所以",
+          "exampleDe": "Ich war müde, deshalb bin ich früh nach Hause gegangen.",
+          "exampleZh": "我很累，所以早早回家了。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "connector_adverb",
+            "sentencePosition": "Hauptsatz-Konnektor: deshalb + Verb auf Position 2"
+          },
+          "id": "b1_1_l01_supp_017",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "Glück haben",
+          "plural": null,
+          "translationZh": "運氣好",
+          "exampleDe": "Heute habe ich wirklich Glück gehabt.",
+          "exampleZh": "今天我真的很幸運。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。",
+            "pattern": "Glück haben + Perfekt: hat Glück gehabt"
+          },
+          "id": "b1_1_l01_supp_018",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "Pech haben",
+          "plural": null,
+          "translationZh": "倒楣；運氣不好",
+          "exampleDe": "Wir hatten Pech mit dem Wetter.",
+          "exampleZh": "我們遇到壞天氣，真倒楣。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。",
+            "pattern": "Pech haben"
+          },
+          "id": "b1_1_l01_supp_019",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "wegen",
+          "plural": null,
+          "translationZh": "因為；由於",
+          "exampleDe": "Wegen des Regens blieben wir zu Hause.",
+          "exampleZh": "因為下雨，我們待在家裡。",
+          "pos": "preposition",
+          "practice": {
+            "type": "preposition",
+            "case": "Genitiv（口語常聽到 Dativ）",
+            "practicePromptZh": "練習：介系詞後面的格位與固定搭配。",
+            "usageNoteZh": "B1 常見原因介系詞。"
+          },
+          "id": "b1_1_l01_supp_020",
+          "lessonTag": "Lektion 1｜Glück im Alltag",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l02",
+      "lesson": 2,
+      "title": "Unterhaltung",
+      "lessonTag": "Lektion 2｜Unterhaltung",
+      "vocabulary": [
+        {
+          "article": "die",
+          "word": "Sendung",
+          "plural": "die Sendungen",
+          "translationZh": "節目；播出",
+          "exampleDe": "Die Sendung beginnt um acht Uhr.",
+          "exampleZh": "這個節目八點開始。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Sendungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_001",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Moderator",
+          "plural": "die Moderatoren",
+          "translationZh": "主持人",
+          "exampleDe": "Der Moderator stellt dem Gast viele Fragen.",
+          "exampleZh": "主持人問來賓很多問題。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Moderatoren",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_002",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Moderatorin",
+          "plural": "die Moderatorinnen",
+          "translationZh": "女主持人",
+          "exampleDe": "Die Moderatorin spricht sehr deutlich.",
+          "exampleZh": "女主持人說話很清楚。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Moderatorinnen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_003",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Unterhaltung",
+          "plural": "die Unterhaltungen",
+          "translationZh": "娛樂；交談",
+          "exampleDe": "Gute Unterhaltung ist mir am Wochenende wichtig.",
+          "exampleZh": "週末時好的娛樂對我很重要。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Unterhaltungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_004",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Krimi",
+          "plural": "die Krimis",
+          "translationZh": "犯罪小說/影集",
+          "exampleDe": "Ich sehe abends gern einen Krimi.",
+          "exampleZh": "我晚上喜歡看犯罪影集。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Krimis",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_005",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Hauptrolle",
+          "plural": "die Hauptrollen",
+          "translationZh": "主角；主角角色",
+          "exampleDe": "Sie spielt die Hauptrolle in der Serie.",
+          "exampleZh": "她在這部影集中飾演主角。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Hauptrollen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_006",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Schauspieler",
+          "plural": "die Schauspieler",
+          "translationZh": "男演員",
+          "exampleDe": "Der Schauspieler ist in Deutschland sehr bekannt.",
+          "exampleZh": "這位男演員在德國很有名。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Schauspieler",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_007",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Schauspielerin",
+          "plural": "die Schauspielerinnen",
+          "translationZh": "女演員",
+          "exampleDe": "Die Schauspielerin hat viele Preise gewonnen.",
+          "exampleZh": "這位女演員得過很多獎。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Schauspielerinnen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l02_supp_008",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "ansehen",
+          "plural": null,
+          "translationZh": "觀看",
+          "exampleDe": "Ich sehe mir heute Abend einen Film an.",
+          "exampleZh": "我今天晚上看一部電影。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "ansehen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "angesehen",
+            "perfekt_3sg": "hat angesehen",
+            "praeteritum_3sg": "sah an",
+            "present": {
+              "ich": "ich sehe mir ... an",
+              "du": "du siehst dir ... an",
+              "er/sie/es": "er sieht sich ... an",
+              "wir": "wir sehen uns ... an",
+              "ihr": "ihr seht euch ... an",
+              "sie/Sie": "sie sehen sich ... an"
+            },
+            "pattern": "sich etwas ansehen"
+          },
+          "id": "b1_1_l02_supp_009",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "auftreten",
+          "plural": null,
+          "translationZh": "登場；演出",
+          "exampleDe": "Die Band ist gestern im Club aufgetreten.",
+          "exampleZh": "這個樂團昨天在俱樂部演出。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "auftreten",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "sein",
+            "participleII": "aufgetreten",
+            "perfekt_3sg": "ist aufgetreten",
+            "praeteritum_3sg": "trat auf",
+            "present": {
+              "ich": "ich trete auf",
+              "du": "du trittst auf",
+              "er/sie/es": "er tritt auf",
+              "wir": "wir treten auf",
+              "ihr": "ihr tretet auf",
+              "sie/Sie": "sie treten auf"
+            }
+          },
+          "id": "b1_1_l02_supp_010",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "empfehlen",
+          "plural": null,
+          "translationZh": "推薦",
+          "exampleDe": "Kannst du mir eine gute Serie empfehlen?",
+          "exampleZh": "你可以推薦我一部好影集嗎？",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "empfehlen",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "empfohlen",
+            "perfekt_3sg": "hat empfohlen",
+            "praeteritum_3sg": "empfahl",
+            "present": {
+              "ich": "ich empfehle",
+              "du": "du empfiehlst",
+              "er/sie/es": "er empfiehlt",
+              "wir": "wir empfehlen",
+              "ihr": "ihr empfehlt",
+              "sie/Sie": "sie empfehlen"
+            }
+          },
+          "id": "b1_1_l02_supp_011",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich erinnern",
+          "plural": null,
+          "translationZh": "想起；記得",
+          "exampleDe": "Ich erinnere mich an diese Folge.",
+          "exampleZh": "我記得這一集。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich erinnern",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich erinnert",
+            "perfekt_3sg": "hat sich erinnert",
+            "praeteritum_3sg": "erinnerte sich",
+            "present": {
+              "ich": "ich erinnere mich",
+              "du": "du erinnerst dich",
+              "er/sie/es": "er erinnert sich",
+              "wir": "wir erinnern uns",
+              "ihr": "ihr erinnert euch",
+              "sie/Sie": "sie erinnern sich"
+            },
+            "pattern": "sich an + Akk. erinnern"
+          },
+          "id": "b1_1_l02_supp_012",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "spannend",
+          "plural": null,
+          "translationZh": "刺激的；緊張好看的",
+          "exampleDe": "Der Film war sehr spannend.",
+          "exampleZh": "這部電影非常刺激好看。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l02_supp_013",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "langweilig",
+          "plural": null,
+          "translationZh": "無聊的",
+          "exampleDe": "Die zweite Folge fand ich langweilig.",
+          "exampleZh": "我覺得第二集很無聊。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l02_supp_014",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "berühmt",
+          "plural": null,
+          "translationZh": "有名的",
+          "exampleDe": "Der Sänger ist weltweit berühmt.",
+          "exampleZh": "這位歌手世界聞名。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l02_supp_015",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "unterhaltsam",
+          "plural": null,
+          "translationZh": "有娛樂性的；有趣的",
+          "exampleDe": "Die Sendung ist sehr unterhaltsam.",
+          "exampleZh": "這個節目很有趣。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l02_supp_016",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "eigentlich",
+          "plural": null,
+          "translationZh": "其實；原本",
+          "exampleDe": "Eigentlich mag ich Krimis nicht.",
+          "exampleZh": "其實我不喜歡犯罪影集。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb",
+            "usageNoteZh": "常用來修正或補充自己的說法。"
+          },
+          "id": "b1_1_l02_supp_017",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "dagegen",
+          "plural": null,
+          "translationZh": "相反地；對此",
+          "exampleDe": "Ich mag Filme, mein Bruder dagegen liest lieber Bücher.",
+          "exampleZh": "我喜歡電影；相反地，我弟弟比較喜歡看書。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "connector_adverb",
+            "sentencePosition": "可放在主句中場或句首；句首時動詞第二位。"
+          },
+          "id": "b1_1_l02_supp_018",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "während",
+          "plural": null,
+          "translationZh": "而；當……的時候",
+          "exampleDe": "Während ich koche, hört mein Bruder Musik.",
+          "exampleZh": "我煮飯的時候，我弟弟在聽音樂。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "subordinating_conjunction",
+            "sentencePosition": "Nebensatz: während + Verb am Ende",
+            "usageNoteZh": "可表示時間，也可表示對比。"
+          },
+          "id": "b1_1_l02_supp_019",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "eine Rolle spielen",
+          "plural": null,
+          "translationZh": "扮演角色；有影響",
+          "exampleDe": "Musik spielt in meinem Leben eine große Rolle.",
+          "exampleZh": "音樂在我的生活中扮演重要角色。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。"
+          },
+          "id": "b1_1_l02_supp_020",
+          "lessonTag": "Lektion 2｜Unterhaltung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l03",
+      "lesson": 3,
+      "title": "Gesund bleiben",
+      "lessonTag": "Lektion 3｜Gesund bleiben",
+      "vocabulary": [
+        {
+          "article": "die",
+          "word": "Ernährung",
+          "plural": "die Ernährungen",
+          "translationZh": "飲食；營養方式",
+          "exampleDe": "Gesunde Ernährung ist für den Körper wichtig.",
+          "exampleZh": "健康飲食對身體很重要。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Ernährungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_001",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Bewegung",
+          "plural": "die Bewegungen",
+          "translationZh": "運動；活動",
+          "exampleDe": "Mehr Bewegung hilft gegen Stress.",
+          "exampleZh": "更多運動有助於對抗壓力。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Bewegungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_002",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Entspannung",
+          "plural": "die Entspannungen",
+          "translationZh": "放鬆",
+          "exampleDe": "Nach der Arbeit brauche ich Entspannung.",
+          "exampleZh": "下班後我需要放鬆。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Entspannungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_003",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Schlaf",
+          "plural": "(無複數)",
+          "translationZh": "睡眠",
+          "exampleDe": "Guter Schlaf ist sehr wichtig.",
+          "exampleZh": "好的睡眠非常重要。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "(無複數)",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_004",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Kraft",
+          "plural": "die Kräfte",
+          "translationZh": "力量；體力",
+          "exampleDe": "Nach der Pause hatte ich wieder Kraft.",
+          "exampleZh": "休息後我又有力氣了。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Kräfte",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_005",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Termin",
+          "plural": "die Termine",
+          "translationZh": "預約；行程",
+          "exampleDe": "Ich habe morgen einen Termin beim Arzt.",
+          "exampleZh": "我明天有一個看醫生的預約。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Termine",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_006",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Versicherung",
+          "plural": "die Versicherungen",
+          "translationZh": "保險",
+          "exampleDe": "Die Versicherung bezahlt die Behandlung.",
+          "exampleZh": "保險會支付治療費用。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Versicherungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l03_supp_007",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich fühlen",
+          "plural": null,
+          "translationZh": "感覺；覺得身體狀態",
+          "exampleDe": "Ich fühle mich heute viel besser.",
+          "exampleZh": "我今天感覺好多了。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich fühlen",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich gefühlt",
+            "perfekt_3sg": "hat sich gefühlt",
+            "praeteritum_3sg": "fühlte sich",
+            "present": {
+              "ich": "ich fühle mich",
+              "du": "du fühlst dich",
+              "er/sie/es": "er fühlt sich",
+              "wir": "wir fühlen uns",
+              "ihr": "ihr fühlt euch",
+              "sie/Sie": "sie fühlen sich"
+            }
+          },
+          "id": "b1_1_l03_supp_008",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich bewegen",
+          "plural": null,
+          "translationZh": "活動；運動",
+          "exampleDe": "Ich bewege mich im Alltag zu wenig.",
+          "exampleZh": "我日常活動量太少。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich bewegen",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich bewegt",
+            "perfekt_3sg": "hat sich bewegt",
+            "praeteritum_3sg": "bewegte sich",
+            "present": {
+              "ich": "ich bewege mich",
+              "du": "du bewegst dich",
+              "er/sie/es": "er bewegt sich",
+              "wir": "wir bewegen uns",
+              "ihr": "ihr bewegt euch",
+              "sie/Sie": "sie bewegen sich"
+            }
+          },
+          "id": "b1_1_l03_supp_009",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "vermeiden",
+          "plural": null,
+          "translationZh": "避免",
+          "exampleDe": "Ich vermeide zu viel Zucker.",
+          "exampleZh": "我避免吃太多糖。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "vermeiden",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "vermieden",
+            "perfekt_3sg": "hat vermieden",
+            "praeteritum_3sg": "vermied",
+            "present": {
+              "ich": "ich vermeide",
+              "du": "du vermeidest",
+              "er/sie/es": "er vermeidet",
+              "wir": "wir vermeiden",
+              "ihr": "ihr vermeidet",
+              "sie/Sie": "sie vermeiden"
+            }
+          },
+          "id": "b1_1_l03_supp_010",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "aufpassen",
+          "plural": null,
+          "translationZh": "注意；小心",
+          "exampleDe": "Pass auf deine Gesundheit auf!",
+          "exampleZh": "注意你的健康！",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "aufpassen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "aufgepasst",
+            "perfekt_3sg": "hat aufgepasst",
+            "praeteritum_3sg": "passte auf",
+            "present": {
+              "ich": "ich passe auf",
+              "du": "du passt auf",
+              "er/sie/es": "er passt auf",
+              "wir": "wir passen auf",
+              "ihr": "ihr passt auf",
+              "sie/Sie": "sie passen auf"
+            },
+            "pattern": "auf + Akk. aufpassen"
+          },
+          "id": "b1_1_l03_supp_011",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich erholen",
+          "plural": null,
+          "translationZh": "恢復；休養",
+          "exampleDe": "Nach der Krankheit muss ich mich erholen.",
+          "exampleZh": "生病後我必須休養。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich erholen",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich erholt",
+            "perfekt_3sg": "hat sich erholt",
+            "praeteritum_3sg": "erholte sich",
+            "present": {
+              "ich": "ich erhole mich",
+              "du": "du erholst dich",
+              "er/sie/es": "er erholt sich",
+              "wir": "wir erholen uns",
+              "ihr": "ihr erholt euch",
+              "sie/Sie": "sie erholen sich"
+            }
+          },
+          "id": "b1_1_l03_supp_012",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "regelmäßig",
+          "plural": null,
+          "translationZh": "規律的；定期的",
+          "exampleDe": "Regelmäßige Bewegung ist gesund.",
+          "exampleZh": "規律運動是健康的。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l03_supp_013",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "ausgewogen",
+          "plural": null,
+          "translationZh": "均衡的",
+          "exampleDe": "Eine ausgewogene Ernährung ist wichtig.",
+          "exampleZh": "均衡飲食很重要。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l03_supp_014",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "fit",
+          "plural": null,
+          "translationZh": "健康有活力的",
+          "exampleDe": "Ich möchte fit bleiben.",
+          "exampleZh": "我想保持健康有活力。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l03_supp_015",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "erschöpft",
+          "plural": null,
+          "translationZh": "筋疲力盡的",
+          "exampleDe": "Nach der Arbeit war ich völlig erschöpft.",
+          "exampleZh": "下班後我完全筋疲力盡。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l03_supp_016",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "mindestens",
+          "plural": null,
+          "translationZh": "至少",
+          "exampleDe": "Du solltest mindestens zwei Liter Wasser trinken.",
+          "exampleZh": "你應該至少喝兩公升水。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb",
+            "usageNoteZh": "常與數量搭配。"
+          },
+          "id": "b1_1_l03_supp_017",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "stattdessen",
+          "plural": null,
+          "translationZh": "取而代之；反而",
+          "exampleDe": "Ich esse weniger Süßigkeiten und trinke stattdessen Wasser.",
+          "exampleZh": "我少吃甜食，改喝水。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "connector_adverb",
+            "sentencePosition": "主句連接副詞，句首時動詞第二位。"
+          },
+          "id": "b1_1_l03_supp_018",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sobald",
+          "plural": null,
+          "translationZh": "一……就……",
+          "exampleDe": "Sobald ich Zeit habe, gehe ich zum Arzt.",
+          "exampleZh": "我一有時間就去看醫生。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "subordinating_conjunction",
+            "sentencePosition": "Nebensatz: sobald + Verb am Ende"
+          },
+          "id": "b1_1_l03_supp_019",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "Sport treiben",
+          "plural": null,
+          "translationZh": "做運動",
+          "exampleDe": "Ich treibe dreimal pro Woche Sport.",
+          "exampleZh": "我每週運動三次。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。"
+          },
+          "id": "b1_1_l03_supp_020",
+          "lessonTag": "Lektion 3｜Gesund bleiben",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l04",
+      "lesson": 4,
+      "title": "Sprachen",
+      "lessonTag": "Lektion 4｜Sprachen",
+      "vocabulary": [
+        {
+          "article": "die",
+          "word": "Aussage",
+          "plural": "die Aussagen",
+          "translationZh": "說法；陳述",
+          "exampleDe": "Diese Aussage verstehe ich nicht ganz.",
+          "exampleZh": "我不太懂這個說法。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Aussagen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l04_supp_001",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "das",
+          "word": "Missverständnis",
+          "plural": "die Missverständnisse",
+          "translationZh": "誤會",
+          "exampleDe": "Zwischen uns gab es ein Missverständnis.",
+          "exampleZh": "我們之間有一個誤會。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "das",
+            "plural": "die Missverständnisse",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l04_supp_002",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Redewendung",
+          "plural": "die Redewendungen",
+          "translationZh": "慣用語",
+          "exampleDe": "Diese Redewendung benutzt man oft im Alltag.",
+          "exampleZh": "這個慣用語日常生活中常用。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Redewendungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l04_supp_003",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Übersetzung",
+          "plural": "die Übersetzungen",
+          "translationZh": "翻譯",
+          "exampleDe": "Die Übersetzung ist nicht ganz richtig.",
+          "exampleZh": "這個翻譯不完全正確。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Übersetzungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l04_supp_004",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Akzent",
+          "plural": "die Akzente",
+          "translationZh": "口音",
+          "exampleDe": "Man hört seinen Akzent noch ein bisschen.",
+          "exampleZh": "還聽得出他有一點口音。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Akzente",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l04_supp_005",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Wortschatz",
+          "plural": "die Wortschätze",
+          "translationZh": "詞彙量；詞庫",
+          "exampleDe": "Mein deutscher Wortschatz wird langsam größer.",
+          "exampleZh": "我的德文詞彙量慢慢變大。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Wortschätze",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l04_supp_006",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "ausdrücken",
+          "plural": null,
+          "translationZh": "表達",
+          "exampleDe": "Wie kann ich das auf Deutsch ausdrücken?",
+          "exampleZh": "我怎麼用德文表達這件事？",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "ausdrücken",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "ausgedrückt",
+            "perfekt_3sg": "hat ausgedrückt",
+            "praeteritum_3sg": "drückte aus",
+            "present": {
+              "ich": "ich drücke ... aus",
+              "du": "du drückst ... aus",
+              "er/sie/es": "er drückt ... aus",
+              "wir": "wir drücken ... aus",
+              "ihr": "ihr drückt ... aus",
+              "sie/Sie": "sie drücken ... aus"
+            }
+          },
+          "id": "b1_1_l04_supp_007",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "aussprechen",
+          "plural": null,
+          "translationZh": "發音；說出",
+          "exampleDe": "Wie spricht man dieses Wort aus?",
+          "exampleZh": "這個字怎麼發音？",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "aussprechen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "ausgesprochen",
+            "perfekt_3sg": "hat ausgesprochen",
+            "praeteritum_3sg": "sprach aus",
+            "present": {
+              "ich": "ich spreche ... aus",
+              "du": "du sprichst ... aus",
+              "er/sie/es": "er spricht ... aus",
+              "wir": "wir sprechen ... aus",
+              "ihr": "ihr sprecht ... aus",
+              "sie/Sie": "sie sprechen ... aus"
+            }
+          },
+          "id": "b1_1_l04_supp_008",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "bedeuten",
+          "plural": null,
+          "translationZh": "意思是",
+          "exampleDe": "Was bedeutet dieses Wort?",
+          "exampleZh": "這個單字是什麼意思？",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "bedeuten",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "bedeutet",
+            "perfekt_3sg": "hat bedeutet",
+            "praeteritum_3sg": "bedeutete",
+            "present": {
+              "ich": "ich bedeute",
+              "du": "du bedeutest",
+              "er/sie/es": "es bedeutet",
+              "wir": "wir bedeuten",
+              "ihr": "ihr bedeutet",
+              "sie/Sie": "sie bedeuten"
+            }
+          },
+          "id": "b1_1_l04_supp_009",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "nachfragen",
+          "plural": null,
+          "translationZh": "追問；再次詢問",
+          "exampleDe": "Wenn ich etwas nicht verstehe, frage ich nach.",
+          "exampleZh": "如果我不懂，我會再問。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "nachfragen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "nachgefragt",
+            "perfekt_3sg": "hat nachgefragt",
+            "praeteritum_3sg": "fragte nach",
+            "present": {
+              "ich": "ich frage nach",
+              "du": "du fragst nach",
+              "er/sie/es": "er fragt nach",
+              "wir": "wir fragen nach",
+              "ihr": "ihr fragt nach",
+              "sie/Sie": "sie fragen nach"
+            }
+          },
+          "id": "b1_1_l04_supp_010",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "verbessern",
+          "plural": null,
+          "translationZh": "改善；修正",
+          "exampleDe": "Ich möchte meine Aussprache verbessern.",
+          "exampleZh": "我想改善我的發音。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "verbessern",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "verbessert",
+            "perfekt_3sg": "hat verbessert",
+            "praeteritum_3sg": "verbesserte",
+            "present": {
+              "ich": "ich verbessere",
+              "du": "du verbesserst",
+              "er/sie/es": "er verbessert",
+              "wir": "wir verbessern",
+              "ihr": "ihr verbessert",
+              "sie/Sie": "sie verbessern"
+            }
+          },
+          "id": "b1_1_l04_supp_011",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "deutlich",
+          "plural": null,
+          "translationZh": "清楚的；明顯的",
+          "exampleDe": "Bitte sprechen Sie langsam und deutlich.",
+          "exampleZh": "請您慢慢且清楚地說。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l04_supp_012",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "mündlich",
+          "plural": null,
+          "translationZh": "口頭的",
+          "exampleDe": "Morgen haben wir eine mündliche Prüfung.",
+          "exampleZh": "明天我們有口試。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l04_supp_013",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "schriftlich",
+          "plural": null,
+          "translationZh": "書面的",
+          "exampleDe": "Die Bewerbung muss schriftlich sein.",
+          "exampleZh": "申請必須是書面的。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l04_supp_014",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "mehrsprachig",
+          "plural": null,
+          "translationZh": "多語的",
+          "exampleDe": "Viele Kinder wachsen mehrsprachig auf.",
+          "exampleZh": "很多孩子在多語環境中長大。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l04_supp_015",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "nämlich",
+          "plural": null,
+          "translationZh": "也就是；因為",
+          "exampleDe": "Ich lerne Deutsch, nämlich für meine Reise.",
+          "exampleZh": "我學德文，也就是為了我的旅行。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb",
+            "usageNoteZh": "常補充前一句的理由或說明；位置通常在句中。"
+          },
+          "id": "b1_1_l04_supp_016",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "falls",
+          "plural": null,
+          "translationZh": "如果；萬一",
+          "exampleDe": "Falls du Fragen hast, melde dich bitte.",
+          "exampleZh": "如果你有問題，請跟我聯絡。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "subordinating_conjunction",
+            "sentencePosition": "Nebensatz: falls + Verb am Ende"
+          },
+          "id": "b1_1_l04_supp_017",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "je ... desto ...",
+          "plural": null,
+          "translationZh": "越……越……",
+          "exampleDe": "Je mehr ich übe, desto sicherer spreche ich.",
+          "exampleZh": "我練習越多，說得越有自信。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "comparison_connector",
+            "pattern": "Je + Komparativ, desto + Komparativ + Verb"
+          },
+          "id": "b1_1_l04_supp_018",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "auf Deutsch",
+          "plural": null,
+          "translationZh": "用德文",
+          "exampleDe": "Kannst du das auf Deutsch sagen?",
+          "exampleZh": "你可以用德文說這個嗎？",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。"
+          },
+          "id": "b1_1_l04_supp_019",
+          "lessonTag": "Lektion 4｜Sprachen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l05",
+      "lesson": 5,
+      "title": "Eine Arbeit finden",
+      "lessonTag": "Lektion 5｜Eine Arbeit finden",
+      "vocabulary": [
+        {
+          "article": "die",
+          "word": "Stelle",
+          "plural": "die Stellen",
+          "translationZh": "職位；工作機會",
+          "exampleDe": "Ich habe eine interessante Stelle gefunden.",
+          "exampleZh": "我找到一個有趣的職缺。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Stellen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_001",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Anzeige",
+          "plural": "die Anzeigen",
+          "translationZh": "廣告；徵才廣告",
+          "exampleDe": "Die Anzeige steht im Internet.",
+          "exampleZh": "這個廣告刊在網路上。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Anzeigen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_002",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Qualifikation",
+          "plural": "die Qualifikationen",
+          "translationZh": "資格；能力條件",
+          "exampleDe": "Für diese Stelle braucht man gute Qualifikationen.",
+          "exampleZh": "這個職位需要好的資格條件。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Qualifikationen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_003",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "das",
+          "word": "Vorstellungsgespräch",
+          "plural": "die Vorstellungsgespräche",
+          "translationZh": "面試",
+          "exampleDe": "Morgen habe ich ein Vorstellungsgespräch.",
+          "exampleZh": "我明天有一場面試。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "das",
+            "plural": "die Vorstellungsgespräche",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_004",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Arbeitgeber",
+          "plural": "die Arbeitgeber",
+          "translationZh": "雇主",
+          "exampleDe": "Der Arbeitgeber bietet flexible Arbeitszeiten an.",
+          "exampleZh": "雇主提供彈性工時。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Arbeitgeber",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_005",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Arbeitnehmerin",
+          "plural": "die Arbeitnehmerinnen",
+          "translationZh": "女受雇者；女員工",
+          "exampleDe": "Die Arbeitnehmerin hat einen neuen Vertrag bekommen.",
+          "exampleZh": "這位女員工拿到新合約。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Arbeitnehmerinnen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_006",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Fähigkeit",
+          "plural": "die Fähigkeiten",
+          "translationZh": "能力",
+          "exampleDe": "Teamfähigkeit ist eine wichtige Fähigkeit.",
+          "exampleZh": "團隊合作能力是一項重要能力。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Fähigkeiten",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_007",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Kenntnis",
+          "plural": "die Kenntnisse",
+          "translationZh": "知識；技能",
+          "exampleDe": "Gute Computerkenntnisse sind ein Vorteil.",
+          "exampleZh": "良好的電腦技能是一項優勢。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Kenntnisse",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l05_supp_008",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich bewerben",
+          "plural": null,
+          "translationZh": "應徵；申請",
+          "exampleDe": "Ich bewerbe mich um eine Stelle als Designer.",
+          "exampleZh": "我應徵一個設計師的職位。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich bewerben",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich beworben",
+            "perfekt_3sg": "hat sich beworben",
+            "praeteritum_3sg": "bewarb sich",
+            "present": {
+              "ich": "ich bewerbe mich",
+              "du": "du bewirbst dich",
+              "er/sie/es": "er bewirbt sich",
+              "wir": "wir bewerben uns",
+              "ihr": "ihr bewerbt euch",
+              "sie/Sie": "sie bewerben sich"
+            },
+            "pattern": "sich um + Akk. bewerben"
+          },
+          "id": "b1_1_l05_supp_009",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "unterschreiben",
+          "plural": null,
+          "translationZh": "簽名",
+          "exampleDe": "Bitte unterschreiben Sie den Vertrag.",
+          "exampleZh": "請您簽這份合約。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "unterschreiben",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "unterschrieben",
+            "perfekt_3sg": "hat unterschrieben",
+            "praeteritum_3sg": "unterschrieb",
+            "present": {
+              "ich": "ich unterschreibe",
+              "du": "du unterschreibst",
+              "er/sie/es": "er unterschreibt",
+              "wir": "wir unterschreiben",
+              "ihr": "ihr unterschreibt",
+              "sie/Sie": "sie unterschreiben"
+            }
+          },
+          "id": "b1_1_l05_supp_010",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "vorstellen",
+          "plural": null,
+          "translationZh": "介紹；想像",
+          "exampleDe": "Können Sie sich bitte kurz vorstellen?",
+          "exampleZh": "請您簡短介紹自己。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "vorstellen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "vorgestellt",
+            "perfekt_3sg": "hat vorgestellt",
+            "praeteritum_3sg": "stellte vor",
+            "present": {
+              "ich": "ich stelle ... vor",
+              "du": "du stellst ... vor",
+              "er/sie/es": "er stellt ... vor",
+              "wir": "wir stellen ... vor",
+              "ihr": "ihr stellt ... vor",
+              "sie/Sie": "sie stellen ... vor"
+            },
+            "pattern": "sich vorstellen / jemanden vorstellen"
+          },
+          "id": "b1_1_l05_supp_011",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "kündigen",
+          "plural": null,
+          "translationZh": "辭職；解雇",
+          "exampleDe": "Er hat seine Stelle gekündigt.",
+          "exampleZh": "他辭掉了他的工作。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "kündigen",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "gekündigt",
+            "perfekt_3sg": "hat gekündigt",
+            "praeteritum_3sg": "kündigte",
+            "present": {
+              "ich": "ich kündige",
+              "du": "du kündigst",
+              "er/sie/es": "er kündigt",
+              "wir": "wir kündigen",
+              "ihr": "ihr kündigt",
+              "sie/Sie": "sie kündigen"
+            }
+          },
+          "id": "b1_1_l05_supp_012",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "einstellen",
+          "plural": null,
+          "translationZh": "雇用；設定",
+          "exampleDe": "Die Firma stellt neue Mitarbeiter ein.",
+          "exampleZh": "這家公司雇用新員工。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "einstellen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "eingestellt",
+            "perfekt_3sg": "hat eingestellt",
+            "praeteritum_3sg": "stellte ein",
+            "present": {
+              "ich": "ich stelle ... ein",
+              "du": "du stellst ... ein",
+              "er/sie/es": "er stellt ... ein",
+              "wir": "wir stellen ... ein",
+              "ihr": "ihr stellt ... ein",
+              "sie/Sie": "sie stellen ... ein"
+            }
+          },
+          "id": "b1_1_l05_supp_013",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "beruflich",
+          "plural": null,
+          "translationZh": "職業上的",
+          "exampleDe": "Ich möchte mich beruflich verändern.",
+          "exampleZh": "我想在職業上有所改變。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l05_supp_014",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "selbstständig",
+          "plural": null,
+          "translationZh": "獨立的；自營的",
+          "exampleDe": "Sie arbeitet seit zwei Jahren selbstständig.",
+          "exampleZh": "她自營工作已經兩年了。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l05_supp_015",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "zuverlässig",
+          "plural": null,
+          "translationZh": "可靠的",
+          "exampleDe": "Ein zuverlässiger Mitarbeiter ist sehr wertvoll.",
+          "exampleZh": "一位可靠的員工非常有價值。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l05_supp_016",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "flexibel",
+          "plural": null,
+          "translationZh": "彈性的",
+          "exampleDe": "Flexible Arbeitszeiten sind für mich wichtig.",
+          "exampleZh": "彈性工時對我很重要。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l05_supp_017",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "insgesamt",
+          "plural": null,
+          "translationZh": "總共；整體來說",
+          "exampleDe": "Insgesamt hat das Gespräch gut geklappt.",
+          "exampleZh": "整體來說，這場談話很順利。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb"
+          },
+          "id": "b1_1_l05_supp_018",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "außerdem",
+          "plural": null,
+          "translationZh": "此外",
+          "exampleDe": "Ich habe Erfahrung, außerdem spreche ich Englisch.",
+          "exampleZh": "我有經驗，此外我會說英文。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "connector_adverb",
+            "sentencePosition": "主句連接副詞；句首時動詞第二位。"
+          },
+          "id": "b1_1_l05_supp_019",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "damit",
+          "plural": null,
+          "translationZh": "為了這樣；使得",
+          "exampleDe": "Ich übe viel, damit ich im Gespräch sicherer bin.",
+          "exampleZh": "我大量練習，好讓自己在面談中更有自信。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "subordinating_conjunction",
+            "sentencePosition": "Nebensatz: damit + Verb am Ende",
+            "usageNoteZh": "表示目的。"
+          },
+          "id": "b1_1_l05_supp_020",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "Erfahrung sammeln",
+          "plural": null,
+          "translationZh": "累積經驗",
+          "exampleDe": "Im Praktikum kann man viel Erfahrung sammeln.",
+          "exampleZh": "在實習中可以累積很多經驗。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。"
+          },
+          "id": "b1_1_l05_supp_021",
+          "lessonTag": "Lektion 5｜Eine Arbeit finden",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l06",
+      "lesson": 6,
+      "title": "Dienstleistung",
+      "lessonTag": "Lektion 6｜Dienstleistung",
+      "vocabulary": [
+        {
+          "article": "der",
+          "word": "Service",
+          "plural": "die Services",
+          "translationZh": "服務",
+          "exampleDe": "Der Service in diesem Hotel ist sehr gut.",
+          "exampleZh": "這間飯店的服務很好。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Services",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l06_supp_001",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Beschwerde",
+          "plural": "die Beschwerden",
+          "translationZh": "抱怨；申訴",
+          "exampleDe": "Ich möchte eine Beschwerde schreiben.",
+          "exampleZh": "我想寫一封申訴。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Beschwerden",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l06_supp_002",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Reklamation",
+          "plural": "die Reklamationen",
+          "translationZh": "客訴；退換貨申訴",
+          "exampleDe": "Bei einer Reklamation braucht man den Kassenbon.",
+          "exampleZh": "客訴時需要收據。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Reklamationen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l06_supp_003",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Reservierung",
+          "plural": "die Reservierungen",
+          "translationZh": "預約；訂位",
+          "exampleDe": "Wir haben eine Reservierung für zwei Personen.",
+          "exampleZh": "我們有兩位的訂位。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Reservierungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l06_supp_004",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Lieferung",
+          "plural": "die Lieferungen",
+          "translationZh": "配送；送貨",
+          "exampleDe": "Die Lieferung kommt morgen an.",
+          "exampleZh": "配送明天會到。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Lieferungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l06_supp_005",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Gebühr",
+          "plural": "die Gebühren",
+          "translationZh": "費用；手續費",
+          "exampleDe": "Für den Service gibt es eine kleine Gebühr.",
+          "exampleZh": "這項服務有一筆小費用。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Gebühren",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l06_supp_006",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "sich beschweren",
+          "plural": null,
+          "translationZh": "抱怨；申訴",
+          "exampleDe": "Der Kunde beschwert sich über die lange Wartezeit.",
+          "exampleZh": "顧客抱怨等待時間太長。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "sich beschweren",
+            "reflexive": true,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "sich beschwert",
+            "perfekt_3sg": "hat sich beschwert",
+            "praeteritum_3sg": "beschwerte sich",
+            "present": {
+              "ich": "ich beschwere mich",
+              "du": "du beschwerst dich",
+              "er/sie/es": "er beschwert sich",
+              "wir": "wir beschweren uns",
+              "ihr": "ihr beschwert euch",
+              "sie/Sie": "sie beschweren sich"
+            },
+            "pattern": "sich über + Akk. beschweren"
+          },
+          "id": "b1_1_l06_supp_007",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "reparieren",
+          "plural": null,
+          "translationZh": "修理",
+          "exampleDe": "Können Sie das Gerät reparieren?",
+          "exampleZh": "您可以修理這個設備嗎？",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "reparieren",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "repariert",
+            "perfekt_3sg": "hat repariert",
+            "praeteritum_3sg": "reparierte",
+            "present": {
+              "ich": "ich repariere",
+              "du": "du reparierst",
+              "er/sie/es": "er repariert",
+              "wir": "wir reparieren",
+              "ihr": "ihr repariert",
+              "sie/Sie": "sie reparieren"
+            }
+          },
+          "id": "b1_1_l06_supp_008",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "liefern",
+          "plural": null,
+          "translationZh": "配送；送貨",
+          "exampleDe": "Die Firma liefert das Paket nach Hause.",
+          "exampleZh": "這家公司把包裹送到家裡。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "liefern",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "geliefert",
+            "perfekt_3sg": "hat geliefert",
+            "praeteritum_3sg": "lieferte",
+            "present": {
+              "ich": "ich liefere",
+              "du": "du lieferst",
+              "er/sie/es": "er liefert",
+              "wir": "wir liefern",
+              "ihr": "ihr liefert",
+              "sie/Sie": "sie liefern"
+            }
+          },
+          "id": "b1_1_l06_supp_009",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "vereinbaren",
+          "plural": null,
+          "translationZh": "約定；商定",
+          "exampleDe": "Ich möchte einen Termin vereinbaren.",
+          "exampleZh": "我想約一個時間。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "vereinbaren",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "vereinbart",
+            "perfekt_3sg": "hat vereinbart",
+            "praeteritum_3sg": "vereinbarte",
+            "present": {
+              "ich": "ich vereinbare",
+              "du": "du vereinbarst",
+              "er/sie/es": "er vereinbart",
+              "wir": "wir vereinbaren",
+              "ihr": "ihr vereinbart",
+              "sie/Sie": "sie vereinbaren"
+            }
+          },
+          "id": "b1_1_l06_supp_010",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "stornieren",
+          "plural": null,
+          "translationZh": "取消預訂",
+          "exampleDe": "Ich muss meine Reservierung stornieren.",
+          "exampleZh": "我必須取消我的預約。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "stornieren",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "storniert",
+            "perfekt_3sg": "hat storniert",
+            "praeteritum_3sg": "stornierte",
+            "present": {
+              "ich": "ich storniere",
+              "du": "du stornierst",
+              "er/sie/es": "er storniert",
+              "wir": "wir stornieren",
+              "ihr": "ihr storniert",
+              "sie/Sie": "sie stornieren"
+            }
+          },
+          "id": "b1_1_l06_supp_011",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "höflich",
+          "plural": null,
+          "translationZh": "有禮貌的",
+          "exampleDe": "Eine höfliche E-Mail wirkt professionell.",
+          "exampleZh": "一封有禮貌的電子郵件看起來很專業。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l06_supp_012",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "unzufrieden",
+          "plural": null,
+          "translationZh": "不滿意的",
+          "exampleDe": "Der Kunde war mit dem Service unzufrieden.",
+          "exampleZh": "顧客對服務不滿意。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l06_supp_013",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "verfügbar",
+          "plural": null,
+          "translationZh": "可用的；有空的",
+          "exampleDe": "Ist der Termin noch verfügbar?",
+          "exampleZh": "這個時段還有空嗎？",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l06_supp_014",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "dringend",
+          "plural": null,
+          "translationZh": "緊急的",
+          "exampleDe": "Ich brauche dringend einen Termin.",
+          "exampleZh": "我急需一個預約。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l06_supp_015",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "leider",
+          "plural": null,
+          "translationZh": "很遺憾；可惜",
+          "exampleDe": "Leider ist der Termin schon vergeben.",
+          "exampleZh": "很遺憾，這個時段已經被預約了。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb"
+          },
+          "id": "b1_1_l06_supp_016",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "bitte",
+          "plural": null,
+          "translationZh": "請",
+          "exampleDe": "Könnten Sie mir bitte helfen?",
+          "exampleZh": "您可以幫我嗎？",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "adverb",
+            "usageNoteZh": "德語禮貌請求中非常常用。"
+          },
+          "id": "b1_1_l06_supp_017",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "falls",
+          "plural": null,
+          "translationZh": "如果；萬一",
+          "exampleDe": "Falls es ein Problem gibt, rufen Sie uns bitte an.",
+          "exampleZh": "如果有問題，請您打電話給我們。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "subordinating_conjunction",
+            "sentencePosition": "Nebensatz: falls + Verb am Ende"
+          },
+          "id": "b1_1_l06_supp_018",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "einen Termin vereinbaren",
+          "plural": null,
+          "translationZh": "約時間",
+          "exampleDe": "Ich möchte gern einen Termin vereinbaren.",
+          "exampleZh": "我想約一個時間。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。"
+          },
+          "id": "b1_1_l06_supp_019",
+          "lessonTag": "Lektion 6｜Dienstleistung",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    },
+    {
+      "lessonId": "b1_1_l07",
+      "lesson": 7,
+      "title": "Rund ums Wohnen",
+      "lessonTag": "Lektion 7｜Rund ums Wohnen",
+      "vocabulary": [
+        {
+          "article": "die",
+          "word": "Mietwohnung",
+          "plural": "die Mietwohnungen",
+          "translationZh": "出租公寓",
+          "exampleDe": "Wir suchen eine helle Mietwohnung.",
+          "exampleZh": "我們在找一間明亮的出租公寓。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Mietwohnungen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_001",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Umzug",
+          "plural": "die Umzüge",
+          "translationZh": "搬家",
+          "exampleDe": "Der Umzug war sehr anstrengend.",
+          "exampleZh": "搬家非常累人。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Umzüge",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_002",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Nachbarschaft",
+          "plural": "die Nachbarschaften",
+          "translationZh": "鄰里；社區",
+          "exampleDe": "Die Nachbarschaft ist ruhig und freundlich.",
+          "exampleZh": "這個社區安靜又友善。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Nachbarschaften",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_003",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "der",
+          "word": "Mieter",
+          "plural": "die Mieter",
+          "translationZh": "房客；承租人",
+          "exampleDe": "Der Mieter muss die Miete pünktlich zahlen.",
+          "exampleZh": "房客必須準時付房租。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "der",
+            "plural": "die Mieter",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_004",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Vermieterin",
+          "plural": "die Vermieterinnen",
+          "translationZh": "女房東；出租人",
+          "exampleDe": "Die Vermieterin wohnt im gleichen Haus.",
+          "exampleZh": "女房東住在同一棟房子裡。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Vermieterinnen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_005",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Kaution",
+          "plural": "die Kautionen",
+          "translationZh": "押金",
+          "exampleDe": "Die Kaution beträgt zwei Monatsmieten.",
+          "exampleZh": "押金是兩個月房租。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "die Kautionen",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_006",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": "die",
+          "word": "Nebenkosten",
+          "plural": "(只有複數)",
+          "translationZh": "附加費用；管理水電等雜費",
+          "exampleDe": "Die Nebenkosten sind in der Miete nicht enthalten.",
+          "exampleZh": "雜費不包含在房租內。",
+          "pos": "noun",
+          "practice": {
+            "type": "noun",
+            "article": "die",
+            "plural": "(只有複數)",
+            "practicePromptZh": "練習：冠詞、複數、Akkusativ/Dativ 例句與名詞搭配。"
+          },
+          "id": "b1_1_l07_supp_007",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "umziehen",
+          "plural": null,
+          "translationZh": "搬家",
+          "exampleDe": "Wir sind letztes Jahr nach Köln umgezogen.",
+          "exampleZh": "我們去年搬到科隆。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "umziehen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "sein",
+            "participleII": "umgezogen",
+            "perfekt_3sg": "ist umgezogen",
+            "praeteritum_3sg": "zog um",
+            "present": {
+              "ich": "ich ziehe um",
+              "du": "du ziehst um",
+              "er/sie/es": "er zieht um",
+              "wir": "wir ziehen um",
+              "ihr": "ihr zieht um",
+              "sie/Sie": "sie ziehen um"
+            }
+          },
+          "id": "b1_1_l07_supp_008",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "einziehen",
+          "plural": null,
+          "translationZh": "搬入",
+          "exampleDe": "Wir ziehen nächste Woche in die neue Wohnung ein.",
+          "exampleZh": "我們下週搬進新公寓。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "einziehen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "sein",
+            "participleII": "eingezogen",
+            "perfekt_3sg": "ist eingezogen",
+            "praeteritum_3sg": "zog ein",
+            "present": {
+              "ich": "ich ziehe ein",
+              "du": "du ziehst ein",
+              "er/sie/es": "er zieht ein",
+              "wir": "wir ziehen ein",
+              "ihr": "ihr zieht ein",
+              "sie/Sie": "sie ziehen ein"
+            }
+          },
+          "id": "b1_1_l07_supp_009",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "ausziehen",
+          "plural": null,
+          "translationZh": "搬出；脫下",
+          "exampleDe": "Mein Nachbar zieht morgen aus.",
+          "exampleZh": "我的鄰居明天搬出去。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "ausziehen",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "sein",
+            "participleII": "ausgezogen",
+            "perfekt_3sg": "ist ausgezogen",
+            "praeteritum_3sg": "zog aus",
+            "present": {
+              "ich": "ich ziehe aus",
+              "du": "du ziehst aus",
+              "er/sie/es": "er zieht aus",
+              "wir": "wir ziehen aus",
+              "ihr": "ihr zieht aus",
+              "sie/Sie": "sie ziehen aus"
+            }
+          },
+          "id": "b1_1_l07_supp_010",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "renovieren",
+          "plural": null,
+          "translationZh": "整修；翻新",
+          "exampleDe": "Wir müssen das Bad renovieren.",
+          "exampleZh": "我們必須整修浴室。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "renovieren",
+            "reflexive": false,
+            "separable": false,
+            "auxiliary": "haben",
+            "participleII": "renoviert",
+            "perfekt_3sg": "hat renoviert",
+            "praeteritum_3sg": "renovierte",
+            "present": {
+              "ich": "ich renoviere",
+              "du": "du renovierst",
+              "er/sie/es": "er renoviert",
+              "wir": "wir renovieren",
+              "ihr": "ihr renoviert",
+              "sie/Sie": "sie renovieren"
+            }
+          },
+          "id": "b1_1_l07_supp_011",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "einrichten",
+          "plural": null,
+          "translationZh": "布置；裝潢",
+          "exampleDe": "Sie richtet ihr Zimmer gemütlich ein.",
+          "exampleZh": "她把房間布置得很舒適。",
+          "pos": "verb",
+          "practice": {
+            "type": "verb",
+            "infinitive": "einrichten",
+            "reflexive": false,
+            "separable": true,
+            "auxiliary": "haben",
+            "participleII": "eingerichtet",
+            "perfekt_3sg": "hat eingerichtet",
+            "praeteritum_3sg": "richtete ein",
+            "present": {
+              "ich": "ich richte ... ein",
+              "du": "du richtest ... ein",
+              "er/sie/es": "er richtet ... ein",
+              "wir": "wir richten ... ein",
+              "ihr": "ihr richtet ... ein",
+              "sie/Sie": "sie richten ... ein"
+            }
+          },
+          "id": "b1_1_l07_supp_012",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "hell",
+          "plural": null,
+          "translationZh": "明亮的",
+          "exampleDe": "Die Wohnung ist hell und freundlich.",
+          "exampleZh": "這間公寓明亮又舒服。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l07_supp_013",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "ruhig",
+          "plural": null,
+          "translationZh": "安靜的",
+          "exampleDe": "Wir wohnen in einer ruhigen Straße.",
+          "exampleZh": "我們住在一條安靜的街上。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l07_supp_014",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "zentral",
+          "plural": null,
+          "translationZh": "位於市中心的；中心的",
+          "exampleDe": "Die Wohnung liegt sehr zentral.",
+          "exampleZh": "這間公寓位置很市中心。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l07_supp_015",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "möbliert",
+          "plural": null,
+          "translationZh": "附家具的",
+          "exampleDe": "Ich suche ein möbliertes Zimmer.",
+          "exampleZh": "我在找一間附家具的房間。",
+          "pos": "adjective",
+          "practice": {
+            "type": "adjective",
+            "practicePromptZh": "練習：放在名詞前時要依冠詞與格位變化；作表語時不變化。"
+          },
+          "id": "b1_1_l07_supp_016",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "trotzdem",
+          "plural": null,
+          "translationZh": "儘管如此",
+          "exampleDe": "Die Wohnung ist klein, trotzdem gefällt sie mir.",
+          "exampleZh": "這間公寓很小，儘管如此我很喜歡。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "connector_adverb",
+            "sentencePosition": "主句連接副詞；句首時動詞第二位。"
+          },
+          "id": "b1_1_l07_supp_017",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "obwohl",
+          "plural": null,
+          "translationZh": "雖然",
+          "exampleDe": "Obwohl die Miete hoch ist, nehmen wir die Wohnung.",
+          "exampleZh": "雖然房租很高，我們還是租下這間公寓。",
+          "pos": "adverb/connector",
+          "practice": {
+            "type": "function-word",
+            "subtype": "subordinating_conjunction",
+            "sentencePosition": "Nebensatz: obwohl + Verb am Ende"
+          },
+          "id": "b1_1_l07_supp_018",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "trotz",
+          "plural": null,
+          "translationZh": "儘管",
+          "exampleDe": "Trotz der hohen Miete gefällt mir die Wohnung.",
+          "exampleZh": "儘管房租很高，我還是喜歡這間公寓。",
+          "pos": "preposition",
+          "practice": {
+            "type": "preposition",
+            "case": "Genitiv",
+            "practicePromptZh": "練習：介系詞後面的格位與固定搭配。",
+            "usageNoteZh": "表示讓步；口語有時接 Dativ。"
+          },
+          "id": "b1_1_l07_supp_019",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        },
+        {
+          "article": null,
+          "word": "zur Miete wohnen",
+          "plural": null,
+          "translationZh": "租房住",
+          "exampleDe": "Viele Studierende wohnen zur Miete.",
+          "exampleZh": "許多大學生租房住。",
+          "pos": "phrase",
+          "practice": {
+            "type": "phrase",
+            "practicePromptZh": "練習：整塊記憶，注意固定搭配與句中位置。"
+          },
+          "id": "b1_1_l07_supp_020",
+          "lessonTag": "Lektion 7｜Rund ums Wohnen",
+          "source": "coursebook_workbook_supplement",
+          "isSupplement": true
+        }
+      ]
+    }
+  ]
+}

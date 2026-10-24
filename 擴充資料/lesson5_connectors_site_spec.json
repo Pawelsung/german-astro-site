@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "project": "german-astro-site",
+    "lessonId": "lesson5-connectors",
+    "lessonNumber": 5,
+    "slug": "lesson5-connectors",
+    "route": "/lesson5-connectors",
+    "astroPage": "src/pages/lesson5-connectors.astro",
+    "reactComponent": "src/components/ConnectorTrainer.jsx",
+    "dataFile": "src/data/connectors-question-bank.json",
+    "titleZh": "Lektion 5：句子怎麼接？德文連接詞與語序訓練",
+    "titleDe": "Konnektoren & Satzstellung",
+    "subtitleZh": "從 A2 到 B2：學會判斷主句、子句、倒裝與成對連接詞",
+    "targetLevel": ["A2", "B1", "B2"],
+    "techStack": {
+      "framework": "Astro page shell + React component",
+      "style": "Tailwind CSS",
+      "state": "React state + localStorage",
+      "futureSync": "Firebase optional later"
+    }
+  },
+  "designPrinciples": [
+    "不要做成長篇文法文章，要做成互動式語序訓練器。",
+    "先判斷動詞位置，再理解中文意思。",
+    "每個連接詞卡片都要有：意思、語序類型、公式、例句、常見錯誤、相近詞比較。",
+    "題目要訓練：分類、選詞、排序、改錯、句型轉換、成對連接。",
+    "主卡片是核心，篩選與統計要輕量。"
+  ],
+  "relationToExistingLessons": {
+    "existingLessons": [
+      {
+        "lesson": 1,
+        "route": "/lesson1-wort",
+        "topic": "名詞、冠詞、複數",
+        "reuseIdea": "延續字卡、測驗、錯題收藏、localStorage 進度。"
+      },
+      {
+        "lesson": 2,
+        "route": "/lesson2-VerbWithPreposition",
+        "topic": "動詞與介系詞",
+        "reuseIdea": "可把 sich freuen auf, sich interessieren für 等例句納入連接詞造句。"
+      },
+      {
+        "lesson": 3,
+        "route": "/lesson3-irregular-verbs",
+        "topic": "不規則動詞",
+        "reuseIdea": "可用不規則動詞資料產生含連接詞的例句，例如 fahren, bleiben, kommen, sehen。"
+      },
+      {
+        "lesson": 4,
+        "route": "/lesson4-kasus",
+        "topic": "格位訓練",
+        "reuseIdea": "銜接關係子句與子句動詞最後，作為句子結構進階延伸。"
+      }
+    ],
+    "navigationSuggestion": "首頁新增 Lektion 5 card，排序在 lesson4 後面。"
+  },
+  "syntaxTypes": [
+    {
+      "id": "coordinating",
+      "labelZh": "並列連接詞",
+      "labelDe": "Nebenordnende Konjunktionen",
+      "verbPosition": "normal_v2",
+      "ruleZh": "不改變語序，前後都維持主句語序，變位動詞仍在第 2 位。",
+      "colorToken": "blue",
+      "examples": ["und", "aber", "oder", "denn", "sondern"]
+    },
+    {
+      "id": "connector_adverb",
+      "labelZh": "連接副詞",
+      "labelDe": "Konnektoradverbien",
+      "verbPosition": "inversion_v2",
+      "ruleZh": "放句首時佔據第一位置，後面主句要倒裝，變位動詞立刻出現。",
+      "colorToken": "orange",
+      "examples": ["deshalb", "deswegen", "trotzdem", "dann", "danach", "außerdem"]
+    },
+    {
+      "id": "subordinating",
+      "labelZh": "子句連接詞",
+      "labelDe": "Subjunktionen",
+      "verbPosition": "verb_final",
+      "ruleZh": "引導子句，變位動詞放到句尾；若子句放句首，後面主句要倒裝。",
+      "colorToken": "purple",
+      "examples": ["weil", "dass", "obwohl", "wenn", "als", "damit", "bevor", "nachdem"]
+    },
+    {
+      "id": "infinitive_construction",
+      "labelZh": "不定詞結構",
+      "labelDe": "Infinitivkonstruktionen",
+      "verbPosition": "zu_infinitive",
+      "ruleZh": "使用 zu + 動詞原形，常見 um ... zu / ohne ... zu / anstatt ... zu。",
+      "colorToken": "green",
+      "examples": ["um ... zu", "ohne ... zu", "anstatt ... zu"]
+    },
+    {
+      "id": "paired_connector",
+      "labelZh": "成對連接詞",
+      "labelDe": "Zweiteilige Konnektoren",
+      "verbPosition": "depends_on_pattern",
+      "ruleZh": "固定搭配，需要記住前後配對與語意功能。",
+      "colorToken": "pink",
+      "examples": ["nicht nur ... sondern auch", "sowohl ... als auch", "je ... desto"]
+    }
+  ],
+  "contentModules": [
+    {
+      "id": "m1-overview",
+      "titleZh": "語序總覽：先看動詞放哪裡",
+      "learningGoal": "能把連接詞分成：不改語序、主句倒裝、子句動詞最後、成對連接詞。",
+      "coreConnectors": ["und", "aber", "oder", "denn", "sondern", "deshalb", "trotzdem", "weil", "dass", "obwohl", "wenn"],
+      "recommendedActivities": ["classify_syntax", "order_words", "quick_review"]
+    },
+    {
+      "id": "m2-reason-result",
+      "titleZh": "原因與結果：weil / denn / deshalb",
+      "learningGoal": "能區分「因為」與「所以」，並正確處理 weil 子句與 deshalb 倒裝。",
+      "coreConnectors": ["weil", "da", "denn", "deshalb", "deswegen", "darum", "daher", "folglich"],
+      "recommendedActivities": ["choose_connector", "transform_sentence", "error_correction"]
+    },
+    {
+      "id": "m3-contrast-concession",
+      "titleZh": "轉折與讓步：aber / obwohl / trotzdem",
+      "learningGoal": "能區分但是、而是、雖然、儘管如此，避免 obwohl 和 trotzdem 雙重標記。",
+      "coreConnectors": ["aber", "sondern", "jedoch", "obwohl", "trotzdem", "dennoch", "trotz"],
+      "recommendedActivities": ["choose_connector", "error_correction", "sentence_pairing"]
+    },
+    {
+      "id": "m4-time",
+      "titleZh": "時間連接詞：wenn / als / bevor / nachdem",
+      "learningGoal": "能用時間軸理解事件先後，並區分 wenn 與 als。",
+      "coreConnectors": ["wenn", "als", "bevor", "nachdem", "während", "seitdem", "bis", "sobald", "solange"],
+      "recommendedActivities": ["choose_connector", "timeline_order", "order_words"]
+    },
+    {
+      "id": "m5-purpose-condition-method",
+      "titleZh": "目的、條件、方式：damit / um ... zu / indem",
+      "learningGoal": "能判斷主詞相同或不同，選用 um ... zu 或 damit；能使用 wenn/falls/indem。",
+      "coreConnectors": ["damit", "um ... zu", "wenn", "falls", "sofern", "solange", "indem", "ohne ... zu", "anstatt ... zu"],
+      "recommendedActivities": ["choose_connector", "transform_sentence", "cloze"]
+    },
+    {
+      "id": "m6-paired",
+      "titleZh": "成對連接詞：not only ... but also 的德文版本",
+      "learningGoal": "能正確配對並使用 nicht nur ... sondern auch、sowohl ... als auch、je ... desto 等結構。",
+      "coreConnectors": ["nicht nur ... sondern auch", "sowohl ... als auch", "entweder ... oder", "weder ... noch", "zwar ... aber", "je ... desto", "einerseits ... andererseits"],
+      "recommendedActivities": ["pair_connector", "sentence_builder", "choose_connector"]
+    },
+    {
+      "id": "m7-mixed-challenge",
+      "titleZh": "混合挑戰：從句子判斷語序與意思",
+      "learningGoal": "能在短文、句型轉換與錯誤修正中綜合使用連接詞。",
+      "coreConnectors": "all",
+      "recommendedActivities": ["mixed_quiz", "transform_sentence", "short_writing"]
+    }
+  ],
+  "componentPlan": {
+    "filesToCreate": [
+      {
+        "path": "src/pages/lesson5-connectors.astro",
+        "purpose": "Astro page shell，匯入 ConnectorTrainer.jsx。",
+        "notes": "樣式與 lesson1/2/3 保持一致，加入 title、description、breadcrumb。"
+      },
+      {
+        "path": "src/components/ConnectorTrainer.jsx",
+        "purpose": "主互動元件，包含模式切換、資料篩選、題目作答、錯題與收藏。",
+        "notes": "第一版先用 localStorage，不要強制串 Firebase。"
+      },
+      {
+        "path": "src/data/connectors-question-bank.json",
+        "purpose": "本課連接詞資料與題庫。",
+        "notes": "由題庫 JSON 檔提供，可直接放入此路徑。"
+      }
+    ],
+    "stateShape": {
+      "mode": "learn | quiz | mistakes | bookmarks | review",
+      "moduleId": "m1-overview",
+      "levelFilter": "all | A2 | B1 | B2",
+      "syntaxFilter": "all | coordinating | connector_adverb | subordinating | infinitive_construction | paired_connector",
+      "currentQuestionIndex": 0,
+      "answers": {},
+      "mistakes": [],
+      "bookmarks": [],
+      "mastery": {}
+    },
+    "localStorageKeys": [
+      "german-lesson5-connectors-progress",
+      "german-lesson5-connectors-mistakes",
+      "german-lesson5-connectors-bookmarks",
+      "german-lesson5-connectors-mastery"
+    ]
+  },
+  "codexImplementationInstructions": [
+    "請先讀取 src/pages 既有 lesson1、lesson2、lesson3 的頁面結構，保持 Layout 與視覺語氣一致。",
+    "請建立 lesson5-connectors.astro，匯入 ConnectorTrainer.jsx，並使用 client:only=\"react\" 或與既有 lesson 相同的 React hydration 方式。",
+    "請將題庫 JSON 放入 src/data/connectors-question-bank.json，React component 從該檔案 import。",
+    "請先實作 MVP：學習卡、語序分類、選擇題、句子排序、成對配對、錯題與收藏、localStorage 儲存。",
+    "請不要一開始加入過度複雜的 Firebase 同步或 AI API；保留 hook/function 位置即可。",
+    "請確保手機版可用：卡片主體優先、篩選收合、按鈕足夠大。",
+    "請在首頁新增 Lektion 5 card，文字使用中文主標＋德文副標。",
+    "請確保 npm run build 可以通過。"
+  ],
+  "acceptanceCriteria": [
+    "首頁能看到 Lektion 5 入口。",
+    "lesson5-connectors 頁面可正常開啟。",
+    "能在學習卡模式看到連接詞資料。",
+    "能依語序類型、等級、模組篩選。",
+    "能完成至少四種題型：分類、選詞、排序、成對配對。",
+    "答錯題目會加入錯題區。",
+    "可收藏連接詞或題目。",
+    "重新整理頁面後進度不消失。",
+    "手機版排版不爆版。",
+    "npm run build 成功。"
+  ]
+}
