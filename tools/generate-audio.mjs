@@ -1,8 +1,9 @@
 // Pre-generates natural German audio with Google Cloud Text-to-Speech for every text the site speaks.
 // Usage: node --experimental-strip-types tools/generate-audio.mjs [--dry-run] [--limit N]
-// Reads GOOGLE_TTS_API_KEY from the environment or .env. Only missing files are generated, so re-runs are cheap.
+// Reads GOOGLE_TTS_API_KEY from the environment or .env. Only missing files are generated, so re-runs are cheap;
+// clips for texts that no longer exist are deleted.
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { audioKey } from '../src/lib/germanSpeech.mjs';
 import { normalizeVocabulary } from '../src/lib/vocabulary.mjs';
@@ -75,6 +76,18 @@ async function synthesize(text, apiKey, attempt = 1) {
 const texts = collectTexts();
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : { voice: VOICE, files: {} };
 if (manifest.voice !== VOICE) { manifest.voice = VOICE; manifest.files = {}; }
+// Drop clips whose text no longer appears on the site (e.g. after an example sentence was corrected).
+const current = new Set(texts);
+const stale = Object.keys(manifest.files).filter((text) => !current.has(text));
+if (stale.length && !dryRun) {
+  for (const text of stale) {
+    const file = join(OUT_DIR, manifest.files[text]);
+    if (existsSync(file)) rmSync(file);
+    delete manifest.files[text];
+  }
+  writeFileSync(MANIFEST, `${JSON.stringify({ voice: VOICE, files: Object.fromEntries(Object.entries(manifest.files).sort(([a], [b]) => a.localeCompare(b))) }, null, 0)}\n`);
+}
+if (stale.length) console.log(`${stale.length} stale clips ${dryRun ? 'would be removed' : 'removed'}`);
 const missing = texts.filter((text) => !manifest.files[text] || !existsSync(join(OUT_DIR, manifest.files[text]))).slice(0, limit);
 const chars = missing.reduce((sum, text) => sum + text.length, 0);
 console.log(`${texts.length} texts total, ${missing.length} to generate (${chars} characters), voice ${VOICE}`);

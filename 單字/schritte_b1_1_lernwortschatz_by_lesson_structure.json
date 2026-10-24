@@ -89,7 +89,7 @@
           "word": "weg sein",
           "plural": "",
           "translationZh": "不在；消失了",
-          "exampleDe": "Mein Schlüssel ist plötzlich weg gewesen.",
+          "exampleDe": "Mein Schlüssel war plötzlich weg.",
           "lessonTag": "Lektion 1｜Glück im Alltag",
           "pos": "verb"
         },
@@ -529,7 +529,7 @@
           "word": "Standesamt",
           "plural": "die Standesämter",
           "translationZh": "戶政事務所；婚姻登記處",
-          "exampleDe": "Sie haben im Standesamt geheiratet.",
+          "exampleDe": "Sie haben auf dem Standesamt geheiratet.",
           "lessonTag": "Lektion 1｜Glück im Alltag",
           "pos": "noun"
         },
@@ -1565,7 +1565,7 @@
           "word": "Verbesserung",
           "plural": "die Verbesserungen",
           "translationZh": "改善；好轉",
-          "exampleDe": "Ich wünsche dir gute Verbesserung.",
+          "exampleDe": "Nach der Therapie gab es eine deutliche Verbesserung.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
           "pos": "noun"
         },
@@ -1613,7 +1613,7 @@
           "id": "b1_1_l03_w032",
           "article": "der",
           "word": "Fachmann",
-          "plural": "die Fachmänner",
+          "plural": "die Fachleute",
           "translationZh": "男專家",
           "exampleDe": "Der Fachmann gibt einen Rat.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
@@ -1635,7 +1635,7 @@
           "word": "rechts",
           "plural": "",
           "translationZh": "右邊的；在右邊",
-          "exampleDe": "Die rechte Schulter tut weh.",
+          "exampleDe": "Die Apotheke ist gleich rechts.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
           "pos": "adjective"
         },
@@ -1645,7 +1645,7 @@
           "word": "links",
           "plural": "",
           "translationZh": "左邊的；在左邊",
-          "exampleDe": "Mein linker Arm ist schwach.",
+          "exampleDe": "Biegen Sie an der Ampel links ab.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
           "pos": "adjective"
         },
@@ -2183,7 +2183,7 @@
           "word": "daher",
           "plural": "",
           "translationZh": "因此；由此",
-          "exampleDe": "Ich hatte wenig Zeit, daher bin ich spät gekommen.",
+          "exampleDe": "Es hat stark geregnet, daher sind wir zu Hause geblieben.",
           "lessonTag": "Lektion 4｜Sprachen",
           "pos": "adverb/connector"
         },

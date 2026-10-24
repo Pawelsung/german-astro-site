@@ -191,7 +191,7 @@
         {
           "id": "b1_1_l01_hidden_008",
           "article": "",
-          "word": "verständigen",
+          "word": "sich verständigen",
           "plural": "",
           "translationZh": "溝通/理解",
           "exampleDe": "...da gab es einige deutsche und englische Familien, mit denen ich mich gut verständigen konnte.",
@@ -238,7 +238,7 @@
           "word": "enttäuscht",
           "plural": "",
           "translationZh": "失望的",
-          "exampleDe": "Benno enttäuscht — Freundin verlassen.",
+          "exampleDe": "Ich bin von dem Film ziemlich enttäuscht.",
           "exampleZh": "",
           "lessonTag": "Lektion 1｜Glück im Alltag｜隱藏版進階詞",
           "pos": "adjective",
@@ -275,7 +275,7 @@
         {
           "id": "b1_1_l01_hidden_012",
           "article": "",
-          "word": "verknallen",
+          "word": "sich verknallen",
           "plural": "",
           "translationZh": "墜入愛河(口語)",
           "exampleDe": "So haben wir zwei uns quasi ineinander verknallt.",
@@ -476,7 +476,7 @@
         },
         {
           "id": "b1_1_l02_hidden_008",
-          "article": "das",
+          "article": "die",
           "word": "schlechte Sache",
           "plural": "",
           "translationZh": "壞事",
@@ -488,7 +488,8 @@
             "type": "phrase",
             "pattern": "n. phr.",
             "usageNoteZh": "壞事",
-            "practicePromptZh": "練習：理解整個短語在來源句中的語氣與用法。"
+            "practicePromptZh": "練習：理解整個短語在來源句中的語氣與用法。",
+            "article": "die"
           },
           "level": "B1/B2",
           "sourceType": "hidden-advanced-vocabulary",
@@ -625,7 +626,7 @@
         {
           "id": "b1_1_l02_hidden_015",
           "article": "die",
-          "word": "Staffeln",
+          "word": "Staffel",
           "plural": "die Staffeln",
           "translationZh": "(影集)季",
           "exampleDe": "...aber ich habe alle Staffeln zu Hause.",
@@ -655,7 +656,7 @@
         {
           "id": "b1_1_l03_hidden_001",
           "article": "",
-          "word": "anstrengen",
+          "word": "sich anstrengen",
           "plural": "",
           "translationZh": "努力/費勁",
           "exampleDe": "...kommt er mit seiner Arbeit nur ganz ganz langsam voran, obwohl er sich total anstrengt.",
@@ -720,7 +721,7 @@
           "word": "kräftigen",
           "plural": "",
           "translationZh": "加強/使強壯",
-          "exampleDe": "Als nächstes machen wir eine Übung zur Kräftigung der Beinmuskulatur.",
+          "exampleDe": "Diese Übung kräftigt die Beinmuskulatur.",
           "exampleZh": "",
           "lessonTag": "Lektion 3｜Gesundheit und Gewohnheiten｜隱藏版進階詞",
           "pos": "verb",
@@ -1246,18 +1247,18 @@
         },
         {
           "id": "b1_1_l05_hidden_002",
-          "article": "",
+          "article": "der",
           "word": "Auszubildende",
-          "plural": "die Auszubildende",
-          "translationZh": "學徒/受培訓者",
+          "plural": "die Auszubildenden",
+          "translationZh": "學徒；受培訓者（女性：die Auszubildende）",
           "exampleDe": "Ich habe gesehen, dass der Technomarkt zur Zeit Auszubildende sucht.",
           "exampleZh": "",
           "lessonTag": "Lektion 5｜Ausbildung und Beruf｜隱藏版進階詞",
           "pos": "noun",
           "practice": {
             "type": "noun",
-            "article": "",
-            "plural": "die Auszubildende",
+            "article": "der",
+            "plural": "die Auszubildenden",
             "practicePromptZh": "練習：冠詞、複數與來源句語境。"
           },
           "level": "B1/B2",
@@ -1354,8 +1355,8 @@
         },
         {
           "id": "b1_1_l05_hidden_007",
-          "article": "die",
-          "word": "Tipps",
+          "article": "der",
+          "word": "Tipp",
           "plural": "die Tipps",
           "translationZh": "建議",
           "exampleDe": "...welche Tipps geben Sie dann jemandem mit auf den Weg?",
@@ -1364,7 +1365,7 @@
           "pos": "noun",
           "practice": {
             "type": "noun",
-            "article": "die",
+            "article": "der",
             "plural": "die Tipps",
             "practicePromptZh": "練習：冠詞、複數與來源句語境。"
           },
@@ -1474,7 +1475,7 @@
           "id": "b1_1_l06_hidden_002",
           "article": "der",
           "word": "Preisnachlass",
-          "plural": "die Preisnachlasse",
+          "plural": "die Preisnachlässe",
           "translationZh": "折扣/減價",
           "exampleDe": "...selbstverständlich geben wir Ihnen einen Preisnachlass.",
           "exampleZh": "",
@@ -1483,7 +1484,7 @@
           "practice": {
             "type": "noun",
             "article": "der",
-            "plural": "die Preisnachlasse",
+            "plural": "die Preisnachlässe",
             "practicePromptZh": "練習：冠詞、複數與來源句語境。"
           },
           "level": "B1/B2",
@@ -1580,7 +1581,7 @@
           "id": "b1_1_l06_hidden_007",
           "article": "der",
           "word": "Auftrag",
-          "plural": "die Auftrage",
+          "plural": "die Aufträge",
           "translationZh": "委託/訂單",
           "exampleDe": "Ein neuer Auftrag.",
           "exampleZh": "",
@@ -1589,7 +1590,7 @@
           "practice": {
             "type": "noun",
             "article": "der",
-            "plural": "die Auftrage",
+            "plural": "die Aufträge",
             "practicePromptZh": "練習：冠詞、複數與來源句語境。"
           },
           "level": "B1/B2",
@@ -1806,7 +1807,7 @@
           "id": "b1_1_l07_hidden_005",
           "article": "der",
           "word": "Rechtsanwalt",
-          "plural": "die Rechtsanwalte",
+          "plural": "die Rechtsanwälte",
           "translationZh": "律師",
           "exampleDe": "...haben wir dann Post von seinem Rechtsanwalt bekommen.",
           "exampleZh": "",
@@ -1815,7 +1816,7 @@
           "practice": {
             "type": "noun",
             "article": "der",
-            "plural": "die Rechtsanwalte",
+            "plural": "die Rechtsanwälte",
             "practicePromptZh": "練習：冠詞、複數與來源句語境。"
           },
           "level": "B1/B2",
@@ -1829,7 +1830,7 @@
           "article": "die",
           "word": "Höhe",
           "plural": "die Höhen",
-          "translationZh": "太過分了/極點",
+          "translationZh": "高度；（Das ist die Höhe! 太過分了）",
           "exampleDe": "Das ist ja wohl die Höhe.",
           "exampleZh": "",
           "lessonTag": "Lektion 7｜Nachbarschaft und Zusammenleben｜隱藏版進階詞",
@@ -1932,17 +1933,17 @@
         },
         {
           "id": "b1_1_l07_hidden_011",
-          "article": "die",
-          "word": "Senioren",
+          "article": "der",
+          "word": "Senior",
           "plural": "die Senioren",
-          "translationZh": "長者",
+          "translationZh": "長者；年長者",
           "exampleDe": "Heutzutage wünschen sich immer mehr Senioren...",
           "exampleZh": "",
           "lessonTag": "Lektion 7｜Nachbarschaft und Zusammenleben｜隱藏版進階詞",
           "pos": "noun",
           "practice": {
             "type": "noun",
-            "article": "die",
+            "article": "der",
             "plural": "die Senioren",
             "practicePromptZh": "練習：冠詞、複數與來源句語境。"
           },

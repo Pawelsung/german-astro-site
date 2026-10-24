@@ -654,7 +654,7 @@
     "word": "Bauch",
     "plural": "die Bäuche",
     "meaning": "肚子",
-    "example": "Ich habe Bauchschmerzen.",
+    "example": "Mein Bauch tut weh.",
     "category": "⚕️ 身體與健康",
     "errors": 0,
     "starred": false
@@ -2762,7 +2762,7 @@
   {
     "article": "die",
     "word": "Wirtschaft",
-    "plural": "die Wirtschaften",
+    "plural": "(無複數)",
     "meaning": "經濟",
     "example": "Die Wirtschaft wächst schnell.",
     "category": "💼 職場與經濟",
@@ -2962,7 +2962,7 @@
   {
     "article": "der",
     "word": "Streit",
-    "plural": "die Streite",
+    "plural": "die Streitigkeiten",
     "meaning": "爭吵",
     "example": "Wir hatten gestern einen heftigen Streit.",
     "category": "❤️ 情緒與人際",
@@ -3084,7 +3084,7 @@
     "word": "Heizung",
     "plural": "die Heizungen",
     "meaning": "暖氣",
-    "example": "Mach bitte die Heizung an es ist kalt.",
+    "example": "Mach bitte die Heizung an, es ist kalt.",
     "category": "🛋️ 居家與生活",
     "errors": 0,
     "starred": false
@@ -3094,7 +3094,7 @@
     "word": "Decke",
     "plural": "die Decken",
     "meaning": "天花板/毯子",
-    "example": "Mir ist kalt gib mir bitte eine Decke.",
+    "example": "Mir ist kalt, gib mir bitte eine Decke.",
     "category": "🛋️ 居家與生活",
     "errors": 0,
     "starred": false
@@ -3574,7 +3574,7 @@
     "word": "Ausgang",
     "plural": "die Ausgänge",
     "meaning": "出口",
-    "example": "Entschuldigung wo ist der Ausgang?",
+    "example": "Entschuldigung, wo ist der Ausgang?",
     "category": "🏢 城市與建築",
     "errors": 0,
     "starred": false
@@ -3684,7 +3684,7 @@
     "word": "Traum",
     "plural": "die Träume",
     "meaning": "夢想/夢",
-    "example": "Mein Traum ist es um die Welt zu reisen.",
+    "example": "Mein Traum ist es, um die Welt zu reisen.",
     "category": "💭 思想與人生",
     "errors": 0,
     "starred": false
@@ -3824,7 +3824,7 @@
     "word": "Hochzeit",
     "plural": "die Hochzeiten",
     "meaning": "婚禮",
-    "example": "Wir sind auf einer Hochzeit eingeladen.",
+    "example": "Wir sind zu einer Hochzeit eingeladen.",
     "category": "🎉 節慶與活動",
     "errors": 0,
     "starred": false
@@ -4554,7 +4554,7 @@
     "word": "Führerschein",
     "plural": "die Führerscheine",
     "meaning": "駕照",
-    "example": "Ich habe meinen Führerschein bestanden.",
+    "example": "Ich habe letztes Jahr meinen Führerschein gemacht.",
     "category": "🚗 交通擴充",
     "errors": 0,
     "starred": false

@@ -148,7 +148,7 @@
           "word": "weg sein",
           "plural": "",
           "translationZh": "不在；消失了",
-          "exampleDe": "Mein Schlüssel ist plötzlich weg gewesen.",
+          "exampleDe": "Mein Schlüssel war plötzlich weg.",
           "lessonTag": "Lektion 1｜Glück im Alltag",
           "pos": "verb",
           "practice": {
@@ -1179,7 +1179,7 @@
           "word": "Standesamt",
           "plural": "die Standesämter",
           "translationZh": "戶政事務所；婚姻登記處",
-          "exampleDe": "Sie haben im Standesamt geheiratet.",
+          "exampleDe": "Sie haben auf dem Standesamt geheiratet.",
           "lessonTag": "Lektion 1｜Glück im Alltag",
           "pos": "noun",
           "practice": {
@@ -2026,7 +2026,7 @@
             "plural": "(無複數)",
             "practicePromptZh": "練習：冠詞 + 單數、複數、Akkusativ/Dativ 例句。"
           },
-          "exampleZh": "我不能看到血。",
+          "exampleZh": "我見不得血。",
           "isSupplement": false
         },
         {
@@ -3997,7 +3997,7 @@
           "word": "Verbesserung",
           "plural": "die Verbesserungen",
           "translationZh": "改善；好轉",
-          "exampleDe": "Ich wünsche dir gute Verbesserung.",
+          "exampleDe": "Nach der Therapie gab es eine deutliche Verbesserung.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
           "pos": "noun",
           "practice": {
@@ -4006,7 +4006,7 @@
             "plural": "die Verbesserungen",
             "practicePromptZh": "練習：冠詞 + 單數、複數、Akkusativ/Dativ 例句。"
           },
-          "exampleZh": "我祝你早日好轉。",
+          "exampleZh": "治療後情況有了明顯改善。",
           "isSupplement": false
         },
         {
@@ -4100,7 +4100,7 @@
           "id": "b1_1_l03_w032",
           "article": "der",
           "word": "Fachmann",
-          "plural": "die Fachmänner",
+          "plural": "die Fachleute",
           "translationZh": "男專家",
           "exampleDe": "Der Fachmann gibt einen Rat.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
@@ -4108,7 +4108,7 @@
           "practice": {
             "type": "noun",
             "article": "der",
-            "plural": "die Fachmänner",
+            "plural": "die Fachleute",
             "practicePromptZh": "練習：冠詞 + 單數、複數、Akkusativ/Dativ 例句。"
           },
           "exampleZh": "這位專家給了一個建議。",
@@ -4153,7 +4153,7 @@
           "word": "rechts",
           "plural": "",
           "translationZh": "右邊的；在右邊",
-          "exampleDe": "Die rechte Schulter tut weh.",
+          "exampleDe": "Die Apotheke ist gleich rechts.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
           "pos": "adjective",
           "practice": {
@@ -4161,7 +4161,7 @@
             "practicePromptZh": "練習：放在 sein 後面，以及放在名詞前做形容詞字尾變化。",
             "examplePattern": "Das ist ... / ein ...er ... / eine ...e ..."
           },
-          "exampleZh": "右肩會痛。",
+          "exampleZh": "藥局就在右邊。",
           "isSupplement": false
         },
         {
@@ -4170,7 +4170,7 @@
           "word": "links",
           "plural": "",
           "translationZh": "左邊的；在左邊",
-          "exampleDe": "Mein linker Arm ist schwach.",
+          "exampleDe": "Biegen Sie an der Ampel links ab.",
           "lessonTag": "Lektion 3｜Gesund bleiben",
           "pos": "adjective",
           "practice": {
@@ -4178,7 +4178,7 @@
             "practicePromptZh": "練習：放在 sein 後面，以及放在名詞前做形容詞字尾變化。",
             "examplePattern": "Das ist ... / ein ...er ... / eine ...e ..."
           },
-          "exampleZh": "我的左手臂很無力。",
+          "exampleZh": "請在紅綠燈處左轉。",
           "isSupplement": false
         },
         {
@@ -5720,7 +5720,7 @@
           "word": "daher",
           "plural": "",
           "translationZh": "因此；由此",
-          "exampleDe": "Ich hatte wenig Zeit, daher bin ich spät gekommen.",
+          "exampleDe": "Es hat stark geregnet, daher sind wir zu Hause geblieben.",
           "lessonTag": "Lektion 4｜Sprachen",
           "pos": "adverb/connector",
           "practice": {
@@ -5731,7 +5731,7 @@
             "usageNoteZh": "表示因此，較書面。",
             "practicePromptZh": "請用這個詞造一個 B1 程度句子，並檢查動詞位置。"
           },
-          "exampleZh": "我時間不多，所以我晚到了。",
+          "exampleZh": "雨下得很大，所以我們待在家裡。",
           "isSupplement": false
         },
         {
