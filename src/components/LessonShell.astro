@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import UserAccount from './UserAccount.jsx';
 import ConceptCard from './ConceptCard.astro';
 import RoundSummary from './RoundSummary.jsx';
+import LessonModes from './LessonModes.jsx';
 
 interface Frontmatter {
   title: string;
@@ -112,10 +113,11 @@ const conceptKey = `l${lessonLinks.findIndex(([href]) => Astro.url.pathname.repl
     <nav aria-label="切換學習主題" class="lesson-nav mx-auto flex w-full max-w-6xl gap-1 overflow-x-auto px-4 pb-3 md:pb-4">
       {lessonLinks.map(([href, label]) => <a href={href} aria-current={Astro.url.pathname.replace(/\/$/, '') === href.replace(/\/$/, '') ? 'page' : undefined} class="lesson-nav-link">{label}</a>)}
     </nav>
-    <div class="mx-auto w-full max-w-6xl px-4 pb-4">
+    <div class="mx-auto grid w-full max-w-6xl gap-3 px-4 pb-4">
+      <LessonModes client:only="react" lesson={conceptKey}><div slot="fallback" class="lesson-modes" aria-hidden="true"><span class="lesson-mode"></span><span class="lesson-mode"></span><span class="lesson-mode"></span></div></LessonModes>
       <ConceptCard lesson={conceptKey} />
     </div>
-    <div class={contentClass}>
+    <div id="practice" class={`${contentClass} scroll-mt-4`}>
       <slot />
     </div>
 

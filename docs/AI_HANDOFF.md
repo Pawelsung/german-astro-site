@@ -62,6 +62,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-24：統一「學習／練習／複習」三個入口（已 commit，未部署）
+- 新增 `src/components/LessonModes.jsx`，放在 LessonShell 概念卡上方，六課共用：
+  - 學習：展開並捲動到 `#concept-card`
+  - 練習：捲動到 `#practice`（練習區）；在複習模式時改為回到全部題目
+  - 複習：連到 `?review=1`，並顯示待複習數量徽章；數量來源和首頁相同（`getLearningSummary`）
+- 六個 trainer 原本就支援 `isReviewRequested()`，所以不需要修改 trainer。
+- 用 `client:only` 加上同尺寸的 fallback 佔位，載入時版面不會跳動。
+- 驗證：在第 4 課實測，點「複習」後只出現 7 題錯題，入口列顯示「複習中・還有 7 題」；手機深色版排版正常。
+
 ### 2026-10-24：快取設定修正（已部署）
 - 問題：Firebase 預設對 HTML 快取 1 小時。部署後，瀏覽器會沿用舊 HTML，而舊 HTML 指向已被刪除的舊 `_astro/*.js`，導致頁面空白（404）。
 - 修正：在 `firebase.json` 加上 headers——全站預設 `no-cache`（每次重新驗證，靠 ETag 判斷，成本很低）；`/_astro/**` 和 `/audio/de-charon/**` 的檔名帶有雜湊，設為 `immutable` 並快取一年。
@@ -206,7 +215,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ### 介面（使用者目前最在意）
 - [x] 每輪 10 題的結算（2026-10-24 完成）
-- [ ] 六課統一成「學習／練習／複習」三個入口（第二批剩下的部分）
+- [x] 六課統一三個入口（2026-10-24 完成）
 - [ ] 第 2～6 課在手機上的篩選列和設定區，比照第 1 課改成可收合
 - [ ] 第 2、3 課的字卡也改用 3D 翻面加滑動（目前只有第 1 課有）
 - [ ] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）
