@@ -13,6 +13,7 @@ import { verbPrepositions } from '../data/verb-prepositions';
 import { getFirebaseServices } from '../lib/firebase';
 import { loadLesson2Progress, saveLesson2Progress } from '../lib/progressStorage';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { blankPreposition } from '../lib/prepositionBlank.mjs';
 
 const verbData = verbPrepositions;
 
@@ -213,7 +214,9 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
     } else {
       correctOpt = q.prep;
       const allPreps = [...new Set(data.map(d => d.prep))];
-      const wrongPreps = allPreps.filter(p => p !== correctOpt);
+      // Verbs like sprechen (über/mit) have two right answers; never offer the other one as a distractor.
+      const validPreps = data.filter(d => d.verb === q.verb).map(d => d.prep);
+      const wrongPreps = allPreps.filter(p => !validPreps.includes(p));
       distractors = wrongPreps.sort(() => 0.5 - Math.random()).slice(0, 3);
       setOptions([correctOpt, ...distractors].sort(() => 0.5 - Math.random()));
     }
@@ -303,19 +306,31 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
           <>
             <h2 className="text-[clamp(1.9rem,11vw,2.75rem)] sm:text-4xl font-extrabold text-gray-800 mb-2 break-words max-w-full">{question.verb}</h2>
             <p className="text-base sm:text-lg text-amber-700 font-medium break-words">{question.verbTrans}</p>
-            {showHint && <p className="mt-4 text-xs sm:text-sm text-gray-500 font-medium bg-gray-50 p-3 rounded-xl border border-gray-100">提示：{question.example.replace(new RegExp(`\\b${question.prep}\\b`, 'i'), '___')}</p>}
+            {showHint && <p className="mt-4 text-xs sm:text-sm text-gray-500 font-medium bg-gray-50 p-3 rounded-xl border border-gray-100">提示：{(() => { const b = blankPreposition(question.example, question.prep); return b ? `${b.before}___${b.after}` : question.example; })()}</p>}
           </>
         )}
         {mode === 'sentence' && (
           <>
-            <p className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">
-              {question.example.split(new RegExp(`\\b${question.prep}\\b`, 'i')).map((part, i, arr) => (
-                <React.Fragment key={i}>
-                  {part}
-                  {i < arr.length - 1 && <span className="inline-block w-12 sm:w-16 border-b-4 border-amber-400 mx-1 sm:mx-2 mb-1"></span>}
-                </React.Fragment>
-              ))}
-            </p>
+            {(() => {
+              const blank = blankPreposition(question.example, question.prep);
+              if (!blank) return <p className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">{question.example}</p>;
+              return (
+                <>
+                  <p className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">
+                    {blank.before}
+                    {answered
+                      ? <span className="mx-1 rounded-md bg-amber-100 px-1.5 text-amber-800">{blank.found}</span>
+                      : <span className="inline-block w-12 sm:w-16 border-b-4 border-amber-400 mx-1 sm:mx-2 mb-1"></span>}
+                    {blank.after}
+                  </p>
+                  {blank.contraction && (
+                    <p className="mt-2 text-xs sm:text-sm font-bold text-gray-500">
+                      {answered ? `${blank.contraction.form} = ${blank.contraction.expansion}` : '空格處是縮寫或複合形式，請選出原本的介系詞'}
+                    </p>
+                  )}
+                </>
+              );
+            })()}
             <p className="text-sm sm:text-base text-amber-700 font-medium mt-4 bg-amber-50 px-3 sm:px-4 py-1.5 rounded-full inline-block">{question.verb} ({question.verbTrans})</p>
           </>
         )}

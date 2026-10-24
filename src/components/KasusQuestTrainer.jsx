@@ -130,6 +130,25 @@ function cleanPathLevel(level = '') {
   return level.replace('Boss', '綜合');
 }
 
+const TRIGGER_TERMS = [
+  [/relative pronoun as subject/gi, '關係代名詞當主詞'],
+  [/relative pronoun/gi, '關係代名詞'],
+  [/relative clause/gi, '關係子句'],
+  [/two-way preposition/gi, '雙向介系詞'],
+  [/preposition classification/gi, '介系詞分類'],
+  [/reflexive/gi, '反身'],
+  [/body part/gi, '身體部位'],
+  [/^subject$/i, '主詞']
+];
+
+// Clue text in Chinese; before answering, case names are masked so the clue points at the
+// verb or preposition without giving the answer away.
+function triggerText(trigger = '', reveal = false) {
+  let text = TRIGGER_TERMS.reduce((value, [pattern, zh]) => value.replace(pattern, zh), String(trigger || '-'));
+  if (!reveal) text = text.replace(/Nominativ|Akkusativ|Dativ|Genitiv/g, '？');
+  return text;
+}
+
 function cleanOption(option = '') {
   return option
     .replace('Akkusativ Zone', '固定 Akkusativ')
@@ -399,7 +418,7 @@ export default function KasusQuestTrainer() {
                   <div className="flex min-w-0 flex-wrap gap-1.5">
                     <span className="rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-black text-teal-800">{current.level}</span>
                     <span className="rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-black text-teal-800">{MODE_LABELS[current.mode]}</span>
-                    {showInlineHint && (
+                    {selected && (
                       <span className={cx('rounded-full border px-2.5 py-1 text-[11px] font-black', CASE_STYLES[current.case] || 'border-slate-200 bg-white text-slate-600')}>{current.case}</span>
                     )}
                   </div>
@@ -420,7 +439,7 @@ export default function KasusQuestTrainer() {
                 <p className="mt-2 text-sm font-bold text-slate-500 md:text-base">{current.translation}</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-black text-teal-700">{genderKey(current.gender) && <i className={`g-dot g-${genderKey(current.gender)}`} />}目標詞：{current.targetNoun || '-'}</span>
-                  {showInlineHint && <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-black text-cyan-700">線索：{current.trigger === 'subject' ? '主詞' : current.trigger || '-'}</span>}
+                  {showInlineHint && <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-black text-cyan-700">線索：{triggerText(current.trigger, !!selected)}</span>}
                 </div>
               </div>
 

@@ -17,6 +17,18 @@ const field = 'min-h-11 w-full rounded-xl border border-slate-200 bg-white px-3 
 const emptyUI = { preset: DEFAULT_PRESET, chapter: 'all', mode: 'learn', index: 0, filter: 'all' };
 
 const SWIPE_THRESHOLD = 90;
+const POS_CHOICES = ['noun', 'verb', 'adjective', 'adverb', 'connector', 'preposition', 'phrase'];
+
+// Four part-of-speech choices that stay stable for a word: the answer plus three distractors
+// that are not part of it (so "adverb/connector" never sits next to "adverb" or "connector").
+function posOptions(word) {
+  const answer = word.pos;
+  const parts = String(answer).split('/');
+  let seed = [...wordKey(word)].reduce((sum, ch) => (sum * 31 + ch.charCodeAt(0)) >>> 0, 7);
+  const next = () => (seed = (seed * 1103515245 + 12345) >>> 0) / 4294967296;
+  const pool = POS_CHOICES.filter(pos => !parts.includes(pos)).sort(() => next() - 0.5);
+  return [answer, ...pool.slice(0, 3)].sort(() => next() - 0.5);
+}
 
 // Learn-mode card: tap or Space flips in 3D; swipe right = 記住了, left = 還不熟.
 function FlashCard({ word, flipped, onFlip, onRate, speak }) {
@@ -25,7 +37,8 @@ function FlashCard({ word, flipped, onFlip, onRate, speak }) {
   const drag = useRef(null);
   function down(e) {
     if (e.button !== undefined && e.button !== 0) return;
-    if (e.target.closest('button')) return;
+    // Buttons and the conjugation <details> on the back must not flip the card.
+    if (e.target.closest('button, summary, details, a')) return;
     drag.current = { x: e.clientX, y: e.clientY, moved: false, id: e.pointerId };
   }
   function moveDrag(e) {
@@ -219,7 +232,7 @@ export default function VocabularyTrainer() {
     setUI(prev => ({ ...prev, index: (prev.index + (leaves ? 0 : 1)) % size }));
     setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); submitting.current = false;
   }
-  const answerOptions = !current ? [] : ui.mode === 'article' ? ['der', 'die', 'das'] : ui.mode === 'pos' ? [...new Set(['noun','verb','adjective','adverb','connector','preposition','phrase',current.pos])] : [];
+  const answerOptions = !current ? [] : ui.mode === 'article' ? ['der', 'die', 'das'] : ui.mode === 'pos' ? posOptions(current) : [];
   useAnswerShortcuts({ options: answerOptions, answered: !!feedback, onSelect: submit, onNext: () => move(1), enabled: ui.mode !== 'learn' && ui.mode !== 'list' });
   const feedbackRef = useRevealOnShow(feedback);
   // Flashcard keys: Space flips, 1/2 rate, ←/→ move between words.

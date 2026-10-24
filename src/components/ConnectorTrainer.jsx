@@ -83,6 +83,14 @@ function normalizeAnswer(value) {
   return String(value ?? '').trim().replace(/\s+/g, ' ');
 }
 
+// Typed sentences are compared without case, punctuation or extra spaces: the lesson is about word order.
+function looseSentence(value) {
+  return String(value ?? '').normalize('NFC').toLocaleLowerCase('de').replace(/[.,!?;:„“"']/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+// Rewrites have more than one right answer, so a mismatch goes to self-check instead of "wrong".
+const SELF_CHECK_TYPES = new Set(['transform_sentence', 'sentence_builder']);
+
 function isAnswerCorrect(question, value) {
   if (question.type === 'pair_connector') {
     const expected = new Set(question.answer.map((item) => `${item.left}:${item.right}`));
@@ -99,8 +107,10 @@ function isAnswerCorrect(question, value) {
   }
 
   if (question.type === 'transform_sentence' || question.type === 'sentence_builder') {
-    return normalizeAnswer(value).toLowerCase() === normalizeAnswer(question.sampleAnswer).toLowerCase();
+    return looseSentence(value) === looseSentence(question.sampleAnswer);
   }
+
+  if (question.type === 'error_correction') return looseSentence(value) === looseSentence(question.answer);
 
   return normalizeAnswer(value) === normalizeAnswer(question.answer);
 }
@@ -367,7 +377,7 @@ function QuizView({ questions, progress, setProgress }) {
     setResult(null);
   }, [question?.id]);
 
-  useAnswerShortcuts({ answered: result !== null, onNext: () => setIndex((current) => (current + 1) % questions.length), enabled: !!question });
+  useAnswerShortcuts({ answered: result === true || result === false, onNext: () => setIndex((current) => (current + 1) % questions.length), enabled: !!question });
   const resultRef = useRevealOnShow(result !== null);
 
   if (!question) {
@@ -384,6 +394,11 @@ function QuizView({ questions, progress, setProgress }) {
       question,
       question.type === 'order_words' ? (draft || []).map((item) => item.token) : draft
     );
+    if (!correct && SELF_CHECK_TYPES.has(question.type)) { setResult('check'); return; }
+    finish(correct);
+  };
+
+  const finish = (correct) => {
     answerCue(correct);
     setResult(correct);
     setProgress((current) => {
@@ -433,7 +448,20 @@ function QuizView({ questions, progress, setProgress }) {
             <QuestionInput question={question} value={draft} onChange={setDraft} locked={result !== null} />
           </div>
 
-          {result !== null && (
+          {result === 'check' && (
+            <div role="status" className="fx-enter rounded-xl border border-violet-200 bg-violet-50 p-4">
+              <p className="text-sm font-black text-violet-800">和範例寫法不同，請自己對照：</p>
+              <p className="mt-2 break-words text-sm font-bold text-slate-600">你的答案：<span lang="de" className="text-slate-800">{draft}</span></p>
+              <p className="mt-1 break-words text-sm font-bold text-slate-600">範例答案：<span lang="de" className="text-slate-800">{question.sampleAnswer}</span></p>
+              <p className="mt-2 text-xs font-bold text-slate-500">子句放前或放後、換一個詞序，只要動詞位置正確都算對。</p>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button type="button" onClick={() => finish(true)} className="rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2.5 text-sm font-black text-emerald-700">我的寫法也正確</button>
+                <button type="button" onClick={() => finish(false)} className="rounded-xl border border-rose-300 bg-rose-50 px-3 py-2.5 text-sm font-black text-rose-700">我寫錯了</button>
+              </div>
+            </div>
+          )}
+
+          {(result === true || result === false) && (
             <div ref={resultRef} role="status" className={cx('fx-enter scroll-mb-24 rounded-xl border p-4', result ? 'border-emerald-200 bg-emerald-50' : 'border-rose-200 bg-rose-50')}>
               <div className="mb-2 flex items-center gap-2 font-black">
                 {result ? <CheckCircle className="h-5 w-5 text-emerald-600" /> : <XCircle className="h-5 w-5 text-rose-600" />}

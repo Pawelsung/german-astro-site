@@ -915,7 +915,11 @@ export default function IrregularVerbTrainer() {
   const currentTypeMeta = currentVerb ? getTypeMeta(currentVerb.type) : null;
   const currentAuxHint = currentVerb ? inferAuxHint(currentVerb) : null;
   const currentLearningState = currentVerb ? deriveLearningState(progress[currentVerb.id]) : null;
-  const modalOptions = currentVerb && mode === MODES.MODAL ? generateModalOptions(currentVerb) : [];
+  // Shuffle once per verb; recomputing every render made the buttons jump after each click.
+  const modalOptions = useMemo(
+    () => (currentVerb && mode === MODES.MODAL ? generateModalOptions(currentVerb) : []),
+    [currentVerb?.id, mode]
+  );
 
   const advancedCount =
     (mode === MODES.MODAL ? 1 : 0) +
