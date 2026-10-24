@@ -674,7 +674,7 @@ export default function VerbWithPreposition() {
   return (
     <div className="w-full relative pb-24 md:pb-8 text-gray-800 font-sans selection:bg-amber-200">
 
-      {speechData.speechMessage && <p role="status" className="mb-3 rounded-xl bg-amber-50 p-3 text-sm text-amber-800">{speechData.speechMessage}</p>}
+      {speechData.speechMessage && <p role="status" className="speech-toast">{speechData.speechMessage}</p>}
       {/* 電腦版/平板版專用的頂部工具列 */}
       <div className="hidden md:grid grid-cols-4 gap-2 mb-3 rounded-2xl bg-white shadow-sm border border-slate-200 p-3">
         {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {

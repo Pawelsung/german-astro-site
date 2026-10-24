@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { audioKey, createGermanSpeechPlayer, loadAudioManifest } from '../lib/germanSpeech.mjs';
 
+// Progress notices are not shown: they appeared above the card and pushed it down on every tap.
+const PROGRESS_MESSAGES = new Set(['正在播放德語發音…', '正在準備發音…']);
+
 export function useGermanSpeech({ voiceURI = '', rate = 0.9, pitch = 1 } = {}) {
   const [voices, setVoices] = useState([]);
-  const [speechMessage, setSpeechMessage] = useState('');
+  const [speechMessage, setRawMessage] = useState('');
+  const setSpeechMessage = message => setRawMessage(PROGRESS_MESSAGES.has(message) ? '' : message);
   const player = useRef(null);
   const audioFiles = useRef({});
   useEffect(() => {

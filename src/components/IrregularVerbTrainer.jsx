@@ -928,7 +928,7 @@ export default function IrregularVerbTrainer() {
 
   return (
     <div className="text-slate-800">
-      {speechMessage && <p role="status" className="mb-3 rounded-xl bg-violet-50 p-3 text-sm text-violet-800">{speechMessage}</p>}
+      {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
       <div className="mb-3 rounded-xl md:rounded-2xl bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
         <div className="flex flex-col gap-2">
           <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
