@@ -3287,7 +3287,7 @@
       "targetNoun": "der Stuhl",
       "gender": "m",
       "trigger": "unter + Dativ (Wo?)",
-      "explanationZh": "under/unter 是雙向介系詞。liegen 表示位置，問 Wo?，用 Dativ。der Stuhl → dem Stuhl。",
+      "explanationZh": "unter 是雙向介系詞。liegen 表示位置，問 Wo?，用 Dativ。der Stuhl → dem Stuhl。",
       "tags": [
         "B1",
         "preposition",

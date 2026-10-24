@@ -89,6 +89,8 @@ export interface SentencePattern {
   level: LessonLevel;
   mode: ExerciseMode;
   allowedNounTags?: string[];
+  // Explicit noun whitelist; preferred over tags so frames stay meaningful ("Ich lese ein Buch", not "einen Film").
+  allowedNounIds?: string[];
 }
 
 export interface LessonExercise {
@@ -410,16 +412,17 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
   {
     id: "subject-nom-def",
     prefix: "",
-    suffix: " ist sehr gut.",
+    suffix: " gefällt mir sehr.",
     caseName: "nominativ",
     articleType: "definite",
-    meaning: "那個……很好。",
+    meaning: "我很喜歡那個……",
     caseReason: "句首的名詞片語是主詞，所以使用 Nominativ。",
     level: "A2",
     mode: "quick-drill",
   },
   {
     id: "ich-sehe-akk-indef",
+    allowedNounIds: ["film", "freund", "stadt", "serie", "bild", "cafe", "tasche"],
     prefix: "Ich sehe ",
     suffix: ".",
     caseName: "akkusativ",
@@ -431,6 +434,7 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
   },
   {
     id: "ich-kaufe-akk-indef",
+    allowedNounIds: ["tasche", "buch", "brot", "kaffee", "bild"],
     prefix: "Ich kaufe ",
     suffix: ".",
     caseName: "akkusativ",
@@ -439,22 +443,22 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
     caseReason: "kaufen 後面買的東西是直接受詞，使用 Akkusativ。",
     level: "A2",
     mode: "case-detective",
-    allowedNounTags: ["thing", "food", "daily", "school"],
   },
   {
     id: "ich-lese-akk-indef",
+    allowedNounIds: ["buch"],
     prefix: "Ich lese ",
     suffix: ".",
     caseName: "akkusativ",
     articleType: "indefinite",
-    meaning: "我讀一本／一個……",
+    meaning: "我讀一本……",
     caseReason: "lesen 後面被閱讀的東西是直接受詞，使用 Akkusativ。",
     level: "A2",
     mode: "case-detective",
-    allowedNounTags: ["school", "movie", "thing"],
   },
   {
     id: "mit-dat-indef",
+    allowedNounIds: ["freund", "lehrerin"],
     prefix: "Ich gehe mit ",
     suffix: " ins Kino.",
     caseName: "dativ",
@@ -463,10 +467,10 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
     caseReason: "mit 後面固定接 Dativ。",
     level: "A2-B1",
     mode: "dativ-focus",
-    allowedNounTags: ["person"],
   },
   {
     id: "aus-dat-indef",
+    allowedNounIds: ["stadt"],
     prefix: "Ich komme aus ",
     suffix: ".",
     caseName: "dativ",
@@ -475,10 +479,10 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
     caseReason: "aus 後面固定接 Dativ。",
     level: "A2-B1",
     mode: "dativ-focus",
-    allowedNounTags: ["place", "travel"],
   },
   {
     id: "nach-dat-indef",
+    allowedNounIds: ["tag"],
     prefix: "Nach ",
     suffix: " bin ich müde.",
     caseName: "dativ",
@@ -487,15 +491,15 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
     caseReason: "nach 後面固定接 Dativ。",
     level: "A2-B1",
     mode: "dativ-focus",
-    allowedNounTags: ["time", "abstract", "school"],
   },
   {
     id: "mit-dat-zero",
-    prefix: "Ich arbeite mit ",
+    allowedNounIds: ["kaffee", "brot"],
+    prefix: "Ich frühstücke mit ",
     suffix: ".",
     caseName: "dativ",
     articleType: "zero",
-    meaning: "我用／和……一起工作。",
+    meaning: "我早餐配……",
     caseReason: "mit 後面固定接 Dativ；本題是無冠詞挑戰題。",
     level: "B1",
     mode: "dativ-focus",
@@ -711,7 +715,26 @@ function buildExercise(params: {
   };
 }
 
+// Adjectives that make sense with each noun, so generated phrases never read like "ein leckerer Film".
+const NOUN_ADJECTIVES: Record<string, string[]> = {
+  film: ["gut", "schoen", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "bekannt"],
+  freund: ["gut", "nett", "freundlich", "alt", "neu"],
+  kaffee: ["gut", "stark", "lecker"],
+  tag: ["gut", "schoen", "lang", "langweilig", "wichtig", "schwierig"],
+  stadt: ["schoen", "klein", "gross", "alt", "neu", "interessant", "bekannt", "langweilig"],
+  serie: ["gut", "interessant", "langweilig", "neu", "alt", "lang", "bekannt"],
+  lehrerin: ["gut", "nett", "freundlich", "neu", "bekannt"],
+  frage: ["gut", "wichtig", "interessant", "schwierig", "klein", "neu"],
+  tasche: ["schoen", "klein", "gross", "neu", "alt"],
+  buch: ["gut", "interessant", "langweilig", "neu", "alt", "wichtig", "bekannt", "schwierig", "schoen", "lang"],
+  brot: ["gut", "lecker"],
+  cafe: ["schoen", "klein", "gross", "neu", "alt", "gut", "nett", "bekannt"],
+  bild: ["schoen", "gross", "klein", "alt", "neu", "bekannt", "interessant"],
+  problem: ["gross", "klein", "neu", "alt", "wichtig", "schwierig"],
+};
+
 function nounAllowed(pattern: SentencePattern, noun: LessonNoun): boolean {
+  if (pattern.allowedNounIds) return pattern.allowedNounIds.includes(noun.id);
   if (!pattern.allowedNounTags) return true;
   return pattern.allowedNounTags.some((tag) => noun.tags.includes(tag));
 }
@@ -730,15 +753,15 @@ function buildCoreExercises(): LessonExercise[] {
     {
       stage: 2,
       patternIds: ["subject-nom-def"],
-      nounIds: ["film", "stadt", "buch", "serie", "brot", "bild", "frage", "cafe"],
-      adjectiveIds: ["gut", "schoen", "interessant", "neu"],
+      nounIds: ["film", "stadt", "buch", "serie", "bild", "cafe"],
+      adjectiveIds: ["neu", "schoen", "interessant", "alt", "klein"],
       max: 24,
     },
     {
       stage: 3,
       patternIds: ["das-ist-nom-indef", "ich-sehe-akk-indef", "ich-kaufe-akk-indef", "ich-lese-akk-indef"],
       nounIds: ["film", "freund", "kaffee", "tag", "stadt", "serie", "tasche", "buch", "brot", "bild", "problem"],
-      adjectiveIds: ["gut", "schoen", "klein", "gross", "interessant", "langweilig", "neu", "alt", "wichtig", "lecker", "stark"],
+      adjectiveIds: ["gut", "schoen", "klein", "gross", "interessant", "langweilig", "neu", "alt", "wichtig", "lecker", "stark", "bekannt"],
       max: 48,
       perPatternMax: 12,
     },
@@ -746,15 +769,15 @@ function buildCoreExercises(): LessonExercise[] {
       stage: 4,
       patternIds: ["mit-dat-indef", "aus-dat-indef", "nach-dat-indef"],
       nounIds: ["freund", "lehrerin", "stadt", "cafe", "tag", "problem"],
-      adjectiveIds: ["gut", "nett", "freundlich", "klein", "schoen", "lang", "schwierig"],
+      adjectiveIds: ["gut", "nett", "freundlich", "klein", "schoen", "lang", "schwierig", "gross", "alt", "langweilig", "bekannt"],
       max: 32,
       perPatternMax: 12,
     },
     {
       stage: 5,
       patternIds: ["mit-dat-zero"],
-      nounIds: ["kaffee", "brot", "buch", "bild", "problem"],
-      adjectiveIds: ["gut", "stark", "lecker", "wichtig", "schwierig"],
+      nounIds: ["kaffee", "brot"],
+      adjectiveIds: ["gut", "stark", "lecker", "alt"],
       max: 12,
     },
   ];
@@ -764,29 +787,36 @@ function buildCoreExercises(): LessonExercise[] {
     for (const patternId of plan.patternIds) {
       const pattern = LESSON6_PATTERNS.find((item) => item.id === patternId);
       if (!pattern) continue;
+      const nouns = plan.nounIds
+        .map((id) => LESSON6_NOUNS.find((item) => item.id === id))
+        .filter((noun): noun is LessonNoun => !!noun && nounAllowed(pattern, noun));
+      // Only meaningful noun + adjective pairs, taken round-robin so one noun does not fill a whole pattern.
+      const byNoun = nouns.map((noun) =>
+        plan.adjectiveIds
+          .filter((id) => (NOUN_ADJECTIVES[noun.id] || []).includes(id))
+          .map((id) => LESSON6_ADJECTIVES.find((item) => item.id === id))
+          .filter((adjective): adjective is LessonAdjective => !!adjective)
+          .map((adjective) => [noun, adjective] as [LessonNoun, LessonAdjective])
+      );
+      const pairs: Array<[LessonNoun, LessonAdjective]> = [];
+      for (let round = 0; byNoun.some((list) => list[round]); round += 1) {
+        for (const list of byNoun) if (list[round]) pairs.push(list[round]);
+      }
       let patternCount = 0;
-      for (const nounId of plan.nounIds) {
-        const noun = LESSON6_NOUNS.find((item) => item.id === nounId);
-        if (!noun || !nounAllowed(pattern, noun)) continue;
-        for (const adjectiveId of plan.adjectiveIds) {
-          if (count >= plan.max) break;
-          if (plan.perPatternMax && patternCount >= plan.perPatternMax) break;
-          const adjective = LESSON6_ADJECTIVES.find((item) => item.id === adjectiveId);
-          if (!adjective) continue;
-          exercises.push(
-            buildExercise({
-              id: `l6-s${plan.stage}-${patternId}-${nounId}-${adjectiveId}`,
-              stage: plan.stage,
-              pattern,
-              noun,
-              adjective,
-            })
-          );
-          count++;
-          patternCount++;
-        }
+      for (const [noun, adjective] of pairs) {
         if (count >= plan.max) break;
         if (plan.perPatternMax && patternCount >= plan.perPatternMax) break;
+        exercises.push(
+          buildExercise({
+            id: `l6-s${plan.stage}-${patternId}-${noun.id}-${adjective.id}`,
+            stage: plan.stage,
+            pattern,
+            noun,
+            adjective,
+          })
+        );
+        count++;
+        patternCount++;
       }
     }
   }
@@ -969,20 +999,19 @@ export const LESSON6_ZERO_ARTICLE_EXERCISES: LessonExercise[] = [
     mode: "quick-drill",
     level: "B1",
     prompt: "Mit ____ kann ich besser lernen.",
-    questionZh: "請選出正確的無冠詞片語：用好書我可以學得更好。",
-    given: { noun: "das Buch", adjective: "gut（好的）", articleType: "zero", caseName: "dativ" },
-    options: ["gutem Buch", "gutes Buch", "guten Buch", "guter Buch"],
-    answer: "gutem Buch",
+    questionZh: "請選出正確的無冠詞複數片語：用好書我可以學得更好。",
+    given: { noun: "die Bücher", adjective: "gut（好的）", articleType: "zero", caseName: "dativ" },
+    options: ["guten Büchern", "gute Bücher", "gutem Büchern", "guter Bücher"],
+    answer: "guten Büchern",
     answerIndex: 0,
     explanation: [
-      "正解：Mit gutem Buch kann ich besser lernen.",
-      "Buch 是 das Buch，中性名詞。",
+      "正解：Mit guten Büchern kann ich besser lernen.",
+      "單數可數名詞（ein Buch）不能省略冠詞，所以這裡用複數 Bücher。",
       "mit 後面固定接 Dativ。",
-      "無冠詞中性 Dativ 用 -em。",
-      "所以是 gutem Buch。提醒：真實生活中更常說 mit einem guten Buch，本題是為了練無冠詞字尾。",
+      "無冠詞複數 Dativ：形容詞用 -en，名詞再加 -n：guten Büchern。",
     ],
-    miniRule: "無冠詞中性 Dativ：gutem Buch。",
-    tags: ["zero", "dativ", "n", "school"],
+    miniRule: "無冠詞複數 Dativ：guten Büchern（形容詞 -en，名詞 -n）。",
+    tags: ["zero", "dativ", "pl", "school"],
   },
   {
     id: "l6-zero-10",

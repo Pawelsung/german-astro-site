@@ -885,7 +885,10 @@
       "promptZh": "請找出錯誤並改正。",
       "wrongSentence": "Obwohl es regnet, trotzdem gehe ich raus.",
       "answer": "Obwohl es regnet, gehe ich raus.",
-      "explanationZh": "德文通常不要 obwohl 和 trotzdem 雙重標記。"
+      "explanationZh": "obwohl 子句已經占了句首第一位，主句的變位動詞要緊接在逗號後面。trotzdem 可以保留，但不能放在句首，要放在動詞後面：Obwohl es regnet, gehe ich trotzdem raus.",
+      "acceptedAnswers": [
+        "Obwohl es regnet, gehe ich trotzdem raus."
+      ]
     },
     {
       "id": "lc5-q014",
@@ -1301,7 +1304,7 @@
       "moduleId": "m3-contrast-concession",
       "level": "A2",
       "promptZh": "請選出最適合的連接詞。",
-      "sentenceWithBlank": "Das ist nicht ein Fehler, ___ eine Variante.",
+      "sentenceWithBlank": "Das ist kein Fehler, ___ eine Variante.",
       "options": [
         {
           "id": "aber",
@@ -1321,7 +1324,7 @@
         }
       ],
       "answer": "sondern",
-      "explanationZh": "前面有否定 nicht，後面修正內容，用 sondern。"
+      "explanationZh": "前面有否定 kein，後面修正內容，用 sondern：不是錯誤，而是另一種說法。"
     },
     {
       "id": "lc5-q028",
@@ -1497,7 +1500,7 @@
       "moduleId": "m5-purpose-condition-method",
       "level": "B1",
       "promptZh": "請選出最適合的不定詞結構。",
-      "sentenceWithBlank": "Sie macht Notizen, ___ die Regel zu vergessen.",
+      "sentenceWithBlank": "Er antwortet, ___ die Frage genau zu lesen.",
       "options": [
         {
           "id": "ohne",
@@ -1517,7 +1520,7 @@
         }
       ],
       "answer": "ohne",
-      "explanationZh": "ohne ... zu 表示「沒有……就……」，主詞相同時可用不定詞結構。"
+      "explanationZh": "ohne ... zu 表示「沒有做某事就……」：他沒有仔細讀問題就回答了。主詞相同時用不定詞結構。"
     },
     {
       "id": "lc5-q035",
@@ -1598,9 +1601,9 @@
       "moduleId": "m2-reason-result",
       "level": "A2",
       "promptZh": "請找出錯誤並改正。",
-      "wrongSentence": "Ich bin krank, denn ich zu Hause bleibe.",
-      "answer": "Ich bin krank, denn ich bleibe zu Hause.",
-      "explanationZh": "denn 後面維持主句語序：ich bleibe，不是動詞句尾。"
+      "wrongSentence": "Ich bleibe zu Hause, denn ich krank bin.",
+      "answer": "Ich bleibe zu Hause, denn ich bin krank.",
+      "explanationZh": "denn 後面維持主句語序：ich bin krank，不是把動詞放句尾。"
     },
     {
       "id": "lc5-q039",
@@ -1682,7 +1685,7 @@
       "moduleId": "m6-paired",
       "level": "B1",
       "promptZh": "請選出最適合的成對連接詞。",
-      "sentenceWithBlank": "___ ist die Regel wichtig, ___ braucht sie viele Beispiele.",
+      "sentenceWithBlank": "___ ist die Regel einfach, ___ gibt es viele Ausnahmen.",
       "options": [
         {
           "id": "Einerseits...andererseits",
@@ -1702,7 +1705,7 @@
         }
       ],
       "answer": "Einerseits...andererseits",
-      "explanationZh": "這裡平衡兩個觀點，用 einerseits ... andererseits。"
+      "explanationZh": "一方面規則簡單，另一方面例外很多：平衡兩個相對的觀點，用 einerseits ... andererseits。"
     },
     {
       "id": "lc5-q047",
@@ -1771,7 +1774,7 @@
         }
       ],
       "answer": "a",
-      "explanationZh": "obwohl 子句動詞 bin 在句尾；子句在前時，主句 lerne ich 倒裝；不要再加 trotzdem。"
+      "explanationZh": "obwohl 子句動詞 bin 在句尾；子句在前時，主句動詞 lerne 緊接在逗號後。d 錯在 trotzdem 放句首；若要保留應說 …, lerne ich trotzdem weiter。"
     },
     {
       "type": "classify_syntax",
@@ -2026,7 +2029,7 @@
         }
       ],
       "answer": "subordinating",
-      "explanationZh": "obwohl：子句動詞最後；不要和 trotzdem 重複。 例句：Obwohl es regnet, gehe ich spazieren.",
+      "explanationZh": "obwohl：子句動詞最後。主句可以再加 trotzdem 加強語氣，但要放在動詞後面。 例句：Obwohl es regnet, gehe ich (trotzdem) spazieren.",
       "id": "lc5-q056"
     },
     {
@@ -4131,8 +4134,11 @@
       "promptZh": "高強度改錯：請找出錯誤並改正。",
       "wrongSentence": "Obwohl es regnet, trotzdem gehen wir raus.",
       "answer": "Obwohl es regnet, gehen wir raus.",
-      "explanationZh": "避免 obwohl + trotzdem 雙重標記。",
-      "id": "lc5-q134"
+      "explanationZh": "obwohl 子句已經占了句首第一位，主句的變位動詞要緊接在逗號後面。trotzdem 可以保留，但不能放在句首，要放在動詞後面：Obwohl es regnet, gehen wir trotzdem raus.",
+      "id": "lc5-q134",
+      "acceptedAnswers": [
+        "Obwohl es regnet, gehen wir trotzdem raus."
+      ]
     },
     {
       "type": "error_correction",
@@ -4690,7 +4696,7 @@
         }
       ],
       "answer": "c",
-      "explanationZh": "obwohl 子句動詞最後，後面主句倒裝。",
+      "explanationZh": "obwohl 子句動詞最後，後面主句動詞緊接在逗號後。d 錯在 trotzdem 占了句首；可以說 …, lerne ich trotzdem weiter。",
       "id": "lc5-q168"
     },
     {

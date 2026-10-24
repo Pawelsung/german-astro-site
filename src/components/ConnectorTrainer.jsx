@@ -110,7 +110,9 @@ function isAnswerCorrect(question, value) {
     return looseSentence(value) === looseSentence(question.sampleAnswer);
   }
 
-  if (question.type === 'error_correction') return looseSentence(value) === looseSentence(question.answer);
+  if (question.type === 'error_correction') {
+    return [question.answer, ...(question.acceptedAnswers || [])].some((answer) => looseSentence(value) === looseSentence(answer));
+  }
 
   return normalizeAnswer(value) === normalizeAnswer(question.answer);
 }

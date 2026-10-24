@@ -50,7 +50,7 @@ export const irregularVerbs = [
     level: "A1",
     type: "mixed",
     meaningZh: "想；思考",
-    example: "Ich habe lange darüber gedacht."
+    example: "Ich habe oft an dich gedacht."
   },
   {
     id: "duerfen",
@@ -393,7 +393,7 @@ export const irregularVerbs = [
     type: "modal",
     group: "modal",
     meaningZh: "應該",
-    example: "Ich habe mehr lernen sollen."
+    example: "Wir haben um acht Uhr da sein sollen."
   },
   {
     id: "sprechen",
@@ -493,12 +493,12 @@ export const irregularVerbs = [
     id: "backen",
     infinitive: "backen",
     present3rd: "backt",
-    praeteritum: "buk",
+    praeteritum: "backte",
     perfekt: "hat gebacken",
     auxiliary: "hat",
     participle: "gebacken",
     level: "A2",
-    type: "strong",
+    type: "mixed",
     meaningZh: "烘焙",
     example: "Meine Mutter hat Brot gebacken."
   },
@@ -603,8 +603,8 @@ export const irregularVerbs = [
     participle: "geladen",
     level: "A2",
     type: "strong",
-    meaningZh: "裝載；邀請",
-    example: "Sie hat viele Gäste eingeladen."
+    meaningZh: "裝載",
+    example: "Er hat die Kisten ins Auto geladen."
   },
   {
     id: "laufen",
@@ -1178,7 +1178,7 @@ export const irregularVerbs = [
     level: "B1",
     type: "strong",
     meaningZh: "說謊",
-    example: "Er hat mich angelogen."
+    example: "Er hat schon wieder gelogen."
   },
   {
     id: "meiden",
@@ -1217,7 +1217,7 @@ export const irregularVerbs = [
     level: "B1",
     type: "strong",
     meaningZh: "建議；猜",
-    example: "Der Arzt hat mir Ruhe geraten."
+    example: "Der Arzt hat mir zu mehr Ruhe geraten."
   },
   {
     id: "reiben",
@@ -1269,7 +1269,7 @@ export const irregularVerbs = [
     level: "B1",
     type: "strong",
     meaningZh: "分開；離婚",
-    example: "Das Paar ist vor zwei Jahren geschieden."
+    example: "Die beiden sind seit zwei Jahren geschieden."
   },
   {
     id: "scheinen",
@@ -1490,7 +1490,7 @@ export const irregularVerbs = [
     level: "B1",
     type: "strong",
     meaningZh: "指出；指示",
-    example: "Der Lehrer hat auf den Fehler hingewiesen."
+    example: "Er hat mir den Weg gewiesen."
   },
   {
     id: "werben",
@@ -1596,7 +1596,7 @@ export const irregularVerbs = [
     level: "B2",
     type: "strong",
     meaningZh: "撕裂",
-    example: "Das Seil ist plötzlich gerissen."
+    example: "Er hat das Papier in Stücke gerissen."
   },
   {
     id: "ringen",
@@ -1700,7 +1700,7 @@ export const irregularVerbs = [
     level: "B2",
     type: "strong",
     meaningZh: "發誓",
-    example: "Er hat die Wahrheit geschworen."
+    example: "Er hat geschworen, die Wahrheit zu sagen."
   },
   {
     id: "spinnen",
@@ -1739,7 +1739,7 @@ export const irregularVerbs = [
     level: "B2",
     type: "strong",
     meaningZh: "撞；推",
-    example: "Er hat versehentlich gegen die Tür gestoßen."
+    example: "Er hat mich aus Versehen gestoßen."
   },
   {
     id: "streichen",
@@ -1791,7 +1791,7 @@ export const irregularVerbs = [
     level: "B2",
     type: "mixed",
     meaningZh: "轉向；轉身",
-    example: "Er hat sich schnell gewandt."
+    example: "Er hat sich an seinen Lehrer gewandt."
   },
   {
     id: "winden",
@@ -1818,16 +1818,16 @@ export const irregularVerbs = [
     participle: "bewogen",
     level: "C1",
     type: "strong",
-    meaningZh: "促使；使感動",
-    example: "Seine Worte haben mich tief bewogen."
+    meaningZh: "促使；使下決心",
+    example: "Was hat dich dazu bewogen, Deutsch zu lernen?"
   },
   {
     id: "dringen",
     infinitive: "dringen",
     present3rd: "dringt",
     praeteritum: "drang",
-    perfekt: "hat gedrungen",
-    auxiliary: "hat",
+    perfekt: "ist gedrungen",
+    auxiliary: "ist",
     participle: "gedrungen",
     level: "C1",
     type: "strong",
@@ -1942,12 +1942,12 @@ export const irregularVerbs = [
     id: "melken",
     infinitive: "melken",
     present3rd: "melkt",
-    praeteritum: "molk",
+    praeteritum: "melkte",
     perfekt: "hat gemolken",
     auxiliary: "hat",
     participle: "gemolken",
     level: "C1",
-    type: "strong",
+    type: "mixed",
     meaningZh: "擠奶",
     example: "Der Bauer hat morgens die Kühe gemolken."
   },
@@ -2001,7 +2001,7 @@ export const irregularVerbs = [
     level: "C1",
     type: "strong",
     meaningZh: "吸；吸取",
-    example: "Das Gerät hat den Staub eingesogen."
+    example: "Die Pflanze hat das Wasser aus der Erde gesogen."
   },
   {
     id: "schleichen",
