@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
-import { createGermanSpeechPlayer } from '../lib/germanSpeech.mjs';
+import { audioKey, createGermanSpeechPlayer, loadAudioManifest } from '../lib/germanSpeech.mjs';
 
 export function useGermanSpeech({ voiceURI = '', rate = 0.9, pitch = 1 } = {}) {
   const [voices, setVoices] = useState([]);
   const [speechMessage, setSpeechMessage] = useState('');
   const player = useRef(null);
+  const audioFiles = useRef({});
+  useEffect(() => {
+    loadAudioManifest().then(files => { audioFiles.current = files; });
+  }, []);
   useEffect(() => {
     const synth = window.speechSynthesis;
     if (!synth) return;
@@ -14,7 +18,7 @@ export function useGermanSpeech({ voiceURI = '', rate = 0.9, pitch = 1 } = {}) {
     return () => { synth.removeEventListener('voiceschanged', refresh); player.current?.stop(); };
   }, []);
   const speak = text => {
-    player.current ||= createGermanSpeechPlayer(window, setSpeechMessage);
+    player.current ||= createGermanSpeechPlayer(window, setSpeechMessage, { resolveAudio: key => audioFiles.current[key] || audioFiles.current[audioKey(key)] || null });
     player.current.speak(text, { voiceURI, rate, pitch });
   };
   return { voices, speak, speechMessage };

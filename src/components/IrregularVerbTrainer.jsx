@@ -1140,7 +1140,7 @@ export default function IrregularVerbTrainer() {
                     onChange={(e) => setVoiceURI(e.target.value)}
                     className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 font-bold outline-none"
                   >
-                    <option value="">系統德語人聲</option>
+                    <option value="">自然人聲（預設）</option>
                     {voices.map((voice) => (
                       <option key={voice.voiceURI} value={voice.voiceURI}>
                         {voice.name} ({voice.lang})

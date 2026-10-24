@@ -11,7 +11,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "audio": "node --experimental-strip-types tools/generate-audio.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.6",

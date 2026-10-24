@@ -549,7 +549,7 @@ const SettingsView = ({ voiceData, userData, user }) => {
                 }}
                 className="w-full p-3 sm:p-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-amber-500 outline-none text-sm sm:text-base font-medium appearance-none"
                 >
-                <option value="">系統德語人聲</option>
+                <option value="">自然人聲（預設）</option>
                 {voices.map(v => (
                     <option key={v.voiceURI} value={v.voiceURI}>
                     {v.name} ({v.lang})

@@ -50,3 +50,26 @@ test('silent engine reports a retry instruction and cleanup clears its watchdog'
   calls[0][1].onerror({error:'audio-busy'});
   assert.equal(messages.at(-1),'正在播放德語發音…');
 });
+test('plays pre-generated audio when available and no voice is chosen', () => {
+  const played = [];
+  const env = { Audio: class { constructor(src) { this.src = src; played.push(this); } play() { this.playing = true; return Promise.resolve(); } pause() {} },
+    speechSynthesis: { getVoices: () => [], speak: () => played.push('synth') }, SpeechSynthesisUtterance: class {}, setTimeout: () => 1, clearTimeout: () => {} };
+  const player = createGermanSpeechPlayer(env, () => {}, { resolveAudio: key => (key === 'Guten Tag' ? '/audio/de-charon/a.mp3' : null) });
+  player.speak('  Guten   Tag ');
+  assert.equal(played[0].src, '/audio/de-charon/a.mp3');
+  assert.equal(played[0].playing, true);
+  assert.equal(played[0].playbackRate, 1);
+  player.speak('Unbekannt');
+  assert.equal(played.at(-1), 'synth');
+});
+test('a chosen system voice skips pre-generated audio, and a failed clip falls back to speech', () => {
+  const created = [], spoken = [];
+  const env = { Audio: class { constructor(src) { this.src = src; created.push(this); } play() { throw new Error('blocked'); } pause() {} },
+    speechSynthesis: { getVoices: () => [], speak: u => spoken.push(u.text) }, SpeechSynthesisUtterance: class { constructor(t) { this.text = t; } }, setTimeout: () => 1, clearTimeout: () => {} };
+  const player = createGermanSpeechPlayer(env, () => {}, { resolveAudio: () => '/a.mp3' });
+  player.speak('Hallo', { voiceURI: 'de-local' });
+  assert.equal(created.length, 0);
+  player.speak('Hallo');
+  assert.equal(created.length, 1);
+  assert.deepEqual(spoken, ['Hallo', 'Hallo']);
+});

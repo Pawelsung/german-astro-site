@@ -41,7 +41,34 @@ CSS class（`src/styles/global.css` 檔尾）：
 - `kbd-hint`（鍵盤提示小標，觸控裝置自動隱藏）
 - `sound-toggle`、`lesson-skeleton`（載入骨架）
 
+## 長期升級藍圖（2026-10-24 與使用者討論，尚未開工）
+
+目標：從「題庫翻頁」變成「學 → 練 → 用 → 複習」的互動學習旅程。原則上執行時不產生額外費用：全部在前端完成，圖像用自製 SVG 或開源圖示（如 OpenMoji），語音用已產生的 Google TTS 音檔。
+
+- **A. 視覺化文法（最優先）**
+  - 全站統一的冠詞顏色：der 藍、die 紅、das 綠、複數紫
+  - 格位句子圖解：用顏色標出句子角色，動詞用箭頭指向受詞
+  - 形容詞字尾變化表做成可點的熱圖
+  - 語序做成拖拉的句框（Satzklammer）
+  - 雙向介系詞做成 Wo／Wohin 拖放情境圖
+- **B. 新題型**：拖拉排序、配對、克漏字即時提示、聽寫（自然人聲）、跟讀（Web Speech 語音辨識，僅 Chrome）
+- **C. 圖像化單字**：名詞配圖示；第 7 課 Wohnen 做成房間情境圖，可點各個熱點
+- **D. 情境對話**：分支式小劇情（看醫生、找房子），有音檔，選擇回應
+- **E. 跨課複習**：統一 SRS 的今日複習佇列、弱點地圖、每輪結算畫面
+- **F. 遊戲化**：XP、等級地圖、徽章、連對 combo、限時挑戰
+- **G. PWA**：可安裝、離線使用（快取音檔）
+
+建議順序：A1 冠詞顏色 → E 結算與今日複習 → A 圖解 → B → C/D → F/G。
+
 ## 進度紀錄
+
+### 2026-10-24：Google 自然人聲（已 commit，未 push、未部署）
+- 人聲：`de-DE-Chirp3-HD-Charon`（男聲），由使用者試聽後選定。
+- `npm run audio`（`tools/generate-audio.mjs`）會收集第 1～3 課所有 `speak()` 的文字，共 2,838 段、約 55,000 字元，產生到 `public/audio/de-charon/*.mp3`（約 24MB），對照表在 `public/audio/manifest.json`。
+- 腳本採增量產生；遇到 429 會自動退避重試（Chirp 3 HD 有每分鐘配額）。
+- `germanSpeech.mjs`：沒有手動選人聲時，優先播放 mp3；沒有對應音檔或播放失敗時，退回 `speechSynthesis`。`audioKey()` 是腳本和播放器共用的文字正規化函式。
+- 語速：0.9 對應原速，其他語速用 `playbackRate` 等比換算。
+- 驗證：22 個測試全數通過。在瀏覽器中按第 1 課的喇叭，確認播放 `/audio/de-charon/*.mp3`（200、audio/mpeg）。iPhone 實機尚未測試。
 
 ### 2026-10-24：第二階段「介面改版」（已 commit，未 push、未部署）
 
@@ -106,11 +133,9 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [ ] 第 2、3 課的字卡也改用 3D 翻面加滑動（目前只有第 1 課有）
 - [ ] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）
 
-### 自然人聲（使用者已選定 Google Cloud TTS 免費額度）
-- [ ] 使用者需要先建立 GCP 專案、啟用 Text-to-Speech API、綁定帳單，並建立服務帳戶金鑰。**金鑰不能進 repo**，請放 `.env` 或本機路徑。
-- [ ] 寫一支 `tools/generate-audio.mjs`：從各課資料取出所有單字和例句，去重後在本機一次呼叫 TTS，產生 mp3 放到 `public/audio/<hash>.mp3`，並輸出對照表 `public/audio/manifest.json`。建議用 `de-DE` Neural2 或 WaveNet 人聲；每月免費額度約 100 萬字元，足夠一次產生全部。
-- [ ] `src/lib/germanSpeech.mjs`：有音檔時優先播放音檔，沒有才退回 `speechSynthesis`
-- [ ] 新增單字時重新執行腳本，只產生缺少的音檔
+### 自然人聲（Google Cloud TTS）
+- 已完成，見進度紀錄。之後**新增或修改任何會被 `speak()` 唸出的文字**（單字、例句、動詞形態）時，都要執行 `npm run audio`。腳本只會補產生缺少的音檔；可以先用 `npm run audio -- --dry-run` 看要產生幾個、共多少字元。
+- [ ] 如果新增了會呼叫 `speak()` 的課程或欄位，記得把它加進 `tools/generate-audio.mjs` 的 `collectTexts()`
 
 ### 先前稽核留下、尚未處理的問題（見 `../german-site-audit/report.html`）
 - [ ] 首頁「學習建議」導向錯誤的課程（應依待複習資料決定）
