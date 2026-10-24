@@ -1,5 +1,6 @@
 ---
 import LessonShell from '../components/LessonShell.astro';
+import LessonSkeleton from '../components/LessonSkeleton.astro';
 import ConnectorTrainer from '../components/ConnectorTrainer.jsx';
 
 export const frontmatter = {
@@ -16,7 +17,7 @@ export const frontmatter = {
 
 <LessonShell frontmatter={frontmatter}>
   <div class="max-w-6xl mx-auto">
-    <ConnectorTrainer client:only="react" />
+    <ConnectorTrainer client:only="react"><LessonSkeleton slot="fallback" /></ConnectorTrainer>
   </div>
 
   <li slot="tips" class="flex items-start gap-2">

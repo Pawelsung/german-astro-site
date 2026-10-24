@@ -12,6 +12,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { verbPrepositions } from '../data/verb-prepositions';
 import { getFirebaseServices } from '../lib/firebase';
 import { loadLesson2Progress, saveLesson2Progress } from '../lib/progressStorage';
+import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 
 const verbData = verbPrepositions;
 
@@ -184,6 +185,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
   const [answered, setAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [picked, setPicked] = useState(null);
 
   const quizPool = useMemo(() => {
     let pool = data;
@@ -200,6 +202,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
     setAnswered(false);
     setIsCorrect(false);
     setShowHint(false);
+    setPicked(null);
 
     let correctOpt = "";
     let distractors = [];
@@ -230,8 +233,10 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
       correct = opt === question.prep;
     }
 
+    answerCue(correct);
     setAnswered(true);
     setIsCorrect(correct);
+    setPicked(opt);
 
     if (correct) {
       setScore(s => s + 10);
@@ -250,6 +255,9 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
       date: new Date().toISOString()
     });
   };
+
+  useAnswerShortcuts({ options, answered, onSelect: handleAnswer, onNext: generateQuestion, enabled: !!question });
+  const feedbackRef = useRevealOnShow(answered);
 
   if (!question) return <div className="p-8 text-center text-gray-500">準備測驗中...</div>;
 
@@ -339,9 +347,9 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
               : (opt === question.prep);
 
             if (isThisCorrect) {
-              btnClass += "bg-green-100 border-green-500 text-green-700 scale-[1.02] shadow-md";
-            } else if (opt === (mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep)) {
-               btnClass += "bg-green-100 border-green-500 text-green-700";
+              btnClass += "fx-correct bg-green-100 border-green-500 text-green-700 scale-[1.02] shadow-md";
+            } else if (opt === picked) {
+               btnClass += "fx-wrong bg-red-100 border-red-500 text-red-700";
             } else {
                btnClass += "bg-gray-50 border-gray-100 text-gray-400 opacity-60";
             }
@@ -350,14 +358,15 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
           }
 
           return (
-            <button key={idx} disabled={answered} onClick={() => handleAnswer(opt)} className={btnClass}>
+            <button key={`${question.id}-${opt}`} data-answer-option disabled={answered} onClick={() => handleAnswer(opt)} className={`${btnClass} inline-flex items-center justify-center gap-2`}>
+              {!answered && idx < 9 && <span className="kbd-hint" aria-hidden="true">{idx + 1}</span>}
               {opt}
             </button>
           )
         })}
       </div>
 
-      <div className={`p-3 sm:p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mt-5 ${answered ? (isCorrect ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200') : 'bg-slate-50 text-slate-600 border border-slate-100'}`}>
+      <div ref={feedbackRef} key={answered ? 'answered' : 'open'} role="status" className={`${answered ? 'fx-enter ' : ''}scroll-mb-6 p-3 sm:p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mt-5 ${answered ? (isCorrect ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200') : 'bg-slate-50 text-slate-600 border border-slate-100'}`}>
         <div className="flex items-center gap-2">
           {answered && (isCorrect ? <CheckCircle size={20} className="sm:w-6 sm:h-6" /> : <XCircle size={20} className="sm:w-6 sm:h-6" />)}
           <span className="font-extrabold text-sm sm:text-base">
@@ -371,6 +380,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
           className="w-full md:w-auto px-5 py-2.5 sm:py-3 bg-white rounded-xl shadow font-extrabold text-sm border hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 active:scale-95"
         >
           {answered ? '下一題' : '跳過'} <Play size={16} className="fill-current" />
+          {answered && <span className="kbd-hint" aria-hidden="true">Enter</span>}
         </button>
       </div>
     </div>

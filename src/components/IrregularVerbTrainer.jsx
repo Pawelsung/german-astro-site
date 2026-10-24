@@ -6,6 +6,16 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { irregularVerbs } from '../data/irregular-verbs';
 import { getFirebaseServices } from '../lib/firebase';
+import { answerCue, useRevealOnShow } from '../lib/answerFeedback';
+
+// Colors a choice button after answering: the right answer pops green, a wrong pick shakes red.
+function choiceTone(option, picked, correct, feedback, pickedClass) {
+  if (feedback && option === correct) return 'fx-correct bg-emerald-100 text-emerald-800 border-emerald-500';
+  if (feedback && option === picked) return 'fx-wrong bg-rose-100 text-rose-800 border-rose-500';
+  if (option === picked) return pickedClass;
+  return 'bg-white text-slate-700 border-slate-200 hover:border-violet-300';
+}
+
 const STORAGE_KEY = 'irregular-verbs-trainer-v3';
 
 const MODES = {
@@ -629,6 +639,10 @@ export default function IrregularVerbTrainer() {
     return () => window.removeEventListener('keydown', handleKeydown);
   }, [deck.length, mode, showBack, currentIndex]);
 
+  const typingFeedbackRef = useRevealOnShow(typingFeedback);
+  const auxFeedbackRef = useRevealOnShow(auxFeedback);
+  const modalFeedbackRef = useRevealOnShow(modalFeedback);
+
   const filteredByLevel = useMemo(() => {
     if (level === 'ALL') return irregularVerbs;
     return irregularVerbs.filter((verb) => verb.level === level);
@@ -814,6 +828,7 @@ export default function IrregularVerbTrainer() {
       normalizeText(typingPerfekt) === normalizeText(currentVerb.perfekt);
 
     const ok = praeteritumOk && perfektOk;
+    answerCue(ok);
 
     if (ok) {
       markCorrect(currentVerb.id);
@@ -834,6 +849,7 @@ export default function IrregularVerbTrainer() {
   function handleAuxAnswer(answer) {
     if (!currentVerb || auxFeedback) return;
     setAuxAnswer(answer);
+    answerCue(answer === currentVerb.auxiliary);
 
     if (answer === currentVerb.auxiliary) {
       markCorrect(currentVerb.id);
@@ -854,6 +870,7 @@ export default function IrregularVerbTrainer() {
   function handleModalSubmit(answer) {
     if (!currentVerb || modalFeedback) return;
     setModalAnswer(answer);
+    answerCue(answer === currentVerb.present3rd);
 
     if (answer === currentVerb.present3rd) {
       markCorrect(currentVerb.id);
@@ -1275,7 +1292,9 @@ export default function IrregularVerbTrainer() {
 
           {typingFeedback && (
             <div
-              className={`rounded-2xl px-5 py-4 font-black ${
+              ref={typingFeedbackRef}
+              role="status"
+              className={`fx-enter scroll-mb-6 rounded-2xl px-5 py-4 font-black ${
                 typingFeedback.type === 'success'
                   ? 'bg-emerald-100 text-emerald-700'
                   : 'bg-rose-100 text-rose-700'
@@ -1315,10 +1334,8 @@ export default function IrregularVerbTrainer() {
               <div className="flex justify-center gap-3 sm:gap-4">
                 <button
                   onClick={() => handleAuxAnswer('hat')}
-                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border ${
-                    auxAnswer === 'hat'
-                      ? 'bg-violet-600 text-white border-violet-600'
-                      : 'bg-white text-slate-700 border-slate-200'
+                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border-2 transition-all active:scale-95 ${
+                    choiceTone('hat', auxAnswer, currentVerb.auxiliary, auxFeedback, 'bg-violet-600 text-white border-violet-600')
                   }`}
                   type="button"
                 >
@@ -1326,10 +1343,8 @@ export default function IrregularVerbTrainer() {
                 </button>
                 <button
                   onClick={() => handleAuxAnswer('ist')}
-                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border ${
-                    auxAnswer === 'ist'
-                      ? 'bg-violet-600 text-white border-violet-600'
-                      : 'bg-white text-slate-700 border-slate-200'
+                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border-2 transition-all active:scale-95 ${
+                    choiceTone('ist', auxAnswer, currentVerb.auxiliary, auxFeedback, 'bg-violet-600 text-white border-violet-600')
                   }`}
                   type="button"
                 >
@@ -1341,7 +1356,9 @@ export default function IrregularVerbTrainer() {
 
           {auxFeedback && (
             <div
-              className={`rounded-2xl px-5 py-4 font-black ${
+              ref={auxFeedbackRef}
+              role="status"
+              className={`fx-enter scroll-mb-6 rounded-2xl px-5 py-4 font-black ${
                 auxFeedback.type === 'success'
                   ? 'bg-emerald-100 text-emerald-700'
                   : 'bg-rose-100 text-rose-700'
@@ -1374,10 +1391,8 @@ export default function IrregularVerbTrainer() {
                   <button
                     key={option}
                     onClick={() => handleModalSubmit(option)}
-                    className={`px-4 sm:px-6 py-4 rounded-2xl font-black text-lg sm:text-xl border break-words ${
-                      modalAnswer === option
-                        ? 'bg-indigo-600 text-white border-indigo-600'
-                        : 'bg-white text-slate-700 border-slate-200'
+                    className={`px-4 sm:px-6 py-4 rounded-2xl font-black text-lg sm:text-xl border-2 break-words transition-all active:scale-95 ${
+                      choiceTone(option, modalAnswer, currentVerb.present3rd, modalFeedback, 'bg-indigo-600 text-white border-indigo-600')
                     }`}
                     type="button"
                   >
@@ -1408,7 +1423,9 @@ export default function IrregularVerbTrainer() {
 
           {modalFeedback && (
             <div
-              className={`rounded-2xl px-5 py-4 font-black ${
+              ref={modalFeedbackRef}
+              role="status"
+              className={`fx-enter scroll-mb-6 rounded-2xl px-5 py-4 font-black ${
                 modalFeedback.type === 'success'
                   ? 'bg-emerald-100 text-emerald-700'
                   : 'bg-rose-100 text-rose-700'

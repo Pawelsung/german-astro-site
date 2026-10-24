@@ -5,6 +5,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import lessonData from '../data/lesson6-adjective-declension';
 import { loadLesson6Progress, saveLesson6Progress } from '../lib/progressStorage';
+import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 
 const MODE_LABELS = {
   concept: '概念',
@@ -263,6 +264,7 @@ export default function AdjectiveDeclensionTrainer() {
   function answer(option) {
     if (!current || selected) return;
     const isCorrect = option === current.answer;
+    answerCue(isCorrect);
     setAnsweredExercise(current);
     setSelected(option);
     setProgress((prev) => {
@@ -298,6 +300,9 @@ export default function AdjectiveDeclensionTrainer() {
       };
     });
   }
+
+  useAnswerShortcuts({ options: displayedOptions || [], answered: !!selected, onSelect: answer, onNext: () => next() });
+  const feedbackRef = useRevealOnShow(selected);
 
   function next() {
     if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
@@ -412,7 +417,7 @@ export default function AdjectiveDeclensionTrainer() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-amber-100 bg-white/95 p-4 shadow-sm md:p-5">
+              <div key={current.id} className="fx-question rounded-2xl border border-amber-100 bg-white/95 p-4 shadow-sm md:p-5">
                 <div className="text-sm font-black text-slate-400">{current.questionZh}</div>
                 <h2 className="mt-3 break-words text-2xl font-black leading-relaxed text-slate-900 md:text-3xl">{current.prompt}</h2>
                 {current.given && (
@@ -426,16 +431,19 @@ export default function AdjectiveDeclensionTrainer() {
               </div>
 
               <div className={cx('mt-3 grid gap-2', optionIsLong(displayedOptions) ? 'grid-cols-1' : 'grid-cols-2')}>
-                {displayedOptions.map((option) => {
+                {displayedOptions.map((option, optionIndex) => {
                   const isAnswer = option === current.answer;
                   const isSelected = option === selected;
                   return (
                     <button
-                      key={option}
+                      key={`${current.id}-${option}`}
                       type="button"
+                      data-answer-option
                       onClick={() => answer(option)}
                       className={cx(
-                        'min-h-14 rounded-2xl border-2 px-3 py-3 text-left text-base font-black shadow-sm transition-all',
+                        'flex min-h-14 items-center gap-2 rounded-2xl border-2 px-3 py-3 text-left text-base font-black shadow-sm transition-all active:scale-[0.98]',
+                        selected && isAnswer && 'fx-correct',
+                        selected && isSelected && !isAnswer && 'fx-wrong',
                         !optionIsLong(displayedOptions) && 'text-center',
                         !selected && 'border-amber-100 bg-white text-slate-800 hover:border-amber-400 hover:bg-amber-50',
                         selected && isAnswer && 'border-emerald-600 bg-emerald-100 text-emerald-900',
@@ -443,14 +451,15 @@ export default function AdjectiveDeclensionTrainer() {
                         selected && !isSelected && !isAnswer && 'border-slate-100 bg-slate-50 text-slate-400'
                       )}
                     >
-                      {option}
+                      {!selected && optionIndex < 9 && <span className="kbd-hint" aria-hidden="true">{optionIndex + 1}</span>}
+                      <span className={cx('min-w-0 flex-1', !optionIsLong(displayedOptions) && 'text-center')}>{option}</span>
                     </button>
                   );
                 })}
               </div>
 
               {selected && (
-                <div className={cx('mt-4 rounded-2xl border-2 p-4 shadow-sm', selected === current.answer ? 'border-emerald-500 bg-emerald-50' : 'border-rose-500 bg-rose-50')}>
+                <div ref={feedbackRef} role="status" className={cx('fx-enter mt-4 scroll-mb-24 rounded-2xl border-2 p-4 shadow-sm', selected === current.answer ? 'border-emerald-500 bg-emerald-50' : 'border-rose-500 bg-rose-50')}>
                   <div className="flex items-center gap-2">
                     {selected === current.answer ? <CheckCircle className="text-emerald-700" size={20} /> : <XCircle className="text-rose-700" size={20} />}
                     <div className={cx('font-black', selected === current.answer ? 'text-emerald-900' : 'text-rose-900')}>
@@ -469,8 +478,9 @@ export default function AdjectiveDeclensionTrainer() {
               <button type="button" onClick={prev} className="rounded-2xl border border-amber-100 bg-white px-4 py-3 text-sm font-black text-amber-700 shadow-sm hover:bg-amber-50">
                 上一題
               </button>
-              <button type="button" onClick={next} className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-black text-white shadow-sm hover:bg-slate-800">
+              <button type="button" onClick={next} className={cx('inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-black text-white shadow-sm transition-all hover:bg-slate-800 active:scale-[0.98]', selected && 'ring-4 ring-amber-400/40')}>
                 下一題
+                {selected && <span className="kbd-hint !border-white/30 !bg-white/15 !text-white" aria-hidden="true">Enter</span>}
               </button>
             </div>
           </section>

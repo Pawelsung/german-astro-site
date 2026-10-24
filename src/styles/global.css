@@ -422,3 +422,71 @@ button:disabled { cursor: default; }
 .lesson-nav-link { flex:1; min-width:52px; text-align:center; white-space:nowrap; padding:9px 12px; border-radius:10px; font-size:13px; font-weight:700; color:var(--text-muted); }
 .lesson-nav-link[aria-current=page] { color:#0369a1; background:var(--surface); box-shadow:0 1px 3px #00000010; }
 .lesson-nav-link:hover { background:var(--surface); }
+
+/* Dark-mode gaps: -900 text, hover backgrounds and green/red/cyan tints were left light. */
+.dark .text-teal-900 { color: var(--text) !important; }
+.dark .text-emerald-900,
+.dark .text-green-800,
+.dark .text-green-700 { color: #6ee7b7 !important; }
+.dark .text-rose-900,
+.dark .text-red-800,
+.dark .text-red-700 { color: #fda4af !important; }
+.dark .text-amber-900 { color: #fcd34d !important; }
+.dark .text-cyan-800,
+.dark .text-cyan-700 { color: #67e8f9 !important; }
+.dark .hover\:text-teal-900:hover { color: #5eead4 !important; }
+.dark .bg-green-50,
+.dark .bg-green-100 { background-color: rgb(6 78 59 / 0.42) !important; }
+.dark .bg-red-50,
+.dark .bg-red-100 { background-color: rgb(76 5 25 / 0.45) !important; }
+.dark .bg-cyan-50 { background-color: rgb(8 51 68 / 0.5) !important; }
+.dark .bg-amber-100\/50 { background-color: rgb(69 26 3 / 0.42) !important; }
+.dark .bg-gray-200 { background-color: var(--surface-muted) !important; }
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-gray-50:hover,
+.dark .hover\:bg-gray-200:hover { background-color: var(--surface-muted) !important; }
+.dark .hover\:bg-teal-50:hover,
+.dark .hover\:bg-emerald-50:hover { background-color: rgb(19 78 74 / 0.6) !important; }
+.dark .hover\:bg-sky-50:hover,
+.dark .hover\:bg-blue-50:hover { background-color: rgb(8 47 73 / 0.7) !important; }
+.dark .hover\:bg-violet-50:hover,
+.dark .hover\:bg-indigo-100:hover { background-color: rgb(46 16 101 / 0.6) !important; }
+.dark .hover\:bg-rose-50:hover { background-color: rgb(76 5 25 / 0.6) !important; }
+.dark .hover\:bg-amber-50:hover,
+.dark .hover\:bg-amber-50\/50:hover,
+.dark .hover\:bg-amber-100:hover,
+.dark .hover\:bg-amber-200:hover { background-color: rgb(69 26 3 / 0.6) !important; }
+
+/* Answer feedback motion (disabled by the reduced-motion policy above). */
+@keyframes fx-pop { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
+@keyframes fx-shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(3px); } }
+@keyframes fx-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fx-glow { 0% { box-shadow: 0 0 0 0 rgb(16 185 129 / 0.55); } 100% { box-shadow: 0 0 0 14px rgb(16 185 129 / 0); } }
+@keyframes fx-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.fx-correct { animation: fx-pop 320ms cubic-bezier(.34,1.56,.64,1), fx-glow 700ms ease-out; }
+.fx-wrong { animation: fx-shake 380ms ease-in-out; }
+.fx-enter { animation: fx-enter 260ms ease-out both; }
+.fx-question { animation: fx-enter 220ms ease-out both; }
+.kbd-hint { display: inline-grid; place-items: center; min-width: 1.35rem; height: 1.35rem; padding: 0 0.3rem; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 0.35rem; font-size: 0.68rem; font-weight: 800; line-height: 1; color: var(--text-faint); background: var(--surface); }
+@media (hover: none) { .kbd-hint { display: none; } }
+
+.sound-toggle { display: inline-flex; align-items: center; gap: 0.35rem; min-height: 2rem; padding: 0 0.7rem; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-muted); font-size: 0.75rem; font-weight: 800; }
+.sound-toggle[aria-pressed="false"] { opacity: 0.65; }
+
+.lesson-skeleton { display: grid; gap: 16px; }
+.lesson-skeleton .sk { border-radius: 16px; background: linear-gradient(90deg, var(--surface-muted) 25%, var(--surface-soft) 50%, var(--surface-muted) 75%); background-size: 200% 100%; animation: fx-shimmer 1.4s linear infinite; }
+.lesson-skeleton .sk-bar { height: 48px; }
+.lesson-skeleton .sk-card { height: 260px; }
+.lesson-skeleton .sk-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lesson-skeleton .sk-option { height: 56px; }
+.lesson-skeleton p { text-align: center; font-size: 13px; font-weight: 700; color: var(--text-faint); }
+.vocab-answers button { display:inline-flex; align-items:center; justify-content:center; gap:8px; transition: transform 120ms ease, border-color 150ms ease, background-color 150ms ease; }
+.vocab-answers button:active:not(:disabled) { transform: scale(0.97); }
+.vocab-answers button.is-correct { opacity:1; border-color:#059669; background:#d1fae5; color:#065f46; }
+.vocab-answers button.is-wrong { opacity:1; border-color:#e11d48; background:#ffe4e6; color:#9f1239; }
+.dark .vocab-answers button.is-correct { background:#064e3b; color:#a7f3d0; }
+.dark .vocab-answers button.is-wrong { background:#4c0519; color:#fecdd3; }
+.vocab-primary .kbd-hint { border-color: rgb(255 255 255 / 0.3); background: rgb(255 255 255 / 0.15); color: white; }
+.vocab-primary.is-ready { box-shadow: 0 0 0 4px rgb(14 165 233 / 0.3); }
+.vocab-feedback { scroll-margin-bottom: 96px; }

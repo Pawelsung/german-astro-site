@@ -1,5 +1,6 @@
 ---
 import LessonShell from '../components/LessonShell.astro';
+import LessonSkeleton from '../components/LessonSkeleton.astro';
 import AdjectiveDeclensionTrainer from '../components/AdjectiveDeclensionTrainer.jsx';
 
 export const frontmatter = {
@@ -16,7 +17,7 @@ export const frontmatter = {
 
 <LessonShell frontmatter={frontmatter}>
   <div class="max-w-6xl mx-auto">
-    <AdjectiveDeclensionTrainer client:only="react" />
+    <AdjectiveDeclensionTrainer client:only="react"><LessonSkeleton slot="fallback" /></AdjectiveDeclensionTrainer>
   </div>
 
   <li slot="tips" class="flex items-start gap-2">

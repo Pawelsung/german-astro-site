@@ -72,7 +72,12 @@ const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
           >
             ← 返回學習工作台
           </a>
-          <UserAccount client:only="react" compact />
+          <div class="flex items-center gap-2">
+            <button type="button" class="sound-toggle" data-sound-toggle aria-pressed="true" title="答題音效">
+              <span data-sound-icon aria-hidden="true">🔊</span><span>音效</span>
+            </button>
+            <UserAccount client:only="react" compact />
+          </div>
         </div>
 
         <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -120,4 +125,20 @@ const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
       </div>
     )}
   </main>
+  <script>
+    import { SOUND_STORAGE_KEY, isSoundEnabled } from '../lib/answerFeedback';
+
+    const toggle = document.querySelector('[data-sound-toggle]');
+    const icon = document.querySelector('[data-sound-icon]');
+    const render = (on) => {
+      toggle?.setAttribute('aria-pressed', String(on));
+      if (icon) icon.textContent = on ? '🔊' : '🔇';
+    };
+    render(isSoundEnabled());
+    toggle?.addEventListener('click', () => {
+      const on = !isSoundEnabled();
+      try { localStorage.setItem(SOUND_STORAGE_KEY, String(on)); } catch {}
+      render(on);
+    });
+  </script>
 </Layout>

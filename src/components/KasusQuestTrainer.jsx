@@ -4,6 +4,7 @@ import { isReviewRequested } from '../lib/progressStorage';
 import React, { useEffect, useMemo, useState } from 'react';
 import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import data from '../data/lesson4-kasus-quest-data.json';
+import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 
 const STORAGE_KEY = 'kasus-quest-trainer-v1';
 
@@ -256,6 +257,7 @@ export default function KasusQuestTrainer() {
   function answer(option) {
     if (!current || selected) return;
     const isCorrect = option === current.answer;
+    answerCue(isCorrect);
     setAnsweredExercise(current);
     setSelected(option);
     setShowHint(true);
@@ -293,6 +295,9 @@ export default function KasusQuestTrainer() {
       };
     });
   }
+
+  useAnswerShortcuts({ options: current?.options || [], answered: !!selected, onSelect: answer, onNext: () => next() });
+  const feedbackRef = useRevealOnShow(selected);
 
   function next() {
     if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
@@ -384,7 +389,7 @@ export default function KasusQuestTrainer() {
       ) : (
         <div className="grid justify-center gap-4 xl:grid-cols-[minmax(0,760px)_320px]">
           <div className="w-full max-w-[760px] min-w-0 rounded-2xl border border-teal-200 bg-teal-50/70 p-2 shadow-md shadow-teal-900/10 md:p-4 dark:bg-slate-900 dark:border-teal-900/60 dark:shadow-black/20">
-            <div className="rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 via-cyan-50/60 to-white p-3 md:p-5 dark:from-teal-950/35 dark:via-cyan-950/20 dark:to-slate-900 dark:border-teal-900/60">
+            <div key={current.id} className="fx-question rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 via-cyan-50/60 to-white p-3 md:p-5 dark:from-teal-950/35 dark:via-cyan-950/20 dark:to-slate-900 dark:border-teal-900/60">
               <div className="mb-3 grid grid-cols-[1fr_auto] items-center gap-3">
                 <div className="min-w-0">
                   <div className="flex min-w-0 flex-wrap gap-1.5">
@@ -416,16 +421,19 @@ export default function KasusQuestTrainer() {
               </div>
 
               <div className={cx('mt-3 grid gap-2 md:mt-4 md:grid-cols-2', compactOptions && 'grid-cols-2')}>
-                {current.options.map((option) => {
+                {current.options.map((option, optionIndex) => {
                   const isAnswer = option === current.answer;
                   const isSelected = option === selected;
                   return (
                     <button
-                      key={option}
+                      key={`${current.id}-${option}`}
                       type="button"
+                      data-answer-option
                       onClick={() => answer(option)}
                       className={cx(
-                        'min-h-14 rounded-2xl border-2 px-3 py-3 text-left text-base font-black shadow-sm transition-all md:px-4',
+                        'flex min-h-14 items-center gap-2 rounded-2xl border-2 px-3 py-3 text-left text-base font-black shadow-sm transition-all active:scale-[0.98] md:px-4',
+                        selected && isAnswer && 'fx-correct',
+                        selected && isSelected && !isAnswer && 'fx-wrong',
                         compactOptions && 'text-center',
                         !selected && 'border-teal-100 bg-white text-slate-800 hover:border-teal-400 hover:bg-teal-50 hover:text-teal-900',
                         selected && isAnswer && 'border-emerald-600 bg-emerald-100 text-emerald-900 shadow-emerald-100',
@@ -433,14 +441,15 @@ export default function KasusQuestTrainer() {
                         selected && !isSelected && !isAnswer && 'border-slate-100 bg-slate-50 text-slate-400 shadow-none'
                       )}
                     >
-                      {cleanOption(option)}
+                      {!selected && optionIndex < 9 && <span className="kbd-hint" aria-hidden="true">{optionIndex + 1}</span>}
+                      <span className={cx('min-w-0 flex-1', compactOptions && 'text-center')}>{cleanOption(option)}</span>
                     </button>
                   );
                 })}
               </div>
 
               {selected && (
-                <div className={cx('mt-4 rounded-2xl border-2 p-4 shadow-sm', selected === current.answer ? 'border-emerald-500 bg-emerald-50' : 'border-rose-500 bg-rose-50')}>
+                <div ref={feedbackRef} role="status" className={cx('fx-enter mt-4 scroll-mb-24 rounded-2xl border-2 p-4 shadow-sm', selected === current.answer ? 'border-emerald-500 bg-emerald-50' : 'border-rose-500 bg-rose-50')}>
                   <div className="flex items-center gap-2">
                     {selected === current.answer ? <CheckCircle className="text-emerald-700" size={20} /> : <XCircle className="text-rose-700" size={20} />}
                   <div className={cx('font-black', selected === current.answer ? 'text-emerald-900' : 'text-rose-900')}>{selected === current.answer ? '正確' : `正確答案：${cleanOption(current.answer)}`}</div>
@@ -483,8 +492,9 @@ export default function KasusQuestTrainer() {
               <button type="button" onClick={prev} className="rounded-2xl border border-teal-100 bg-white px-4 py-3 text-sm font-black text-teal-700 shadow-sm hover:border-teal-300 hover:bg-teal-50">
                 ← 上一題
               </button>
-              <button type="button" onClick={next} className="rounded-2xl bg-teal-700 px-4 py-3 text-sm font-black text-white shadow-sm shadow-teal-900/20 hover:bg-teal-800">
+              <button type="button" onClick={next} className={cx('inline-flex items-center justify-center gap-2 rounded-2xl bg-teal-700 px-4 py-3 text-sm font-black text-white shadow-sm shadow-teal-900/20 transition-all hover:bg-teal-800 active:scale-[0.98]', selected && 'ring-4 ring-teal-400/40')}>
                 下一題 →
+                {selected && <span className="kbd-hint !border-white/30 !bg-white/15 !text-white" aria-hidden="true">Enter</span>}
               </button>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { useStoredProgress } from '../hooks/useStoredProgress';
 import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
 import { isReviewRequested } from '../lib/progressStorage';
 import React, { useEffect, useMemo, useState } from 'react';
+import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import {
   ArrowRight,
   BookOpen,
@@ -366,6 +367,9 @@ function QuizView({ questions, progress, setProgress }) {
     setResult(null);
   }, [question?.id]);
 
+  useAnswerShortcuts({ answered: result !== null, onNext: () => setIndex((current) => (current + 1) % questions.length), enabled: !!question });
+  const resultRef = useRevealOnShow(result !== null);
+
   if (!question) {
     return (
       <div className="min-w-0 rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
@@ -380,6 +384,7 @@ function QuizView({ questions, progress, setProgress }) {
       question,
       question.type === 'order_words' ? (draft || []).map((item) => item.token) : draft
     );
+    answerCue(correct);
     setResult(correct);
     setProgress((current) => {
       const answers = {
@@ -424,10 +429,12 @@ function QuizView({ questions, progress, setProgress }) {
       <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <QuestionPrompt question={question} />
         <div className="min-w-0 space-y-4">
-          <QuestionInput question={question} value={draft} onChange={setDraft} locked={result !== null} />
+          <div className={cx(result === false && 'fx-wrong', result === true && 'fx-correct rounded-xl')}>
+            <QuestionInput question={question} value={draft} onChange={setDraft} locked={result !== null} />
+          </div>
 
           {result !== null && (
-            <div className={cx('rounded-xl border p-4', result ? 'border-emerald-200 bg-emerald-50' : 'border-rose-200 bg-rose-50')}>
+            <div ref={resultRef} role="status" className={cx('fx-enter scroll-mb-24 rounded-xl border p-4', result ? 'border-emerald-200 bg-emerald-50' : 'border-rose-200 bg-rose-50')}>
               <div className="mb-2 flex items-center gap-2 font-black">
                 {result ? <CheckCircle className="h-5 w-5 text-emerald-600" /> : <XCircle className="h-5 w-5 text-rose-600" />}
                 <span className={result ? 'text-emerald-800' : 'text-rose-800'}>
@@ -459,9 +466,10 @@ function QuizView({ questions, progress, setProgress }) {
             <button
               type="button"
               onClick={next}
-              className="rounded-xl border border-violet-200 bg-violet-50 px-4 py-3 text-sm font-black text-violet-700"
+              className={cx('inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-black transition-all active:scale-[0.98]', result !== null ? 'border-violet-600 bg-violet-600 text-white ring-4 ring-violet-400/30' : 'border-violet-200 bg-violet-50 text-violet-700')}
             >
               下一題
+              {result !== null && <span className="kbd-hint !border-white/30 !bg-white/15 !text-white" aria-hidden="true">Enter</span>}
             </button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 ---
 import LessonShell from '../components/LessonShell.astro';
+import LessonSkeleton from '../components/LessonSkeleton.astro';
 import VocabularyTrainer from '../components/VocabularyTrainer.jsx';
 
 export const frontmatter = {
@@ -16,6 +17,6 @@ export const frontmatter = {
 
 <LessonShell frontmatter={frontmatter}>
   <div class="max-w-6xl mx-auto">
-    <VocabularyTrainer client:only="react"><p slot="fallback" class="p-8 text-center">正在準備單字工作台…</p></VocabularyTrainer>
+    <VocabularyTrainer client:only="react"><LessonSkeleton slot="fallback" /></VocabularyTrainer>
   </div>
 </LessonShell>
