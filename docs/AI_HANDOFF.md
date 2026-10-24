@@ -62,6 +62,10 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-24：各課內容檢視
+- 使用者反映：介面變好看了，但課程內容和使用體驗仍然不好。逐課檢視的結果寫在 `docs/lesson-review-2026-10-24.md`，包含問題證據和三批修正順序。
+- 最優先處理：第一批的 6 個 bug 和答案錯判問題，例如第 2 課有 20% 的填空題答案直接露出、第 4 課引導模式在作答前洩漏答案。
+
 ### 2026-10-24：推上 GitHub 並部署正式站
 - 已 push 到 `origin/main`（GitHub Pawelsung/german-astro-site），並部署到 https://german-astro-site.web.app/ （只部署 Hosting，Firestore rules 未變動）。
 - 本機沒有全域安裝 firebase CLI，部署指令是：`npx -y firebase-tools@14 deploy --only hosting --project german-astro-site --non-interactive`（CLI 已用 gtt.pawel@gmail.com 登入）。部署前務必先執行 `npm run build`。
