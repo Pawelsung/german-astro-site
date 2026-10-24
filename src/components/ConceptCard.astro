@@ -1,0 +1,219 @@
+---
+// "1-minute concept" card shown above each trainer: the rule first, then practice.
+// Open on the first visit to a lesson, collapsed afterwards (remembered per lesson in localStorage).
+interface Props {
+  lesson: string;
+}
+
+const { lesson } = Astro.props;
+const titles: Record<string, string> = {
+  l1: '背單字的三個重點',
+  l2: '動詞＋介系詞要整組記',
+  l3: '不規則動詞：用母音變化分組記',
+  l4: '格位：先找角色，再變冠詞',
+  l5: '連接詞決定動詞放哪裡',
+  l6: '形容詞字尾：看冠詞有沒有「露出」性別'
+};
+const ablaut = [
+  ['ei → ie → ie', 'bleiben – blieb – geblieben', 'schreiben, steigen'],
+  ['ei → i → i', 'schneiden – schnitt – geschnitten', 'greifen, reiten'],
+  ['ie → o → o', 'fliegen – flog – geflogen', 'verlieren, schließen'],
+  ['i → a → u', 'finden – fand – gefunden', 'trinken, singen'],
+  ['i → a → o', 'beginnen – begann – begonnen', 'schwimmen, gewinnen'],
+  ['e → a → o', 'helfen – half – geholfen', 'sprechen, nehmen'],
+  ['e → a → e', 'geben – gab – gegeben', 'lesen, sehen'],
+  ['a → u → a', 'fahren – fuhr – gefahren', 'tragen, waschen'],
+  ['a → ie → a', 'schlafen – schlief – geschlafen', 'fallen, laufen']
+];
+---
+
+{titles[lesson] && (
+  <details id="concept-card" class="concept-card" data-concept={lesson} open>
+    <summary>
+      <span class="concept-badge">1 分鐘重點</span>
+      <span class="concept-title">{titles[lesson]}</span>
+      <span class="concept-toggle" aria-hidden="true"></span>
+    </summary>
+
+    <div class="concept-body">
+      {lesson === 'l1' && (
+        <>
+          <section>
+            <h3>① 名詞一定連冠詞一起記</h3>
+            <p class="concept-chips" lang="de">
+              <span class="g-der">der Tisch</span><span class="g-die">die Lampe</span><span class="g-das">das Bett</span><span class="g-pl">die Tische</span>
+            </p>
+            <p>全站顏色都一樣：<b class="g-der">der 藍</b>、<b class="g-die">die 紅</b>、<b class="g-das">das 綠</b>、<b class="g-pl">複數紫</b>。用顏色記，比死背字母更容易。</p>
+          </section>
+          <section>
+            <h3>② 看字尾猜性別（大多數適用）</h3>
+            <table class="concept-table" lang="de">
+              <tr><td class="g-die">-ung · -heit · -keit · -schaft · -ion</td><td><span class="g-die">die</span> Zeitung, Freiheit</td></tr>
+              <tr><td class="g-das">-chen · -lein · -um</td><td><span class="g-das">das</span> Mädchen, Museum</td></tr>
+              <tr><td class="g-der">-er（人）· -ling · -ismus</td><td><span class="g-der">der</span> Lehrer, Frühling</td></tr>
+            </table>
+          </section>
+          <section>
+            <h3>③ 練習順序</h3>
+            <ol>
+              <li><b>字卡</b>：看單字、翻面看例句，右滑「記住了」、左滑「還不熟」</li>
+              <li><b>冠詞</b>：只看名詞，選 der／die／das</li>
+              <li><b>聽寫</b>：聽發音拼出單字，順便練大小寫和變音</li>
+            </ol>
+          </section>
+        </>
+      )}
+
+      {lesson === 'l2' && (
+        <>
+          <section>
+            <h3>① 公式：動詞 ＋ 介系詞 ＋ 格位</h3>
+            <p class="concept-formula" lang="de"><span>warten</span><span>auf</span><span class="case-tone-akk">+ Akk</span></p>
+            <p lang="de" class="concept-example">Ich warte auf <b>den</b> Bus.</p>
+            <p>介系詞和格位都是固定搭配，<b>不能用中文意思推</b>，要像一個單字一樣整組記。</p>
+          </section>
+          <section>
+            <h3>② 常見搭配分兩邊</h3>
+            <div class="concept-columns" lang="de">
+              <div><p class="case-tone-akk concept-col-head">+ Akkusativ</p><p>warten <b>auf</b> · sich freuen <b>auf</b><br />sprechen <b>über</b> · sich ärgern <b>über</b><br />sich interessieren <b>für</b> · denken <b>an</b><br />sich kümmern <b>um</b></p></div>
+              <div><p class="case-tone-dat concept-col-head">+ Dativ</p><p>sprechen <b>mit</b> · anfangen <b>mit</b><br />träumen <b>von</b> · abhängen <b>von</b><br />gratulieren <b>zu</b> · fragen <b>nach</b><br />sich bedanken <b>bei</b></p></div>
+            </div>
+          </section>
+          <section>
+            <h3>③ 小陷阱</h3>
+            <ul>
+              <li>mit／von／zu／nach／bei 永遠接 Dativ；für／um 永遠接 Akkusativ</li>
+              <li>auf、an、über 在固定搭配裡<b>沒有</b> Wo／Wohin 規則，要直接背</li>
+              <li>代替「事情」時用 da(r)- 複合詞：Ich warte <b>darauf</b>.</li>
+            </ul>
+          </section>
+        </>
+      )}
+
+      {lesson === 'l3' && (
+        <>
+          <section class="concept-wide">
+            <h3>① 不規則動詞大多照固定的母音變化走</h3>
+            <table class="concept-table concept-ablaut" lang="de">
+              <tr><th>母音</th><th>代表</th><th>同一組</th></tr>
+              {ablaut.map(([pattern, example, more]) => (
+                <tr><td><b>{pattern}</b></td><td>{example}</td><td>{more}</td></tr>
+              ))}
+            </table>
+          </section>
+          <section>
+            <h3>② Perfekt 用 haben 還是 sein？</h3>
+            <ul>
+              <li><b>sein</b>：位置移動（gehen、fahren、fliegen），或狀態改變（aufwachen、sterben、werden），另外還有 sein、bleiben</li>
+              <li><b>haben</b>：其他大部分動詞，包含所有帶直接受詞的動詞</li>
+            </ul>
+          </section>
+          <section>
+            <h3>③ 現在式也會變母音（只有 du／er）</h3>
+            <p lang="de">helfen → du <b>hilfst</b>, er <b>hilft</b><br />sehen → er <b>sieht</b> · fahren → er <b>fährt</b></p>
+          </section>
+        </>
+      )}
+
+      {lesson === 'l4' && (
+        <>
+          <section>
+            <h3>① 先問「誰對誰做什麼」</h3>
+            <p class="concept-roles">
+              <span class="case-tone-nom">Nominativ · 主詞 · Wer?</span>
+              <span class="case-tone-akk">Akkusativ · 直接受詞 · Wen? Was?</span>
+              <span class="case-tone-dat">Dativ · 間接受詞 · Wem?</span>
+            </p>
+            <p lang="de" class="concept-example">
+              <span class="concept-mark case-tone-nom">Der Vater</span> gibt <span class="concept-mark case-tone-dat">dem Kind</span> <span class="concept-mark case-tone-akk">einen Ball</span>.
+            </p>
+          </section>
+          <section>
+            <h3>② 再查冠詞表</h3>
+            <table class="concept-table concept-grid" lang="de">
+              <tr><th></th><th class="g-der">陽性</th><th class="g-die">陰性</th><th class="g-das">中性</th><th class="g-pl">複數</th></tr>
+              <tr><th class="case-tone-nom">Nom</th><td>der</td><td>die</td><td>das</td><td>die</td></tr>
+              <tr><th class="case-tone-akk">Akk</th><td><b>den</b></td><td>die</td><td>das</td><td>die</td></tr>
+              <tr><th class="case-tone-dat">Dat</th><td><b>dem</b></td><td><b>der</b></td><td><b>dem</b></td><td><b>den</b> …n</td></tr>
+            </table>
+            <p>Akkusativ 只有<b>陽性</b>會改變（der → den）；Dativ 每一欄都會改變。</p>
+          </section>
+          <section>
+            <h3>③ 介系詞直接決定格位</h3>
+            <ul lang="de">
+              <li><span class="case-tone-akk concept-inline">Akk</span> durch, für, gegen, ohne, um</li>
+              <li><span class="case-tone-dat concept-inline">Dat</span> aus, bei, mit, nach, seit, von, zu</li>
+              <li><b>雙向</b> an, auf, hinter, in, neben, über, unter, vor, zwischen：Wo?（位置）用 Dat，Wohin?（方向）用 Akk</li>
+            </ul>
+          </section>
+        </>
+      )}
+
+      {lesson === 'l5' && (
+        <>
+          <section class="concept-wide">
+            <h3>看連接詞屬於哪一類，就知道動詞要放哪裡</h3>
+            <div class="concept-orders" lang="de">
+              <div>
+                <p class="concept-order-head">① 並列連接詞（不佔位置）<small>und · aber · denn · oder · sondern</small></p>
+                <p class="concept-slots"><span>Ich bin müde,</span><span class="slot-0">denn</span><span>ich</span><span class="slot-verb">bin</span><span>krank.</span></p>
+              </div>
+              <div>
+                <p class="concept-order-head">② 連接副詞（佔第一位 → 倒裝）<small>deshalb · trotzdem · dann · außerdem</small></p>
+                <p class="concept-slots"><span>Ich bin krank.</span><span class="slot-1">Deshalb</span><span class="slot-verb">bleibe</span><span>ich zu Hause.</span></p>
+              </div>
+              <div>
+                <p class="concept-order-head">③ 從屬連接詞（動詞放最後）<small>weil · dass · obwohl · wenn · als</small></p>
+                <p class="concept-slots"><span>…,</span><span class="slot-1">weil</span><span>ich krank</span><span class="slot-verb">bin.</span></p>
+              </div>
+              <div>
+                <p class="concept-order-head">④ 子句放句首 → 主句動詞緊接在逗號後</p>
+                <p class="concept-slots"><span class="slot-1">Weil ich krank bin,</span><span class="slot-verb">bleibe</span><span>ich zu Hause.</span></p>
+              </div>
+            </div>
+            <p class="concept-legend"><span class="slot-verb">動詞</span> 的位置就是這一課的全部重點。</p>
+          </section>
+        </>
+      )}
+
+      {lesson === 'l6' && (
+        <>
+          <section>
+            <h3>① 定冠詞 der／die／das 之後：只有 -e 或 -en</h3>
+            <table class="concept-table concept-grid" lang="de">
+              <tr><th></th><th class="g-der">陽性</th><th class="g-die">陰性</th><th class="g-das">中性</th><th class="g-pl">複數</th></tr>
+              <tr><th class="case-tone-nom">Nom</th><td class="end-e">-e</td><td class="end-e">-e</td><td class="end-e">-e</td><td class="end-en">-en</td></tr>
+              <tr><th class="case-tone-akk">Akk</th><td class="end-en">-en</td><td class="end-e">-e</td><td class="end-e">-e</td><td class="end-en">-en</td></tr>
+              <tr><th class="case-tone-dat">Dat</th><td class="end-en">-en</td><td class="end-en">-en</td><td class="end-en">-en</td><td class="end-en">-en</td></tr>
+            </table>
+            <p lang="de">der gut<b>e</b> Film · mit dem gut<b>en</b> Film</p>
+          </section>
+          <section>
+            <h3>② 不定冠詞 ein：冠詞沒露出性別，形容詞來補</h3>
+            <p lang="de">ein gut<b class="g-der">er</b> Film（der）· ein gut<b class="g-das">es</b> Buch（das）</p>
+            <p>其他情況和 ① 相同：einen gut<b>en</b> Film、einer gut<b>en</b> Frau。</p>
+          </section>
+          <section>
+            <h3>③ 沒有冠詞：形容詞自己扛冠詞的字尾</h3>
+            <p lang="de">gut<b class="g-der">er</b> Kaffee（der）· gut<b class="g-die">e</b> Musik（die）· gut<b class="g-das">es</b> Brot（das）<br />mit gut<b>em</b> Kaffee（dem）</p>
+          </section>
+        </>
+      )}
+    </div>
+  </details>
+)}
+
+<script is:inline>
+  // Runs while the page is parsed, so a remembered card is collapsed before the first paint (no jump).
+  (() => {
+    const card = document.getElementById('concept-card');
+    if (!card) return;
+    const key = 'gw-concept-seen-' + card.dataset.concept;
+    try {
+      if (localStorage.getItem(key)) card.open = false;
+      else localStorage.setItem(key, '1');
+    } catch (error) {
+      // Without storage the card simply stays open.
+    }
+  })();
+</script>

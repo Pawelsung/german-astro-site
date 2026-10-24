@@ -401,7 +401,7 @@ function QuizView({ questions, progress, setProgress }) {
   };
 
   const finish = (correct) => {
-    answerCue(correct);
+    answerCue(correct, getAnswerText(question));
     setResult(correct);
     setProgress((current) => {
       const answers = {

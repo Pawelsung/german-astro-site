@@ -265,7 +265,7 @@ export default function AdjectiveDeclensionTrainer() {
   function answer(option) {
     if (!current || selected) return;
     const isCorrect = option === current.answer;
-    answerCue(isCorrect);
+    answerCue(isCorrect, current.prompt.includes('____') ? current.prompt.replace('____', current.answer) : current.answer);
     setAnsweredExercise(current);
     setSelected(option);
     setProgress((prev) => {

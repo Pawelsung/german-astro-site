@@ -236,7 +236,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
       correct = opt === question.prep;
     }
 
-    answerCue(correct);
+    answerCue(correct, `${question.verb} ${question.prep} + ${question.case === 'A' ? 'Akkusativ' : 'Dativ'}`);
     setAnswered(true);
     setIsCorrect(correct);
     setPicked(opt);

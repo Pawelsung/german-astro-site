@@ -62,6 +62,23 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-24：第二批——概念卡與每輪結算（已 commit，未部署）
+- **概念卡** `src/components/ConceptCard.astro`：每課練習區上方有一張「1 分鐘重點」卡（`<details id="concept-card">`）
+  - 第 1 課：冠詞顏色、字尾猜性別
+  - 第 2 課：動詞＋介系詞公式、Akk 與 Dat 的常見搭配
+  - 第 3 課：9 組母音變化、haben 或 sein
+  - 第 4 課：格位角色、冠詞表、介系詞分組
+  - 第 5 課：四種語序的動詞位置圖
+  - 第 6 課：字尾表與三條規則
+  - 第一次造訪時展開，之後預設收合。用 `is:inline` script 在第一次繪製前處理收合，避免版面跳動；記錄的 key 為 `gw-concept-seen-l1`～`l6`
+  - 課程對應方式：`LessonShell` 依網址在 `lessonLinks` 中的順序產生 `conceptKey`（`l1`～`l6`）
+- **每輪結算**
+  - `src/lib/roundTracker.mjs` 是純邏輯，測試在 `tests/roundTracker.test.mjs`
+  - `answerFeedback.js` 每頁共用一個 tracker；`answerCue(correct, label)` 的第二個參數是**正確答案文字**，會列在結算的錯題清單中。六課都已傳入 label
+  - `RoundSummary.jsx` 放在 LessonShell 頁首，顯示「本輪 n/10」的小進度條；第 10 題答完約 1.2 秒後跳出結算視窗，內容包含正確率環、今日作答數、連續天數、錯題清單，以及「再來一輪」「看重點卡」「回首頁」三個按鈕
+  - 結算視窗開啟時（`[data-round-summary]`），各課的鍵盤快捷鍵都會暫停
+- 驗證：31 個測試全數通過。在瀏覽器中測過第 4 課桌面版完整流程：連續答 10 題、跳出結算、點「看重點卡」會展開並捲動到概念卡、再次造訪時自動收合。也測過第 5 課和第 3 課的手機深色版，表格沒有溢出。
+
 ### 2026-10-24：全部內容正確性檢視與修正（已部署）
 - 逐條檢查六課題庫和三個字庫，報告在 `docs/content-review-2026-10-24.md`，共修正約 80 處。
 - 第 6 課產生器加入名詞與形容詞相容表（`NOUN_ADJECTIVES`）和各句型的名詞白名單（`allowedNounIds`）。**新增名詞或形容詞時，必須同時更新相容表**，否則不會產生題目。
@@ -183,7 +200,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 ## 下一步（建議順序）
 
 ### 介面（使用者目前最在意）
-- [ ] 每輪 10 題後顯示結算畫面（答對率、答錯清單、再來一輪），做成共用元件，掛在 `answerCue` 的計數上
+- [x] 每輪 10 題的結算（2026-10-24 完成）
+- [ ] 六課統一成「學習／練習／複習」三個入口（第二批剩下的部分）
 - [ ] 第 2～6 課在手機上的篩選列和設定區，比照第 1 課改成可收合
 - [ ] 第 2、3 課的字卡也改用 3D 翻面加滑動（目前只有第 1 課有）
 - [ ] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）

@@ -2,6 +2,7 @@
 // keeping the explanation in view, and number/Enter keyboard shortcuts.
 import { useEffect, useRef } from 'react';
 import { recordAnswer } from './dailyActivity.mjs';
+import { createRoundTracker } from './roundTracker.mjs';
 
 export const SOUND_STORAGE_KEY = 'gw-sound-enabled';
 
@@ -47,8 +48,23 @@ export function playAnswerSound(correct) {
   }
 }
 
-export function answerCue(correct) {
+export const ROUND_EVENT = 'gw-round-complete';
+export const ROUND_PROGRESS_EVENT = 'gw-round-progress';
+
+// One tracker per page: all trainers on a lesson page share it through this module instance.
+const rounds = createRoundTracker((summary) => {
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(ROUND_EVENT, { detail: summary }));
+});
+
+export function roundProgress() {
+  return rounds.progress();
+}
+
+// `label` is the correct sentence or word, listed in the round summary when the answer was wrong.
+export function answerCue(correct, label = '') {
   recordAnswer(correct);
+  rounds.record(correct, label);
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(ROUND_PROGRESS_EVENT, { detail: rounds.progress() }));
   playAnswerSound(correct);
   // Browsers block vibrate until the user has tapped the page.
   if (!correct && typeof navigator !== 'undefined' && navigator.vibrate && navigator.userActivation?.hasBeenActive !== false) {
@@ -92,6 +108,7 @@ export function useAnswerShortcuts({ options = [], answered, onSelect, onNext, e
     if (!enabled) return undefined;
     const handler = (event) => {
       if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (document.querySelector('[data-round-summary]')) return;
       if (isTypingTarget(event.target)) return;
       const { options: opts, answered: done, onSelect: select, onNext: goNext } = latest.current;
       if (!done && /^[1-9]$/.test(event.key)) {

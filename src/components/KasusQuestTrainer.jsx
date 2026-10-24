@@ -280,7 +280,7 @@ export default function KasusQuestTrainer() {
   function answer(option) {
     if (!current || selected) return;
     const isCorrect = option === current.answer;
-    answerCue(isCorrect);
+    answerCue(isCorrect, cleanOption(current.fullSentence));
     setAnsweredExercise(current);
     setSelected(option);
     setShowHint(true);

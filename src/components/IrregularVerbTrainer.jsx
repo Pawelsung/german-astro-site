@@ -607,7 +607,7 @@ export default function IrregularVerbTrainer() {
 
   useEffect(() => {
     const handleKeydown = (e) => {
-      if (!deck.length) return;
+      if (!deck.length || document.querySelector('[data-round-summary]')) return;
 
       const tag = document.activeElement?.tagName?.toLowerCase();
       const isTypingField = tag === 'input' || tag === 'textarea';
@@ -828,7 +828,7 @@ export default function IrregularVerbTrainer() {
       normalizeText(typingPerfekt) === normalizeText(currentVerb.perfekt);
 
     const ok = praeteritumOk && perfektOk;
-    answerCue(ok);
+    answerCue(ok, `${currentVerb.infinitive} – ${currentVerb.praeteritum} – ${currentVerb.perfekt}`);
 
     if (ok) {
       markCorrect(currentVerb.id);
@@ -849,7 +849,7 @@ export default function IrregularVerbTrainer() {
   function handleAuxAnswer(answer) {
     if (!currentVerb || auxFeedback) return;
     setAuxAnswer(answer);
-    answerCue(answer === currentVerb.auxiliary);
+    answerCue(answer === currentVerb.auxiliary, `${currentVerb.infinitive} → ${currentVerb.perfekt}`);
 
     if (answer === currentVerb.auxiliary) {
       markCorrect(currentVerb.id);
@@ -870,7 +870,7 @@ export default function IrregularVerbTrainer() {
   function handleModalSubmit(answer) {
     if (!currentVerb || modalFeedback) return;
     setModalAnswer(answer);
-    answerCue(answer === currentVerb.present3rd);
+    answerCue(answer === currentVerb.present3rd, `${currentVerb.infinitive} → er ${currentVerb.present3rd}`);
 
     if (answer === currentVerb.present3rd) {
       markCorrect(currentVerb.id);

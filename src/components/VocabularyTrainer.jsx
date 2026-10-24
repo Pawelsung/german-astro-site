@@ -207,7 +207,7 @@ export default function VocabularyTrainer() {
     const expected = ui.mode === 'article' ? current.article : ui.mode === 'pos' ? current.pos : current.word;
     // German noun capitalization and umlauts are part of spelling.
     const correct = String(value).trim().normalize('NFC') === String(expected).trim().normalize('NFC');
-    answerCue(correct);
+    answerCue(correct, `${current.article ? `${current.article} ` : ''}${current.word}（${current.meaning}）`);
     setAnsweredWord(current); setFeedback({ correct, expected, given: value });
     updateWord({ errors: correct ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(correct) });
     setSession(s => ({ done: s.done + 1, correct: s.correct + Number(correct) }));
@@ -223,7 +223,7 @@ export default function VocabularyTrainer() {
   }
   function rateCard(known) {
     if (!current) return;
-    answerCue(known);
+    answerCue(known, `${current.article ? `${current.article} ` : ''}${current.word}（${current.meaning}）`);
     updateWord({ errors: known ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(known) });
     setSession(s => ({ done: s.done + 1, correct: s.correct + Number(known) }));
     // A known word leaves the review deck, so the next word slides into the same index.
@@ -243,6 +243,7 @@ export default function VocabularyTrainer() {
       const { mode, hasCurrent, answered, toggleFlip: flip, move: go, rateCard: rateIt } = cardKeys.current;
       if (!hasCurrent || mode === 'list' || e.metaKey || e.ctrlKey || e.altKey) return;
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName) || e.target?.isContentEditable) return;
+      if (document.querySelector('[data-round-summary]')) return;
       if (mode === 'learn' && e.key === ' ' && e.target?.tagName !== 'BUTTON') { e.preventDefault(); flip(); }
       else if (mode === 'learn' && e.key === 'ArrowRight') { e.preventDefault(); go(1); }
       else if (mode === 'learn' && (e.key === '1' || e.key === '2')) { e.preventDefault(); rateIt(e.key === '2'); }
