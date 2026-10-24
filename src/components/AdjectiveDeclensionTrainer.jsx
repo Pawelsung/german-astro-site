@@ -6,6 +6,7 @@ import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import lessonData from '../data/lesson6-adjective-declension';
 import { loadLesson6Progress, saveLesson6Progress } from '../lib/progressStorage';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { splitArticle } from '../lib/grammarColors.mjs';
 
 const MODE_LABELS = {
   concept: '概念',
@@ -422,7 +423,7 @@ export default function AdjectiveDeclensionTrainer() {
                 <h2 className="mt-3 break-words text-2xl font-black leading-relaxed text-slate-900 md:text-3xl">{current.prompt}</h2>
                 {current.given && (
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {current.given.noun && <span className="rounded-full bg-slate-50 px-3 py-1 text-xs font-black text-slate-600">{current.given.noun}</span>}
+                    {current.given.noun && (() => { const { article, rest, gender } = splitArticle(current.given.noun); return <span className="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-black text-slate-600">{gender && <i className={`g-dot g-${gender}`} />}{article && <span className={`g-${gender}`}>{article}&nbsp;</span>}{rest}</span>; })()}
                     {current.given.adjective && <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-black text-amber-700">{current.given.adjective}</span>}
                     {current.given.articleType && <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-black text-teal-700">{ARTICLE_LABELS[current.given.articleType]}</span>}
                     {current.given.caseName && <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{CASE_LABELS[current.given.caseName]}</span>}

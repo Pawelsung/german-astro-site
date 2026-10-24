@@ -553,3 +553,66 @@ button:disabled { cursor: default; }
 @media (max-width: 640px) {
   .theme-toggle { min-width: 2.25rem; min-height: 2.25rem; opacity: 0.75; }
 }
+
+/* Article (gender) and case color system. Gender: der blue, die red, das green, plural purple.
+   Cases use hues that do not collide with gender: Nom amber, Akk cyan, Dat magenta. */
+:root {
+  --g-der: #2563eb; --g-die: #dc2626; --g-das: #16a34a; --g-pl: #9333ea;
+  --case-nom: #b45309; --case-nom-bg: #fef3c7;
+  --case-akk: #0e7490; --case-akk-bg: #cffafe;
+  --case-dat: #a21caf; --case-dat-bg: #fae8ff;
+  --case-gen: #475569; --case-gen-bg: #e2e8f0;
+}
+:root.dark {
+  --g-der: #60a5fa; --g-die: #f87171; --g-das: #4ade80; --g-pl: #c084fc;
+  --case-nom: #fbbf24; --case-nom-bg: rgb(120 53 15 / 0.45);
+  --case-akk: #22d3ee; --case-akk-bg: rgb(22 78 99 / 0.5);
+  --case-dat: #e879f9; --case-dat-bg: rgb(112 26 117 / 0.45);
+  --case-gen: #cbd5e1; --case-gen-bg: rgb(51 65 85 / 0.6);
+}
+.g-der { color: var(--g-der) !important; } .g-die { color: var(--g-die) !important; } .g-das { color: var(--g-das) !important; } .g-pl { color: var(--g-pl) !important; }
+.g-dot { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 999px; background: currentColor; vertical-align: middle; margin-right: 0.3rem; flex-shrink: 0; }
+.g-dot.g-der { background: var(--g-der); } .g-dot.g-die { background: var(--g-die); } .g-dot.g-das { background: var(--g-das); } .g-dot.g-pl { background: var(--g-pl); }
+.case-tone-nom { background: var(--case-nom-bg) !important; color: var(--case-nom) !important; border-color: var(--case-nom) !important; }
+.case-tone-akk { background: var(--case-akk-bg) !important; color: var(--case-akk) !important; border-color: var(--case-akk) !important; }
+.case-tone-dat { background: var(--case-dat-bg) !important; color: var(--case-dat) !important; border-color: var(--case-dat) !important; }
+.case-tone-gen { background: var(--case-gen-bg) !important; color: var(--case-gen) !important; border-color: var(--case-gen) !important; }
+
+/* Lesson 1: gender colors on cards and article buttons */
+.flip-front[data-gender] { border-top: 5px solid var(--gender-color, var(--border)); }
+.flip-front[data-gender="der"] { --gender-color: var(--g-der); } .flip-front[data-gender="die"] { --gender-color: var(--g-die); }
+.flip-front[data-gender="das"] { --gender-color: var(--g-das); } .flip-front[data-gender="pl"] { --gender-color: var(--g-pl); }
+.vocab-answers button.g-btn:not(.is-correct):not(.is-wrong) { border-width: 2px; border-color: color-mix(in srgb, var(--btn-g) 45%, var(--border)); color: var(--btn-g); }
+.vocab-answers button.g-btn:hover:not(:disabled) { border-color: var(--btn-g); color: var(--btn-g); background: color-mix(in srgb, var(--btn-g) 8%, var(--surface)); }
+.vocab-answers button.g-btn[data-g="der"] { --btn-g: var(--g-der); } .vocab-answers button.g-btn[data-g="die"] { --btn-g: var(--g-die); } .vocab-answers button.g-btn[data-g="das"] { --btn-g: var(--g-das); }
+.gender-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 12px; font-weight: 700; color: var(--text-muted); }
+.gender-legend span { display: inline-flex; align-items: center; }
+
+/* Lesson 4: case sentence diagram */
+.case-diagram { margin: 12px 0 0; }
+.cd-sentence { position: relative; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px 8px; padding: 40px 4px 4px; font-size: clamp(18px, 2.4vw, 22px); font-weight: 800; color: var(--text); }
+.cd-arrows { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.cd-arrow { fill: none; stroke: var(--text-muted); stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; animation: cd-draw 600ms 150ms ease-out forwards; }
+.cd-link { fill: none; stroke: var(--text-faint); stroke-width: 2; stroke-dasharray: 0.03 0.025; opacity: 0; animation: cd-fade 400ms 450ms ease-out forwards; }
+.cd-head { fill: var(--text-muted); }
+@keyframes cd-draw { to { stroke-dashoffset: 0; } }
+@keyframes cd-fade { to { opacity: 1; } }
+.cd-word { padding: 4px 2px; line-height: 1.3; }
+.cd-chunk { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.cd-text { padding: 3px 8px; border-radius: 10px; line-height: 1.3; }
+.cd-tag { display: inline-flex; align-items: center; white-space: nowrap; font-size: 11px; font-weight: 800; color: var(--text-muted); }
+.cd-target .cd-text { border: 2px solid; animation: fx-pop 360ms cubic-bezier(.34,1.56,.64,1) both; animation-delay: inherit; }
+.cd-target.case-nom .cd-text { border-color: var(--case-nom); background: var(--case-nom-bg); } .cd-target.case-nom .cd-tag { color: var(--case-nom); }
+.cd-target.case-akk .cd-text { border-color: var(--case-akk); background: var(--case-akk-bg); } .cd-target.case-akk .cd-tag { color: var(--case-akk); }
+.cd-target.case-dat .cd-text { border-color: var(--case-dat); background: var(--case-dat-bg); } .cd-target.case-dat .cd-tag { color: var(--case-dat); }
+.cd-target.case-gen .cd-text { border-color: var(--case-gen); background: var(--case-gen-bg); } .cd-target.case-gen .cd-tag { color: var(--case-gen); }
+.cd-trigger .cd-text { border-bottom: 3px solid var(--text-muted); border-radius: 4px; }
+.cd-antecedent .cd-text { border: 2px dashed var(--text-faint); }
+.cd-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 12px; font-weight: 700; color: var(--text-muted); }
+.cd-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.cd-swatch { display: inline-block; width: 14px; height: 10px; border-radius: 3px; border: 2px solid; }
+.cd-swatch.case-nom { border-color: var(--case-nom); background: var(--case-nom-bg); } .cd-swatch.case-akk { border-color: var(--case-akk); background: var(--case-akk-bg); }
+.cd-swatch.case-dat { border-color: var(--case-dat); background: var(--case-dat-bg); } .cd-swatch.case-gen { border-color: var(--case-gen); background: var(--case-gen-bg); }
+.cd-swatch-arrow { border: 0; height: 2px; background: var(--text-muted); border-radius: 0; }
+.cd-swatch-link { border: 0; border-top: 2px dashed var(--text-faint); height: 0; border-radius: 0; }
+@media (prefers-reduced-motion: reduce) { .cd-arrow { stroke-dashoffset: 0; } .cd-link { opacity: 1; } }

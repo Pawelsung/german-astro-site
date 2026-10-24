@@ -5,6 +5,7 @@ import { PROGRESS_KEYS, readJSON, writeJSON, isReviewRequested } from '../lib/pr
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chaptersFor, filterVocabulary, articleExplanation } from '../lib/vocabulary.mjs';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { genderKey } from '../lib/grammarColors.mjs';
 
 const UI_KEY = 'german-vocabulary-workspace-v1';
 const CACHE_KEY = 'german-vocabulary-library-v1';
@@ -57,9 +58,9 @@ function FlashCard({ word, flipped, onFlip, onRate, speak }) {
     >
       {hint && <span className={`flip-stamp ${hint}`} style={{ opacity: Math.min(Math.abs(dx) / SWIPE_THRESHOLD, 1) }}>{hint === 'known' ? '記住了' : '還不熟'}</span>}
       <div className={`flip-inner${flipped ? ' is-flipped' : ''}`}>
-        <div className="flip-face flip-front" aria-hidden={flipped}>
+        <div className="flip-face flip-front" aria-hidden={flipped} data-gender={genderKey(word.article) || undefined}>
           <span className="vocab-pos">{POS_LABELS[word.pos] || word.pos}</span>
-          <h3 lang="de">{word.article && <span className="vocab-article">{word.article} </span>}{word.word}</h3>
+          <h3 lang="de">{word.article && <span className={`vocab-article g-${genderKey(word.article)}`}>{word.article} </span>}{word.word}</h3>
           <button className="vocab-audio" aria-label="播放單字發音" onClick={() => speak(word.word)}><Volume2 size={22}/></button>
           <span className="flip-tip">點一下翻面 · 左右滑動評分</span>
         </div>
@@ -281,12 +282,13 @@ export default function VocabularyTrainer() {
       {speechMessage && <p role="status" className="vocab-message">{speechMessage}</p>}
       {error && <p role="alert" className="vocab-error">{error} <button onClick={() => loadPreset(selectedPreset || presets.find(p => p.id === DEFAULT_PRESET))}>重新載入字庫</button></p>}
       {message && <div className="vocab-message" role="status">{message}<button aria-label="關閉訊息" onClick={() => setMessage('')}>×</button></div>}
-      {loading ? <p role="status" className="vocab-empty">正在載入字庫…</p> : !current ? <div className="vocab-empty"><Check size={28}/><h3>{ui.filter === 'review' ? '這個範圍沒有待複習單字' : '沒有符合條件的單字'}</h3><p>可以切換課次、模式或清除篩選繼續學習。</p><button className={button} onClick={() => { setQuery(''); change({ filter:'all', chapter:'all', mode:'learn' }); }}>查看全部單字</button></div> : ui.mode === 'list' ? <div className="vocab-dictionary">{filtered.map(w => <article key={wordKey(w)}><div><h3 lang="de">{w.article} {w.word}</h3><p>{w.meaning}</p><small>{POS_LABELS[w.pos] || w.pos} · {w.category}</small>{w.example && <p lang="de">{w.example}</p>}{w.exampleZh && <p>{w.exampleZh}</p>}</div><button className={button} aria-label={`播放 ${w.word}`} onClick={() => speak(w.word)}><Volume2 size={18}/></button></article>)}</div> : <>
+      {loading ? <p role="status" className="vocab-empty">正在載入字庫…</p> : !current ? <div className="vocab-empty"><Check size={28}/><h3>{ui.filter === 'review' ? '這個範圍沒有待複習單字' : '沒有符合條件的單字'}</h3><p>可以切換課次、模式或清除篩選繼續學習。</p><button className={button} onClick={() => { setQuery(''); change({ filter:'all', chapter:'all', mode:'learn' }); }}>查看全部單字</button></div> : ui.mode === 'list' ? <div className="vocab-dictionary">{filtered.map(w => <article key={wordKey(w)}><div><h3 lang="de">{w.article && <span className={`g-${genderKey(w.article)}`}>{w.article} </span>}{w.word}</h3><p>{w.meaning}</p><small>{POS_LABELS[w.pos] || w.pos} · {w.category}</small>{w.example && <p lang="de">{w.example}</p>}{w.exampleZh && <p>{w.exampleZh}</p>}</div><button className={button} aria-label={`播放 ${w.word}`} onClick={() => speak(w.word)}><Volume2 size={18}/></button></article>)}</div> : <>
         <div className="vocab-card-meta"><span>{chapters.find(c => c.key === ui.chapter)?.label || '全部課次'} · {Math.min(ui.index + 1, Math.max(filtered.length,1))} / {Math.max(filtered.length,answeredWord ? 1 : 0)}</span><button className={button} aria-label={current.starred ? '取消收藏' : '收藏單字'} aria-pressed={!!current.starred} onClick={() => { updateWord({starred:!current.starred}); if(answeredWord) setAnsweredWord(w => ({...w,starred:!w.starred})); }}><Star size={17} fill={current.starred ? 'currentColor' : 'none'}/></button></div>
         {ui.mode === 'learn' ? <FlashCard key={wordKey(current)} word={current} flipped={flipped} onFlip={toggleFlip} onRate={rateCard} speak={speak}/> : <div className="vocab-card fx-question" key={`${wordKey(current)}-${ui.mode}`}>
           <span className="vocab-pos">{ui.mode === 'pos' && !feedback ? '判斷詞性' : POS_LABELS[current.pos] || current.pos}</span>
           {ui.mode === 'spell' ? <><h3>{current.meaning}</h3><button className={button} onClick={() => speak(current.word)}><Volume2 size={19}/>播放單字</button></> : <><h3 lang="de">{ui.mode === 'learn' && current.article && <span className="vocab-article">{current.article} </span>}{current.word}</h3><button className="vocab-audio" aria-label="播放單字發音" onClick={() => speak(current.word)}><Volume2 size={22}/></button>{ui.mode !== 'learn' && <p>{current.meaning}</p>}</>}
-          {ui.mode === 'article' && <div className="vocab-answers">{answerOptions.map((a, i) => <button key={a} data-answer-option className={optionState(a)} disabled={!!feedback} onClick={() => submit(a)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{a}</button>)}</div>}
+          {ui.mode === 'article' && <div className="vocab-answers">{answerOptions.map((a, i) => <button key={a} data-answer-option data-g={a} className={`g-btn ${optionState(a)}`} disabled={!!feedback} onClick={() => submit(a)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{a}</button>)}</div>}
+          {ui.mode === 'article' && <p className="gender-legend" aria-hidden="true"><span><i className="g-dot g-der"/>der 陽性</span><span><i className="g-dot g-die"/>die 陰性</span><span><i className="g-dot g-das"/>das 中性</span></p>}
           {ui.mode === 'pos' && <div className="vocab-answers">{answerOptions.map((p, i) => <button key={p} data-answer-option className={optionState(p)} disabled={!!feedback} onClick={() => submit(p)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{POS_LABELS[p] || p}</button>)}</div>}
           {ui.mode === 'spell' && <form className="vocab-spelling" onSubmit={e => {e.preventDefault();submit(answer);}}><label htmlFor="vocab-answer">輸入聽到的單字（注意名詞大寫）</label><input id="vocab-answer" className={field} autoComplete="off" autoCapitalize="none" spellCheck={false} disabled={!!feedback} value={answer} onChange={e => setAnswer(e.target.value)}/><div className="vocab-umlauts">{['ä','ö','ü','ß'].map(char => <button type="button" key={char} disabled={!!feedback} onClick={() => setAnswer(a => a + char)}>{char}</button>)}</div><button className={button} disabled={!!feedback || !answer.trim()}>檢查答案</button></form>}
         </div>}

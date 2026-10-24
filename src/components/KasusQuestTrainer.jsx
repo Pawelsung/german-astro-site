@@ -5,6 +5,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import data from '../data/lesson4-kasus-quest-data.json';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { analyzeCaseSentence } from '../lib/caseDiagram.mjs';
+import { genderKey } from '../lib/grammarColors.mjs';
+import CaseDiagram from './CaseDiagram.jsx';
 
 const STORAGE_KEY = 'kasus-quest-trainer-v1';
 
@@ -90,11 +93,12 @@ const MISTAKE_LABELS = {
   'reflexive-error': '反身代名詞'
 };
 
+// Matches the case colors of the sentence diagram (global.css --case-*).
 const CASE_STYLES = {
-  Nominativ: 'bg-cyan-50 text-cyan-800 border-cyan-300',
-  Akkusativ: 'bg-amber-50 text-amber-800 border-amber-300',
-  Dativ: 'bg-teal-50 text-teal-800 border-teal-300',
-  Genitiv: 'bg-indigo-50 text-indigo-800 border-indigo-300'
+  Nominativ: 'case-tone-nom',
+  Akkusativ: 'case-tone-akk',
+  Dativ: 'case-tone-dat',
+  Genitiv: 'case-tone-gen'
 };
 
 function loadProgress() {
@@ -415,7 +419,7 @@ export default function KasusQuestTrainer() {
                 <h2 className="mt-2 break-words text-xl font-black leading-relaxed text-slate-800 md:text-3xl">{current.sentence}</h2>
                 <p className="mt-2 text-sm font-bold text-slate-500 md:text-base">{current.translation}</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
-                  <span className="rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-black text-teal-700">目標詞：{current.targetNoun || '-'}</span>
+                  <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-black text-teal-700">{genderKey(current.gender) && <i className={`g-dot g-${genderKey(current.gender)}`} />}目標詞：{current.targetNoun || '-'}</span>
                   {showInlineHint && <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-black text-cyan-700">線索：{current.trigger === 'subject' ? '主詞' : current.trigger || '-'}</span>}
                 </div>
               </div>
@@ -454,7 +458,9 @@ export default function KasusQuestTrainer() {
                     {selected === current.answer ? <CheckCircle className="text-emerald-700" size={20} /> : <XCircle className="text-rose-700" size={20} />}
                   <div className={cx('font-black', selected === current.answer ? 'text-emerald-900' : 'text-rose-900')}>{selected === current.answer ? '正確' : `正確答案：${cleanOption(current.answer)}`}</div>
                   </div>
-                  <div className="mt-3 break-words text-lg font-black text-slate-800">{cleanOption(current.fullSentence)}</div>
+                  {analyzeCaseSentence(current)
+                    ? <CaseDiagram exercise={current} />
+                    : <div className="mt-3 break-words text-lg font-black text-slate-800">{cleanOption(current.fullSentence)}</div>}
                   <p className="mt-2 text-sm font-bold leading-relaxed text-slate-600">{current.explanationZh}</p>
                 </div>
               )}
