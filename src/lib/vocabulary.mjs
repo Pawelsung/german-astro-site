@@ -1,3 +1,4 @@
+import { findClozeTarget } from './vocabPractice.mjs';
 export const POS_LABELS = { noun: '名詞', verb: '動詞', adjective: '形容詞', adverb: '副詞', 'adverb/connector': '副詞／連接詞', connector: '連接詞', conjunction: '連接詞', preposition: '介系詞', phrase: '片語', other: '其他' };
 export const wordKey = word => [word.article || '', word.word || '', word.meaning || word.translationZh || ''].map(s => String(s).trim().normalize('NFC')).join('|');
 export function normalizeVocabulary(input) {
@@ -37,7 +38,7 @@ export function chaptersFor(words) {
 }
 export function filterVocabulary(words, { chapter = 'all', filter = 'all', mode = 'learn', query = '' } = {}) {
   const q = query.trim().toLocaleLowerCase('de');
-  return words.filter(w => (chapter === 'all' || String(w.lesson || w.category) === chapter) && (filter !== 'review' || w.errors > 0) && (filter !== 'starred' || w.starred) && (mode !== 'article' || ['der','die','das'].includes(w.article)) && (!q || `${w.article} ${w.word} ${w.meaning}`.toLocaleLowerCase('de').includes(q)));
+  return words.filter(w => (chapter === 'all' || String(w.lesson || w.category) === chapter) && (filter !== 'review' || w.errors > 0) && (filter !== 'starred' || w.starred) && (mode !== 'article' || ['der','die','das'].includes(w.article)) && (mode !== 'cloze' || findClozeTarget(w)) && (!q || `${w.article} ${w.word} ${w.meaning}`.toLocaleLowerCase('de').includes(q)));
 }
 export function articleExplanation(word) {
   if (word.article === 'die' && /(ung|heit|keit|schaft|tion|tät)$/.test(word.word)) return '這類字尾通常是陰性名詞，使用 die。請連同例句一起記憶。';

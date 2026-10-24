@@ -62,6 +62,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-24：第 1 課新增「中→德」與「填空」（已 commit，未部署）
+- 純邏輯放在 `src/lib/vocabPractice.mjs`（測試在 `tests/vocabPractice.test.mjs`）：
+  - `findClozeTarget`：在例句中找出該字或它的變化形，例如 gewundert、eingestiegen、可分動詞的 stimme。B1 字庫約 97% 的字可以出填空題
+  - `productionAnswer`：名詞要求連同冠詞作答
+  - `checkTyped`：比對答案，並分辨缺冠詞、冠詞錯、大小寫、變音、反身動詞少 sich 等情況，給出針對性的提示（`MISS_REASONS`）
+- `filterVocabulary` 在 cloze 模式只會挑出找得到挖空位置的字。
+- UI：模式列改為「字卡、中→德、填空、冠詞、聽寫、詞性、字典」；手機上可橫向捲動（記得 `.vocab-workspace > * { min-width: 0 }`，否則整張卡片會被撐寬）。
+- 提示只顯示「第一個字母＋長度」，不會透露冠詞。有實體鍵盤的裝置會自動聚焦輸入框，手機則不會（避免鍵盤彈出造成版面跳動）。
+
 ### 2026-10-24：統一「學習／練習／複習」三個入口（已部署）
 - 新增 `src/components/LessonModes.jsx`，放在 LessonShell 概念卡上方，六課共用：
   - 學習：展開並捲動到 `#concept-card`

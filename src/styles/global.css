@@ -717,3 +717,19 @@ a.lesson-mode:hover, button.lesson-mode:hover { border-color: #6366f1; box-shado
   .lesson-mode b { font-size: 14px; }
   .lesson-mode small { font-size: 10px; }
 }
+
+/* Lesson 1: Chinese → German and cloze */
+.vocab-task { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+.vocab-cloze { font-size: clamp(19px, 3vw, 24px); font-weight: 700; line-height: 1.8; color: var(--text); }
+.vocab-blank { display: inline-block; min-width: 4em; margin: 0 4px; padding: 0 6px; border-bottom: 3px solid #0284c7; color: transparent; }
+.vocab-blank.is-filled { color: #0284c7; border-bottom-color: #059669; animation: fx-pop 320ms cubic-bezier(.34,1.56,.64,1); }
+.vocab-hint-button { justify-self: center; font-size: 13px; font-weight: 700; color: var(--text-faint); text-decoration: underline; text-underline-offset: 3px; }
+.vocab-hint { text-align: center; font-size: 14px; font-weight: 800; color: #0284c7; }
+@media (max-width: 640px) {
+  .vocab-tabs { overflow-x: auto; scrollbar-width: none; }
+  .vocab-tabs::-webkit-scrollbar { display: none; }
+  .vocab-tabs button { flex: 0 0 auto; padding: 8px 12px; }
+}
+/* Grid/flex children must be allowed to shrink, or the 7 mode tabs widen the whole card on phones. */
+.vocab-workspace > *, .vocab-toolbar { min-width: 0; }
+.vocab-tabs { min-width: 0; }

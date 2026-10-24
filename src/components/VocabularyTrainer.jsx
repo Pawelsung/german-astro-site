@@ -6,17 +6,26 @@ import { useStoredProgress } from '../hooks/useStoredProgress';
 import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chaptersFor, filterVocabulary, articleExplanation } from '../lib/vocabulary.mjs';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import { genderKey } from '../lib/grammarColors.mjs';
+import { MISS_REASONS, checkTyped, findClozeTarget, productionAnswer } from '../lib/vocabPractice.mjs';
 
 const UI_KEY = 'german-vocabulary-workspace-v1';
 const CACHE_KEY = 'german-vocabulary-library-v1';
 const DEFAULT_PRESET = 'schritte-b1-1';
-const modes = [['learn', '字卡'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
+const modes = [['learn', '字卡'], ['produce', '中→德'], ['cloze', '填空'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
+const TYPED_MODES = ['produce', 'cloze'];
 const readWords = () => { try { return normalizeVocabulary(readJSON(PROGRESS_KEYS.lesson1Words, [])); } catch { return []; } };
 const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-bold transition-colors hover:border-sky-400 hover:bg-sky-50 disabled:opacity-40';
 const field = 'min-h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm';
 const emptyUI = { preset: DEFAULT_PRESET, chapter: 'all', mode: 'learn', index: 0, filter: 'all' };
 
 const SWIPE_THRESHOLD = 90;
+
+// "der Erlebnis" → "E _ _ _ _ _ _ _ _": first letter and length only, so the hint never gives away the article.
+function hintFor(answer) {
+  const word = String(answer).replace(/^(der|die|das)\s+/, '');
+  return word.split(' ').map((part) => [...part].map((char, i) => (i === 0 ? char : '_')).join(' ')).join('   ');
+}
+
 const POS_CHOICES = ['noun', 'verb', 'adjective', 'adverb', 'connector', 'preposition', 'phrase'];
 
 // Four part-of-speech choices that stay stable for a word: the answer plus three distractors
@@ -120,6 +129,8 @@ export default function VocabularyTrainer() {
   const [query, setQuery] = useState('');
   const [flipped, setFlipped] = useState(false);
   const [answer, setAnswer] = useState('');
+  const [hint, setHint] = useState(false);
+  const answerInput = useRef(null);
   const [feedback, setFeedback] = useState(null);
   const [tools, setTools] = useState(false);
   const [libraryOpen, setLibraryOpen] = useState(false);
@@ -141,7 +152,7 @@ export default function VocabularyTrainer() {
 
   function change(patch) {
     setUI(prev => ({ ...prev, ...patch, index: 0 }));
-    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); submitting.current = false;
+    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); setHint(false); submitting.current = false;
   }
   useEffect(() => { writeJSON(UI_KEY, ui); }, [ui]);
   useEffect(() => {
@@ -204,11 +215,13 @@ export default function VocabularyTrainer() {
   function submit(value) {
     if (!current || feedback || submitting.current || !String(value).trim()) return;
     submitting.current = true;
-    const expected = ui.mode === 'article' ? current.article : ui.mode === 'pos' ? current.pos : current.word;
-    // German noun capitalization and umlauts are part of spelling.
-    const correct = String(value).trim().normalize('NFC') === String(expected).trim().normalize('NFC');
+    const cloze = ui.mode === 'cloze' ? findClozeTarget(current) : null;
+    const expected = ui.mode === 'article' ? current.article : ui.mode === 'pos' ? current.pos : ui.mode === 'produce' ? productionAnswer(current) : cloze ? cloze.answer : current.word;
+    // Typed modes explain near misses (article, capitals, umlauts); spelling stays exact.
+    const check = TYPED_MODES.includes(ui.mode) ? checkTyped(expected, value, { sentenceStart: !!cloze && !cloze.before.trim() }) : null;
+    const correct = check ? check.correct : String(value).trim().normalize('NFC') === String(expected).trim().normalize('NFC');
     answerCue(correct, `${current.article ? `${current.article} ` : ''}${current.word}（${current.meaning}）`);
-    setAnsweredWord(current); setFeedback({ correct, expected, given: value });
+    setAnsweredWord(current); setFeedback({ correct, expected, given: value, reason: check?.reason, note: check?.note, base: cloze?.base });
     updateWord({ errors: correct ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(correct) });
     setSession(s => ({ done: s.done + 1, correct: s.correct + Number(correct) }));
   }
@@ -216,7 +229,7 @@ export default function VocabularyTrainer() {
     // In a review deck the current word may have been removed on a correct answer.
     const stillPresent = filtered.some(w => wordKey(w) === wordKey(current || {}));
     setUI(prev => ({ ...prev, index: (prev.index + (answeredWord && !stillPresent && delta > 0 ? 0 : delta) + filtered.length) % Math.max(filtered.length, 1) }));
-    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); submitting.current = false;
+    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); setHint(false); submitting.current = false;
   }
   function toggleFlip() {
     setFlipped(v => !v); if (!flipped) updateWord({ seen: (current.seen || 0) + 1 });
@@ -230,11 +243,16 @@ export default function VocabularyTrainer() {
     const leaves = known && ui.filter === 'review';
     const size = Math.max(filtered.length - (leaves ? 1 : 0), 1);
     setUI(prev => ({ ...prev, index: (prev.index + (leaves ? 0 : 1)) % size }));
-    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); submitting.current = false;
+    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); setHint(false); submitting.current = false;
   }
   const answerOptions = !current ? [] : ui.mode === 'article' ? ['der', 'die', 'das'] : ui.mode === 'pos' ? posOptions(current) : [];
   useAnswerShortcuts({ options: answerOptions, answered: !!feedback, onSelect: submit, onNext: () => move(1), enabled: ui.mode !== 'learn' && ui.mode !== 'list' });
   const feedbackRef = useRevealOnShow(feedback);
+  // Focus the answer box for typed questions on devices with a real keyboard (no pop-up keyboard jump on phones).
+  useEffect(() => {
+    if (!TYPED_MODES.includes(ui.mode) || feedback || !window.matchMedia?.('(hover: hover) and (pointer: fine)').matches) return;
+    answerInput.current?.focus({ preventScroll: true });
+  }, [ui.mode, ui.index, feedback]);
   // Flashcard keys: Space flips, 1/2 rate, ←/→ move between words.
   const cardKeys = useRef({});
   cardKeys.current = { mode: ui.mode, hasCurrent: !!current, answered: !!feedback, toggleFlip, move, rateCard };
@@ -300,13 +318,13 @@ export default function VocabularyTrainer() {
         <div className="vocab-card-meta"><span>{chapters.find(c => c.key === ui.chapter)?.label || '全部課次'} · {Math.min(ui.index + 1, Math.max(filtered.length,1))} / {Math.max(filtered.length,answeredWord ? 1 : 0)}</span><button className={button} aria-label={current.starred ? '取消收藏' : '收藏單字'} aria-pressed={!!current.starred} onClick={() => { updateWord({starred:!current.starred}); if(answeredWord) setAnsweredWord(w => ({...w,starred:!w.starred})); }}><Star size={17} fill={current.starred ? 'currentColor' : 'none'}/></button></div>
         {ui.mode === 'learn' ? <FlashCard key={wordKey(current)} word={current} flipped={flipped} onFlip={toggleFlip} onRate={rateCard} speak={speak}/> : <div className="vocab-card fx-question" key={`${wordKey(current)}-${ui.mode}`}>
           <span className="vocab-pos">{ui.mode === 'pos' && !feedback ? '判斷詞性' : POS_LABELS[current.pos] || current.pos}</span>
-          {ui.mode === 'spell' ? <><h3>{current.meaning}</h3><button className={button} onClick={() => speak(current.word)}><Volume2 size={19}/>播放單字</button></> : <><h3 lang="de">{ui.mode === 'learn' && current.article && <span className="vocab-article">{current.article} </span>}{current.word}</h3><button className="vocab-audio" aria-label="播放單字發音" onClick={() => speak(current.word)}><Volume2 size={22}/></button>{ui.mode !== 'learn' && <p>{current.meaning}</p>}</>}
+          {ui.mode === 'produce' ? <><h3>{current.meaning}</h3><p className="vocab-task">{current.article ? '用德文寫出來，名詞要連冠詞（例如 der Tisch）' : '用德文寫出這個字'}</p></> : ui.mode === 'cloze' ? (() => { const cloze = findClozeTarget(current); return <><p className="vocab-cloze" lang="de">{cloze.before}<span className={`vocab-blank${feedback ? ' is-filled' : ''}`}>{feedback ? cloze.answer : '\u00a0'.repeat(Math.max(6, cloze.answer.length))}</span>{cloze.after}</p><p className="vocab-task">提示：<b lang="de">{current.article ? `${current.article} ` : ''}{current.word}</b>（{current.meaning}）{cloze.inflected ? '・要寫成句中的正確形式' : ''}</p>{current.exampleZh && <p className="vocab-task">{current.exampleZh}</p>}</>; })() : ui.mode === 'spell' ? <><h3>{current.meaning}</h3><button className={button} onClick={() => speak(current.word)}><Volume2 size={19}/>播放單字</button></> : <><h3 lang="de">{ui.mode === 'learn' && current.article && <span className="vocab-article">{current.article} </span>}{current.word}</h3><button className="vocab-audio" aria-label="播放單字發音" onClick={() => speak(current.word)}><Volume2 size={22}/></button>{ui.mode !== 'learn' && <p>{current.meaning}</p>}</>}
           {ui.mode === 'article' && <div className="vocab-answers">{answerOptions.map((a, i) => <button key={a} data-answer-option data-g={a} className={`g-btn ${optionState(a)}`} disabled={!!feedback} onClick={() => submit(a)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{a}</button>)}</div>}
           {ui.mode === 'article' && <p className="gender-legend" aria-hidden="true"><span><i className="g-dot g-der"/>der 陽性</span><span><i className="g-dot g-die"/>die 陰性</span><span><i className="g-dot g-das"/>das 中性</span></p>}
           {ui.mode === 'pos' && <div className="vocab-answers">{answerOptions.map((p, i) => <button key={p} data-answer-option className={optionState(p)} disabled={!!feedback} onClick={() => submit(p)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{POS_LABELS[p] || p}</button>)}</div>}
-          {ui.mode === 'spell' && <form className="vocab-spelling" onSubmit={e => {e.preventDefault();submit(answer);}}><label htmlFor="vocab-answer">輸入聽到的單字（注意名詞大寫）</label><input id="vocab-answer" className={field} autoComplete="off" autoCapitalize="none" spellCheck={false} disabled={!!feedback} value={answer} onChange={e => setAnswer(e.target.value)}/><div className="vocab-umlauts">{['ä','ö','ü','ß'].map(char => <button type="button" key={char} disabled={!!feedback} onClick={() => setAnswer(a => a + char)}>{char}</button>)}</div><button className={button} disabled={!!feedback || !answer.trim()}>檢查答案</button></form>}
+          {(ui.mode === 'spell' || TYPED_MODES.includes(ui.mode)) && <form className="vocab-spelling" onSubmit={e => {e.preventDefault();submit(answer);}}><label htmlFor="vocab-answer">{ui.mode === 'spell' ? '輸入聽到的單字（注意名詞大寫）' : ui.mode === 'cloze' ? '輸入空格中的字' : '輸入德文'}</label><input id="vocab-answer" ref={answerInput} className={field} autoComplete="off" autoCapitalize="none" spellCheck={false} disabled={!!feedback} value={answer} onChange={e => setAnswer(e.target.value)}/><div className="vocab-umlauts">{['ä','ö','ü','ß'].map(char => <button type="button" key={char} disabled={!!feedback} onClick={() => setAnswer(a => a + char)}>{char}</button>)}</div>{TYPED_MODES.includes(ui.mode) && !feedback && (hint ? <p className="vocab-hint" lang="de">開頭：{hintFor(ui.mode === 'cloze' ? findClozeTarget(current).answer : productionAnswer(current))}</p> : <button type="button" className="vocab-hint-button" onClick={() => setHint(true)}>給我一點提示</button>)}<button className={button} disabled={!!feedback || !answer.trim()}>檢查答案</button></form>}
         </div>}
-        {feedback && <div ref={feedbackRef} role="status" className={`vocab-feedback fx-enter ${feedback.correct ? 'correct' : 'incorrect'}`}><strong>{feedback.correct ? '答對了！' : `正確答案：${ui.mode === 'pos' ? POS_LABELS[feedback.expected] || feedback.expected : feedback.expected}`}</strong><p>{ui.mode === 'article' ? articleExplanation(current) : ui.mode === 'spell' ? `正確拼寫：${current.word}。留意大小寫與變音字母。` : `${current.word} 是${POS_LABELS[current.pos] || current.pos}。`}</p>{current.example && <p lang="de">{current.example}</p>}{current.exampleZh && <p>{current.exampleZh}</p>}<small>{feedback.correct ? '已從待複習清單移除。' : '已加入待複習清單。'}讀完後再繼續下一題。</small></div>}
+        {feedback && <div ref={feedbackRef} role="status" className={`vocab-feedback fx-enter ${feedback.correct ? 'correct' : 'incorrect'}`}><strong>{feedback.correct ? '答對了！' : `正確答案：${ui.mode === 'pos' ? POS_LABELS[feedback.expected] || feedback.expected : feedback.expected}`}</strong><p>{ui.mode === 'article' ? articleExplanation(current) : ui.mode === 'spell' ? `正確拼寫：${current.word}。留意大小寫與變音字母。` : TYPED_MODES.includes(ui.mode) ? [feedback.correct ? (feedback.note === 'reflexive' ? `完整形式是 ${current.word}，記得連 sich 一起記。` : '') : (MISS_REASONS[feedback.reason] || ''), ui.mode === 'cloze' && feedback.expected !== current.word ? `原形：${current.word}` : ''].filter(Boolean).join(' ') : `${current.word} 是${POS_LABELS[current.pos] || current.pos}。`}</p>{current.example && <p lang="de">{current.example}</p>}{current.exampleZh && <p>{current.exampleZh}</p>}<small>{feedback.correct ? '已從待複習清單移除。' : '已加入待複習清單。'}讀完後再繼續下一題。</small></div>}
         <div className="vocab-navigation"><button className={button} onClick={() => move(-1)}><ArrowLeft size={17}/>上一個</button><span>本次作答 {session.done} · 答對 {session.correct}</span><button className={`vocab-primary${feedback ? ' is-ready' : ''}`} onClick={() => move(1)}>下一個<ArrowRight size={17}/>{(feedback || ui.mode === 'learn') && <span className="kbd-hint" aria-hidden="true">{feedback ? 'Enter' : '→'}</span>}</button></div>
       </>}
     </section>
