@@ -2,9 +2,9 @@
   {
     "id": "a1-b1-part1",
     "label": "A1-B1 Part 1",
-    "description": "依主題分類的 A1-B1 德語名詞字庫",
+    "description": "依主題分類的 A1-B1 德語名詞字庫，去重後共 449 個單字",
     "path": "/vocab/a1-b1-part1.json",
-    "count": 466
+    "count": 449
   },
   {
     "id": "schritte-b1-1-nouns",

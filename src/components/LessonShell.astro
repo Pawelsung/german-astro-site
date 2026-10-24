@@ -53,6 +53,11 @@ const themes = {
     bullet: 'text-teal-500'
   }
 };
+const lessonLinks = [
+  ['/lesson1-wort/', '單字'], ['/lesson2-VerbWithPreposition/', '介系詞'],
+  ['/lesson3-irregular-verbs/', '動詞'], ['/lesson4-kasus/', '格位'],
+  ['/lesson5-connectors/', '語序'], ['/lesson6-adjective-declension/', '字尾']
+];
 const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
 ---
 
@@ -60,7 +65,7 @@ const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
   <main class={`min-h-screen ${theme.page} text-slate-800 flex flex-col`}>
     <div class="w-full px-4 pt-5 md:pt-4 pb-3">
       <div class="max-w-6xl mx-auto">
-        <div class="mb-4 md:mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="mb-4 md:mb-3 flex flex-wrap items-center justify-between gap-2">
           <a
             href="/"
             class={`${theme.link} font-black inline-flex items-center gap-2 px-3 py-2 rounded-lg transition-all w-fit text-sm`}
@@ -82,7 +87,7 @@ const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
           </div>
 
           {frontmatter.tags?.length && (
-            <div class="flex flex-wrap gap-2 md:max-w-sm md:justify-end">
+            <div class="hidden sm:flex flex-wrap gap-2 md:max-w-sm md:justify-end">
               {frontmatter.tags.slice(0, 4).map((tag) => (
                 <span class={`px-2.5 py-1 ${theme.chip} text-[11px] font-black rounded-full border`}>
                   #{tag}
@@ -94,6 +99,9 @@ const theme = themes[frontmatter.theme ?? ''] ?? themes.sky;
       </div>
     </div>
 
+    <nav aria-label="切換學習主題" class="mx-auto flex w-full max-w-6xl gap-1 overflow-x-auto px-4 pb-4">
+      {lessonLinks.map(([href, label]) => <a href={href} aria-current={Astro.url.pathname.replace(/\/$/, '') === href.replace(/\/$/, '') ? 'page' : undefined} class="lesson-nav-link">{label}</a>)}
+    </nav>
     <div class={contentClass}>
       <slot />
     </div>

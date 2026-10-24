@@ -357,3 +357,68 @@ textarea {
     padding: 0 0.6rem;
   }
 }
+
+/* Shared focus and motion policy for all learning tools. */
+:where(button,a,input,select,textarea,summary):focus-visible { outline: 3px solid #0284c7; outline-offset: 3px; }
+button, summary { cursor: pointer; }
+button:disabled { cursor: default; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+.vocab-workspace { display:grid; gap:20px; color:var(--text); }
+.vocab-library,.vocab-study { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:24px; }
+.vocab-library-heading { display:flex; align-items:center; gap:12px; margin-bottom:20px; color:#0369a1; }
+.vocab-library-heading h2 { font-weight:800; font-size:18px; color:var(--text); }
+.vocab-library-heading p,.vocab-note { font-size:13px; color:var(--text-muted); margin-top:4px; }
+.vocab-selectors { display:grid; grid-template-columns:1fr 1.3fr 1.3fr; gap:12px; }
+.vocab-selectors label,.vocab-tools label { display:grid; gap:6px; font-size:12px; font-weight:700; color:var(--text-muted); }
+.vocab-chapters { margin-top:16px; border-top:1px solid var(--border); padding-top:12px; }
+.vocab-chapters summary { font-weight:700; font-size:13px; padding:8px 0; }
+.vocab-chapters summary span { margin-left:12px; font-weight:400; color:var(--text-muted); }
+.vocab-chapter-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:12px; }
+.vocab-chapter-grid button { text-align:left; display:grid; gap:8px; border:1px solid var(--border); background:var(--surface-soft); border-radius:12px; padding:14px; }
+.vocab-chapter-grid button.selected { border-color:#0284c7; }
+.vocab-chapter-grid strong { font-size:13px; }.vocab-chapter-grid span { font-size:11px; color:var(--text-muted); }
+.vocab-chapter-grid progress { width:100%; height:5px; accent-color:#0284c7; }
+.vocab-toolbar,.vocab-filter-row,.vocab-card-meta,.vocab-navigation { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.vocab-tabs { display:flex; gap:4px; padding:4px; border-radius:14px; background:var(--surface-muted); }
+.vocab-tabs button { min-height:40px; padding:8px 24px; border-radius:10px; font-weight:700; font-size:14px; white-space:nowrap; }
+.vocab-tabs button[aria-pressed=true] { background:var(--surface); color:#0284c7; box-shadow:0 1px 4px #00000014; }
+.vocab-filter-row { margin-top:20px; flex-wrap:wrap; }.vocab-filters { display:flex; gap:6px; }
+.vocab-filters button { min-height:36px; padding:6px 12px; border-radius:9px; font-size:12px; font-weight:700; color:var(--text-muted); }
+.vocab-filters button[aria-pressed=true] { background:#e0f2fe; color:#075985; }
+.vocab-search { display:flex; align-items:center; gap:8px; color:var(--text-muted); border:1px solid var(--border); border-radius:10px; padding:8px 12px; }
+.vocab-search input { min-width:0; width:170px; background:transparent; font-size:13px; }
+.vocab-card-meta { max-width:780px; margin:24px auto 8px; font-size:12px; color:var(--text-muted); }
+.vocab-card { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; min-height:300px; max-width:780px; margin:auto; padding:32px 24px; border:1px solid var(--border); border-radius:18px; background:var(--surface-soft); text-align:center; }
+.vocab-card h3 { font-size:clamp(26px,4vw,46px); font-weight:800; line-height:1.3; overflow-wrap:anywhere; }
+.vocab-pos { font-size:11px; font-weight:800; letter-spacing:.06em; padding:5px 10px; border-radius:6px; background:var(--surface); color:var(--text-muted); }
+.vocab-article { color:#0284c7; }.vocab-audio { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--border); background:var(--surface); border-radius:50%; color:#0284c7; }
+.vocab-explanation { width:100%; border-top:1px solid var(--border); padding-top:20px; line-height:1.8; }
+.vocab-explanation strong { font-size:21px; }.vocab-explanation p { margin-top:8px; font-size:14px; color:var(--text-muted); }.vocab-explanation button { display:inline-flex; vertical-align:middle; padding:10px; }
+.vocab-answers { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; width:100%; }
+.vocab-answers button { min-width:90px; min-height:48px; border:1px solid var(--border); border-radius:12px; background:var(--surface); font-weight:700; padding:10px 16px; }
+.vocab-answers button:hover:not(:disabled) { border-color:#0284c7; color:#0284c7; }.vocab-answers button:disabled { opacity:.55; }
+.vocab-navigation { max-width:780px; margin:18px auto 0; }.vocab-navigation span { font-size:12px; color:var(--text-muted); }
+.vocab-primary { min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:10px; background:#0369a1; color:white; padding:10px 20px; border-radius:12px; font-size:14px; font-weight:700; }
+.vocab-primary:hover { background:#075985; }
+.vocab-feedback { max-width:780px; margin:16px auto 0; border-radius:14px; border:1px solid; padding:18px; font-size:14px; line-height:1.7; }.vocab-feedback p { margin-top:6px; }.vocab-feedback small { display:block; margin-top:10px; }
+.vocab-feedback.correct { background:#ecfdf5; border-color:#6ee7b7; color:#065f46; }.vocab-feedback.incorrect { background:#fff1f2; border-color:#fda4af; color:#9f1239; }
+.vocab-spelling { display:grid; gap:10px; max-width:380px; width:100%; }.vocab-spelling label { font-size:12px; color:var(--text-muted); }.vocab-umlauts { display:flex; justify-content:center; gap:10px; }.vocab-umlauts button { border:1px solid var(--border); border-radius:8px; padding:7px 16px; }
+.vocab-tools { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:12px; align-items:end; border-top:1px solid var(--border); padding-top:16px; margin-top:16px; }
+.vocab-error,.vocab-message { font-size:13px; padding:12px; border-radius:10px; margin-top:16px; background:var(--surface-muted); }.vocab-error { color:#be123c; }.vocab-error button { text-decoration:underline; }.vocab-message { display:flex; justify-content:space-between; gap:12px; }.vocab-message button { min-width:24px; }
+.vocab-empty { display:grid; justify-items:center; gap:14px; text-align:center; padding:50px 20px; }.vocab-empty h3 { font-size:20px; font-weight:800; }.vocab-empty p { color:var(--text-muted); font-size:14px; }
+.vocab-dictionary { margin-top:20px; }.vocab-dictionary article { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:20px 0; border-bottom:1px solid var(--border); }.vocab-dictionary h3 { font-size:20px; font-weight:800; }.vocab-dictionary small,.vocab-dictionary p { color:var(--text-muted); line-height:1.7; }.vocab-dictionary small { display:block; font-size:11px; margin:6px 0; }
+.dark .vocab-feedback.correct { background:#052e25; color:#a7f3d0; }.dark .vocab-feedback.incorrect { background:#3b1020; color:#fecdd3; }
+@media(max-width:640px) {
+  .vocab-library,.vocab-study { padding:14px; border-radius:16px; }.vocab-workspace { gap:12px; }
+  .vocab-selectors { grid-template-columns:1fr 1fr; gap:10px; }.vocab-selectors label:nth-child(2) { display:none; }.vocab-selectors label { font-size:11px; }
+  .vocab-library-heading { margin-bottom:12px; }.vocab-library-heading p { display:none; }.vocab-chapter-grid { grid-template-columns:1fr 1fr; }
+  .vocab-tabs { flex:1; min-width:0; }.vocab-tabs button { flex:1; padding:8px 6px; font-size:12px; }.vocab-toolbar { gap:6px; }
+  .vocab-filter-row { margin-top:12px; }.vocab-search { width:100%; }.vocab-search input { width:100%; }
+  .vocab-card-meta { margin-top:16px; }.vocab-card { padding:22px 16px; min-height:230px; gap:14px; }
+  .vocab-navigation span { font-size:10px; }.vocab-tools { grid-template-columns:1fr 1fr; }.vocab-navigation { gap:6px; }
+}
+.lesson-nav-link { flex:1; min-width:52px; text-align:center; white-space:nowrap; padding:9px 12px; border-radius:10px; font-size:13px; font-weight:700; color:var(--text-muted); }
+.lesson-nav-link[aria-current=page] { color:#0369a1; background:var(--surface); box-shadow:0 1px 3px #00000010; }
+.lesson-nav-link:hover { background:var(--surface); }

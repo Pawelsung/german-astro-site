@@ -1,10 +1,11 @@
 ---
 import LessonShell from '../components/LessonShell.astro';
+import VocabularyTrainer from '../components/VocabularyTrainer.jsx';
 
 export const frontmatter = {
-  title: "Lektion 1｜單字練習",
-  description: "以單字卡整理詞彙、詞性、例句與複習紀錄。可載入內建字庫或自製 JSON 字卡。",
-  category: "文法練習",
+  title: "單字學習｜分課練習",
+  description: "依教材與課次練習單字、冠詞和聽寫，接著複習還不熟悉的內容。",
+  category: "單字練習",
   tags: ["詞彙整理", "聽寫", "學習紀錄"],
   order: 1,
   level: "A1-B1",
@@ -13,70 +14,8 @@ export const frontmatter = {
 };
 ---
 
-<LessonShell frontmatter={frontmatter} contentClass="w-full flex-grow px-4 pb-10">
+<LessonShell frontmatter={frontmatter}>
   <div class="max-w-6xl mx-auto">
-    <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-      <iframe
-        id="lesson1-frame"
-        src="/lesson1-platform.html"
-        title="Lektion 1 platform"
-        class="w-full border-0 block"
-        style="height: 900px;"
-        loading="eager"
-      ></iframe>
-    </div>
+    <VocabularyTrainer client:only="react"><p slot="fallback" class="p-8 text-center">正在準備單字工作台…</p></VocabularyTrainer>
   </div>
-
-  <script>
-    function resizeLesson1Frame() {
-      const iframe = document.getElementById('lesson1-frame');
-      if (!iframe) return;
-
-      try {
-        const doc = iframe.contentWindow?.document;
-        if (!doc) return;
-
-        const body = doc.body;
-        const html = doc.documentElement;
-
-        const height = Math.max(
-          body.scrollHeight,
-          body.offsetHeight,
-          html.clientHeight,
-          html.scrollHeight,
-          html.offsetHeight
-        );
-
-        iframe.style.height = `${height}px`;
-      } catch (e) {
-        console.warn('iframe 高度自動調整失敗', e);
-      }
-    }
-
-    window.addEventListener('load', () => {
-      const iframe = document.getElementById('lesson1-frame');
-      if (!iframe) return;
-
-      iframe.addEventListener('load', () => {
-        resizeLesson1Frame();
-
-        try {
-          const iframeWindow = iframe.contentWindow;
-          iframeWindow?.addEventListener('resize', resizeLesson1Frame);
-
-          const iframeDoc = iframeWindow?.document;
-          const observerTarget = iframeDoc?.body;
-          if (observerTarget) {
-            const observer = new ResizeObserver(() => resizeLesson1Frame());
-            observer.observe(observerTarget);
-          }
-        } catch (e) {
-          console.warn('無法監聽 iframe 內容變化', e);
-        }
-
-        setTimeout(resizeLesson1Frame, 300);
-        setTimeout(resizeLesson1Frame, 1000);
-      });
-    });
-  </script>
 </LessonShell>
