@@ -62,7 +62,12 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-24：第二批——概念卡與每輪結算（已 commit，未部署）
+### 2026-10-24：快取設定修正（已部署）
+- 問題：Firebase 預設對 HTML 快取 1 小時。部署後，瀏覽器會沿用舊 HTML，而舊 HTML 指向已被刪除的舊 `_astro/*.js`，導致頁面空白（404）。
+- 修正：在 `firebase.json` 加上 headers——全站預設 `no-cache`（每次重新驗證，靠 ETag 判斷，成本很低）；`/_astro/**` 和 `/audio/de-charon/**` 的檔名帶有雜湊，設為 `immutable` 並快取一年。
+- 修正前一小時內開過網站的裝置，可能還要再重新整理一次；之後的部署不會再發生這個問題。
+
+### 2026-10-24：第二批——概念卡與每輪結算（已部署）
 - **概念卡** `src/components/ConceptCard.astro`：每課練習區上方有一張「1 分鐘重點」卡（`<details id="concept-card">`）
   - 第 1 課：冠詞顏色、字尾猜性別
   - 第 2 課：動詞＋介系詞公式、Akk 與 Dat 的常見搭配
