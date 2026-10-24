@@ -1,3 +1,6 @@
+import { useStoredProgress } from '../hooks/useStoredProgress';
+import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
+import { isReviewRequested } from '../lib/progressStorage';
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   ArrowRight,
@@ -66,17 +69,12 @@ function cx(...values) {
 }
 
 function loadProgress() {
-  if (typeof window === 'undefined') return { answers: {}, mistakes: [], bookmarks: [] };
-  try {
-    return {
-      answers: {},
-      mistakes: [],
-      bookmarks: [],
-      ...JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')
-    };
-  } catch {
-    return { answers: {}, mistakes: [], bookmarks: [] };
-  }
+  const stored = readProgressMap(STORAGE_KEY);
+  return {
+    answers: stored.answers && typeof stored.answers === 'object' ? stored.answers : {},
+    mistakes: Array.isArray(stored.mistakes) ? stored.mistakes : [],
+    bookmarks: Array.isArray(stored.bookmarks) ? stored.bookmarks : []
+  };
 }
 
 function normalizeAnswer(value) {
@@ -377,6 +375,7 @@ function QuizView({ questions, progress, setProgress }) {
   }
 
   const submit = () => {
+    if (result !== null) return;
     const correct = isAnswerCorrect(
       question,
       question.type === 'order_words' ? (draft || []).map((item) => item.token) : draft
@@ -566,16 +565,16 @@ function RecordsView({ questions, progress, setMode }) {
 
 export default function ConnectorTrainer() {
   const [mode, setMode] = useState('learn');
+  const [reviewIds, setReviewIds] = useState(null);
   const [moduleId, setModuleId] = useState('all');
   const [level, setLevel] = useState('all');
   const [syntax, setSyntax] = useState('all');
-  const [progress, setProgress] = useState(loadProgress);
+  const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-    window.dispatchEvent(new CustomEvent('learning-progress-updated'));
-  }, [progress]);
+    if (isReviewRequested()) { setMode('quiz'); setReviewIds([...progress.mistakes]); }
+  }, []);
+
 
   const connectors = useMemo(() => {
     return data.connectors.filter((connector) => {
@@ -589,11 +588,12 @@ export default function ConnectorTrainer() {
 
   const questions = useMemo(() => {
     return data.questions.filter((question) => {
+      if (reviewIds && !reviewIds.includes(question.id)) return false;
       if (moduleId !== 'all' && question.moduleId !== moduleId) return false;
       if (level !== 'all' && !String(question.level).includes(level)) return false;
       return true;
     });
-  }, [moduleId, level]);
+  }, [moduleId, level, reviewIds]);
 
   const answeredCount = Object.keys(progress.answers).length;
   const correctCount = Object.values(progress.answers).filter((answer) => answer.correct).length;
@@ -664,7 +664,7 @@ export default function ConnectorTrainer() {
       <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
         <div className="mb-4 flex flex-wrap gap-2">
           <FilterButton active={mode === 'learn'} onClick={() => setMode('learn')}>學習卡</FilterButton>
-          <FilterButton active={mode === 'quiz'} onClick={() => setMode('quiz')}>練習</FilterButton>
+          <FilterButton active={mode === 'quiz'} onClick={() => { setReviewIds(null); setMode('quiz'); }}>練習</FilterButton>
           <FilterButton active={mode === 'records'} onClick={() => setMode('records')}>紀錄</FilterButton>
           <FilterButton active={mode === 'mistakes'} onClick={() => setMode('mistakes')}>錯題</FilterButton>
           <FilterButton active={mode === 'bookmarks'} onClick={() => setMode('bookmarks')}>收藏</FilterButton>
@@ -697,6 +697,7 @@ export default function ConnectorTrainer() {
       </section>
 
       {mode === 'learn' && <LearnView connectors={connectors} progress={progress} onBookmark={toggleBookmark} />}
+      {reviewIds && mode === 'quiz' && <p className="text-sm font-bold text-rose-700">錯題複習 · 本輪 {reviewIds.length} 題 <button className="underline" onClick={() => setReviewIds(null)}>切換全部題目</button></p>}
       {mode === 'quiz' && <QuizView questions={questions} progress={progress} setProgress={setProgress} />}
       {mode === 'records' && <RecordsView questions={data.questions} progress={progress} setMode={setMode} />}
       {mode === 'mistakes' && <MistakesView questions={data.questions} progress={progress} setMode={setMode} />}

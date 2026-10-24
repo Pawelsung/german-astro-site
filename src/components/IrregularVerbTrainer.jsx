@@ -1,9 +1,11 @@
+import { useGermanSpeech } from '../hooks/useGermanSpeech';
+import { useStoredProgress } from '../hooks/useStoredProgress';
+import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
+import { isReviewRequested } from '../lib/progressStorage';
 import React, { useEffect, useMemo, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
-import { doc, onSnapshot, setDoc } from 'firebase/firestore';
 import { irregularVerbs } from '../data/irregular-verbs';
 import { getFirebaseServices } from '../lib/firebase';
-
 const STORAGE_KEY = 'irregular-verbs-trainer-v3';
 
 const MODES = {
@@ -47,20 +49,9 @@ function splitPerfekt(perfekt = '') {
 }
 
 function loadProgress() {
-  if (typeof window === 'undefined') return {};
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
+  return readProgressMap(STORAGE_KEY);
 }
 
-function saveProgress(progress) {
-  if (typeof window === 'undefined') return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  window.dispatchEvent(new CustomEvent('learning-progress-updated'));
-}
 
 function mergeProgress(local = {}, remote = {}) {
   return { ...remote, ...local };
@@ -179,14 +170,13 @@ function inferAuxHint(verb) {
 function deriveLearningState(item = {}) {
   const seen = item.seenCount || 0;
   const correct = item.correctCount || 0;
-  const wrong = item.wrongCount || 0;
-  const hard = !!item.isHard;
+  const pending = itemNeedsReview(item);
 
-  if (correct >= 5 && wrong <= 1 && !hard) {
+  if (correct >= 5 && !pending) {
     return { label: '已熟記', cls: 'bg-emerald-100 text-emerald-700 border-emerald-200' };
   }
 
-  if (hard || wrong >= 3) {
+  if (pending) {
     return { label: '需要複習', cls: 'bg-rose-100 text-rose-600 border-rose-200' };
   }
 
@@ -406,6 +396,7 @@ function FlashcardLikeMode({
   currentStats,
   onToggleStar,
   onToggleHard,
+  onMastered,
   onFlip,
   onPrev,
   onNext,
@@ -426,7 +417,7 @@ function FlashcardLikeMode({
             activeClass="bg-yellow-500 text-white border-yellow-500"
             inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
           >
-            ⭐ 已收藏
+            {currentStats?.starred ? '★ 取消收藏' : '☆ 收藏'}
           </ActionToggle>
 
           <ActionToggle
@@ -437,6 +428,7 @@ function FlashcardLikeMode({
           >
             需要複習
           </ActionToggle>
+          {onMastered && showBack && <button type="button" onClick={() => onMastered(currentVerb.id)} className="rounded-xl bg-emerald-600 px-4 py-2 font-bold text-white">已掌握，移出複習</button>}
         </>
       }
     >
@@ -449,7 +441,7 @@ function FlashcardLikeMode({
             showBack ? '[transform:rotateY(180deg)]' : ''
           }`}
         >
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-center min-w-0 [backface-visibility:hidden]">
+          <div aria-hidden={showBack} inert={showBack} style={{ visibility: showBack ? 'hidden' : 'visible', WebkitBackfaceVisibility: 'hidden' }} className="absolute inset-0 flex flex-col justify-center items-center text-center min-w-0 [backface-visibility:hidden]">
             {frontBadge && (
               <div className="mb-3 flex justify-center">
                 <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
@@ -480,7 +472,7 @@ function FlashcardLikeMode({
             </div>
           </div>
 
-          <div className="absolute inset-0 flex flex-col justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div aria-hidden={!showBack} inert={!showBack} style={{ visibility: showBack ? 'visible' : 'hidden', WebkitBackfaceVisibility: 'hidden' }} className="absolute inset-0 flex flex-col justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
             <div className="grid sm:grid-cols-2 gap-4 text-left auto-rows-fr">
               <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
                 <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>
@@ -563,7 +555,7 @@ export default function IrregularVerbTrainer() {
   const [level, setLevel] = useState('ALL');
   const [search, setSearch] = useState('');
   const [showBack, setShowBack] = useState(false);
-  const [progress, setProgress] = useState(loadProgress);
+  const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
   const [deck, setDeck] = useState(irregularVerbs);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAudioPanel, setShowAudioPanel] = useState(false);
@@ -582,16 +574,18 @@ export default function IrregularVerbTrainer() {
   const [modalAnswer, setModalAnswer] = useState('');
   const [modalFeedback, setModalFeedback] = useState(null);
 
-  const [voices, setVoices] = useState([]);
   const [voiceURI, setVoiceURI] = useState('');
   const [rate, setRate] = useState(0.9);
   const [pitch, setPitch] = useState(1.0);
+  const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI, rate, pitch });
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    saveProgress(progress);
-  }, [progress]);
+    if (isReviewRequested()) setMode(MODES.WRONG);
+  }, []);
+
+
 
   useEffect(() => {
     const services = getFirebaseServices();
@@ -600,61 +594,6 @@ export default function IrregularVerbTrainer() {
     const unsubscribe = onAuthStateChanged(services.auth, setUser);
     return () => unsubscribe();
   }, []);
-
-  useEffect(() => {
-    const services = getFirebaseServices();
-    if (!services || !user) return;
-
-    const docRef = doc(services.db, 'users', user.uid, 'learning', 'lesson3');
-    const unsubscribe = onSnapshot(docRef, (snapshot) => {
-      const remoteLesson3 = snapshot.exists() ? snapshot.data().value : null;
-      if (!remoteLesson3) {
-        setDoc(docRef, { value: progress, updatedAt: new Date().toISOString() }, { merge: true });
-        return;
-      }
-
-      setProgress((current) => {
-        const merged = mergeProgress(current, remoteLesson3);
-        saveProgress(merged);
-        return merged;
-      });
-    });
-
-    return () => unsubscribe();
-  }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    const services = getFirebaseServices();
-    if (!services || !user) return;
-
-    const docRef = doc(services.db, 'users', user.uid, 'learning', 'lesson3');
-    setDoc(docRef, { value: progress, updatedAt: new Date().toISOString() }, { merge: true }).catch(
-      console.error
-    );
-  }, [progress, user]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) return;
-
-    const loadVoices = () => {
-      const germanVoices = window.speechSynthesis
-        .getVoices()
-        .filter((voice) => voice.lang.toLowerCase().startsWith('de'));
-
-      setVoices(germanVoices);
-
-      if (!voiceURI && germanVoices.length > 0) {
-        setVoiceURI(germanVoices[0].voiceURI);
-      }
-    };
-
-    loadVoices();
-    window.speechSynthesis.onvoiceschanged = loadVoices;
-
-    return () => {
-      window.speechSynthesis.onvoiceschanged = null;
-    };
-  }, [voiceURI]);
 
   useEffect(() => {
     const handleKeydown = (e) => {
@@ -690,22 +629,6 @@ export default function IrregularVerbTrainer() {
     return () => window.removeEventListener('keydown', handleKeydown);
   }, [deck.length, mode, showBack, currentIndex]);
 
-  function speak(text) {
-    if (typeof window === 'undefined' || !window.speechSynthesis || !text) return;
-
-    window.speechSynthesis.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'de-DE';
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-
-    const selectedVoice = voices.find((voice) => voice.voiceURI === voiceURI);
-    if (selectedVoice) utterance.voice = selectedVoice;
-
-    window.speechSynthesis.speak(utterance);
-  }
-
   const filteredByLevel = useMemo(() => {
     if (level === 'ALL') return irregularVerbs;
     return irregularVerbs.filter((verb) => verb.level === level);
@@ -722,7 +645,7 @@ export default function IrregularVerbTrainer() {
   }, [filteredByType, auxFilter]);
 
   const wrongList = useMemo(() => {
-    return filteredByAux.filter((verb) => (progress[verb.id]?.wrongCount || 0) > 0);
+    return filteredByAux.filter((verb) => itemNeedsReview(progress[verb.id]));
   }, [filteredByAux, progress]);
 
   const hardList = useMemo(() => {
@@ -792,7 +715,7 @@ export default function IrregularVerbTrainer() {
     setAuxFeedback(null);
     setModalAnswer('');
     setModalFeedback(null);
-  }, [visibleList, mode, cardOrder]);
+  }, [visibleList.map(verb => verb.id).join(','), mode, cardOrder]);
 
   const currentVerb = deck[currentIndex] || null;
 
@@ -809,7 +732,7 @@ export default function IrregularVerbTrainer() {
       const current = prev[verbId] || {};
       return {
         ...prev,
-        [verbId]: updater(current)
+        [verbId]: { ...updater(current), updatedAt: new Date().toISOString() }
       };
     });
   }
@@ -824,7 +747,8 @@ export default function IrregularVerbTrainer() {
   function markCorrect(verbId) {
     updateItemProgress(verbId, (current) => ({
       ...current,
-      correctCount: (current.correctCount || 0) + 1
+      correctCount: (current.correctCount || 0) + 1,
+      lastCorrect: true, isHard: false
     }));
   }
 
@@ -832,6 +756,7 @@ export default function IrregularVerbTrainer() {
     updateItemProgress(verbId, (current) => ({
       ...current,
       wrongCount: (current.wrongCount || 0) + 1,
+      lastCorrect: false,
       isHard: true
     }));
   }
@@ -881,7 +806,7 @@ export default function IrregularVerbTrainer() {
 
   function handleTypingSubmit(e) {
     e.preventDefault();
-    if (!currentVerb) return;
+    if (!currentVerb || typingFeedback) return;
 
     const praeteritumOk =
       normalizeText(typingPraeteritum) === normalizeText(currentVerb.praeteritum);
@@ -896,7 +821,7 @@ export default function IrregularVerbTrainer() {
         type: 'success',
         text: '答對了！'
       });
-      setTimeout(() => nextCard(), 900);
+
     } else {
       markWrong(currentVerb.id);
       setTypingFeedback({
@@ -907,7 +832,7 @@ export default function IrregularVerbTrainer() {
   }
 
   function handleAuxAnswer(answer) {
-    if (!currentVerb) return;
+    if (!currentVerb || auxFeedback) return;
     setAuxAnswer(answer);
 
     if (answer === currentVerb.auxiliary) {
@@ -916,7 +841,7 @@ export default function IrregularVerbTrainer() {
         type: 'success',
         text: `答對了：${currentVerb.perfekt}`
       });
-      setTimeout(() => nextCard(), 900);
+
     } else {
       markWrong(currentVerb.id);
       setAuxFeedback({
@@ -927,7 +852,7 @@ export default function IrregularVerbTrainer() {
   }
 
   function handleModalSubmit(answer) {
-    if (!currentVerb) return;
+    if (!currentVerb || modalFeedback) return;
     setModalAnswer(answer);
 
     if (answer === currentVerb.present3rd) {
@@ -936,7 +861,7 @@ export default function IrregularVerbTrainer() {
         type: 'success',
         text: `答對了：${currentVerb.infinitive} → ${currentVerb.present3rd}`
       });
-      setTimeout(() => nextCard(), 900);
+
     } else {
       markWrong(currentVerb.id);
       setModalFeedback({
@@ -986,6 +911,7 @@ export default function IrregularVerbTrainer() {
 
   return (
     <div className="text-slate-800">
+      {speechMessage && <p role="status" className="mb-3 rounded-xl bg-violet-50 p-3 text-sm text-violet-800">{speechMessage}</p>}
       <div className="mb-3 rounded-xl md:rounded-2xl bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
         <div className="flex flex-col gap-2">
           <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
@@ -1197,6 +1123,7 @@ export default function IrregularVerbTrainer() {
                     onChange={(e) => setVoiceURI(e.target.value)}
                     className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 font-bold outline-none"
                   >
+                    <option value="">系統德語人聲</option>
                     {voices.map((voice) => (
                       <option key={voice.voiceURI} value={voice.voiceURI}>
                         {voice.name} ({voice.lang})
@@ -1288,6 +1215,7 @@ export default function IrregularVerbTrainer() {
       {(mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) && currentVerb && (
         <FlashcardLikeMode
           tone="rose"
+          onMastered={mode !== MODES.STARRED ? markCorrect : undefined}
           currentVerb={currentVerb}
           currentStats={currentStats}
           onToggleStar={toggleStar}

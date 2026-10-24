@@ -27,8 +27,22 @@ export function readJSON(key: string, fallback: any = null) {
 
 export function writeJSON(key: string, value: any) {
   if (typeof window === 'undefined') return;
-  window.localStorage.setItem(key, JSON.stringify(value));
-  window.dispatchEvent(new CustomEvent('learning-progress-updated'));
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+    window.dispatchEvent(new CustomEvent('learning-progress-updated', { detail: { key } }));
+  } catch {
+    window.dispatchEvent(new CustomEvent('learning-storage-error'));
+  }
+}
+
+export function needsReview(item: any) {
+  if (!item || typeof item !== 'object') return false;
+  return Boolean(item.needsReview || item.isHard || (item.lastCorrect !== true && ((item.wrong || 0) > 0 || (item.wrongCount || 0) > 0)));
+}
+
+export function readProgressMap(key: string) {
+  const value = readJSON(key, {});
+  return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
 }
 
 export function loadLesson2Progress() {
@@ -45,12 +59,34 @@ export function saveLesson2Progress(progress: any) {
 }
 
 export function loadLesson6Progress() {
-  const parsed = readJSON(PROGRESS_KEYS.lesson6, {});
-  return parsed && typeof parsed === 'object' ? parsed : {};
+  return readProgressMap(PROGRESS_KEYS.lesson6);
 }
 
 export function saveLesson6Progress(progress: any) {
   writeJSON(PROGRESS_KEYS.lesson6, progress);
+}
+
+export function getReviewAction(summary: ReturnType<typeof getLearningSummary>) {
+  const lessons = [
+    [summary.lesson1ErrorCount, '/lesson1-wort/', '單字練習'],
+    [summary.lesson2ReviewCount, '/lesson2-VerbWithPreposition/', '動詞與介系詞'],
+    [summary.lesson3WrongCount, '/lesson3-irregular-verbs/', '不規則動詞'],
+    [summary.lesson4WrongCount, '/lesson4-kasus/', '格位練習'],
+    [summary.lesson5WrongCount, '/lesson5-connectors/', '連接詞與語序'],
+    [summary.lesson6WrongCount, '/lesson6-adjective-declension/', '形容詞字尾']
+  ] as const;
+  const next = lessons.find(([count]) => count > 0);
+  return next
+    ? { href: `${next[1]}?review=1`, label: `複習${next[2]}（${next[0]} 題）` }
+    : { href: '/lesson1-wort/', label: '開始學習練習' };
+}
+
+export function isReviewRequested() {
+  return typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('review') === '1';
+}
+
+export function isLesson2Due(item: any, now = Date.now()) {
+  return typeof item?.nextReview === 'number' && item.nextReview <= now;
 }
 
 export function getLearningSummary() {
@@ -69,14 +105,14 @@ export function getLearningSummary() {
 
   const lesson1WordCount = Array.isArray(lesson1Words) ? lesson1Words.length : 0;
   const lesson1ErrorCount = Array.isArray(lesson1Words)
-    ? lesson1Words.filter((word: any) => (word.errors || 0) > 0).length
+    ? lesson1Words.filter((word: any) => (word?.errors || 0) > 0).length
     : 0;
   const lesson3WrongCount = lesson3Items.filter(
-    (item: any) => item?.isHard || (item?.wrongCount || 0) > 0
+    needsReview
   ).length;
   const lesson3StarredCount = lesson3Items.filter((item: any) => item?.starred).length;
   const lesson4WrongCount = lesson4Items.filter(
-    (item: any) => item?.needsReview || (item?.wrong || 0) > 0
+    needsReview
   ).length;
   const lesson4StarredCount = lesson4Items.filter((item: any) => item?.starred).length;
   const lesson5AnsweredCount = Object.keys(lesson5Answers).length;
@@ -84,14 +120,15 @@ export function getLearningSummary() {
   const lesson5WrongCount = lesson5Mistakes.length;
   const lesson5StarredCount = lesson5Bookmarks.length;
   const lesson6AnsweredCount = lesson6Items.filter((item: any) => item?.answered).length;
-  const lesson6WrongCount = lesson6Items.filter((item: any) => (item?.wrong || 0) > 0 || item?.needsReview).length;
+  const lesson6WrongCount = lesson6Items.filter(needsReview).length;
   const lesson6StarredCount = lesson6Items.filter((item: any) => item?.starred).length;
 
   return {
     lesson1WordCount,
     lesson1ErrorCount,
+    lesson1StarredCount: Array.isArray(lesson1Words) ? lesson1Words.filter((word: any) => word?.starred).length : 0,
     lesson2StarredCount: lesson2Progress.starred.length,
-    lesson2ReviewCount: Object.keys(lesson2Progress.srs || {}).length,
+    lesson2ReviewCount: Object.values(lesson2Progress.srs || {}).filter((item) => isLesson2Due(item)).length,
     lesson3WrongCount,
     lesson3StarredCount,
     lesson4WrongCount,
@@ -123,7 +160,15 @@ function mergeUnique(a: any[] = [], b: any[] = []) {
 }
 
 function mergeObjects(local: any = {}, remote: any = {}) {
-  return { ...remote, ...local };
+  const result = { ...remote, ...local };
+  for (const key of Object.keys(remote || {})) {
+    const a = local?.[key];
+    const b = remote[key];
+    const at = a?.updatedAt || a?.lastAnsweredAt || a?.answeredAt || '';
+    const bt = b?.updatedAt || b?.lastAnsweredAt || b?.answeredAt || '';
+    if (bt > at) result[key] = b;
+  }
+  return result;
 }
 
 function getWordKey(word: any) {
@@ -151,8 +196,9 @@ function mergeLesson1Words(localWords: any[] = [], remoteWords: any[] = []) {
     merged.set(key, {
       ...remoteWord,
       ...word,
-      errors: Math.max(remoteWord.errors || 0, word.errors || 0),
-      starred: Boolean(remoteWord.starred || word.starred)
+      ...((word.updatedAt || remoteWord.updatedAt)
+        ? ((word.updatedAt || '') >= (remoteWord.updatedAt || '') ? word : remoteWord)
+        : { errors: Math.max(remoteWord.errors || 0, word.errors || 0), starred: Boolean(remoteWord.starred || word.starred) })
     });
   });
 
@@ -188,7 +234,11 @@ export function mergeRemoteProgress(remoteProgress: any = {}) {
     lesson2: mergeLesson2(local.lesson2, remoteProgress.lesson2),
     lesson3: mergeObjects(local.lesson3, remoteProgress.lesson3),
     lesson4: mergeObjects(local.lesson4, remoteProgress.lesson4),
-    lesson5: mergeObjects(local.lesson5, remoteProgress.lesson5),
+    lesson5: {
+      answers: mergeObjects(local.lesson5?.answers, remoteProgress.lesson5?.answers),
+      mistakes: Object.entries(mergeObjects(local.lesson5?.answers, remoteProgress.lesson5?.answers)).filter(([, value]: any) => !value.correct).map(([key]) => key),
+      bookmarks: mergeUnique(local.lesson5?.bookmarks, remoteProgress.lesson5?.bookmarks)
+    },
     lesson6: mergeObjects(local.lesson6, remoteProgress.lesson6),
     updatedAt: new Date().toISOString()
   };

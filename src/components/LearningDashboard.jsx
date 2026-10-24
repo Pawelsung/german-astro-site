@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, RotateCcw, Star } from 'lucide-react';
-import { getLearningSummary } from '../lib/progressStorage';
+import { getLearningSummary, getReviewAction } from '../lib/progressStorage';
 import UserAccount from './UserAccount.jsx';
 
 function LessonRecord({ href, label, title, primary, secondary, tone = 'amber' }) {
@@ -16,7 +16,7 @@ function LessonRecord({ href, label, title, primary, secondary, tone = 'amber' }
   return (
     <a
       href={href}
-      className="grid min-w-64 grid-cols-[auto_1fr_auto] items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 hover:bg-white transition-colors"
+      className="grid min-w-0 grid-cols-[auto_1fr_auto] items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 hover:bg-white transition-colors"
     >
       <div className={`flex h-9 w-9 items-center justify-center rounded-lg border text-sm font-black ${toneClass}`}>
         {label}
@@ -67,22 +67,19 @@ export default function LearningDashboard() {
 
   const reviewCount =
     summary.lesson1ErrorCount +
+    summary.lesson2ReviewCount +
     summary.lesson3WrongCount +
     summary.lesson4WrongCount +
     summary.lesson5WrongCount +
     summary.lesson6WrongCount;
   const starredCount =
+    summary.lesson1StarredCount +
     summary.lesson2StarredCount +
     summary.lesson3StarredCount +
     summary.lesson4StarredCount +
     summary.lesson5StarredCount +
     summary.lesson6StarredCount;
-  const primaryAction =
-    reviewCount > 0
-      ? { href: '/lesson3-irregular-verbs/', label: '複習需要加強的內容' }
-      : summary.lesson2ReviewCount > 0
-        ? { href: '/lesson2-VerbWithPreposition/', label: '複習動詞與介系詞' }
-        : { href: '/lesson1-wort/', label: '開始學習練習' };
+  const primaryAction = getReviewAction(summary);
   const lessonRecords = [
     {
       href: '/lesson1-wort/',
@@ -137,9 +134,7 @@ export default function LearningDashboard() {
   return (
     <section className="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-200 mb-8">
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid gap-3">
-          <UserAccount />
-
+        <div className="grid content-start gap-3">
           <a
             href={primaryAction.href}
             className="flex items-center justify-between gap-4 rounded-xl bg-slate-900 px-5 py-3.5 text-white hover:bg-slate-800 transition-colors"
@@ -150,10 +145,15 @@ export default function LearningDashboard() {
             </div>
             <ArrowRight className="shrink-0 text-slate-300" size={24} />
           </a>
+          <a href="/lesson1-wort/" className="rounded-xl border border-sky-100 bg-sky-50 px-5 py-3 text-sm font-bold text-sky-800">繼續單字學習 · 自動恢復上次課次與位置 →</a>
+          <details className="rounded-xl border border-slate-200 p-3">
+            <summary className="text-sm font-bold text-slate-600">帳號與跨裝置同步</summary>
+            <div className="mt-3"><UserAccount /></div>
+          </details>
         </div>
 
         <div className="grid gap-3 content-start">
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 ">
             <StatPill icon={<RotateCcw size={16} />} label="需要複習" value={reviewCount} tone="rose" />
             <StatPill icon={<Star size={16} className="fill-amber-400" />} label="已收藏" value={starredCount} tone="amber" />
           </div>
@@ -170,7 +170,7 @@ export default function LearningDashboard() {
             </summary>
 
             <div className="border-t border-slate-100 p-3">
-              <div className="grid max-h-72 gap-2 overflow-y-auto pr-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div className="grid max-h-72 gap-2 overflow-y-auto pr-1">
                 {lessonRecords.map((lesson) => (
                   <LessonRecord key={lesson.href} {...lesson} />
                 ))}

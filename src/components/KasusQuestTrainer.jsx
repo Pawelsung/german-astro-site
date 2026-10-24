@@ -1,3 +1,6 @@
+import { useStoredProgress } from '../hooks/useStoredProgress';
+import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
+import { isReviewRequested } from '../lib/progressStorage';
 import React, { useEffect, useMemo, useState } from 'react';
 import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import data from '../data/lesson4-kasus-quest-data.json';
@@ -94,19 +97,9 @@ const CASE_STYLES = {
 };
 
 function loadProgress() {
-  if (typeof window === 'undefined') return {};
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-  } catch {
-    return {};
-  }
+  return readProgressMap(STORAGE_KEY);
 }
 
-function saveProgress(progress) {
-  if (typeof window === 'undefined') return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  window.dispatchEvent(new CustomEvent('learning-progress-updated'));
-}
 
 function cx(...values) {
   return values.filter(Boolean).join(' ');
@@ -201,11 +194,14 @@ export default function KasusQuestTrainer() {
   const [showHint, setShowHint] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState(null);
-  const [progress, setProgress] = useState(loadProgress);
+  const [answeredExercise, setAnsweredExercise] = useState(null);
+  const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
 
   useEffect(() => {
-    saveProgress(progress);
-  }, [progress]);
+    if (isReviewRequested()) setMistakeOnly(true);
+  }, []);
+
+
 
   const exercises = data.exercises || [];
   const modes = Object.keys(MODE_LABELS).filter((item) => exercises.some((exercise) => exercise.mode === item));
@@ -214,7 +210,7 @@ export default function KasusQuestTrainer() {
     let next = exercises;
     if (level !== 'ALL') next = next.filter((exercise) => exercise.level === level);
     if (mode !== 'ALL') next = next.filter((exercise) => exercise.mode === mode);
-    if (mistakeOnly) next = next.filter((exercise) => getExerciseProgress(progress, exercise.id).wrong > 0);
+    if (mistakeOnly) next = next.filter((exercise) => itemNeedsReview(getExerciseProgress(progress, exercise.id)));
     if (savedOnly) next = next.filter((exercise) => {
       const item = getExerciseProgress(progress, exercise.id);
       return item.starred || item.needsReview;
@@ -222,7 +218,7 @@ export default function KasusQuestTrainer() {
     return next;
   }, [exercises, level, mode, mistakeOnly, savedOnly, progress]);
 
-  const current = filtered[currentIndex] || null;
+  const current = answeredExercise || filtered[currentIndex % Math.max(filtered.length, 1)] || null;
   const currentProgress = current ? getExerciseProgress(progress, current.id) : {};
   const currentGuide = MODE_GUIDES[current?.mode] || MODE_GUIDES['case-detective'];
   const compactOptions = isCompactOptionSet(current);
@@ -230,7 +226,7 @@ export default function KasusQuestTrainer() {
   const correct = Object.values(progress).reduce((sum, item) => sum + (item?.correct || 0), 0);
   const wrong = Object.values(progress).reduce((sum, item) => sum + (item?.wrong || 0), 0);
   const accuracy = correct + wrong > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
-  const needsReview = Object.values(progress).filter((item) => item?.needsReview || (item?.wrong || 0) > 0).length;
+  const needsReview = Object.values(progress).filter(itemNeedsReview).length;
   const savedItems = Object.values(progress).filter((item) => item?.starred || item?.needsReview).length;
   const mistakeStats = Object.values(progress).reduce((acc, item) => {
     if (!item?.wrong) return acc;
@@ -245,6 +241,7 @@ export default function KasusQuestTrainer() {
 
   function resetAnswer(nextIndex = currentIndex) {
     setSelected(null);
+    setAnsweredExercise(null);
     setShowHint(style === 'guided');
     setCurrentIndex(nextIndex);
   }
@@ -252,12 +249,14 @@ export default function KasusQuestTrainer() {
   useEffect(() => {
     setCurrentIndex(0);
     setSelected(null);
+    setAnsweredExercise(null);
     setShowHint(style === 'guided');
   }, [level, mode, mistakeOnly, savedOnly, style]);
 
   function answer(option) {
     if (!current || selected) return;
     const isCorrect = option === current.answer;
+    setAnsweredExercise(current);
     setSelected(option);
     setShowHint(true);
     setProgress((prev) => {
@@ -267,9 +266,12 @@ export default function KasusQuestTrainer() {
         [current.id]: {
           ...item,
           answered: true,
+          needsReview: !isCorrect,
+          updatedAt: new Date().toISOString(),
           correct: (item.correct || 0) + (isCorrect ? 1 : 0),
           wrong: (item.wrong || 0) + (isCorrect ? 0 : 1),
           lastAnswer: option,
+          lastCorrect: isCorrect,
           lastAnsweredAt: new Date().toISOString(),
           mistakeTypes: isCorrect ? item.mistakeTypes || [] : current.mistakeTypes || []
         }
@@ -285,19 +287,20 @@ export default function KasusQuestTrainer() {
         ...prev,
         [current.id]: {
           ...item,
-          [flag]: !item[flag]
+          [flag]: !item[flag],
+          updatedAt: new Date().toISOString()
         }
       };
     });
   }
 
   function next() {
-    if (filtered.length === 0) return;
-    resetAnswer((currentIndex + 1) % filtered.length);
+    if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
+    resetAnswer((currentIndex + (answeredExercise && !filtered.some(item => item.id === answeredExercise.id) ? 0 : 1)) % filtered.length);
   }
 
   function prev() {
-    if (filtered.length === 0) return;
+    if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
     resetAnswer((currentIndex - 1 + filtered.length) % filtered.length);
   }
 
@@ -393,7 +396,7 @@ export default function KasusQuestTrainer() {
                   </div>
                 </div>
                 <div className="flex shrink-0 gap-1.5">
-                  <button type="button" aria-label="已收藏" onClick={() => toggleFlag('starred')} className={cx('grid h-9 w-9 place-items-center rounded-xl border shadow-sm transition-colors', currentProgress.starred ? 'border-amber-500 bg-amber-500 text-white' : 'border-teal-100 bg-white text-slate-500 hover:border-amber-300 hover:bg-amber-50')}>
+                  <button type="button" aria-label={currentProgress.starred ? "取消收藏" : "收藏"} aria-pressed={!!currentProgress.starred} onClick={() => toggleFlag('starred')} className={cx('grid h-9 w-9 place-items-center rounded-xl border shadow-sm transition-colors', currentProgress.starred ? 'border-amber-500 bg-amber-500 text-white' : 'border-teal-100 bg-white text-slate-500 hover:border-amber-300 hover:bg-amber-50')}>
                     <Star size={16} className={cx(currentProgress.starred && 'fill-white')} />
                   </button>
                   <button type="button" onClick={() => toggleFlag('needsReview')} className={cx('h-9 rounded-xl border px-2.5 text-[11px] font-black shadow-sm transition-colors', currentProgress.needsReview ? 'border-rose-600 bg-rose-600 text-white' : 'border-teal-100 bg-white text-slate-500 hover:border-rose-300 hover:bg-rose-50')}>
@@ -408,7 +411,7 @@ export default function KasusQuestTrainer() {
                 <p className="mt-2 text-sm font-bold text-slate-500 md:text-base">{current.translation}</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   <span className="rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-black text-teal-700">目標詞：{current.targetNoun || '-'}</span>
-                  {showInlineHint && <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-black text-cyan-700">線索：{current.trigger || '-'}</span>}
+                  {showInlineHint && <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-black text-cyan-700">線索：{current.trigger === 'subject' ? '主詞' : current.trigger || '-'}</span>}
                 </div>
               </div>
 

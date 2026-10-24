@@ -1,3 +1,6 @@
+import { useStoredProgress } from '../hooks/useStoredProgress';
+import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
+import { isReviewRequested } from '../lib/progressStorage';
 import React, { useEffect, useMemo, useState } from 'react';
 import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import lessonData from '../data/lesson6-adjective-declension';
@@ -203,13 +206,17 @@ export default function AdjectiveDeclensionTrainer() {
   const [savedOnly, setSavedOnly] = useState(false);
   const [showConcepts, setShowConcepts] = useState(false);
   const [showRecords, setShowRecords] = useState(false);
+  const [showTools, setShowTools] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState(null);
-  const [progress, setProgress] = useState(loadLesson6Progress);
+  const [answeredExercise, setAnsweredExercise] = useState(null);
+  const [progress, setProgress] = useStoredProgress('german-lesson6-adjective-declension-progress', loadLesson6Progress);
 
   useEffect(() => {
-    saveLesson6Progress(progress);
-  }, [progress]);
+    if (isReviewRequested()) setReviewOnly(true);
+  }, []);
+
+
 
   const exercises = lessonData.exercises || [];
   const availableModes = Object.keys(MODE_LABELS).filter((item) => exercises.some((exercise) => exercise.mode === item));
@@ -221,13 +228,13 @@ export default function AdjectiveDeclensionTrainer() {
     if (stage !== 'ALL') next = next.filter((exercise) => String(exercise.stage) === stage);
     if (reviewOnly) next = next.filter((exercise) => {
       const item = getItemProgress(progress, exercise.id);
-      return item.needsReview || (item.wrong || 0) > 0;
+      return itemNeedsReview(item);
     });
     if (savedOnly) next = next.filter((exercise) => getItemProgress(progress, exercise.id).starred);
     return next;
   }, [exercises, mode, stage, reviewOnly, savedOnly, progress]);
 
-  const current = filtered[currentIndex] || null;
+  const current = answeredExercise || filtered[currentIndex % Math.max(filtered.length, 1)] || null;
   const currentProgress = current ? getItemProgress(progress, current.id) : {};
   const displayedOptions = useMemo(
     () => rotateOptions(current?.options || [], current?.id || ''),
@@ -236,7 +243,7 @@ export default function AdjectiveDeclensionTrainer() {
   const answeredItems = Object.values(progress).filter((item) => item?.answered);
   const correctCount = Object.values(progress).reduce((sum, item) => sum + (item?.correct || 0), 0);
   const wrongCount = Object.values(progress).reduce((sum, item) => sum + (item?.wrong || 0), 0);
-  const reviewCount = Object.values(progress).filter((item) => item?.needsReview || (item?.wrong || 0) > 0).length;
+  const reviewCount = Object.values(progress).filter(itemNeedsReview).length;
   const starredCount = Object.values(progress).filter((item) => item?.starred).length;
   const accuracy = correctCount + wrongCount > 0 ? Math.round((correctCount / (correctCount + wrongCount)) * 100) : 0;
 
@@ -250,11 +257,13 @@ export default function AdjectiveDeclensionTrainer() {
   useEffect(() => {
     setCurrentIndex(0);
     setSelected(null);
+    setAnsweredExercise(null);
   }, [mode, stage, reviewOnly, savedOnly]);
 
   function answer(option) {
     if (!current || selected) return;
     const isCorrect = option === current.answer;
+    setAnsweredExercise(current);
     setSelected(option);
     setProgress((prev) => {
       const item = prev[current.id] || {};
@@ -263,6 +272,8 @@ export default function AdjectiveDeclensionTrainer() {
         [current.id]: {
           ...item,
           answered: true,
+          needsReview: !isCorrect,
+          updatedAt: new Date().toISOString(),
           correct: (item.correct || 0) + (isCorrect ? 1 : 0),
           wrong: (item.wrong || 0) + (isCorrect ? 0 : 1),
           lastAnswer: option,
@@ -281,26 +292,30 @@ export default function AdjectiveDeclensionTrainer() {
         ...prev,
         [current.id]: {
           ...item,
-          [flag]: !item[flag]
+          [flag]: !item[flag],
+          updatedAt: new Date().toISOString()
         }
       };
     });
   }
 
   function next() {
-    if (filtered.length === 0) return;
+    if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
     setSelected(null);
-    setCurrentIndex((currentIndex + 1) % filtered.length);
+    setAnsweredExercise(null);
+    setCurrentIndex((currentIndex + (answeredExercise && !filtered.some(item => item.id === answeredExercise.id) ? 0 : 1)) % filtered.length);
   }
 
   function prev() {
-    if (filtered.length === 0) return;
+    if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
     setSelected(null);
+    setAnsweredExercise(null);
     setCurrentIndex((currentIndex - 1 + filtered.length) % filtered.length);
   }
 
   function resetProgress() {
     setSelected(null);
+    setAnsweredExercise(null);
     setProgress({});
   }
 
@@ -308,6 +323,7 @@ export default function AdjectiveDeclensionTrainer() {
     setReviewOnly(false);
     setSavedOnly(false);
     setSelected(null);
+    setAnsweredExercise(null);
 
     if (item.modes.includes('concept')) {
       setShowConcepts((value) => !value);
@@ -326,12 +342,12 @@ export default function AdjectiveDeclensionTrainer() {
         <div className="grid gap-3 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <h2 className="text-lg font-black text-slate-800">{lessonData.meta.subtitle}</h2>
-            <p className="mt-1 text-sm font-bold leading-relaxed text-slate-500">{lessonData.meta.description}</p>
+            <p className="mt-1 hidden text-sm font-bold leading-relaxed text-slate-500 md:block">{lessonData.meta.description}</p>
           </div>
           <div className="grid grid-cols-4 gap-2 text-center sm:min-w-[430px]">
             {[
               ['已作答', answeredItems.length],
-              ['正確率', `${accuracy}%`],
+              ['正確率', answeredItems.length ? `${accuracy}%` : '—'],
               ['需複習', reviewCount],
               ['收藏', starredCount]
             ].map(([label, value]) => (
@@ -343,12 +359,15 @@ export default function AdjectiveDeclensionTrainer() {
           </div>
         </div>
 
-        <div className="mt-4 grid gap-2 md:grid-cols-[1fr_1fr_auto_auto_auto_auto]">
-          <select value={mode} onChange={(event) => setMode(event.target.value)} className="min-h-10 rounded-xl border border-amber-100 bg-amber-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-amber-400">
+        <button type="button" aria-expanded={showTools} aria-controls="adjective-tools" onClick={() => setShowTools(value => !value)} className="mt-3 min-h-10 w-full rounded-xl border border-amber-100 px-3 py-2 text-sm font-bold md:hidden">
+          {showTools ? '收合篩選與工具' : '篩選、錯題與文法速查'}{reviewOnly ? ' · 錯題模式' : ''}
+        </button>
+        <div id="adjective-tools" className={cx('mt-4 grid-cols-2 gap-2 md:grid md:grid-cols-[1fr_1fr_auto_auto_auto_auto]', showTools ? 'grid' : 'hidden')}>
+          <select aria-label="題型" value={mode} onChange={(event) => setMode(event.target.value)} className="min-h-10 rounded-xl border border-amber-100 bg-amber-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-amber-400">
             <option value="ALL">全部題型</option>
             {availableModes.map((item) => <option key={item} value={item}>{MODE_LABELS[item]}</option>)}
           </select>
-          <select value={stage} onChange={(event) => setStage(event.target.value)} className="min-h-10 rounded-xl border border-amber-100 bg-amber-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-amber-400">
+          <select aria-label="學習階段" value={stage} onChange={(event) => setStage(event.target.value)} className="min-h-10 rounded-xl border border-amber-100 bg-amber-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-amber-400">
             <option value="ALL">全部階段</option>
             {availableStages.map((item) => <option key={item} value={String(item)}>{STAGE_LABELS[item] || `Stage ${item}`}</option>)}
           </select>

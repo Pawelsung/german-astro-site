@@ -16,7 +16,7 @@ export const frontmatter = {
 
 <LessonShell frontmatter={frontmatter}>
   <div class="max-w-6xl mx-auto">
-    <VerbWithPreposition client:load />
+    <VerbWithPreposition client:only="react" />
   </div>
 
   <li slot="tips" class="flex items-start gap-2">
@@ -29,6 +29,6 @@ export const frontmatter = {
   </li>
   <li slot="tips" class="flex items-start gap-2">
     <span class="text-current opacity-70 mt-0.5">•</span>
-    <span>注意格位：德文介系詞後面接 Akkusativ 通常有方向、目標性；接 Dativ 多與狀態、位置有關。</span>
+    <span>注意格位：固定動詞搭配要把「動詞＋介系詞＋格位」一起記，例如 warten auf + Akkusativ。Wo／Wohin 的位置與方向判斷適用於雙向介系詞的空間用法，不能套用到所有搭配。</span>
   </li>
 </LessonShell>

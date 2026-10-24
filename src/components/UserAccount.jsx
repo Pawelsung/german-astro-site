@@ -9,10 +9,10 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
-import { collectLocalProgress, mergeRemoteProgress } from '../lib/progressStorage';
+import { collectLocalProgress, mergeRemoteProgress, PROGRESS_KEYS } from '../lib/progressStorage';
 
 const provider = new GoogleAuthProvider();
-const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5'];
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6'];
 
 function mergeUnique(a = [], b = []) {
   return [...new Set([...(Array.isArray(a) ? a : []), ...(Array.isArray(b) ? b : [])])];
@@ -38,7 +38,7 @@ function mergeRemoteValue(key, legacyValue, splitValue) {
     return splitValue || legacyValue;
   }
 
-  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5') {
+  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5' || key === 'lesson6') {
     return { ...(legacyValue || {}), ...(splitValue || {}) };
   }
 
@@ -129,6 +129,7 @@ export default function UserAccount({ compact = false }) {
   const [password, setPassword] = useState('');
   const [showEmailForm, setShowEmailForm] = useState(false);
   const userRef = useRef(null);
+  const syncingRef = useRef(false);
   const syncTimerRef = useRef(null);
 
   const syncLocalProgress = useCallback(async (nextStatus = '已同步') => {
@@ -158,10 +159,12 @@ export default function UserAccount({ compact = false }) {
         return;
       }
 
+      syncingRef.current = true;
       setStatus('同步中...');
 
       try {
         const remoteProgress = await loadRemoteProgress(services.db, nextUser.uid);
+        if (userRef.current?.uid !== nextUser.uid) return;
         const merged = mergeRemoteProgress(remoteProgress);
         await saveRemoteProgress(services.db, nextUser.uid, merged);
         window.dispatchEvent(new CustomEvent('learning-progress-updated'));
@@ -169,6 +172,8 @@ export default function UserAccount({ compact = false }) {
       } catch (error) {
         console.error(error);
         setStatus(getSyncErrorMessage(error));
+      } finally {
+        syncingRef.current = false;
       }
     });
   }, []);
@@ -176,7 +181,9 @@ export default function UserAccount({ compact = false }) {
   useEffect(() => {
     if (!user) return;
 
-    const handleProgressUpdated = () => {
+    const handleProgressUpdated = (event) => {
+      if (syncingRef.current) return;
+      if (event.detail?.key && !Object.values(PROGRESS_KEYS).includes(event.detail.key)) return;
       window.clearTimeout(syncTimerRef.current);
       syncTimerRef.current = window.setTimeout(() => {
         setStatus('自動同步中...');
@@ -190,6 +197,12 @@ export default function UserAccount({ compact = false }) {
       window.clearTimeout(syncTimerRef.current);
     };
   }, [user, syncLocalProgress]);
+
+  useEffect(() => {
+    const warn = () => setStatus('本機儲存空間不足，請先匯出備份');
+    window.addEventListener('learning-storage-error', warn);
+    return () => window.removeEventListener('learning-storage-error', warn);
+  }, []);
 
   async function handleGoogleLogin() {
     const services = getFirebaseServices();
