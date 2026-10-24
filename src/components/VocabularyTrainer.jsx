@@ -1,6 +1,6 @@
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, BookOpen, Check, Download, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Download, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
 import { PROGRESS_KEYS, readJSON, writeJSON, isReviewRequested } from '../lib/progressStorage';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chaptersFor, filterVocabulary, articleExplanation } from '../lib/vocabulary.mjs';
@@ -14,6 +14,70 @@ const readWords = () => { try { return normalizeVocabulary(readJSON(PROGRESS_KEY
 const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-bold transition-colors hover:border-sky-400 hover:bg-sky-50 disabled:opacity-40';
 const field = 'min-h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm';
 const emptyUI = { preset: DEFAULT_PRESET, chapter: 'all', mode: 'learn', index: 0, filter: 'all' };
+
+const SWIPE_THRESHOLD = 90;
+
+// Learn-mode card: tap or Space flips in 3D; swipe right = 記住了, left = 還不熟.
+function FlashCard({ word, flipped, onFlip, onRate, speak }) {
+  const [dx, setDx] = useState(0);
+  const [leaving, setLeaving] = useState(0);
+  const drag = useRef(null);
+  function down(e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    if (e.target.closest('button')) return;
+    drag.current = { x: e.clientX, y: e.clientY, moved: false, id: e.pointerId };
+  }
+  function moveDrag(e) {
+    const d = drag.current; if (!d) return;
+    const x = e.clientX - d.x;
+    if (!d.moved && Math.abs(x) < 8) return;
+    if (!d.moved && Math.abs(e.clientY - d.y) > Math.abs(x)) { drag.current = null; return; }
+    if (!d.moved) { d.moved = true; e.currentTarget.setPointerCapture?.(d.id); }
+    setDx(x);
+  }
+  function up() {
+    const d = drag.current; drag.current = null;
+    if (!d) return;
+    if (!d.moved) { onFlip(); return; }
+    if (Math.abs(dx) >= SWIPE_THRESHOLD) {
+      const dir = dx > 0 ? 1 : -1;
+      setLeaving(dir);
+      setTimeout(() => { setLeaving(0); setDx(0); onRate(dir > 0); }, 180);
+    } else setDx(0);
+  }
+  const offset = leaving ? leaving * 600 : dx;
+  const hint = dx > 30 ? 'known' : dx < -30 ? 'unknown' : '';
+  return <div className="flip-wrap">
+    <div
+      className={`flip-card${dx || leaving ? ' is-dragging' : ''}`}
+      style={{ transform: `translateX(${offset}px) rotate(${offset / 18}deg)`, opacity: leaving ? 0 : 1 }}
+      onPointerDown={down} onPointerMove={moveDrag} onPointerUp={up} onPointerCancel={() => { drag.current = null; setDx(0); }}
+      onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); onFlip(); } }}
+      role="button" tabIndex={0} aria-pressed={flipped} aria-label={flipped ? '翻回單字' : '翻面看解釋'}
+    >
+      {hint && <span className={`flip-stamp ${hint}`} style={{ opacity: Math.min(Math.abs(dx) / SWIPE_THRESHOLD, 1) }}>{hint === 'known' ? '記住了' : '還不熟'}</span>}
+      <div className={`flip-inner${flipped ? ' is-flipped' : ''}`}>
+        <div className="flip-face flip-front" aria-hidden={flipped}>
+          <span className="vocab-pos">{POS_LABELS[word.pos] || word.pos}</span>
+          <h3 lang="de">{word.article && <span className="vocab-article">{word.article} </span>}{word.word}</h3>
+          <button className="vocab-audio" aria-label="播放單字發音" onClick={() => speak(word.word)}><Volume2 size={22}/></button>
+          <span className="flip-tip">點一下翻面 · 左右滑動評分</span>
+        </div>
+        <div className="flip-face flip-back" aria-hidden={!flipped}>
+          <strong className="flip-meaning">{word.meaning}</strong>
+          {word.plural && word.plural !== '-' && <p>複數：{word.plural}</p>}
+          <PracticeDetails practice={word.practice}/>
+          {word.example && <p lang="de" className="flip-example">{word.example} <button aria-label="播放例句" onClick={() => speak(word.example)}><Volume2 size={16}/></button></p>}
+          {word.exampleZh && <p>{word.exampleZh}</p>}
+        </div>
+      </div>
+    </div>
+    <div className="flip-rate">
+      <button className="flip-rate-unknown" onClick={() => onRate(false)}><span className="kbd-hint" aria-hidden="true">1</span>還不熟</button>
+      <button className="flip-rate-known" onClick={() => onRate(true)}><span className="kbd-hint" aria-hidden="true">2</span>記住了</button>
+    </div>
+  </div>;
+}
 
 function PracticeDetails({ practice }) {
   if (!practice || typeof practice !== 'object') return null;
@@ -44,6 +108,7 @@ export default function VocabularyTrainer() {
   const [answer, setAnswer] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [tools, setTools] = useState(false);
+  const [libraryOpen, setLibraryOpen] = useState(false);
   const [voice, setVoice] = useState(() => readJSON(PROGRESS_KEYS.lesson1Stats, {})?.voices?.selectedURI || '');
   const [rate, setRate] = useState(() => readJSON(PROGRESS_KEYS.lesson1Stats, {})?.voices?.rate || 0.9);
   const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI: voice, rate });
@@ -65,6 +130,11 @@ export default function VocabularyTrainer() {
     setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); submitting.current = false;
   }
   useEffect(() => { writeJSON(UI_KEY, ui); }, [ui]);
+  useEffect(() => {
+    if (!message) return undefined;
+    const timer = setTimeout(() => setMessage(''), 4000);
+    return () => clearTimeout(timer);
+  }, [message]);
   useEffect(() => {
     const controller = new AbortController();
     fetch('/vocab/index.json', { signal: controller.signal }).then(res => {
@@ -137,20 +207,31 @@ export default function VocabularyTrainer() {
   function toggleFlip() {
     setFlipped(v => !v); if (!flipped) updateWord({ seen: (current.seen || 0) + 1 });
   }
+  function rateCard(known) {
+    if (!current) return;
+    answerCue(known);
+    updateWord({ errors: known ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(known) });
+    setSession(s => ({ done: s.done + 1, correct: s.correct + Number(known) }));
+    // A known word leaves the review deck, so the next word slides into the same index.
+    const leaves = known && ui.filter === 'review';
+    const size = Math.max(filtered.length - (leaves ? 1 : 0), 1);
+    setUI(prev => ({ ...prev, index: (prev.index + (leaves ? 0 : 1)) % size }));
+    setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); submitting.current = false;
+  }
   const answerOptions = !current ? [] : ui.mode === 'article' ? ['der', 'die', 'das'] : ui.mode === 'pos' ? [...new Set(['noun','verb','adjective','adverb','connector','preposition','phrase',current.pos])] : [];
   useAnswerShortcuts({ options: answerOptions, answered: !!feedback, onSelect: submit, onNext: () => move(1), enabled: ui.mode !== 'learn' && ui.mode !== 'list' });
   const feedbackRef = useRevealOnShow(feedback);
-  const flipRef = useRevealOnShow(flipped);
-  // Flashcard keys: Space flips, ←/→ move between words.
+  // Flashcard keys: Space flips, 1/2 rate, ←/→ move between words.
   const cardKeys = useRef({});
-  cardKeys.current = { mode: ui.mode, hasCurrent: !!current, answered: !!feedback, toggleFlip, move };
+  cardKeys.current = { mode: ui.mode, hasCurrent: !!current, answered: !!feedback, toggleFlip, move, rateCard };
   useEffect(() => {
     const handler = (e) => {
-      const { mode, hasCurrent, answered, toggleFlip: flip, move: go } = cardKeys.current;
+      const { mode, hasCurrent, answered, toggleFlip: flip, move: go, rateCard: rateIt } = cardKeys.current;
       if (!hasCurrent || mode === 'list' || e.metaKey || e.ctrlKey || e.altKey) return;
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName) || e.target?.isContentEditable) return;
       if (mode === 'learn' && e.key === ' ' && e.target?.tagName !== 'BUTTON') { e.preventDefault(); flip(); }
       else if (mode === 'learn' && e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      else if (mode === 'learn' && (e.key === '1' || e.key === '2')) { e.preventDefault(); rateIt(e.key === '2'); }
       else if (e.key === 'ArrowLeft' && (mode === 'learn' || !answered)) { e.preventDefault(); go(-1); }
     };
     window.addEventListener('keydown', handler);
@@ -181,7 +262,7 @@ export default function VocabularyTrainer() {
   }
   return <div className="vocab-workspace">
     <section className="vocab-library" aria-label="選擇學習範圍">
-      <div className="vocab-library-heading"><BookOpen size={20}/><div><h2>我的單字課程</h2><p>先選教材，再選這次想練習的課次。</p></div></div>
+      <button type="button" className="vocab-library-heading" aria-expanded={libraryOpen} onClick={() => setLibraryOpen(v => !v)}><BookOpen size={20}/><div><h2>我的單字課程</h2><p>先選教材，再選這次想練習的課次。</p><span className="vocab-library-current">{selectedPreset?.label || '自訂字庫'} · {chapters.find(c => c.key === ui.chapter)?.label || '全部課次'}</span></div><ChevronDown size={18} className="vocab-library-chevron" aria-hidden="true"/></button><div className="vocab-library-body" data-open={libraryOpen}>
       <div className="vocab-selectors">
         <label>程度／教材<select className={field} aria-label="程度與教材" disabled={loading} value={activeLevel} onChange={e => loadPreset(presets.find(p => p.id === (e.target.value === 'b1' ? DEFAULT_PRESET : 'a1-b1-part1')))}><option value="b1">B1 · Schritte B1.1</option><option value="mixed">A1–B1 · 綜合主題</option>{activeLevel === 'custom' && <option value="custom">自訂字庫</option>}</select></label>
         <label>字庫<select className={field} aria-label="字庫" disabled={loading} value={ui.preset} onChange={e => loadPreset(presets.find(p => p.id === e.target.value))}>{presets.filter(p => activeLevel === 'b1' ? p.id.startsWith('schritte-') : p.id === 'a1-b1-part1').map(p => <option key={p.id} value={p.id}>{p.label} · {p.count} 字</option>)}{ui.preset === 'custom' && <option value="custom">已匯入字庫</option>}</select></label>
@@ -191,7 +272,7 @@ export default function VocabularyTrainer() {
       <details className="vocab-chapters"><summary>瀏覽{isB1 ? '各課' : '主題'}進度 <span>{chapters.length} 個單元</span></summary><div className="vocab-chapter-grid">{chapters.map(c => {
         const items = words.filter(w => String(w.lesson || w.category) === c.key); const learned = items.filter(w => w.attempts > 0 || w.seen > 0).length;
         return <button key={c.key} className={ui.chapter === c.key ? 'selected' : ''} aria-pressed={ui.chapter === c.key} onClick={() => change({ chapter: c.key })}><strong>{c.label}</strong><span>{c.count} 字 · 已練 {learned} · 待複習 {items.filter(w => w.errors > 0).length}</span><progress max={c.count} value={learned} aria-label={`${c.label}已練習進度`}/></button>;
-      })}</div></details>
+      })}</div></details></div>
     </section>
     <section className="vocab-study" aria-label="單字練習">
       <div className="vocab-toolbar"><div role="group" aria-label="練習模式" className="vocab-tabs">{modes.map(([id,label]) => <button key={id} aria-pressed={ui.mode === id} onClick={() => change({ mode:id })}>{label}</button>)}</div><button className={button} aria-label="語音與資料設定" aria-expanded={tools} onClick={() => setTools(v => !v)}><Settings2 size={18}/></button></div>
@@ -202,14 +283,13 @@ export default function VocabularyTrainer() {
       {message && <div className="vocab-message" role="status">{message}<button aria-label="關閉訊息" onClick={() => setMessage('')}>×</button></div>}
       {loading ? <p role="status" className="vocab-empty">正在載入字庫…</p> : !current ? <div className="vocab-empty"><Check size={28}/><h3>{ui.filter === 'review' ? '這個範圍沒有待複習單字' : '沒有符合條件的單字'}</h3><p>可以切換課次、模式或清除篩選繼續學習。</p><button className={button} onClick={() => { setQuery(''); change({ filter:'all', chapter:'all', mode:'learn' }); }}>查看全部單字</button></div> : ui.mode === 'list' ? <div className="vocab-dictionary">{filtered.map(w => <article key={wordKey(w)}><div><h3 lang="de">{w.article} {w.word}</h3><p>{w.meaning}</p><small>{POS_LABELS[w.pos] || w.pos} · {w.category}</small>{w.example && <p lang="de">{w.example}</p>}{w.exampleZh && <p>{w.exampleZh}</p>}</div><button className={button} aria-label={`播放 ${w.word}`} onClick={() => speak(w.word)}><Volume2 size={18}/></button></article>)}</div> : <>
         <div className="vocab-card-meta"><span>{chapters.find(c => c.key === ui.chapter)?.label || '全部課次'} · {Math.min(ui.index + 1, Math.max(filtered.length,1))} / {Math.max(filtered.length,answeredWord ? 1 : 0)}</span><button className={button} aria-label={current.starred ? '取消收藏' : '收藏單字'} aria-pressed={!!current.starred} onClick={() => { updateWord({starred:!current.starred}); if(answeredWord) setAnsweredWord(w => ({...w,starred:!w.starred})); }}><Star size={17} fill={current.starred ? 'currentColor' : 'none'}/></button></div>
-        <div className="vocab-card" key={`${wordKey(current)}-${ui.mode}`}>
+        {ui.mode === 'learn' ? <FlashCard key={wordKey(current)} word={current} flipped={flipped} onFlip={toggleFlip} onRate={rateCard} speak={speak}/> : <div className="vocab-card fx-question" key={`${wordKey(current)}-${ui.mode}`}>
           <span className="vocab-pos">{ui.mode === 'pos' && !feedback ? '判斷詞性' : POS_LABELS[current.pos] || current.pos}</span>
           {ui.mode === 'spell' ? <><h3>{current.meaning}</h3><button className={button} onClick={() => speak(current.word)}><Volume2 size={19}/>播放單字</button></> : <><h3 lang="de">{ui.mode === 'learn' && current.article && <span className="vocab-article">{current.article} </span>}{current.word}</h3><button className="vocab-audio" aria-label="播放單字發音" onClick={() => speak(current.word)}><Volume2 size={22}/></button>{ui.mode !== 'learn' && <p>{current.meaning}</p>}</>}
-          {ui.mode === 'learn' && <><button className={button} aria-expanded={flipped} onClick={toggleFlip}><RotateCcw size={16}/>{flipped ? '收起解釋' : '顯示解釋與例句'}<span className="kbd-hint" aria-hidden="true">Space</span></button>{flipped && <div ref={flipRef} className="vocab-explanation fx-enter"><strong>{current.meaning}</strong>{current.plural && current.plural !== '-' && <p>複數：{current.plural}</p>}<PracticeDetails practice={current.practice}/>{current.example && <p lang="de">{current.example} <button aria-label="播放例句" onClick={() => speak(current.example)}><Volume2 size={16}/></button></p>}<p>{current.exampleZh}</p></div>}</>}
           {ui.mode === 'article' && <div className="vocab-answers">{answerOptions.map((a, i) => <button key={a} data-answer-option className={optionState(a)} disabled={!!feedback} onClick={() => submit(a)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{a}</button>)}</div>}
           {ui.mode === 'pos' && <div className="vocab-answers">{answerOptions.map((p, i) => <button key={p} data-answer-option className={optionState(p)} disabled={!!feedback} onClick={() => submit(p)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{POS_LABELS[p] || p}</button>)}</div>}
           {ui.mode === 'spell' && <form className="vocab-spelling" onSubmit={e => {e.preventDefault();submit(answer);}}><label htmlFor="vocab-answer">輸入聽到的單字（注意名詞大寫）</label><input id="vocab-answer" className={field} autoComplete="off" autoCapitalize="none" spellCheck={false} disabled={!!feedback} value={answer} onChange={e => setAnswer(e.target.value)}/><div className="vocab-umlauts">{['ä','ö','ü','ß'].map(char => <button type="button" key={char} disabled={!!feedback} onClick={() => setAnswer(a => a + char)}>{char}</button>)}</div><button className={button} disabled={!!feedback || !answer.trim()}>檢查答案</button></form>}
-        </div>
+        </div>}
         {feedback && <div ref={feedbackRef} role="status" className={`vocab-feedback fx-enter ${feedback.correct ? 'correct' : 'incorrect'}`}><strong>{feedback.correct ? '答對了！' : `正確答案：${ui.mode === 'pos' ? POS_LABELS[feedback.expected] || feedback.expected : feedback.expected}`}</strong><p>{ui.mode === 'article' ? articleExplanation(current) : ui.mode === 'spell' ? `正確拼寫：${current.word}。留意大小寫與變音字母。` : `${current.word} 是${POS_LABELS[current.pos] || current.pos}。`}</p>{current.example && <p lang="de">{current.example}</p>}{current.exampleZh && <p>{current.exampleZh}</p>}<small>{feedback.correct ? '已從待複習清單移除。' : '已加入待複習清單。'}讀完後再繼續下一題。</small></div>}
         <div className="vocab-navigation"><button className={button} onClick={() => move(-1)}><ArrowLeft size={17}/>上一個</button><span>本次作答 {session.done} · 答對 {session.correct}</span><button className={`vocab-primary${feedback ? ' is-ready' : ''}`} onClick={() => move(1)}>下一個<ArrowRight size={17}/>{(feedback || ui.mode === 'learn') && <span className="kbd-hint" aria-hidden="true">{feedback ? 'Enter' : '→'}</span>}</button></div>
       </>}

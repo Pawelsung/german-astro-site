@@ -5,8 +5,8 @@
 ## 專案快速概覽
 
 - 網站：德語學習工作台，正式站 https://german-astro-site.web.app/（Firebase Hosting，`firebase.json` 指向 `dist`）
-- 技術：Astro 7 + React 19（所有練習元件都是 `client:only="react"`）+ Tailwind 4 + Firebase（選用的雲端同步）
-- 指令：`npm run dev`（本機 4321）、`npm run build`、`npm test`（node test，17 個測試）
+- 技術：Astro 7 + React 19（練習元件都是 `client:only="react"`；首頁 `LearningDashboard` 是 `client:load`，先 SSR 再於 useEffect 讀 localStorage，避免 hydration 不一致）+ Tailwind 4 + Firebase（選用的雲端同步）
+- 指令：`npm run dev`（本機 4321）、`npm run build`、`npm test`（node test，20 個測試）
 - 頁面：`src/pages/lesson1-wort.astro`～`lesson6-adjective-declension.astro`，共用外框 `src/components/LessonShell.astro`
 - 練習元件：
   - 第 1 課 `VocabularyTrainer.jsx`（字卡／冠詞／聽寫／詞性／字典）
@@ -15,7 +15,8 @@
   - 第 4 課 `KasusQuestTrainer.jsx`
   - 第 5 課 `ConnectorTrainer.jsx`
   - 第 6 課 `AdjectiveDeclensionTrainer.jsx`
-- 首頁儀表板：`LearningDashboard.jsx`；登入：`UserAccount.jsx`；進度儲存：`src/lib/progressStorage.ts`
+- 首頁：`src/pages/index.astro` 在建置時計算各課題數，再傳給 `LearningDashboard.jsx`（今日任務、統計、課程卡片）
+- 登入：`UserAccount.jsx`；進度儲存：`src/lib/progressStorage.ts`；每日作答與上次課程：`src/lib/dailyActivity.mjs`
 
 ## 重要慣例與陷阱
 
@@ -28,7 +29,7 @@
 
 | 匯出 | 用途 |
 | --- | --- |
-| `answerCue(correct)` | 播放 WebAudio 合成音效（答對兩聲上揚、答錯一聲低音），答錯時在手機輕震 |
+| `answerCue(correct)` | 記錄今日作答（`dailyActivity.recordAnswer`），播放 WebAudio 合成音效（答對兩聲上揚、答錯一聲低音），答錯時在手機輕震。**新題型務必呼叫它，首頁的每日目標才會計數** |
 | `useRevealOnShow(key)` | 回傳 ref；`key` 變成 truthy 時，若元素不在畫面內就平滑捲動到可見 |
 | `useAnswerShortcuts({ options, answered, onSelect, onNext, enabled })` | 未作答時 `1`–`9` 選答案；作答後 `Enter`／`→` 下一題。焦點在輸入框時不觸發 |
 | `SOUND_STORAGE_KEY` / `isSoundEnabled()` | 音效開關，localStorage key 為 `gw-sound-enabled`（預設開） |
@@ -41,6 +42,33 @@ CSS class（`src/styles/global.css` 檔尾）：
 - `sound-toggle`、`lesson-skeleton`（載入骨架）
 
 ## 進度紀錄
+
+### 2026-10-24：第二階段「介面改版」（已 commit，未 push、未部署）
+
+完成項目：
+1. **首頁重做**（`LearningDashboard.jsx`、`index.astro`）
+   - 上方是「今日任務」主卡：問候語、每日目標環（10 題）、連續天數 🔥 和近 7 天作答量
+   - 主按鈕的優先順序：先導向待複習的課，其次是上次的課，最後是從單字開始；另附「或繼續上次」連結
+   - 三個統計小卡：待複習、已收藏、今日正確率
+   - 6 張課程卡片放在同一個格狀區塊，各有進度條（已練／總題數）、待複習徽章，滑鼠移上時會浮起
+   - 頁首改成精簡的 sticky 列，手機上登入只顯示「登入」
+2. **每日活動紀錄**（`src/lib/dailyActivity.mjs`，測試在 `tests/activity.test.mjs`）
+   - localStorage key 為 `gw-daily-activity-v1`，保留 60 天；上次造訪的課記在 `gw-last-lesson-v1`，由 `LessonShell` 寫入
+   - **目前只存在本機，尚未加入 Firebase 同步**
+3. **第 1 課字卡**改成 3D 翻面卡：點一下或按 Space 翻面；向右滑或按 `2` 表示「記住了」，向左滑或按 `1` 表示「還不熟」，下方也有兩個對應按鈕。評分會寫入 errors／attempts 並計入每日目標。
+4. **手機版面**
+   - 課程頁頁首變精簡：返回只顯示「首頁」、音效只顯示圖示、隱藏課程說明
+   - 第 1 課「我的單字課程」在手機上可收合，只顯示目前教材和課次
+   - 載入訊息 4 秒後自動消失；右下角主題按鈕縮小
+5. 答錯震動改為使用者點過頁面後才觸發，避免 console 錯誤。
+
+驗證方式：`npm run build` 成功，`npm test` 20/20 通過。在本機瀏覽器測過：
+- 首頁：桌面淺色、桌面深色、手機深色，數字（今日題數、連續天數、正確率、上次課程）有正確更新
+- 第 1 課手機版：翻面、拖曳滑動評分、收合選單
+- 第 4 課手機版頁首
+- 首頁 console 沒有 hydration 警告
+
+未驗證：實體手機的觸控滑動手感、iOS Safari 的 3D 翻面效果、淺色模式下的第 1 課字卡。
 
 ### 2026-10-24：整理 Git 歷史（未 push、未部署）
 
@@ -72,15 +100,17 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 下一步（建議順序）
 
-### 第二階段：讓人想每天回來
-- [ ] 首頁改以「今日任務」為主角：例如「今天 10 題・約 5 分鐘」、大的開始按鈕、連續天數。資料來源是 `progressStorage.ts` 裡各課的錯題／待複習資料。
-- [ ] 每輪 10 題後顯示結算畫面（答對率、新學單字數、待複習清單，以及「再來一輪」）。
-- [ ] 課程卡片加上進度環或進度條。
-- [ ] 第 1 課字卡改成 3D 翻面，手機支援左右滑動（左滑：不熟，右滑：熟）。
+### 介面（使用者目前最在意）
+- [ ] 每輪 10 題後顯示結算畫面（答對率、答錯清單、再來一輪），做成共用元件，掛在 `answerCue` 的計數上
+- [ ] 第 2～6 課在手機上的篩選列和設定區，比照第 1 課改成可收合
+- [ ] 第 2、3 課的字卡也改用 3D 翻面加滑動（目前只有第 1 課有）
+- [ ] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）
 
-### 第三階段：視覺層次與手機版
-- [ ] 深色主題提高層次（主要按鈕用亮色，其他元素降低存在感）。
-- [ ] 手機上把教材／課次選擇收進底部面板，首屏直接顯示題目；右下角主題切換按鈕不要壓到內容。
+### 自然人聲（使用者已選定 Google Cloud TTS 免費額度）
+- [ ] 使用者需要先建立 GCP 專案、啟用 Text-to-Speech API、綁定帳單，並建立服務帳戶金鑰。**金鑰不能進 repo**，請放 `.env` 或本機路徑。
+- [ ] 寫一支 `tools/generate-audio.mjs`：從各課資料取出所有單字和例句，去重後在本機一次呼叫 TTS，產生 mp3 放到 `public/audio/<hash>.mp3`，並輸出對照表 `public/audio/manifest.json`。建議用 `de-DE` Neural2 或 WaveNet 人聲；每月免費額度約 100 萬字元，足夠一次產生全部。
+- [ ] `src/lib/germanSpeech.mjs`：有音檔時優先播放音檔，沒有才退回 `speechSynthesis`
+- [ ] 新增單字時重新執行腳本，只產生缺少的音檔
 
 ### 先前稽核留下、尚未處理的問題（見 `../german-site-audit/report.html`）
 - [ ] 首頁「學習建議」導向錯誤的課程（應依待複習資料決定）

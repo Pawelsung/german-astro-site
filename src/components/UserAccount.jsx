@@ -258,8 +258,8 @@ export default function UserAccount({ compact = false }) {
 
   if (compact) {
     return (
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-full bg-white/90 border border-amber-100 px-3 py-1.5 text-xs font-black text-slate-500">
+      <div className="flex shrink-0 items-center gap-2">
+        <span className="hidden max-w-[14rem] truncate rounded-full bg-white/90 border border-amber-100 px-3 py-1.5 text-xs font-black text-slate-500 sm:inline-block">
           {user ? user.email || '已登入' : status}
         </span>
         {user ? (
@@ -273,7 +273,7 @@ export default function UserAccount({ compact = false }) {
           </>
         ) : (
           <button onClick={handleGoogleLogin} className="rounded-full bg-amber-600 px-3 py-1.5 text-xs font-black text-white disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
-            登入同步紀錄
+            <span className="sm:hidden">登入</span><span className="hidden sm:inline">登入同步紀錄</span>
           </button>
         )}
       </div>

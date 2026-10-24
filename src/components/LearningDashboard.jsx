@@ -1,62 +1,132 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, RotateCcw, Star } from 'lucide-react';
+import { ArrowRight, Flame, RotateCcw, Star, Target } from 'lucide-react';
 import { getLearningSummary, getReviewAction } from '../lib/progressStorage';
-import UserAccount from './UserAccount.jsx';
+import { getActivity, getLastLesson } from '../lib/dailyActivity.mjs';
 
-function LessonRecord({ href, label, title, primary, secondary, tone = 'amber' }) {
-  const tones = {
-    sky: 'text-sky-700 border-sky-100 bg-sky-50',
-    emerald: 'text-emerald-700 border-emerald-100 bg-emerald-50',
-    violet: 'text-violet-700 border-violet-100 bg-violet-50',
-    teal: 'text-teal-700 border-teal-100 bg-teal-50',
-    amber: 'text-amber-700 border-amber-100 bg-amber-50'
-  };
-  const toneClass = tones[tone] || tones.amber;
+const THEMES = {
+  sky: { badge: 'bg-sky-100 text-sky-700', bar: 'bg-sky-500', ring: 'hover:border-sky-300', accent: 'text-sky-600' },
+  emerald: { badge: 'bg-emerald-100 text-emerald-700', bar: 'bg-emerald-500', ring: 'hover:border-emerald-300', accent: 'text-emerald-600' },
+  amber: { badge: 'bg-amber-100 text-amber-700', bar: 'bg-amber-500', ring: 'hover:border-amber-300', accent: 'text-amber-600' },
+  violet: { badge: 'bg-violet-100 text-violet-700', bar: 'bg-violet-500', ring: 'hover:border-violet-300', accent: 'text-violet-600' },
+  teal: { badge: 'bg-teal-100 text-teal-700', bar: 'bg-teal-500', ring: 'hover:border-teal-300', accent: 'text-teal-600' }
+};
 
+// Progress per lesson, keyed by frontmatter order. `total` falls back to the static item count.
+function lessonStats(order, summary) {
+  switch (order) {
+    case 1: return { done: summary.lesson1PracticedCount, review: summary.lesson1ErrorCount, total: summary.lesson1WordCount };
+    case 2: return { done: summary.lesson2PracticedCount, review: summary.lesson2ReviewCount };
+    case 3: return { done: summary.lesson3PracticedCount, review: summary.lesson3WrongCount };
+    case 4: return { done: summary.lesson4AnsweredCount, review: summary.lesson4WrongCount };
+    case 5: return { done: summary.lesson5AnsweredCount, review: summary.lesson5WrongCount };
+    case 6: return { done: summary.lesson6AnsweredCount, review: summary.lesson6WrongCount };
+    default: return { done: 0, review: 0 };
+  }
+}
+
+function greeting(date) {
+  const hour = date.getHours();
+  if (hour < 5) return '夜深了，還在努力';
+  if (hour < 11) return '早安';
+  if (hour < 14) return '午安';
+  if (hour < 18) return '下午好';
+  return '晚安';
+}
+
+function GoalRing({ value, goal }) {
+  const radius = 42;
+  const circumference = 2 * Math.PI * radius;
+  const ratio = Math.min(value / goal, 1);
+  return (
+    <div className="relative grid h-24 w-24 shrink-0 place-items-center md:h-32 md:w-32">
+      <svg viewBox="0 0 100 100" className="absolute inset-0 -rotate-90" aria-hidden="true">
+        <circle cx="50" cy="50" r={radius} fill="none" stroke="rgb(255 255 255 / 0.18)" strokeWidth="9" />
+        <circle
+          cx="50" cy="50" r={radius} fill="none" stroke="white" strokeWidth="9" strokeLinecap="round"
+          strokeDasharray={circumference} strokeDashoffset={circumference * (1 - ratio)}
+          style={{ transition: 'stroke-dashoffset 700ms cubic-bezier(.2,.8,.2,1)' }}
+        />
+      </svg>
+      <div className="text-center leading-none">
+        <div className="text-2xl font-black md:text-3xl">{value}</div>
+        <div className="mt-1 text-xs font-bold text-white/70">/ {goal} 題</div>
+      </div>
+    </div>
+  );
+}
+
+function StatTile({ icon, label, value, href }) {
+  const body = (
+    <>
+      <span className="hidden h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-100 text-slate-600 sm:grid">{icon}</span>
+      <span className="min-w-0">
+        <span className="block text-xs font-bold text-slate-500">{label}</span>
+        <span className="block text-xl font-black text-slate-900">{value}</span>
+      </span>
+    </>
+  );
+  const cls = 'flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2.5 shadow-sm sm:px-4 sm:py-3';
+  return href ? <a href={href} className={`${cls} transition-colors hover:border-slate-300`}>{body}</a> : <div className={cls}>{body}</div>;
+}
+
+function LessonCard({ lesson, stats, ready }) {
+  const theme = THEMES[lesson.theme] || THEMES.sky;
+  const total = stats.total || lesson.total || 0;
+  const done = Math.min(stats.done || 0, total || Infinity);
+  const percent = total ? Math.round((done / total) * 100) : 0;
+  const [prefix, name] = lesson.title.includes('｜') ? lesson.title.split('｜') : ['', lesson.title];
+  const kicker = `Lektion ${lesson.order} · ${lesson.category}`;
+  const heading = prefix.startsWith('Lektion') ? name : prefix || name;
   return (
     <a
-      href={href}
-      className="grid min-w-0 grid-cols-[auto_1fr_auto] items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 hover:bg-white transition-colors"
+      href={lesson.href}
+      className={`group relative flex flex-col rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${theme.ring}`}
     >
-      <div className={`flex h-9 w-9 items-center justify-center rounded-lg border text-sm font-black ${toneClass}`}>
-        {label}
+      <div className="flex items-start justify-between gap-3">
+        <span className={`grid h-11 w-11 place-items-center rounded-2xl text-lg font-black ${theme.badge}`}>{lesson.order}</span>
+        <div className="flex flex-wrap justify-end gap-1.5 text-[11px] font-black">
+          {ready && stats.review > 0 && (
+            <span className="rounded-full bg-rose-100 px-2.5 py-1 text-rose-700">{stats.review} 待複習</span>
+          )}
+          {lesson.level && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-600">{lesson.level}</span>}
+        </div>
       </div>
-      <div className="min-w-0">
-        <h3 className="truncate text-sm font-black text-slate-800">{title}</h3>
-        <p className="mt-0.5 text-xs font-bold text-slate-400">{secondary}</p>
-      </div>
-      <div className="text-right">
-        <p className="text-lg font-black text-slate-800">{primary.value}</p>
-        <p className="text-[11px] font-black text-slate-400">{primary.label}</p>
+      <p className="mt-4 text-xs font-black tracking-wide text-slate-400">{kicker}</p>
+      <h3 className="mt-0.5 text-lg font-black leading-snug text-slate-900">{heading}</h3>
+      <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-slate-500">{lesson.description}</p>
+      <div className="mt-auto pt-5">
+        <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-slate-500">
+          <span>{ready && total ? `已練 ${done} / ${total}` : `${lesson.minutes || 15} 分鐘`}</span>
+          <span className={`inline-flex items-center gap-1 font-black ${theme.accent}`}>
+            {ready && done > 0 ? '繼續' : '開始'}
+            <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+          </span>
+        </div>
+        <div className="h-2 overflow-hidden rounded-full bg-slate-100">
+          <div className={`h-full rounded-full ${theme.bar}`} style={{ width: `${ready ? percent : 0}%`, transition: 'width 700ms ease' }} />
+        </div>
       </div>
     </a>
   );
 }
 
-function StatPill({ icon, label, value, tone }) {
-  const colors = {
-    rose: 'bg-rose-50 text-rose-600',
-    amber: 'bg-amber-50 text-amber-700',
-    slate: 'bg-slate-50 text-slate-700'
-  };
+const EMPTY_ACTIVITY = { goal: 10, todayAnswered: 0, todayCorrect: 0, streak: 0, week: [] };
 
-  return (
-    <div className={`rounded-xl px-4 py-3 ${colors[tone] || colors.slate}`}>
-      <div className="mb-1 flex items-center gap-2">
-        {icon}
-        <span className="text-xs font-black">{label}</span>
-      </div>
-      <p className="text-2xl font-black">{value}</p>
-    </div>
-  );
-}
-
-export default function LearningDashboard() {
-  const [summary, setSummary] = useState(() => getLearningSummary());
+export default function LearningDashboard({ lessons = [] }) {
+  // Start empty so the server render and first client render match; real data loads after mount.
+  const [summary, setSummary] = useState(null);
+  const [activity, setActivity] = useState(EMPTY_ACTIVITY);
+  const [lastLesson, setLastLesson] = useState(null);
+  const [hello, setHello] = useState('歡迎回來');
 
   useEffect(() => {
-    const refresh = () => setSummary(getLearningSummary());
+    const refresh = () => {
+      setSummary(getLearningSummary());
+      setActivity(getActivity());
+      setLastLesson(getLastLesson());
+    };
     refresh();
+    setHello(greeting(new Date()));
     window.addEventListener('storage', refresh);
     window.addEventListener('learning-progress-updated', refresh);
     return () => {
@@ -65,120 +135,88 @@ export default function LearningDashboard() {
     };
   }, []);
 
-  const reviewCount =
-    summary.lesson1ErrorCount +
-    summary.lesson2ReviewCount +
-    summary.lesson3WrongCount +
-    summary.lesson4WrongCount +
-    summary.lesson5WrongCount +
-    summary.lesson6WrongCount;
-  const starredCount =
-    summary.lesson1StarredCount +
-    summary.lesson2StarredCount +
-    summary.lesson3StarredCount +
-    summary.lesson4StarredCount +
-    summary.lesson5StarredCount +
-    summary.lesson6StarredCount;
-  const primaryAction = getReviewAction(summary);
-  const lessonRecords = [
-    {
-      href: '/lesson1-wort/',
-      label: '1',
-      title: '單字練習',
-      primary: { value: summary.lesson1ErrorCount, label: '錯誤紀錄' },
-      secondary: `${summary.lesson1WordCount} 個單字`,
-      tone: 'sky'
-    },
-    {
-      href: '/lesson2-VerbWithPreposition/',
-      label: '2',
-      title: '動詞與介系詞',
-      primary: { value: summary.lesson2ReviewCount, label: '複習' },
-      secondary: `${summary.lesson2StarredCount} 個已收藏`,
-      tone: 'emerald'
-    },
-    {
-      href: '/lesson3-irregular-verbs/',
-      label: '3',
-      title: '不規則動詞',
-      primary: { value: summary.lesson3WrongCount, label: '需要複習' },
-      secondary: `${summary.lesson3StarredCount} 個已收藏`,
-      tone: 'violet'
-    },
-    {
-      href: '/lesson4-kasus/',
-      label: '4',
-      title: '格位練習',
-      primary: { value: summary.lesson4WrongCount, label: '需要複習' },
-      secondary: `${summary.lesson4StarredCount} 個已收藏`,
-      tone: 'teal'
-    },
-    {
-      href: '/lesson5-connectors/',
-      label: '5',
-      title: '連接詞與語序',
-      primary: { value: summary.lesson5WrongCount, label: '錯題' },
-      secondary: `${summary.lesson5AnsweredCount} 題已作答 · ${summary.lesson5StarredCount} 個已收藏`,
-      tone: 'violet'
-    },
-    {
-      href: '/lesson6-adjective-declension/',
-      label: '6',
-      title: '形容詞字尾',
-      primary: { value: summary.lesson6WrongCount, label: '需要複習' },
-      secondary: `${summary.lesson6AnsweredCount} 題已作答 · ${summary.lesson6StarredCount} 個已收藏`,
-      tone: 'amber'
-    }
-  ];
+  const ready = summary !== null;
+  const stats = Object.fromEntries(lessons.map((lesson) => [lesson.order, ready ? lessonStats(lesson.order, summary) : { done: 0, review: 0 }]));
+  const reviewCount = Object.values(stats).reduce((sum, item) => sum + (item.review || 0), 0);
+  const starredCount = ready
+    ? summary.lesson1StarredCount + summary.lesson2StarredCount + summary.lesson3StarredCount + summary.lesson4StarredCount + summary.lesson5StarredCount + summary.lesson6StarredCount
+    : 0;
+  const reviewAction = ready ? getReviewAction(summary) : null;
+  const hasReview = ready && reviewCount > 0;
+  const primary = hasReview
+    ? { href: reviewAction.href, label: reviewAction.label.replace(/^複習/, '複習 ') }
+    : lastLesson
+      ? { href: lastLesson.href, label: `繼續 ${lastLesson.title}` }
+      : { href: lessons[0]?.href || '/lesson1-wort/', label: '從單字開始' };
+  const secondary = hasReview && lastLesson && !reviewAction.href.startsWith(lastLesson.href) ? lastLesson : null;
+  const goalDone = activity.todayAnswered >= activity.goal;
+  const accuracy = activity.todayAnswered ? `${Math.round((activity.todayCorrect / activity.todayAnswered) * 100)}%` : '—';
+  const weekMax = Math.max(activity.goal, ...activity.week.map((day) => day.answered));
 
   return (
-    <section className="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-200 mb-8">
-      <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid content-start gap-3">
-          <a
-            href={primaryAction.href}
-            className="flex items-center justify-between gap-4 rounded-xl bg-slate-900 px-5 py-3.5 text-white hover:bg-slate-800 transition-colors"
-          >
-            <div>
-              <p className="text-xs font-black uppercase tracking-widest text-slate-300">學習建議</p>
-              <p className="mt-1 text-lg md:text-xl font-black">{primaryAction.label}</p>
+    <div className="grid gap-6 md:gap-8">
+      <section className="home-hero relative overflow-hidden rounded-[28px] p-5 text-white shadow-xl md:p-8">
+        <div className="relative grid items-center gap-6 md:grid-cols-[1fr_auto]">
+          <div className="min-w-0">
+            <p className="text-sm font-bold text-white/75">{hello}</p>
+            <h2 className="mt-1 text-2xl font-black leading-tight md:text-3xl">
+              {goalDone ? '今日目標達成！再多練幾題吧 🎉' : `今天的任務：完成 ${activity.goal} 題`}
+            </h2>
+            <p className="mt-2 text-sm font-medium text-white/75">
+              {hasReview ? `你有 ${reviewCount} 題待複習，先把它們清掉最有效率。` : '每天 5 分鐘，比一次讀很久更容易記住。'}
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <a href={primary.href} className="home-cta inline-flex min-h-12 items-center gap-2 rounded-2xl px-5 py-3 text-base font-black shadow-lg transition-transform hover:-translate-y-0.5 active:scale-[0.98]">
+                {hasReview ? <RotateCcw size={18} /> : <Target size={18} />}
+                {primary.label}
+                <ArrowRight size={18} />
+              </a>
+              {secondary && (
+                <a href={secondary.href} className="rounded-2xl px-3 py-2 text-sm font-bold text-white/85 underline-offset-4 hover:underline">
+                  或繼續上次：{secondary.title}
+                </a>
+              )}
             </div>
-            <ArrowRight className="shrink-0 text-slate-300" size={24} />
-          </a>
-          <a href="/lesson1-wort/" className="rounded-xl border border-sky-100 bg-sky-50 px-5 py-3 text-sm font-bold text-sky-800">繼續單字學習 · 自動恢復上次課次與位置 →</a>
-          <details className="rounded-xl border border-slate-200 p-3">
-            <summary className="text-sm font-bold text-slate-600">帳號與跨裝置同步</summary>
-            <div className="mt-3"><UserAccount /></div>
-          </details>
-        </div>
-
-        <div className="grid gap-3 content-start">
-          <div className="grid grid-cols-2 gap-3 ">
-            <StatPill icon={<RotateCcw size={16} />} label="需要複習" value={reviewCount} tone="rose" />
-            <StatPill icon={<Star size={16} className="fill-amber-400" />} label="已收藏" value={starredCount} tone="amber" />
           </div>
-
-          <details className="rounded-xl border border-slate-200 bg-white">
-            <summary className="grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-3 px-4 py-3">
-              <div>
-                <h3 className="text-sm font-black text-slate-800">各課紀錄</h3>
-                <p className="mt-0.5 text-xs font-bold text-slate-400">展開查看每一課的複習狀態</p>
+          <div className="flex items-center gap-4 md:flex-col md:gap-3">
+            <GoalRing value={activity.todayAnswered} goal={activity.goal} />
+            <div className="grid gap-2">
+              <div className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-white/15 px-3 py-1.5 text-sm font-black">
+                <Flame size={16} className={activity.streak ? 'text-amber-300' : 'text-white/60'} />
+                {activity.streak ? `連續 ${activity.streak} 天` : '開始連續紀錄'}
               </div>
-              <span className="rounded-lg bg-slate-50 px-3 py-1.5 text-xs font-black text-slate-500">
-                {lessonRecords.length} 課
-              </span>
-            </summary>
-
-            <div className="border-t border-slate-100 p-3">
-              <div className="grid max-h-72 gap-2 overflow-y-auto pr-1">
-                {lessonRecords.map((lesson) => (
-                  <LessonRecord key={lesson.href} {...lesson} />
+              <div className="flex h-8 items-end gap-1 md:justify-center" aria-label="最近七天作答量">
+                {(activity.week.length ? activity.week : Array.from({ length: 7 }, (_, i) => ({ key: i, answered: 0 }))).map((day) => (
+                  <span
+                    key={day.key}
+                    title={`${day.key}：${day.answered} 題`}
+                    className={`w-3 rounded-full ${day.answered ? 'bg-white' : 'bg-white/25'}`}
+                    style={{ height: `${Math.max(18, (day.answered / weekMax) * 100)}%` }}
+                  />
                 ))}
               </div>
             </div>
-          </details>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="grid grid-cols-3 gap-2 sm:gap-3" aria-label="學習統計">
+        <StatTile icon={<RotateCcw size={18} />} label="待複習" value={ready ? reviewCount : '—'} href={hasReview ? reviewAction.href : undefined} />
+        <StatTile icon={<Star size={18} />} label="已收藏" value={ready ? starredCount : '—'} />
+        <StatTile icon={<Target size={18} />} label="今日正確率" value={accuracy} />
+      </section>
+
+      <section>
+        <div className="mb-4 flex items-baseline justify-between gap-3">
+          <h2 className="text-lg font-black text-slate-900">全部課程</h2>
+          <span className="text-xs font-bold text-slate-500">{lessons.length} 個主題</span>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {lessons.map((lesson) => (
+            <LessonCard key={lesson.href} lesson={lesson} stats={stats[lesson.order]} ready={ready} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

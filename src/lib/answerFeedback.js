@@ -1,6 +1,7 @@
-// Shared answer feedback for all trainers: short synthesized sounds, light haptics,
+// Shared answer feedback for all trainers: daily activity logging, short synthesized sounds, light haptics,
 // keeping the explanation in view, and number/Enter keyboard shortcuts.
 import { useEffect, useRef } from 'react';
+import { recordAnswer } from './dailyActivity.mjs';
 
 export const SOUND_STORAGE_KEY = 'gw-sound-enabled';
 
@@ -47,8 +48,10 @@ export function playAnswerSound(correct) {
 }
 
 export function answerCue(correct) {
+  recordAnswer(correct);
   playAnswerSound(correct);
-  if (!correct && typeof navigator !== 'undefined' && navigator.vibrate) {
+  // Browsers block vibrate until the user has tapped the page.
+  if (!correct && typeof navigator !== 'undefined' && navigator.vibrate && navigator.userActivation?.hasBeenActive !== false) {
     try { navigator.vibrate(60); } catch { /* unsupported */ }
   }
 }

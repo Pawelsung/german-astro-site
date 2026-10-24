@@ -122,17 +122,28 @@ export function getLearningSummary() {
   const lesson6AnsweredCount = lesson6Items.filter((item: any) => item?.answered).length;
   const lesson6WrongCount = lesson6Items.filter(needsReview).length;
   const lesson6StarredCount = lesson6Items.filter((item: any) => item?.starred).length;
+  const lesson1PracticedCount = Array.isArray(lesson1Words)
+    ? lesson1Words.filter((word: any) => (word?.attempts || 0) > 0 || (word?.seen || 0) > 0).length
+    : 0;
+  const lesson3PracticedCount = lesson3Items.filter(
+    (item: any) => (item?.seenCount || 0) + (item?.correctCount || 0) + (item?.wrongCount || 0) > 0
+  ).length;
+  const lesson4AnsweredCount = lesson4Items.filter((item: any) => item?.answered).length;
 
   return {
     lesson1WordCount,
     lesson1ErrorCount,
+    lesson1PracticedCount,
     lesson1StarredCount: Array.isArray(lesson1Words) ? lesson1Words.filter((word: any) => word?.starred).length : 0,
     lesson2StarredCount: lesson2Progress.starred.length,
     lesson2ReviewCount: Object.values(lesson2Progress.srs || {}).filter((item) => isLesson2Due(item)).length,
+    lesson2PracticedCount: Object.keys(lesson2Progress.srs || {}).length,
+    lesson3PracticedCount,
     lesson3WrongCount,
     lesson3StarredCount,
     lesson4WrongCount,
     lesson4StarredCount,
+    lesson4AnsweredCount,
     lesson5AnsweredCount,
     lesson5CorrectCount,
     lesson5WrongCount,

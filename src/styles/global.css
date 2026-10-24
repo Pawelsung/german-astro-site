@@ -490,3 +490,66 @@ button:disabled { cursor: default; }
 .vocab-primary .kbd-hint { border-color: rgb(255 255 255 / 0.3); background: rgb(255 255 255 / 0.15); color: white; }
 .vocab-primary.is-ready { box-shadow: 0 0 0 4px rgb(14 165 233 / 0.3); }
 .vocab-feedback { scroll-margin-bottom: 96px; }
+
+/* Home page */
+.home-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--page-bg) 85%, transparent); backdrop-filter: blur(14px); }
+.home-logo { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 0.85rem; background: linear-gradient(135deg, #111827 0 33%, #dc2626 33% 66%, #f59e0b 66%); color: white; font-size: 0.8rem; font-weight: 900; letter-spacing: 0.04em; text-shadow: 0 1px 2px rgb(0 0 0 / 0.5); box-shadow: 0 6px 16px rgb(15 23 42 / 0.18); }
+.home-hero { background: radial-gradient(120% 140% at 100% 0%, #818cf8 0%, transparent 55%), linear-gradient(135deg, #4f46e5 0%, #2563eb 55%, #0ea5e9 100%); }
+.home-hero::after { content: ""; position: absolute; right: -60px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: rgb(255 255 255 / 0.08); pointer-events: none; }
+.dark .home-hero { background: radial-gradient(120% 140% at 100% 0%, #6366f1 0%, transparent 55%), linear-gradient(135deg, #312e81 0%, #1e3a8a 55%, #0c4a6e 100%); }
+.home-cta { background: #ffffff; color: #4338ca; }
+.dark .home-cta { background: #ffffff; color: #312e81; }
+
+/* Lesson 1: collapsible library on phones */
+.vocab-library-heading { width: 100%; border: 0; background: none; padding: 0; text-align: left; cursor: default; }
+.vocab-library-current, .vocab-library-chevron { display: none; }
+@media (max-width: 640px) {
+  .vocab-library-heading { cursor: pointer; margin-bottom: 0; }
+  .vocab-library-heading > div { flex: 1; min-width: 0; }
+  .vocab-library-current { display: block; margin-top: 2px; font-size: 12px; font-weight: 700; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .vocab-library-chevron { display: block; flex-shrink: 0; color: var(--text-faint); transition: transform 200ms ease; }
+  .vocab-library-heading[aria-expanded="true"] .vocab-library-chevron { transform: rotate(180deg); }
+  .vocab-library-body[data-open="false"] { display: none; }
+  .vocab-library-body[data-open="true"] { margin-top: 12px; animation: fx-enter 200ms ease-out both; }
+}
+
+/* Lesson 1: 3D flashcard with swipe rating */
+.flip-wrap { max-width: 780px; margin: 0 auto; display: grid; gap: 14px; }
+.flip-card { position: relative; perspective: 1400px; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: pointer; transition: transform 220ms ease, opacity 180ms ease; border-radius: 22px; }
+.flip-card.is-dragging { transition: opacity 180ms ease; }
+.flip-card:focus-visible { outline: 3px solid #0284c7; outline-offset: 4px; }
+.flip-inner { display: grid; transform-style: preserve-3d; transition: transform 520ms cubic-bezier(.2,.8,.2,1); }
+.flip-inner.is-flipped { transform: rotateY(180deg); }
+.flip-face { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-height: 300px; padding: 32px 24px; border: 1px solid var(--border); border-radius: 22px; background: var(--surface-soft); text-align: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 10px 30px rgb(15 23 42 / 0.08); }
+.flip-front h3 { font-size: clamp(30px, 6vw, 52px); font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+.flip-back { transform: rotateY(180deg); background: linear-gradient(160deg, var(--surface) 0%, var(--surface-soft) 100%); line-height: 1.75; }
+.flip-back p { font-size: 14px; color: var(--text-muted); }
+.flip-meaning { font-size: 24px; font-weight: 800; color: var(--text); }
+.flip-example button { display: inline-flex; vertical-align: middle; padding: 6px; color: #0284c7; }
+.flip-tip { font-size: 12px; font-weight: 700; color: var(--text-faint); }
+.flip-stamp { position: absolute; top: 18px; z-index: 2; padding: 6px 14px; border: 3px solid; border-radius: 12px; font-size: 18px; font-weight: 900; transform: rotate(-8deg); pointer-events: none; }
+.flip-stamp.known { left: 18px; color: #059669; border-color: #059669; background: rgb(236 253 245 / 0.92); }
+.flip-stamp.unknown { right: 18px; color: #e11d48; border-color: #e11d48; background: rgb(255 241 242 / 0.92); transform: rotate(8deg); }
+.flip-rate { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.flip-rate button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; border-radius: 14px; border: 2px solid; font-size: 15px; font-weight: 800; transition: transform 120ms ease, background-color 150ms ease; }
+.flip-rate button:active { transform: scale(0.97); }
+.flip-rate-unknown { border-color: #fda4af; background: #fff1f2; color: #be123c; }
+.flip-rate-known { border-color: #6ee7b7; background: #ecfdf5; color: #047857; }
+.dark .flip-rate-unknown { border-color: #9f1239; background: #3b1020; color: #fecdd3; }
+.dark .flip-rate-known { border-color: #047857; background: #052e25; color: #a7f3d0; }
+.dark .flip-face { box-shadow: 0 10px 30px rgb(0 0 0 / 0.35); }
+@media (max-width: 640px) {
+  .flip-face { min-height: 260px; padding: 24px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { transition: none; }
+}
+
+/* Lesson nav: hide scrollbar, keep swipeable */
+.lesson-nav { scrollbar-width: none; }
+.lesson-nav::-webkit-scrollbar { display: none; }
+
+/* Theme toggle: smaller on phones (height stays above lesson 2's bottom nav) */
+@media (max-width: 640px) {
+  .theme-toggle { min-width: 2.25rem; min-height: 2.25rem; opacity: 0.75; }
+}
