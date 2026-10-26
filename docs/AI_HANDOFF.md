@@ -62,6 +62,10 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-26：內容擴充規劃
+- 依 B1 範圍盤點各課缺口，寫在 `docs/content-expansion-plan.md`。最大的缺口：第 6 課的定冠詞 Akk／Dat、複數和 Genitiv；整個 Genitiv 和 n-Deklination；Konjunktiv II 和 Passiv 完全沒有涵蓋；單字缺 B1.2；沒有聽力和寫作練習。
+- 尚未開始實作，等使用者選定優先順序。
+
 ### 2026-10-24：修正手機字卡無法滑動／翻面（已部署）
 - 使用者回報：手機上字卡滑不動、也翻不了面。
 - **根本原因**：iOS Safari 只支援 `touch-action: auto` 和 `manipulation`，**不支援 `pan-y`**。第 1 課字卡原本用 pointer events 處理滑動，手指一橫移，Safari 就把它當成頁面捲動並送出 `pointercancel`，導致滑動失效；點擊時手指只要稍微移動也會被取消，所以翻不了面。
