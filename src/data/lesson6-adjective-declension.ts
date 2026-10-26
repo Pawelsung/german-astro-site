@@ -4,8 +4,9 @@
 // 可直接放入 Astro / React 專案中使用。
 
 export type Gender = "m" | "f" | "n" | "pl";
-export type GermanCase = "nominativ" | "akkusativ" | "dativ";
-export type ArticleType = "definite" | "indefinite" | "zero";
+export type GermanCase = "nominativ" | "akkusativ" | "dativ" | "genitiv";
+// possessive = mein/meine…, negative = kein/keine… (both decline like ein, but also exist in the plural).
+export type ArticleType = "definite" | "indefinite" | "possessive" | "negative" | "zero";
 export type LessonLevel = "A2" | "A2-B1" | "B1";
 export type ExerciseMode =
   | "concept"
@@ -13,7 +14,8 @@ export type ExerciseMode =
   | "case-detective"
   | "dativ-focus"
   | "sentence-upgrade"
-  | "error-fix";
+  | "error-fix"
+  | "genitiv-focus";
 
 export interface LessonMeta {
   id: string;
@@ -65,6 +67,8 @@ export interface LessonNoun {
   plural: string;
   dativePlural: string;
   gender: Exclude<Gender, "pl">;
+  // Genitive singular for der/das nouns (des Films, des Buches); feminine nouns keep their form.
+  genitive?: string;
   meaning: string;
   level: "A1" | "A2" | "B1";
   tags: string[];
@@ -73,6 +77,8 @@ export interface LessonNoun {
 export interface LessonAdjective {
   id: string;
   adjective: string;
+  // Stem used before endings when it differs: teuer → teur-e, dunkel → dunkl-e.
+  stem?: string;
   meaning: string;
   level: "A1" | "A2" | "B1";
   tags: string[];
@@ -91,6 +97,10 @@ export interface SentencePattern {
   allowedNounTags?: string[];
   // Explicit noun whitelist; preferred over tags so frames stay meaningful ("Ich lese ein Buch", not "einen Film").
   allowedNounIds?: string[];
+  // Adjectives that fit the frame's meaning ("Wegen des schlechten Wetters …", never "des schönen Wetters").
+  allowedAdjectiveIds?: string[];
+  excludeAdjectiveIds?: string[];
+  number?: "sg" | "pl";
 }
 
 export interface LessonExercise {
@@ -105,6 +115,7 @@ export interface LessonExercise {
     adjective?: string;
     articleType?: ArticleType;
     caseName?: GermanCase;
+    number?: "sg" | "pl";
   };
   options: string[];
   answer: string;
@@ -362,20 +373,36 @@ export const LESSON6_CONCEPT_CARDS: ConceptCard[] = [
 ];
 
 export const LESSON6_NOUNS: LessonNoun[] = [
-  { id: "film", article: "der", noun: "Film", plural: "Filme", dativePlural: "Filmen", gender: "m", meaning: "電影", level: "A1", tags: ["movie", "daily", "thing"] },
-  { id: "freund", article: "der", noun: "Freund", plural: "Freunde", dativePlural: "Freunden", gender: "m", meaning: "朋友", level: "A1", tags: ["person", "daily"] },
-  { id: "kaffee", article: "der", noun: "Kaffee", plural: "Kaffees", dativePlural: "Kaffees", gender: "m", meaning: "咖啡", level: "A1", tags: ["food", "daily"] },
-  { id: "tag", article: "der", noun: "Tag", plural: "Tage", dativePlural: "Tagen", gender: "m", meaning: "日子", level: "A1", tags: ["time", "daily"] },
+  { id: "film", article: "der", noun: "Film", plural: "Filme", dativePlural: "Filmen", genitive: "Films", gender: "m", meaning: "電影", level: "A1", tags: ["movie", "daily", "thing"] },
+  { id: "freund", article: "der", noun: "Freund", plural: "Freunde", dativePlural: "Freunden", genitive: "Freundes", gender: "m", meaning: "朋友", level: "A1", tags: ["person", "daily"] },
+  { id: "kaffee", article: "der", noun: "Kaffee", plural: "Kaffees", dativePlural: "Kaffees", genitive: "Kaffees", gender: "m", meaning: "咖啡", level: "A1", tags: ["food", "daily"] },
+  { id: "tag", article: "der", noun: "Tag", plural: "Tage", dativePlural: "Tagen", genitive: "Tages", gender: "m", meaning: "日子", level: "A1", tags: ["time", "daily"] },
   { id: "stadt", article: "die", noun: "Stadt", plural: "Städte", dativePlural: "Städten", gender: "f", meaning: "城市", level: "A1", tags: ["travel", "place"] },
   { id: "serie", article: "die", noun: "Serie", plural: "Serien", dativePlural: "Serien", gender: "f", meaning: "影集", level: "A1", tags: ["movie", "daily", "thing"] },
   { id: "lehrerin", article: "die", noun: "Lehrerin", plural: "Lehrerinnen", dativePlural: "Lehrerinnen", gender: "f", meaning: "女老師", level: "A1", tags: ["person", "school"] },
   { id: "frage", article: "die", noun: "Frage", plural: "Fragen", dativePlural: "Fragen", gender: "f", meaning: "問題", level: "A1", tags: ["school", "abstract"] },
   { id: "tasche", article: "die", noun: "Tasche", plural: "Taschen", dativePlural: "Taschen", gender: "f", meaning: "包包", level: "A1", tags: ["daily", "thing"] },
-  { id: "buch", article: "das", noun: "Buch", plural: "Bücher", dativePlural: "Büchern", gender: "n", meaning: "書", level: "A1", tags: ["school", "thing"] },
-  { id: "brot", article: "das", noun: "Brot", plural: "Brote", dativePlural: "Broten", gender: "n", meaning: "麵包", level: "A1", tags: ["food", "daily"] },
-  { id: "cafe", article: "das", noun: "Café", plural: "Cafés", dativePlural: "Cafés", gender: "n", meaning: "咖啡館", level: "A1", tags: ["place", "travel", "daily"] },
-  { id: "bild", article: "das", noun: "Bild", plural: "Bilder", dativePlural: "Bildern", gender: "n", meaning: "圖畫、照片", level: "A1", tags: ["art", "thing"] },
-  { id: "problem", article: "das", noun: "Problem", plural: "Probleme", dativePlural: "Problemen", gender: "n", meaning: "問題、困難", level: "A2", tags: ["abstract", "school"] },
+  { id: "buch", article: "das", noun: "Buch", plural: "Bücher", dativePlural: "Büchern", genitive: "Buches", gender: "n", meaning: "書", level: "A1", tags: ["school", "thing"] },
+  { id: "brot", article: "das", noun: "Brot", plural: "Brote", dativePlural: "Broten", genitive: "Brotes", gender: "n", meaning: "麵包", level: "A1", tags: ["food", "daily"] },
+  { id: "cafe", article: "das", noun: "Café", plural: "Cafés", dativePlural: "Cafés", genitive: "Cafés", gender: "n", meaning: "咖啡館", level: "A1", tags: ["place", "travel", "daily"] },
+  { id: "bild", article: "das", noun: "Bild", plural: "Bilder", dativePlural: "Bildern", genitive: "Bildes", gender: "n", meaning: "圖畫、照片", level: "A1", tags: ["art", "thing"] },
+  { id: "problem", article: "das", noun: "Problem", plural: "Probleme", dativePlural: "Problemen", genitive: "Problems", gender: "n", meaning: "問題、困難", level: "A2", tags: ["abstract", "school"] },
+  { id: "jacke", article: "die", noun: "Jacke", plural: "Jacken", dativePlural: "Jacken", gender: "f", meaning: "外套", level: "A1", tags: ["thing", "daily"] },
+  { id: "wohnung", article: "die", noun: "Wohnung", plural: "Wohnungen", dativePlural: "Wohnungen", gender: "f", meaning: "公寓", level: "A1", tags: ["place", "daily"] },
+  { id: "auto", article: "das", noun: "Auto", plural: "Autos", dativePlural: "Autos", genitive: "Autos", gender: "n", meaning: "汽車", level: "A1", tags: ["thing", "travel"] },
+  { id: "computer", article: "der", noun: "Computer", plural: "Computer", dativePlural: "Computern", genitive: "Computers", gender: "m", meaning: "電腦", level: "A1", tags: ["thing", "work"] },
+  { id: "handy", article: "das", noun: "Handy", plural: "Handys", dativePlural: "Handys", genitive: "Handys", gender: "n", meaning: "手機", level: "A1", tags: ["thing", "daily"] },
+  { id: "zimmer", article: "das", noun: "Zimmer", plural: "Zimmer", dativePlural: "Zimmern", genitive: "Zimmers", gender: "n", meaning: "房間", level: "A1", tags: ["place", "daily"] },
+  { id: "schluessel", article: "der", noun: "Schlüssel", plural: "Schlüssel", dativePlural: "Schlüsseln", genitive: "Schlüssels", gender: "m", meaning: "鑰匙", level: "A1", tags: ["thing", "daily"] },
+  { id: "kind", article: "das", noun: "Kind", plural: "Kinder", dativePlural: "Kindern", genitive: "Kindes", gender: "n", meaning: "孩子", level: "A1", tags: ["person", "family"] },
+  { id: "mann", article: "der", noun: "Mann", plural: "Männer", dativePlural: "Männern", genitive: "Mannes", gender: "m", meaning: "男人", level: "A1", tags: ["person"] },
+  { id: "bruder", article: "der", noun: "Bruder", plural: "Brüder", dativePlural: "Brüdern", genitive: "Bruders", gender: "m", meaning: "兄弟", level: "A1", tags: ["person", "family"] },
+  { id: "schwester", article: "die", noun: "Schwester", plural: "Schwestern", dativePlural: "Schwestern", gender: "f", meaning: "姊妹", level: "A1", tags: ["person", "family"] },
+  { id: "nachbarin", article: "die", noun: "Nachbarin", plural: "Nachbarinnen", dativePlural: "Nachbarinnen", gender: "f", meaning: "女鄰居", level: "A2", tags: ["person"] },
+  { id: "idee", article: "die", noun: "Idee", plural: "Ideen", dativePlural: "Ideen", gender: "f", meaning: "主意；點子", level: "A2", tags: ["abstract"] },
+  { id: "wetter", article: "das", noun: "Wetter", plural: "", dativePlural: "", genitive: "Wetters", gender: "n", meaning: "天氣", level: "A1", tags: ["weather"] },
+  { id: "regen", article: "der", noun: "Regen", plural: "", dativePlural: "", genitive: "Regens", gender: "m", meaning: "雨", level: "A2", tags: ["weather"] },
+  { id: "kaelte", article: "die", noun: "Kälte", plural: "", dativePlural: "", gender: "f", meaning: "寒冷", level: "B1", tags: ["weather"] },
 ];
 
 export const LESSON6_ADJECTIVES: LessonAdjective[] = [
@@ -395,6 +422,22 @@ export const LESSON6_ADJECTIVES: LessonAdjective[] = [
   { id: "freundlich", adjective: "freundlich", meaning: "友善的", level: "A2", tags: ["person", "positive"] },
   { id: "bekannt", adjective: "bekannt", meaning: "知名的", level: "A2", tags: ["person", "art"] },
   { id: "schwierig", adjective: "schwierig", meaning: "困難的", level: "A2", tags: ["school", "abstract"] },
+  { id: "teuer", adjective: "teuer", stem: "teur", meaning: "貴的", level: "A1", tags: ["price"] },
+  { id: "billig", adjective: "billig", meaning: "便宜的", level: "A1", tags: ["price"] },
+  { id: "schnell", adjective: "schnell", meaning: "快的", level: "A1", tags: ["speed"] },
+  { id: "langsam", adjective: "langsam", meaning: "慢的", level: "A1", tags: ["speed"] },
+  { id: "frisch", adjective: "frisch", meaning: "新鮮的", level: "A1", tags: ["food"] },
+  { id: "warm", adjective: "warm", meaning: "溫暖的", level: "A1", tags: ["weather"] },
+  { id: "kalt", adjective: "kalt", meaning: "冷的", level: "A1", tags: ["weather"] },
+  { id: "hell", adjective: "hell", meaning: "明亮的", level: "A2", tags: ["place"] },
+  { id: "dunkel", adjective: "dunkel", stem: "dunkl", meaning: "暗的", level: "A2", tags: ["place"] },
+  { id: "modern", adjective: "modern", meaning: "現代的", level: "A2", tags: ["style"] },
+  { id: "bequem", adjective: "bequem", meaning: "舒適的", level: "A2", tags: ["thing"] },
+  { id: "schlecht", adjective: "schlecht", meaning: "壞的；差的", level: "A1", tags: ["opinion"] },
+  { id: "jung", adjective: "jung", meaning: "年輕的", level: "A1", tags: ["person"] },
+  { id: "ruhig", adjective: "ruhig", meaning: "安靜的", level: "A2", tags: ["place", "person"] },
+  { id: "spannend", adjective: "spannend", meaning: "精彩的；扣人心弦的", level: "A2", tags: ["movie"] },
+  { id: "praktisch", adjective: "praktisch", meaning: "實用的", level: "A2", tags: ["thing"] },
 ];
 
 export const LESSON6_PATTERNS: SentencePattern[] = [
@@ -504,12 +547,252 @@ export const LESSON6_PATTERNS: SentencePattern[] = [
     level: "B1",
     mode: "dativ-focus",
   },
+  {
+    id: "ich-mag-akk-def",
+    prefix: "Ich mag ",
+    suffix: ".",
+    caseName: "akkusativ",
+    articleType: "definite",
+    meaning: "我喜歡那個……",
+    caseReason: "mögen 後面的受詞是 Akkusativ。",
+    level: "A2",
+    mode: "case-detective",
+    allowedNounIds: ["film", "stadt", "buch", "serie", "bild", "cafe", "jacke", "wohnung", "auto"],
+  },
+  {
+    id: "ich-helfe-dat-def",
+    prefix: "Ich helfe ",
+    suffix: ".",
+    caseName: "dativ",
+    articleType: "definite",
+    meaning: "我幫助那位……",
+    caseReason: "helfen 後面接 Dativ。",
+    level: "A2",
+    mode: "dativ-focus",
+    excludeAdjectiveIds: ["interessant", "bekannt"],
+    allowedNounIds: ["freund", "lehrerin", "nachbarin", "kind", "mann", "bruder", "schwester"],
+  },
+  {
+    id: "wir-sitzen-in-dat-def",
+    prefix: "Wir sitzen in ",
+    suffix: ".",
+    caseName: "dativ",
+    articleType: "definite",
+    meaning: "我們坐在那間……裡。",
+    caseReason: "in 表示位置（Wo?），所以用 Dativ。",
+    level: "A2",
+    mode: "dativ-focus",
+    allowedNounIds: ["cafe", "zimmer", "wohnung", "auto"],
+  },
+  {
+    id: "pl-nom-def",
+    prefix: "",
+    suffix: " sind sehr teuer.",
+    caseName: "nominativ",
+    articleType: "definite",
+    meaning: "那些……很貴。",
+    caseReason: "句首的複數名詞片語是主詞，使用 Nominativ。",
+    level: "A2",
+    mode: "quick-drill",
+    allowedNounIds: ["tasche", "jacke", "buch", "bild", "auto", "computer", "handy"],
+    number: "pl",
+    excludeAdjectiveIds: ["teuer", "billig"],
+  },
+  {
+    id: "pl-dat-def",
+    prefix: "Ich spiele mit ",
+    suffix: ".",
+    caseName: "dativ",
+    articleType: "definite",
+    meaning: "我和那些……一起玩。",
+    caseReason: "mit 後面固定接 Dativ；複數 Dativ 名詞要加 -n。",
+    level: "A2",
+    mode: "dativ-focus",
+    allowedNounIds: ["kind", "freund"],
+    number: "pl",
+  },
+  {
+    id: "pl-akk-zero",
+    prefix: "Ich brauche ",
+    suffix: ".",
+    caseName: "akkusativ",
+    articleType: "zero",
+    meaning: "我需要（一些）……",
+    caseReason: "brauchen 後面的受詞是 Akkusativ；複數沒有不定冠詞，所以這裡沒有冠詞。",
+    level: "A2-B1",
+    mode: "quick-drill",
+    allowedNounIds: ["jacke", "buch", "idee"],
+    number: "pl",
+  },
+  {
+    id: "pl-nom-zero",
+    prefix: "",
+    suffix: " sind heute sehr beliebt.",
+    caseName: "nominativ",
+    articleType: "zero",
+    meaning: "……現在很受歡迎。",
+    caseReason: "句首的複數名詞片語是主詞，使用 Nominativ；沒有冠詞時形容詞自己表現格位。",
+    level: "A2-B1",
+    mode: "quick-drill",
+    allowedNounIds: ["auto", "handy", "cafe", "serie"],
+    number: "pl",
+  },
+  {
+    id: "das-ist-mein",
+    prefix: "Das ist ",
+    suffix: ".",
+    caseName: "nominativ",
+    articleType: "possessive",
+    meaning: "這是我的……",
+    caseReason: "Das ist ... 後面說明主詞是什麼，使用 Nominativ。",
+    level: "A2",
+    mode: "quick-drill",
+    allowedNounIds: ["computer", "jacke", "auto", "handy", "wohnung", "zimmer", "freund", "schwester", "bruder"],
+  },
+  {
+    id: "ich-suche-mein",
+    prefix: "Ich suche ",
+    suffix: ".",
+    caseName: "akkusativ",
+    articleType: "possessive",
+    meaning: "我在找我的……",
+    caseReason: "suchen 後面的受詞是 Akkusativ。",
+    level: "A2",
+    mode: "case-detective",
+    allowedNounIds: ["schluessel", "jacke", "handy", "tasche", "buch"],
+  },
+  {
+    id: "mit-mein-dat",
+    prefix: "Ich telefoniere mit ",
+    suffix: ".",
+    caseName: "dativ",
+    articleType: "possessive",
+    meaning: "我和我的……講電話。",
+    caseReason: "mit 後面固定接 Dativ。",
+    level: "A2",
+    mode: "dativ-focus",
+    allowedNounIds: ["freund", "schwester", "bruder", "nachbarin"],
+  },
+  {
+    id: "bei-mein-pl",
+    prefix: "Ich wohne bei ",
+    suffix: ".",
+    caseName: "dativ",
+    articleType: "possessive",
+    meaning: "我住在我的……家。",
+    caseReason: "bei 後面固定接 Dativ；複數 Dativ 名詞要加 -n。",
+    level: "A2-B1",
+    mode: "dativ-focus",
+    allowedNounIds: ["freund", "bruder", "schwester"],
+    number: "pl",
+  },
+  {
+    id: "ich-habe-kein-akk",
+    prefix: "Ich habe ",
+    suffix: ".",
+    caseName: "akkusativ",
+    articleType: "negative",
+    meaning: "我沒有……",
+    caseReason: "haben 後面的受詞是 Akkusativ；kein 的變化和 ein 一樣。",
+    level: "A2",
+    mode: "case-detective",
+    allowedNounIds: ["computer", "wohnung", "handy", "auto", "zimmer"],
+  },
+  {
+    id: "das-ist-kein-nom",
+    prefix: "Das ist ",
+    suffix: ".",
+    caseName: "nominativ",
+    articleType: "negative",
+    meaning: "這不是……",
+    caseReason: "Das ist ... 後面說明主詞是什麼，使用 Nominativ。",
+    level: "A2",
+    mode: "quick-drill",
+    allowedNounIds: ["problem", "idee", "film", "frage"],
+  },
+  {
+    id: "kein-pl-akk",
+    prefix: "Wir haben ",
+    suffix: ".",
+    caseName: "akkusativ",
+    articleType: "negative",
+    meaning: "我們沒有……",
+    caseReason: "haben 後面的受詞是 Akkusativ；keine + 複數時形容詞用 -en。",
+    level: "A2-B1",
+    mode: "case-detective",
+    allowedNounIds: ["problem", "idee"],
+    number: "pl",
+  },
+  {
+    id: "gen-def-owner",
+    prefix: "Das ist das Zimmer ",
+    suffix: ".",
+    caseName: "genitiv",
+    articleType: "definite",
+    meaning: "這是那位……的房間。",
+    caseReason: "「誰的房間」用 Genitiv 表示所有關係。",
+    level: "B1",
+    mode: "genitiv-focus",
+    allowedNounIds: ["mann", "lehrerin", "nachbarin", "kind", "freund", "schwester", "bruder"],
+  },
+  {
+    id: "gen-def-pl",
+    prefix: "Das ist das Zimmer ",
+    suffix: ".",
+    caseName: "genitiv",
+    articleType: "definite",
+    meaning: "這是那些……的房間。",
+    caseReason: "「誰的房間」用 Genitiv；複數 Genitiv 的冠詞是 der。",
+    level: "B1",
+    mode: "genitiv-focus",
+    allowedNounIds: ["kind", "bruder", "schwester"],
+    number: "pl",
+  },
+  {
+    id: "wegen-gen-def",
+    prefix: "Wegen ",
+    suffix: " bleiben wir zu Hause.",
+    caseName: "genitiv",
+    articleType: "definite",
+    meaning: "因為……我們待在家。",
+    caseReason: "wegen 後面接 Genitiv。",
+    level: "B1",
+    mode: "genitiv-focus",
+    allowedNounIds: ["wetter", "regen", "kaelte"],
+    allowedAdjectiveIds: ["schlecht", "kalt", "stark", "lang", "gross"],
+  },
+  {
+    id: "gen-mein",
+    prefix: "Das ist das Fahrrad ",
+    suffix: ".",
+    caseName: "genitiv",
+    articleType: "possessive",
+    meaning: "這是我的……的腳踏車。",
+    caseReason: "「誰的腳踏車」用 Genitiv；meines／meiner 的變化和 eines／einer 一樣。",
+    level: "B1",
+    mode: "genitiv-focus",
+    allowedNounIds: ["bruder", "schwester", "freund", "nachbarin"],
+  },
+  {
+    id: "trotz-gen-zero",
+    prefix: "Trotz ",
+    suffix: " gehen wir spazieren.",
+    caseName: "genitiv",
+    articleType: "zero",
+    meaning: "儘管……我們還是去散步。",
+    caseReason: "trotz 後面接 Genitiv；沒有冠詞時，陽性／中性形容詞用 -en，陰性用 -er。",
+    level: "B1",
+    mode: "genitiv-focus",
+    allowedNounIds: ["wetter", "regen", "kaelte"],
+    allowedAdjectiveIds: ["schlecht", "kalt", "stark", "gross"],
+  }
 ];
 
 const CASE_ZH: Record<GermanCase, string> = {
   nominativ: "Nominativ 主格",
   akkusativ: "Akkusativ 受格",
   dativ: "Dativ 與格",
+  genitiv: "Genitiv 屬格",
 };
 
 const GENDER_ZH: Record<Gender, string> = {
@@ -522,6 +805,8 @@ const GENDER_ZH: Record<Gender, string> = {
 const ARTICLE_TYPE_ZH: Record<ArticleType, string> = {
   definite: "定冠詞 der/die/das",
   indefinite: "不定冠詞 ein/eine",
+  possessive: "所有格冠詞 mein/meine",
+  negative: "否定冠詞 kein/keine",
   zero: "無冠詞",
 };
 
@@ -529,50 +814,68 @@ const DEFINITE_ARTICLES: Record<GermanCase, Record<Gender, string>> = {
   nominativ: { m: "der", f: "die", n: "das", pl: "die" },
   akkusativ: { m: "den", f: "die", n: "das", pl: "die" },
   dativ: { m: "dem", f: "der", n: "dem", pl: "den" },
+  genitiv: { m: "des", f: "der", n: "des", pl: "der" },
 };
 
 const INDEFINITE_ARTICLES: Record<GermanCase, Record<Exclude<Gender, "pl">, string>> = {
   nominativ: { m: "ein", f: "eine", n: "ein" },
   akkusativ: { m: "einen", f: "eine", n: "ein" },
   dativ: { m: "einem", f: "einer", n: "einem" },
+  genitiv: { m: "eines", f: "einer", n: "eines" },
 };
+
+// mein/kein in the plural: meine, meine, meinen, meiner.
+const PLURAL_DETERMINER_ENDINGS: Record<GermanCase, string> = { nominativ: "e", akkusativ: "e", dativ: "en", genitiv: "er" };
 
 const DEFINITE_ADJ_ENDINGS: Record<GermanCase, Record<Gender, string>> = {
   nominativ: { m: "e", f: "e", n: "e", pl: "en" },
   akkusativ: { m: "en", f: "e", n: "e", pl: "en" },
   dativ: { m: "en", f: "en", n: "en", pl: "en" },
+  genitiv: { m: "en", f: "en", n: "en", pl: "en" },
 };
 
 const INDEFINITE_ADJ_ENDINGS: Record<GermanCase, Record<Exclude<Gender, "pl">, string>> = {
   nominativ: { m: "er", f: "e", n: "es" },
   akkusativ: { m: "en", f: "e", n: "es" },
   dativ: { m: "en", f: "en", n: "en" },
+  genitiv: { m: "en", f: "en", n: "en" },
 };
 
 const ZERO_ARTICLE_ADJ_ENDINGS: Record<GermanCase, Record<Gender, string>> = {
   nominativ: { m: "er", f: "e", n: "es", pl: "e" },
   akkusativ: { m: "en", f: "e", n: "es", pl: "e" },
   dativ: { m: "em", f: "er", n: "em", pl: "en" },
+  // Without an article the masculine/neuter genitive takes -en (trotz starken Regens), not -es.
+  genitiv: { m: "en", f: "er", n: "en", pl: "er" },
 };
 
 function getArticle(articleType: ArticleType, gender: Gender, caseName: GermanCase): string {
   if (articleType === "definite") return DEFINITE_ARTICLES[caseName][gender];
   if (articleType === "zero") return "";
-  if (gender === "pl") return "";
-  return INDEFINITE_ARTICLES[caseName][gender];
+  if (articleType === "indefinite") return gender === "pl" ? "" : INDEFINITE_ARTICLES[caseName][gender];
+  const stem = articleType === "possessive" ? "mein" : "kein";
+  if (gender === "pl") return `${stem}${PLURAL_DETERMINER_ENDINGS[caseName]}`;
+  return INDEFINITE_ARTICLES[caseName][gender].replace(/^ein/, stem);
 }
 
 function getAdjectiveEnding(articleType: ArticleType, gender: Gender, caseName: GermanCase): string {
   if (articleType === "definite") return DEFINITE_ADJ_ENDINGS[caseName][gender];
   if (articleType === "zero") return ZERO_ARTICLE_ADJ_ENDINGS[caseName][gender];
-  if (gender === "pl") return ZERO_ARTICLE_ADJ_ENDINGS[caseName].pl;
+  if (gender === "pl") {
+    // ein has no plural (→ zero-article endings); meine/keine behave like die: always -en.
+    return articleType === "indefinite" ? ZERO_ARTICLE_ADJ_ENDINGS[caseName].pl : "en";
+  }
   return INDEFINITE_ADJ_ENDINGS[caseName][gender];
 }
 
 function getNounForm(noun: LessonNoun, gender: Gender, caseName: GermanCase): string {
-  if (gender !== "pl") return noun.noun;
-  if (caseName === "dativ") return noun.dativePlural;
-  return noun.plural;
+  if (gender === "pl") return caseName === "dativ" ? noun.dativePlural : noun.plural;
+  if (caseName === "genitiv" && gender !== "f") return noun.genitive ?? `${noun.noun}s`;
+  return noun.noun;
+}
+
+function adjectiveForm(adjective: LessonAdjective, ending: string): string {
+  return `${ending ? adjective.stem ?? adjective.adjective : adjective.adjective}${ending}`;
 }
 
 function buildPhrase(params: {
@@ -588,7 +891,7 @@ function buildPhrase(params: {
   const article = params.forceArticle ?? getArticle(params.articleType, gender, params.caseName);
   const ending = params.forceEnding ?? getAdjectiveEnding(params.articleType, gender, params.caseName);
   const nounForm = getNounForm(params.noun, gender, params.caseName);
-  return [article, `${params.adjective.adjective}${ending}`, nounForm].filter(Boolean).join(" ");
+  return [article, adjectiveForm(params.adjective, ending), nounForm].filter(Boolean).join(" ");
 }
 
 function capitalizePhrase(phrase: string): string {
@@ -626,19 +929,29 @@ function makeExplanation(params: {
   gender?: Gender;
 }): string[] {
   const gender = params.gender ?? params.noun.gender;
+  const caseName = params.pattern.caseName;
   const articleLabel = ARTICLE_TYPE_ZH[params.pattern.articleType];
-  const ending = getAdjectiveEnding(params.pattern.articleType, gender, params.pattern.caseName);
-  const article = getArticle(params.pattern.articleType, gender, params.pattern.caseName);
+  const ending = getAdjectiveEnding(params.pattern.articleType, gender, caseName);
+  const article = getArticle(params.pattern.articleType, gender, caseName);
   const baseArticle = gender === "pl" ? "die" : params.noun.article;
+  const nounNote =
+    gender === "pl" && caseName === "dativ" && params.noun.dativePlural !== params.noun.plural
+      ? `複數 Dativ 的名詞要再加 -n：${params.noun.dativePlural}。`
+      : caseName === "genitiv" && gender !== "pl" && gender !== "f"
+        ? `陽性／中性名詞在 Genitiv 要加 -(e)s：${getNounForm(params.noun, gender, caseName)}。`
+        : "";
+  const stemNote = params.adjective.stem ? `注意 ${params.adjective.adjective} 加字尾時會變成 ${params.adjective.stem}-。` : "";
 
   return [
     `正解：${params.answer}`,
     `先看名詞：${baseArticle} ${gender === "pl" ? params.noun.plural : params.noun.noun}，這裡是${GENDER_ZH[gender]}。`,
     `再看句子：${params.pattern.caseReason}`,
-    `所以本題使用 ${CASE_ZH[params.pattern.caseName]}。`,
+    `所以本題使用 ${CASE_ZH[caseName]}。`,
     `冠詞類型：${articleLabel}。${article ? `這裡的冠詞是 ${article}。` : "這裡沒有冠詞，形容詞要承擔更多文法資訊。"}`,
     `形容詞 ${params.adjective.adjective} 在這裡加字尾 -${ending}，所以答案是：${params.answer}。`,
-  ];
+    nounNote,
+    stemNote,
+  ].filter(Boolean);
 }
 
 function buildExercise(params: {
@@ -650,7 +963,7 @@ function buildExercise(params: {
   mode?: ExerciseMode;
   gender?: Gender;
 }): LessonExercise {
-  const gender = params.gender ?? params.noun.gender;
+  const gender = params.gender ?? (params.pattern.number === "pl" ? "pl" : params.noun.gender);
   const correct = formatPhraseForPrompt(params.pattern, buildPhrase({
     noun: params.noun,
     adjective: params.adjective,
@@ -671,7 +984,8 @@ function buildExercise(params: {
     }))
   );
 
-  const wrongCase: GermanCase = params.pattern.caseName === "dativ" ? "akkusativ" : "dativ";
+  const wrongCase: GermanCase =
+    params.pattern.caseName === "genitiv" ? "dativ" : params.pattern.caseName === "dativ" ? "akkusativ" : "dativ";
   const wrongByCase = formatPhraseForPrompt(params.pattern, buildPhrase({
     noun: params.noun,
     adjective: params.adjective,
@@ -690,10 +1004,11 @@ function buildExercise(params: {
     prompt: `${params.pattern.prefix}____${params.pattern.suffix}`,
     questionZh: `${params.pattern.meaning}｜請選出正確的「冠詞＋形容詞＋名詞」。`,
     given: {
-      noun: `${params.noun.article} ${params.noun.noun}`,
+      noun: gender === "pl" ? `die ${params.noun.plural}` : `${params.noun.article} ${params.noun.noun}`,
       adjective: `${params.adjective.adjective}（${params.adjective.meaning}）`,
       articleType: params.pattern.articleType,
       caseName: params.pattern.caseName,
+      number: gender === "pl" ? "pl" : "sg",
     },
     options,
     answer: correct,
@@ -706,31 +1021,51 @@ function buildExercise(params: {
       gender,
     }),
     miniRule:
-      params.pattern.caseName === "dativ"
-        ? "看到 mit / aus / bei / nach / von / zu，要先想到 Dativ。"
-        : params.pattern.caseName === "akkusativ"
-          ? "直接受詞多半使用 Akkusativ，陽性名詞變化最明顯。"
-          : "主詞或 Das ist ... 後面常用 Nominativ。",
-    tags: [params.pattern.caseName, params.pattern.articleType, params.noun.gender, params.adjective.id],
+      gender === "pl" && params.pattern.articleType !== "zero" && params.pattern.articleType !== "indefinite"
+        ? "複數只要前面有 die／meine／keine，形容詞一律 -en。"
+        : params.pattern.caseName === "genitiv"
+          ? "wegen／trotz／während 和「誰的……」用 Genitiv：des …(e)s／der …；有冠詞時形容詞一律 -en。"
+          : params.pattern.caseName === "dativ"
+            ? "看到 mit / aus / bei / nach / von / zu，要先想到 Dativ。"
+            : params.pattern.caseName === "akkusativ"
+              ? "直接受詞多半使用 Akkusativ，陽性名詞變化最明顯。"
+              : "主詞或 Das ist ... 後面常用 Nominativ。",
+    tags: [params.pattern.caseName, params.pattern.articleType, gender, params.adjective.id],
   };
 }
 
 // Adjectives that make sense with each noun, so generated phrases never read like "ein leckerer Film".
 const NOUN_ADJECTIVES: Record<string, string[]> = {
-  film: ["gut", "schoen", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "bekannt"],
-  freund: ["gut", "nett", "freundlich", "alt", "neu"],
-  kaffee: ["gut", "stark", "lecker"],
-  tag: ["gut", "schoen", "lang", "langweilig", "wichtig", "schwierig"],
-  stadt: ["schoen", "klein", "gross", "alt", "neu", "interessant", "bekannt", "langweilig"],
-  serie: ["gut", "interessant", "langweilig", "neu", "alt", "lang", "bekannt"],
-  lehrerin: ["gut", "nett", "freundlich", "neu", "bekannt"],
+  film: ["gut", "schoen", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "bekannt", "spannend", "schlecht"],
+  freund: ["gut", "nett", "freundlich", "alt", "neu", "jung"],
+  kaffee: ["gut", "stark", "lecker", "frisch", "warm", "kalt"],
+  tag: ["gut", "schoen", "lang", "langweilig", "wichtig", "schwierig", "kalt", "warm"],
+  stadt: ["schoen", "klein", "gross", "alt", "neu", "interessant", "bekannt", "langweilig", "modern", "ruhig"],
+  serie: ["gut", "interessant", "langweilig", "neu", "alt", "lang", "bekannt", "spannend", "schlecht"],
+  lehrerin: ["gut", "nett", "freundlich", "neu", "bekannt", "jung"],
   frage: ["gut", "wichtig", "interessant", "schwierig", "klein", "neu"],
-  tasche: ["schoen", "klein", "gross", "neu", "alt"],
-  buch: ["gut", "interessant", "langweilig", "neu", "alt", "wichtig", "bekannt", "schwierig", "schoen", "lang"],
-  brot: ["gut", "lecker"],
-  cafe: ["schoen", "klein", "gross", "neu", "alt", "gut", "nett", "bekannt"],
-  bild: ["schoen", "gross", "klein", "alt", "neu", "bekannt", "interessant"],
+  tasche: ["schoen", "klein", "gross", "neu", "alt", "teuer", "billig", "praktisch"],
+  buch: ["gut", "interessant", "langweilig", "neu", "alt", "wichtig", "bekannt", "schwierig", "schoen", "lang", "spannend", "teuer", "billig"],
+  brot: ["gut", "lecker", "frisch"],
+  cafe: ["schoen", "klein", "gross", "neu", "alt", "gut", "nett", "bekannt", "ruhig", "modern", "hell"],
+  bild: ["schoen", "gross", "klein", "alt", "neu", "bekannt", "interessant", "modern", "dunkel", "hell", "teuer"],
   problem: ["gross", "klein", "neu", "alt", "wichtig", "schwierig"],
+  jacke: ["neu", "alt", "warm", "schoen", "teuer", "billig", "bequem", "praktisch", "dunkel", "klein", "gross"],
+  wohnung: ["neu", "alt", "gross", "klein", "hell", "dunkel", "modern", "teuer", "billig", "ruhig", "schoen"],
+  auto: ["neu", "alt", "schnell", "langsam", "teuer", "billig", "klein", "gross", "modern", "praktisch"],
+  computer: ["neu", "alt", "schnell", "langsam", "teuer", "billig", "modern", "praktisch"],
+  handy: ["neu", "alt", "teuer", "billig", "modern", "praktisch", "schnell"],
+  zimmer: ["gross", "klein", "hell", "dunkel", "ruhig", "schoen", "modern", "warm", "kalt"],
+  schluessel: ["alt", "neu", "klein"],
+  kind: ["klein", "nett", "freundlich", "ruhig"],
+  mann: ["alt", "jung", "nett", "freundlich", "bekannt", "interessant"],
+  bruder: ["klein", "gross", "jung", "nett"],
+  schwester: ["klein", "gross", "jung", "nett"],
+  nachbarin: ["nett", "freundlich", "neu", "alt", "jung", "ruhig"],
+  idee: ["gut", "neu", "interessant", "schlecht", "wichtig", "spannend"],
+  wetter: ["schlecht", "kalt", "warm", "schoen", "gut"],
+  regen: ["stark", "kalt", "lang"],
+  kaelte: ["gross", "stark"],
 };
 
 function nounAllowed(pattern: SentencePattern, noun: LessonNoun): boolean {
@@ -774,6 +1109,38 @@ function buildCoreExercises(): LessonExercise[] {
       perPatternMax: 12,
     },
     {
+      stage: 6,
+      patternIds: ["ich-mag-akk-def", "ich-helfe-dat-def", "wir-sitzen-in-dat-def"],
+      nounIds: ["film", "stadt", "buch", "serie", "bild", "cafe", "jacke", "wohnung", "auto", "freund", "lehrerin", "nachbarin", "kind", "mann", "bruder", "schwester", "zimmer"],
+      adjectiveIds: ["gut", "schoen", "klein", "gross", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "stark", "nett", "freundlich", "bekannt", "schwierig", "teuer", "billig", "schnell", "langsam", "frisch", "warm", "kalt", "hell", "dunkel", "modern", "bequem", "schlecht", "jung", "ruhig", "spannend", "praktisch"],
+      max: 30,
+      perPatternMax: 12,
+    },
+    {
+      stage: 7,
+      patternIds: ["pl-nom-def", "pl-dat-def", "pl-akk-zero", "pl-nom-zero"],
+      nounIds: ["tasche", "jacke", "buch", "bild", "auto", "computer", "handy", "kind", "freund", "idee", "cafe", "serie"],
+      adjectiveIds: ["gut", "schoen", "klein", "gross", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "stark", "nett", "freundlich", "bekannt", "schwierig", "teuer", "billig", "schnell", "langsam", "frisch", "warm", "kalt", "hell", "dunkel", "modern", "bequem", "schlecht", "jung", "ruhig", "spannend", "praktisch"],
+      max: 28,
+      perPatternMax: 8,
+    },
+    {
+      stage: 8,
+      patternIds: ["das-ist-mein", "ich-suche-mein", "mit-mein-dat", "bei-mein-pl", "ich-habe-kein-akk", "das-ist-kein-nom", "kein-pl-akk"],
+      nounIds: ["computer", "jacke", "auto", "handy", "wohnung", "zimmer", "freund", "schwester", "bruder", "schluessel", "tasche", "buch", "nachbarin", "problem", "idee", "film", "frage"],
+      adjectiveIds: ["gut", "schoen", "klein", "gross", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "stark", "nett", "freundlich", "bekannt", "schwierig", "teuer", "billig", "schnell", "langsam", "frisch", "warm", "kalt", "hell", "dunkel", "modern", "bequem", "schlecht", "jung", "ruhig", "spannend", "praktisch"],
+      max: 56,
+      perPatternMax: 8,
+    },
+    {
+      stage: 9,
+      patternIds: ["gen-def-owner", "gen-def-pl", "wegen-gen-def", "gen-mein", "trotz-gen-zero"],
+      nounIds: ["mann", "lehrerin", "nachbarin", "kind", "freund", "schwester", "bruder", "wetter", "regen", "kaelte"],
+      adjectiveIds: ["gut", "schoen", "klein", "gross", "interessant", "langweilig", "neu", "alt", "lang", "wichtig", "stark", "nett", "freundlich", "bekannt", "schwierig", "teuer", "billig", "schnell", "langsam", "frisch", "warm", "kalt", "hell", "dunkel", "modern", "bequem", "schlecht", "jung", "ruhig", "spannend", "praktisch"],
+      max: 40,
+      perPatternMax: 8,
+    },
+    {
       stage: 5,
       patternIds: ["mit-dat-zero"],
       nounIds: ["kaffee", "brot"],
@@ -794,6 +1161,7 @@ function buildCoreExercises(): LessonExercise[] {
       const byNoun = nouns.map((noun) =>
         plan.adjectiveIds
           .filter((id) => (NOUN_ADJECTIVES[noun.id] || []).includes(id))
+          .filter((id) => (!pattern.allowedAdjectiveIds || pattern.allowedAdjectiveIds.includes(id)) && !pattern.excludeAdjectiveIds?.includes(id))
           .map((id) => LESSON6_ADJECTIVES.find((item) => item.id === id))
           .filter((adjective): adjective is LessonAdjective => !!adjective)
           .map((adjective) => [noun, adjective] as [LessonNoun, LessonAdjective])
@@ -1960,6 +2328,7 @@ export const LESSON6_DECLENSION_TABLES = {
       { caseName: "Nominativ", masculine: "der gute Film", feminine: "die gute Stadt", neuter: "das gute Buch", plural: "die guten Filme" },
       { caseName: "Akkusativ", masculine: "den guten Film", feminine: "die gute Stadt", neuter: "das gute Buch", plural: "die guten Filme" },
       { caseName: "Dativ", masculine: "dem guten Film", feminine: "der guten Stadt", neuter: "dem guten Buch", plural: "den guten Filmen" },
+      { caseName: "Genitiv", masculine: "des guten Films", feminine: "der guten Stadt", neuter: "des guten Buches", plural: "der guten Filme" },
     ],
   },
   indefinite: {
@@ -1969,6 +2338,17 @@ export const LESSON6_DECLENSION_TABLES = {
       { caseName: "Nominativ", masculine: "ein guter Film", feminine: "eine gute Stadt", neuter: "ein gutes Buch", plural: "—" },
       { caseName: "Akkusativ", masculine: "einen guten Film", feminine: "eine gute Stadt", neuter: "ein gutes Buch", plural: "—" },
       { caseName: "Dativ", masculine: "einem guten Film", feminine: "einer guten Stadt", neuter: "einem guten Buch", plural: "—" },
+      { caseName: "Genitiv", masculine: "eines guten Films", feminine: "einer guten Stadt", neuter: "eines guten Buches", plural: "—" },
+    ],
+  },
+  possessive: {
+    title: "mein／kein 後形容詞字尾",
+    note: "單數和 ein 完全一樣；複數 meine／keine 後面的形容詞一律 -en。",
+    rows: [
+      { caseName: "Nominativ", masculine: "mein guter Freund", feminine: "meine gute Jacke", neuter: "mein gutes Buch", plural: "meine guten Freunde" },
+      { caseName: "Akkusativ", masculine: "keinen guten Freund", feminine: "keine gute Jacke", neuter: "kein gutes Buch", plural: "keine guten Freunde" },
+      { caseName: "Dativ", masculine: "meinem guten Freund", feminine: "meiner guten Jacke", neuter: "meinem guten Buch", plural: "meinen guten Freunden" },
+      { caseName: "Genitiv", masculine: "meines guten Freundes", feminine: "meiner guten Jacke", neuter: "meines guten Buches", plural: "meiner guten Freunde" },
     ],
   },
   zero: {
@@ -1978,6 +2358,7 @@ export const LESSON6_DECLENSION_TABLES = {
       { caseName: "Nominativ", masculine: "guter Kaffee", feminine: "gute Musik", neuter: "gutes Essen", plural: "gute Filme" },
       { caseName: "Akkusativ", masculine: "guten Kaffee", feminine: "gute Musik", neuter: "gutes Essen", plural: "gute Filme" },
       { caseName: "Dativ", masculine: "gutem Kaffee", feminine: "guter Musik", neuter: "gutem Essen", plural: "guten Filmen" },
+      { caseName: "Genitiv", masculine: "guten Kaffees", feminine: "guter Musik", neuter: "guten Essens", plural: "guter Filme" },
     ],
   },
 };
@@ -2001,7 +2382,7 @@ export const LESSON6_STUDY_FLOW = [
     step: 3,
     title: "格位偵探",
     minutes: 6,
-    description: "從句子角色判斷 Nominativ、Akkusativ、Dativ。",
+    description: "從句子角色判斷 Nominativ、Akkusativ、Dativ，也練 mein／kein 和複數。",
     modes: ["case-detective"],
   },
   {
@@ -2017,6 +2398,13 @@ export const LESSON6_STUDY_FLOW = [
     minutes: 4,
     description: "把簡單句加上形容詞，並診斷常見錯誤。",
     modes: ["sentence-upgrade", "error-fix"],
+  },
+  {
+    step: 6,
+    title: "Genitiv 特訓",
+    minutes: 5,
+    description: "練 des guten Films、meiner kleinen Schwester、wegen des schlechten Wetters、trotz starken Regens。",
+    modes: ["genitiv-focus"],
   },
 ];
 

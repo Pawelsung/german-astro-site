@@ -14,7 +14,8 @@ const MODE_LABELS = {
   'case-detective': '格位偵探',
   'dativ-focus': 'Dativ 特訓',
   'sentence-upgrade': '句子升級',
-  'error-fix': '錯誤修正'
+  'error-fix': '錯誤修正',
+  'genitiv-focus': 'Genitiv 特訓'
 };
 
 const STAGE_LABELS = {
@@ -22,19 +23,26 @@ const STAGE_LABELS = {
   2: '定冠詞',
   3: '不定冠詞 / Akkusativ',
   4: 'Dativ',
-  5: 'B1 挑戰'
+  5: 'B1 挑戰',
+  6: '定冠詞 Akk／Dat',
+  7: '複數',
+  8: 'mein／kein',
+  9: 'Genitiv'
 };
 
 const ARTICLE_LABELS = {
   definite: '定冠詞',
   indefinite: '不定冠詞',
+  possessive: '所有格 mein',
+  negative: '否定 kein',
   zero: '無冠詞'
 };
 
 const CASE_LABELS = {
   nominativ: 'Nominativ',
   akkusativ: 'Akkusativ',
-  dativ: 'Dativ'
+  dativ: 'Dativ',
+  genitiv: 'Genitiv'
 };
 
 const ENDING_PATTERN = /(er|en|es|em|e)$/;
@@ -117,6 +125,7 @@ function ConceptPanel({ onClose }) {
   const tableTabs = [
     ['definite', '定冠詞'],
     ['indefinite', '不定冠詞'],
+    ['possessive', 'mein／kein'],
     ['zero', '無冠詞']
   ];
   const activeTable = lessonData.declensionTables[activeTab];
@@ -423,7 +432,7 @@ export default function AdjectiveDeclensionTrainer() {
                 <h2 className="mt-3 break-words text-2xl font-black leading-relaxed text-slate-900 md:text-3xl">{current.prompt}</h2>
                 {current.given && (
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {current.given.noun && (() => { const { article, rest, gender } = splitArticle(current.given.noun); return <span className="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-black text-slate-600">{gender && <i className={`g-dot g-${gender}`} />}{article && <span className={`g-${gender}`}>{article}&nbsp;</span>}{rest}</span>; })()}
+                    {current.given.noun && (() => { const parts = splitArticle(current.given.noun); const { article, rest } = parts; const gender = current.given.number === 'pl' ? 'pl' : parts.gender; return <span className="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-black text-slate-600">{gender && <i className={`g-dot g-${gender}`} />}{article && <span className={`g-${gender}`}>{article}&nbsp;</span>}{rest}</span>; })()}
                     {current.given.adjective && <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-black text-amber-700">{current.given.adjective}</span>}
                     {current.given.articleType && <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-black text-teal-700">{ARTICLE_LABELS[current.given.articleType]}</span>}
                     {current.given.caseName && <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{CASE_LABELS[current.given.caseName]}</span>}

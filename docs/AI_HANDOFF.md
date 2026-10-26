@@ -62,6 +62,22 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-26：第 6 課擴充（已 commit，未部署）
+- 題數：154 → 284（自動產生 243 題，手寫 41 題）；名詞 14 → 30 個，形容詞 16 → 32 個。
+- 新增 4 個階段：
+  - 6：定冠詞 Akk／Dat
+  - 7：複數（定冠詞，以及無冠詞的 Nom／Akk）
+  - 8：mein／kein（各格位，含複數）
+  - 9：Genitiv（定冠詞、所有格冠詞、wegen、trotz＋無冠詞）
+- 文法引擎：
+  - `GermanCase` 加上 `genitiv`；`ArticleType` 加上 `possessive`、`negative`
+  - 名詞有 `genitive` 欄位（des Films）；形容詞有 `stem` 欄位（teuer → teur-、dunkel → dunkl-）
+  - 句型可設 `number: "pl"`、`allowedAdjectiveIds`、`excludeAdjectiveIds`，用來排除語意不通的組合，例如「Wegen des schönen Wetters …」
+- **`tests/lesson6.test.mjs` 用一套獨立撰寫的變化表重新計算所有自動產生題的答案**，並檢查選項不重複。新增名詞、形容詞或句型後務必執行 `npm test`。
+- 我逐條讀過新產生的句子，排除了「Ich helfe dem interessanten Mann」這類語意不自然的句子。
+- 文法速查新增「mein／kein」分頁，各表也補上 Genitiv 列；學習路徑新增 Step 6「Genitiv 特訓」；概念卡補上 Genitiv 列和 mein／kein 的規則。
+- 第 6 課沒有語音，不需要產生音檔。
+
 ### 2026-10-26：內容擴充規劃
 - 依 B1 範圍盤點各課缺口，寫在 `docs/content-expansion-plan.md`。最大的缺口：第 6 課的定冠詞 Akk／Dat、複數和 Genitiv；整個 Genitiv 和 n-Deklination；Konjunktiv II 和 Passiv 完全沒有涵蓋；單字缺 B1.2；沒有聽力和寫作練習。
 - 尚未開始實作，等使用者選定優先順序。
