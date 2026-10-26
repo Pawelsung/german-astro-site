@@ -2,7 +2,7 @@
 // which verb or preposition triggers it, and (for relative clauses) which noun is referred to.
 import { genderKey } from './grammarColors.mjs';
 
-const PREPOSITIONS = new Set(['mit', 'für', 'ohne', 'bei', 'durch', 'zu', 'in', 'auf', 'an', 'aus', 'seit', 'gegen', 'um', 'unter', 'über', 'neben', 'vor', 'hinter', 'zwischen', 'nach', 'von', 'gegenüber', 'entlang', 'bis']);
+const PREPOSITIONS = new Set(['mit', 'für', 'ohne', 'bei', 'durch', 'zu', 'in', 'auf', 'an', 'aus', 'seit', 'gegen', 'um', 'unter', 'über', 'neben', 'vor', 'hinter', 'zwischen', 'nach', 'von', 'gegenüber', 'entlang', 'bis', 'wegen', 'trotz', 'während', 'statt', 'innerhalb', 'außerhalb']);
 const SEPARABLE = ['an', 'auf', 'aus', 'ein', 'mit', 'vor', 'zu', 'ab', 'zurück', 'weg'];
 const DETERMINER = /^(d(er|ie|as|en|em|es)|k?ein(e[mnrs]?)?|mein|dein|sein|ihr|unser|eu(e)?r|dies)/i;
 
@@ -71,7 +71,8 @@ function repairTargets(exercise, tokens) {
 
 function nounTargets(exercise, tokens) {
   const noun = lower(String(exercise.targetNoun || '').split(' ').pop() || '');
-  const at = tokens.findIndex((token) => lower(token) === noun);
+  // Genitive and n-declension add an ending: Bruder → Bruders, Student → Studenten.
+  const at = tokens.findIndex((token) => { const word = lower(token); return word === noun || (word.startsWith(noun) && word.length - noun.length <= 2); });
   if (at < 0) return null;
   const start = at > 0 && DETERMINER.test(strip(tokens[at - 1])) ? at - 1 : at;
   return [{ start, end: at, caseName: exercise.case, gender: genderKey(exercise.gender) }];
@@ -122,7 +123,7 @@ function findTrigger(exercise, tokens, target, taken) {
 }
 
 export function analyzeCaseSentence(exercise) {
-  if (!exercise?.fullSentence || exercise.mode === 'preposition-classify') return null;
+  if (!exercise?.fullSentence || exercise.mode === 'preposition-classify' || exercise.diagram === false) return null;
   let sentence = String(exercise.sentence || '');
   if (sentence.includes('→')) sentence = sentence.split('→').pop().trim();
   const tokens = exercise.fullSentence.trim().split(/\s+/);

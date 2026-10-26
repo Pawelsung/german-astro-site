@@ -62,6 +62,23 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-26：第 4 課擴充 Genitiv 與 n-Deklination（已 commit，未部署）
+- 題數 116 → 155，新增兩個模式：
+  - `genitiv`（17 題）：所有關係；wegen、während、trotz、statt、innerhalb；Wessen?；認格位
+  - `n-deklination`（18 題）：Akk／Dat／Gen、Nominativ 對照題、Herr 和 Name 特例、辨認題
+  - 另有 4 題 `sentence-repair`，例如「wegen dem Regen」改成書面語，以及漏加 -n 的修正
+- 資料：`modes`、`mistakeTypes`（`n-declension-error`）、`caseGuide` 的 Genitiv 說明、`learningPath` 新增 Level 6；元件中的 `MODE_LABELS`、`MODE_GUIDES`、`MISTAKE_LABELS` 也一併更新。
+- `caseDiagram.mjs`：
+  - 介系詞清單加入 Genitiv 介系詞
+  - 名詞比對允許加了字尾的形式（Bruders、Studenten）
+  - 題目設 `diagram: false` 時不畫圖解（辨認題使用）
+- 概念卡加入 Gen 列、Genitiv 介系詞，以及「④ n-Deklination」。
+- 新增 `tests/lesson4.test.mjs`，檢查：
+  - 選項不重複，且包含答案
+  - 單一空格題把答案填回去後與 `fullSentence` 完全相同（全部 155 題）
+  - n-Deklination 名詞在 Nominativ 以外都有 -n
+  - Genitiv 的陽性和中性名詞有 -(e)s
+
 ### 2026-10-26：第 6 課擴充（已部署）
 - 題數：154 → 284（自動產生 243 題，手寫 41 題）；名詞 14 → 30 個，形容詞 16 → 32 個。
 - 新增 4 個階段：

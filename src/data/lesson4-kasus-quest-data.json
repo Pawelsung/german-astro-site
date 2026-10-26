@@ -94,7 +94,7 @@
         "Wessen?"
       ],
       "zh": "屬格：誰的？",
-      "simpleRule": "B1 先認識即可，B2 再大量練習。Lesson 4 第一版不當主線。",
+      "simpleRule": "問「誰的？」時用 Genitiv；wegen、trotz、während、statt、innerhalb 後面也接 Genitiv。陽性／中性名詞要加 -(e)s。",
       "example": "Das ist das Auto des Mannes.",
       "exampleZh": "這是那個男人的車。",
       "highlight": "des Mannes"
@@ -574,6 +574,24 @@
         "B1"
       ],
       "description": "把介系詞分類到 Akkusativ / Dativ / Two-way 區域。"
+    },
+    {
+      "id": "genitiv",
+      "title": "Genitiv",
+      "levelRange": [
+        "A2",
+        "B1"
+      ],
+      "description": "練習「誰的……」和 wegen／trotz／während／statt／innerhalb + Genitiv。"
+    },
+    {
+      "id": "n-deklination",
+      "title": "n-Deklination",
+      "levelRange": [
+        "A2",
+        "B1"
+      ],
+      "description": "練習 der Student、der Kollege 這類名詞在 Akk／Dat／Gen 加 -(e)n。"
     }
   ],
   "mistakeTypes": [
@@ -616,6 +634,11 @@
       "id": "reflexive-error",
       "name": "Reflexive Error",
       "zh": "反身代名詞 mich/mir 錯"
+    },
+    {
+      "id": "n-declension-error",
+      "name": "n-Declension Error",
+      "zh": "n-Deklination 漏加 -n"
     }
   ],
   "exercises": [
@@ -4221,6 +4244,1186 @@
         "relative-clause-error",
         "preposition-error"
       ]
+    },
+    {
+      "id": "kasus-b1-gen-001",
+      "level": "A2",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das ist das Auto ___.",
+      "translation": "這是我爸爸的車。",
+      "options": [
+        "meines Vaters",
+        "meinem Vater",
+        "mein Vater",
+        "meinen Vater"
+      ],
+      "answer": "meines Vaters",
+      "fullSentence": "Das ist das Auto meines Vaters.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Vater",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "「誰的車」用 Genitiv。der Vater 是陽性：mein → meines，名詞加 -s：meines Vaters。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-002",
+      "level": "A2",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Farbe ___ gefällt mir.",
+      "translation": "我喜歡這件洋裝的顏色。",
+      "options": [
+        "des Kleides",
+        "dem Kleid",
+        "das Kleid",
+        "der Kleid"
+      ],
+      "answer": "des Kleides",
+      "fullSentence": "Die Farbe des Kleides gefällt mir.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "das Kleid",
+      "gender": "n",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "「洋裝的顏色」用 Genitiv。das Kleid 是中性：des，單音節名詞常加 -es：des Kleides。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-003",
+      "level": "A2",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das ist das Zimmer ___.",
+      "translation": "這是我妹妹（姊姊）的房間。",
+      "options": [
+        "meiner Schwester",
+        "meine Schwester",
+        "meinem Schwester",
+        "meines Schwester"
+      ],
+      "answer": "meiner Schwester",
+      "fullSentence": "Das ist das Zimmer meiner Schwester.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Schwester",
+      "gender": "f",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "陰性名詞的 Genitiv：meine → meiner，名詞本身不加 -s：meiner Schwester。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-004",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Spielsachen ___ liegen überall.",
+      "translation": "孩子們的玩具散落一地。",
+      "options": [
+        "der Kinder",
+        "den Kindern",
+        "die Kinder",
+        "des Kinder"
+      ],
+      "answer": "der Kinder",
+      "fullSentence": "Die Spielsachen der Kinder liegen überall.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Kinder",
+      "gender": "pl",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "複數的 Genitiv 冠詞是 der，名詞不變：der Kinder。不要和 Dativ 的 den Kindern 混淆。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-005",
+      "level": "A2",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Name ___ ist Lukas.",
+      "translation": "那位老師的名字是 Lukas。",
+      "options": [
+        "des Lehrers",
+        "dem Lehrer",
+        "den Lehrer",
+        "der Lehrer"
+      ],
+      "answer": "des Lehrers",
+      "fullSentence": "Der Name des Lehrers ist Lukas.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "「老師的名字」用 Genitiv。der Lehrer → des Lehrers（陽性名詞加 -s）。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-006",
+      "level": "A2",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das Ende ___ war spannend.",
+      "translation": "這部電影的結局很精彩。",
+      "options": [
+        "des Films",
+        "dem Film",
+        "den Film",
+        "der Film"
+      ],
+      "answer": "des Films",
+      "fullSentence": "Das Ende des Films war spannend.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Film",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "「電影的結局」用 Genitiv。der Film → des Films。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-007",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Wohnung ___ ist sehr groß.",
+      "translation": "我父母的公寓很大。",
+      "options": [
+        "meiner Eltern",
+        "meinen Eltern",
+        "meine Eltern",
+        "meines Eltern"
+      ],
+      "answer": "meiner Eltern",
+      "fullSentence": "Die Wohnung meiner Eltern ist sehr groß.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Eltern",
+      "gender": "pl",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "複數的 Genitiv：meine → meiner。meinen Eltern 是 Dativ。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-008",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wegen ___ bleiben wir zu Hause.",
+      "translation": "因為下雨，我們待在家。",
+      "options": [
+        "des Regens",
+        "dem Regen",
+        "den Regen",
+        "der Regen"
+      ],
+      "answer": "des Regens",
+      "fullSentence": "Wegen des Regens bleiben wir zu Hause.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Regen",
+      "gender": "m",
+      "trigger": "wegen + Genitiv",
+      "explanationZh": "wegen 接 Genitiv：der Regen → des Regens。口語常聽到 wegen dem Regen，但書面語和考試要用 Genitiv。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-009",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Während ___ darf man nicht telefonieren.",
+      "translation": "上課時不可以講電話。",
+      "options": [
+        "des Unterrichts",
+        "dem Unterricht",
+        "den Unterricht",
+        "der Unterricht"
+      ],
+      "answer": "des Unterrichts",
+      "fullSentence": "Während des Unterrichts darf man nicht telefonieren.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Unterricht",
+      "gender": "m",
+      "trigger": "während + Genitiv",
+      "explanationZh": "während 當介系詞（在……期間）接 Genitiv：des Unterrichts。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-010",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Trotz ___ gehen wir spazieren.",
+      "translation": "儘管很冷，我們還是去散步。",
+      "options": [
+        "der Kälte",
+        "die Kälte",
+        "den Kälte",
+        "des Kältes"
+      ],
+      "answer": "der Kälte",
+      "fullSentence": "Trotz der Kälte gehen wir spazieren.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Kälte",
+      "gender": "f",
+      "trigger": "trotz + Genitiv",
+      "explanationZh": "trotz 接 Genitiv。die Kälte 是陰性：der Kälte，名詞不加 -s。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-011",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wegen ___ komme ich zu spät.",
+      "translation": "因為一場車禍，我會遲到。",
+      "options": [
+        "eines Unfalls",
+        "einem Unfall",
+        "einen Unfall",
+        "ein Unfall"
+      ],
+      "answer": "eines Unfalls",
+      "fullSentence": "Wegen eines Unfalls komme ich zu spät.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Unfall",
+      "gender": "m",
+      "trigger": "wegen + Genitiv",
+      "explanationZh": "wegen 接 Genitiv。der Unfall：ein → eines，名詞加 -s：eines Unfalls。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-012",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Innerhalb ___ bekommen Sie eine Antwort.",
+      "translation": "您會在一週內收到答覆。",
+      "options": [
+        "einer Woche",
+        "eine Woche",
+        "einem Woche",
+        "eines Woche"
+      ],
+      "answer": "einer Woche",
+      "fullSentence": "Innerhalb einer Woche bekommen Sie eine Antwort.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Woche",
+      "gender": "f",
+      "trigger": "innerhalb + Genitiv",
+      "explanationZh": "innerhalb（在……之內）接 Genitiv。die Woche 是陰性：eine → einer。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-013",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Statt ___ trinke ich heute einen Tee.",
+      "translation": "今天我不喝咖啡，改喝茶。",
+      "options": [
+        "eines Kaffees",
+        "einem Kaffee",
+        "einen Kaffee",
+        "ein Kaffee"
+      ],
+      "answer": "eines Kaffees",
+      "fullSentence": "Statt eines Kaffees trinke ich heute einen Tee.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Kaffee",
+      "gender": "m",
+      "trigger": "statt + Genitiv",
+      "explanationZh": "statt（代替）接 Genitiv。der Kaffee：ein → eines，名詞加 -s：eines Kaffees。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-014",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Während ___ habe ich viel gelernt.",
+      "translation": "旅行期間我學到很多。",
+      "options": [
+        "der Reise",
+        "die Reise",
+        "dem Reise",
+        "des Reises"
+      ],
+      "answer": "der Reise",
+      "fullSentence": "Während der Reise habe ich viel gelernt.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Reise",
+      "gender": "f",
+      "trigger": "während + Genitiv",
+      "explanationZh": "während 接 Genitiv。die Reise 是陰性：der Reise。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "Präposition"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-015",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "Am Ende ___ gibt es eine Prüfung.",
+      "translation": "課程結束時有一場考試。",
+      "options": [
+        "des Kurses",
+        "dem Kurs",
+        "den Kurs",
+        "der Kurs"
+      ],
+      "answer": "des Kurses",
+      "fullSentence": "Am Ende des Kurses gibt es eine Prüfung.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Kurs",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "「課程的結尾」用 Genitiv。der Kurs 以 -s 結尾，所以加 -es：des Kurses。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error",
+        "article-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-016",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "畫線名詞 meines Bruders 是哪一格？",
+      "sentence": "Das Handy meines Bruders ist kaputt.",
+      "translation": "我哥哥（弟弟）的手機壞了。",
+      "options": [
+        "Nominativ",
+        "Akkusativ",
+        "Dativ",
+        "Genitiv"
+      ],
+      "answer": "Genitiv",
+      "fullSentence": "Das Handy meines Bruders ist kaputt.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Bruder",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "問「誰的手機？」→ meines Bruders，是 Genitiv。看到 meines／des 加上名詞 -s，就是陽性 Genitiv。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-017",
+      "level": "B1",
+      "mode": "genitiv",
+      "prompt": "請選出正確答案。",
+      "sentence": "___ Auto ist das? – Das ist das Auto meiner Mutter.",
+      "translation": "這是誰的車？——這是我媽媽的車。",
+      "options": [
+        "Wessen",
+        "Wem",
+        "Wen",
+        "Wer"
+      ],
+      "answer": "Wessen",
+      "fullSentence": "Wessen Auto ist das? – Das ist das Auto meiner Mutter.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "die Mutter",
+      "gender": null,
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "問「誰的」用 Wessen?，答案也用 Genitiv：meiner Mutter。Wem 問 Dativ，Wen 問 Akkusativ，Wer 問 Nominativ。",
+      "tags": [
+        "B1",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-018",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wegen dem Regen bleiben wir zu Hause.",
+      "translation": "因為下雨，我們待在家。",
+      "options": [
+        "Wegen dem Regen bleiben wir zu Hause.",
+        "Wegen des Regens bleiben wir zu Hause.",
+        "Wegen den Regen bleiben wir zu Hause.",
+        "Wegen der Regen bleiben wir zu Hause."
+      ],
+      "answer": "Wegen des Regens bleiben wir zu Hause.",
+      "fullSentence": "Wegen des Regens bleiben wir zu Hause.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Regen",
+      "gender": "m",
+      "trigger": "wegen + Genitiv",
+      "explanationZh": "wegen dem Regen 是口語說法；標準書面語要用 Genitiv：wegen des Regens。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "repair"
+      ],
+      "mistakeTypes": [
+        "preposition-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-gen-019",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das ist das Zimmer des Kind.",
+      "translation": "這是那個孩子的房間。",
+      "options": [
+        "Das ist das Zimmer des Kind.",
+        "Das ist das Zimmer des Kindes.",
+        "Das ist das Zimmer dem Kind.",
+        "Das ist das Zimmer der Kind."
+      ],
+      "answer": "Das ist das Zimmer des Kindes.",
+      "fullSentence": "Das ist das Zimmer des Kindes.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "das Kind",
+      "gender": "n",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "中性名詞在 Genitiv 也要加 -(e)s：des Kindes。只換冠詞不夠。",
+      "tags": [
+        "B1",
+        "Genitiv",
+        "repair"
+      ],
+      "mistakeTypes": [
+        "article-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-001",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich frage ___.",
+      "translation": "我問那位學生。",
+      "options": [
+        "den Studenten",
+        "den Student",
+        "dem Studenten",
+        "der Student"
+      ],
+      "answer": "den Studenten",
+      "fullSentence": "Ich frage den Studenten.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Student",
+      "gender": "m",
+      "trigger": "fragen + Akkusativ",
+      "explanationZh": "der Student 屬於 n-Deklination（字尾 -ent）：除了 Nominativ 單數，都要加 -en。Akkusativ：den Studenten。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-002",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich helfe ___.",
+      "translation": "我幫那位同事。",
+      "options": [
+        "dem Kollegen",
+        "dem Kollege",
+        "den Kollegen",
+        "der Kollege"
+      ],
+      "answer": "dem Kollegen",
+      "fullSentence": "Ich helfe dem Kollegen.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Kollege",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen 接 Dativ：dem。der Kollege 是 n-Deklination（陽性、指人、字尾 -e），名詞要加 -n：dem Kollegen。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-003",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir besuchen ___.",
+      "translation": "我們去拜訪我們的鄰居。",
+      "options": [
+        "unseren Nachbarn",
+        "unseren Nachbar",
+        "unserem Nachbarn",
+        "unser Nachbar"
+      ],
+      "answer": "unseren Nachbarn",
+      "fullSentence": "Wir besuchen unseren Nachbarn.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Nachbar",
+      "gender": "m",
+      "trigger": "besuchen + Akkusativ",
+      "explanationZh": "besuchen 接 Akkusativ：unseren。der Nachbar 是要另外背的 n-Deklination 名詞：den Nachbarn。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-004",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Verkäuferin berät ___.",
+      "translation": "那位女店員為那位顧客提供建議。",
+      "options": [
+        "den Kunden",
+        "den Kunde",
+        "dem Kunden",
+        "der Kunde"
+      ],
+      "answer": "den Kunden",
+      "fullSentence": "Die Verkäuferin berät den Kunden.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Kunde",
+      "gender": "m",
+      "trigger": "beraten + Akkusativ",
+      "explanationZh": "beraten 接 Akkusativ。der Kunde 字尾 -e、陽性、指人 → n-Deklination：den Kunden。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-005",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich gebe ___ das Buch.",
+      "translation": "我把書給那個男孩。",
+      "options": [
+        "dem Jungen",
+        "dem Junge",
+        "den Jungen",
+        "der Junge"
+      ],
+      "answer": "dem Jungen",
+      "fullSentence": "Ich gebe dem Jungen das Buch.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Junge",
+      "gender": "m",
+      "trigger": "geben + Dativ + Akkusativ",
+      "explanationZh": "給誰用 Dativ：dem。der Junge 是 n-Deklination：dem Jungen。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-006",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Kennst du ___?",
+      "translation": "你認識那位總統嗎？",
+      "options": [
+        "den Präsidenten",
+        "den Präsident",
+        "dem Präsidenten",
+        "der Präsident"
+      ],
+      "answer": "den Präsidenten",
+      "fullSentence": "Kennst du den Präsidenten?",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Präsident",
+      "gender": "m",
+      "trigger": "kennen + Akkusativ",
+      "explanationZh": "kennen 接 Akkusativ。der Präsident 字尾 -ent → n-Deklination：den Präsidenten。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-007",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Der Polizist hilft ___.",
+      "translation": "那位警察幫助那位觀光客。",
+      "options": [
+        "dem Touristen",
+        "dem Tourist",
+        "den Touristen",
+        "der Tourist"
+      ],
+      "answer": "dem Touristen",
+      "fullSentence": "Der Polizist hilft dem Touristen.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Tourist",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen 接 Dativ。der Tourist 字尾 -ist → n-Deklination：dem Touristen。對照主詞 der Polizist 是 Nominativ，所以不加 -en。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-008",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Das ist das Fahrrad ___.",
+      "translation": "這是那個男孩的腳踏車。",
+      "options": [
+        "des Jungen",
+        "des Junges",
+        "dem Jungen",
+        "der Junge"
+      ],
+      "answer": "des Jungen",
+      "fullSentence": "Das ist das Fahrrad des Jungen.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Junge",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "n-Deklination 名詞的 Genitiv 加 -n，不加 -s：des Jungen（不是 des Junges）。",
+      "tags": [
+        "B1",
+        "n-Deklination",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-009",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Im Zoo sehen wir ___.",
+      "translation": "我們在動物園看到一隻獅子。",
+      "options": [
+        "einen Löwen",
+        "einen Löwe",
+        "einem Löwen",
+        "ein Löwe"
+      ],
+      "answer": "einen Löwen",
+      "fullSentence": "Im Zoo sehen wir einen Löwen.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Löwe",
+      "gender": "m",
+      "trigger": "sehen + Akkusativ",
+      "explanationZh": "sehen 接 Akkusativ：einen。der Löwe 是 n-Deklination（陽性、動物、字尾 -e）：einen Löwen。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-010",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich spreche mit ___.",
+      "translation": "我和那位先生說話。",
+      "options": [
+        "dem Herrn",
+        "dem Herr",
+        "dem Herren",
+        "den Herr"
+      ],
+      "answer": "dem Herrn",
+      "fullSentence": "Ich spreche mit dem Herrn.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Herr",
+      "gender": "m",
+      "trigger": "mit + Dativ",
+      "explanationZh": "mit 接 Dativ。der Herr 是特例：單數加 -n（dem Herrn），複數才加 -en（die Herren）。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "preposition-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-011",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "___ wohnt neben mir.",
+      "translation": "那位鄰居住在我隔壁。",
+      "options": [
+        "Der Nachbar",
+        "Der Nachbarn",
+        "Den Nachbarn",
+        "Dem Nachbarn"
+      ],
+      "answer": "Der Nachbar",
+      "fullSentence": "Der Nachbar wohnt neben mir.",
+      "case": "Nominativ",
+      "questionWord": "Wer?",
+      "targetNoun": "der Nachbar",
+      "gender": "m",
+      "trigger": "subject",
+      "explanationZh": "主詞用 Nominativ。n-Deklination 只有在 Nominativ 單數時不加 -n：der Nachbar。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-012",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich habe ___ eine E-Mail geschrieben.",
+      "translation": "我寫了一封電子郵件給那位記者。",
+      "options": [
+        "dem Journalisten",
+        "dem Journalist",
+        "den Journalisten",
+        "der Journalist"
+      ],
+      "answer": "dem Journalisten",
+      "fullSentence": "Ich habe dem Journalisten eine E-Mail geschrieben.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Journalist",
+      "gender": "m",
+      "trigger": "schreiben + Dativ + Akkusativ",
+      "explanationZh": "寫給誰用 Dativ：dem。der Journalist 字尾 -ist → dem Journalisten。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-013",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wie ist der Name ___?",
+      "translation": "那位顧客叫什麼名字？",
+      "options": [
+        "des Kunden",
+        "des Kundens",
+        "dem Kunden",
+        "der Kunde"
+      ],
+      "answer": "des Kunden",
+      "fullSentence": "Wie ist der Name des Kunden?",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Kunde",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "「顧客的名字」用 Genitiv。n-Deklination 的 Genitiv 只加 -n：des Kunden（不加 -s）。",
+      "tags": [
+        "B1",
+        "n-Deklination",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-014",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich kenne ___ nicht.",
+      "translation": "我不認識這個人。",
+      "options": [
+        "diesen Menschen",
+        "diesen Mensch",
+        "diesem Menschen",
+        "dieser Mensch"
+      ],
+      "answer": "diesen Menschen",
+      "fullSentence": "Ich kenne diesen Menschen nicht.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Mensch",
+      "gender": "m",
+      "trigger": "kennen + Akkusativ",
+      "explanationZh": "kennen 接 Akkusativ：diesen。der Mensch 是要另外背的 n-Deklination：diesen Menschen。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-015",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich habe ___ vergessen.",
+      "translation": "我忘了那個名字。",
+      "options": [
+        "den Namen",
+        "den Name",
+        "dem Namen",
+        "der Name"
+      ],
+      "answer": "den Namen",
+      "fullSentence": "Ich habe den Namen vergessen.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Name",
+      "gender": "m",
+      "trigger": "vergessen + Akkusativ",
+      "explanationZh": "vergessen 接 Akkusativ。der Name 屬於 n-Deklination：den Namen。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-016",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "請選出正確答案。",
+      "sentence": "Die Bedeutung ___ ist unklar.",
+      "translation": "這個名字的意思不清楚。",
+      "options": [
+        "des Namens",
+        "des Namen",
+        "dem Namen",
+        "der Name"
+      ],
+      "answer": "des Namens",
+      "fullSentence": "Die Bedeutung des Namens ist unklar.",
+      "case": "Genitiv",
+      "questionWord": "Wessen?",
+      "targetNoun": "der Name",
+      "gender": "m",
+      "trigger": "Wessen? 所有關係",
+      "explanationZh": "der Name 是特例：Genitiv 要加 -ns：des Namens。同類還有 der Gedanke（des Gedankens）。",
+      "tags": [
+        "B1",
+        "n-Deklination",
+        "Genitiv"
+      ],
+      "mistakeTypes": [
+        "n-declension-error",
+        "case-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-017",
+      "level": "A2",
+      "mode": "n-deklination",
+      "prompt": "選出屬於 n-Deklination 的名詞。",
+      "sentence": "Welches Nomen gehört zur n-Deklination?",
+      "translation": "哪一個名詞屬於 n-Deklination？",
+      "options": [
+        "der Kollege",
+        "der Lehrer",
+        "der Freund",
+        "der Vater"
+      ],
+      "answer": "der Kollege",
+      "fullSentence": "der Kollege → den Kollegen",
+      "case": "Akkusativ",
+      "questionWord": "—",
+      "targetNoun": "der Kollege",
+      "gender": "m",
+      "trigger": "n-Deklination 辨認",
+      "explanationZh": "n-Deklination 的典型特徵：陽性、指人或動物、字尾 -e／-ent／-ist。der Kollege 符合，所以 den／dem Kollegen。der Lehrer、der Freund、der Vater 都是一般名詞。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error"
+      ],
+      "diagram": false
+    },
+    {
+      "id": "kasus-b1-ndek-018",
+      "level": "B1",
+      "mode": "n-deklination",
+      "prompt": "選出「不」屬於 n-Deklination 的名詞。",
+      "sentence": "Welches Nomen gehört NICHT zur n-Deklination?",
+      "translation": "哪一個名詞「不」屬於 n-Deklination？",
+      "options": [
+        "der Student",
+        "der Junge",
+        "der Lehrer",
+        "der Tourist"
+      ],
+      "answer": "der Lehrer",
+      "fullSentence": "der Lehrer → den Lehrer",
+      "case": "Akkusativ",
+      "questionWord": "—",
+      "targetNoun": "der Lehrer",
+      "gender": "m",
+      "trigger": "n-Deklination 辨認",
+      "explanationZh": "der Lehrer 字尾是 -er，是一般名詞（den Lehrer）。der Student（-ent）、der Junge（-e）、der Tourist（-ist）都是 n-Deklination。",
+      "tags": [
+        "B1",
+        "n-Deklination"
+      ],
+      "mistakeTypes": [
+        "n-declension-error"
+      ],
+      "diagram": false
+    },
+    {
+      "id": "kasus-b1-ndek-019",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出正確答案。",
+      "sentence": "Ich frage den Student.",
+      "translation": "我問那位學生。",
+      "options": [
+        "Ich frage den Student.",
+        "Ich frage den Studenten.",
+        "Ich frage dem Studenten.",
+        "Ich frage der Student."
+      ],
+      "answer": "Ich frage den Studenten.",
+      "fullSentence": "Ich frage den Studenten.",
+      "case": "Akkusativ",
+      "questionWord": "Wen?",
+      "targetNoun": "der Student",
+      "gender": "m",
+      "trigger": "fragen + Akkusativ",
+      "explanationZh": "冠詞 den 對了，但 der Student 是 n-Deklination，名詞也要加 -en：den Studenten。",
+      "tags": [
+        "B1",
+        "n-Deklination",
+        "repair"
+      ],
+      "mistakeTypes": [
+        "n-declension-error"
+      ]
+    },
+    {
+      "id": "kasus-b1-ndek-020",
+      "level": "B1",
+      "mode": "sentence-repair",
+      "prompt": "請選出正確答案。",
+      "sentence": "Wir helfen dem Nachbar.",
+      "translation": "我們幫助那位鄰居。",
+      "options": [
+        "Wir helfen dem Nachbar.",
+        "Wir helfen dem Nachbarn.",
+        "Wir helfen den Nachbar.",
+        "Wir helfen der Nachbar."
+      ],
+      "answer": "Wir helfen dem Nachbarn.",
+      "fullSentence": "Wir helfen dem Nachbarn.",
+      "case": "Dativ",
+      "questionWord": "Wem?",
+      "targetNoun": "der Nachbar",
+      "gender": "m",
+      "trigger": "helfen + Dativ",
+      "explanationZh": "helfen 接 Dativ：dem。der Nachbar 是 n-Deklination：dem Nachbarn。",
+      "tags": [
+        "B1",
+        "n-Deklination",
+        "repair"
+      ],
+      "mistakeTypes": [
+        "n-declension-error"
+      ]
     }
   ],
   "learningPath": [
@@ -4300,6 +5503,20 @@
       ],
       "recommendedModes": [
         "reflexive-choice"
+      ]
+    },
+    {
+      "level": "Level 6",
+      "title": "B1 Genitiv 與 n-Deklination",
+      "targetCEFR": "B1",
+      "goals": [
+        "用 Genitiv 表達「誰的」",
+        "wegen／trotz／während + Genitiv",
+        "認出 der Student、der Kollege 這類名詞，Akk／Dat／Gen 加 -(e)n"
+      ],
+      "recommendedModes": [
+        "genitiv",
+        "n-deklination"
       ]
     },
     {

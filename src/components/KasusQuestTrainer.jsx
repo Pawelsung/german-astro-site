@@ -21,7 +21,9 @@ const MODE_LABELS = {
   'relative-pronoun-case': '關係代名詞',
   'reflexive-choice': '反身代名詞',
   'sentence-repair': '句子修正',
-  'boss-challenge': '綜合練習'
+  'boss-challenge': '綜合練習',
+  genitiv: 'Genitiv',
+  'n-deklination': 'n-Deklination'
 };
 
 const STYLE_LABELS = {
@@ -31,6 +33,16 @@ const STYLE_LABELS = {
 };
 
 const MODE_GUIDES = {
+  genitiv: {
+    title: 'Genitiv',
+    focus: '問「誰的？」（Wessen?），或看到 wegen／trotz／während／statt 時用 Genitiv。',
+    steps: ['冠詞：des／der／des／der（eines、meines、keiner…）', '陽性／中性名詞加 -(e)s：des Films', '陰性和複數名詞本身不變']
+  },
+  'n-deklination': {
+    title: 'n-Deklination',
+    focus: '陽性、指人或動物、字尾 -e／-ent／-ist 的名詞，除了 Nominativ 單數都加 -(e)n。',
+    steps: ['先判斷格位，選對冠詞', '再看名詞是不是 n-Deklination（der Student、der Kollege…）', '是的話名詞加 -(e)n：den Studenten']
+  },
   'article-builder': {
     title: '冠詞變化',
     focus: '先判斷格位，再把名詞性別套進冠詞表。',
@@ -90,7 +102,8 @@ const MISTAKE_LABELS = {
   'pronoun-error': '代名詞',
   'preposition-error': '介系詞規則',
   'relative-clause-error': '關係子句',
-  'reflexive-error': '反身代名詞'
+  'reflexive-error': '反身代名詞',
+  'n-declension-error': 'n-Deklination'
 };
 
 // Matches the case colors of the sentence diagram (global.css --case-*).

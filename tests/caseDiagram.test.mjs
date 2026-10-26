@@ -10,7 +10,7 @@ const words = (model, { start, end }) => model.tokens.slice(start, end + 1).join
 test('every sentence exercise produces a diagram; classification cards do not', () => {
   for (const exercise of data.exercises) {
     const model = analyzeCaseSentence(exercise);
-    if (exercise.mode === 'preposition-classify') assert.equal(model, null, exercise.id);
+    if (exercise.mode === 'preposition-classify' || exercise.diagram === false) assert.equal(model, null, exercise.id);
     else assert.ok(model?.targets.length, exercise.id);
   }
 });
