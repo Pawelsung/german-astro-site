@@ -62,6 +62,20 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-26：第 2 課擴充到 104 組（尚未部署）
+- `src/data/verb-prepositions.ts`：新增 id 51～104，共 54 組。補上 **vor**（Angst haben、sich fürchten、warnen、schützen）、**aus**（bestehen），以及 B1 常見搭配：
+  - 反身動詞：sich informieren／vorbereiten／erkundigen／verabschieden／erholen 等
+  - 「形容詞＋sein」：stolz／neidisch／gespannt auf、zufrieden／einverstanden mit
+  - Lust haben auf、es geht um、es handelt sich um
+- 同一動詞有第二個介系詞的組合：sich bewerben bei、sich entschuldigen bei、denken über、streiten über、halten von／für。測驗出選項時會排除同一動詞的其他正確介系詞，所以不會誤判。
+- 概念卡 l2 的 Dativ 欄加入 Angst haben vor、bestehen aus，「小陷阱」補上 aus 和 vor 都接 Dativ。
+- 已執行 `npm run audio`，新增 94 個音檔。
+- 驗證：
+  - `npm test` 全部 42 個測試通過（`prepositionBlank.test.mjs` 確認每個例句都只挖一個空）
+  - 另用腳本檢查：沒有重複的（動詞, 介系詞）組合；挖空後其餘句子裡不會再出現同一個介系詞而洩漏答案
+  - `npm run build` 成功；本機瀏覽器確認字卡顯示「1 / 104」，單字測驗和例句填空都會出新題目，概念卡有新內容
+- 未驗證：格位判斷模式只抽查程式邏輯（沿用 `case` 欄位），沒有逐題點過；也還沒在真的 iPhone 上試。
+
 ### 2026-10-26：第 4 課擴充 Genitiv 與 n-Deklination（已部署）
 - 題數 116 → 155，新增兩個模式：
   - `genitiv`（17 題）：所有關係；wegen、während、trotz、statt、innerhalb；Wessen?；認格位
@@ -271,6 +285,12 @@ CSS class（`src/styles/global.css` 檔尾）：
 未驗證：實際音效聽感、實體手機的震動與觸控、淺色模式逐頁目視、第 5 課詞塊排序題的動畫手感。
 
 ## 下一步（建議順序）
+
+### 內容擴充（見 `docs/content-expansion-plan.md`）
+- [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
+- [ ] 第 2 課加入 wo(r)-／da(r)- 練習（Worauf wartest du? → Ich warte darauf.）
+- [ ] 新增 Konjunktiv II 課，接著是 Passiv 課
+- [ ] 單字 B1.2（需要使用者確認教材範圍）
 
 ### 介面（使用者目前最在意）
 - [x] 每輪 10 題的結算（2026-10-24 完成）
