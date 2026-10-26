@@ -62,7 +62,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-26：第 2 課擴充到 104 組（尚未部署）
+### 2026-10-26：第 2 課擴充到 104 組（已部署）
+- 已 push 並部署；正式站確認字卡顯示「1 / 104」、概念卡有 bestehen aus，新音檔回應 200 audio/mpeg。
 - `src/data/verb-prepositions.ts`：新增 id 51～104，共 54 組。補上 **vor**（Angst haben、sich fürchten、warnen、schützen）、**aus**（bestehen），以及 B1 常見搭配：
   - 反身動詞：sich informieren／vorbereiten／erkundigen／verabschieden／erholen 等
   - 「形容詞＋sein」：stolz／neidisch／gespannt auf、zufrieden／einverstanden mit
