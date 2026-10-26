@@ -62,7 +62,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-26：第 4 課擴充 Genitiv 與 n-Deklination（已 commit，未部署）
+### 2026-10-26：第 4 課擴充 Genitiv 與 n-Deklination（已部署）
 - 題數 116 → 155，新增兩個模式：
   - `genitiv`（17 題）：所有關係；wegen、während、trotz、statt、innerhalb；Wessen?；認格位
   - `n-deklination`（18 題）：Akk／Dat／Gen、Nominativ 對照題、Herr 和 Name 特例、辨認題
