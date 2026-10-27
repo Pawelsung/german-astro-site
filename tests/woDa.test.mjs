@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { verbPrepositions } from '../src/data/verb-prepositions.ts';
 import { woDaPractice } from '../src/data/wo-da-practice.ts';
-import { daForm, fillWoDa, personForm, woDaAnswer, woDaOptions, woForm } from '../src/lib/woDa.mjs';
+import { daForm, fillWoDa, isSentenceStart, personForm, woDaAnswer, woDaOptions, woForm } from '../src/lib/woDa.mjs';
 
 const entries = new Map(verbPrepositions.map((entry) => [entry.id, entry]));
 const preps = [...new Set(verbPrepositions.map((entry) => entry.prep))];
@@ -48,5 +48,19 @@ test('question items give a reply that shows thing or person', () => {
     // The reply starts with the same preposition, which is what makes the answer unambiguous.
     const reply = item.sentence.split(' – ')[1];
     assert.ok(reply.toLowerCase().startsWith(`${entry.prep} `), `item ${item.id}: reply should start with ${entry.prep}`);
+  }
+});
+
+test('a blank that opens a sentence is capitalized', () => {
+  assert.ok(isSentenceStart('___ wartest du?'));
+  assert.ok(isSentenceStart('Ein eigenes Haus? ___ träume ich schon lange.'));
+  assert.ok(!isSentenceStart('Ich warte schon lange ___.'));
+  for (const item of woDaPractice) {
+    const answer = woDaAnswer(item, entries.get(item.entryId));
+    const filled = fillWoDa(item, answer);
+    // No sentence in the bank may start with a lower-case letter once filled in.
+    for (const sentence of filled.split(/(?<=[.?!])\s+/)) {
+      assert.match(sentence, /^[–\p{Lu}]/u, `item ${item.id}: "${sentence}"`);
+    }
   }
 });

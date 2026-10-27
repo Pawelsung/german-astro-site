@@ -10,7 +10,8 @@ export const personForm = (prep, kasus) => `${prep} ${kasus === 'A' ? 'wen' : 'w
 // The classic slip: "woauf" without r, or "wormit" with an r that does not belong.
 const rSlip = (prefix, prep) => `${prefix}${startsWithVowel(prep) ? '' : 'r'}${prep}`;
 
-export const isSentenceStart = (sentence) => sentence.trimStart().startsWith('___');
+// The blank opens a sentence at the very start or after . ? ! ("Ein eigenes Haus? ___ träume ich …").
+export const isSentenceStart = (sentence) => /(^|[.?!]\s+)___/.test(sentence.trimStart());
 
 // Form the blank expects: thing question (wo-), reference back (da-), or person question.
 export function woDaAnswer(item, entry) {
