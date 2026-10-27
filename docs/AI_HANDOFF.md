@@ -62,6 +62,14 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-27：新課內容複核與修正（本機完成，未 push／部署）
+- 詳見 `docs/content-review-2026-10-27.md`：第 7 課逐題複核，並閱讀第 2／4／6 課新增內容。
+- 確認修正 gehen 的 du／ihr Konjunktiv II：gingest／ginget；原測試也寫錯，已先確認修正參考表會抓到失敗，再修產生器，補齊全部 13 動詞的形式表測試。
+- 修正 als 必須用 KII、KII 一律代表不可能等過度絕對的說明；改寫題明示時間與相反情境，r4 換掉易歧義干擾選項，i9 改成明確現在假設，v6 翻譯補過去時間。
+- 第 4 課 Genitiv 介系詞題改正 Wessen? 提示，部分題明示要求 Genitiv 書面語。
+- `npm test` 51 通過、`npm run build` 成功；3 個修正文字音檔已補產並更新 manifest。未做本輪瀏覽器逐題或母語教師驗收。
+- 第 6 課實際 305 題（243 生成＋62 手寫）；舊紀錄的 284 題不符現況。
+
 ### 2026-10-27：新增第 7 課 Konjunktiv II（已部署）
 - 已 push 並部署；正式站確認 `/lesson7-konjunktiv/` 顯示「0 / 136」、課程列有「假設」、概念卡有內容、首頁出現第 7 課卡片。
 - 新頁面 `/lesson7-konjunktiv/`（`src/pages/lesson7-konjunktiv.astro`，主題色 emerald，課程列標籤「假設」），共 136 題：

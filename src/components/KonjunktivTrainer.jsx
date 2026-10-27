@@ -63,7 +63,7 @@ function Prompt({ item, picked }) {
           <span lang="de" className="font-bold">{item.fact}</span>
         </p>
       )}
-      {item.stage === 'transform' && <p className="text-sm font-bold text-slate-500">選出正確的 Konjunktiv II 句子：</p>}
+      {item.stage === 'transform' && <p className="text-sm font-bold text-slate-500">依照上方改寫要求，選出 Konjunktiv II 句子：</p>}
       {item.stage === 'function' && <p lang="de" className="text-lg sm:text-2xl font-bold leading-relaxed text-slate-800">{item.sentence}</p>}
       {item.sentence && item.stage !== 'function' && <Sentence item={item} picked={picked} />}
     </div>

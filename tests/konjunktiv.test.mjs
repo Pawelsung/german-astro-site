@@ -12,10 +12,15 @@ test('Konjunktiv II forms match the reference tables', () => {
   assert.deepEqual(all('haben', konjunktivForm), ['hätte', 'hättest', 'hätte', 'hätten', 'hättet', 'hätten']);
   assert.deepEqual(all('werden', konjunktivForm), ['würde', 'würdest', 'würde', 'würden', 'würdet', 'würden']);
   assert.deepEqual(all('können', konjunktivForm), ['könnte', 'könntest', 'könnte', 'könnten', 'könntet', 'könnten']);
+  assert.deepEqual(all('müssen', konjunktivForm), ['müsste', 'müsstest', 'müsste', 'müssten', 'müsstet', 'müssten']);
+  assert.deepEqual(all('dürfen', konjunktivForm), ['dürfte', 'dürftest', 'dürfte', 'dürften', 'dürftet', 'dürften']);
+  assert.deepEqual(all('sollen', konjunktivForm), ['sollte', 'solltest', 'sollte', 'sollten', 'solltet', 'sollten']);
+  assert.deepEqual(all('wollen', konjunktivForm), ['wollte', 'wolltest', 'wollte', 'wollten', 'wolltet', 'wollten']);
   assert.deepEqual(all('mögen', konjunktivForm), ['möchte', 'möchtest', 'möchte', 'möchten', 'möchtet', 'möchten']);
   assert.deepEqual(all('wissen', konjunktivForm), ['wüsste', 'wüsstest', 'wüsste', 'wüssten', 'wüsstet', 'wüssten']);
   assert.deepEqual(all('kommen', konjunktivForm), ['käme', 'kämst', 'käme', 'kämen', 'kämt', 'kämen']);
-  assert.deepEqual(all('gehen', konjunktivForm), ['ginge', 'gingst', 'ginge', 'gingen', 'gingt', 'gingen']);
+  // Duden: https://www.duden.de/konjugation/gehen — gingst/gingt are indicative past forms.
+  assert.deepEqual(all('gehen', konjunktivForm), ['ginge', 'gingest', 'ginge', 'gingen', 'ginget', 'gingen']);
   assert.deepEqual(all('geben', konjunktivForm), ['gäbe', 'gäbst', 'gäbe', 'gäben', 'gäbt', 'gäben']);
 });
 

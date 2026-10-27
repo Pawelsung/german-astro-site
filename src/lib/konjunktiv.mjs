@@ -23,7 +23,8 @@ export const KONJUNKTIV_VERBS = [
 const needsE = (stem) => /[td]$/.test(stem);
 
 export function konjunktivForm(verb, person) {
-  const e = needsE(verb.k2) ? 'e' : '';
+  // gehen retains -e- in gingest/ginget; gingst/gingt are Präteritum.
+  const e = needsE(verb.k2) || verb.infinitive === 'gehen' ? 'e' : '';
   return verb.k2 + ['e', `${e}st`, 'e', 'en', `${e}t`, 'en'][person];
 }
 
