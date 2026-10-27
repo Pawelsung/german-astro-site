@@ -62,7 +62,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-27：第 2 課新增「wo/da 代換」測驗模式（尚未部署）
+### 2026-10-27：第 2 課新增「wo/da 代換」測驗模式（已部署）
+- 已 push 並部署。部署後在正式站發現第 27 題「Ein eigenes Haus? ___ träume ich schon lange.」選項是小寫 davon：`isSentenceStart` 原本只看空格是否在最前面，改成空格在 . ? ! 之後也算句首，新增測試確認每句填好後都以大寫開頭，重產該句音檔後再部署一次；正式站確認選項變成 Davon／Darvon／Von es／Darauf。
 - 測驗多了第四個模式「wo/da 代換」，三種題型：
   - **問事物**（18 題）：___ wartest du? – Auf den Bus. → Worauf
   - **代替事物**（17 題）：Ich warte schon seit einer Stunde ___. → darauf（含 Das hängt davon ab, ob … 這種指向後面子句的用法）
