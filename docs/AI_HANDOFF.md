@@ -62,7 +62,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-27：新課內容複核與修正（本機完成，未 push／部署）
+### 2026-10-27：新課內容複核與修正（已部署）
+- 使用者已授權部署；修正 commit `c94d14b` 已 push 到 main，Firebase Hosting 正式站發布成功。HTTP 核對第 4／7 課 HTML、頁面引用的 7 個 JS、audio manifest 與 3 個新 MP3，均 200 且與本機 dist 位元組一致；未新增瀏覽器互動驗收。
 - 詳見 `docs/content-review-2026-10-27.md`：第 7 課逐題複核，並閱讀第 2／4／6 課新增內容。
 - 確認修正 gehen 的 du／ihr Konjunktiv II：gingest／ginget；原測試也寫錯，已先確認修正參考表會抓到失敗，再修產生器，補齊全部 13 動詞的形式表測試。
 - 修正 als 必須用 KII、KII 一律代表不可能等過度絕對的說明；改寫題明示時間與相反情境，r4 換掉易歧義干擾選項，i9 改成明確現在假設，v6 翻譯補過去時間。
