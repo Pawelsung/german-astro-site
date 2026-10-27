@@ -12,7 +12,7 @@ import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
 import { collectLocalProgress, mergeRemoteProgress, PROGRESS_KEYS } from '../lib/progressStorage';
 
 const provider = new GoogleAuthProvider();
-const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6'];
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7'];
 
 function mergeUnique(a = [], b = []) {
   return [...new Set([...(Array.isArray(a) ? a : []), ...(Array.isArray(b) ? b : [])])];
@@ -38,7 +38,7 @@ function mergeRemoteValue(key, legacyValue, splitValue) {
     return splitValue || legacyValue;
   }
 
-  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5' || key === 'lesson6') {
+  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5' || key === 'lesson6' || key === 'lesson7') {
     return { ...(legacyValue || {}), ...(splitValue || {}) };
   }
 

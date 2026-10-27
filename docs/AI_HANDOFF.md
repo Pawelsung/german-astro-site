@@ -62,6 +62,17 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-27：新增第 7 課 Konjunktiv II（尚未部署）
+- 新頁面 `/lesson7-konjunktiv/`（`src/pages/lesson7-konjunktiv.astro`，主題色 emerald，課程列標籤「假設」），共 136 題：
+  - **形式**（78 題，由程式產生）：`src/lib/konjunktiv.mjs` 的 `KONJUNKTIV_VERBS` 13 個動詞 × 6 個人稱（sein、haben、werden、können、müssen、dürfen、sollen、wollen、mögen，加上 B1+ 的 wissen、kommen、gehen、geben）。錯誤選項是同人稱的過去式（hatte）和其他人稱；sollen／wollen 與過去式同形，不會拿過去式當錯誤選項。
+  - **用法**（58 題，手寫）：`src/data/lesson7-konjunktiv.ts`，分成禮貌請求 8、願望 7、建議 5、非現實條件 10、改寫句子 10、用途判斷 10、進階（過去的非現實、als + Konjunktiv II）8。`options[0]` 一律是答案，畫面上會打亂。
+  - 改寫句子的錯誤選項針對常見錯誤：否定沒對調、真實條件句、würde + 過去分詞、Perfekt 助動詞選錯。
+- 元件 `src/components/KonjunktivTrainer.jsx`：範圍按鈕一列可橫向捲動、作答後顯示完整句子＋中文＋說明並朗讀、錯題進複習（`needsReview`）、`?review=1` 只出錯題。
+- 串接：`PROGRESS_KEYS.lesson7`（`german-lesson7-konjunktiv-progress`）、`getLearningSummary` 的 `lesson7AnsweredCount／lesson7WrongCount`、`getReviewAction`、`collectLocalProgress／mergeRemoteProgress`、`UserAccount` 的 `PROGRESS_DOCS`（Firestore 規則允許 `learning/` 下任何文件，不用改）、`LessonModes`（l7）、`LearningDashboard`（case 7）、`LessonShell` 的 `lessonLinks`、首頁 `totals`、`ConceptCard`（l7：形式表、四種用法、小陷阱）。
+- 音檔：`tools/generate-audio.mjs` 收進每題作答後朗讀的文字，新增 135 個音檔。
+- 驗證：新增 `tests/konjunktiv.test.mjs`（形式和過去式對照手寫的變化表、每題四個不重複選項、同形的人稱不會被當成錯誤選項、手寫題格式），`npm test` 51 個通過；`npm run build` 成功；本機手機尺寸（深色）和桌面（淺色）實際作答，確認形式、改寫、用途判斷三種畫面、錯題進複習、`?review=1`、首頁卡片「已練 3 / 136、2 待複習」。測試後已清掉本機的第 7 課紀錄。未在 iPhone 上試。
+- 之後可做：Konjunktiv II 的打字練習（目前只有選擇題）；更多過去式非現實句；把 `docs/content-review-2026-10-24.md` 的方法套用到這 58 題再檢查一次。
+
 ### 2026-10-27：第 2 課新增「wo/da 代換」測驗模式（已部署）
 - 已 push 並部署。部署後在正式站發現第 27 題「Ein eigenes Haus? ___ träume ich schon lange.」選項是小寫 davon：`isSentenceStart` 原本只看空格是否在最前面，改成空格在 . ? ! 之後也算句首，新增測試確認每句填好後都以大寫開頭，重產該句音檔後再部署一次；正式站確認選項變成 Davon／Darvon／Von es／Darauf。
 - 測驗多了第四個模式「wo/da 代換」，三種題型：
@@ -328,7 +339,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 ### 內容擴充（見 `docs/content-expansion-plan.md`）
 - [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
 - [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）
-- [ ] 新增 Konjunktiv II 課，接著是 Passiv 課
+- [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
+- [ ] 新增 Passiv 課（可沿用第 7 課的元件結構）
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
 
 ### 介面（使用者目前最在意）

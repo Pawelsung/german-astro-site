@@ -20,6 +20,7 @@ function lessonStats(order, summary) {
     case 4: return { done: summary.lesson4AnsweredCount, review: summary.lesson4WrongCount };
     case 5: return { done: summary.lesson5AnsweredCount, review: summary.lesson5WrongCount };
     case 6: return { done: summary.lesson6AnsweredCount, review: summary.lesson6WrongCount };
+    case 7: return { done: summary.lesson7AnsweredCount, review: summary.lesson7WrongCount };
     default: return { done: 0, review: 0 };
   }
 }

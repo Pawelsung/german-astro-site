@@ -1,0 +1,35 @@
+---
+import LessonShell from '../components/LessonShell.astro';
+import LessonSkeleton from '../components/LessonSkeleton.astro';
+import KonjunktivTrainer from '../components/KonjunktivTrainer.jsx';
+
+export const frontmatter = {
+  title: "Lektion 7｜Konjunktiv II",
+  description: "用 würde、hätte、wäre、könnte 表達禮貌請求、願望、建議和非現實條件：Wenn ich Zeit hätte, würde ich …",
+  category: "文法練習",
+  tags: ["B1", "Konjunktiv II", "würde", "hätte", "wäre"],
+  order: 7,
+  level: "A2-B1",
+  estimatedMinutes: 20,
+  theme: "emerald"
+};
+---
+
+<LessonShell frontmatter={frontmatter}>
+  <div class="max-w-6xl mx-auto">
+    <KonjunktivTrainer client:only="react"><LessonSkeleton slot="fallback" /></KonjunktivTrainer>
+  </div>
+
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>sein、haben 和情態動詞直接用 Konjunktiv II 形式（wäre、hätte、könnte），其他動詞多半用 würde + 不定式。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>Konjunktiv II 大多是過去式加變音：hatte → hätte、konnte → könnte。sollte、wollte 沒有變音，和過去式同形。</span>
+  </li>
+  <li slot="tips" class="flex items-start gap-2">
+    <span class="text-current opacity-70 mt-0.5">•</span>
+    <span>把事實改成非現實條件時，肯定和否定要對調：Ich habe <b>kein</b> Auto → Wenn ich <b>ein</b> Auto hätte, …</span>
+  </li>
+</LessonShell>

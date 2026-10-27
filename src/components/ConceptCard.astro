@@ -12,7 +12,8 @@ const titles: Record<string, string> = {
   l3: '不規則動詞：用母音變化分組記',
   l4: '格位：先找角色，再變冠詞',
   l5: '連接詞決定動詞放哪裡',
-  l6: '形容詞字尾：看冠詞有沒有「露出」性別'
+  l6: '形容詞字尾：看冠詞有沒有「露出」性別',
+  l7: 'Konjunktiv II：說「不是真的」或「客氣」的事'
 };
 const ablaut = [
   ['ei → ie → ie', 'bleiben – blieb – geblieben', 'schreiben, steigen'],
@@ -208,6 +209,38 @@ const ablaut = [
             <h3>③ 沒有冠詞：形容詞自己扛冠詞的字尾</h3>
             <p lang="de">gut<b class="g-der">er</b> Kaffee（der）· gut<b class="g-die">e</b> Musik（die）· gut<b class="g-das">es</b> Brot（das）<br />mit gut<b>em</b> Kaffee（dem）</p>
             <p>例外：Genitiv 的陽性／中性用 -en，因為名詞本身已經加了 -s：trotz stark<b>en</b> Regen<b>s</b>。</p>
+          </section>
+        </>
+      )}
+      {lesson === 'l7' && (
+        <>
+          <section>
+            <h3>① 形式：過去式加變音，或 würde + 不定式</h3>
+            <table class="concept-table" lang="de">
+              <tr><th></th><th>sein</th><th>haben</th><th>werden</th><th>können</th></tr>
+              <tr><th>ich / er</th><td>wäre</td><td>hätte</td><td>würde</td><td>könnte</td></tr>
+              <tr><th>du</th><td>wärst</td><td>hättest</td><td>würdest</td><td>könntest</td></tr>
+              <tr><th>wir / sie</th><td>wären</td><td>hätten</td><td>würden</td><td>könnten</td></tr>
+              <tr><th>ihr</th><td>wärt</td><td>hättet</td><td>würdet</td><td>könntet</td></tr>
+            </table>
+            <p>müsste、dürfte、möchte 也一樣加變音；sollte、wollte <b>沒有</b>變音。其他動詞：<span lang="de">ich <b>würde</b> … gehen</span>。</p>
+          </section>
+          <section>
+            <h3>② 四種用法</h3>
+            <ul lang="de">
+              <li><span lang="zh-Hant">禮貌請求</span>：<b>Könnten</b> Sie mir helfen? · Ich <b>hätte</b> gern einen Kaffee.</li>
+              <li><span lang="zh-Hant">願望</span>：Wenn ich doch mehr Zeit <b>hätte</b>! · Ich <b>wäre</b> gern am Meer.</li>
+              <li><span lang="zh-Hant">建議</span>：An deiner Stelle <b>würde</b> ich … · Du <b>solltest</b> …</li>
+              <li><span lang="zh-Hant">非現實條件</span>：Wenn ich Zeit <b>hätte</b>, <b>würde</b> ich dich besuchen.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>③ 小陷阱</h3>
+            <ul>
+              <li>改寫事實時肯定和否定要對調：Ich bin <b>krank</b> → Wenn ich <b>nicht</b> krank wäre, …</li>
+              <li>würde 後面是<b>不定式</b>（besuchen），不是過去分詞（besucht）</li>
+              <li>過去的事用 hätte／wäre + 過去分詞：Wenn ich das gewusst <b>hätte</b>, … · … <b>wäre</b> ich gekommen</li>
+            </ul>
           </section>
         </>
       )}

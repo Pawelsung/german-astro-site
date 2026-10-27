@@ -11,6 +11,8 @@ import { verbPrepositions } from '../src/data/verb-prepositions.ts';
 import { irregularVerbs } from '../src/data/irregular-verbs.ts';
 import { woDaPractice } from '../src/data/wo-da-practice.ts';
 import { fillWoDa, woDaAnswer } from '../src/lib/woDa.mjs';
+import { konjunktivExercises } from '../src/data/lesson7-konjunktiv.ts';
+import { fillBlank, formExercises, formPhrase } from '../src/lib/konjunktiv.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const VOICE = 'de-DE-Chirp3-HD-Charon';
@@ -42,6 +44,14 @@ function collectTexts() {
   // wo/da mode reads the completed sentence after each answer.
   const entries = new Map(verbPrepositions.map((item) => [item.id, item]));
   for (const item of woDaPractice) add(fillWoDa(item, woDaAnswer(item, entries.get(item.entryId))));
+
+  // Lesson 7: the solved form or sentence read after each answer (same rule as solvedText in KonjunktivTrainer).
+  for (const item of formExercises()) add(formPhrase(item));
+  for (const item of konjunktivExercises) {
+    if (item.stage === 'transform') add(item.options[0]);
+    else if (item.stage === 'function') add(item.sentence);
+    else add(fillBlank(item.sentence, item.options[0]));
+  }
 
   // Lesson 3: forms, participle (speak(splitPerfekt(perfekt).participle)) and examples.
   for (const verb of irregularVerbs) {

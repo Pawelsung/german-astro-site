@@ -5,7 +5,8 @@ export const PROGRESS_KEYS = {
   lesson3: 'irregular-verbs-trainer-v3',
   lesson4: 'kasus-quest-trainer-v1',
   lesson5: 'german-lesson5-connectors-progress',
-  lesson6: 'german-lesson6-adjective-declension-progress'
+  lesson6: 'german-lesson6-adjective-declension-progress',
+  lesson7: 'german-lesson7-konjunktiv-progress'
 };
 
 export const defaultLesson2Progress = {
@@ -73,7 +74,8 @@ export function getReviewAction(summary: ReturnType<typeof getLearningSummary>) 
     [summary.lesson3WrongCount, '/lesson3-irregular-verbs/', '不規則動詞'],
     [summary.lesson4WrongCount, '/lesson4-kasus/', '格位練習'],
     [summary.lesson5WrongCount, '/lesson5-connectors/', '連接詞與語序'],
-    [summary.lesson6WrongCount, '/lesson6-adjective-declension/', '形容詞字尾']
+    [summary.lesson6WrongCount, '/lesson6-adjective-declension/', '形容詞字尾'],
+    [summary.lesson7WrongCount, '/lesson7-konjunktiv/', 'Konjunktiv II']
   ] as const;
   const next = lessons.find(([count]) => count > 0);
   return next
@@ -96,9 +98,11 @@ export function getLearningSummary() {
   const lesson4Progress = readJSON(PROGRESS_KEYS.lesson4, {});
   const lesson5Progress = readJSON(PROGRESS_KEYS.lesson5, {});
   const lesson6Progress = readJSON(PROGRESS_KEYS.lesson6, {});
+  const lesson7Progress = readJSON(PROGRESS_KEYS.lesson7, {});
   const lesson3Items = lesson3Progress ? Object.values(lesson3Progress) : [];
   const lesson4Items = lesson4Progress ? Object.values(lesson4Progress) : [];
   const lesson6Items = lesson6Progress ? Object.values(lesson6Progress) : [];
+  const lesson7Items = lesson7Progress ? Object.values(lesson7Progress) : [];
   const lesson5Answers = lesson5Progress?.answers || {};
   const lesson5Mistakes = Array.isArray(lesson5Progress?.mistakes) ? lesson5Progress.mistakes : [];
   const lesson5Bookmarks = Array.isArray(lesson5Progress?.bookmarks) ? lesson5Progress.bookmarks : [];
@@ -122,6 +126,8 @@ export function getLearningSummary() {
   const lesson6AnsweredCount = lesson6Items.filter((item: any) => item?.answered).length;
   const lesson6WrongCount = lesson6Items.filter(needsReview).length;
   const lesson6StarredCount = lesson6Items.filter((item: any) => item?.starred).length;
+  const lesson7AnsweredCount = lesson7Items.filter((item: any) => item?.answered).length;
+  const lesson7WrongCount = lesson7Items.filter(needsReview).length;
   const lesson1PracticedCount = Array.isArray(lesson1Words)
     ? lesson1Words.filter((word: any) => (word?.attempts || 0) > 0 || (word?.seen || 0) > 0).length
     : 0;
@@ -151,6 +157,8 @@ export function getLearningSummary() {
     lesson6AnsweredCount,
     lesson6WrongCount,
     lesson6StarredCount,
+    lesson7AnsweredCount,
+    lesson7WrongCount,
     totalSavedItems:
       lesson1WordCount +
       lesson2Progress.starred.length +
@@ -162,7 +170,8 @@ export function getLearningSummary() {
       lesson5WrongCount +
       lesson5StarredCount +
       lesson6WrongCount +
-      lesson6StarredCount
+      lesson6StarredCount +
+      lesson7WrongCount
   };
 }
 
@@ -233,6 +242,7 @@ export function collectLocalProgress() {
     lesson4: readJSON(PROGRESS_KEYS.lesson4, {}),
     lesson5: readJSON(PROGRESS_KEYS.lesson5, {}),
     lesson6: readJSON(PROGRESS_KEYS.lesson6, {}),
+    lesson7: readJSON(PROGRESS_KEYS.lesson7, {}),
     updatedAt: new Date().toISOString()
   };
 }
@@ -251,6 +261,7 @@ export function mergeRemoteProgress(remoteProgress: any = {}) {
       bookmarks: mergeUnique(local.lesson5?.bookmarks, remoteProgress.lesson5?.bookmarks)
     },
     lesson6: mergeObjects(local.lesson6, remoteProgress.lesson6),
+    lesson7: mergeObjects(local.lesson7, remoteProgress.lesson7),
     updatedAt: new Date().toISOString()
   };
 
@@ -261,6 +272,7 @@ export function mergeRemoteProgress(remoteProgress: any = {}) {
   writeJSON(PROGRESS_KEYS.lesson4, merged.lesson4);
   writeJSON(PROGRESS_KEYS.lesson5, merged.lesson5);
   writeJSON(PROGRESS_KEYS.lesson6, merged.lesson6);
+  writeJSON(PROGRESS_KEYS.lesson7, merged.lesson7);
 
   return merged;
 }

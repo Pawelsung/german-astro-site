@@ -7,6 +7,8 @@ import { irregularVerbs } from '../data/irregular-verbs';
 import kasusData from '../data/lesson4-kasus-quest-data.json';
 import connectorData from '../data/connectors-question-bank.json';
 import adjectiveData from '../data/lesson6-adjective-declension';
+import { konjunktivExercises } from '../data/lesson7-konjunktiv';
+import { formExercises } from '../lib/konjunktiv.mjs';
 
 const allFiles = import.meta.glob('./*.{mdx,astro}', { eager: true });
 
@@ -25,7 +27,8 @@ const totals: Record<number, number> = {
   3: irregularVerbs.length,
   4: kasusData.exercises?.length ?? 0,
   5: connectorData.questions?.length ?? 0,
-  6: adjectiveData.exercises?.length ?? 0
+  6: adjectiveData.exercises?.length ?? 0,
+  7: formExercises().length + konjunktivExercises.length
 };
 
 const lessons = allLessons.map(({ url, frontmatter }: any) => ({

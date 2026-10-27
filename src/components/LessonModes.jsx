@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { BookOpen, PencilLine, RotateCcw } from 'lucide-react';
 import { getLearningSummary, isReviewRequested } from '../lib/progressStorage';
 
-// Items waiting for review per lesson key (l1–l6); every trainer already supports ?review=1.
+// Items waiting for review per lesson key (l1–l7); every trainer already supports ?review=1.
 const REVIEW_COUNT = {
   l1: (s) => s.lesson1ErrorCount,
   l2: (s) => s.lesson2ReviewCount,
   l3: (s) => s.lesson3WrongCount,
   l4: (s) => s.lesson4WrongCount,
   l5: (s) => s.lesson5WrongCount,
-  l6: (s) => s.lesson6WrongCount
+  l6: (s) => s.lesson6WrongCount,
+  l7: (s) => s.lesson7WrongCount
 };
 
 function scrollToId(id) {
