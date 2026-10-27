@@ -409,8 +409,8 @@ export default function AdjectiveDeclensionTrainer() {
             目前篩選條件沒有題目。
           </div>
         ) : (
-          <section className="rounded-2xl border border-amber-200 bg-amber-50/70 p-2 shadow-md shadow-amber-900/10 md:p-4">
-            <div className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-teal-50/60 p-3 md:p-5">
+          <section className="rounded-2xl border border-amber-200 bg-amber-50/70 p-2 shadow-md shadow-amber-900/10 md:p-4 dark:bg-slate-900/60 dark:border-amber-900/50 dark:shadow-black/20">
+            <div className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-teal-50/60 p-3 md:p-5 dark:from-slate-900 dark:via-amber-950/25 dark:to-slate-950 dark:border-amber-900/50">
               <div className="mb-3 grid grid-cols-[1fr_auto] items-center gap-3">
                 <div className="flex min-w-0 flex-wrap gap-1.5">
                   <span className="rounded-full border border-amber-200 bg-white px-2.5 py-1 text-[11px] font-black text-amber-800">{STAGE_LABELS[current.stage] || `Stage ${current.stage}`}</span>

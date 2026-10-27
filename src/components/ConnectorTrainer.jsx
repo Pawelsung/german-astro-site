@@ -133,7 +133,7 @@ function FilterButton({ active, children, onClick }) {
       type="button"
       onClick={onClick}
       className={cx(
-        'min-w-0 rounded-xl border px-3 py-2 text-xs font-black transition active:scale-95',
+        'min-w-0 rounded-xl border px-1 py-2 text-xs font-black transition active:scale-95 sm:px-3',
         active ? 'border-violet-600 bg-violet-600 text-white shadow-sm' : 'border-slate-200 bg-white text-slate-600 hover:bg-violet-50'
       )}
     >
@@ -607,6 +607,8 @@ export default function ConnectorTrainer() {
   const [moduleId, setModuleId] = useState('all');
   const [level, setLevel] = useState('all');
   const [syntax, setSyntax] = useState('all');
+  // Phones only: stats and the three selects stay folded so the card is on the first screen.
+  const [showTools, setShowTools] = useState(false);
   const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
 
   useEffect(() => {
@@ -677,7 +679,7 @@ export default function ConnectorTrainer() {
 
   return (
     <div className="w-full max-w-full min-w-0 overflow-x-hidden space-y-5">
-      <section className="grid min-w-0 grid-cols-4 gap-1.5 rounded-2xl border border-slate-100 bg-white p-2 shadow-sm md:gap-3 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+      <section className="hidden min-w-0 grid-cols-4 gap-3 md:grid">
         {stats.map((stat) => {
           const Icon = stat.icon;
           return (
@@ -699,8 +701,8 @@ export default function ConnectorTrainer() {
         })}
       </section>
 
-      <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
-        <div className="mb-4 flex flex-wrap gap-2">
+      <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-3 shadow-sm md:p-4">
+        <div className="grid grid-cols-5 gap-1.5 md:mb-4 md:flex md:flex-wrap md:gap-2">
           <FilterButton active={mode === 'learn'} onClick={() => setMode('learn')}>學習卡</FilterButton>
           <FilterButton active={mode === 'quiz'} onClick={() => { setReviewIds(null); setMode('quiz'); }}>練習</FilterButton>
           <FilterButton active={mode === 'records'} onClick={() => setMode('records')}>紀錄</FilterButton>
@@ -708,7 +710,28 @@ export default function ConnectorTrainer() {
           <FilterButton active={mode === 'bookmarks'} onClick={() => setMode('bookmarks')}>收藏</FilterButton>
         </div>
 
-        <div className="grid min-w-0 gap-3 md:grid-cols-3">
+        <button
+          type="button"
+          onClick={() => setShowTools((value) => !value)}
+          aria-expanded={showTools}
+          className="mt-2 flex w-full min-w-0 items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-sm font-black text-slate-700 md:hidden"
+        >
+          <span className="min-w-0 truncate">
+            篩選
+            <span className="ml-2 text-xs font-bold text-slate-500">
+              {[
+                MODULES.find((item) => item.id === moduleId)?.label,
+                level !== 'all' && level,
+                syntax !== 'all' && data.syntaxTypes.find((item) => item.id === syntax)?.labelZh,
+                `答對 ${correctCount}/${answeredCount}`,
+                progress.mistakes.length > 0 && `錯題 ${progress.mistakes.length}`
+              ].filter(Boolean).join(' · ')}
+            </span>
+          </span>
+          <span aria-hidden="true" className={cx('text-slate-400 transition-transform', showTools && 'rotate-180')}>▾</span>
+        </button>
+
+        <div className={cx('mt-3 min-w-0 gap-3 md:mt-0 md:grid md:grid-cols-3', showTools ? 'grid' : 'hidden')}>
           <label className="block min-w-0">
             <span className="mb-1 block text-xs font-black text-slate-400">模組</span>
             <select value={moduleId} onChange={(event) => setModuleId(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">

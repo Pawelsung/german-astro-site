@@ -250,7 +250,7 @@ function MainModeButton({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
-      className={`min-h-10 px-3 py-2 md:px-3.5 rounded-xl text-xs sm:text-sm font-black border transition-all whitespace-nowrap ${
+      className={`min-h-10 px-1.5 py-2 sm:px-3 md:px-3.5 rounded-xl text-xs sm:text-sm font-black border transition-all whitespace-nowrap ${
         active
           ? 'bg-violet-600 text-white border-violet-600 shadow-sm'
           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
@@ -578,6 +578,8 @@ export default function IrregularVerbTrainer() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAudioPanel, setShowAudioPanel] = useState(false);
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
+  // Phones only: level, search, filters and voice stay folded so the card is on the first screen.
+  const [showTools, setShowTools] = useState(false);
   const [cardOrder, setCardOrder] = useState(CARD_ORDER.SEQUENTIAL);
   const [typeFilter, setTypeFilter] = useState('ALL');
   const [auxFilter, setAuxFilter] = useState('ALL');
@@ -943,7 +945,7 @@ export default function IrregularVerbTrainer() {
       {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
       <div className="mb-3 rounded-xl md:rounded-2xl bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
         <div className="flex flex-col gap-2">
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+          <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
             <MainModeButton active={mode === MODES.FLASHCARD} onClick={() => setMode(MODES.FLASHCARD)}>
               字卡
             </MainModeButton>
@@ -958,7 +960,22 @@ export default function IrregularVerbTrainer() {
             </MainModeButton>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-[128px_minmax(0,1fr)_auto_auto] md:items-center">
+          <button
+            type="button"
+            onClick={() => setShowTools((prev) => !prev)}
+            aria-expanded={showTools}
+            className="md:hidden flex min-h-10 items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-sm font-black text-slate-700"
+          >
+            <span className="min-w-0 truncate">
+              篩選與語音
+              <span className="ml-2 text-xs font-bold text-slate-500">
+                {[level === 'ALL' ? '全部等級' : level, search && `搜尋「${search}」`, advancedCount > 0 && `篩選 ${advancedCount}`].filter(Boolean).join(' · ')}
+              </span>
+            </span>
+            <span aria-hidden="true" className={`text-slate-400 transition-transform ${showTools ? 'rotate-180' : ''}`}>▾</span>
+          </button>
+
+          <div className={`${showTools ? 'grid' : 'hidden'} md:grid grid-cols-2 gap-2 md:grid-cols-[128px_minmax(0,1fr)_auto_auto] md:items-center`}>
             <select
               value={level}
               onChange={(e) => setLevel(e.target.value)}
@@ -983,7 +1000,7 @@ export default function IrregularVerbTrainer() {
               onClick={() => setShowAdvancedFilters((prev) => !prev)}
               className={`min-h-10 px-3 py-2 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
                 showAdvancedFilters
-                  ? 'bg-slate-800 text-white border-slate-800'
+                  ? 'bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
               }`}
               type="button"
@@ -1005,7 +1022,7 @@ export default function IrregularVerbTrainer() {
           </div>
 
           {showAdvancedFilters && (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-4">
+            <div className={`${showTools ? '' : 'max-md:hidden '}rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-4`}>
               <div>
                 <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
                   專項與清單
@@ -1050,7 +1067,7 @@ export default function IrregularVerbTrainer() {
                   <FilterChip
                     active={typeFilter === 'ALL'}
                     onClick={() => setTypeFilter('ALL')}
-                    activeClass="bg-slate-800 text-white border-slate-800"
+                    activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
                   >
                     全部類型
                   </FilterChip>
@@ -1093,7 +1110,7 @@ export default function IrregularVerbTrainer() {
                   <FilterChip
                     active={auxFilter === 'ALL'}
                     onClick={() => setAuxFilter('ALL')}
-                    activeClass="bg-slate-800 text-white border-slate-800"
+                    activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
                   >
                     全部助動詞
                   </FilterChip>
@@ -1123,14 +1140,14 @@ export default function IrregularVerbTrainer() {
                     <FilterChip
                       active={cardOrder === CARD_ORDER.SEQUENTIAL}
                       onClick={() => setCardOrder(CARD_ORDER.SEQUENTIAL)}
-                      activeClass="bg-slate-800 text-white border-slate-800"
+                      activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
                     >
                       依序字卡
                     </FilterChip>
                     <FilterChip
                       active={cardOrder === CARD_ORDER.RANDOM}
                       onClick={() => setCardOrder(CARD_ORDER.RANDOM)}
-                      activeClass="bg-slate-800 text-white border-slate-800"
+                      activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
                     >
                       隨機字卡
                     </FilterChip>
@@ -1141,7 +1158,7 @@ export default function IrregularVerbTrainer() {
           )}
 
           {showAudioPanel && (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+            <div className={`${showTools ? '' : 'max-md:hidden '}rounded-xl border border-slate-200 bg-slate-50 p-3`}>
               <div className="text-sm font-black text-slate-500 mb-3">德語語音設定</div>
 
               <div className="grid md:grid-cols-4 gap-3">
