@@ -14,6 +14,8 @@ import { getFirebaseServices } from '../lib/firebase';
 import { loadLesson2Progress, saveLesson2Progress } from '../lib/progressStorage';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import { blankPreposition } from '../lib/prepositionBlank.mjs';
+import { WO_DA_KIND_LABEL, WO_DA_RULES, fillWoDa, woDaAnswer, woDaOptions } from '../lib/woDa.mjs';
+import { woDaPractice } from '../data/wo-da-practice';
 import { useSwipe } from '../hooks/useSwipe';
 import { FLIP_BACK_STYLE, FLIP_FACE_STYLE, flipInnerStyle } from '../lib/flipStyles.mjs';
 
@@ -204,7 +206,26 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
     return pool.length > 0 ? pool : data;
   }, [data, userData.starred, onlyStarred]);
 
+  // wo/da items follow the starred filter through the entry they belong to.
+  const woDaPool = useMemo(() => {
+    const ids = new Set(quizPool.map(d => d.id));
+    const pool = woDaPractice.filter(item => ids.has(item.entryId));
+    return pool.length > 0 ? pool : woDaPractice;
+  }, [quizPool]);
+
   const generateQuestion = useCallback(() => {
+    if (mode === 'woda') {
+      const item = woDaPool[Math.floor(Math.random() * woDaPool.length)];
+      const entry = data.find(d => d.id === item.entryId);
+      const otherPreps = [...new Set(data.map(d => d.prep))].sort(() => 0.5 - Math.random());
+      setQuestion({ ...entry, woda: item, answer: woDaAnswer(item, entry), key: `woda-${item.id}` });
+      setOptions(woDaOptions(item, entry, otherPreps).sort(() => 0.5 - Math.random()));
+      setAnswered(false);
+      setIsCorrect(false);
+      setShowHint(false);
+      setPicked(null);
+      return;
+    }
     const randomIdx = Math.floor(Math.random() * quizPool.length);
     const q = quizPool[randomIdx];
     setQuestion(q);
@@ -228,7 +249,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
       distractors = wrongPreps.sort(() => 0.5 - Math.random()).slice(0, 3);
       setOptions([correctOpt, ...distractors].sort(() => 0.5 - Math.random()));
     }
-  }, [quizPool, mode, data]);
+  }, [quizPool, woDaPool, mode, data]);
 
   useEffect(() => {
     generateQuestion();
@@ -238,13 +259,15 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
     if (answered) return;
 
     let correct = false;
-    if (mode === 'case') {
+    if (mode === 'woda') {
+      correct = opt === question.answer;
+    } else if (mode === 'case') {
       correct = (opt === 'Akkusativ' && question.case === 'A') || (opt === 'Dativ' && question.case === 'D');
     } else {
       correct = opt === question.prep;
     }
 
-    answerCue(correct, `${question.verb} ${question.prep} + ${question.case === 'A' ? 'Akkusativ' : 'Dativ'}`);
+    answerCue(correct, mode === 'woda' ? fillWoDa(question.woda, question.answer) : `${question.verb} ${question.prep} + ${question.case === 'A' ? 'Akkusativ' : 'Dativ'}`);
     setAnswered(true);
     setIsCorrect(correct);
     setPicked(opt);
@@ -252,11 +275,13 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
     if (correct) {
       setScore(s => s + 10);
       setStreak(s => s + 1);
-      speak("Richtig!");
     } else {
       setStreak(0);
-      speak(`Falsch. Die Antwort ist ${mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`);
     }
+    // wo/da: read the completed sentence either way, so the right form is heard in context.
+    if (mode === 'woda') speak(fillWoDa(question.woda, question.answer));
+    else if (correct) speak("Richtig!");
+    else speak(`Falsch. Die Antwort ist ${mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`);
 
     addHistory({
       mode,
@@ -297,14 +322,14 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
         </div>
       </div>
 
-      <div className="flex gap-2 mb-6 overflow-x-auto pb-2 hide-scrollbar">
-        {['word', 'sentence', 'case'].map(m => (
+      <div className="grid grid-cols-4 gap-1.5 mb-6 sm:flex sm:gap-2 sm:overflow-x-auto sm:pb-2 hide-scrollbar">
+        {['word', 'sentence', 'case', 'woda'].map(m => (
             <button
                 key={m}
                 onClick={() => setMode(m)}
-                className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all flex-1 ${mode === m ? 'bg-amber-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                className={`px-1 sm:px-5 py-2.5 rounded-full text-[11px] sm:text-sm font-bold whitespace-nowrap transition-all flex-1 ${mode === m ? 'bg-amber-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
             >
-                {m === 'word' ? '單字模式' : (m === 'sentence' ? '例句填空' : '格位判斷')}
+                {{ word: '單字模式', sentence: '例句填空', case: '格位判斷', woda: 'wo/da 代換' }[m]}
             </button>
         ))}
       </div>
@@ -342,6 +367,31 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
             <p className="text-sm sm:text-base text-amber-700 font-medium mt-4 bg-amber-50 px-3 sm:px-4 py-1.5 rounded-full inline-block">{question.verb} ({question.verbTrans})</p>
           </>
         )}
+        {mode === 'woda' && question.woda && (
+          <>
+            <p className="mb-3 text-xs sm:text-sm font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full">{WO_DA_KIND_LABEL[question.woda.kind]}</p>
+            <p lang="de" className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">
+              {(() => {
+                const [before, after] = question.woda.sentence.split('___');
+                return <>
+                  {before}
+                  {answered
+                    ? <span className="mx-1 rounded-md bg-amber-100 px-1.5 text-amber-800">{question.answer}</span>
+                    : <span className="inline-block w-16 sm:w-20 border-b-4 border-amber-400 mx-1 sm:mx-2 mb-1"></span>}
+                  {after}
+                </>;
+              })()}
+            </p>
+            {answered && (
+              <div className="mt-4 space-y-2 text-sm text-left w-full">
+                <p className="text-gray-600">{question.woda.trans}</p>
+                <p className="rounded-xl bg-amber-50 border border-amber-100 px-3 py-2 text-amber-800 font-medium">
+                  <span lang="de" className="font-extrabold">{question.verb} {question.prep} + {question.case === 'A' ? 'Akk' : 'Dat'}</span>　{WO_DA_RULES[question.woda.kind]}
+                </p>
+              </div>
+            )}
+          </>
+        )}
         {mode === 'case' && (
           <>
             <h2 className="text-[clamp(1.5rem,8vw,2.5rem)] md:text-4xl font-extrabold text-gray-800 mb-3 break-words">
@@ -365,7 +415,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
         {options.map((opt, idx) => {
           let btnClass = "py-4 sm:py-5 rounded-2xl border-2 font-bold text-base sm:text-lg transition-all duration-200 active:scale-95 shadow-sm ";
           if (answered) {
-            const isThisCorrect = mode === 'case'
+            const isThisCorrect = mode === 'woda' ? opt === question.answer : mode === 'case'
               ? ((opt === 'Akkusativ' && question.case === 'A') || (opt === 'Dativ' && question.case === 'D'))
               : (opt === question.prep);
 
@@ -381,7 +431,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
           }
 
           return (
-            <button key={`${question.id}-${opt}`} data-answer-option disabled={answered} onClick={() => handleAnswer(opt)} className={`${btnClass} inline-flex items-center justify-center gap-2`}>
+            <button key={`${question.key || question.id}-${opt}`} data-answer-option disabled={answered} onClick={() => handleAnswer(opt)} className={`${btnClass} inline-flex items-center justify-center gap-2`}>
               {!answered && idx < 9 && <span className="kbd-hint" aria-hidden="true">{idx + 1}</span>}
               {opt}
             </button>
@@ -394,7 +444,7 @@ const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
           {answered && (isCorrect ? <CheckCircle size={20} className="sm:w-6 sm:h-6" /> : <XCircle size={20} className="sm:w-6 sm:h-6" />)}
           <span className="font-extrabold text-sm sm:text-base">
             {answered
-              ? (isCorrect ? '正確' : `正確答案: ${mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`)
+              ? (isCorrect ? '正確' : `正確答案: ${mode === 'woda' ? question.answer : mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`)
               : '可以作答，也可以先看下一題'}
           </span>
         </div>

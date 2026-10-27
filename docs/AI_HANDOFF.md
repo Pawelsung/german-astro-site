@@ -62,6 +62,20 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-27：第 2 課新增「wo/da 代換」測驗模式（尚未部署）
+- 測驗多了第四個模式「wo/da 代換」，三種題型：
+  - **問事物**（18 題）：___ wartest du? – Auf den Bus. → Worauf
+  - **代替事物**（17 題）：Ich warte schon seit einer Stunde ___. → darauf（含 Das hängt davon ab, ob … 這種指向後面子句的用法）
+  - **問人**（15 題）：___ wartest du? – Auf meinen Bruder. → Auf wen（Akk 用 wen、Dat 用 wem）
+- 題目是手寫的：`src/data/wo-da-practice.ts` 只存句子、中文和 `entryId`（指向 `verb-prepositions.ts`），答案由 `src/lib/woDa.mjs` 依該組的介系詞和格位推出，所以不會和第 2 課資料對不上。
+- 錯誤選項針對常見錯誤：少了 r（Woauf）或多了 r（Wormit）、事物和人搞混（Worauf ↔ Auf wen）、wen／wem 格位錯、「auf es」。問句題都附上回答（– Auf den Bus.），用來判斷是問事物還是問人。
+- 作答後顯示完整句子、中文、「動詞 介系詞 + 格位」和規則說明，並朗讀整句（`tools/generate-audio.mjs` 已收這 50 句，音檔已產生）。
+- 「只看收藏」時，wo/da 題目也只出收藏的動詞（沒有就出全部）。
+- 手機上四個模式按鈕改成一列四格（原本第四個會被擠出畫面）。
+- 概念卡「小陷阱」補上 wo(r)-／da(r)- 和「問人用介系詞＋wen／wem」。
+- 驗證：新增 `tests/woDa.test.mjs`（形式規則、每題一個空格、四個選項且只有一個正確、問句題的回答以同一個介系詞開頭），`npm test` 46 個通過；`npm run build` 成功；本機手機尺寸實際作答確認畫面和回饋。未在 iPhone 上試。
+- 之後可做：把 wo/da 題目也接上錯題複習（目前只記入作答紀錄 `addHistory`，不進 `?review=1`）。
+
 ### 2026-10-27：手機上收合篩選列（已部署）
 - 已 push 並部署；正式站 375 寬確認第 3 課「篩選與語音」、第 5 課「篩選」收合按鈕都有出現。
 - 先在 375×812 量過六課：第 1、2、4、6 課原本就已收合（第 2 課設定在底部分頁、第 4 課「篩選與紀錄」、第 6 課「篩選、錯題與文法速查」），真正擠的是第 3 課（約 260px）和第 5 課（約 450px）。
@@ -312,7 +326,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ### 內容擴充（見 `docs/content-expansion-plan.md`）
 - [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
-- [ ] 第 2 課加入 wo(r)-／da(r)- 練習（Worauf wartest du? → Ich warte darauf.）
+- [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）
 - [ ] 新增 Konjunktiv II 課，接著是 Passiv 課
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
 

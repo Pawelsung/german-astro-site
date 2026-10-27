@@ -9,6 +9,8 @@ import { audioKey } from '../src/lib/germanSpeech.mjs';
 import { normalizeVocabulary } from '../src/lib/vocabulary.mjs';
 import { verbPrepositions } from '../src/data/verb-prepositions.ts';
 import { irregularVerbs } from '../src/data/irregular-verbs.ts';
+import { woDaPractice } from '../src/data/wo-da-practice.ts';
+import { fillWoDa, woDaAnswer } from '../src/lib/woDa.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const VOICE = 'de-DE-Chirp3-HD-Charon';
@@ -37,6 +39,9 @@ function collectTexts() {
   add('Richtig!');
   add('Das ist ein Test für die Aussprache.');
   for (const answer of new Set(['Akkusativ', 'Dativ', ...verbPrepositions.map((item) => item.prep)])) add(`Falsch. Die Antwort ist ${answer}`);
+  // wo/da mode reads the completed sentence after each answer.
+  const entries = new Map(verbPrepositions.map((item) => [item.id, item]));
+  for (const item of woDaPractice) add(fillWoDa(item, woDaAnswer(item, entries.get(item.entryId))));
 
   // Lesson 3: forms, participle (speak(splitPerfekt(perfekt).participle)) and examples.
   for (const verb of irregularVerbs) {
