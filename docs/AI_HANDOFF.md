@@ -62,7 +62,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-27：新增第 7 課 Konjunktiv II（尚未部署）
+### 2026-10-27：新增第 7 課 Konjunktiv II（已部署）
+- 已 push 並部署；正式站確認 `/lesson7-konjunktiv/` 顯示「0 / 136」、課程列有「假設」、概念卡有內容、首頁出現第 7 課卡片。
 - 新頁面 `/lesson7-konjunktiv/`（`src/pages/lesson7-konjunktiv.astro`，主題色 emerald，課程列標籤「假設」），共 136 題：
   - **形式**（78 題，由程式產生）：`src/lib/konjunktiv.mjs` 的 `KONJUNKTIV_VERBS` 13 個動詞 × 6 個人稱（sein、haben、werden、können、müssen、dürfen、sollen、wollen、mögen，加上 B1+ 的 wissen、kommen、gehen、geben）。錯誤選項是同人稱的過去式（hatte）和其他人稱；sollen／wollen 與過去式同形，不會拿過去式當錯誤選項。
   - **用法**（58 題，手寫）：`src/data/lesson7-konjunktiv.ts`，分成禮貌請求 8、願望 7、建議 5、非現實條件 10、改寫句子 10、用途判斷 10、進階（過去的非現實、als + Konjunktiv II）8。`options[0]` 一律是答案，畫面上會打亂。
