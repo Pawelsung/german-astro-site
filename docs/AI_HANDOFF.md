@@ -62,6 +62,18 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-27：重新檢查舊稽核留下的問題（尚未部署）
+- 端對端實測（本機 dev server）：
+  - 第 1 課按「還不熟」後，`deutschLernkartenDB_vPro` 的錯題數、課次列表的「待複習」、LessonModes 徽章、首頁卡片都一致（5 題）
+  - 首頁「複習」主按鈕導向第一個有錯題的課（`getReviewAction`），不會再導到 0 題的課
+  - 各課 `?review=1` 實際出現的題數和首頁數字一致：第 1 課 5、第 2 課 1、第 3 課 1、第 4 課 8、第 6 課 1，合計 16
+  - 結論：`report.html` 的兩個 P1（首頁導流錯誤、第 1 課紀錄不一致）在首頁改版時已經修好，下一步清單已勾掉
+- 順手修的小問題：
+  - 第 4 課沒作答時「正確率」顯示「—」而不是 0%（第 6 課原本就是這樣）
+  - 第 2 課「已收藏」篩選按鈕、第 3 課 `FilterChip` 加上 `aria-pressed`
+- 其他稽核項目已確認早就處理：第 2 課背面分列 Präteritum／Perfekt、第 4 課線索已翻成中文（subject → 主詞）並遮住格位、主控台沒有錯誤。
+- 驗證：`npm test` 42 個通過、`npm run build` 成功、本機確認 aria-pressed 有出現。未在 iPhone 上試。
+
 ### 2026-10-26：第 2 課擴充到 104 組（已部署）
 - 已 push 並部署；正式站確認字卡顯示「1 / 104」、概念卡有 bestehen aus，新音檔回應 200 audio/mpeg。
 - `src/data/verb-prepositions.ts`：新增 id 51～104，共 54 組。補上 **vor**（Angst haben、sich fürchten、warnen、schützen）、**aus**（bestehen），以及 B1 常見搭配：
@@ -305,5 +317,5 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [ ] 如果新增了會呼叫 `speak()` 的課程或欄位，記得把它加進 `tools/generate-audio.mjs` 的 `collectTexts()`
 
 ### 先前稽核留下、尚未處理的問題（見 `../german-site-audit/report.html`）
-- [ ] 首頁「學習建議」導向錯誤的課程（應依待複習資料決定）
-- [ ] 第 1 課錯題紀錄和首頁統計不一致
+- [x] 首頁「學習建議」導向錯誤的課程（應依待複習資料決定）（2026-10-27 實測確認已修好）
+- [x] 第 1 課錯題紀錄和首頁統計不一致（2026-10-27 實測確認已修好）

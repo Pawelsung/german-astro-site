@@ -443,6 +443,7 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
             <span className="text-xs sm:text-sm font-bold text-gray-500">共 {filteredData.length} 個</span>
             <button
                 onClick={() => setShowOnlyStarred(!showOnlyStarred)}
+                aria-pressed={showOnlyStarred}
                 className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-colors ${showOnlyStarred ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-600'}`}
             >
                 <Star size={14} className={showOnlyStarred ? "fill-amber-500 text-amber-500" : ""} />

@@ -404,7 +404,7 @@ export default function KasusQuestTrainer() {
           <div className="grid grid-cols-5 gap-2 overflow-x-auto">
             {[
               ['已作答', answered],
-              ['正確率', `${accuracy}%`],
+              ['正確率', correct + wrong > 0 ? `${accuracy}%` : '—'],
               ['錯誤紀錄', wrong],
               ['目前範圍', filtered.length],
               ['已整理', savedItems]

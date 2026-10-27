@@ -266,6 +266,7 @@ function FilterChip({ active, onClick, children, activeClass }) {
   return (
     <button
       onClick={onClick}
+      aria-pressed={!!active}
       className={`px-3 py-1.5 rounded-xl text-sm font-black border transition-all ${
         active
           ? activeClass
