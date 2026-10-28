@@ -62,7 +62,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-28：第 1 課新增「課堂筆記單字」字庫（1495 筆）
+### 2026-10-28：第 1 課新增「課堂筆記單字」字庫（1495 筆，已部署）
 - 來源：使用者提供的兩份 JSON（`完整單字總整理_新版校訂補充.json`、`…_同格式_全1504詞條.json`）。逐筆比對後，「新版校訂補充」完整包含舊版且沒有遺失任何欄位，所以只用新版。
 - 修正腳本 `tools/vocab-review/fix.py`（資料：同資料夾的 `examples.json` 159 句新例句、`plurals.txt` 360 個複數）。用法：`python3 -I tools/vocab-review/fix.py <新版原始檔> tools/vocab-review/examples.json <完整修正版> public/vocab/personal-notes.json <log.json>`。原始 `translationZh` 不動，清理後的釋義另存 `meaning`（`normalizeVocabulary` 優先用 `meaning`）；每筆改動記在 `review.siteFixes`。
 - 輸出：
@@ -72,6 +72,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - 例句：原檔有 699 句樣板句（「Im Kurs sprechen wir heute über …」「Im Unterricht lernen wir heute das Wort …」）。★★／★ 組的 159 句已改寫成真正的情境例句；**初次收錄組還有 540 句樣板句，網站版先不顯示例句**（完整版仍保留並有 fieldOrigins 標記）。
 - 介面：`VocabularyTrainer.jsx`「程度／教材」多一個「課堂筆記 · 依出現頻率」（`LEVEL_PRESETS`）；`POS_LABELS` 補代名詞、冠詞類、語氣詞、數詞、縮合詞；`chaptersFor` 對分組檔保留檔案中的組別順序（`groupOrder`），Schritte 仍是 1–7 課。
 - 驗證：新增測試（組別順序、詞性都有中文標籤、釋義沒有校訂註記、冠詞與複數格式、沒有樣板例句），`npm test` 52 通過；本機瀏覽器確認可切換到新字庫並顯示 1495 字。
+- 已 push 並部署；正式站確認 index.json 有新字庫、personal-notes.json 與本機一致。音檔新增 2142 個（`npm run audio`）。
 - 未驗證：內容沒有逐字對照原始手寫筆記與詞典；新例句與複數是人工撰寫，未經母語者校對。
 
 ### 2026-10-27：新課內容複核與修正（已部署）
