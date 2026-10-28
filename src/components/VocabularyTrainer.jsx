@@ -12,6 +12,8 @@ import { MISS_REASONS, checkTyped, findClozeTarget, productionAnswer } from '../
 const UI_KEY = 'german-vocabulary-workspace-v1';
 const CACHE_KEY = 'german-vocabulary-library-v1';
 const DEFAULT_PRESET = 'schritte-b1-1';
+const NOTES_PRESET = 'personal-notes';
+const LEVEL_PRESETS = { b1: DEFAULT_PRESET, mixed: 'a1-b1-part1', notes: NOTES_PRESET };
 const modes = [['learn', '字卡'], ['produce', '中→德'], ['cloze', '填空'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
 const TYPED_MODES = ['produce', 'cloze'];
 const readWords = () => { try { return normalizeVocabulary(readJSON(PROGRESS_KEYS.lesson1Words, [])); } catch { return []; } };
@@ -139,7 +141,7 @@ export default function VocabularyTrainer() {
   const current = answeredWord || filtered[ui.index % Math.max(filtered.length, 1)];
   const selectedPreset = presets.find(p => p.id === ui.preset);
   const isB1 = ui.preset.startsWith('schritte-');
-  const activeLevel = ui.preset === 'custom' ? 'custom' : isB1 ? 'b1' : 'mixed';
+  const activeLevel = ui.preset === 'custom' ? 'custom' : isB1 ? 'b1' : ui.preset === NOTES_PRESET ? 'notes' : 'mixed';
 
   function change(patch) {
     setUI(prev => ({ ...prev, ...patch, index: 0 }));
@@ -288,12 +290,13 @@ export default function VocabularyTrainer() {
     <section className="vocab-library" aria-label="選擇學習範圍">
       <button type="button" className="vocab-library-heading" aria-expanded={libraryOpen} onClick={() => setLibraryOpen(v => !v)}><BookOpen size={20}/><div><h2>我的單字課程</h2><p>先選教材，再選這次想練習的課次。</p><span className="vocab-library-current">{selectedPreset?.label || '自訂字庫'} · {chapters.find(c => c.key === ui.chapter)?.label || '全部課次'}</span></div><ChevronDown size={18} className="vocab-library-chevron" aria-hidden="true"/></button><div className="vocab-library-body" data-open={libraryOpen}>
       <div className="vocab-selectors">
-        <label>程度／教材<select className={field} aria-label="程度與教材" disabled={loading} value={activeLevel} onChange={e => loadPreset(presets.find(p => p.id === (e.target.value === 'b1' ? DEFAULT_PRESET : 'a1-b1-part1')))}><option value="b1">B1 · Schritte B1.1</option><option value="mixed">A1–B1 · 綜合主題</option>{activeLevel === 'custom' && <option value="custom">自訂字庫</option>}</select></label>
-        <label>字庫<select className={field} aria-label="字庫" disabled={loading} value={ui.preset} onChange={e => loadPreset(presets.find(p => p.id === e.target.value))}>{presets.filter(p => activeLevel === 'b1' ? p.id.startsWith('schritte-') : p.id === 'a1-b1-part1').map(p => <option key={p.id} value={p.id}>{p.label} · {p.count} 字</option>)}{ui.preset === 'custom' && <option value="custom">已匯入字庫</option>}</select></label>
+        <label>程度／教材<select className={field} aria-label="程度與教材" disabled={loading} value={activeLevel} onChange={e => loadPreset(presets.find(p => p.id === LEVEL_PRESETS[e.target.value]))}><option value="b1">B1 · Schritte B1.1</option><option value="mixed">A1–B1 · 綜合主題</option>{presets.some(p => p.id === NOTES_PRESET) && <option value="notes">課堂筆記 · 依出現頻率</option>}{activeLevel === 'custom' && <option value="custom">自訂字庫</option>}</select></label>
+        <label>字庫<select className={field} aria-label="字庫" disabled={loading} value={ui.preset} onChange={e => loadPreset(presets.find(p => p.id === e.target.value))}>{presets.filter(p => activeLevel === 'b1' ? p.id.startsWith('schritte-') : p.id === LEVEL_PRESETS[activeLevel]).map(p => <option key={p.id} value={p.id}>{p.label} · {p.count} 字</option>)}{ui.preset === 'custom' && <option value="custom">已匯入字庫</option>}</select></label>
         <label>{isB1 ? '課次' : '課次／主題'}<select className={field} aria-label="課次" value={ui.chapter} onChange={e => change({ chapter: e.target.value })}><option value="all">全部 · {words.length} 字</option>{chapters.map(c => <option key={c.key} value={c.key}>{c.label} · {c.count} 字</option>)}</select></label>
       </div>
       {activeLevel === 'mixed' && <p className="vocab-note">這份字庫依主題整理，未標示每字的個別 CEFR 等級。</p>}
-      <details className="vocab-chapters"><summary>瀏覽{isB1 ? '各課' : '主題'}進度 <span>{chapters.length} 個單元</span></summary><div className="vocab-chapter-grid">{chapters.map(c => {
+      {activeLevel === 'notes' && <p className="vocab-note">依筆記中出現的次數分組（不是課本課次），★ 越多代表上課越常出現。</p>}
+      <details className="vocab-chapters"><summary>瀏覽{isB1 ? '各課' : activeLevel === 'notes' ? '分組' : '主題'}進度 <span>{chapters.length} 個單元</span></summary><div className="vocab-chapter-grid">{chapters.map(c => {
         const items = words.filter(w => String(w.lesson || w.category) === c.key); const learned = items.filter(w => w.attempts > 0 || w.seen > 0).length;
         return <button key={c.key} className={ui.chapter === c.key ? 'selected' : ''} aria-pressed={ui.chapter === c.key} onClick={() => change({ chapter: c.key })}><strong>{c.label}</strong><span>{c.count} 字 · 已練 {learned} · 待複習 {items.filter(w => w.errors > 0).length}</span><progress max={c.count} value={learned} aria-label={`${c.label}已練習進度`}/></button>;
       })}</div></details></div>

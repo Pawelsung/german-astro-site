@@ -40,5 +40,12 @@
     "description": "課文、音檔與補充閱讀中的 B1/B2 進階詞彙；原 100 筆去除既有字庫重複後共 87 筆，含短語與口語表達。",
     "path": "/vocab/schritte-b1-1-hidden-advanced.json",
     "count": 87
+  },
+  {
+    "id": "personal-notes",
+    "label": "課堂筆記單字（依出現頻率）",
+    "description": "整理自 61 份德文課堂筆記，依出現次數分成 ★★★ 到初次收錄 4 組，共 1495 筆；已修正冠詞、複數、動詞形態與中文釋義",
+    "path": "/vocab/personal-notes.json",
+    "count": 1495
   }
 ]

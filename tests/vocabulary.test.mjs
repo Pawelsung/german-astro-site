@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { normalizeVocabulary, chaptersFor, filterVocabulary, mergeVocabularyProgress } from '../src/lib/vocabulary.mjs';
+import { POS_LABELS, normalizeVocabulary, chaptersFor, filterVocabulary, mergeVocabularyProgress } from '../src/lib/vocabulary.mjs';
 const read = path => JSON.parse(readFileSync(new URL('../public' + path, import.meta.url)));
 const complete = normalizeVocabulary(read('/vocab/schritte-b1-1-complete.json'));
 
@@ -10,6 +10,18 @@ test('every bundled vocabulary loads and matches advertised unique count', () =>
     const words = normalizeVocabulary(read(preset.path));
     assert.equal(words.length, preset.count, preset.id);
     if (preset.id.startsWith('schritte')) assert.equal(chaptersFor(words).length, 7, preset.id);
+  }
+});
+test('class-notes vocabulary keeps frequency groups in order and every entry is usable', () => {
+  const notes = normalizeVocabulary(read('/vocab/personal-notes.json'));
+  assert.deepEqual(chaptersFor(notes).map(c => c.label.split(' ')[0]), ['★★★', '★★', '★', '初次收錄（1']);
+  assert.deepEqual(chaptersFor(complete).map(c => c.key), ['1', '2', '3', '4', '5', '6', '7']);
+  for (const w of notes) {
+    assert.ok(POS_LABELS[w.pos], `${w.word}: unlabeled pos ${w.pos}`);
+    assert.doesNotMatch(w.meaning, /原文|原筆記|複數 /, w.word);
+    if (w.pos === 'noun' && w.article) assert.match(w.article, /^(der|die|das)$/, w.word);
+    if (w.plural) assert.match(w.plural, /^die /, w.word);
+    if (w.example) assert.doesNotMatch(w.example, /Im Kurs sprechen wir heute über|das Wort „/, w.word);
   }
 });
 test('B1 chapter 3 contains exactly its own 79 words; article mode excludes non-nouns', () => {

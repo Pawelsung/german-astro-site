@@ -1,9 +1,9 @@
 import { findClozeTarget } from './vocabPractice.mjs';
-export const POS_LABELS = { noun: '名詞', verb: '動詞', adjective: '形容詞', adverb: '副詞', 'adverb/connector': '副詞／連接詞', connector: '連接詞', conjunction: '連接詞', preposition: '介系詞', phrase: '片語', other: '其他' };
+export const POS_LABELS = { noun: '名詞', verb: '動詞', adjective: '形容詞', adverb: '副詞', 'adverb/connector': '副詞／連接詞', connector: '連接詞', conjunction: '連接詞', preposition: '介系詞', phrase: '片語', pronoun: '代名詞', determiner: '冠詞類', particle: '語氣詞', numeral: '數詞', contraction: '縮合詞', other: '其他' };
 export const wordKey = word => [word.article || '', word.word || '', word.meaning || word.translationZh || ''].map(s => String(s).trim().normalize('NFC')).join('|');
 export function normalizeVocabulary(input) {
   let items = input;
-  if (Array.isArray(input?.lessons)) items = input.lessons.flatMap(lesson => (lesson.vocabulary || []).map(w => ({ ...w, lesson: w.lesson || lesson.lesson, lessonTitle: w.lessonTitle || lesson.title, category: w.category || w.lessonTag || lesson.lessonTag, source: w.source || input.meta?.name })));
+  if (Array.isArray(input?.lessons)) items = input.lessons.flatMap((lesson, groupOrder) => (lesson.vocabulary || []).map(w => ({ ...w, lesson: w.lesson || lesson.lesson, lessonTitle: w.lessonTitle || lesson.title, category: w.category || w.lessonTag || lesson.lessonTag, source: w.source || input.meta?.name, groupOrder })));
   else if (!Array.isArray(input)) items = input?.words || input?.vocabulary;
   if (!Array.isArray(items)) throw new Error('請匯入單字陣列或含 lessons 的 JSON 字庫。');
   const seen = new Set();
@@ -31,10 +31,11 @@ export function chaptersFor(words) {
   const chapters = new Map();
   for (const w of words) {
     const key = w.lesson ? String(w.lesson) : w.category;
-    if (!chapters.has(key)) chapters.set(key, { key, label: w.lesson ? `第 ${w.lesson} 課 · ${w.lessonTitle || w.category}` : w.category, count: 0 });
+    if (!chapters.has(key)) chapters.set(key, { key, label: w.lesson ? `第 ${w.lesson} 課 · ${w.lessonTitle || w.category}` : w.category, count: 0, order: w.groupOrder ?? Infinity });
     chapters.get(key).count++;
   }
-  return [...chapters.values()].sort((a,b) => a.key.localeCompare(b.key, 'zh-TW', { numeric: true }));
+  // grouped files keep their own group order (e.g. ★★★ before ★); flat lists sort by name
+  return [...chapters.values()].sort((a,b) => (a.order - b.order) || a.key.localeCompare(b.key, 'zh-TW', { numeric: true })).map(({ order, ...c }) => c);
 }
 export function filterVocabulary(words, { chapter = 'all', filter = 'all', mode = 'learn', query = '' } = {}) {
   const q = query.trim().toLocaleLowerCase('de');
