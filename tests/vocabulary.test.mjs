@@ -13,7 +13,7 @@ test('every bundled vocabulary loads and matches advertised unique count', () =>
   }
 });
 test('class-notes vocabulary keeps frequency groups in order and every entry is usable', () => {
-  const notes = normalizeVocabulary(read('/vocab/personal-notes.json'));
+  const notes = normalizeVocabulary(read('/vocab/course-notes.json'));
   assert.deepEqual(chaptersFor(notes).map(c => c.label.split(' ')[0]), ['★★★', '★★', '★', '初次收錄（1']);
   assert.deepEqual(chaptersFor(complete).map(c => c.key), ['1', '2', '3', '4', '5', '6', '7']);
   for (const w of notes) {

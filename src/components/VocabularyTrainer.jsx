@@ -12,7 +12,7 @@ import { MISS_REASONS, checkTyped, findClozeTarget, productionAnswer } from '../
 const UI_KEY = 'german-vocabulary-workspace-v1';
 const CACHE_KEY = 'german-vocabulary-library-v1';
 const DEFAULT_PRESET = 'schritte-b1-1';
-const NOTES_PRESET = 'personal-notes';
+const NOTES_PRESET = 'course-notes';
 const LEVEL_PRESETS = { b1: DEFAULT_PRESET, mixed: 'a1-b1-part1', notes: NOTES_PRESET };
 const modes = [['learn', '字卡'], ['produce', '中→德'], ['cloze', '填空'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
 const TYPED_MODES = ['produce', 'cloze'];
@@ -290,7 +290,7 @@ export default function VocabularyTrainer() {
     <section className="vocab-library" aria-label="選擇學習範圍">
       <button type="button" className="vocab-library-heading" aria-expanded={libraryOpen} onClick={() => setLibraryOpen(v => !v)}><BookOpen size={20}/><div><h2>我的單字課程</h2><p>先選教材，再選這次想練習的課次。</p><span className="vocab-library-current">{selectedPreset?.label || '自訂字庫'} · {chapters.find(c => c.key === ui.chapter)?.label || '全部課次'}</span></div><ChevronDown size={18} className="vocab-library-chevron" aria-hidden="true"/></button><div className="vocab-library-body" data-open={libraryOpen}>
       <div className="vocab-selectors">
-        <label>程度／教材<select className={field} aria-label="程度與教材" disabled={loading} value={activeLevel} onChange={e => loadPreset(presets.find(p => p.id === LEVEL_PRESETS[e.target.value]))}><option value="b1">B1 · Schritte B1.1</option><option value="mixed">A1–B1 · 綜合主題</option>{presets.some(p => p.id === NOTES_PRESET) && <option value="notes">課堂筆記 · 依出現頻率</option>}{activeLevel === 'custom' && <option value="custom">自訂字庫</option>}</select></label>
+        <label>程度／教材<select className={field} aria-label="程度與教材" disabled={loading} value={activeLevel} onChange={e => loadPreset(presets.find(p => p.id === LEVEL_PRESETS[e.target.value]))}><option value="b1">B1 · Schritte B1.1</option><option value="mixed">A1–B1 · 綜合主題</option>{presets.some(p => p.id === NOTES_PRESET) && <option value="notes">課程筆記 · 依出現頻率</option>}{activeLevel === 'custom' && <option value="custom">自訂字庫</option>}</select></label>
         <label>字庫<select className={field} aria-label="字庫" disabled={loading} value={ui.preset} onChange={e => loadPreset(presets.find(p => p.id === e.target.value))}>{presets.filter(p => activeLevel === 'b1' ? p.id.startsWith('schritte-') : p.id === LEVEL_PRESETS[activeLevel]).map(p => <option key={p.id} value={p.id}>{p.label} · {p.count} 字</option>)}{ui.preset === 'custom' && <option value="custom">已匯入字庫</option>}</select></label>
         <label>{isB1 ? '課次' : '課次／主題'}<select className={field} aria-label="課次" value={ui.chapter} onChange={e => change({ chapter: e.target.value })}><option value="all">全部 · {words.length} 字</option>{chapters.map(c => <option key={c.key} value={c.key}>{c.label} · {c.count} 字</option>)}</select></label>
       </div>

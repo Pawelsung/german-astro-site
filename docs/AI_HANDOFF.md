@@ -62,17 +62,21 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-10-28：第 1 課新增「課堂筆記單字」字庫（1495 筆，已部署）
+### 2026-10-28：字庫改名為「課程筆記」（已部署）
+- 使用者要求改名：檔案 `public/vocab/course-notes.json`（id `course-notes`）、完整版 `單字/課程筆記單字_完整修正版.json`，介面與 index 標籤改為「課程筆記」。
+- 音檔：`npm run audio -- --dry-run` 顯示 5257 筆文字全部已有音檔（0 筆待產生）。`npm test` 52 通過，本機確認切換到新名稱的字庫可正常載入 1495 字。
+
+### 2026-10-28：第 1 課新增「課程筆記單字」字庫（1495 筆，已部署）
 - 來源：使用者提供的兩份 JSON（`完整單字總整理_新版校訂補充.json`、`…_同格式_全1504詞條.json`）。逐筆比對後，「新版校訂補充」完整包含舊版且沒有遺失任何欄位，所以只用新版。
-- 修正腳本 `tools/vocab-review/fix.py`（資料：同資料夾的 `examples.json` 159 句新例句、`plurals.txt` 360 個複數）。用法：`python3 -I tools/vocab-review/fix.py <新版原始檔> tools/vocab-review/examples.json <完整修正版> public/vocab/personal-notes.json <log.json>`。原始 `translationZh` 不動，清理後的釋義另存 `meaning`（`normalizeVocabulary` 優先用 `meaning`）；每筆改動記在 `review.siteFixes`。
+- 修正腳本 `tools/vocab-review/fix.py`（資料：同資料夾的 `examples.json` 159 句新例句、`plurals.txt` 360 個複數）。用法：`python3 -I tools/vocab-review/fix.py <新版原始檔> tools/vocab-review/examples.json <完整修正版> public/vocab/course-notes.json <log.json>`。原始 `translationZh` 不動，清理後的釋義另存 `meaning`（`normalizeVocabulary` 優先用 `meaning`）；每筆改動記在 `review.siteFixes`。
 - 輸出：
-  - `單字/完整單字總整理_新版校訂補充_修正版.json`：完整 1504 筆，保留來源、頻率、review 等所有欄位
-  - `public/vocab/personal-notes.json`：網站用精簡版 1495 筆（去掉 9 筆無法辨識的待確認詞條），依出現次數分 ★★★／★★／★／初次收錄 4 組
+  - `單字/課程筆記單字_完整修正版.json`：完整 1504 筆，保留來源、頻率、review 等所有欄位
+  - `public/vocab/course-notes.json`：網站用精簡版 1495 筆（去掉 9 筆無法辨識的待確認詞條），依出現次數分 ★★★／★★／★／初次收錄 4 組
 - 主要修正：英文術語 7 筆改成德文（kinetic sculpture → die kinetische Skulptur 等）；補冠詞（die Mathe）；8 個動詞缺完成式／助動詞（fahren、wandern 補 sein，hängen 分及物／不及物等）；passieren 的現在式表原本六人稱都填 es passiert；詞性修正（obwohl、falls → 連接詞）；中文釋義修正 10 筆（gleich、mal、Franken「法蘭克」→ 瑞士法郎等）；101 筆釋義去掉重複詞段、「（複數 X）」與「原文 der 應校正」這類校訂註記（避免在中→德模式洩漏答案）；359 個名詞補上複數、14 個不常用複數移除（Kleidungen 等）。
 - 例句：原檔有 699 句樣板句（「Im Kurs sprechen wir heute über …」「Im Unterricht lernen wir heute das Wort …」）。★★／★ 組的 159 句已改寫成真正的情境例句；**初次收錄組還有 540 句樣板句，網站版先不顯示例句**（完整版仍保留並有 fieldOrigins 標記）。
-- 介面：`VocabularyTrainer.jsx`「程度／教材」多一個「課堂筆記 · 依出現頻率」（`LEVEL_PRESETS`）；`POS_LABELS` 補代名詞、冠詞類、語氣詞、數詞、縮合詞；`chaptersFor` 對分組檔保留檔案中的組別順序（`groupOrder`），Schritte 仍是 1–7 課。
+- 介面：`VocabularyTrainer.jsx`「程度／教材」多一個「課程筆記 · 依出現頻率」（`LEVEL_PRESETS`）；`POS_LABELS` 補代名詞、冠詞類、語氣詞、數詞、縮合詞；`chaptersFor` 對分組檔保留檔案中的組別順序（`groupOrder`），Schritte 仍是 1–7 課。
 - 驗證：新增測試（組別順序、詞性都有中文標籤、釋義沒有校訂註記、冠詞與複數格式、沒有樣板例句），`npm test` 52 通過；本機瀏覽器確認可切換到新字庫並顯示 1495 字。
-- 已 push 並部署；正式站確認 index.json 有新字庫、personal-notes.json 與本機一致。音檔新增 2142 個（`npm run audio`）。
+- 已 push 並部署；正式站確認 index.json 有新字庫、course-notes.json 與本機一致。音檔新增 2142 個（`npm run audio`）。
 - 未驗證：內容沒有逐字對照原始手寫筆記與詞典；新例句與複數是人工撰寫，未經母語者校對。
 
 ### 2026-10-27：新課內容複核與修正（已部署）
@@ -365,7 +369,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
 - [ ] 新增 Passiv 課（可沿用第 7 課的元件結構）
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
-- [ ] 課堂筆記字庫「初次收錄」組 540 句樣板例句改寫成真正例句（改 `tools/vocab-review/examples.json` 後重跑 fix.py 與 `npm run audio`）
+- [ ] 課程筆記字庫「初次收錄」組 540 句樣板例句改寫成真正例句（改 `tools/vocab-review/examples.json` 後重跑 fix.py 與 `npm run audio`）
 - [ ] 9 筆無法辨識的筆記詞條（Putzhilfer、Frumgung、Sonnenunteraufgang 等）需使用者對照原始筆記確認
 
 ### 介面（使用者目前最在意）

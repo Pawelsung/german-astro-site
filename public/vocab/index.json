@@ -42,10 +42,10 @@
     "count": 87
   },
   {
-    "id": "personal-notes",
-    "label": "課堂筆記單字（依出現頻率）",
-    "description": "整理自 61 份德文課堂筆記，依出現次數分成 ★★★ 到初次收錄 4 組，共 1495 筆；已修正冠詞、複數、動詞形態與中文釋義",
-    "path": "/vocab/personal-notes.json",
+    "id": "course-notes",
+    "label": "課程筆記單字（依出現頻率）",
+    "description": "整理自 61 份德文課程筆記，依出現次數分成 ★★★ 到初次收錄 4 組，共 1495 筆；已修正冠詞、複數、動詞形態與中文釋義",
+    "path": "/vocab/course-notes.json",
     "count": 1495
   }
 ]

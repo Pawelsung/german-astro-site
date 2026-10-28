@@ -181,7 +181,7 @@ for lesson in data['lessons']:
     site_lessons.append({'lessonId': lesson['lessonId'], 'title': lesson['title'], 'lessonTag': lesson['lessonTag'], 'vocabulary': vocab})
 count = sum(len(l['vocabulary']) for l in site_lessons)
 site = {
-    'meta': {'name': '課堂筆記單字（依出現頻率）', 'source': data['meta']['source'], 'updatedAt': '2026-10-28', 'itemCount': count,
+    'meta': {'name': '課程筆記單字（依出現頻率）', 'source': data['meta']['source'], 'updatedAt': '2026-10-28', 'itemCount': count,
              'noteZh': '依筆記中出現次數分組，不是課本課次。9 筆無法辨識的待確認詞條未收錄；樣板例句未放上網站。'},
     'lessons': site_lessons,
 }
