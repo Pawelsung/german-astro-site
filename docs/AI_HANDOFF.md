@@ -62,6 +62,11 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-10-29：首頁新增 LangLoop 受邀課程卡
+- `src/components/LangLoopCard.jsx`：登入後向 LangLoop 的 `GET /api/auth/access`（帶 Firebase ID token）確認帳號是否在 LangLoop 允許名單，是的話才在「全部課程」最後顯示深色卡片。點卡片會用表單 POST 把 ID token 送到 LangLoop 的 `/api/auth/handoff`，直接以登入狀態進入 LangLoop（token 不放網址）。
+- 允許名單只在 LangLoop 維護（Vercel env `LANGLOOP_OWNER_EMAIL` 與 Supabase 表 `allowed_users`），這邊不另存。LangLoop 只接受 `german-astro-site.web.app`／`.firebaseapp.com` 這兩個來源；若德文網站換網域，要在 LangLoop 設 `LANGLOOP_PARTNER_ORIGINS`。
+- LangLoop 網址可用 `PUBLIC_LANGLOOP_URL` 覆寫，預設 https://langloop-three.vercel.app。卡片樣式是 `global.css` 檔尾的 `.langloop-card*`，淺色和深色模式都是同一個深色卡片。
+
 ### 2026-10-28：字庫改名為「課程筆記」（已部署）
 - 使用者要求改名：檔案 `public/vocab/course-notes.json`（id `course-notes`）、完整版 `單字/課程筆記單字_完整修正版.json`，介面與 index 標籤改為「課程筆記」。
 - 音檔：`npm run audio -- --dry-run` 顯示 5257 筆文字全部已有音檔（0 筆待產生）。`npm test` 52 通過，本機確認切換到新名稱的字庫可正常載入 1495 字。

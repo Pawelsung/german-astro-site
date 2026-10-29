@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Flame, RotateCcw, Star, Target } from 'lucide-react';
 import { getLearningSummary, getReviewAction } from '../lib/progressStorage';
 import { getActivity, getLastLesson } from '../lib/dailyActivity.mjs';
+import LangLoopCard from './LangLoopCard.jsx';
 
 const THEMES = {
   sky: { badge: 'bg-sky-100 text-sky-700', bar: 'bg-sky-500', ring: 'hover:border-sky-300', accent: 'text-sky-600' },
@@ -216,6 +217,7 @@ export default function LearningDashboard({ lessons = [] }) {
           {lessons.map((lesson) => (
             <LessonCard key={lesson.href} lesson={lesson} stats={stats[lesson.order]} ready={ready} />
           ))}
+          <LangLoopCard />
         </div>
       </section>
     </div>

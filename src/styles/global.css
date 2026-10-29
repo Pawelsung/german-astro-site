@@ -733,3 +733,12 @@ a.lesson-mode:hover, button.lesson-mode:hover { border-color: #6366f1; box-shado
 /* Grid/flex children must be allowed to shrink, or the 7 mode tabs widen the whole card on phones. */
 .vocab-workspace > *, .vocab-toolbar { min-width: 0; }
 .vocab-tabs { min-width: 0; }
+
+/* LangLoop 受邀課程卡：深色卡片在淺色與深色模式下都一樣，不受上方 .dark 覆寫影響 */
+.langloop-card { background: linear-gradient(145deg, #18181b 0%, #27272a 100%); border: 1px solid #3f3f46; color: #fafafa; }
+.langloop-card:hover { border-color: #f59e0b; }
+.langloop-card-icon { background: #f59e0b; color: #18181b; }
+.langloop-card-badge { background: rgb(245 158 11 / 0.15); color: #fcd34d; }
+.langloop-card-title { color: #fafafa; }
+.langloop-card-muted { color: #a1a1aa; }
+.langloop-card-accent { color: #fbbf24; }
