@@ -1,0 +1,5 @@
+# German Astro Site project-scoped Codex subagents.
+# Effective only when Codex trusts this repository; agents inherit parent permissions.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 8
