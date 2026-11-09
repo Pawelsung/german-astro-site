@@ -1,7 +1,7 @@
 // Build the graded lexicon: merged banks + grading tags + corrections + new-word drafts.
 // Also reports coverage and the flags that still need a decision.
 // Usage: node tools/lexicon/apply-tags.mjs
-import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 const DIR = new URL('./', import.meta.url);
 const DATA = new URL('../../src/data/lexicon/', import.meta.url);
@@ -80,16 +80,18 @@ for (const [id, kind] of Object.entries(fix.kind)) need(id).kind = kind;
 for (const [id, level] of Object.entries(fix.level)) need(id).level = level;
 for (const id of fix.noPush) need(id).push = false;
 
+const lemma = e => `${e.article ? e.article + ' ' : ''}${e.word}`;
 const redirects = new Map();
 for (const [id, change] of Object.entries(fix.rename)) {
   const e = need(id);
   byId.delete(id);
+  e.variants = [...(e.variants || []), lemma(e)];
   Object.assign(e, change);
   byId.set(e.id, e);
+  touched.add(e.id);
   redirects.set(id, e.id);
 }
 
-const lemma = e => `${e.article ? e.article + ' ' : ''}${e.word}`;
 for (const [from, to] of Object.entries(fix.merge)) {
   const source = need(from);
   const target = need(to);
@@ -102,6 +104,14 @@ for (const [from, to] of Object.entries(fix.merge)) {
 
 const graded = [...byId.values()].sort((a, b) => a.word.localeCompare(b.word, 'de') || a.article.localeCompare(b.article));
 for (const e of graded) if (touched.has(e.id) || INFORMATIONAL.test(e.flag)) e.flag = '';
+
+// Review records are keyed by id, so an id may never disappear without a redirect.
+const LOCK = new URL('ids.lock', DATA);
+const locked = existsSync(LOCK) ? readFileSync(LOCK, 'utf8').split('\n').filter(Boolean) : [];
+const lost = locked.filter(id => !byId.has(id) && !redirects.has(id));
+if (lost.length) throw new Error(`這些 id 消失了且沒有 redirect：${lost.slice(0, 10).join(', ')}（共 ${lost.length} 筆）`);
+writeFileSync(LOCK, [...new Set([...locked, ...byId.keys()])].sort().join('\n') + '\n');
+writeFileSync(new URL('redirects.json', DATA), JSON.stringify(Object.fromEntries([...redirects].sort()), null, 1));
 
 writeFileSync(new URL('lexicon.graded.json', DATA), JSON.stringify({ meta: { count: graded.length, status: 'graded-ai-only' }, entries: graded }, null, 1));
 

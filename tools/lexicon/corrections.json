@@ -28,7 +28,10 @@
     "zur-zeit": "zurzeit"
   },
   "rename": {
-    "jemand-jemanden-jemandem": { "id": "jemand", "word": "jemand" }
+    "jemand-jemanden-jemandem": {
+      "id": "jemand",
+      "word": "jemand"
+    }
   },
   "meaning": {
     "jemand-jemanden-jemandem": "某人",
@@ -52,10 +55,18 @@
     "das-rad": "車輪；腳踏車",
     "die-teigtasche": "包餡的麵食（類似餃子）",
     "die-anmeldung": "報名；註冊；登記",
-    "der-student": "大學生（男）"
+    "der-student": "大學生（男）",
+    "extravagant": "奢華的；古怪的",
+    "die-praxis": "診所；實踐",
+    "der-strom": "電；電流；大河",
+    "sich-entscheiden-fuer-gegen": "決定支持；決定反對",
+    "die-kohlensaeure": "碳酸；（飲料的）氣泡"
   },
   "example": {
-    "ersparen": { "de": "Das Taxi erspart uns den langen Fußweg.", "zh": "搭計程車讓我們省去走一大段路。" }
+    "ersparen": {
+      "de": "Das Taxi erspart uns den langen Fußweg.",
+      "zh": "搭計程車讓我們省去走一大段路。"
+    }
   },
   "pos": {
     "links": "adverb",
@@ -120,6 +131,32 @@
     "ein-paar",
     "das-cafe",
     "der-see",
-    "das-schild"
+    "das-schild",
+    "einziehen",
+    "entlassen",
+    "erfahren",
+    "der-fall",
+    "die-figur",
+    "die-folge",
+    "fuehren",
+    "das-gericht",
+    "keinen-sinn-machen",
+    "knapp",
+    "der-krebs",
+    "laden",
+    "lieber",
+    "die-messe",
+    "das-objekt",
+    "der-schnitt",
+    "sich-veraendern",
+    "tiefgruendig",
+    "trauen",
+    "uebersetzen",
+    "umgehen",
+    "zaehlen",
+    "die-zahncreme",
+    "die-zahnpasta",
+    "zu",
+    "der-zug"
   ]
 }

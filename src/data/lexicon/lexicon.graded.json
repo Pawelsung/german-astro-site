@@ -24788,7 +24788,7 @@
    "level": "B1",
    "topic": "home",
    "push": true,
-   "flag": "也有「拉進、徵收」等義"
+   "flag": ""
   },
   {
    "article": "das",
@@ -25535,7 +25535,7 @@
    "level": "B2",
    "topic": "work",
    "push": true,
-   "flag": "多義，程度以「解雇」計"
+   "flag": ""
   },
   {
    "article": "",
@@ -26340,7 +26340,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "詞性多義（動詞／形容詞）"
+   "flag": ""
   },
   {
    "article": "die",
@@ -28870,7 +28870,7 @@
    "kind": "word",
    "plural": "",
    "meanings": [
-    "古怪的/奢侈放縱的"
+    "奢華的；古怪的"
    ],
    "examples": [
     {
@@ -28894,7 +28894,7 @@
    "level": "B2",
    "topic": "people",
    "push": true,
-   "flag": "釋義含斜線兩義"
+   "flag": ""
   },
   {
    "article": "",
@@ -29499,7 +29499,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "多義（案件、情況、格）"
+   "flag": ""
   },
   {
    "id": "fallen",
@@ -30804,7 +30804,7 @@
    "level": "B1",
    "topic": "people",
    "push": true,
-   "flag": "多義"
+   "flag": ""
   },
   {
    "article": "der",
@@ -31934,7 +31934,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "多義"
+   "flag": ""
   },
   {
    "article": "",
@@ -33794,7 +33794,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "多義"
+   "flag": ""
   },
   {
    "article": "der",
@@ -36459,7 +36459,7 @@
    "level": "B1",
    "topic": "food",
    "push": true,
-   "flag": "多義（餐點、法院）"
+   "flag": ""
   },
   {
    "article": "der",
@@ -46582,7 +46582,10 @@
    "level": "A2",
    "topic": "grammar",
    "push": false,
-   "flag": "應併入 jemand"
+   "flag": "",
+   "variants": [
+    "jemand / jemanden / jemandem"
+   ]
   },
   {
    "article": "",
@@ -48346,7 +48349,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "常見說法為 keinen Sinn ergeben/Sinn machen"
+   "flag": ""
   },
   {
    "article": "",
@@ -49747,7 +49750,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "詞性可能是 adjective/adverb"
+   "flag": ""
   },
   {
    "article": "der",
@@ -49955,7 +49958,7 @@
    "kind": "word",
    "plural": "",
    "meanings": [
-    "碳酸"
+    "碳酸；（飲料的）氣泡"
    ],
    "examples": [],
    "sourceLevel": null,
@@ -49975,7 +49978,7 @@
    "level": "B1",
    "topic": "food",
    "push": true,
-   "flag": "飲料語境「氣泡」"
+   "flag": ""
   },
   {
    "article": "der",
@@ -51363,7 +51366,7 @@
    "level": "B1",
    "topic": "health",
    "push": true,
-   "flag": "兩義，癌症義為主"
+   "flag": ""
   },
   {
    "article": "der",
@@ -52597,7 +52600,7 @@
    "level": "B1",
    "topic": "media",
    "push": true,
-   "flag": "不規則動詞；與 der Laden 不同"
+   "flag": ""
   },
   {
    "article": "der",
@@ -54553,7 +54556,7 @@
    "level": "A1",
    "topic": "grammar",
    "push": true,
-   "flag": "lieb 的比較級副詞"
+   "flag": ""
   },
   {
    "article": "",
@@ -57423,7 +57426,7 @@
    "level": "B1",
    "topic": "work",
    "push": true,
-   "flag": "多義"
+   "flag": ""
   },
   {
    "article": "das",
@@ -64194,7 +64197,7 @@
    "level": "B1",
    "topic": "grammar",
    "push": true,
-   "flag": "釋義兩義並列，文法義建議 term；程度？B1/B2"
+   "flag": ""
   },
   {
    "article": "das",
@@ -67538,7 +67541,7 @@
    "kind": "word",
    "plural": "die Praxen",
    "meanings": [
-    "診所"
+    "診所；實踐"
    ],
    "examples": [
     {
@@ -67559,7 +67562,7 @@
    "level": "B1",
    "topic": "health",
    "push": true,
-   "flag": "多義（實踐／診所）；程度？A2/B1"
+   "flag": ""
   },
   {
    "article": "der",
@@ -74612,7 +74615,7 @@
    "level": "B2",
    "topic": "general",
    "push": true,
-   "flag": "多義（切口／平均）"
+   "flag": ""
   },
   {
    "article": "der",
@@ -78404,7 +78407,7 @@
    "kind": "phrase",
    "plural": "",
    "meanings": [
-    "決定支持／反對；選擇／不選；決定選擇／不選"
+    "決定支持；決定反對"
    ],
    "examples": [
     {
@@ -78435,7 +78438,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "兩種搭配併為一條，建議拆開"
+   "flag": ""
   },
   {
    "article": "",
@@ -79872,7 +79875,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "與 sich ändern 近義"
+   "flag": ""
   },
   {
    "article": "",
@@ -85604,7 +85607,7 @@
    "kind": "word",
    "plural": "(無複數)",
    "meanings": [
-    "電"
+    "電；電流；大河"
    ],
    "examples": [
     {
@@ -85625,7 +85628,7 @@
    "level": "B1",
    "topic": "home",
    "push": true,
-   "flag": "眾義：電流/河流；此處釋義「電」"
+   "flag": ""
   },
   {
    "article": "die",
@@ -88529,7 +88532,7 @@
    "level": "B2",
    "topic": "general",
    "push": true,
-   "flag": "程度？B1/B2"
+   "flag": ""
   },
   {
    "article": "das",
@@ -89292,7 +89295,7 @@
    "level": "B2",
    "topic": "feel",
    "push": true,
-   "flag": "常為 sich trauen / jdm trauen，釋義混雜"
+   "flag": ""
   },
   {
    "article": "die",
@@ -90953,7 +90956,7 @@
    "level": "B1",
    "topic": "school",
    "push": true,
-   "flag": "可分/不可分義不同（übersetzen 渡河 vs 翻譯）"
+   "flag": ""
   },
   {
    "article": "die",
@@ -91645,7 +91648,7 @@
    "level": "B1",
    "topic": "general",
    "push": true,
-   "flag": "不可分(umgehen 繞過) 與可分(umgehen mit) 不同，釋義取後者"
+   "flag": ""
   },
   {
    "id": "die-umleitung",
@@ -105611,7 +105614,7 @@
    "level": "A2",
    "topic": "time",
    "push": true,
-   "flag": "釋義含兩義（計數；算數），可能需拆"
+   "flag": ""
   },
   {
    "article": "die",
@@ -105750,7 +105753,7 @@
    "level": "A2",
    "topic": "health",
    "push": true,
-   "flag": "與 Zahnpasta 重複，可合併"
+   "flag": ""
   },
   {
    "article": "die",
@@ -105780,7 +105783,7 @@
    "level": "A2",
    "topic": "health",
    "push": true,
-   "flag": "與 Zahncreme 重複，可合併"
+   "flag": ""
   },
   {
    "article": "das",
@@ -106713,7 +106716,7 @@
    "level": "A1",
    "topic": "grammar",
    "push": true,
-   "flag": "詞性含介系詞與不定詞標記，多義"
+   "flag": ""
   },
   {
    "article": "",
@@ -107267,7 +107270,7 @@
    "level": "A1",
    "topic": "travel",
    "push": true,
-   "flag": "多義，常用義為火車"
+   "flag": ""
   },
   {
    "id": "zugeben",
