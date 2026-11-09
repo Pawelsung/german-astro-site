@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ReviewApp from '../components/ReviewApp.jsx';
+import UserAccount from '../components/UserAccount.jsx';
+---
+
+<Layout title="今日複習 | 德語學習工作台">
+  <div hidden><UserAccount client:only="react" compact /></div>
+  <ReviewApp client:only="react" />
+</Layout>

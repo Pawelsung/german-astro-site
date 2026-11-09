@@ -62,6 +62,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-09：統一複習第 1 階段，步驟 1、2、4、5、6（未 commit、未部署）
+- 規格與使用者確認的決定在 `docs/phase1-unified-review.md`。每日字數由使用者自訂，達標後可以繼續做。
+- 詞條 id 由 `src/data/lexicon/ids.lock` 鎖定；`tools/lexicon/build-site-data.mjs` 產生瀏覽器用的 `src/data/lexicon/site/`。改字庫後要依序執行 `apply-tags.mjs`、`build-site-data.mjs`。
+- 複習紀錄核心 `src/lib/reviewStore.mjs`（key `gw-review-v1`），遷移 `reviewMigrate.mjs`，瀏覽器銜接 `reviewBridge.js`，第 1 課已雙寫。
+- `UserAccount.jsx` 改為只寫有變動的文件、複習紀錄延遲 5 秒並在離開頁面時送出、同一分頁 10 分鐘內不重複下載（`cloudSync.mjs`）。
+- 驗證：`npm test` 100 通過、`npm run build` 通過；本機瀏覽器用測試資料走過遷移、雙寫、程度設定、檢測、複習、繼續做、每週抽考、手機寬度與深淺色。**雲端同步只有單元測試，沒有用真實帳號實測。**
+- 之後完成步驟 3、7、8、9、10：`src/pages/review.astro`、`src/components/ReviewApp.jsx`、`src/lib/reviewQueue.mjs`（每日佇列、檢測、每週抽考），首頁改成「今天」卡片。新畫面的樣式在 `global.css` 檔尾的 `.calm-*`、`.today-*`，淺色與深色都用 `--calm-*` 變數。
+- 尚未做：步驟 11 清單；第 2 階段的今日一句、每日短文、底部字卡。
+
 ### 2026-11-09：主字庫合併與分級（未 commit、未上線，網站尚未使用）
 - 新增 `AGENTS.md`（Codex 與 Claude Code 共用的協作指南）、`CLAUDE.md`（指向 AGENTS.md）、`.claude/agents/` 六個角色定義。
 - `tools/lexicon/build-lexicon.mjs` 把 `public/vocab` 的 8 個字庫合併成主字庫草稿，2236 筆，輸出在 `src/data/lexicon/`。

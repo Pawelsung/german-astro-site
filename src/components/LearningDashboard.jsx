@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Flame, RotateCcw, Star, Target } from 'lucide-react';
-import { getLearningSummary, getReviewAction } from '../lib/progressStorage';
+import { ArrowRight, Flame } from 'lucide-react';
+import { PROGRESS_KEYS, getLearningSummary, getReviewAction, readJSON } from '../lib/progressStorage';
+import { dayNumber, decodeReview } from '../lib/reviewStore.mjs';
+import { TODAY_KEY, getReviewSnapshot } from '../lib/reviewQueue.mjs';
 import { getActivity, getLastLesson } from '../lib/dailyActivity.mjs';
 import LangLoopCard from './LangLoopCard.jsx';
 
@@ -33,42 +35,6 @@ function greeting(date) {
   if (hour < 14) return '午安';
   if (hour < 18) return '下午好';
   return '晚安';
-}
-
-function GoalRing({ value, goal }) {
-  const radius = 42;
-  const circumference = 2 * Math.PI * radius;
-  const ratio = Math.min(value / goal, 1);
-  return (
-    <div className="relative grid h-24 w-24 shrink-0 place-items-center md:h-32 md:w-32">
-      <svg viewBox="0 0 100 100" className="absolute inset-0 -rotate-90" aria-hidden="true">
-        <circle cx="50" cy="50" r={radius} fill="none" stroke="rgb(255 255 255 / 0.18)" strokeWidth="9" />
-        <circle
-          cx="50" cy="50" r={radius} fill="none" stroke="white" strokeWidth="9" strokeLinecap="round"
-          strokeDasharray={circumference} strokeDashoffset={circumference * (1 - ratio)}
-          style={{ transition: 'stroke-dashoffset 700ms cubic-bezier(.2,.8,.2,1)' }}
-        />
-      </svg>
-      <div className="text-center leading-none">
-        <div className="text-2xl font-black md:text-3xl">{value}</div>
-        <div className="mt-1 text-xs font-bold text-white/70">/ {goal} 題</div>
-      </div>
-    </div>
-  );
-}
-
-function StatTile({ icon, label, value, href }) {
-  const body = (
-    <>
-      <span className="hidden h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-100 text-slate-600 sm:grid">{icon}</span>
-      <span className="min-w-0">
-        <span className="block text-xs font-bold text-slate-500">{label}</span>
-        <span className="block text-xl font-black text-slate-900">{value}</span>
-      </span>
-    </>
-  );
-  const cls = 'flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2.5 shadow-sm sm:px-4 sm:py-3';
-  return href ? <a href={href} className={`${cls} transition-colors hover:border-slate-300`}>{body}</a> : <div className={cls}>{body}</div>;
 }
 
 function LessonCard({ lesson, stats, ready }) {
@@ -112,13 +78,15 @@ function LessonCard({ lesson, stats, ready }) {
   );
 }
 
-const EMPTY_ACTIVITY = { goal: 10, todayAnswered: 0, todayCorrect: 0, streak: 0, week: [] };
+const EMPTY_ACTIVITY = { streak: 0 };
+const readSnapshot = () => getReviewSnapshot(readJSON(TODAY_KEY, null), decodeReview(readJSON(PROGRESS_KEYS.review, null)), dayNumber());
 
 export default function LearningDashboard({ lessons = [] }) {
   // Start empty so the server render and first client render match; real data loads after mount.
   const [summary, setSummary] = useState(null);
   const [activity, setActivity] = useState(EMPTY_ACTIVITY);
   const [lastLesson, setLastLesson] = useState(null);
+  const [today, setToday] = useState(null);
   const [hello, setHello] = useState('歡迎回來');
 
   useEffect(() => {
@@ -126,6 +94,7 @@ export default function LearningDashboard({ lessons = [] }) {
       setSummary(getLearningSummary());
       setActivity(getActivity());
       setLastLesson(getLastLesson());
+      setToday(readSnapshot());
     };
     refresh();
     setHello(greeting(new Date()));
@@ -139,73 +108,34 @@ export default function LearningDashboard({ lessons = [] }) {
 
   const ready = summary !== null;
   const stats = Object.fromEntries(lessons.map((lesson) => [lesson.order, ready ? lessonStats(lesson.order, summary) : { done: 0, review: 0 }]));
-  const reviewCount = Object.values(stats).reduce((sum, item) => sum + (item.review || 0), 0);
-  const starredCount = ready
-    ? summary.lesson1StarredCount + summary.lesson2StarredCount + summary.lesson3StarredCount + summary.lesson4StarredCount + summary.lesson5StarredCount + summary.lesson6StarredCount
-    : 0;
-  const reviewAction = ready ? getReviewAction(summary) : null;
-  const hasReview = ready && reviewCount > 0;
-  const primary = hasReview
-    ? { href: reviewAction.href, label: reviewAction.label.replace(/^複習/, '複習 ') }
-    : lastLesson
-      ? { href: lastLesson.href, label: `繼續 ${lastLesson.title}` }
-      : { href: lessons[0]?.href || '/lesson1-wort/', label: '從單字開始' };
-  const secondary = hasReview && lastLesson && !reviewAction.href.startsWith(lastLesson.href) ? lastLesson : null;
-  const goalDone = activity.todayAnswered >= activity.goal;
-  const accuracy = activity.todayAnswered ? `${Math.round((activity.todayCorrect / activity.todayAnswered) * 100)}%` : '—';
-  const weekMax = Math.max(activity.goal, ...activity.week.map((day) => day.answered));
+  // Lesson 1 words live in the daily review now, so only the grammar lessons are counted here.
+  const grammarReview = Object.entries(stats).reduce((sum, [order, item]) => (order === '1' ? sum : sum + (item.review || 0)), 0);
+  const reviewAction = ready ? getReviewAction(summary, { skipLesson1: true }) : null;
+  const goal = today?.goal ?? 15;
+  const done = today?.done ?? 0;
+  const percent = Math.min(100, Math.round((done / goal) * 100));
+  const headline = today?.reached ? '今天完成了' : `今日複習 ${goal} 個字`;
+  const subline = today?.reached ? `已複習 ${done} 個字，想多做可以繼續。` : done ? `已完成 ${done} 個，還剩 ${goal - done} 個。` : '看字、想一下、翻開，一次一個就好。';
+  const cta = today?.reached ? '再做幾個' : done ? '繼續複習' : '開始複習';
 
   return (
     <div className="grid gap-6 md:gap-8">
-      <section className="home-hero relative overflow-hidden rounded-[28px] p-5 text-white shadow-xl md:p-8">
-        <div className="relative grid items-center gap-6 md:grid-cols-[1fr_auto]">
-          <div className="min-w-0">
-            <p className="text-sm font-bold text-white/75">{hello}</p>
-            <h2 className="mt-1 text-2xl font-black leading-tight md:text-3xl">
-              {goalDone ? '今日目標達成！再多練幾題吧 🎉' : `今天的任務：完成 ${activity.goal} 題`}
-            </h2>
-            <p className="mt-2 text-sm font-medium text-white/75">
-              {hasReview ? `你有 ${reviewCount} 題待複習，先把它們清掉最有效率。` : '每天 5 分鐘，比一次讀很久更容易記住。'}
-            </p>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <a href={primary.href} className="home-cta inline-flex min-h-12 items-center gap-2 rounded-2xl px-5 py-3 text-base font-black shadow-lg transition-transform hover:-translate-y-0.5 active:scale-[0.98]">
-                {hasReview ? <RotateCcw size={18} /> : <Target size={18} />}
-                {primary.label}
-                <ArrowRight size={18} />
-              </a>
-              {secondary && (
-                <a href={secondary.href} className="rounded-2xl px-3 py-2 text-sm font-bold text-white/85 underline-offset-4 hover:underline">
-                  或繼續上次：{secondary.title}
-                </a>
-              )}
-            </div>
-          </div>
-          <div className="flex items-center gap-4 md:flex-col md:gap-3">
-            <GoalRing value={activity.todayAnswered} goal={activity.goal} />
-            <div className="grid gap-2">
-              <div className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-white/15 px-3 py-1.5 text-sm font-black">
-                <Flame size={16} className={activity.streak ? 'text-amber-300' : 'text-white/60'} />
-                {activity.streak ? `連續 ${activity.streak} 天` : '開始連續紀錄'}
-              </div>
-              <div className="flex h-8 items-end gap-1 md:justify-center" aria-label="最近七天作答量">
-                {(activity.week.length ? activity.week : Array.from({ length: 7 }, (_, i) => ({ key: i, answered: 0 }))).map((day) => (
-                  <span
-                    key={day.key}
-                    title={`${day.key}：${day.answered} 題`}
-                    className={`w-3 rounded-full ${day.answered ? 'bg-white' : 'bg-white/25'}`}
-                    style={{ height: `${Math.max(18, (day.answered / weekMax) * 100)}%` }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+      <section className="today-card">
+        <div className="today-top">
+          <p>{hello}</p>
+          {activity.streak > 0 && <span className="today-streak"><Flame size={15} />{activity.streak} 天</span>}
         </div>
-      </section>
-
-      <section className="grid grid-cols-3 gap-2 sm:gap-3" aria-label="學習統計">
-        <StatTile icon={<RotateCcw size={18} />} label="待複習" value={ready ? reviewCount : '—'} href={hasReview ? reviewAction.href : undefined} />
-        <StatTile icon={<Star size={18} />} label="已收藏" value={ready ? starredCount : '—'} />
-        <StatTile icon={<Target size={18} />} label="今日正確率" value={accuracy} />
+        <h1>{today ? headline : '今日複習'}</h1>
+        <p className="today-sub">{today ? subline : '\u00a0'}</p>
+        <div className="today-bar" role="progressbar" aria-valuemin={0} aria-valuemax={goal} aria-valuenow={Math.min(done, goal)} aria-label="今日複習進度"><span style={{ width: `${percent}%` }} /></div>
+        <a href="/review/" className="today-cta">{cta}<ArrowRight size={18} /></a>
+        {ready && (grammarReview > 0 || lastLesson) && (
+          <p className="today-more">
+            {grammarReview > 0
+              ? <a href={reviewAction.href}>文法有 {grammarReview} 題待複習</a>
+              : <a href={lastLesson.href}>繼續上次：{lastLesson.title}</a>}
+          </p>
+        )}
       </section>
 
       <section>

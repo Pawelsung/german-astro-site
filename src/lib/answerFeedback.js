@@ -61,10 +61,11 @@ export function roundProgress() {
 }
 
 // `label` is the correct sentence or word, listed in the round summary when the answer was wrong.
-export function answerCue(correct, label = '') {
+export function answerCue(correct, label = '', { silent = false } = {}) {
   recordAnswer(correct);
   rounds.record(correct, label);
   if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(ROUND_PROGRESS_EVENT, { detail: rounds.progress() }));
+  if (silent) return;
   playAnswerSound(correct);
   // Browsers block vibrate until the user has tapped the page.
   if (!correct && typeof navigator !== 'undefined' && navigator.vibrate && navigator.userActivation?.hasBeenActive !== false) {
