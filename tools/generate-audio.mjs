@@ -36,6 +36,13 @@ function collectTexts() {
     }
   }
 
+  // Review cards read the graded lexicon, which includes words that are in no bundled bank.
+  const lexicon = JSON.parse(readFileSync(join(ROOT, 'src/data/lexicon/lexicon.graded.json'), 'utf8'));
+  for (const entry of lexicon.entries) {
+    add(entry.word);
+    for (const example of entry.examples) add(example.de);
+  }
+
   // Lesson 2: verbs, examples and the spoken quiz feedback.
   for (const item of verbPrepositions) { add(item.verb); add(item.example); }
   add('Richtig!');
