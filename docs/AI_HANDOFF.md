@@ -62,6 +62,26 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-09 修正跨裝置同步（Claude Code，已部署）
+
+- 使用者實測跨裝置沒有同步。查出四個原因並修正：
+  1. 今日完成字數只存在各裝置，現在放進複習紀錄的 `settings.dayDone`（`withDayDone`、`doneToday`，合併時取較新的一天、同一天取較大值）。
+  2. 上傳會整份覆蓋雲端，另一台的字可能被蓋掉；`syncLocalProgress` 現在先讀雲端、用 `mergeReviewValues` 合併再寫。
+  3. `/review` 載入後才收到雲端資料時，評分會用舊資料蓋回去；`persistReview` 改為先合併，並監聽沒有 `detail.key` 的 `learning-progress-updated`，用 `reconcileToday` 移除別台評過的字。
+  4. 同一分頁 10 分鐘內不下載、分頁回到前景也不下載；改成每次先讀 `progressMeta.updatedAt`（1 次讀取），有變才整包下載，回到前景時也檢查（間隔至少 30 秒）。
+- 驗證：103 個測試通過、建置通過；本機用測試資料模擬雲端資料晚到，完成數、佇列和評分後的紀錄都正確。
+- 還沒做什麼：未用真實帳號實測；連續天數（`gw-daily-activity-v1`）仍是各裝置分開計算。
+
+### 2026-11-09 第 1 階段部署到正式站（Claude Code）
+
+- 做了什麼：使用者決定直接上正式站。從 `claude/xian-kai-qi-7924bf`（`d859a98`）建置，只部署 Hosting（`firebase deploy --only hosting`）。`firestore.rules` 已涵蓋 `users/{uid}/learning/review`，規則沒有改。
+- 驗證了什麼：100 個測試通過；線上 `/`、`/review/`、字庫 JSON、音檔 manifest 都回 200，線上 `/review/` 和本次建置內容相同，頁面打得開且主控台沒有錯誤；TTS 金鑰沒有進 `dist`。
+- 還沒做什麼：真實帳號的雲端同步尚未實測；iPhone 實際手感未測；步驟 11（清單）未做。
+- 注意：
+  - 正式站比 `main` 新。這個分支還沒合併，**從 `main` 建置部署會把正式站蓋回舊版**。
+  - worktree 沒有 `.env`，直接建置會讓登入失效。部署前要帶入主目錄 `.env` 的 `PUBLIC_FIREBASE_*`，並確認 `dist` 裡有 authDomain。
+  - `firebase` 不在 PATH，用 `npx firebase-tools`。
+
 ### 2026-11-09：統一複習第 1 階段，步驟 1、2、4、5、6（未 commit、未部署）
 - 規格與使用者確認的決定在 `docs/phase1-unified-review.md`。每日字數由使用者自訂，達標後可以繼續做。
 - 詞條 id 由 `src/data/lexicon/ids.lock` 鎖定；`tools/lexicon/build-site-data.mjs` 產生瀏覽器用的 `src/data/lexicon/site/`。改字庫後要依序執行 `apply-tags.mjs`、`build-site-data.mjs`。

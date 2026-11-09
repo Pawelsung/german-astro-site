@@ -85,9 +85,28 @@ export function advanceToday(state, rating) {
   return { ...state, items, pos: state.pos + 1, done: state.done + (counts ? 1 : 0) };
 }
 
+// The queue itself belongs to one device; today's count travels with the review record.
+export const doneToday = (settings, today) => (settings.dayDone?.day === today ? settings.dayDone.done : 0);
+export const withDayDone = (settings, today, done, now) => ({ ...settings, dayDone: { day: today, done }, t: now });
+
+function ratedElsewhere(item, record, today) {
+  if (!record || item.repeat || item.kind === 'weekly') return false;
+  // A revisit word is scheduled far ahead before it is shown, so only a recent rating counts.
+  return item.kind === 'revisit' ? today - lastSeenDay(record) < RETURN_AFTER_DAYS : record.d > today;
+}
+
+// Brings this device's queue in line after words were rated on another one.
+export function reconcileToday(state, review, today) {
+  const ahead = state.items.slice(state.pos);
+  const kept = ahead.filter(item => !ratedElsewhere(item, review.words[item.id], today));
+  const done = Math.max(state.done, doneToday(review.settings, today));
+  if (kept.length === ahead.length && done === state.done) return state;
+  return { ...state, items: [...state.items.slice(0, state.pos), ...kept], done };
+}
+
 export function getReviewSnapshot(stored, review, today) {
   const goal = review.settings.dailyGoal;
-  const done = stored?.day === today ? stored.done : 0;
+  const done = Math.max(stored?.day === today ? stored.done : 0, doneToday(review.settings, today));
   const due = Object.values(review.words).filter(record => record.d <= today).length;
   return { goal, done, due, reached: done >= goal, started: done > 0 };
 }

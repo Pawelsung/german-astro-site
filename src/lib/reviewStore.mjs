@@ -111,11 +111,19 @@ function mergeMap(a, b, combine) {
   return out;
 }
 
+// Today's count must not go down because the other device saved its settings last.
+function laterDayDone(a, b) {
+  if (!a || !b) return a || b;
+  if (a.day !== b.day) return a.day > b.day ? a : b;
+  return a.done >= b.done ? a : b;
+}
+
 export function mergeReview(a, b) {
   let settings;
   if ((a.settings.t || 0) !== (b.settings.t || 0)) settings = (a.settings.t || 0) > (b.settings.t || 0) ? a.settings : b.settings;
   else settings = JSON.stringify(a.settings) <= JSON.stringify(b.settings) ? a.settings : b.settings;
-  return { words: mergeMap(a.words, b.words, mergeRecord), stars: mergeMap(a.stars, b.stars, mergeStar), settings };
+  const dayDone = laterDayDone(a.settings.dayDone, b.settings.dayDone);
+  return { words: mergeMap(a.words, b.words, mergeRecord), stars: mergeMap(a.stars, b.stars, mergeStar), settings: dayDone ? { ...settings, dayDone } : settings };
 }
 
 // How lesson 1 practice feeds the record. Returns the record unchanged when the answer should not count.

@@ -2,11 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   PLACEMENT_SIZE, advanceToday, buildDailyQueue, currentItem, getReviewSnapshot, newTodayState,
-  pickPlacement, pickWeeklyCheck, placementPassed, rateQueueItem, weeklyCheckDue, withBaseline, withoutBaseline
+  pickPlacement, pickWeeklyCheck, placementPassed, rateQueueItem, reconcileToday, weeklyCheckDue, withBaseline, withDayDone, withoutBaseline
 } from '../src/lib/reviewQueue.mjs';
 import { RATINGS, emptyRecord, emptyReview } from '../src/lib/reviewStore.mjs';
 
 const today = 20000;
+const DAY = 86400000;
 const words = (level, count) => Array.from({ length: count }, (_, i) => ({ id: `${level}-${i}`, level }));
 const pool = [...words('A1', 200), ...words('A2', 200), ...words('B1', 600), ...words('B2', 160)];
 function reviewWith(extra = {}) {
@@ -95,6 +96,27 @@ test('home snapshot needs no lexicon and resets with the day', () => {
   assert.deepEqual(getReviewSnapshot({ day: today, done: 15 }, review, today), { goal: 15, done: 15, due: 4, reached: true, started: true });
   assert.equal(getReviewSnapshot({ day: today - 1, done: 15 }, review, today).done, 0);
   assert.equal(getReviewSnapshot(null, review, today).reached, false);
+});
+
+test('the home count and queue follow words rated on another device', () => {
+  const review = reviewWith();
+  review.settings = withDayDone(review.settings, today, 6, 5);
+  assert.equal(getReviewSnapshot(null, review, today).done, 6);
+  assert.equal(getReviewSnapshot(null, review, today + 1).done, 0);
+  review.words.gone = { ...emptyRecord(), b: 1, d: today + 1, t: today * DAY };
+  review.words.waiting = { ...emptyRecord(), b: 2, d: today, t: 1 };
+  review.words.old = { ...emptyRecord(), b: 5, d: today + 20, t: (today - 40) * DAY };
+  review.words.seen = { ...emptyRecord(), b: 5, d: today + 20, t: today * DAY };
+  review.words.again = { ...emptyRecord(), b: 1, d: today + 1, t: today * DAY };
+  const items = [
+    { id: 'behind', kind: 'new' }, { id: 'gone', kind: 'new' }, { id: 'waiting', kind: 'due' }, { id: 'old', kind: 'revisit' },
+    { id: 'seen', kind: 'revisit' }, { id: 'again', kind: 'new', repeat: true }, { id: 'fresh', kind: 'new' }
+  ];
+  const state = { ...newTodayState(today, 15), items, pos: 1, done: 1 };
+  const next = reconcileToday(state, review, today);
+  assert.deepEqual(next.items.map(it => it.id), ['behind', 'waiting', 'old', 'again', 'fresh']);
+  assert.equal(next.done, 6);
+  assert.equal(reconcileToday(next, review, today), next);
 });
 
 test('known-level words start high, so a correct answer keeps them learned and a miss sends them back', () => {

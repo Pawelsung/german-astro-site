@@ -1,8 +1,7 @@
 // Decides what actually needs to travel to Firestore. Remembered per tab in sessionStorage.
-import { hashText } from './reviewStore.mjs';
+import { decodeReview, encodeReview, hashText, mergeReview } from './reviewStore.mjs';
 
 const STATE_KEY = 'gw-sync-state-v1';
-export const DOWNLOAD_INTERVAL_MS = 10 * 60 * 1000;
 
 // Firestore returns map keys in its own order, so hashes must not depend on key order.
 export function stableStringify(value) {
@@ -21,8 +20,16 @@ export function hashValue(value) {
 export const hashProgress = (progress, keys) => Object.fromEntries(keys.map(key => [key, hashValue(progress[key])]));
 export const changedKeys = (progress, keys, hashes = {}) => keys.filter(key => hashValue(progress[key]) !== hashes[key]);
 
-export function shouldDownload(state, now = Date.now()) {
-  return !state.downloadedAt || now - state.downloadedAt >= DOWNLOAD_INTERVAL_MS;
+// `remoteAt` is the time of the latest upload from any device, which costs one read to learn.
+export function shouldDownload(state, remoteAt = '') {
+  return !state.downloadedAt || (state.remoteAt || '') !== (remoteAt || '');
+}
+
+// An upload replaces the cloud copy, so it must first take in what other devices put there.
+export function mergeReviewValues(local, remote) {
+  if (!remote) return local ?? null;
+  if (!local) return remote;
+  return encodeReview(mergeReview(decodeReview(local), decodeReview(remote)));
 }
 
 const storage = () => {
@@ -32,9 +39,9 @@ const storage = () => {
 export function readSyncState(uid, store = storage()) {
   try {
     const state = JSON.parse(store?.getItem(STATE_KEY) || 'null');
-    if (state?.uid === uid) return { downloadedAt: state.downloadedAt || 0, hashes: state.hashes || {} };
+    if (state?.uid === uid) return { downloadedAt: state.downloadedAt || 0, remoteAt: state.remoteAt || '', hashes: state.hashes || {} };
   } catch { /* treat corrupt state as never synced */ }
-  return { downloadedAt: 0, hashes: {} };
+  return { downloadedAt: 0, remoteAt: '', hashes: {} };
 }
 
 export function writeSyncState(uid, state, store = storage()) {

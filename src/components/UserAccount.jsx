@@ -9,13 +9,14 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
-import { collectLocalProgress, mergeRemoteProgress, PROGRESS_KEYS } from '../lib/progressStorage';
-import { changedKeys, hashProgress, readSyncState, shouldDownload, writeSyncState } from '../lib/cloudSync.mjs';
+import { collectLocalProgress, mergeRemoteProgress, PROGRESS_KEYS, readJSON, writeJSON } from '../lib/progressStorage';
+import { changedKeys, hashProgress, mergeReviewValues, readSyncState, shouldDownload, stableStringify, writeSyncState } from '../lib/cloudSync.mjs';
 
 const provider = new GoogleAuthProvider();
 const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7', 'review'];
 const REVIEW_SYNC_DELAY = 5000;
 const LESSON_SYNC_DELAY = 700;
+const PULL_GAP = 30000;
 
 function mergeUnique(a = [], b = []) {
   return [...new Set([...(Array.isArray(a) ? a : []), ...(Array.isArray(b) ? b : [])])];
@@ -101,6 +102,11 @@ async function loadRemoteProgress(db, uid) {
   return remote;
 }
 
+async function readRemoteStamp(db, uid) {
+  const snap = await getDoc(doc(db, 'users', uid, 'learning', 'progressMeta'));
+  return snap.exists() ? snap.data()?.updatedAt || '' : '';
+}
+
 async function saveRemoteProgress(db, uid, progress, keys) {
   if (!keys.length) return;
   await Promise.all(
@@ -135,6 +141,8 @@ export default function UserAccount({ compact = false }) {
   const userRef = useRef(null);
   const syncingRef = useRef(false);
   const syncTimerRef = useRef(null);
+  const pullingRef = useRef(false);
+  const lastPullRef = useRef(0);
 
   const syncLocalProgress = useCallback(async (nextStatus = '已同步') => {
     const services = getFirebaseServices();
@@ -144,14 +152,62 @@ export default function UserAccount({ compact = false }) {
     try {
       const progress = collectLocalProgress();
       const state = readSyncState(currentUser.uid);
-      await saveRemoteProgress(services.db, currentUser.uid, progress, changedKeys(progress, PROGRESS_DOCS, state.hashes));
-      writeSyncState(currentUser.uid, { ...state, hashes: hashProgress(progress, PROGRESS_DOCS) });
+      const keys = changedKeys(progress, PROGRESS_DOCS, state.hashes);
+      if (keys.includes('review')) {
+        const snap = await getDoc(doc(services.db, 'users', currentUser.uid, 'learning', 'review'));
+        // Read local again after the wait, in case another card was rated meanwhile.
+        const current = readJSON(PROGRESS_KEYS.review, null);
+        progress.review = mergeReviewValues(current, snap.exists() ? snap.data()?.value : null);
+        if (stableStringify(progress.review) !== stableStringify(current)) {
+          syncingRef.current = true;
+          writeJSON(PROGRESS_KEYS.review, progress.review);
+          window.dispatchEvent(new CustomEvent('learning-progress-updated'));
+          syncingRef.current = false;
+        }
+      }
+      await saveRemoteProgress(services.db, currentUser.uid, progress, keys);
+      writeSyncState(currentUser.uid, { ...state, remoteAt: keys.length ? progress.updatedAt : state.remoteAt, hashes: hashProgress(progress, PROGRESS_DOCS) });
       setStatus(nextStatus);
     } catch (error) {
       console.error(error);
       setStatus(getSyncErrorMessage(error));
     }
   }, []);
+
+  // Downloads only when some device has uploaded since this tab last looked.
+  const pullRemote = useCallback(async () => {
+    const services = getFirebaseServices();
+    const currentUser = userRef.current;
+    if (!services || !currentUser || pullingRef.current) return;
+    pullingRef.current = true;
+    lastPullRef.current = Date.now();
+    const { uid } = currentUser;
+
+    try {
+      const remoteAt = await readRemoteStamp(services.db, uid);
+      if (!shouldDownload(readSyncState(uid), remoteAt)) {
+        await syncLocalProgress('已同步');
+        return;
+      }
+
+      syncingRef.current = true;
+      setStatus('同步中...');
+      const remoteProgress = await loadRemoteProgress(services.db, uid);
+      if (userRef.current?.uid !== uid) return;
+      const merged = mergeRemoteProgress(remoteProgress);
+      const keys = changedKeys(merged, PROGRESS_DOCS, hashProgress(remoteProgress, PROGRESS_DOCS));
+      await saveRemoteProgress(services.db, uid, merged, keys);
+      writeSyncState(uid, { downloadedAt: Date.now(), remoteAt: keys.length ? merged.updatedAt : remoteAt, hashes: hashProgress(merged, PROGRESS_DOCS) });
+      window.dispatchEvent(new CustomEvent('learning-progress-updated'));
+      setStatus('已同步');
+    } catch (error) {
+      console.error(error);
+      setStatus(getSyncErrorMessage(error));
+    } finally {
+      syncingRef.current = false;
+      pullingRef.current = false;
+    }
+  }, [syncLocalProgress]);
 
   useEffect(() => {
     const services = getFirebaseServices();
@@ -166,31 +222,9 @@ export default function UserAccount({ compact = false }) {
         return;
       }
 
-      // Moving between pages should not download every document again.
-      if (!shouldDownload(readSyncState(nextUser.uid))) {
-        await syncLocalProgress('已同步');
-        return;
-      }
-
-      syncingRef.current = true;
-      setStatus('同步中...');
-
-      try {
-        const remoteProgress = await loadRemoteProgress(services.db, nextUser.uid);
-        if (userRef.current?.uid !== nextUser.uid) return;
-        const merged = mergeRemoteProgress(remoteProgress);
-        await saveRemoteProgress(services.db, nextUser.uid, merged, changedKeys(merged, PROGRESS_DOCS, hashProgress(remoteProgress, PROGRESS_DOCS)));
-        writeSyncState(nextUser.uid, { downloadedAt: Date.now(), hashes: hashProgress(merged, PROGRESS_DOCS) });
-        window.dispatchEvent(new CustomEvent('learning-progress-updated'));
-        setStatus('已同步');
-      } catch (error) {
-        console.error(error);
-        setStatus(getSyncErrorMessage(error));
-      } finally {
-        syncingRef.current = false;
-      }
+      await pullRemote();
     });
-  }, [syncLocalProgress]);
+  }, [pullRemote]);
 
   useEffect(() => {
     if (!user) return;
@@ -207,8 +241,13 @@ export default function UserAccount({ compact = false }) {
     };
 
     // A review session ends by leaving the page, so anything still waiting goes out now.
+    // Coming back to a tab left open picks up what other devices did in the meantime.
     const flushWhenHidden = () => {
-      if (document.visibilityState !== 'hidden' || !syncTimerRef.current) return;
+      if (document.visibilityState === 'visible') {
+        if (Date.now() - lastPullRef.current >= PULL_GAP) pullRemote();
+        return;
+      }
+      if (!syncTimerRef.current) return;
       window.clearTimeout(syncTimerRef.current);
       syncTimerRef.current = null;
       syncLocalProgress('已自動同步');
@@ -221,7 +260,7 @@ export default function UserAccount({ compact = false }) {
       document.removeEventListener('visibilitychange', flushWhenHidden);
       window.clearTimeout(syncTimerRef.current);
     };
-  }, [user, syncLocalProgress]);
+  }, [user, syncLocalProgress, pullRemote]);
 
   useEffect(() => {
     const warn = () => setStatus('本機儲存空間不足，請先匯出備份');

@@ -5,10 +5,10 @@ import { answerCue } from '../lib/answerFeedback';
 import { genderKey } from '../lib/grammarColors.mjs';
 import { POS_LABELS } from '../lib/vocabulary.mjs';
 import { readJSON, writeJSON } from '../lib/progressStorage';
-import { RATINGS, DEFAULT_DAILY_GOAL, dayNumber, decodeReview, emptyRecord, markArticleWrong, rateWord } from '../lib/reviewStore.mjs';
+import { RATINGS, DEFAULT_DAILY_GOAL, dayNumber, decodeReview, emptyRecord, markArticleWrong, mergeReview, rateWord } from '../lib/reviewStore.mjs';
 import {
   EXTRA_BATCH, LEVELS, TODAY_KEY, advanceToday, buildDailyQueue, currentItem, newTodayState, pickPlacement,
-  pickWeeklyCheck, placementPassed, rateQueueItem, weeklyCheckDue, withBaseline, withoutBaseline
+  pickWeeklyCheck, placementPassed, rateQueueItem, reconcileToday, weeklyCheckDue, withBaseline, withDayDone, withoutBaseline
 } from '../lib/reviewQueue.mjs';
 import { loadLevelDetails, loadLexicon, migrateLessonProgress, readStoredReview, saveReview } from '../lib/reviewBridge.js';
 
@@ -143,6 +143,8 @@ export default function ReviewApp() {
   const { speak } = useGermanSpeech();
 
   const persistReview = useCallback(() => {
+    // The cloud copy may have landed in storage after this page loaded; saving must not drop it.
+    review.current = mergeReview(review.current, decodeReview(readStoredReview()));
     saveReview(review.current);
     setVersion(v => v + 1);
   }, []);
@@ -172,7 +174,7 @@ export default function ReviewApp() {
 
   const startSession = useCallback(async () => {
     const goal = review.current.settings.dailyGoal || DEFAULT_DAILY_GOAL;
-    let current = readToday(today) || newTodayState(today, goal);
+    let current = reconcileToday(readToday(today) || newTodayState(today, goal), review.current, today);
     current = { ...current, goal };
     const needed = goal - current.done - (current.items.length - current.pos);
     if (needed > 0) current = (await extendQueue(current, needed)) || current;
@@ -209,23 +211,40 @@ export default function ReviewApp() {
     return () => { alive = false; };
   }, [startSession]);
 
+  // Another device's work arrives a moment after this page has already started.
+  const live = useRef({});
+  live.current = { phase, state };
+  useEffect(() => {
+    const onCloudUpdate = event => {
+      if (event.detail?.key || !lexicon.current) return;
+      review.current = mergeReview(review.current, decodeReview(readStoredReview()));
+      setVersion(v => v + 1);
+      const { phase: now, state: shown } = live.current;
+      const changed = shown && reconcileToday(shown, review.current, today) !== shown;
+      if ((now === 'level' && review.current.settings.level) || (['session', 'done'].includes(now) && changed)) startSession();
+    };
+    window.addEventListener('learning-progress-updated', onCloudUpdate);
+    return () => window.removeEventListener('learning-progress-updated', onCloudUpdate);
+  }, [startSession, today]);
+
   const item = state ? currentItem(state) : null;
 
   const rate = useCallback(async rating => {
     if (!item || !revealed) return;
+    const next = advanceToday(state, rating);
     if (!item.repeat) {
       review.current.words[item.id] = rateQueueItem(item, review.current.words[item.id], rating);
+      if (next.done !== state.done) review.current.settings = withDayDone(review.current.settings, today, next.done, Date.now());
       persistReview();
     }
     const [, article, word] = lexicon.current.rows.get(item.id);
     // Only 會了 makes a sound: not knowing a word here is information, not a failure.
     answerCue(rating !== RATINGS.DONT_KNOW, `${article ? `${article} ` : ''}${word}`, { silent: rating !== RATINGS.KNOW });
-    const next = advanceToday(state, rating);
     persistState(next);
     setRevealed(false);
     setArticleNoted(false);
     if (!currentItem(next)) setPhase('done');
-  }, [item, persistReview, persistState, revealed, state]);
+  }, [item, persistReview, persistState, revealed, state, today]);
 
   const noteArticle = useCallback(() => {
     if (!item || articleNoted) return;
