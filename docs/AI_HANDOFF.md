@@ -62,6 +62,14 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-09：主字庫合併與分級（未 commit、未上線，網站尚未使用）
+- 新增 `AGENTS.md`（Codex 與 Claude Code 共用的協作指南）、`CLAUDE.md`（指向 AGENTS.md）、`.claude/agents/` 六個角色定義。
+- `tools/lexicon/build-lexicon.mjs` 把 `public/vocab` 的 8 個字庫合併成主字庫草稿，2236 筆，輸出在 `src/data/lexicon/`。
+- 全部詞條已依 `tools/lexicon/RUBRIC.md` 分級（`tools/lexicon/tags/`），`check-tags.mjs` 全數通過；`apply-tags.mjs` 產生 `lexicon.graded.json`、`coverage-report.md`、`flags.md`。Schritte B1.1 官方字表被標成 B2 以上的字一律校正回 B1。
+- `tools/lexicon/corrections.json` 記錄合併、釋義、詞性與程度修正；`tools/lexicon/drafts/` 是新增的 802 個 A1–B1 單字，已由獨立校對修正，`apply-tags.mjs` 會全部併入 `lexicon.graded.json`。
+- 尚未做：使用者抽查（`tools/lexicon/sample-review.md`）、`flags.md` 剩餘標註、新字音檔、B2 補字、網站改用主字庫。程度是 AI 判斷，沒有和官方字表逐字比對。
+- 下一階段（第 1 階段）：統一複習；已學會的低程度字仍要定期抽考。
+
 ### 2026-10-29：首頁新增 LangLoop 受邀課程卡
 - `src/components/LangLoopCard.jsx`：登入後向 LangLoop 的 `GET /api/auth/access`（帶 Firebase ID token）確認帳號是否在 LangLoop 允許名單，是的話才在「全部課程」最後顯示深色卡片。點卡片會用表單 POST 把 ID token 送到 LangLoop 的 `/api/auth/handoff`，直接以登入狀態進入 LangLoop（token 不放網址）。
 - 允許名單只在 LangLoop 維護（Vercel env `LANGLOOP_OWNER_EMAIL` 與 Supabase 表 `allowed_users`），這邊不另存。LangLoop 只接受 `german-astro-site.web.app`／`.firebaseapp.com` 這兩個來源；若德文網站換網域，要在 LangLoop 設 `LANGLOOP_PARTNER_ORIGINS`。

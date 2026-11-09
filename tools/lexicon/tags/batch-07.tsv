@@ -1,0 +1,251 @@
+id	level	topic	kind	push	flag
+der-ruecken	A2	health	word	y	
+der-rueckflug	A2	travel	word	y	
+die-rueckmeldung	B1	work	word	y	
+der-rucksack	A1	travel	word	y	
+ruecksicht-nehmen	B1	people	phrase	y	應為 Rücksicht nehmen auf，pos 實為片語
+rufen	A2	daily	word	y	
+die-ruhe	A2	daily	word	y	
+der-ruhetag	A2	work	word	n	
+ruhig	A2	feel	word	y	
+das-ruehrei	A2	food	word	y	
+ruehren	B1	food	word	y	
+die-runde	B1	general	word	y	
+der-rundfunk	B2	media	word	y	
+die-rundfunkgebuehr	B2	media	word	n	
+das-sachbuch	B1	media	word	y	
+die-sache	A2	general	word	y	
+der-saft	A1	food	word	y	
+die-sage	B2	society	word	y	
+die-saison	B1	time	word	y	
+die-salami	A2	food	word	y	
+die-salzburger-festspiele	B2	society	word	n	專有名詞
+das-sandwich	A1	food	word	y	
+der-saenger	A2	leisure	word	y	
+die-saengerin	A2	leisure	word	y	
+satt	A2	food	word	y	
+der-satz	A1	school	word	y	
+der-satzbau	B1	school	word	n	
+die-sau	B2	nature	word	n	多為罵人用語，不宜推送
+sauber	A1	home	word	y	
+der-schaden	B1	general	word	y	
+das-schaf	A2	nature	word	y	
+der-schafskaese	A2	food	word	y	
+der-schalter	A2	city	word	y	
+scharf-auf-etwas-sein	C1	feel	phrase	n	口語；程度？B2/C1
+schenken	A2	shop	word	y	
+die-schere	A2	home	word	y	
+das-schicksal	B2	general	word	y	srcLevel B1，程度？B1/B2
+schieben	B1	daily	word	y	
+schiessen	B1	leisure	word	y	
+das-schild	A2	city	word	y	das Schild（牌子）與 der Schild（盾）不同
+schlafen	A1	daily	word	y	
+die-schlafstoerung	B2	health	word	y	
+schlank	A2	people	word	y	
+schlecht-drauf-sein	B2	feel	phrase	n	口語
+die-schlechte-sache	B1	general	chunk	n	形容詞＋名詞組合，非固定搭配；建議移除
+schliessen	A1	daily	word	y	
+schliesslich	B1	general	word	y	
+schlimm	A2	feel	word	y	
+das-schloss	A2	city	word	y	兩義（城堡／鎖）
+der-schluessel	A1	home	word	y	
+schmal	B1	people	word	y	
+schmecken	A1	food	word	y	
+der-schmerz	A2	health	word	y	
+schmerzen-haben	A2	health	phrase	y	
+das-schmerzmittel	B1	health	word	y	
+schmutzig	A2	home	word	y	
+die-schnecke	B1	nature	word	y	
+der-schnee	A1	nature	word	y	
+schneefrei	C1	school	word	n	罕見；釋義依語境
+schneelos	C1	nature	word	n	罕見
+schneien	A1	nature	word	y	
+schnell	A1	general	word	y	
+der-schnitt	B2	general	word	y	多義（切口／平均）
+der-schnupfen	A2	health	word	y	
+schon-mal	A2	time	phrase	y	
+schottland	B1	travel	word	n	專有名詞；pos 應為專有名詞，通常不帶冠詞
+der-schrank	A1	home	word	y	
+schreiben	A1	school	word	y	
+schreien	B1	feel	word	y	
+die-schrift	B1	school	word	y	
+das-schriftsystem	B2	school	word	n	
+der-schub	C1	general	word	n	
+der-schuh	A1	shop	word	y	
+der-schulausflug	A2	school	word	y	
+die-schule	A1	school	word	y	
+der-schueler	A1	school	word	y	
+schueler-innen	A2	school	word	n	性別包容寫法，應併入 der Schüler
+die-schuelerin	A1	school	word	y	
+das-schuljahr	A2	school	word	y	
+die-schulter	A2	health	word	y	
+der-schwabe	B2	people	word	n	地域人名
+schwaebisch	B2	school	word	n	方言名；pos 實為形容詞／名詞
+schwach	A2	health	word	y	
+der-schwager	A2	people	word	y	
+die-schwaegerin	A2	people	word	y	
+der-schwefel	C1	nature	word	n	
+das-schwein	A2	nature	word	y	
+der-schweinestall	B2	nature	word	n	
+die-schweiz	A1	travel	word	n	專有名詞
+die-schwester	A1	people	word	y	釋義宜為「姊妹；護士」，Schwester 為姊或妹
+die-schwierigkeit	B1	general	word	y	
+schwitzen	A2	health	word	y	
+der-see	A2	nature	word	y	der See（湖）／die See（海）冠詞需注意
+die-seezunge	B2	food	word	n	
+sehen	A1	daily	word	y	
+die-sehenswuerdigkeit	A2	travel	word	y	
+die-seife	A2	home	word	y	
+seit-zwei-tagen	A2	time	chunk	n	
+die-seite	A2	general	word	y	
+der-sekt	B1	food	word	y	
+selbst	B1	grammar	word	y	
+selbststaendig	B1	work	word	y	
+seltsam	B1	general	word	y	
+das-semester	A2	school	word	y	
+die-semesterarbeit	B1	school	word	n	
+der-senior	B2	people	word	n	
+die-serie	A2	media	word	y	
+der-service	B1	work	word	y	
+setzen	A2	daily	word	y	
+setzen-sie-sich	A1	daily	chunk	n	
+das-shampoo	A2	home	word	y	
+sich-abwechseln	B1	general	word	n	與 abwechseln 重複，可併入
+sich-aendern	A2	general	word	y	
+sich-aneignen	B2	school	word	y	
+sich-anhoeren	B1	general	word	y	
+sich-anstrengen	B1	school	word	y	
+sich-aergern-ueber	B1	feel	phrase	y	
+sich-ausdruecken	B1	school	word	y	
+sich-auskennen-mit	B1	general	phrase	y	
+sich-ausruhen	A2	daily	word	y	
+sich-auswirken	B2	general	word	y	
+sich-bedanken	A2	daily	word	y	
+sich-befinden	B1	general	word	y	
+sich-beklagen	B2	feel	word	y	
+sich-beruhigen	B1	feel	word	y	
+sich-bewerben	B1	work	word	y	
+sich-drehen-um	B2	general	phrase	y	
+sich-eignen	B2	general	word	y	
+sich-entscheiden-fuer-gegen	B1	general	phrase	y	兩種搭配併為一條，建議拆開
+sich-entschuldigen	A2	daily	word	y	
+sich-entspannen	A2	leisure	word	y	
+sich-erfuellen	B2	feel	word	y	
+sich-erhoehen	B2	general	word	y	
+sich-erholen	B1	health	word	y	
+sich-erinnern	B1	general	word	y	常搭配 an，建議寫成 sich erinnern an
+sich-erkaelten	A2	health	word	y	
+sich-etwas-kaufen	A2	shop	phrase	n	
+sich-freuen	A2	feel	word	y	
+sich-freuen-auf	A2	feel	phrase	y	
+sich-freuen-ueber	A2	feel	phrase	y	
+sich-fuehlen	A2	feel	word	y	
+sich-gewoehnen	B1	general	word	y	常搭配 an
+sich-interessieren-fuer	A2	leisure	phrase	y	
+sich-kuemmern-um	B1	general	phrase	y	
+sich-lohnen	B1	general	word	y	
+sich-melden	A2	daily	word	y	
+sich-reimen	B2	school	word	n	
+sich-setzen	A1	daily	word	y	
+sich-sorgen-machen-um	B1	feel	phrase	y	實際為 sich Sorgen machen um，pos 宜為片語
+sich-streiten	B1	people	word	y	
+sich-testen-lassen	B1	health	phrase	n	
+sich-treffen	A1	people	word	y	
+sich-ueberlegen	B1	general	word	y	
+sich-unsicher-fuehlen	B1	feel	phrase	n	為 sich fühlen 之組合
+sich-unterhalten	B1	people	word	y	
+sich-verabreden	A2	daily	word	y	
+sich-verabschieden	A2	daily	word	y	
+sich-veraendern	B1	general	word	y	與 sich ändern 近義
+sich-verknallen	B2	feel	word	n	口語
+sich-verspaeten	A2	travel	word	y	
+sich-verstaendigen	B2	people	word	y	
+sich-vorbereiten-auf	A2	school	phrase	y	
+sich-wehren	B2	general	word	y	
+sich-wundern	B1	feel	word	y	
+sich-zu-hause-fuehlen	B1	feel	phrase	y	
+die-sicherheit	B1	general	word	y	
+die-sicht	B2	general	word	y	
+der-sinn	B1	general	word	y	
+sinngemaess	C1	school	word	n	
+sinnvoll	B1	general	word	y	
+die-sinusitis	C1	health	word	n	醫學術語
+die-situation	B1	general	word	y	
+sitzen	A1	daily	word	y	
+die-skulptur	B2	leisure	word	y	
+die-sms	A2	media	word	y	
+so-viel	A2	time	phrase	n	
+so-wie	B1	grammar	phrase	n	
+sodass	B1	grammar	word	n	
+das-sofa	A1	home	word	y	
+die-softskills	B2	work	word	n	
+der-sommer	A1	nature	word	y	
+das-sonderangebot	A2	shop	word	y	
+der-sonderfall	B2	general	word	y	
+die-sonderkraefte	C1	society	word	n	
+sonderlich	C1	general	word	n	
+sondern	A2	grammar	word	n	
+die-sonderpaedagogik	C1	school	word	n	
+der-song	A2	leisure	word	y	
+die-sonne	A1	nature	word	y	
+der-sonnenaufgang	B1	nature	word	y	
+der-sonnenstich	B2	health	word	y	
+der-sonnenuntergang	B1	nature	word	y	
+sonst	A2	grammar	word	y	
+die-sorge	B1	feel	word	y	
+sorgen	B1	general	word	n	應併入 sorgen für
+sorgen-fuer	B1	general	phrase	y	
+sortieren	B1	daily	word	y	
+souveraen	C1	people	word	y	
+sowie	B1	grammar	word	n	
+sowohl-als-auch	B1	grammar	phrase	n	
+sozial	B1	society	word	y	
+die-soziale-kompetenz	B2	work	phrase	n	
+sozusagen	B2	general	word	y	
+spannend	A2	leisure	word	y	
+die-spannung	B2	feel	word	y	
+sparsam	B1	shop	word	y	
+der-spass	A2	leisure	word	y	
+spass-machen	A2	leisure	phrase	y	
+das-spaesschen	C1	leisure	word	n	
+spaeter	A1	time	word	y	
+spaeteres-stadium	B2	health	phrase	n	
+spaetestens	A2	time	word	y	
+das-speditionsunternehmen	C1	work	word	n	
+die-spezialitaet	B1	food	word	y	
+der-spiegel	A2	home	word	y	
+das-spiegelei	A2	food	word	y	
+das-spiel	A1	leisure	word	y	
+spinnen	B2	feel	word	n	口語；srcLevel B1，程度？B1/B2
+spontan	B1	general	word	y	
+der-sport	A1	leisure	word	y	
+sport-treiben	A1	leisure	phrase	y	
+der-sportplatz	A2	leisure	word	y	
+der-sportschuhladen	B1	shop	word	n	
+die-sprache	A1	school	word	y	
+sprachlich	B1	school	word	y	
+die-sprechstunde	A2	health	word	y	
+spueren	B1	feel	word	y	
+der-staat	B1	society	word	y	
+das-stadion	A2	leisure	word	y	
+die-stadt	A1	city	word	y	
+staedtisch	B1	city	word	y	
+die-staedtische-kunsthalle	B2	city	phrase	n	
+das-staedtische-kunstmuseum	B2	city	phrase	n	
+der-stadtrand	B1	city	word	y	
+der-stadtteil	B1	city	word	y	
+die-staffel	C1	media	word	n	也有接力賽義；釋義限「影集季」，建議補充
+stammen	B1	general	word	y	常搭配 aus
+das-standesamt	B1	city	word	y	
+der-star	A2	leisure	word	y	
+stark	A1	general	word	y	
+statt	B1	grammar	word	n	
+stattfinden	A2	time	word	y	
+der-stau	A2	travel	word	y	
+staunen	B2	feel	word	y	
+die-steckdose	A2	home	word	y	
+der-stecker	A2	home	word	y	
+stehen	A1	daily	word	y	
+steil	B1	nature	word	y	
+der-stein	A2	nature	word	y	
+die-stelle	B1	work	word	y	

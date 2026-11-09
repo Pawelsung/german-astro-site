@@ -1,0 +1,2575 @@
+[
+ {
+  "word": "Kündigung",
+  "article": "die",
+  "plural": "die Kündigungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "解僱；辭職；終止合約",
+  "exampleDe": "Nach der Kündigung musste er schnell eine neue Stelle finden.",
+  "exampleZh": "被解僱之後，他必須趕快找到新工作。"
+ },
+ {
+  "word": "Gewerkschaft",
+  "article": "die",
+  "plural": "die Gewerkschaften",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "工會",
+  "exampleDe": "Die Gewerkschaft kämpft für höhere Löhne in der Pflege.",
+  "exampleZh": "工會為照護業爭取更高的薪資。"
+ },
+ {
+  "word": "Rente",
+  "article": "die",
+  "plural": "die Renten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "退休金；退休",
+  "exampleDe": "Meine Eltern gehen nächstes Jahr in Rente und wollen dann viel reisen.",
+  "exampleZh": "我爸媽明年退休，之後想多去旅行。"
+ },
+ {
+  "word": "Abteilung",
+  "article": "die",
+  "plural": "die Abteilungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "部門",
+  "exampleDe": "In welcher Abteilung arbeitet deine Schwester eigentlich?",
+  "exampleZh": "你姊姊是在哪個部門工作啊？"
+ },
+ {
+  "word": "Angestellte",
+  "article": "der",
+  "plural": "die Angestellten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "職員；受僱者",
+  "exampleDe": "Als Angestellter bekommt man jeden Monat das gleiche Gehalt.",
+  "exampleZh": "身為受僱職員，每個月領的薪水都一樣。"
+ },
+ {
+  "word": "Arbeitsplatz",
+  "article": "der",
+  "plural": "die Arbeitsplätze",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "工作崗位；職位",
+  "exampleDe": "Durch die neue Fabrik entstehen in der Region 200 Arbeitsplätze.",
+  "exampleZh": "新工廠將為這個地區創造兩百個工作機會。"
+ },
+ {
+  "word": "Arbeitszeit",
+  "article": "die",
+  "plural": "die Arbeitszeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "工時；工作時間",
+  "exampleDe": "Weil ich kleine Kinder habe, sind mir flexible Arbeitszeiten wichtig.",
+  "exampleZh": "因為我有年幼的孩子，彈性工時對我很重要。"
+ },
+ {
+  "word": "Mitarbeiter",
+  "article": "der",
+  "plural": "die Mitarbeiter",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "員工；同事",
+  "exampleDe": "Die Firma sucht neue Mitarbeiter für das Lager.",
+  "exampleZh": "公司正在徵倉庫的新員工。"
+ },
+ {
+  "word": "Streik",
+  "article": "der",
+  "plural": "die Streiks",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "罷工",
+  "exampleDe": "Wegen des Streiks fahren heute kaum Züge.",
+  "exampleZh": "因為罷工，今天幾乎沒有火車開。"
+ },
+ {
+  "word": "Teilzeit",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "兼職；部分工時",
+  "exampleDe": "Seit der Geburt ihres Sohnes arbeitet sie in Teilzeit.",
+  "exampleZh": "兒子出生後，她就改做部分工時。"
+ },
+ {
+  "word": "Probezeit",
+  "article": "die",
+  "plural": "die Probezeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "試用期",
+  "exampleDe": "In der Probezeit können beide Seiten schneller kündigen.",
+  "exampleZh": "試用期間，雙方都能比較快終止合約。"
+ },
+ {
+  "word": "Gehaltserhöhung",
+  "article": "die",
+  "plural": "die Gehaltserhöhungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "加薪",
+  "exampleDe": "Nach drei Jahren habe ich endlich um eine Gehaltserhöhung gebeten.",
+  "exampleZh": "三年後，我終於提出了加薪的要求。"
+ },
+ {
+  "word": "Karriere",
+  "article": "die",
+  "plural": "die Karrieren",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "職涯；事業發展",
+  "exampleDe": "Für ihre Karriere ist sie sogar nach Singapur gezogen.",
+  "exampleZh": "為了事業發展，她甚至搬到了新加坡。"
+ },
+ {
+  "word": "Branche",
+  "article": "die",
+  "plural": "die Branchen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "行業；產業",
+  "exampleDe": "In dieser Branche findet man zurzeit leicht einen Job.",
+  "exampleZh": "這個行業目前很容易找到工作。"
+ },
+ {
+  "word": "Konkurrenz",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "競爭；競爭對手",
+  "exampleDe": "Die Konkurrenz ist groß, deshalb müssen wir günstiger werden.",
+  "exampleZh": "競爭很激烈，所以我們必須降價。"
+ },
+ {
+  "word": "Ruhestand",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "退休（狀態）",
+  "exampleDe": "Seit sie im Ruhestand ist, hilft sie im Altenheim aus.",
+  "exampleZh": "退休之後，她就到養老院幫忙。"
+ },
+ {
+  "word": "Dienstreise",
+  "article": "die",
+  "plural": "die Dienstreisen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "出差",
+  "exampleDe": "Nächste Woche bin ich auf Dienstreise in Hamburg.",
+  "exampleZh": "下週我要去漢堡出差。"
+ },
+ {
+  "word": "Zusammenarbeit",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "合作",
+  "exampleDe": "Vielen Dank für die gute Zusammenarbeit in diesem Jahr!",
+  "exampleZh": "感謝今年這段愉快的合作！"
+ },
+ {
+  "word": "Stellenanzeige",
+  "article": "die",
+  "plural": "die Stellenanzeigen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "徵才廣告",
+  "exampleDe": "Auf diese Stellenanzeige habe ich mich gestern beworben.",
+  "exampleZh": "我昨天應徵了這則徵才廣告。"
+ },
+ {
+  "word": "Geschäftsführer",
+  "article": "der",
+  "plural": "die Geschäftsführer",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "總經理；負責人",
+  "exampleDe": "Der Geschäftsführer hat alle zu einer Besprechung eingeladen.",
+  "exampleZh": "總經理請大家來開會。"
+ },
+ {
+  "word": "Bewerber",
+  "article": "der",
+  "plural": "die Bewerber",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "應徵者",
+  "exampleDe": "Von den vierzig Bewerbern wurden nur fünf eingeladen.",
+  "exampleZh": "四十位應徵者中，只有五位獲邀面試。"
+ },
+ {
+  "word": "Sitzung",
+  "article": "die",
+  "plural": "die Sitzungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "會議",
+  "exampleDe": "Die Sitzung dauerte länger, als wir gedacht hatten.",
+  "exampleZh": "會議開得比我們預期的還久。"
+ },
+ {
+  "word": "Vorgesetzte",
+  "article": "der",
+  "plural": "die Vorgesetzten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "上司",
+  "exampleDe": "Sprich am besten zuerst mit deinem Vorgesetzten darüber.",
+  "exampleZh": "這件事最好先跟你的上司談。"
+ },
+ {
+  "word": "streiken",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "罷工",
+  "exampleDe": "Die Piloten streiken, weil sie mehr Geld fordern.",
+  "exampleZh": "機師們罷工，因為他們要求加薪。",
+  "verb": {
+   "praesens3": "streikt",
+   "praeteritum": "streikte",
+   "perfekt": "hat gestreikt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "leiten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "帶領；管理",
+  "exampleDe": "Seit zwei Jahren leitet er eine kleine Bäckerei in Köln.",
+  "exampleZh": "兩年來他在科隆經營一家小麵包店。",
+  "verb": {
+   "praesens3": "leitet",
+   "praeteritum": "leitete",
+   "perfekt": "hat geleitet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "organisieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "籌辦；安排",
+  "exampleDe": "Wer organisiert dieses Jahr die Weihnachtsfeier im Büro?",
+  "exampleZh": "今年誰負責籌辦辦公室的聖誕派對？",
+  "verb": {
+   "praesens3": "organisiert",
+   "praeteritum": "organisierte",
+   "perfekt": "hat organisiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "zusammenarbeiten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "合作；一起工作",
+  "exampleDe": "Wir arbeiten eng mit einer Firma aus Polen zusammen.",
+  "exampleZh": "我們和一家波蘭公司密切合作。",
+  "verb": {
+   "praesens3": "arbeitet zusammen",
+   "praeteritum": "arbeitete zusammen",
+   "perfekt": "hat zusammengearbeitet",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "vertreten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "代理；代表",
+  "exampleDe": "Während meines Urlaubs vertritt mich Herr Lang.",
+  "exampleZh": "我休假期間由朗先生代理我的工作。",
+  "verb": {
+   "praesens3": "vertritt",
+   "praeteritum": "vertrat",
+   "perfekt": "hat vertreten",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "kopieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "影印；複製",
+  "exampleDe": "Kopierst du mir bitte diese beiden Seiten?",
+  "exampleZh": "可以幫我影印這兩頁嗎？",
+  "verb": {
+   "praesens3": "kopiert",
+   "praeteritum": "kopierte",
+   "perfekt": "hat kopiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "präsentieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "展示；發表",
+  "exampleDe": "Morgen präsentiert unser Team den Kunden die neue Idee.",
+  "exampleZh": "明天我們團隊要向客戶發表新點子。",
+  "verb": {
+   "praesens3": "präsentiert",
+   "praeteritum": "präsentierte",
+   "perfekt": "hat präsentiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "mitteilen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "通知；告知",
+  "exampleDe": "Bitte teilen Sie uns Ihre neue Adresse rechtzeitig mit.",
+  "exampleZh": "請及時告知我們您的新地址。",
+  "verb": {
+   "praesens3": "teilt mit",
+   "praeteritum": "teilte mit",
+   "perfekt": "hat mitgeteilt",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "unterbrechen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "打斷；中斷",
+  "exampleDe": "Entschuldigung, dass ich Sie kurz unterbreche.",
+  "exampleZh": "不好意思，稍微打斷您一下。",
+  "verb": {
+   "praesens3": "unterbricht",
+   "praeteritum": "unterbrach",
+   "perfekt": "hat unterbrochen",
+   "aux": "haben",
+   "note": "不可分動詞"
+  }
+ },
+ {
+  "word": "beraten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "提供諮詢；給建議",
+  "exampleDe": "Die Dame im Jobcenter hat mich sehr gut beraten.",
+  "exampleZh": "就業中心的那位女士給了我很好的建議。",
+  "verb": {
+   "praesens3": "berät",
+   "praeteritum": "beriet",
+   "perfekt": "hat beraten",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "berufstätig",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "有工作的；在職的",
+  "exampleDe": "Beide Eltern sind berufstätig, deshalb geht das Kind in den Hort.",
+  "exampleZh": "父母都有工作，所以孩子去課後托育。"
+ },
+ {
+  "word": "flexibel",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "有彈性的；靈活的",
+  "exampleDe": "In diesem Job muss man zeitlich sehr flexibel sein.",
+  "exampleZh": "這份工作在時間上要非常有彈性。"
+ },
+ {
+  "word": "verantwortlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "負責的",
+  "exampleDe": "Wer ist hier für die Bestellungen verantwortlich?",
+  "exampleZh": "這裡誰負責訂單？"
+ },
+ {
+  "word": "tätig",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "work",
+  "meaning": "從事工作的；任職的",
+  "exampleDe": "Sie ist seit Jahren als Krankenschwester im Ausland tätig.",
+  "exampleZh": "她多年來在國外擔任護理師。"
+ },
+ {
+  "word": "Abschluss",
+  "article": "der",
+  "plural": "die Abschlüsse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "畢業；學歷；結業",
+  "exampleDe": "Nach dem Abschluss möchte ich ein Jahr in Wien arbeiten.",
+  "exampleZh": "畢業之後我想在維也納工作一年。"
+ },
+ {
+  "word": "Fach",
+  "article": "das",
+  "plural": "die Fächer",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "科目",
+  "exampleDe": "Mathe war in der Schule immer mein schwierigstes Fach.",
+  "exampleZh": "數學一直是我在學校最難的科目。"
+ },
+ {
+  "word": "Note",
+  "article": "die",
+  "plural": "die Noten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "成績；分數",
+  "exampleDe": "Trotz guter Noten hat sie keinen Studienplatz bekommen.",
+  "exampleZh": "儘管成績很好，她還是沒有拿到大學名額。"
+ },
+ {
+  "word": "Vorlesung",
+  "article": "die",
+  "plural": "die Vorlesungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "大學講課",
+  "exampleDe": "Die Vorlesung fällt heute leider aus, weil der Professor krank ist.",
+  "exampleZh": "可惜教授生病了，今天的課取消了。"
+ },
+ {
+  "word": "Seminar",
+  "article": "das",
+  "plural": "die Seminare",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "專題討論課；研討課",
+  "exampleDe": "Für das Seminar müssen wir jede Woche einen Text lesen.",
+  "exampleZh": "這門討論課我們每週都要讀一篇文章。"
+ },
+ {
+  "word": "Klausur",
+  "article": "die",
+  "plural": "die Klausuren",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "筆試；期末考",
+  "exampleDe": "Am Dienstag schreibe ich eine Klausur in Statistik.",
+  "exampleZh": "星期二我有統計學筆試。"
+ },
+ {
+  "word": "Stipendium",
+  "article": "das",
+  "plural": "die Stipendien",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "獎學金",
+  "exampleDe": "Ohne ein Stipendium hätte ich hier nicht studieren können.",
+  "exampleZh": "要是沒有獎學金，我就沒辦法在這裡念書。"
+ },
+ {
+  "word": "Studiengebühr",
+  "article": "die",
+  "plural": "die Studiengebühren",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "學費（大學）",
+  "exampleDe": "In manchen Ländern sind die Studiengebühren sehr hoch.",
+  "exampleZh": "有些國家的大學學費非常高。"
+ },
+ {
+  "word": "Nachhilfe",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "課後補習",
+  "exampleDe": "Weil er in Englisch schlecht war, bekam er Nachhilfe.",
+  "exampleZh": "因為他英文不好，所以去補習。"
+ },
+ {
+  "word": "Volkshochschule",
+  "article": "die",
+  "plural": "die Volkshochschulen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "社區大學；成人教育中心",
+  "exampleDe": "Abends besucht meine Mutter einen Kochkurs an der Volkshochschule.",
+  "exampleZh": "我媽媽晚上在成人教育中心上烹飪課。"
+ },
+ {
+  "word": "Bildung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "教育；學識",
+  "exampleDe": "Gute Bildung darf nicht vom Geld der Eltern abhängen.",
+  "exampleZh": "良好的教育不該取決於父母的財力。"
+ },
+ {
+  "word": "Erziehung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "教養；管教",
+  "exampleDe": "Bei der Erziehung ihrer Kinder sind sie sich selten einig.",
+  "exampleZh": "在孩子的教養上，他們很少意見一致。"
+ },
+ {
+  "word": "Fortschritt",
+  "article": "der",
+  "plural": "die Fortschritte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "進步",
+  "exampleDe": "Du hast beim Sprechen große Fortschritte gemacht!",
+  "exampleZh": "你的口說進步很多！"
+ },
+ {
+  "word": "Konzentration",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "專注力；專心",
+  "exampleDe": "Nach acht Stunden Unterricht lässt die Konzentration nach.",
+  "exampleZh": "上了八小時的課後，專注力就下降了。"
+ },
+ {
+  "word": "Aufmerksamkeit",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "注意力；關注",
+  "exampleDe": "Der Lehrer bat die Klasse um ihre Aufmerksamkeit.",
+  "exampleZh": "老師請全班注意聽。"
+ },
+ {
+  "word": "Rechtschreibung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "拼字；正字法",
+  "exampleDe": "In meinem Aufsatz waren viele Fehler in der Rechtschreibung.",
+  "exampleZh": "我的作文有很多拼字錯誤。"
+ },
+ {
+  "word": "Aufsatz",
+  "article": "der",
+  "plural": "die Aufsätze",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "作文；短篇論述",
+  "exampleDe": "Wir sollen einen Aufsatz über unsere Heimat schreiben.",
+  "exampleZh": "我們要寫一篇關於家鄉的作文。"
+ },
+ {
+  "word": "Zusammenfassung",
+  "article": "die",
+  "plural": "die Zusammenfassungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "摘要；總結",
+  "exampleDe": "Am Ende der Stunde schreiben alle eine kurze Zusammenfassung.",
+  "exampleZh": "下課前大家都要寫一段簡短的摘要。"
+ },
+ {
+  "word": "bestehen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "通過（考試）；由…組成；存在",
+  "exampleDe": "Wenn ich die Prüfung bestehe, lade ich euch alle zum Essen ein.",
+  "exampleZh": "如果我考過了，就請你們大家吃飯。",
+  "verb": {
+   "praesens3": "besteht",
+   "praeteritum": "bestand",
+   "perfekt": "hat bestanden",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "durchfallen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "不及格；沒考過",
+  "exampleDe": "Bei der Führerscheinprüfung ist er leider schon zweimal durchgefallen.",
+  "exampleZh": "很遺憾，他駕照考試已經兩次沒過。",
+  "verb": {
+   "praesens3": "fällt durch",
+   "praeteritum": "fiel durch",
+   "perfekt": "ist durchgefallen",
+   "aux": "sein",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "nachschlagen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "查（字典、資料）",
+  "exampleDe": "Unbekannte Wörter schlage ich meistens gleich im Wörterbuch nach.",
+  "exampleZh": "不懂的字我通常馬上查字典。",
+  "verb": {
+   "praesens3": "schlägt nach",
+   "praeteritum": "schlug nach",
+   "perfekt": "hat nachgeschlagen",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "begreifen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "理解；領悟",
+  "exampleDe": "Endlich habe ich begriffen, wie man diese Aufgabe löst.",
+  "exampleZh": "我終於懂這道題怎麼解了。",
+  "verb": {
+   "praesens3": "begreift",
+   "praeteritum": "begriff",
+   "perfekt": "hat begriffen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "zusammenfassen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "總結；摘要",
+  "exampleDe": "Könntest du den Text in zwei Sätzen zusammenfassen?",
+  "exampleZh": "你能用兩句話總結這篇文章嗎？",
+  "verb": {
+   "praesens3": "fasst zusammen",
+   "praeteritum": "fasste zusammen",
+   "perfekt": "hat zusammengefasst",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "abschreiben",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "抄寫；抄襲",
+  "exampleDe": "Wer in der Prüfung abschreibt, bekommt eine Sechs.",
+  "exampleZh": "考試作弊抄襲的人會拿到最低分。",
+  "verb": {
+   "praesens3": "schreibt ab",
+   "praeteritum": "schrieb ab",
+   "perfekt": "hat abgeschrieben",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "sich konzentrieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "專心；集中",
+  "exampleDe": "Bei diesem Lärm kann ich mich nicht auf die Hausaufgaben konzentrieren.",
+  "exampleZh": "這麼吵，我沒辦法專心寫作業。",
+  "verb": {
+   "praesens3": "konzentriert sich",
+   "praeteritum": "konzentrierte sich",
+   "perfekt": "hat sich konzentriert",
+   "aux": "haben",
+   "note": "反身動詞：sich konzentrieren (auf + Akk.)"
+  }
+ },
+ {
+  "word": "erwähnen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "提到；提及",
+  "exampleDe": "Im Unterricht hat die Lehrerin dieses Buch mehrmals erwähnt.",
+  "exampleZh": "老師上課時提過這本書好幾次。",
+  "verb": {
+   "praesens3": "erwähnt",
+   "praeteritum": "erwähnte",
+   "perfekt": "hat erwähnt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "einschreiben",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "註冊（學校、課程）",
+  "exampleDe": "Bis Ende September muss ich mich an der Uni einschreiben.",
+  "exampleZh": "我九月底前必須到大學註冊。",
+  "verb": {
+   "praesens3": "schreibt ein",
+   "praeteritum": "schrieb ein",
+   "perfekt": "hat eingeschrieben",
+   "aux": "haben",
+   "note": "可分動詞；常作反身：sich einschreiben"
+  }
+ },
+ {
+  "word": "schriftlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "書面的；筆試的",
+  "exampleDe": "Der schriftliche Teil der Prüfung beginnt um neun Uhr.",
+  "exampleZh": "考試的筆試部分九點開始。"
+ },
+ {
+  "word": "auswendig",
+  "article": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "背誦地；憑記憶",
+  "exampleDe": "Das Gedicht mussten wir alle auswendig lernen.",
+  "exampleZh": "這首詩我們全都得背起來。"
+ },
+ {
+  "word": "praktisch",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "實用的；實際的",
+  "exampleDe": "Das Praktikum war gut, weil ich viel praktische Erfahrung gesammelt habe.",
+  "exampleZh": "這次實習很棒，因為我累積了很多實務經驗。"
+ },
+ {
+  "word": "theoretisch",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "school",
+  "meaning": "理論上的",
+  "exampleDe": "Der Kurs ist mir zu theoretisch, ich möchte lieber etwas ausprobieren.",
+  "exampleZh": "這門課對我來說太理論了，我比較想實際動手試試。"
+ },
+ {
+  "word": "Politik",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "政治；政策",
+  "exampleDe": "Mein Onkel interessiert sich überhaupt nicht für Politik.",
+  "exampleZh": "我叔叔對政治完全沒興趣。"
+ },
+ {
+  "word": "Demokratie",
+  "article": "die",
+  "plural": "die Demokratien",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "民主；民主國家",
+  "exampleDe": "In einer Demokratie darf jeder seine Meinung sagen.",
+  "exampleZh": "在民主國家，每個人都可以說出自己的意見。"
+ },
+ {
+  "word": "Bürgermeister",
+  "article": "der",
+  "plural": "die Bürgermeister",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "市長；鎮長",
+  "exampleDe": "Der Bürgermeister hat den neuen Spielplatz persönlich eröffnet.",
+  "exampleZh": "市長親自為新遊樂場揭幕。"
+ },
+ {
+  "word": "Mehrheit",
+  "article": "die",
+  "plural": "die Mehrheiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "多數",
+  "exampleDe": "Die Mehrheit der Befragten ist für mehr Radwege.",
+  "exampleZh": "大多數受訪者支持增設自行車道。"
+ },
+ {
+  "word": "Minderheit",
+  "article": "die",
+  "plural": "die Minderheiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "少數；少數族群",
+  "exampleDe": "Auch Minderheiten müssen im Land geschützt werden.",
+  "exampleZh": "少數族群在國內也必須受到保護。"
+ },
+ {
+  "word": "Bevölkerung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "人口；全體居民",
+  "exampleDe": "Ein großer Teil der Bevölkerung lebt inzwischen in Städten.",
+  "exampleZh": "如今大部分人口都住在城市裡。"
+ },
+ {
+  "word": "Generation",
+  "article": "die",
+  "plural": "die Generationen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "世代",
+  "exampleDe": "Die junge Generation sieht das Thema Arbeit ganz anders.",
+  "exampleZh": "年輕世代對工作這件事的看法完全不同。"
+ },
+ {
+  "word": "Freiheit",
+  "article": "die",
+  "plural": "die Freiheiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "自由",
+  "exampleDe": "Für die Freiheit sind damals viele Menschen auf die Straße gegangen.",
+  "exampleZh": "當年有許多人為了自由走上街頭。"
+ },
+ {
+  "word": "Frieden",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "和平",
+  "exampleDe": "Alle hoffen, dass in der Region bald wieder Frieden herrscht.",
+  "exampleZh": "大家都希望這個地區能早日恢復和平。"
+ },
+ {
+  "word": "Gleichberechtigung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "平權；權利平等",
+  "exampleDe": "Bei der Gleichberechtigung von Frauen und Männern gibt es noch viel zu tun.",
+  "exampleZh": "在男女平權方面，還有很多事要做。"
+ },
+ {
+  "word": "Armut",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "貧窮",
+  "exampleDe": "Trotz Arbeit leben manche Familien in Armut.",
+  "exampleZh": "儘管有工作，有些家庭仍生活在貧窮中。"
+ },
+ {
+  "word": "Krise",
+  "article": "die",
+  "plural": "die Krisen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "危機",
+  "exampleDe": "Während der Krise haben viele Geschäfte schließen müssen.",
+  "exampleZh": "危機期間，許多店家不得不關門。"
+ },
+ {
+  "word": "Vorurteil",
+  "article": "das",
+  "plural": "die Vorurteile",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "偏見",
+  "exampleDe": "Solche Vorurteile gegenüber Ausländern ärgern mich sehr.",
+  "exampleZh": "這種對外國人的偏見讓我很生氣。"
+ },
+ {
+  "word": "Flüchtling",
+  "article": "der",
+  "plural": "die Flüchtlinge",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "難民",
+  "exampleDe": "Unser Verein hilft Flüchtlingen beim Deutschlernen.",
+  "exampleZh": "我們協會協助難民學德語。"
+ },
+ {
+  "word": "Integration",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "融入；整合",
+  "exampleDe": "Ein Sprachkurs ist für die Integration besonders wichtig.",
+  "exampleZh": "語言課程對融入社會特別重要。"
+ },
+ {
+  "word": "Staatsangehörigkeit",
+  "article": "die",
+  "plural": "die Staatsangehörigkeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "國籍",
+  "exampleDe": "Welche Staatsangehörigkeit haben Sie?",
+  "exampleZh": "請問您的國籍是？"
+ },
+ {
+  "word": "Demonstration",
+  "article": "die",
+  "plural": "die Demonstrationen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "示威遊行",
+  "exampleDe": "An der Demonstration haben über 5000 Menschen teilgenommen.",
+  "exampleZh": "有超過五千人參加了這場示威。"
+ },
+ {
+  "word": "Verbot",
+  "article": "das",
+  "plural": "die Verbote",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "禁令",
+  "exampleDe": "Seit dem Verbot darf man in Kneipen nicht mehr rauchen.",
+  "exampleZh": "自從禁令實施後，酒吧裡就不能再抽菸了。"
+ },
+ {
+  "word": "Erlaubnis",
+  "article": "die",
+  "plural": "die Erlaubnisse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "許可；允許",
+  "exampleDe": "Ohne Erlaubnis darfst du hier nicht fotografieren.",
+  "exampleZh": "未經許可不能在這裡拍照。"
+ },
+ {
+  "word": "Verbrechen",
+  "article": "das",
+  "plural": "die Verbrechen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "犯罪；罪行",
+  "exampleDe": "Das Verbrechen wurde erst nach zwanzig Jahren aufgeklärt.",
+  "exampleZh": "這起犯罪案件過了二十年才偵破。"
+ },
+ {
+  "word": "Zeuge",
+  "article": "der",
+  "plural": "die Zeugen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "證人；目擊者",
+  "exampleDe": "Die Polizei sucht Zeugen, die den Unfall gesehen haben.",
+  "exampleZh": "警方正在尋找目擊事故的證人。"
+ },
+ {
+  "word": "Anwalt",
+  "article": "der",
+  "plural": "die Anwälte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "律師",
+  "exampleDe": "Wenn der Vermieter nicht reagiert, gehe ich zum Anwalt.",
+  "exampleZh": "如果房東沒回應，我就去找律師。"
+ },
+ {
+  "word": "Gefängnis",
+  "article": "das",
+  "plural": "die Gefängnisse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "監獄",
+  "exampleDe": "Wegen Betrugs saß er drei Jahre im Gefängnis.",
+  "exampleZh": "他因詐欺坐了三年牢。"
+ },
+ {
+  "word": "Strafe",
+  "article": "die",
+  "plural": "die Strafen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "處罰；罰款",
+  "exampleDe": "Für Falschparken zahlt man hier eine hohe Strafe.",
+  "exampleZh": "在這裡違規停車要付高額罰款。"
+ },
+ {
+  "word": "Spende",
+  "article": "die",
+  "plural": "die Spenden",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "捐款；捐贈",
+  "exampleDe": "Das Tierheim lebt fast nur von Spenden.",
+  "exampleZh": "這間動物收容所幾乎全靠捐款維持。"
+ },
+ {
+  "word": "Tradition",
+  "article": "die",
+  "plural": "die Traditionen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "傳統",
+  "exampleDe": "In unserer Familie ist Fondue an Silvester eine Tradition.",
+  "exampleZh": "在我們家，跨年夜吃起司鍋是一項傳統。"
+ },
+ {
+  "word": "Respekt",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "尊重；敬意",
+  "exampleDe": "Egal woher jemand kommt, jeder verdient Respekt.",
+  "exampleZh": "不論來自哪裡，每個人都值得尊重。"
+ },
+ {
+  "word": "Mülltrennung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "垃圾分類",
+  "exampleDe": "Mülltrennung ist in Deutschland ganz normal.",
+  "exampleZh": "垃圾分類在德國是很平常的事。"
+ },
+ {
+  "word": "demonstrieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "示威遊行",
+  "exampleDe": "Tausende Schüler demonstrierten gestern für den Klimaschutz.",
+  "exampleZh": "昨天數千名學生為氣候保護示威遊行。",
+  "verb": {
+   "praesens3": "demonstriert",
+   "praeteritum": "demonstrierte",
+   "perfekt": "hat demonstriert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "protestieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "抗議",
+  "exampleDe": "Die Anwohner protestieren gegen den Bau der neuen Straße.",
+  "exampleZh": "居民抗議興建新道路。",
+  "verb": {
+   "praesens3": "protestiert",
+   "praeteritum": "protestierte",
+   "perfekt": "hat protestiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "beschließen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "決定；議決",
+  "exampleDe": "Der Stadtrat hat beschlossen, die Bibliothek zu renovieren.",
+  "exampleZh": "市議會決定整修圖書館。",
+  "verb": {
+   "praesens3": "beschließt",
+   "praeteritum": "beschloss",
+   "perfekt": "hat beschlossen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "schützen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "保護",
+  "exampleDe": "Eine Impfung schützt vor der Krankheit.",
+  "exampleZh": "打疫苗可以預防這種疾病。",
+  "verb": {
+   "praesens3": "schützt",
+   "praeteritum": "schützte",
+   "perfekt": "hat geschützt",
+   "aux": "haben",
+   "note": "常作：schützen vor + Dat."
+  }
+ },
+ {
+  "word": "spenden",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "捐贈；捐款",
+  "exampleDe": "Jedes Jahr spendet sie Geld für Kinder in Not.",
+  "exampleZh": "她每年都捐錢給需要幫助的孩子。",
+  "verb": {
+   "praesens3": "spendet",
+   "praeteritum": "spendete",
+   "perfekt": "hat gespendet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "bestrafen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "處罰",
+  "exampleDe": "Wer zu schnell fährt, wird hier streng bestraft.",
+  "exampleZh": "在這裡超速會受到嚴厲處罰。",
+  "verb": {
+   "praesens3": "bestraft",
+   "praeteritum": "bestrafte",
+   "perfekt": "hat bestraft",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "abschaffen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "廢除；取消",
+  "exampleDe": "Die Stadt will die Parkgebühren am Wochenende abschaffen.",
+  "exampleZh": "市政府想取消週末停車費。",
+  "verb": {
+   "praesens3": "schafft ab",
+   "praeteritum": "schaffte ab",
+   "perfekt": "hat abgeschafft",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "einführen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "實施；引進",
+  "exampleDe": "Die Regierung hat eine neue Steuer auf Zucker eingeführt.",
+  "exampleZh": "政府開徵了新的糖稅。",
+  "verb": {
+   "praesens3": "führt ein",
+   "praeteritum": "führte ein",
+   "perfekt": "hat eingeführt",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "respektieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "尊重",
+  "exampleDe": "Ich bin anderer Meinung, aber ich respektiere deine Entscheidung.",
+  "exampleZh": "我意見不同，但我尊重你的決定。",
+  "verb": {
+   "praesens3": "respektiert",
+   "praeteritum": "respektierte",
+   "perfekt": "hat respektiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "verschmutzen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "污染；弄髒",
+  "exampleDe": "Autos und Fabriken verschmutzen die Luft in der Stadt.",
+  "exampleZh": "汽車和工廠污染了城市的空氣。",
+  "verb": {
+   "praesens3": "verschmutzt",
+   "praeteritum": "verschmutzte",
+   "perfekt": "hat verschmutzt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "betrügen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "欺騙；詐騙",
+  "exampleDe": "Im Internet wurde er um 800 Euro betrogen.",
+  "exampleZh": "他在網路上被騙了八百歐元。",
+  "verb": {
+   "praesens3": "betrügt",
+   "praeteritum": "betrog",
+   "perfekt": "hat betrogen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "politisch",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "政治的",
+  "exampleDe": "Über politische Themen sprechen wir beim Essen lieber nicht.",
+  "exampleZh": "吃飯時我們還是別談政治話題。"
+ },
+ {
+  "word": "demokratisch",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "民主的",
+  "exampleDe": "Die Entscheidung wurde demokratisch getroffen, alle durften abstimmen.",
+  "exampleZh": "這項決定是民主產生的，大家都能投票。"
+ },
+ {
+  "word": "gesellschaftlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "社會的",
+  "exampleDe": "Einsamkeit im Alter ist ein großes gesellschaftliches Problem.",
+  "exampleZh": "老年孤獨是一個嚴重的社會問題。"
+ },
+ {
+  "word": "international",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "國際的",
+  "exampleDe": "Bei uns arbeitet ein internationales Team aus zwölf Ländern.",
+  "exampleZh": "我們公司有來自十二國的國際團隊。"
+ },
+ {
+  "word": "öffentlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "公共的；公開的",
+  "exampleDe": "In öffentlichen Gebäuden ist das Rauchen verboten.",
+  "exampleZh": "公共建築內禁止吸菸。"
+ },
+ {
+  "word": "historisch",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "歷史的；歷史性的",
+  "exampleDe": "Die historische Altstadt zieht jedes Jahr viele Besucher an.",
+  "exampleZh": "這個歷史悠久的舊城區每年都吸引許多遊客。"
+ },
+ {
+  "word": "religiös",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "宗教的；虔誠的",
+  "exampleDe": "Meine Großmutter ist sehr religiös und geht jeden Sonntag in die Kirche.",
+  "exampleZh": "我祖母非常虔誠，每個星期天都上教堂。"
+ },
+ {
+  "word": "wirtschaftlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "經濟的",
+  "exampleDe": "Die wirtschaftliche Lage hat sich etwas verbessert.",
+  "exampleZh": "經濟情況略有好轉。"
+ },
+ {
+  "word": "tolerant",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "寬容的",
+  "exampleDe": "In unserer WG muss man tolerant sein, sonst gibt es Streit.",
+  "exampleZh": "在我們的合租公寓要寬容一點，不然會吵架。"
+ },
+ {
+  "word": "nachhaltig",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "永續的；持久的",
+  "exampleDe": "Wir versuchen, nachhaltig zu leben und weniger zu kaufen.",
+  "exampleZh": "我們試著永續生活，少買東西。"
+ },
+ {
+  "word": "ehrenamtlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "society",
+  "meaning": "志願的；無給的",
+  "exampleDe": "Er arbeitet ehrenamtlich bei der Tafel und verteilt Essen.",
+  "exampleZh": "他在食物銀行當志工，負責發放食物。"
+ },
+ {
+  "word": "Sendung",
+  "article": "die",
+  "plural": "die Sendungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "節目；郵件包裹",
+  "exampleDe": "Diese Sendung läuft jeden Sonntag um acht.",
+  "exampleZh": "這個節目每週日八點播出。"
+ },
+ {
+  "word": "Schlagzeile",
+  "article": "die",
+  "plural": "die Schlagzeilen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "新聞標題；頭條",
+  "exampleDe": "Der Skandal machte tagelang Schlagzeilen.",
+  "exampleZh": "那件醜聞連續好幾天登上頭條。"
+ },
+ {
+  "word": "Presse",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "新聞媒體；報界",
+  "exampleDe": "Die Presse hat ausführlich über den Streit berichtet.",
+  "exampleZh": "媒體詳細報導了這場爭端。"
+ },
+ {
+  "word": "Interview",
+  "article": "das",
+  "plural": "die Interviews",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "訪談；訪問",
+  "exampleDe": "In dem Interview spricht die Sängerin über ihre Kindheit.",
+  "exampleZh": "這位歌手在訪談中談到她的童年。"
+ },
+ {
+  "word": "Journalist",
+  "article": "der",
+  "plural": "die Journalisten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "記者",
+  "exampleDe": "Als Journalist muss man Informationen immer prüfen.",
+  "exampleZh": "身為記者，必須隨時查證資訊。"
+ },
+ {
+  "word": "Umfrage",
+  "article": "die",
+  "plural": "die Umfragen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "民意調查；問卷調查",
+  "exampleDe": "Laut einer Umfrage liest fast die Hälfte der Jugendlichen keine Zeitung.",
+  "exampleZh": "根據一項調查，近半數青少年不看報紙。"
+ },
+ {
+  "word": "Quelle",
+  "article": "die",
+  "plural": "die Quellen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "來源；出處",
+  "exampleDe": "Du solltest immer prüfen, aus welcher Quelle eine Nachricht stammt.",
+  "exampleZh": "你應該隨時查證一則消息的來源。"
+ },
+ {
+  "word": "Abonnement",
+  "article": "das",
+  "plural": "die Abonnements",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "訂閱；長期票券",
+  "exampleDe": "Mein Abonnement läuft Ende des Monats aus.",
+  "exampleZh": "我的訂閱月底就到期了。"
+ },
+ {
+  "word": "Kommentar",
+  "article": "der",
+  "plural": "die Kommentare",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "評論；留言",
+  "exampleDe": "Unter dem Video standen hunderte böse Kommentare.",
+  "exampleZh": "影片底下有好幾百則惡毒的留言。"
+ },
+ {
+  "word": "Anhang",
+  "article": "der",
+  "plural": "die Anhänge",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "電子郵件附件",
+  "exampleDe": "Im Anhang finden Sie meinen Lebenslauf.",
+  "exampleZh": "我的履歷請見附件。"
+ },
+ {
+  "word": "Website",
+  "article": "die",
+  "plural": "die Websites",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "網站",
+  "exampleDe": "Die Öffnungszeiten stehen auf unserer Website.",
+  "exampleZh": "營業時間都在我們的網站上。"
+ },
+ {
+  "word": "Suchmaschine",
+  "article": "die",
+  "plural": "die Suchmaschinen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "搜尋引擎",
+  "exampleDe": "Ich habe den Namen einfach in die Suchmaschine eingegeben.",
+  "exampleZh": "我直接把名字輸入搜尋引擎。"
+ },
+ {
+  "word": "Datenschutz",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "個人資料保護",
+  "exampleDe": "Aus Gründen des Datenschutzes darf ich Ihnen das nicht sagen.",
+  "exampleZh": "基於個資保護，我不能告訴您這件事。"
+ },
+ {
+  "word": "Daten",
+  "article": "die",
+  "plural": "(只有複數)",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "資料；數據",
+  "exampleDe": "Wurden bei dem Hackerangriff auch persönliche Daten gestohlen?",
+  "exampleZh": "駭客攻擊時個人資料也被偷了嗎？"
+ },
+ {
+  "word": "Nutzer",
+  "article": "der",
+  "plural": "die Nutzer",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "使用者",
+  "exampleDe": "Die App hat inzwischen über eine Million Nutzer.",
+  "exampleZh": "這個應用程式現在已有超過一百萬名使用者。"
+ },
+ {
+  "word": "Netz",
+  "article": "das",
+  "plural": "die Netze",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "網路；訊號；網",
+  "exampleDe": "Auf dem Land habe ich oft kein Netz.",
+  "exampleZh": "在鄉下我常常沒訊號。"
+ },
+ {
+  "word": "Netzwerk",
+  "article": "das",
+  "plural": "die Netzwerke",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "網路；人際網絡；社群網路",
+  "exampleDe": "Viele Jugendliche verbringen täglich Stunden in sozialen Netzwerken.",
+  "exampleZh": "許多青少年每天花好幾個小時在社群網路上。"
+ },
+ {
+  "word": "Technik",
+  "article": "die",
+  "plural": "die Techniken",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "技術；科技",
+  "exampleDe": "Mein Vater kommt mit der modernen Technik gar nicht klar.",
+  "exampleZh": "我爸爸完全搞不定現代科技。"
+ },
+ {
+  "word": "berichten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "報導；敘述",
+  "exampleDe": "Alle Zeitungen haben über den Unfall berichtet.",
+  "exampleZh": "所有報紙都報導了這起事故。",
+  "verb": {
+   "praesens3": "berichtet",
+   "praeteritum": "berichtete",
+   "perfekt": "hat berichtet",
+   "aux": "haben",
+   "note": "常作：berichten über + Akk."
+  }
+ },
+ {
+  "word": "speichern",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "儲存",
+  "exampleDe": "Vergiss nicht, das Dokument zu speichern, bevor du gehst.",
+  "exampleZh": "離開前別忘了存檔。",
+  "verb": {
+   "praesens3": "speichert",
+   "praeteritum": "speicherte",
+   "perfekt": "hat gespeichert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "löschen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "刪除；撲滅",
+  "exampleDe": "Aus Versehen habe ich alle Fotos gelöscht.",
+  "exampleZh": "我不小心把所有照片都刪了。",
+  "verb": {
+   "praesens3": "löscht",
+   "praeteritum": "löschte",
+   "perfekt": "hat gelöscht",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "klicken",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "點擊",
+  "exampleDe": "Klicken Sie unten rechts auf das Feld „Weiter“.",
+  "exampleZh": "請點右下角的「繼續」。",
+  "verb": {
+   "praesens3": "klickt",
+   "praeteritum": "klickte",
+   "perfekt": "hat geklickt",
+   "aux": "haben",
+   "note": "常作：klicken auf + Akk."
+  }
+ },
+ {
+  "word": "ausdrucken",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "列印出來",
+  "exampleDe": "Soll ich dir das Ticket ausdrucken?",
+  "exampleZh": "要我幫你把票印出來嗎？",
+  "verb": {
+   "praesens3": "druckt aus",
+   "praeteritum": "druckte aus",
+   "perfekt": "hat ausgedruckt",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "abonnieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "訂閱",
+  "exampleDe": "Ich habe den Kanal abonniert, weil die Videos so lustig sind.",
+  "exampleZh": "我訂閱了這個頻道，因為影片很好笑。",
+  "verb": {
+   "praesens3": "abonniert",
+   "praeteritum": "abonnierte",
+   "perfekt": "hat abonniert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "kommentieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "評論；留言",
+  "exampleDe": "Sie kommentiert fast jeden Beitrag ihrer Freundin.",
+  "exampleZh": "她幾乎每則朋友的貼文都會留言。",
+  "verb": {
+   "praesens3": "kommentiert",
+   "praeteritum": "kommentierte",
+   "perfekt": "hat kommentiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "installieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "安裝",
+  "exampleDe": "Nachdem ich das Programm installiert hatte, ging nichts mehr.",
+  "exampleZh": "我把程式裝好之後，電腦就什麼都不能用了。",
+  "verb": {
+   "praesens3": "installiert",
+   "praeteritum": "installierte",
+   "perfekt": "hat installiert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "weiterleiten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "轉寄；轉發",
+  "exampleDe": "Ich leite dir die E-Mail vom Chef gleich weiter.",
+  "exampleZh": "我馬上把老闆的信轉寄給你。",
+  "verb": {
+   "praesens3": "leitet weiter",
+   "praeteritum": "leitete weiter",
+   "perfekt": "hat weitergeleitet",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "nutzen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "使用；利用",
+  "exampleDe": "Die Pause nutze ich meistens für einen kurzen Spaziergang.",
+  "exampleZh": "我通常利用休息時間散個步。",
+  "verb": {
+   "praesens3": "nutzt",
+   "praeteritum": "nutzte",
+   "perfekt": "hat genutzt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "teilen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "分享；分開",
+  "exampleDe": "Sie hat das Foto mit all ihren Freunden geteilt.",
+  "exampleZh": "她把照片分享給所有朋友。",
+  "verb": {
+   "praesens3": "teilt",
+   "praeteritum": "teilte",
+   "perfekt": "hat geteilt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "verbinden",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "連接；轉接",
+  "exampleDe": "Einen Moment, ich verbinde Sie mit der Buchhaltung.",
+  "exampleZh": "請稍等，我幫您轉接會計部。",
+  "verb": {
+   "praesens3": "verbindet",
+   "praeteritum": "verband",
+   "perfekt": "hat verbunden",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "eingeben",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "輸入",
+  "exampleDe": "Geben Sie bitte Ihre Kundennummer ein.",
+  "exampleZh": "請輸入您的客戶編號。",
+  "verb": {
+   "praesens3": "gibt ein",
+   "praeteritum": "gab ein",
+   "perfekt": "hat eingegeben",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "werben",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "打廣告；宣傳",
+  "exampleDe": "Die Firma wirbt mit einem bekannten Fußballer für ihre Schuhe.",
+  "exampleZh": "這家公司請知名足球員代言鞋子。",
+  "verb": {
+   "praesens3": "wirbt",
+   "praeteritum": "warb",
+   "perfekt": "hat geworben",
+   "aux": "haben",
+   "note": "常作：werben für + Akk."
+  }
+ },
+ {
+  "word": "digital",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "media",
+  "meaning": "數位的",
+  "exampleDe": "Viele Ämter wollen ihre Formulare bald digital anbieten.",
+  "exampleZh": "許多機關打算很快提供線上表格。"
+ },
+ {
+  "word": "Behörde",
+  "article": "die",
+  "plural": "die Behörden",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "政府機關",
+  "exampleDe": "Für den Umzug muss ich zu mehreren Behörden gehen.",
+  "exampleZh": "搬家我得跑好幾個機關。"
+ },
+ {
+  "word": "Bescheinigung",
+  "article": "die",
+  "plural": "die Bescheinigungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "證明文件",
+  "exampleDe": "Ich brauche eine Bescheinigung von der Universität für das Visum.",
+  "exampleZh": "我辦簽證需要學校開的證明。"
+ },
+ {
+  "word": "Genehmigung",
+  "article": "die",
+  "plural": "die Genehmigungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "許可；批准",
+  "exampleDe": "Für den Umbau braucht man eine Genehmigung von der Stadt.",
+  "exampleZh": "改建需要市政府的許可。"
+ },
+ {
+  "word": "Antrag",
+  "article": "der",
+  "plural": "die Anträge",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "申請；申請書",
+  "exampleDe": "Mein Antrag auf Wohngeld wurde abgelehnt.",
+  "exampleZh": "我的住房補助申請被拒絕了。"
+ },
+ {
+  "word": "Gebühr",
+  "article": "die",
+  "plural": "die Gebühren",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "規費；手續費",
+  "exampleDe": "Für den neuen Ausweis zahlt man eine Gebühr von 37 Euro.",
+  "exampleZh": "辦新證件要繳三十七歐元規費。"
+ },
+ {
+  "word": "Personalausweis",
+  "article": "der",
+  "plural": "die Personalausweise",
+  "pos": "noun",
+  "level": "A2",
+  "topic": "city",
+  "meaning": "身分證",
+  "exampleDe": "Vergiss nicht, deinen Personalausweis mitzunehmen!",
+  "exampleZh": "別忘了帶身分證！"
+ },
+ {
+  "word": "Aufenthaltserlaubnis",
+  "article": "die",
+  "plural": "die Aufenthaltserlaubnisse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "居留許可",
+  "exampleDe": "Meine Aufenthaltserlaubnis läuft im Mai ab.",
+  "exampleZh": "我的居留許可五月到期。"
+ },
+ {
+  "word": "Botschaft",
+  "article": "die",
+  "plural": "die Botschaften",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "大使館",
+  "exampleDe": "Den neuen Pass muss ich bei der Botschaft in Berlin abholen.",
+  "exampleZh": "我得去柏林的大使館領新護照。"
+ },
+ {
+  "word": "Innenstadt",
+  "article": "die",
+  "plural": "die Innenstädte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "市中心",
+  "exampleDe": "In der Innenstadt findet man kaum einen Parkplatz.",
+  "exampleZh": "市中心幾乎找不到停車位。"
+ },
+ {
+  "word": "Vorort",
+  "article": "der",
+  "plural": "die Vororte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "郊區",
+  "exampleDe": "Weil die Mieten dort niedriger sind, wohnen wir in einem Vorort.",
+  "exampleZh": "因為那裡房租比較低，我們住在郊區。"
+ },
+ {
+  "word": "Fußgängerzone",
+  "article": "die",
+  "plural": "die Fußgängerzonen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "行人徒步區",
+  "exampleDe": "Am Samstag ist die Fußgängerzone immer voller Menschen.",
+  "exampleZh": "週六行人徒步區總是人山人海。"
+ },
+ {
+  "word": "Denkmal",
+  "article": "das",
+  "plural": "die Denkmäler",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "紀念碑；古蹟",
+  "exampleDe": "Vor dem Denkmal treffen sich oft Touristengruppen.",
+  "exampleZh": "紀念碑前常有旅行團集合。"
+ },
+ {
+  "word": "Baustelle",
+  "article": "die",
+  "plural": "die Baustellen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "工地",
+  "exampleDe": "Wegen der Baustelle vor dem Haus kann ich morgens nicht schlafen.",
+  "exampleZh": "因為家門前的工地，我早上都睡不好。"
+ },
+ {
+  "word": "Einwohner",
+  "article": "der",
+  "plural": "die Einwohner",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "居民",
+  "exampleDe": "Die Stadt hat ungefähr 80.000 Einwohner.",
+  "exampleZh": "這座城市大約有八萬名居民。"
+ },
+ {
+  "word": "Lärm",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "噪音",
+  "exampleDe": "Der Lärm von der Straße stört mich vor allem nachts.",
+  "exampleZh": "路上的噪音尤其在晚上吵到我。"
+ },
+ {
+  "word": "Nachbarschaft",
+  "article": "die",
+  "plural": "die Nachbarschaften",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "鄰里；附近一帶",
+  "exampleDe": "In unserer Nachbarschaft gibt es einen tollen Bäcker.",
+  "exampleZh": "我們家附近有間很棒的麵包店。"
+ },
+ {
+  "word": "Notruf",
+  "article": "der",
+  "plural": "die Notrufe",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "緊急電話",
+  "exampleDe": "Den Notruf 112 kann man in ganz Europa wählen.",
+  "exampleZh": "全歐洲都可以撥打緊急電話一一二。"
+ },
+ {
+  "word": "beantragen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "申請",
+  "exampleDe": "Wo kann ich einen neuen Reisepass beantragen?",
+  "exampleZh": "我可以在哪裡申請新護照？",
+  "verb": {
+   "praesens3": "beantragt",
+   "praeteritum": "beantragte",
+   "perfekt": "hat beantragt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "abreißen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "拆除",
+  "exampleDe": "Das alte Kino wird nächstes Jahr abgerissen.",
+  "exampleZh": "那間老電影院明年將被拆除。",
+  "verb": {
+   "praesens3": "reißt ab",
+   "praeteritum": "riss ab",
+   "perfekt": "hat abgerissen",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "genehmigen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "批准；核准",
+  "exampleDe": "Die Stadt hat unseren Antrag endlich genehmigt.",
+  "exampleZh": "市政府終於核准了我們的申請。",
+  "verb": {
+   "praesens3": "genehmigt",
+   "praeteritum": "genehmigte",
+   "perfekt": "hat genehmigt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "ländlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "鄉村的",
+  "exampleDe": "Sie ist in einer ländlichen Gegend aufgewachsen.",
+  "exampleZh": "她在鄉村地區長大。"
+ },
+ {
+  "word": "zentral",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "位於中心的；核心的",
+  "exampleDe": "Unsere Wohnung liegt sehr zentral, nur fünf Minuten vom Bahnhof.",
+  "exampleZh": "我們的公寓位置很方便，離車站只要五分鐘。"
+ },
+ {
+  "word": "abgelegen",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "偏僻的",
+  "exampleDe": "Das Hotel war so abgelegen, dass kein Bus dorthin fuhr.",
+  "exampleZh": "那間旅館偏僻到沒有公車到。"
+ },
+ {
+  "word": "belebt",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "熱鬧的；人來人往的",
+  "exampleDe": "Am Abend ist dieser Platz besonders belebt.",
+  "exampleZh": "這個廣場到了晚上特別熱鬧。"
+ },
+ {
+  "word": "überfüllt",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "city",
+  "meaning": "人滿為患的；過於擁擠的",
+  "exampleDe": "Morgens um acht ist die U-Bahn immer überfüllt.",
+  "exampleZh": "早上八點地鐵總是擠滿了人。"
+ },
+ {
+  "word": "Anschluss",
+  "article": "der",
+  "plural": "die Anschlüsse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "轉乘班次；銜接",
+  "exampleDe": "Wegen der Verspätung habe ich meinen Anschluss verpasst.",
+  "exampleZh": "因為誤點，我錯過了轉乘的班次。"
+ },
+ {
+  "word": "Reservierung",
+  "article": "die",
+  "plural": "die Reservierungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "預約；訂位",
+  "exampleDe": "Ohne Reservierung bekommt man im Sommer kein Zimmer.",
+  "exampleZh": "夏天沒預約就訂不到房間。"
+ },
+ {
+  "word": "Buchung",
+  "article": "die",
+  "plural": "die Buchungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "預訂",
+  "exampleDe": "Die Bestätigung Ihrer Buchung bekommen Sie per E-Mail.",
+  "exampleZh": "您會以電子郵件收到預訂確認函。"
+ },
+ {
+  "word": "Aufenthalt",
+  "article": "der",
+  "plural": "die Aufenthalte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "停留；逗留",
+  "exampleDe": "Während unseres Aufenthalts in Prag hat es nur geregnet.",
+  "exampleZh": "我們在布拉格停留期間一直下雨。"
+ },
+ {
+  "word": "Autobahn",
+  "article": "die",
+  "plural": "die Autobahnen",
+  "pos": "noun",
+  "level": "A2",
+  "topic": "travel",
+  "meaning": "高速公路",
+  "exampleDe": "Auf der Autobahn gab es heute früh einen langen Stau.",
+  "exampleZh": "今天一早高速公路上大塞車。"
+ },
+ {
+  "word": "Einbahnstraße",
+  "article": "die",
+  "plural": "die Einbahnstraßen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "單行道",
+  "exampleDe": "Das ist eine Einbahnstraße, du darfst hier nicht rein!",
+  "exampleZh": "這是單行道，你不能開進去！"
+ },
+ {
+  "word": "Geschwindigkeit",
+  "article": "die",
+  "plural": "die Geschwindigkeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "速度",
+  "exampleDe": "Bei hoher Geschwindigkeit braucht man einen längeren Bremsweg.",
+  "exampleZh": "車速快時，煞車距離也會變長。"
+ },
+ {
+  "word": "Strafzettel",
+  "article": "der",
+  "plural": "die Strafzettel",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "罰單",
+  "exampleDe": "Schon wieder ein Strafzettel, nur weil ich fünf Minuten falsch geparkt habe!",
+  "exampleZh": "又一張罰單，只不過違停五分鐘！"
+ },
+ {
+  "word": "Fußgänger",
+  "article": "der",
+  "plural": "die Fußgänger",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "行人",
+  "exampleDe": "Autofahrer müssen hier auf Fußgänger achten.",
+  "exampleZh": "開車的人在這裡要注意行人。"
+ },
+ {
+  "word": "Fahrgast",
+  "article": "der",
+  "plural": "die Fahrgäste",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "乘客",
+  "exampleDe": "Die Fahrgäste mussten eine Stunde im Zug warten.",
+  "exampleZh": "乘客們在車上等了一個小時。"
+ },
+ {
+  "word": "Passagier",
+  "article": "der",
+  "plural": "die Passagiere",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "（飛機、船的）乘客",
+  "exampleDe": "Alle Passagiere werden gebeten, sich anzuschnallen.",
+  "exampleZh": "請所有乘客繫好安全帶。"
+ },
+ {
+  "word": "Verkehrsmittel",
+  "article": "das",
+  "plural": "die Verkehrsmittel",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "交通工具",
+  "exampleDe": "Welches Verkehrsmittel benutzt du am häufigsten?",
+  "exampleZh": "你最常搭什麼交通工具？"
+ },
+ {
+  "word": "Berufsverkehr",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "上下班尖峰車潮",
+  "exampleDe": "Im Berufsverkehr brauche ich eine Stunde bis ins Büro.",
+  "exampleZh": "尖峰時段我要花一小時才到得了公司。"
+ },
+ {
+  "word": "Pendler",
+  "article": "der",
+  "plural": "die Pendler",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "通勤族",
+  "exampleDe": "Für viele Pendler ist die Bahn teuer geworden.",
+  "exampleZh": "對許多通勤族來說，火車變貴了。"
+ },
+ {
+  "word": "Entfernung",
+  "article": "die",
+  "plural": "die Entfernungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "距離",
+  "exampleDe": "Aus dieser Entfernung kann ich das Schild nicht lesen.",
+  "exampleZh": "這麼遠我看不清楚牌子上的字。"
+ },
+ {
+  "word": "Gegend",
+  "article": "die",
+  "plural": "die Gegenden",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "地區；一帶",
+  "exampleDe": "Kennst du dich in dieser Gegend aus?",
+  "exampleZh": "你熟悉這一帶嗎？"
+ },
+ {
+  "word": "Zoll",
+  "article": "der",
+  "plural": "die Zölle",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "海關；關稅",
+  "exampleDe": "Beim Zoll wurde unser ganzes Gepäck kontrolliert.",
+  "exampleZh": "我們所有行李都被海關檢查了。"
+ },
+ {
+  "word": "Handgepäck",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "手提行李",
+  "exampleDe": "Flüssigkeiten sind im Handgepäck nur begrenzt erlaubt.",
+  "exampleZh": "手提行李中的液體有數量限制。"
+ },
+ {
+  "word": "Vorfahrt",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "路權；優先行駛權",
+  "exampleDe": "An dieser Kreuzung hat der Bus Vorfahrt.",
+  "exampleZh": "在這個路口公車有優先路權。"
+ },
+ {
+  "word": "Auskunft",
+  "article": "die",
+  "plural": "die Auskünfte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "詢問服務；資訊",
+  "exampleDe": "Am Schalter bekommen Sie weitere Auskünfte.",
+  "exampleZh": "您可以在櫃台獲得進一步資訊。"
+ },
+ {
+  "word": "überholen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "超車",
+  "exampleDe": "In der Kurve darfst du nicht überholen.",
+  "exampleZh": "彎道不能超車。",
+  "verb": {
+   "praesens3": "überholt",
+   "praeteritum": "überholte",
+   "perfekt": "hat überholt",
+   "aux": "haben",
+   "note": "不可分動詞"
+  }
+ },
+ {
+  "word": "pendeln",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "通勤",
+  "exampleDe": "Mein Mann pendelt jeden Tag zwischen Mainz und Frankfurt.",
+  "exampleZh": "我先生每天在美因茲和法蘭克福之間通勤。",
+  "verb": {
+   "praesens3": "pendelt",
+   "praeteritum": "pendelte",
+   "perfekt": "ist gependelt",
+   "aux": "sein"
+  }
+ },
+ {
+  "word": "stornieren",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "取消（訂單、預約）",
+  "exampleDe": "Bis 24 Stunden vorher können Sie kostenlos stornieren.",
+  "exampleZh": "您在二十四小時前都可以免費取消。",
+  "verb": {
+   "praesens3": "storniert",
+   "praeteritum": "stornierte",
+   "perfekt": "hat storniert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "verreisen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "出遠門；去旅行",
+  "exampleDe": "Über Ostern verreisen wir nicht, wir bleiben zu Hause.",
+  "exampleZh": "復活節我們不出遠門，待在家。",
+  "verb": {
+   "praesens3": "verreist",
+   "praeteritum": "verreiste",
+   "perfekt": "ist verreist",
+   "aux": "sein"
+  }
+ },
+ {
+  "word": "anschnallen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "繫上安全帶",
+  "exampleDe": "Schnall dich bitte an, bevor ich losfahre.",
+  "exampleZh": "我開車前請先繫好安全帶。",
+  "verb": {
+   "praesens3": "schnallt an",
+   "praeteritum": "schnallte an",
+   "perfekt": "hat angeschnallt",
+   "aux": "haben",
+   "note": "可分動詞；常作反身：sich anschnallen"
+  }
+ },
+ {
+  "word": "tanken",
+  "article": "",
+  "pos": "verb",
+  "level": "A2",
+  "topic": "travel",
+  "meaning": "加油",
+  "exampleDe": "Wir müssen unbedingt noch tanken, die Anzeige ist schon rot.",
+  "exampleZh": "我們一定要去加油了，油量表已經亮紅燈。",
+  "verb": {
+   "praesens3": "tankt",
+   "praeteritum": "tankte",
+   "perfekt": "hat getankt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "landen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "降落",
+  "exampleDe": "Das Flugzeug konnte wegen des Nebels nicht landen.",
+  "exampleZh": "飛機因為起霧無法降落。",
+  "verb": {
+   "praesens3": "landet",
+   "praeteritum": "landete",
+   "perfekt": "ist gelandet",
+   "aux": "sein"
+  }
+ },
+ {
+  "word": "starten",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "起飛；開始；發動",
+  "exampleDe": "Unser Flug ist mit zwei Stunden Verspätung gestartet.",
+  "exampleZh": "我們的班機晚了兩小時才起飛。",
+  "verb": {
+   "praesens3": "startet",
+   "praeteritum": "startete",
+   "perfekt": "ist gestartet",
+   "aux": "haben/sein",
+   "note": "不及物（出發、起飛、開始）用 sein；及物（發動機器、啟動計畫）用 haben"
+  }
+ },
+ {
+  "word": "abschleppen",
+  "article": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "拖吊",
+  "exampleDe": "Mein Auto wurde abgeschleppt, weil ich vor einer Einfahrt stand.",
+  "exampleZh": "我的車因為擋住出入口被拖吊了。",
+  "verb": {
+   "praesens3": "schleppt ab",
+   "praeteritum": "schleppte ab",
+   "perfekt": "hat abgeschleppt",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "verspätet",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "延誤的；遲來的",
+  "exampleDe": "Wegen des verspäteten Flugs kamen wir erst um Mitternacht an.",
+  "exampleZh": "因為班機延誤，我們半夜才抵達。"
+ },
+ {
+  "word": "ausgebucht",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "客滿的；已訂滿的",
+  "exampleDe": "Tut mir leid, das Hotel ist am Wochenende komplett ausgebucht.",
+  "exampleZh": "很抱歉，飯店週末已經全部客滿。"
+ },
+ {
+  "word": "ermäßigt",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "優惠的；折扣的",
+  "exampleDe": "Für Rentner gibt es ermäßigte Eintrittskarten.",
+  "exampleZh": "退休人士可買優惠門票。"
+ },
+ {
+  "word": "entfernt",
+  "article": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "travel",
+  "meaning": "距離…遠的",
+  "exampleDe": "Der Campingplatz ist nur zwei Kilometer vom Strand entfernt.",
+  "exampleZh": "露營區離海灘只有兩公里。"
+ }
+]

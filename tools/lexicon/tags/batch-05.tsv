@@ -1,0 +1,251 @@
+id	level	topic	kind	push	flag
+der-kassenbon	A2	shop	word	y	
+die-kategorie	B1	general	word	y	
+die-kathedrale	B2	city	word	y	
+die-katze	A1	nature	word	y	
+kaufen	A1	shop	word	y	
+das-kaufhaus	A2	shop	word	y	
+die-kaution	B1	home	word	y	
+kein	A1	grammar	word	y	
+kein-geld-haben	A2	shop	phrase	y	
+kein-wunder	B1	general	phrase	y	
+keine-zeit-verlieren	B1	time	phrase	y	
+keinen-plan-haben	B1	general	phrase	y	
+keinen-sinn-machen	B1	general	phrase	y	常見說法為 keinen Sinn ergeben/Sinn machen
+keiner-keines-keins	A2	grammar	chunk	n	併到 kein 或 keiner 詞條
+keiner-weiss-es	A2	general	chunk	n	
+der-keller	A1	home	word	y	
+kennen	A1	general	word	y	
+kennenlernen	A1	people	word	y	
+die-kenntnisse	B1	work	word	y	複數名詞
+die-kerze	A2	home	word	y	
+die-ki	B1	media	word	y	縮寫
+der-kilometer	A1	travel	word	y	
+das-kind	A1	people	word	y	
+die-kinderueberraschung	B2	food	word	n	品牌／文化專有詞
+die-kinetische-skulptur	C1	leisure	phrase	n	
+das-kino	A1	leisure	word	y	
+der-kiosk	A2	shop	word	y	
+die-kirche	A1	city	word	y	
+die-kirschbluete	B1	nature	word	y	
+klar	A2	general	word	y	
+die-klassenfahrt	A2	school	word	y	
+der-klassenlehrer	A2	school	word	y	
+das-klavier	A1	leisure	word	y	
+das-kleid	A1	daily	word	y	
+die-kleidung	A1	daily	word	y	
+die-kleinigkeit	B1	general	word	y	
+das-klima	B1	nature	word	y	
+die-klimaanlage	A2	home	word	y	
+der-klimawandel	B1	society	word	y	
+die-klinge	C1	daily	word	n	
+klingen	B1	general	word	y	
+das-klopapier	A2	home	word	y	
+knapp	B1	general	word	y	詞性可能是 adjective/adverb
+der-knick	C1	general	word	n	
+kochen	A1	food	word	y	
+der-koffer	A1	travel	word	y	
+die-kohlenhydrate	B2	health	word	y	複數名詞
+die-kohlensaeure	B1	food	word	y	飲料語境「氣泡」
+der-kollege	A1	work	word	y	
+komisch	A2	feel	word	y	
+das-komma	A2	school	term	n	
+kommen	A1	travel	word	y	
+kommend	B1	time	word	y	
+der-kompromiss	B1	society	word	y	
+der-konditor	B2	food	word	y	
+die-konditorei	A2	food	word	y	
+die-konditorin	B2	food	word	n	陰性形式，可併入 der Konditor
+die-konferenz	B1	work	word	y	
+der-konflikt	B1	society	word	y	
+koennen	A1	grammar	word	y	
+das-konstrukt	C1	general	word	n	
+das-konto	A2	shop	word	y	
+das-konzentrationslager	B2	society	word	n	歷史專有名詞
+das-konzert	A1	leisure	word	y	
+der-kopf	A1	health	word	y	
+der-koerper	A2	health	word	y	
+korrigieren	A2	school	word	y	
+die-kraft	B1	general	word	y	
+das-kraftfahrzeug	B2	travel	word	n	
+kraeftig	B1	health	word	y	
+kraeftigen	B2	health	word	y	
+die-kraehe	B2	nature	word	y	
+krakau	A2	travel	word	n	專有名詞，詞性應為地名
+das-krankenhaus	A1	health	word	y	
+der-krankenpfleger	A2	health	word	y	
+die-krankenschwester	A2	health	word	y	
+die-krankheit	A2	health	word	y	
+der-kratzer	B1	general	word	y	
+der-krebs	B1	health	word	y	兩義，癌症義為主
+der-kredit	B1	shop	word	y	
+die-kreditkarte	A2	shop	word	y	
+der-kreislauf	B2	health	word	y	
+die-kreuzung	A2	travel	word	y	
+der-krieg	A2	society	word	y	
+der-krimi	B1	leisure	word	y	
+kriminal	C1	society	word	n	詞綴形式（Kriminal-），非獨立形容詞
+kritisieren	B1	general	word	y	
+die-kueche	A1	home	word	y	
+der-kuchen	A1	food	word	y	
+der-kuchenwettbewerb	B1	leisure	word	n	
+der-kugelschreiber	A1	school	word	y	
+die-kuh	A2	nature	word	y	
+der-kuehlschrank	A1	home	word	y	
+kulant	C1	shop	word	y	
+die-kultur	B1	society	word	y	
+der-kulturschock	B1	society	word	y	
+der-kunde	A2	shop	word	y	
+kuendigen	B1	work	word	y	
+die-kundin	A2	shop	word	n	陰性形式，可併入 der Kunde
+die-kunst	A2	leisure	word	y	
+der-kuenstler	A2	leisure	word	y	
+kunstvoll	B2	leisure	word	y	
+das-kunstwerk	B1	leisure	word	y	
+der-kunstwerkladen	B2	shop	word	n	自創／罕見複合字
+der-kurs	A1	school	word	y	
+kuerzlich	B1	time	word	y	
+laecheln	A2	feel	word	y	
+laden	B1	media	word	y	不規則動詞；與 der Laden 不同
+der-laden	A2	shop	word	y	
+die-ladenflaeche	B2	shop	word	n	
+die-lage	B1	city	word	y	
+die-lampe	A1	home	word	y	
+das-land	A1	society	word	y	
+die-landkarte	A2	travel	word	y	
+langeweile-haben	B1	feel	phrase	y	
+lassen	A2	grammar	word	y	
+die-lauchzwiebel	B1	food	word	y	
+laufen	A1	leisure	word	y	
+die-laune	B1	feel	word	y	
+leben	A1	daily	word	y	
+das-leben	A1	daily	word	y	
+lebendig	B1	general	word	y	
+der-lebenslauf	A2	work	word	y	
+das-lebensmittel	A2	food	word	y	
+die-lebermetastase	C1	health	word	n	
+lebhaft	B1	people	word	y	
+lecker	A1	food	word	y	
+leckeres-essen	A2	food	chunk	n	
+leer	A2	general	word	y	
+leer-sein	A2	general	chunk	n	
+die-leere	B2	feel	word	y	
+legen	A1	home	word	y	
+lehren	B1	school	word	y	
+der-lehrer	A1	school	word	y	
+die-lehrerin	A1	school	word	n	陰性形式，可併入 der Lehrer
+leicht	A2	general	word	y	
+leihen	B1	shop	word	y	
+die-leistung	B1	work	word	y	
+das-leitungswasser	B1	food	word	y	
+lernen	A1	school	word	y	
+lesen	A1	school	word	y	
+letzte-woche	A1	time	chunk	n	
+letzten-freitag	A2	time	chunk	n	
+letzten-montag	A2	time	chunk	n	
+letzten-samstag	A2	time	chunk	n	
+letzten-sonntag	A2	time	chunk	n	
+die-leute	A1	people	word	y	複數名詞
+das-licht	A2	home	word	y	
+die-liebe	A2	feel	word	y	
+lieben	A2	feel	word	y	
+lieber	A1	grammar	word	y	lieb 的比較級副詞
+lieber-nicht	A2	general	chunk	n	
+das-lied	A2	leisure	word	y	
+die-lieferung	B1	shop	word	y	
+liegen	A1	home	word	y	
+lindern	B2	health	word	y	
+links	A1	travel	word	y	詞性應為副詞
+das-literaturmuseum	B2	city	word	n	專有機構名
+locker	B1	feel	word	y	
+der-loeffel	A1	food	word	y	
+der-lohn	B1	work	word	y	
+die-loesung	B1	school	word	y	
+der-loewe	A2	nature	word	y	
+die-luft	A2	nature	word	y	
+luegen	B1	people	word	y	
+die-lust	B1	feel	word	y	
+der-luxus	B2	shop	word	y	
+mach-es-gut	A2	daily	chunk	n	
+machbar	B2	general	word	y	
+machen	A1	general	word	y	
+die-macht	B1	society	word	y	
+der-machtkampf	B2	society	word	n	
+das-maedchen	A1	people	word	y	
+maedchen-fuer-alles	B2	work	phrase	y	
+der-magen	A2	health	word	y	
+die-mahlzeit	B1	food	word	y	
+die-mailbox	B1	media	word	y	
+der-main	A2	nature	word	n	專有名詞（河名）
+mal	A1	grammar	word	y	詞性應為副詞／語氣詞
+mal-mal	B1	grammar	phrase	y	
+malen	A2	leisure	word	y	
+manche	A2	grammar	word	y	
+der-mangel	B2	general	word	y	
+der-mann	A1	people	word	y	
+maennlich	B1	people	word	y	
+die-mannschaft	A2	leisure	word	y	
+der-mantel	A1	daily	word	y	
+der-markt	A1	shop	word	y	
+die-maschine	A2	media	word	y	
+die-maske	B1	health	word	y	
+das-material	B1	general	word	y	
+die-mathe	A2	school	word	y	口語，可併入 die Mathematik
+die-mathematik	A2	school	word	y	
+die-maus	A1	nature	word	y	
+meckern	B2	feel	word	y	
+die-medien	B1	media	word	y	複數名詞
+das-medikament	A2	health	word	y	
+die-medizin	B1	health	word	y	
+das-meer	A1	nature	word	y	
+die-meeresfruechte	B1	food	word	y	複數名詞
+die-mehlspeise	B2	food	word	n	奧地利用語
+mehrere	A2	grammar	word	y	詞性應為不定代名詞／數詞
+mehrmals	A2	time	word	y	
+mehrsprachig	B1	school	word	y	
+mein-herzliches-beileid	B2	society	chunk	n	
+meinen	A2	general	word	y	
+meiner-meinung-nach	B1	general	phrase	y	
+die-meinung	A2	general	word	y	
+meist	B1	grammar	word	y	詞性可能是副詞，meistens 較常用
+die-meldung	B1	media	word	y	
+menschlich	B1	people	word	y	
+die-messe	B1	work	word	y	多義
+das-messer	A1	food	word	y	
+die-methode	B1	school	word	y	
+die-metropole	B2	city	word	y	
+der-metzger	B1	food	word	y	
+die-miete	A2	home	word	y	
+mieten	A2	home	word	y	
+der-mieter	A2	home	word	y	
+der-mietvertrag	A2	home	word	y	
+der-migrant	B2	society	word	y	
+die-migrantin	B2	society	word	n	陰性形式，可併入 der Migrant
+die-mikrowelle	A2	home	word	y	
+die-milch	A1	food	word	y	
+minus	A1	time	word	y	詞性應為介系詞／副詞
+die-minute	A1	time	word	y	
+mischen	B1	food	word	y	
+missverstehen	B2	general	word	y	
+mit-anderen-leuten-teilen	B1	people	chunk	n	
+mit-etwas-umgehen	B2	general	phrase	y	
+mit-fruehstueck	A2	travel	chunk	n	
+mit-ihnen	A1	grammar	chunk	n	
+mit-uebernachtung	A2	travel	chunk	n	
+mit-vollpension	B1	travel	chunk	n	
+mitbringen	A1	daily	word	y	
+mitessen	A2	food	word	y	
+mitfeiern	B1	leisure	word	y	
+das-mitglied	A2	society	word	y	
+mitnehmen	A2	daily	word	y	
+das-mittagessen	A1	food	word	y	
+mittags	A1	time	word	y	
+die-mittagspause	A2	work	word	y	
+die-mitte	A2	travel	word	y	
+mitte-juli	A2	time	chunk	n	
+das-mittel	B1	general	word	y	
+mitteldeutschland	B1	society	word	n	專有名詞
+die-mittelstufe	B1	school	word	n	
+die-mitternacht	A2	time	word	y	
+mittlerweile	B1	time	word	y	
+mittwochs	A1	time	word	y	

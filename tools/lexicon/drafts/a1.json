@@ -1,0 +1,2944 @@
+[
+ {
+  "word": "der",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "陽性定冠詞",
+  "exampleDe": "Der Tee ist heiß.",
+  "exampleZh": "這杯茶很燙。"
+ },
+ {
+  "word": "die",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "陰性定冠詞；也用於兩個以上的人或物",
+  "exampleDe": "Die Tür ist offen.",
+  "exampleZh": "門開著。"
+ },
+ {
+  "word": "das",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "中性定冠詞；這、那",
+  "exampleDe": "Das Kind schläft schon.",
+  "exampleZh": "那個孩子已經睡了。"
+ },
+ {
+  "word": "ein",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "一個（不定冠詞）",
+  "exampleDe": "Ich möchte einen Kaffee, bitte.",
+  "exampleZh": "我想要一杯咖啡，麻煩了。"
+ },
+ {
+  "word": "dieser",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "這個",
+  "exampleDe": "Dieser Bus fährt zum Bahnhof.",
+  "exampleZh": "這班公車開往火車站。"
+ },
+ {
+  "word": "jeder",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "每個",
+  "exampleDe": "Jeden Morgen trinke ich Tee.",
+  "exampleZh": "我每天早上喝茶。"
+ },
+ {
+  "word": "alle",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "所有人；全部",
+  "exampleDe": "Alle sind heute da.",
+  "exampleZh": "今天大家都到了。"
+ },
+ {
+  "word": "ich",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我",
+  "exampleDe": "Ich komme aus Taiwan.",
+  "exampleZh": "我來自台灣。"
+ },
+ {
+  "word": "du",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你",
+  "exampleDe": "Woher kommst du?",
+  "exampleZh": "你從哪裡來？"
+ },
+ {
+  "word": "er",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "他；它（陽性名詞）",
+  "exampleDe": "Er arbeitet in Berlin.",
+  "exampleZh": "他在柏林工作。"
+ },
+ {
+  "word": "sie",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "她；他們；它（陰性名詞）",
+  "exampleDe": "Sie ist meine Schwester.",
+  "exampleZh": "她是我姊姊。"
+ },
+ {
+  "word": "es",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "它（中性名詞；也作形式主詞）",
+  "exampleDe": "Es regnet heute.",
+  "exampleZh": "今天下雨。"
+ },
+ {
+  "word": "wir",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我們",
+  "exampleDe": "Wir lernen zusammen Deutsch.",
+  "exampleZh": "我們一起學德文。"
+ },
+ {
+  "word": "ihr",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你們",
+  "exampleDe": "Habt ihr heute Zeit?",
+  "exampleZh": "你們今天有空嗎？"
+ },
+ {
+  "word": "Sie",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "您；您們（敬稱）",
+  "exampleDe": "Wie heißen Sie?",
+  "exampleZh": "請問您叫什麼名字？"
+ },
+ {
+  "word": "mich",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我（受格）",
+  "exampleDe": "Rufst du mich heute an?",
+  "exampleZh": "你今天會打電話給我嗎？"
+ },
+ {
+  "word": "dich",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你（受格）",
+  "exampleDe": "Ich besuche dich morgen.",
+  "exampleZh": "我明天去看你。"
+ },
+ {
+  "word": "mir",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我（與格）；給我",
+  "exampleDe": "Kannst du mir helfen?",
+  "exampleZh": "你可以幫我嗎？"
+ },
+ {
+  "word": "dir",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你（與格）；給你",
+  "exampleDe": "Ich gebe dir mein Buch.",
+  "exampleZh": "我把我的書給你。"
+ },
+ {
+  "word": "ihn",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "他（受格）",
+  "exampleDe": "Kennst du ihn?",
+  "exampleZh": "你認識他嗎？"
+ },
+ {
+  "word": "ihm",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "他（與格）；給他",
+  "exampleDe": "Ich schreibe ihm eine E-Mail.",
+  "exampleZh": "我寫電子郵件給他。"
+ },
+ {
+  "word": "uns",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我們（受格、與格）",
+  "exampleDe": "Besuchst du uns am Sonntag?",
+  "exampleZh": "你星期天要來看我們嗎？"
+ },
+ {
+  "word": "euch",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你們（受格、與格）",
+  "exampleDe": "Wir warten auf euch.",
+  "exampleZh": "我們在等你們。"
+ },
+ {
+  "word": "ihnen",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "他們（與格）；給他們",
+  "exampleDe": "Die Kinder haben Hunger. Ich gebe ihnen Brot.",
+  "exampleZh": "孩子們餓了，我給他們麵包。"
+ },
+ {
+  "word": "Ihnen",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "您（與格）；給您",
+  "exampleDe": "Wie geht es Ihnen?",
+  "exampleZh": "您好嗎？"
+ },
+ {
+  "word": "man",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "人們；一般人",
+  "exampleDe": "Hier darf man nicht rauchen.",
+  "exampleZh": "這裡不可以抽菸。"
+ },
+ {
+  "word": "mein",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我的",
+  "exampleDe": "Mein Bruder wohnt in Hamburg.",
+  "exampleZh": "我哥哥住在漢堡。"
+ },
+ {
+  "word": "dein",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你的",
+  "exampleDe": "Wo ist dein Handy?",
+  "exampleZh": "你的手機在哪裡？"
+ },
+ {
+  "word": "seine",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "他的；它的",
+  "exampleDe": "Tim ruft seine Mutter an.",
+  "exampleZh": "提姆打電話給他媽媽。"
+ },
+ {
+  "word": "unser",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "我們的",
+  "exampleDe": "Unser Haus ist klein.",
+  "exampleZh": "我們的房子很小。"
+ },
+ {
+  "word": "euer",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "你們的",
+  "exampleDe": "Wann kommt euer Zug?",
+  "exampleZh": "你們的火車什麼時候到？"
+ },
+ {
+  "word": "und",
+  "article": "",
+  "pos": "conjunction",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "和；而且",
+  "exampleDe": "Ich trinke Kaffee und esse ein Brot.",
+  "exampleZh": "我喝咖啡，還吃一塊麵包。"
+ },
+ {
+  "word": "oder",
+  "article": "",
+  "pos": "conjunction",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "或者；還是",
+  "exampleDe": "Möchtest du Tee oder Kaffee?",
+  "exampleZh": "你想喝茶還是咖啡？"
+ },
+ {
+  "word": "aber",
+  "article": "",
+  "pos": "conjunction",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "但是",
+  "exampleDe": "Das Zimmer ist klein, aber schön.",
+  "exampleZh": "這個房間很小，但是很漂亮。"
+ },
+ {
+  "word": "sein",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "是；在",
+  "verb": {
+   "praesens3": "ist",
+   "praeteritum": "war",
+   "perfekt": "ist gewesen",
+   "aux": "sein"
+  },
+  "exampleDe": "Ich bin heute müde.",
+  "exampleZh": "我今天很累。"
+ },
+ {
+  "word": "müssen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "必須",
+  "verb": {
+   "praesens3": "muss",
+   "praeteritum": "musste",
+   "perfekt": "hat gemusst",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich muss heute lange arbeiten.",
+  "exampleZh": "我今天必須工作到很晚。"
+ },
+ {
+  "word": "sollen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "應該；被要求",
+  "verb": {
+   "praesens3": "soll",
+   "praeteritum": "sollte",
+   "perfekt": "hat gesollt",
+   "aux": "haben"
+  },
+  "exampleDe": "Der Arzt sagt, ich soll viel trinken.",
+  "exampleZh": "醫生說我應該多喝水。"
+ },
+ {
+  "word": "dürfen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "可以；被允許",
+  "verb": {
+   "praesens3": "darf",
+   "praeteritum": "durfte",
+   "perfekt": "hat gedurft",
+   "aux": "haben"
+  },
+  "exampleDe": "Darf ich hier sitzen?",
+  "exampleZh": "我可以坐這裡嗎？"
+ },
+ {
+  "word": "möchten",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "想要",
+  "verb": {
+   "praesens3": "möchte",
+   "praeteritum": "wollte",
+   "perfekt": "hat gewollt",
+   "aux": "haben",
+   "note": "由想要的禮貌形式而來，過去式與完成式借用另一個表示想要的動詞"
+  },
+  "exampleDe": "Ich möchte ein Glas Wasser.",
+  "exampleZh": "我想要一杯水。"
+ },
+ {
+  "word": "wer",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "誰",
+  "exampleDe": "Wer ist die Frau dort?",
+  "exampleZh": "那邊那位女士是誰？"
+ },
+ {
+  "word": "was",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "什麼",
+  "exampleDe": "Was machst du heute Abend?",
+  "exampleZh": "你今天晚上要做什麼？"
+ },
+ {
+  "word": "wie",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "如何；怎麼樣",
+  "exampleDe": "Wie ist das Wetter in Taipeh?",
+  "exampleZh": "台北的天氣怎麼樣？"
+ },
+ {
+  "word": "warum",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "為什麼",
+  "exampleDe": "Warum lernst du Deutsch?",
+  "exampleZh": "你為什麼學德文？"
+ },
+ {
+  "word": "welcher",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "哪一個",
+  "exampleDe": "Welcher Tag ist heute?",
+  "exampleZh": "今天星期幾？"
+ },
+ {
+  "word": "woher",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "從哪裡",
+  "exampleDe": "Woher kommen Sie?",
+  "exampleZh": "您從哪裡來？"
+ },
+ {
+  "word": "wen",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "誰（受格）",
+  "exampleDe": "Wen besuchst du am Wochenende?",
+  "exampleZh": "你週末要去拜訪誰？"
+ },
+ {
+  "word": "wem",
+  "article": "",
+  "pos": "pronoun",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "誰（與格）；給誰",
+  "exampleDe": "Wem gehört der Schlüssel?",
+  "exampleZh": "這把鑰匙是誰的？"
+ },
+ {
+  "word": "wie viel",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "多少",
+  "exampleDe": "Wie viel kostet das Brot?",
+  "exampleZh": "這個麵包多少錢？"
+ },
+ {
+  "word": "eins",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "一",
+  "exampleDe": "Wir treffen uns um eins.",
+  "exampleZh": "我們一點見。"
+ },
+ {
+  "word": "zwei",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "二",
+  "exampleDe": "Ich habe zwei Kinder.",
+  "exampleZh": "我有兩個孩子。"
+ },
+ {
+  "word": "drei",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "三",
+  "exampleDe": "Wir bleiben drei Tage in München.",
+  "exampleZh": "我們在慕尼黑待三天。"
+ },
+ {
+  "word": "vier",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "四",
+  "exampleDe": "Vier Personen, bitte.",
+  "exampleZh": "麻煩四位。"
+ },
+ {
+  "word": "fünf",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "五",
+  "exampleDe": "Der Film beginnt um fünf.",
+  "exampleZh": "電影五點開始。"
+ },
+ {
+  "word": "sechs",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "六",
+  "exampleDe": "Mein Sohn ist sechs Jahre alt.",
+  "exampleZh": "我兒子六歲。"
+ },
+ {
+  "word": "sieben",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "七",
+  "exampleDe": "Die Woche hat sieben Tage.",
+  "exampleZh": "一個星期有七天。"
+ },
+ {
+  "word": "acht",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "八",
+  "exampleDe": "Ich stehe um acht Uhr auf.",
+  "exampleZh": "我八點起床。"
+ },
+ {
+  "word": "zehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十",
+  "exampleDe": "Das Ticket kostet zehn Euro.",
+  "exampleZh": "這張票十歐元。"
+ },
+ {
+  "word": "elf",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十一",
+  "exampleDe": "Der Zug kommt um elf Uhr.",
+  "exampleZh": "火車十一點到。"
+ },
+ {
+  "word": "zwölf",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十二",
+  "exampleDe": "Ein Jahr hat zwölf Monate.",
+  "exampleZh": "一年有十二個月。"
+ },
+ {
+  "word": "dreizehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十三",
+  "exampleDe": "Meine Tochter ist dreizehn.",
+  "exampleZh": "我女兒十三歲。"
+ },
+ {
+  "word": "vierzehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十四",
+  "exampleDe": "Das Geschäft öffnet um vierzehn Uhr.",
+  "exampleZh": "這家店下午兩點開門。"
+ },
+ {
+  "word": "fünfzehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十五",
+  "exampleDe": "Der Bus kommt in fünfzehn Minuten.",
+  "exampleZh": "公車十五分鐘後來。"
+ },
+ {
+  "word": "sechzehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十六",
+  "exampleDe": "Im Kurs sind sechzehn Personen.",
+  "exampleZh": "課堂上有十六個人。"
+ },
+ {
+  "word": "siebzehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十七",
+  "exampleDe": "Ich wohne in der Goethestraße siebzehn.",
+  "exampleZh": "我住在歌德街十七號。"
+ },
+ {
+  "word": "achtzehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十八",
+  "exampleDe": "Mit achtzehn darf man hier Auto fahren.",
+  "exampleZh": "在這裡滿十八歲就可以開車。"
+ },
+ {
+  "word": "neunzehn",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十九",
+  "exampleDe": "Der Kurs kostet neunzehn Euro.",
+  "exampleZh": "這堂課要十九歐元。"
+ },
+ {
+  "word": "zwanzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "二十",
+  "exampleDe": "Ich warte schon zwanzig Minuten.",
+  "exampleZh": "我已經等了二十分鐘。"
+ },
+ {
+  "word": "dreißig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "三十",
+  "exampleDe": "Heute sind es dreißig Grad.",
+  "exampleZh": "今天三十度。"
+ },
+ {
+  "word": "vierzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "四十",
+  "exampleDe": "Mein Vater ist vierzig Jahre alt.",
+  "exampleZh": "我爸爸四十歲。"
+ },
+ {
+  "word": "fünfzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "五十",
+  "exampleDe": "Die Jacke kostet fünfzig Euro.",
+  "exampleZh": "這件外套五十歐元。"
+ },
+ {
+  "word": "sechzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "六十",
+  "exampleDe": "Eine Stunde hat sechzig Minuten.",
+  "exampleZh": "一小時有六十分鐘。"
+ },
+ {
+  "word": "siebzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "七十",
+  "exampleDe": "Meine Oma ist siebzig.",
+  "exampleZh": "我奶奶七十歲。"
+ },
+ {
+  "word": "achtzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "八十",
+  "exampleDe": "Hier darf man nur achtzig fahren.",
+  "exampleZh": "這裡時速只能開八十。"
+ },
+ {
+  "word": "neunzig",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "九十",
+  "exampleDe": "Mein Opa wird bald neunzig.",
+  "exampleZh": "我爺爺快九十歲了。"
+ },
+ {
+  "word": "tausend",
+  "article": "",
+  "pos": "numeral",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "一千",
+  "exampleDe": "Das Fahrrad kostet fast tausend Euro.",
+  "exampleZh": "這輛腳踏車要將近一千歐元。"
+ },
+ {
+  "word": "rot",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "紅色的",
+  "exampleDe": "Die Ampel ist rot.",
+  "exampleZh": "現在是紅燈。"
+ },
+ {
+  "word": "blau",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "藍色的",
+  "exampleDe": "Der Himmel ist heute blau.",
+  "exampleZh": "今天天空很藍。"
+ },
+ {
+  "word": "gelb",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "黃色的",
+  "exampleDe": "Ich trage gern gelbe Socken.",
+  "exampleZh": "我喜歡穿黃色的襪子。"
+ },
+ {
+  "word": "grün",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "綠色的",
+  "exampleDe": "Im Frühling ist alles grün.",
+  "exampleZh": "春天的時候到處都是綠色。"
+ },
+ {
+  "word": "schwarz",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "黑色的",
+  "exampleDe": "Sie trinkt den Kaffee schwarz.",
+  "exampleZh": "她喝黑咖啡。"
+ },
+ {
+  "word": "weiß",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "白色的",
+  "exampleDe": "Im Winter ist der Garten weiß.",
+  "exampleZh": "冬天花園一片白。"
+ },
+ {
+  "word": "grau",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "灰色的",
+  "exampleDe": "Die Katze ist grau.",
+  "exampleZh": "這隻貓是灰色的。"
+ },
+ {
+  "word": "braun",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "棕色的",
+  "exampleDe": "Er hat braune Augen.",
+  "exampleZh": "他有棕色的眼睛。"
+ },
+ {
+  "word": "orange",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "橘色的",
+  "exampleDe": "Mein Auto ist orange.",
+  "exampleZh": "我的車是橘色的。"
+ },
+ {
+  "word": "rosa",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "粉紅色的",
+  "exampleDe": "Das Baby trägt ein rosa Kleid.",
+  "exampleZh": "小寶寶穿著一件粉紅色的洋裝。"
+ },
+ {
+  "word": "lila",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "紫色的",
+  "exampleDe": "Sie trägt heute einen lila Rock.",
+  "exampleZh": "她今天穿一件紫色的裙子。"
+ },
+ {
+  "word": "bunt",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "彩色的；五顏六色的",
+  "exampleDe": "Das Bild ist sehr bunt.",
+  "exampleZh": "這幅畫色彩很豐富。"
+ },
+ {
+  "word": "Montag",
+  "article": "der",
+  "plural": "die Montage",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期一",
+  "exampleDe": "Am Montag beginnt der Kurs.",
+  "exampleZh": "課程星期一開始。"
+ },
+ {
+  "word": "Dienstag",
+  "article": "der",
+  "plural": "die Dienstage",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期二",
+  "exampleDe": "Am Dienstag habe ich frei.",
+  "exampleZh": "我星期二休假。"
+ },
+ {
+  "word": "Mittwoch",
+  "article": "der",
+  "plural": "die Mittwoche",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期三",
+  "exampleDe": "Am Mittwoch gehe ich ins Kino.",
+  "exampleZh": "我星期三要去看電影。"
+ },
+ {
+  "word": "Donnerstag",
+  "article": "der",
+  "plural": "die Donnerstage",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期四",
+  "exampleDe": "Der Arzt hat am Donnerstag keine Zeit.",
+  "exampleZh": "醫生星期四沒有空。"
+ },
+ {
+  "word": "Freitag",
+  "article": "der",
+  "plural": "die Freitage",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期五",
+  "exampleDe": "Freitag ist mein Lieblingstag.",
+  "exampleZh": "星期五是我最喜歡的一天。"
+ },
+ {
+  "word": "Samstag",
+  "article": "der",
+  "plural": "die Samstage",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期六",
+  "exampleDe": "Am Samstag kaufe ich auf dem Markt ein.",
+  "exampleZh": "我星期六去市場買東西。"
+ },
+ {
+  "word": "Sonntag",
+  "article": "der",
+  "plural": "die Sonntage",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "星期日",
+  "exampleDe": "Am Sonntag schlafe ich lange.",
+  "exampleZh": "我星期天睡得很晚。"
+ },
+ {
+  "word": "Januar",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "一月",
+  "exampleDe": "Im Januar ist es sehr kalt.",
+  "exampleZh": "一月非常冷。"
+ },
+ {
+  "word": "Februar",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "二月",
+  "exampleDe": "Mein Geburtstag ist im Februar.",
+  "exampleZh": "我的生日在二月。"
+ },
+ {
+  "word": "März",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "三月",
+  "exampleDe": "Im März beginnt der Frühling.",
+  "exampleZh": "春天從三月開始。"
+ },
+ {
+  "word": "April",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "四月",
+  "exampleDe": "Der Kurs endet im April.",
+  "exampleZh": "課程在四月結束。"
+ },
+ {
+  "word": "Mai",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "五月",
+  "exampleDe": "Im Mai gibt es viele Blumen.",
+  "exampleZh": "五月有很多花。"
+ },
+ {
+  "word": "Juni",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "六月",
+  "exampleDe": "Wir fahren im Juni nach Österreich.",
+  "exampleZh": "我們六月要去奧地利。"
+ },
+ {
+  "word": "Juli",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "七月",
+  "exampleDe": "Im Juli haben die Kinder Ferien.",
+  "exampleZh": "孩子們七月放假。"
+ },
+ {
+  "word": "August",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "八月",
+  "exampleDe": "Im August ist es oft heiß.",
+  "exampleZh": "八月常常很熱。"
+ },
+ {
+  "word": "September",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "九月",
+  "exampleDe": "Ich beginne im September mit dem Studium.",
+  "exampleZh": "我九月開始念大學。"
+ },
+ {
+  "word": "Oktober",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十月",
+  "exampleDe": "Im Oktober regnet es oft.",
+  "exampleZh": "十月常常下雨。"
+ },
+ {
+  "word": "November",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十一月",
+  "exampleDe": "Der November ist oft grau.",
+  "exampleZh": "十一月常常灰濛濛的。"
+ },
+ {
+  "word": "Dezember",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "十二月",
+  "exampleDe": "Im Dezember feiern wir Weihnachten.",
+  "exampleZh": "我們十二月過聖誕節。"
+ },
+ {
+  "word": "Frühling",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "春天",
+  "exampleDe": "Der Frühling ist meine Lieblingsjahreszeit.",
+  "exampleZh": "春天是我最喜歡的季節。"
+ },
+ {
+  "word": "Herbst",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "秋天",
+  "exampleDe": "Im Herbst gehen wir oft im Wald spazieren.",
+  "exampleZh": "秋天我們常去森林散步。"
+ },
+ {
+  "word": "Jahreszeit",
+  "article": "die",
+  "plural": "die Jahreszeiten",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "季節",
+  "exampleDe": "Ein Jahr hat vier Jahreszeiten.",
+  "exampleZh": "一年有四個季節。"
+ },
+ {
+  "word": "Großvater",
+  "article": "der",
+  "plural": "die Großväter",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "祖父；外公",
+  "exampleDe": "Mein Großvater wohnt auf dem Land.",
+  "exampleZh": "我爺爺住在鄉下。"
+ },
+ {
+  "word": "Oma",
+  "article": "die",
+  "plural": "die Omas",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "奶奶；外婆",
+  "exampleDe": "Am Sonntag besuche ich meine Oma.",
+  "exampleZh": "我星期天去看奶奶。"
+ },
+ {
+  "word": "Opa",
+  "article": "der",
+  "plural": "die Opas",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "爺爺；外公",
+  "exampleDe": "Mein Opa kocht sehr gut.",
+  "exampleZh": "我爺爺很會做菜。"
+ },
+ {
+  "word": "Eltern",
+  "article": "die",
+  "plural": "(只有複數)",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "父母",
+  "exampleDe": "Meine Eltern wohnen in Taipeh.",
+  "exampleZh": "我父母住在台北。"
+ },
+ {
+  "word": "Großeltern",
+  "article": "die",
+  "plural": "(只有複數)",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "祖父母；外祖父母",
+  "exampleDe": "Die Großeltern kommen zu Weihnachten.",
+  "exampleZh": "爺爺奶奶聖誕節會來。"
+ },
+ {
+  "word": "Sohn",
+  "article": "der",
+  "plural": "die Söhne",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "兒子",
+  "exampleDe": "Ihr Sohn geht schon zur Schule.",
+  "exampleZh": "她兒子已經上學了。"
+ },
+ {
+  "word": "Tochter",
+  "article": "die",
+  "plural": "die Töchter",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "女兒",
+  "exampleDe": "Meine Tochter lernt Klavier.",
+  "exampleZh": "我女兒在學鋼琴。"
+ },
+ {
+  "word": "Onkel",
+  "article": "der",
+  "plural": "die Onkel",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "叔叔；伯伯；舅舅",
+  "exampleDe": "Mein Onkel arbeitet in einer Bank.",
+  "exampleZh": "我叔叔在銀行工作。"
+ },
+ {
+  "word": "Tante",
+  "article": "die",
+  "plural": "die Tanten",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "阿姨；姑姑",
+  "exampleDe": "Meine Tante hat zwei Hunde.",
+  "exampleZh": "我阿姨養了兩隻狗。"
+ },
+ {
+  "word": "Cousin",
+  "article": "der",
+  "plural": "die Cousins",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "堂兄弟；表兄弟",
+  "exampleDe": "Mein Cousin spielt gut Fußball.",
+  "exampleZh": "我表哥足球踢得很好。"
+ },
+ {
+  "word": "Cousine",
+  "article": "die",
+  "plural": "die Cousinen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "堂姊妹；表姊妹",
+  "exampleDe": "Meine Cousine studiert in Köln.",
+  "exampleZh": "我表姊在科隆念大學。"
+ },
+ {
+  "word": "Nichte",
+  "article": "die",
+  "plural": "die Nichten",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "姪女；外甥女",
+  "exampleDe": "Meine Nichte ist drei Jahre alt.",
+  "exampleZh": "我姪女三歲。"
+ },
+ {
+  "word": "Ehemann",
+  "article": "der",
+  "plural": "die Ehemänner",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "丈夫",
+  "exampleDe": "Ihr Ehemann kommt aus Spanien.",
+  "exampleZh": "她先生來自西班牙。"
+ },
+ {
+  "word": "Ehefrau",
+  "article": "die",
+  "plural": "die Ehefrauen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "妻子",
+  "exampleDe": "Seine Ehefrau ist Lehrerin.",
+  "exampleZh": "他太太是老師。"
+ },
+ {
+  "word": "Papa",
+  "article": "der",
+  "plural": "die Papas",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "爸爸",
+  "exampleDe": "Papa, kommst du heute früh nach Hause?",
+  "exampleZh": "爸爸，你今天會早點回家嗎？"
+ },
+ {
+  "word": "Mama",
+  "article": "die",
+  "plural": "die Mamas",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "媽媽",
+  "exampleDe": "Mama, wo sind meine Schuhe?",
+  "exampleZh": "媽媽，我的鞋子在哪裡？"
+ },
+ {
+  "word": "an",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……旁邊；靠著；在（某日）",
+  "exampleDe": "Das Bild hängt an der Wand.",
+  "exampleZh": "那幅畫掛在牆上。"
+ },
+ {
+  "word": "auf",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……上面",
+  "exampleDe": "Das Buch liegt auf dem Tisch.",
+  "exampleZh": "書放在桌上。"
+ },
+ {
+  "word": "aus",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "從……來；從……出來",
+  "exampleDe": "Sie kommt aus Italien.",
+  "exampleZh": "她來自義大利。"
+ },
+ {
+  "word": "für",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "為了；給",
+  "exampleDe": "Die Blumen sind für dich.",
+  "exampleZh": "這些花是給你的。"
+ },
+ {
+  "word": "mit",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "和……一起；用；搭乘",
+  "exampleDe": "Ich fahre mit dem Bus.",
+  "exampleZh": "我搭公車去。"
+ },
+ {
+  "word": "von",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "從；……的",
+  "exampleDe": "Das Geschenk ist von meiner Mutter.",
+  "exampleZh": "這份禮物是我媽媽送的。"
+ },
+ {
+  "word": "über",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……上方；關於",
+  "exampleDe": "Die Lampe hängt über dem Tisch.",
+  "exampleZh": "燈掛在桌子上方。"
+ },
+ {
+  "word": "unter",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……下面",
+  "exampleDe": "Die Katze schläft unter dem Bett.",
+  "exampleZh": "貓在床底下睡覺。"
+ },
+ {
+  "word": "neben",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……旁邊",
+  "exampleDe": "Die Bank ist neben der Post.",
+  "exampleZh": "銀行在郵局旁邊。"
+ },
+ {
+  "word": "hinter",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……後面",
+  "exampleDe": "Hinter dem Haus ist ein Garten.",
+  "exampleZh": "房子後面有個花園。"
+ },
+ {
+  "word": "zwischen",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "在……之間",
+  "exampleDe": "Das Café liegt zwischen dem Kino und der Post.",
+  "exampleZh": "咖啡館在電影院和郵局中間。"
+ },
+ {
+  "word": "ohne",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "沒有；不加",
+  "exampleDe": "Ich trinke Kaffee ohne Milch.",
+  "exampleZh": "我喝咖啡不加牛奶。"
+ },
+ {
+  "word": "seit",
+  "article": "",
+  "pos": "preposition",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "自從；已經……（一段時間）",
+  "exampleDe": "Ich lerne seit zwei Monaten Deutsch.",
+  "exampleZh": "我學德文兩個月了。"
+ },
+ {
+  "word": "ja",
+  "article": "",
+  "pos": "particle",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "是；對",
+  "exampleDe": "Ja, ich komme gern.",
+  "exampleZh": "好，我很樂意來。"
+ },
+ {
+  "word": "nein",
+  "article": "",
+  "pos": "particle",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "不；不是",
+  "exampleDe": "Nein, danke, ich bin satt.",
+  "exampleZh": "不用了，謝謝，我吃飽了。"
+ },
+ {
+  "word": "bitte",
+  "article": "",
+  "pos": "particle",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "請；麻煩了；不客氣",
+  "exampleDe": "Zwei Kaffee, bitte.",
+  "exampleZh": "麻煩兩杯咖啡。"
+ },
+ {
+  "word": "danke",
+  "article": "",
+  "pos": "particle",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "謝謝",
+  "exampleDe": "Danke für deine Hilfe.",
+  "exampleZh": "謝謝你的幫忙。"
+ },
+ {
+  "word": "hallo",
+  "article": "",
+  "pos": "particle",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "哈囉；你好",
+  "exampleDe": "Hallo, wie heißt du?",
+  "exampleZh": "哈囉，你叫什麼名字？"
+ },
+ {
+  "word": "tschüss",
+  "article": "",
+  "pos": "particle",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "再見（口語）",
+  "exampleDe": "Tschüss, bis morgen!",
+  "exampleZh": "掰掰，明天見！"
+ },
+ {
+  "word": "sehr",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "非常",
+  "exampleDe": "Das Essen ist sehr gut.",
+  "exampleZh": "這個菜非常好吃。"
+ },
+ {
+  "word": "hier",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "這裡",
+  "exampleDe": "Hier ist mein Ausweis.",
+  "exampleZh": "這是我的證件。"
+ },
+ {
+  "word": "da",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "那裡；在場",
+  "exampleDe": "Ist Herr Weber heute da?",
+  "exampleZh": "韋伯先生今天在嗎？"
+ },
+ {
+  "word": "jetzt",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "現在",
+  "exampleDe": "Ich habe jetzt keine Zeit.",
+  "exampleZh": "我現在沒有時間。"
+ },
+ {
+  "word": "dann",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "然後；那麼",
+  "exampleDe": "Zuerst esse ich, dann lerne ich.",
+  "exampleZh": "我先吃飯，然後念書。"
+ },
+ {
+  "word": "schon",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "已經",
+  "exampleDe": "Bist du schon zu Hause?",
+  "exampleZh": "你已經到家了嗎？"
+ },
+ {
+  "word": "wieder",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "再次；又",
+  "exampleDe": "Es regnet schon wieder.",
+  "exampleZh": "又下雨了。"
+ },
+ {
+  "word": "nie",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "從不",
+  "exampleDe": "Ich esse nie Fleisch.",
+  "exampleZh": "我從來不吃肉。"
+ },
+ {
+  "word": "manchmal",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "有時候",
+  "exampleDe": "Manchmal gehe ich allein ins Kino.",
+  "exampleZh": "我有時候一個人去看電影。"
+ },
+ {
+  "word": "bald",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "很快；不久",
+  "exampleDe": "Wir sehen uns bald.",
+  "exampleZh": "我們很快就會再見面。"
+ },
+ {
+  "word": "zusammen",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "一起",
+  "exampleDe": "Wir kochen heute zusammen.",
+  "exampleZh": "我們今天一起做飯。"
+ },
+ {
+  "word": "oben",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "在上面；在樓上",
+  "exampleDe": "Das Bad ist oben.",
+  "exampleZh": "浴室在樓上。"
+ },
+ {
+  "word": "unten",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "在下面；在樓下",
+  "exampleDe": "Die Küche ist unten.",
+  "exampleZh": "廚房在樓下。"
+ },
+ {
+  "word": "mehr",
+  "article": "",
+  "pos": "adverb",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "更多",
+  "exampleDe": "Ich möchte mehr Deutsch sprechen.",
+  "exampleZh": "我想多說一點德文。"
+ },
+ {
+  "word": "Guten Morgen",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "早安",
+  "exampleDe": "Guten Morgen, Frau Klein!",
+  "exampleZh": "克萊因女士，早安！"
+ },
+ {
+  "word": "Guten Tag",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "你好；您好",
+  "exampleDe": "Guten Tag, ich suche die Post.",
+  "exampleZh": "您好，我在找郵局。"
+ },
+ {
+  "word": "Guten Abend",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "晚上好",
+  "exampleDe": "Guten Abend, haben Sie einen Tisch frei?",
+  "exampleZh": "晚上好，請問還有空桌嗎？"
+ },
+ {
+  "word": "Gute Nacht",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "晚安",
+  "exampleDe": "Gute Nacht, schlaf gut!",
+  "exampleZh": "晚安，好好睡！"
+ },
+ {
+  "word": "Auf Wiedersehen",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "再見",
+  "exampleDe": "Auf Wiedersehen und einen schönen Tag!",
+  "exampleZh": "再見，祝您有美好的一天！"
+ },
+ {
+  "word": "Vielen Dank",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "非常感謝",
+  "exampleDe": "Vielen Dank für das Geschenk!",
+  "exampleZh": "非常感謝你的禮物！"
+ },
+ {
+  "word": "Wie geht's?",
+  "article": "",
+  "pos": "phrase",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "你好嗎？",
+  "exampleDe": "Hallo Anna, wie geht's?",
+  "exampleZh": "哈囉，安娜，你好嗎？"
+ },
+ {
+  "word": "gut",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "好的",
+  "exampleDe": "Der Kuchen schmeckt gut.",
+  "exampleZh": "這個蛋糕很好吃。"
+ },
+ {
+  "word": "schlecht",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "壞的；不好的",
+  "exampleDe": "Heute ist das Wetter schlecht.",
+  "exampleZh": "今天天氣不好。"
+ },
+ {
+  "word": "groß",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "大的；高的",
+  "exampleDe": "Unsere Wohnung ist groß.",
+  "exampleZh": "我們的公寓很大。"
+ },
+ {
+  "word": "klein",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "小的；矮的",
+  "exampleDe": "Das Zimmer ist klein, aber hell.",
+  "exampleZh": "這個房間很小，但是很明亮。"
+ },
+ {
+  "word": "alt",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "老的；舊的",
+  "exampleDe": "Das Haus ist sehr alt.",
+  "exampleZh": "這棟房子很舊。"
+ },
+ {
+  "word": "jung",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "年輕的",
+  "exampleDe": "Meine Lehrerin ist noch jung.",
+  "exampleZh": "我的老師還很年輕。"
+ },
+ {
+  "word": "lang",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "長的",
+  "exampleDe": "Der Film ist zu lang.",
+  "exampleZh": "這部電影太長了。"
+ },
+ {
+  "word": "kurz",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "短的",
+  "exampleDe": "Sie hat kurze Haare.",
+  "exampleZh": "她是短髮。"
+ },
+ {
+  "word": "warm",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "溫暖的",
+  "exampleDe": "Heute ist es warm.",
+  "exampleZh": "今天很暖和。"
+ },
+ {
+  "word": "kalt",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "冷的",
+  "exampleDe": "Das Wasser ist kalt.",
+  "exampleZh": "水很冷。"
+ },
+ {
+  "word": "heiß",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "熱的；燙的",
+  "exampleDe": "Vorsicht, die Suppe ist heiß!",
+  "exampleZh": "小心，湯很燙！"
+ },
+ {
+  "word": "schön",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "美麗的；美好的",
+  "exampleDe": "Was für ein schöner Tag!",
+  "exampleZh": "多美好的一天啊！"
+ },
+ {
+  "word": "nett",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "親切的；友善的",
+  "exampleDe": "Meine Nachbarin ist sehr nett.",
+  "exampleZh": "我的鄰居很親切。"
+ },
+ {
+  "word": "freundlich",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "友善的",
+  "exampleDe": "Die Verkäuferin ist freundlich.",
+  "exampleZh": "那位店員很友善。"
+ },
+ {
+  "word": "krank",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "health",
+  "meaning": "生病的",
+  "exampleDe": "Mein Sohn ist heute krank.",
+  "exampleZh": "我兒子今天生病了。"
+ },
+ {
+  "word": "richtig",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "正確的",
+  "exampleDe": "Deine Antwort ist richtig.",
+  "exampleZh": "你的答案是對的。"
+ },
+ {
+  "word": "falsch",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "錯誤的",
+  "exampleDe": "Die Nummer ist falsch.",
+  "exampleZh": "這個號碼是錯的。"
+ },
+ {
+  "word": "frei",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "空的；有空的；自由的",
+  "exampleDe": "Ist der Platz hier frei?",
+  "exampleZh": "這個位子是空的嗎？"
+ },
+ {
+  "word": "billig",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "shop",
+  "meaning": "便宜的",
+  "exampleDe": "Die Äpfel sind heute billig.",
+  "exampleZh": "蘋果今天很便宜。"
+ },
+ {
+  "word": "einfach",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "簡單的",
+  "exampleDe": "Die Aufgabe ist einfach.",
+  "exampleZh": "這個題目很簡單。"
+ },
+ {
+  "word": "schwer",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "困難的；重的",
+  "exampleDe": "Deutsch ist nicht so schwer.",
+  "exampleZh": "德文沒有那麼難。"
+ },
+ {
+  "word": "interessant",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "有趣的",
+  "exampleDe": "Das Buch ist interessant.",
+  "exampleZh": "這本書很有趣。"
+ },
+ {
+  "word": "langweilig",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "feel",
+  "meaning": "無聊的",
+  "exampleDe": "Mir ist langweilig.",
+  "exampleZh": "我好無聊。"
+ },
+ {
+  "word": "glücklich",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "feel",
+  "meaning": "幸福的；快樂的",
+  "exampleDe": "Die Kinder sind glücklich.",
+  "exampleZh": "孩子們很開心。"
+ },
+ {
+  "word": "verheiratet",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "已婚的",
+  "exampleDe": "Sind Sie verheiratet?",
+  "exampleZh": "您結婚了嗎？"
+ },
+ {
+  "word": "viel",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "很多的",
+  "exampleDe": "Er trinkt viel Wasser.",
+  "exampleZh": "他喝很多水。"
+ },
+ {
+  "word": "früh",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "早的",
+  "exampleDe": "Morgen stehe ich früh auf.",
+  "exampleZh": "我明天會早起。"
+ },
+ {
+  "word": "spät",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "晚的；遲的",
+  "exampleDe": "Es ist schon spät.",
+  "exampleZh": "已經很晚了。"
+ },
+ {
+  "word": "frisch",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "新鮮的",
+  "exampleDe": "Das Brot ist ganz frisch.",
+  "exampleZh": "這個麵包很新鮮。"
+ },
+ {
+  "word": "langsam",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "慢的",
+  "exampleDe": "Bitte sprechen Sie langsam.",
+  "exampleZh": "請您說慢一點。"
+ },
+ {
+  "word": "laut",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "大聲的；吵的",
+  "exampleDe": "Die Musik ist zu laut.",
+  "exampleZh": "音樂太大聲了。"
+ },
+ {
+  "word": "leise",
+  "article": "",
+  "pos": "adjective",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "小聲的；安靜的",
+  "exampleDe": "Bitte sei leise, das Baby schläft.",
+  "exampleZh": "請小聲一點，小寶寶在睡覺。"
+ },
+ {
+  "word": "heißen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "名叫",
+  "verb": {
+   "praesens3": "heißt",
+   "praeteritum": "hieß",
+   "perfekt": "hat geheißen",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich heiße Anna.",
+  "exampleZh": "我叫安娜。"
+ },
+ {
+  "word": "wohnen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "home",
+  "meaning": "居住",
+  "verb": {
+   "praesens3": "wohnt",
+   "praeteritum": "wohnte",
+   "perfekt": "hat gewohnt",
+   "aux": "haben"
+  },
+  "exampleDe": "Wir wohnen in der Stadtmitte.",
+  "exampleZh": "我們住在市中心。"
+ },
+ {
+  "word": "trinken",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "喝",
+  "verb": {
+   "praesens3": "trinkt",
+   "praeteritum": "trank",
+   "perfekt": "hat getrunken",
+   "aux": "haben"
+  },
+  "exampleDe": "Morgens trinke ich Kaffee.",
+  "exampleZh": "我早上喝咖啡。"
+ },
+ {
+  "word": "sprechen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "說；講",
+  "verb": {
+   "praesens3": "spricht",
+   "praeteritum": "sprach",
+   "perfekt": "hat gesprochen",
+   "aux": "haben"
+  },
+  "exampleDe": "Sprichst du Englisch?",
+  "exampleZh": "你會說英文嗎？"
+ },
+ {
+  "word": "nehmen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "拿；點（餐）；搭（車）",
+  "verb": {
+   "praesens3": "nimmt",
+   "praeteritum": "nahm",
+   "perfekt": "hat genommen",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich nehme die Suppe.",
+  "exampleZh": "我要點這個湯。"
+ },
+ {
+  "word": "schwimmen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "leisure",
+  "meaning": "游泳",
+  "verb": {
+   "praesens3": "schwimmt",
+   "praeteritum": "schwamm",
+   "perfekt": "ist geschwommen",
+   "aux": "haben/sein"
+  },
+  "exampleDe": "Im Sommer schwimme ich gern im See.",
+  "exampleZh": "我夏天喜歡在湖裡游泳。"
+ },
+ {
+  "word": "spielen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "leisure",
+  "meaning": "玩；演奏；打球",
+  "verb": {
+   "praesens3": "spielt",
+   "praeteritum": "spielte",
+   "perfekt": "hat gespielt",
+   "aux": "haben"
+  },
+  "exampleDe": "Die Kinder spielen im Garten.",
+  "exampleZh": "孩子們在花園裡玩。"
+ },
+ {
+  "word": "tanzen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "leisure",
+  "meaning": "跳舞",
+  "verb": {
+   "praesens3": "tanzt",
+   "praeteritum": "tanzte",
+   "perfekt": "hat getanzt",
+   "aux": "haben"
+  },
+  "exampleDe": "Am Samstag tanzen wir.",
+  "exampleZh": "我們星期六去跳舞。"
+ },
+ {
+  "word": "singen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "leisure",
+  "meaning": "唱歌",
+  "verb": {
+   "praesens3": "singt",
+   "praeteritum": "sang",
+   "perfekt": "hat gesungen",
+   "aux": "haben"
+  },
+  "exampleDe": "Meine Schwester singt gut.",
+  "exampleZh": "我姊姊唱歌很好聽。"
+ },
+ {
+  "word": "kosten",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "shop",
+  "meaning": "花費；價錢是",
+  "verb": {
+   "praesens3": "kostet",
+   "praeteritum": "kostete",
+   "perfekt": "hat gekostet",
+   "aux": "haben"
+  },
+  "exampleDe": "Die Tasche kostet zwanzig Euro.",
+  "exampleZh": "這個包包二十歐元。"
+ },
+ {
+  "word": "sagen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "說",
+  "verb": {
+   "praesens3": "sagt",
+   "praeteritum": "sagte",
+   "perfekt": "hat gesagt",
+   "aux": "haben"
+  },
+  "exampleDe": "Was sagst du?",
+  "exampleZh": "你說什麼？"
+ },
+ {
+  "word": "antworten",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "回答",
+  "verb": {
+   "praesens3": "antwortet",
+   "praeteritum": "antwortete",
+   "perfekt": "hat geantwortet",
+   "aux": "haben"
+  },
+  "exampleDe": "Bitte antworten Sie auf Deutsch.",
+  "exampleZh": "請用德文回答。"
+ },
+ {
+  "word": "bestellen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "點餐；訂購",
+  "verb": {
+   "praesens3": "bestellt",
+   "praeteritum": "bestellte",
+   "perfekt": "hat bestellt",
+   "aux": "haben"
+  },
+  "exampleDe": "Wir bestellen eine Pizza.",
+  "exampleZh": "我們點一個披薩。"
+ },
+ {
+  "word": "brauchen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "需要",
+  "verb": {
+   "praesens3": "braucht",
+   "praeteritum": "brauchte",
+   "perfekt": "hat gebraucht",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich brauche einen Stift.",
+  "exampleZh": "我需要一支筆。"
+ },
+ {
+  "word": "denken",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "想；認為",
+  "verb": {
+   "praesens3": "denkt",
+   "praeteritum": "dachte",
+   "perfekt": "hat gedacht",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich denke oft an meine Familie.",
+  "exampleZh": "我常常想到我的家人。"
+ },
+ {
+  "word": "danken",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "感謝",
+  "verb": {
+   "praesens3": "dankt",
+   "praeteritum": "dankte",
+   "perfekt": "hat gedankt",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich danke Ihnen sehr.",
+  "exampleZh": "我非常感謝您。"
+ },
+ {
+  "word": "duschen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "淋浴",
+  "verb": {
+   "praesens3": "duscht",
+   "praeteritum": "duschte",
+   "perfekt": "hat geduscht",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich dusche jeden Morgen.",
+  "exampleZh": "我每天早上淋浴。"
+ },
+ {
+  "word": "fliegen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "飛；搭飛機",
+  "verb": {
+   "praesens3": "fliegt",
+   "praeteritum": "flog",
+   "perfekt": "ist geflogen",
+   "aux": "sein"
+  },
+  "exampleDe": "Morgen fliege ich nach Wien.",
+  "exampleZh": "我明天飛去維也納。"
+ },
+ {
+  "word": "lachen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "feel",
+  "meaning": "笑",
+  "verb": {
+   "praesens3": "lacht",
+   "praeteritum": "lachte",
+   "perfekt": "hat gelacht",
+   "aux": "haben"
+  },
+  "exampleDe": "Das Baby lacht viel.",
+  "exampleZh": "這個小寶寶很愛笑。"
+ },
+ {
+  "word": "putzen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "home",
+  "meaning": "打掃；擦洗",
+  "verb": {
+   "praesens3": "putzt",
+   "praeteritum": "putzte",
+   "perfekt": "hat geputzt",
+   "aux": "haben"
+  },
+  "exampleDe": "Am Samstag putze ich die Wohnung.",
+  "exampleZh": "我星期六打掃家裡。"
+ },
+ {
+  "word": "schicken",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "media",
+  "meaning": "寄；傳送",
+  "verb": {
+   "praesens3": "schickt",
+   "praeteritum": "schickte",
+   "perfekt": "hat geschickt",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich schicke dir ein Foto.",
+  "exampleZh": "我傳一張照片給你。"
+ },
+ {
+  "word": "holen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "去拿；去取",
+  "verb": {
+   "praesens3": "holt",
+   "praeteritum": "holte",
+   "perfekt": "hat geholt",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich hole schnell das Brot.",
+  "exampleZh": "我趕快去拿麵包。"
+ },
+ {
+  "word": "vergessen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "general",
+  "meaning": "忘記",
+  "verb": {
+   "praesens3": "vergisst",
+   "praeteritum": "vergaß",
+   "perfekt": "hat vergessen",
+   "aux": "haben"
+  },
+  "exampleDe": "Ich vergesse oft meinen Schlüssel.",
+  "exampleZh": "我常常忘記帶鑰匙。"
+ },
+ {
+  "word": "warten",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "等待",
+  "verb": {
+   "praesens3": "wartet",
+   "praeteritum": "wartete",
+   "perfekt": "hat gewartet",
+   "aux": "haben"
+  },
+  "exampleDe": "Wir warten auf den Bus.",
+  "exampleZh": "我們在等公車。"
+ },
+ {
+  "word": "mitkommen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "一起來；一起去",
+  "verb": {
+   "praesens3": "kommt mit",
+   "praeteritum": "kam mit",
+   "perfekt": "ist mitgekommen",
+   "aux": "sein",
+   "note": "可分動詞"
+  },
+  "exampleDe": "Kommst du mit ins Kino?",
+  "exampleZh": "你要一起去看電影嗎？"
+ },
+ {
+  "word": "sich anmelden",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "報名；登記",
+  "verb": {
+   "praesens3": "meldet sich an",
+   "praeteritum": "meldete sich an",
+   "perfekt": "hat sich angemeldet",
+   "aux": "haben",
+   "note": "反身、可分動詞"
+  },
+  "exampleDe": "Ich melde mich für den Kurs an.",
+  "exampleZh": "我報名這堂課。"
+ },
+ {
+  "word": "buchstabieren",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "拼讀字母",
+  "verb": {
+   "praesens3": "buchstabiert",
+   "praeteritum": "buchstabierte",
+   "perfekt": "hat buchstabiert",
+   "aux": "haben"
+  },
+  "exampleDe": "Können Sie das bitte buchstabieren?",
+  "exampleZh": "可以請您拼一下嗎？"
+ },
+ {
+  "word": "spazieren gehen",
+  "article": "",
+  "pos": "verb",
+  "level": "A1",
+  "topic": "leisure",
+  "meaning": "散步",
+  "verb": {
+   "praesens3": "geht spazieren",
+   "praeteritum": "ging spazieren",
+   "perfekt": "ist spazieren gegangen",
+   "aux": "sein",
+   "note": "兩個字分開寫"
+  },
+  "exampleDe": "Wir gehen am Sonntag spazieren.",
+  "exampleZh": "我們星期天去散步。"
+ },
+ {
+  "word": "Mensch",
+  "article": "der",
+  "plural": "die Menschen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "人",
+  "exampleDe": "In der Stadt wohnen viele Menschen.",
+  "exampleZh": "這座城市住了很多人。"
+ },
+ {
+  "word": "Herr",
+  "article": "der",
+  "plural": "die Herren",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "先生",
+  "exampleDe": "Herr Schmidt ist mein Lehrer.",
+  "exampleZh": "施密特先生是我的老師。"
+ },
+ {
+  "word": "Adresse",
+  "article": "die",
+  "plural": "die Adressen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "地址",
+  "exampleDe": "Wie ist Ihre Adresse?",
+  "exampleZh": "您的地址是什麼？"
+ },
+ {
+  "word": "Vorname",
+  "article": "der",
+  "plural": "die Vornamen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "名字（不含姓）",
+  "exampleDe": "Mein Vorname ist Anna.",
+  "exampleZh": "我的名字是安娜。"
+ },
+ {
+  "word": "Nachname",
+  "article": "der",
+  "plural": "die Nachnamen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "people",
+  "meaning": "姓",
+  "exampleDe": "Wie schreibt man Ihren Nachnamen?",
+  "exampleZh": "您的姓怎麼拼？"
+ },
+ {
+  "word": "Telefonnummer",
+  "article": "die",
+  "plural": "die Telefonnummern",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "media",
+  "meaning": "電話號碼",
+  "exampleDe": "Gibst du mir deine Telefonnummer?",
+  "exampleZh": "你可以給我你的電話號碼嗎？"
+ },
+ {
+  "word": "Zahl",
+  "article": "die",
+  "plural": "die Zahlen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "數字",
+  "exampleDe": "Die Kinder lernen die Zahlen.",
+  "exampleZh": "孩子們在學數字。"
+ },
+ {
+  "word": "Deutschland",
+  "article": "",
+  "plural": "",
+  "noArticle": true,
+  "pos": "noun",
+  "level": "A1",
+  "topic": "society",
+  "meaning": "德國",
+  "exampleDe": "Ich möchte in Deutschland studieren.",
+  "exampleZh": "我想在德國念大學。"
+ },
+ {
+  "word": "Österreich",
+  "article": "",
+  "plural": "",
+  "noArticle": true,
+  "pos": "noun",
+  "level": "A1",
+  "topic": "society",
+  "meaning": "奧地利",
+  "exampleDe": "Wien liegt in Österreich.",
+  "exampleZh": "維也納在奧地利。"
+ },
+ {
+  "word": "Deutsch",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "德文",
+  "exampleDe": "Mein Deutsch ist noch nicht gut.",
+  "exampleZh": "我的德文還不太好。"
+ },
+ {
+  "word": "Englisch",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "英文",
+  "exampleDe": "Er spricht gut Englisch.",
+  "exampleZh": "他英文說得很好。"
+ },
+ {
+  "word": "Frühstück",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "早餐",
+  "exampleDe": "Das Frühstück ist um sieben Uhr.",
+  "exampleZh": "早餐七點開始。"
+ },
+ {
+  "word": "Tee",
+  "article": "der",
+  "plural": "die Tees",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "茶",
+  "exampleDe": "Ich trinke gern grünen Tee.",
+  "exampleZh": "我喜歡喝綠茶。"
+ },
+ {
+  "word": "Reis",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "米飯",
+  "exampleDe": "Heute gibt es Reis mit Gemüse.",
+  "exampleZh": "今天吃白飯配蔬菜。"
+ },
+ {
+  "word": "Suppe",
+  "article": "die",
+  "plural": "die Suppen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "湯",
+  "exampleDe": "Die Suppe schmeckt gut.",
+  "exampleZh": "這個湯很好喝。"
+ },
+ {
+  "word": "Salat",
+  "article": "der",
+  "plural": "die Salate",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "沙拉；生菜",
+  "exampleDe": "Ich nehme einen kleinen Salat.",
+  "exampleZh": "我要一份小沙拉。"
+ },
+ {
+  "word": "Brötchen",
+  "article": "das",
+  "plural": "die Brötchen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "小圓麵包",
+  "exampleDe": "Zum Frühstück esse ich zwei Brötchen.",
+  "exampleZh": "我早餐吃兩個小麵包。"
+ },
+ {
+  "word": "Butter",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "奶油",
+  "exampleDe": "Die Butter ist im Kühlschrank.",
+  "exampleZh": "奶油在冰箱裡。"
+ },
+ {
+  "word": "Zucker",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "糖",
+  "exampleDe": "Nimmst du Zucker in den Kaffee?",
+  "exampleZh": "你的咖啡要加糖嗎？"
+ },
+ {
+  "word": "Salz",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "鹽",
+  "exampleDe": "Das Essen braucht noch Salz.",
+  "exampleZh": "這道菜還需要加點鹽。"
+ },
+ {
+  "word": "Restaurant",
+  "article": "das",
+  "plural": "die Restaurants",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "餐廳",
+  "exampleDe": "Das Restaurant ist heute geschlossen.",
+  "exampleZh": "這家餐廳今天沒開。"
+ },
+ {
+  "word": "Kellner",
+  "article": "der",
+  "plural": "die Kellner",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "服務生",
+  "exampleDe": "Der Kellner bringt die Rechnung.",
+  "exampleZh": "服務生把帳單拿來。"
+ },
+ {
+  "word": "Speisekarte",
+  "article": "die",
+  "plural": "die Speisekarten",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "菜單",
+  "exampleDe": "Können wir bitte die Speisekarte haben?",
+  "exampleZh": "可以給我們菜單嗎？"
+ },
+ {
+  "word": "Durst",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "food",
+  "meaning": "口渴",
+  "exampleDe": "Ich habe großen Durst.",
+  "exampleZh": "我很渴。"
+ },
+ {
+  "word": "Wohnzimmer",
+  "article": "das",
+  "plural": "die Wohnzimmer",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "home",
+  "meaning": "客廳",
+  "exampleDe": "Abends sitzen wir im Wohnzimmer.",
+  "exampleZh": "我們晚上坐在客廳。"
+ },
+ {
+  "word": "Schlafzimmer",
+  "article": "das",
+  "plural": "die Schlafzimmer",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "home",
+  "meaning": "臥室",
+  "exampleDe": "Unser Schlafzimmer ist klein.",
+  "exampleZh": "我們的臥室很小。"
+ },
+ {
+  "word": "Möbel",
+  "article": "die",
+  "plural": "die Möbel",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "home",
+  "meaning": "家具",
+  "exampleDe": "Wir brauchen neue Möbel.",
+  "exampleZh": "我們需要新家具。"
+ },
+ {
+  "word": "Haltestelle",
+  "article": "die",
+  "plural": "die Haltestellen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "公車或電車站",
+  "exampleDe": "Die Haltestelle ist gleich da vorne.",
+  "exampleZh": "公車站就在前面。"
+ },
+ {
+  "word": "Taxi",
+  "article": "das",
+  "plural": "die Taxis",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "travel",
+  "meaning": "計程車",
+  "exampleDe": "Wir nehmen ein Taxi zum Bahnhof.",
+  "exampleZh": "我們搭計程車去火車站。"
+ },
+ {
+  "word": "Ärztin",
+  "article": "die",
+  "plural": "die Ärztinnen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "health",
+  "meaning": "女醫生",
+  "exampleDe": "Die Ärztin ist sehr freundlich.",
+  "exampleZh": "這位女醫師很親切。"
+ },
+ {
+  "word": "Klasse",
+  "article": "die",
+  "plural": "die Klassen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "school",
+  "meaning": "班級；年級",
+  "exampleDe": "In meiner Klasse sind zwanzig Schüler.",
+  "exampleZh": "我們班上有二十個學生。"
+ },
+ {
+  "word": "Schwimmbad",
+  "article": "das",
+  "plural": "die Schwimmbäder",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "leisure",
+  "meaning": "游泳池",
+  "exampleDe": "Am Wochenende gehen wir ins Schwimmbad.",
+  "exampleZh": "我們週末去游泳池。"
+ },
+ {
+  "word": "Wind",
+  "article": "der",
+  "plural": "die Winde",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "nature",
+  "meaning": "風",
+  "exampleDe": "Heute ist viel Wind.",
+  "exampleZh": "今天風很大。"
+ },
+ {
+  "word": "Sekunde",
+  "article": "die",
+  "plural": "die Sekunden",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "秒",
+  "exampleDe": "Warte eine Sekunde!",
+  "exampleZh": "等一下！"
+ },
+ {
+  "word": "Mittag",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "time",
+  "meaning": "中午",
+  "exampleDe": "Am Mittag esse ich in der Kantine.",
+  "exampleZh": "我中午在員工餐廳吃飯。"
+ },
+ {
+  "word": "Kilo",
+  "article": "das",
+  "plural": "die Kilos",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "shop",
+  "meaning": "公斤",
+  "exampleDe": "Ich kaufe ein Kilo Äpfel.",
+  "exampleZh": "我買一公斤蘋果。"
+ },
+ {
+  "word": "Liter",
+  "article": "der",
+  "plural": "die Liter",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "shop",
+  "meaning": "公升",
+  "exampleDe": "Wir brauchen einen Liter Milch.",
+  "exampleZh": "我們需要一公升牛奶。"
+ },
+ {
+  "word": "Socke",
+  "article": "die",
+  "plural": "die Socken",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "shop",
+  "meaning": "襪子",
+  "exampleDe": "Wo ist meine andere Socke?",
+  "exampleZh": "我的另一隻襪子在哪裡？"
+ },
+ {
+  "word": "Entschuldigung",
+  "article": "die",
+  "plural": "die Entschuldigungen",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "daily",
+  "meaning": "對不起；不好意思；道歉",
+  "exampleDe": "Entschuldigung, wo ist die Toilette?",
+  "exampleZh": "不好意思，請問廁所在哪裡？"
+ },
+ {
+  "word": "Bibliothek",
+  "article": "die",
+  "plural": "die Bibliotheken",
+  "pos": "noun",
+  "level": "A1",
+  "topic": "city",
+  "meaning": "圖書館",
+  "exampleDe": "Ich lerne oft in der Bibliothek.",
+  "exampleZh": "我常在圖書館念書。"
+ },
+ {
+  "word": "ein paar",
+  "article": "",
+  "pos": "determiner",
+  "level": "A1",
+  "topic": "grammar",
+  "meaning": "幾個；一些",
+  "exampleDe": "Ich bleibe noch ein paar Tage in Berlin.",
+  "exampleZh": "我還會在柏林待幾天。"
+ }
+]

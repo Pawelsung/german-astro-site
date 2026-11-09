@@ -1,0 +1,251 @@
+id	level	topic	kind	push	flag
+der-eintritt	A2	leisure	word	y	
+die-eintrittskarte	A2	leisure	word	y	
+einziehen	B1	home	word	y	也有「拉進、徵收」等義
+das-eis	A1	food	word	y	
+der-eiweissanteil	B2	health	word	n	
+die-elbe	B1	nature	word	n	專有名詞
+elektronisch	B1	media	word	y	
+elektronische-geraete	B1	media	phrase	n	
+empfehlen	A2	general	word	y	
+empfindlich	B1	health	word	y	
+das-ende	A1	time	word	y	
+die-energie	B1	nature	word	y	
+eng	B1	general	word	y	
+enge-freunde	B1	people	phrase	n	
+entdecken	B1	general	word	y	
+entkommen	B2	general	word	y	
+entlassen	B2	work	word	y	多義，程度以「解雇」計
+entschaedigen	C1	society	word	n	
+entscheiden	B1	general	word	y	
+die-entscheidung	B1	general	word	y	
+entscheidungen-treffen	B1	general	phrase	n	
+entspannt	B1	feel	word	y	
+entstehen	B1	general	word	y	
+enttaeuschen	B1	feel	word	y	
+enttaeuscht	B1	feel	word	y	
+die-enttaeuschung	B1	feel	word	y	
+entweder-oder	B1	grammar	phrase	n	
+entwickeln	B1	general	word	y	
+der-entwickler	B2	work	word	y	
+die-entwicklung	B1	general	word	y	
+entzuenden	B2	health	word	n	
+die-entzuendung	B2	health	word	y	
+das-erdbeben	B1	nature	word	y	
+die-erde	A2	nature	word	y	
+das-ereignis	B1	general	word	y	
+erfahren	B1	general	word	y	詞性多義（動詞／形容詞）
+die-erfahrung	B1	work	word	y	
+erfinden	B1	general	word	y	
+der-erfolg	B1	general	word	y	
+erfolgreich	B1	general	word	y	
+erfordern	B2	general	word	n	
+das-ergebnis	B1	general	word	y	
+erhalten	B1	general	word	y	
+die-erinnerung	B1	feel	word	y	
+erkaeltet-sein	A2	health	phrase	n	
+die-erkaeltung	A2	health	word	y	
+erkennen	B1	general	word	y	
+erleben	B1	general	word	y	
+das-erleben	B2	general	word	n	名詞化動詞，較少用，可併入 erleben
+das-erlebnis	B1	general	word	y	
+erledigen	B1	daily	word	y	
+erleichtert	B1	feel	word	y	
+die-ernaehrung	B1	health	word	y	
+erneuern	B2	general	word	y	
+der-ersatzschluessel	B1	home	word	n	
+erschoepft	B1	health	word	y	
+ersparen	B2	shop	word	n	釋義過簡，也有「存下」義
+erst	A2	time	word	y	
+erst-die-haelfte	A2	time	chunk	n	
+erst-recht-nicht	B2	grammar	phrase	n	
+die-erstattung	B2	shop	word	y	
+erstaunlich	B2	feel	word	y	
+erste-runde	A2	leisure	chunk	n	
+die-erste-strasse	A1	travel	chunk	n	標為 noun 但實為序數片語/片段
+erstens	B1	grammar	word	n	
+ertragen	B2	feel	word	y	釋義「（動詞）」多餘
+erwachsen	B1	people	word	y	
+der-erwachsene	B1	people	word	y	形容詞變化名詞
+die-erwartung	B1	feel	word	y	
+erzaehlen	A2	media	word	y	
+die-erzaehlung	B1	media	word	y	
+erziehen	B1	people	word	y	
+es-gab	A2	grammar	phrase	n	
+es-geht-mir-sehr-gut	A1	daily	phrase	n	
+es-geht-um	B1	grammar	phrase	n	
+es-gibt-akk	A1	grammar	phrase	n	
+es-kommt-darauf-an	B1	grammar	phrase	n	
+essen	A1	food	word	y	
+das-essen	A1	food	word	y	
+der-esser	B2	food	word	n	少見；釋義待確認
+etwa	B1	grammar	word	n	
+etwas	A1	grammar	word	n	詞性多義（代名詞「某物」為主）
+etwas-zum-trinken	A1	food	phrase	n	
+der-euro	A1	shop	word	y	
+ewig	B1	time	word	y	
+das-exemplar	B2	general	word	y	
+das-experiment	B1	school	word	y	
+die-extraportion	B1	food	word	n	
+extravagant	B2	people	word	y	釋義含斜線兩義
+extrem	B1	general	word	y	
+das-eye-tracking	C1	media	word	n	外來專業詞
+die-fachfrau	B2	work	word	n	
+der-fachlehrer	B2	school	word	n	
+fachlich	B2	work	word	y	
+der-fachmann	B2	work	word	n	
+die-faehre	A2	travel	word	y	
+fahren	A1	travel	word	y	
+die-fahrkarte	A1	travel	word	y	
+das-fahrrad	A1	travel	word	y	
+der-faktor	B2	general	word	y	
+der-fall	B1	general	word	y	多義（案件、情況、格）
+falls	A2	grammar	word	n	
+die-faelschung	B2	society	word	y	
+die-familie	A1	people	word	y	
+fantastisch	A2	feel	word	y	
+fast	A1	grammar	word	y	
+faszinieren	B2	feel	word	y	
+faul	A2	people	word	y	
+das-fax	A2	work	word	y	
+das-fazit	B2	general	word	y	
+fehlen	A2	general	word	y	
+der-fehler	A2	general	word	y	
+die-feier	A2	leisure	word	y	
+der-feierabend	B1	work	word	y	
+feiern	A1	leisure	word	y	
+der-feiertag	A2	time	word	y	
+der-feind	B2	society	word	y	
+das-feld	B1	nature	word	y	
+das-fenster	A1	home	word	y	
+die-ferien	A1	time	word	y	複數名詞
+fernsehen	A1	media	word	y	可分動詞
+der-fernseher	A1	media	word	y	
+fertig	A1	general	word	y	
+das-fest	A2	leisure	word	y	
+festnehmen	B2	society	word	y	可分動詞
+feststellen	B1	general	word	y	可分動詞
+das-fett	B1	food	word	y	
+das-feuerwerk	B1	leisure	word	y	
+das-feuerzeug	B1	daily	word	y	
+das-fieber	A2	health	word	y	
+die-figur	B1	people	word	y	多義
+der-film	A1	media	word	y	
+finanziell	B1	shop	word	y	
+finden	A1	general	word	y	
+der-finger	A2	health	word	y	
+firenze	A2	city	word	n	專有名詞（義大利語地名）
+die-firma	A2	work	word	y	
+das-firmengeheimnis	B2	work	word	n	
+der-fisch	A1	food	word	y	
+fit-halten	B1	health	phrase	n	詞性標 verb 但為片語；釋義含斜線
+das-fitnessstudio	A2	leisure	word	y	
+flach	B1	general	word	y	
+die-flaeche	B1	general	word	y	
+die-flasche	A1	food	word	y	
+das-fleisch	A1	food	word	y	
+der-fleischer	B1	food	word	y	
+fleissig	A2	people	word	y	
+die-fliege	B1	nature	word	y	也有「蝴蝶結領結」義
+fliehen	B1	society	word	y	
+fliessend	B1	school	word	y	
+die-flucht	B2	society	word	y	
+fluechten	B2	society	word	n	
+die-fluechtlingsfamilie	B1	society	word	n	
+der-flug	A2	travel	word	y	
+die-fluggesellschaft	B1	travel	word	y	
+der-flughafen	A1	travel	word	y	
+das-flugzeug	A1	travel	word	y	
+der-fluss	A2	nature	word	y	
+fluessig	B1	general	word	y	
+die-folge	B1	general	word	y	多義
+folgen	B1	general	word	y	
+fordern	B1	general	word	y	
+foerdern	B2	general	word	y	
+die-forelle	B1	food	word	n	
+die-form	B1	general	word	y	
+das-formular	A2	city	word	y	
+forschen	B2	school	word	y	
+die-forschung	B2	school	word	y	
+die-fortbildung	B1	work	word	y	
+fortgehen	B1	daily	word	n	可分動詞
+fortgesetzt	B2	general	word	n	
+das-foto	A1	media	word	y	
+die-frage	A1	school	word	y	
+fragen	A1	school	word	y	
+fragen-stellen	A2	school	phrase	n	
+franken	B1	shop	word	n	專有名詞，釋義含兩義
+frankreich	A1	travel	word	n	專有名詞
+der-franzose	A1	people	word	n	
+die-franzoesin	A1	people	word	n	
+die-frau	A1	people	word	y	
+das-fraeulein	B2	people	word	n	過時用法
+die-frechheit	B2	people	word	y	
+freihaben	A2	work	word	y	可分動詞
+die-freizeit	A1	leisure	word	y	
+die-fremdsprache	A2	school	word	y	
+die-freude	A2	feel	word	y	
+der-freund	A1	people	word	y	
+die-freundin	A1	people	word	y	
+der-friedhof	B1	city	word	y	
+der-friseur	A2	city	word	y	
+die-frist	B2	work	word	y	
+froh	A2	feel	word	y	
+die-frucht	A2	food	word	y	
+das-fruehlingsfest	B1	leisure	word	n	
+die-fruehlingszwiebel	B1	food	word	y	
+fruehstueck-machen	A1	food	phrase	n	
+fruehstuecken	A1	food	word	y	
+die-fuegung	C1	general	word	n	
+fuehren	B1	general	word	y	多義
+der-fuehrerschein	A2	travel	word	y	
+fuers	A2	grammar	word	n	縮合形，可併入 für
+der-fuss	A1	health	word	y	
+der-fussball	A1	leisure	word	y	
+fussball-spielen	A1	leisure	phrase	n	
+die-gabel	A1	food	word	y	
+die-gabelung	B2	travel	word	n	
+der-ganzjahresreifen	B2	travel	word	n	
+gar	B1	grammar	word	n	
+die-garantie	B1	shop	word	y	
+der-garten	A1	home	word	y	
+der-gast	A2	people	word	y	
+der-gastgeber	B1	people	word	y	
+das-gebaeck	B1	food	word	y	
+das-gebaeude	A2	city	word	y	
+geben	A1	general	word	y	
+das-gebiet	B1	general	word	y	
+geboren-sein	A1	people	phrase	n	
+der-geburtstag	A1	time	word	y	
+das-gedicht	B1	school	word	y	
+geeignet	B1	general	word	y	
+die-gefahr	B1	general	word	y	
+gefaehrlich	A2	general	word	y	
+gefallen	A2	feel	word	y	
+das-gefuehl	B1	feel	word	y	
+gegen	A2	grammar	word	n	
+der-gegenstand	B1	general	word	y	
+gegenueber	A2	grammar	word	n	
+das-gehalt	B1	work	word	y	
+gehen	A1	daily	word	y	
+gehoeren	A2	general	word	y	
+gekochte-eier	A2	food	phrase	n	
+das-geld	A1	shop	word	y	
+geld-ausgeben	A2	shop	phrase	n	
+der-geldautomat	A2	shop	word	y	
+die-gelegenheit	B1	general	word	y	
+gelingen	B1	general	word	y	
+die-gemeinschaft	B2	society	word	y	
+der-gemeinschaftsgarten	B2	society	word	n	
+gemischt	B1	general	word	y	
+gemischter-salat	A2	food	phrase	n	
+das-gemuese	A1	food	word	y	
+gemuetlich	A2	home	word	y	
+geniessen	B1	feel	word	y	
+genuegen	B2	general	word	y	
+das-gepaeck	A2	travel	word	y	
+geradeaus	A1	travel	word	y	
+das-geraet	B1	home	word	y	
+geraeumig	B1	home	word	y	
+gerecht	B2	society	word	y	
+das-gericht	B1	food	word	y	多義（餐點、法院）

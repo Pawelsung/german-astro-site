@@ -1,0 +1,251 @@
+id	level	topic	kind	push	flag
+stellen	A2	daily	word	y	
+sterben	A2	health	word	y	
+die-stereoanlage	B1	media	word	y	
+der-stern	A2	nature	word	y	
+die-steuer	B1	shop	word	y	
+der-stiefel	A2	daily	word	y	
+der-stift	A1	school	word	y	
+stilles-wasser	A2	food	phrase	n	
+die-stimmung	B1	feel	word	y	
+stolz	B1	feel	word	y	
+stolz-auf	B1	feel	phrase	y	
+der-strand	A1	nature	word	y	
+die-strasse	A1	city	word	y	
+die-strassenbahn	A2	travel	word	y	
+die-strecke	B1	travel	word	y	
+das-streichholz	B1	home	word	y	
+der-streit	B1	people	word	y	
+streiten	B1	people	word	y	
+der-stress	B1	feel	word	y	
+stressig	B1	feel	word	y	
+der-strom	B1	home	word	y	眾義：電流/河流；此處釋義「電」
+die-stroemung	B2	society	word	n	釋義「潮流；流派」較偏二義，主要義為水流／氣流
+das-stueck	A2	general	word	y	
+der-student	A1	school	word	y	釋義重複「男學生／大學生；男大學生」，宜簡化
+das-studentenwerk	B1	school	word	n	應併入 das-studierendenwerk
+die-studentin	A1	school	word	y	
+die-studie	B1	school	word	y	
+studierend	B2	school	word	n	分詞形容詞，宜併入 die-studierenden
+die-studierenden	B1	school	word	n	複數名詞化分詞
+das-studierendenwerk	B1	school	word	n	
+das-studio	B1	media	word	y	
+das-studium	A2	school	word	y	
+die-stufe	B1	general	word	y	
+der-stuhl	A1	home	word	y	
+die-stunde	A1	time	word	y	釋義「小時」；也指一堂課
+stuttgart	A2	city	word	n	專有名詞
+das-subjekt	A2	grammar	term	n	
+suchen	A1	daily	word	y	
+der-sueden	A2	travel	word	y	
+suedlich-von	A2	travel	phrase	y	
+der-supermarkt	A1	shop	word	y	
+die-suessigkeiten	A2	food	word	y	
+die-szene	B2	society	word	y	
+das-t-shirt	A1	shop	word	y	
+das-tablet	A2	media	word	y	
+die-tablette	A2	health	word	y	
+die-tafel	A1	school	word	y	
+der-tag	A1	time	word	y	
+taeglich	A2	time	word	y	
+tagsueber	A2	time	word	y	pos 標示 adverb/connector 有誤，應為 adverb
+der-taifun	B2	nature	word	y	
+das-tal	A2	nature	word	y	
+das-talent	B1	people	word	y	
+talentiert	B1	people	word	y	
+die-tankstelle	A2	travel	word	y	
+die-tasche	A1	shop	word	y	
+die-tasse	A1	food	word	y	
+die-tastatur	A2	media	word	y	
+die-taetigkeit	B1	work	word	y	
+die-tatsache	B1	general	word	y	
+tauchen	A2	leisure	word	y	
+die-teamfaehigkeit	B1	work	word	y	
+das-technikmuseum	B1	city	word	n	
+technisch	B1	media	word	y	
+die-technische-bildung	B2	school	phrase	n	
+das-teegebaeck	B2	food	word	n	
+die-teigtasche	B1	food	word	n	釋義過泛，似指 Maultasche 等
+der-teil	A2	general	word	y	
+teilnehmen-an-dat	B1	general	phrase	y	
+der-teilnehmer	B1	general	word	y	
+das-telefon	A1	media	word	y	
+telefonieren	A1	media	word	y	
+der-teller	A1	food	word	y	
+der-termin	A2	time	word	y	
+die-terrasse	A2	home	word	y	
+der-test	A2	school	word	y	
+teuer	A1	shop	word	y	
+teurer	A2	shop	word	n	應併入 teuer
+der-text	A1	school	word	y	
+das-theater	A1	leisure	word	y	
+die-theke	B1	food	word	y	
+das-thema	A2	general	word	y	
+die-therme	B1	leisure	word	y	
+das-ticket	A2	travel	word	y	
+tief	A2	general	word	y	
+tief-atmen	A2	health	phrase	y	
+tiefgruendig	B2	general	word	y	程度？B1/B2
+das-tier	A1	nature	word	y	
+der-tipp	A2	general	word	y	
+der-tisch	A1	home	word	y	
+der-titel	B1	media	word	y	
+der-toast	A2	food	word	y	
+die-toilette	A1	home	word	y	
+toll	A2	feel	word	y	
+die-tomate	A1	food	word	y	
+der-topf	A2	home	word	y	
+das-tor	A2	leisure	word	y	
+der-torhueter	B1	leisure	word	n	與 der-torwart 重複，宜併入
+die-torte	A2	food	word	y	
+der-torwart	A2	leisure	word	y	
+der-tourist	A2	travel	word	y	
+traditionell	B1	society	word	y	
+tragen	A2	daily	word	y	
+trainieren	A2	leisure	word	y	
+das-training	A2	leisure	word	y	
+trauen	B2	feel	word	y	常為 sich trauen / jdm trauen，釋義混雜
+die-trauerfeier	B2	society	word	n	
+der-traum	A2	feel	word	y	
+der-traumjob	B1	work	word	y	
+traurig	A2	feel	word	y	
+die-trennung	B1	people	word	y	
+die-treppe	A1	home	word	y	
+trocken	A2	general	word	y	
+trotz	B1	grammar	word	y	詞性應為 preposition（+Gen.），非 adverb/connector
+trotzdem	B1	grammar	word	y	
+der-tumor	B2	health	word	n	
+tun	A1	daily	word	y	
+die-tuer	A1	home	word	y	
+die-tuerkei	A1	city	word	n	專有名詞
+der-turm	A2	city	word	y	
+die-tuete	A2	shop	word	y	
+die-tv-sendung	A2	media	word	y	
+der-typ	B1	people	word	y	
+die-u-bahn	A1	travel	word	y	
+ueben	A1	school	word	y	
+ueber-das-wochenende	A2	time	phrase	n	
+ueberall	A2	general	word	y	
+ueberarbeiten	B1	work	word	y	
+ueberfordern	B2	feel	word	y	程度？B1/B2
+ueberlegenswert	B2	general	word	n	
+uebermenschlich	C1	general	word	n	
+uebernaechst	B1	time	word	y	
+uebernachten	A2	travel	word	y	
+die-uebernachtung	A2	travel	word	y	
+die-ueberraschung	A2	feel	word	y	
+die-ueberraschungsparty	B1	leisure	word	n	
+ueberreden	B2	people	word	y	
+die-ueberschrift	B1	media	word	y	
+uebersetzen	B1	school	word	y	可分/不可分義不同（übersetzen 渡河 vs 翻譯）
+die-uebersetzung	B1	school	word	y	
+ueberspringen	B2	general	word	y	
+ueberwinden	B2	feel	word	y	
+ueberzeugen	B1	general	word	y	
+ueblich	B2	general	word	y	
+die-uebung	A2	school	word	y	
+die-uhr	A1	time	word	y	
+die-ukraine	A2	city	word	n	專有名詞
+um	A1	grammar	word	y	
+um-zu	B1	grammar	phrase	n	
+um-etwas-bitten	B1	general	phrase	y	
+die-umgebung	B1	city	word	y	
+umgehen	B2	general	word	y	不可分(umgehen 繞過) 與可分(umgehen mit) 不同，釋義取後者
+der-umschlag	A2	daily	word	y	
+umso	B1	grammar	word	n	常見於 umso ... je/desto 結構
+umsonst	B1	shop	word	y	
+umsteigen	A2	travel	word	y	
+umstellen	B2	general	word	y	
+die-umstellung	B2	general	word	y	
+die-umwelt	B1	society	word	y	
+umweltfreundlich	B1	society	word	y	
+der-umweltschutz	B1	society	word	y	
+der-umzug	B1	home	word	y	
+unbedingt	B1	general	word	y	
+unbekannt	B1	general	word	y	
+unbewusst	B2	feel	word	y	
+unerwartet	B2	general	word	y	程度？B1/B2
+der-unfall	A2	health	word	y	
+ungefaehr	A2	time	word	y	
+ungefaehr-gleich	B1	general	phrase	n	
+ungerecht	B2	society	word	y	程度？B1/B2
+unglaublich	B1	feel	word	y	
+die-universitaet	A1	school	word	y	
+die-universitaetsstadt	B1	city	word	n	
+der-unsinn	B2	general	word	y	
+unterhaltsam	B2	leisure	word	y	
+unterirdisch	B2	city	word	y	
+die-unterkunft	B1	travel	word	y	
+die-unterlagen	B1	work	word	y	
+unternehmen	B2	general	word	n	應與 das-unternehmen 區分；動詞較少用
+das-unternehmen	B1	work	word	y	
+der-unterricht	A2	school	word	y	
+unterrichten	B1	school	word	y	
+der-unterrichtsplan	B1	school	word	n	
+die-unterrichtsstunde	A2	school	word	y	
+unterscheiden	B1	general	word	y	
+der-unterschied	A2	general	word	y	
+unterstuetzen	B1	general	word	y	
+die-unterstuetzung	B1	general	word	y	
+untersuchen	B1	health	word	y	
+die-untersuchung	B1	health	word	y	
+die-unterwaesche	B1	shop	word	y	
+unterwegs	A2	travel	word	y	
+ununterbrochen	B2	time	word	y	
+das-unwetter	B1	nature	word	y	
+unzufrieden	B1	feel	word	y	
+der-urlaub	A1	travel	word	y	
+urlaub-haben	A2	travel	phrase	y	
+urlaub-machen	A2	travel	phrase	y	
+die-urne	B2	society	word	n	
+die-ursache	B1	general	word	y	
+urspruenglich	B2	general	word	y	程度？B1/B2
+die-usa	A1	city	word	n	專有名詞，複數用法（die USA）
+der-vater	A1	people	word	y	
+der-veganer	B1	food	word	y	
+der-vegetarier	A2	food	word	y	
+der-ventilator	B1	home	word	y	
+die-verabredung	A2	time	word	y	
+veraltet	B2	general	word	y	
+veraendern	B1	general	word	y	
+veranstalten	B1	leisure	word	y	
+der-veranstalter	B2	leisure	word	n	
+die-veranstaltung	B1	leisure	word	y	
+die-verantwortung	B1	work	word	y	
+das-verb	A2	grammar	term	n	
+der-verband	B1	health	word	y	另有「協會」義
+die-verbesserung	B1	general	word	y	
+verbieten	B1	society	word	y	
+verbluehen	C1	nature	word	n	
+verbrauchen	B1	general	word	y	
+verbrennen	B1	health	word	y	
+die-verbrennung	B2	health	word	n	
+verbringen	A2	daily	word	y	
+verdammter-mist	B1	feel	phrase	n	口語粗話
+verdienen	A2	work	word	y	
+der-verein	B1	leisure	word	y	
+vereinbaren	B1	time	word	y	
+verfaulen	B2	nature	word	n	
+die-vergangenheit	B1	time	word	y	
+vergeblich	B2	general	word	y	
+vergleichen	B1	general	word	y	
+der-vergnuegungspark	B1	leisure	word	y	
+das-verhaeltnis	B1	people	word	y	
+verhandeln	B2	work	word	y	程度？B1/B2
+verhindern	B1	general	word	y	
+der-verkaeufer	A2	shop	word	y	
+der-verkaufsstand	B1	shop	word	n	
+der-verkehr	A2	travel	word	y	
+verlaengern	B1	general	word	y	
+verlassen	B1	general	word	y	
+verliebt-sein	A2	feel	phrase	y	
+verlieren	A2	general	word	y	
+der-verlierer	B1	leisure	word	n	
+vermeiden	B1	general	word	y	
+vermieten	A2	home	word	y	
+der-vermieter	B1	home	word	y	
+vermissen	B1	feel	word	y	
+die-vermittlung	B2	work	word	n	
+vermuten	B2	general	word	y	
+veroeffentlichen	B2	media	word	y	
+verpassen	B1	travel	word	y	

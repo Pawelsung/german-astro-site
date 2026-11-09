@@ -1,0 +1,237 @@
+id	level	topic	kind	push	flag
+verrueckt	B1	feel	word	y	
+verschieden	A2	general	word	y	
+verschimmeln	B2	home	word	n	
+verschlucken	B1	health	word	y	
+verschreiben	B1	health	word	y	
+verschwinden	B1	general	word	y	
+die-versicherung	B1	shop	word	y	
+verstaendlich	B1	school	word	y	
+verstehen	A1	school	word	y	
+verstopfen	B2	home	word	n	
+verteilen	B1	general	word	y	
+der-vertrag	B1	work	word	y	
+die-verwaltung	B2	work	word	y	
+die-verwaltungsarbeit	B2	work	word	n	
+verwechseln	B1	general	word	y	
+verwenden	B1	general	word	y	
+verzoegern	B2	general	word	y	
+viel-arbeit	A2	work	chunk	n	
+viel-mehr	A2	time	phrase	n	
+viel-zu-tun-haben	A2	work	phrase	n	
+viele-arbeiten	A2	work	chunk	n	Arbeiten 作「作業/作品」意義與 Arbeit 不同，建議確認是否保留
+vielfaeltig	B2	general	word	y	
+vielleicht	A1	grammar	word	y	
+das-viertel	A2	time	word	y	
+das-visum	A2	travel	word	y	
+das-vitamin	B1	health	word	y	
+der-vogel	A2	nature	word	y	
+die-vogelgrippe	B2	health	word	n	
+der-volksglaube	C1	society	word	n	
+voll	A2	general	word	y	
+voellig	B1	grammar	word	y	
+vom-winde-verweht	B1	media	phrase	n	書名/電影名，屬專有名詞
+von-bis	A1	time	phrase	n	
+voneinander	B1	grammar	word	n	
+vor	A1	grammar	word	y	
+vor-allem	A2	grammar	phrase	y	
+vor-einem-halben-jahr	A2	time	chunk	n	
+vor-kurzem	A2	time	phrase	y	
+vorankommen	B2	general	word	y	srcLevel B1，程度？B1/B2
+vorarbeiten	B2	work	word	n	釋義「預先做」可能是 vorarbeiten 的另一義，常指預先趕工
+die-voraussetzung	B2	general	word	y	srcLevel B1，程度？B1/B2
+vorbereiten	A2	school	word	y	
+die-vorbereitung	A2	school	word	y	
+vorbeugen	B2	health	word	y	srcLevel B1，程度？B1/B2；另有「向前彎身」一義
+die-vorfahren	B2	people	word	n	通常只用複數
+vorhaben	A2	daily	word	y	
+vorhersehbar	B2	general	word	y	srcLevel B1，程度？B1/B2
+vorlesen	A2	school	word	y	
+der-vorleser	B2	media	word	n	書名《朗讀者》，專有名詞傾向
+vorletzt	B1	time	word	y	
+vormittags	A1	time	word	y	
+der-vorschlag	A2	general	word	y	
+vorstellen	A2	people	word	y	
+das-vorstellungsgespraech	B1	work	word	y	
+der-vorteil	B1	general	word	y	
+der-vortrag	B1	school	word	y	
+wachen	B2	general	word	n	少用，wach sein/bewachen 較常見
+wachsen	B1	nature	word	y	
+die-wahl	B1	society	word	y	
+waehlen	B1	society	word	y	
+die-wahlurne	C1	society	word	n	
+wahnsinnig	B1	feel	word	y	
+waehrend	A2	grammar	word	y	詞性可能應為 preposition/conjunction，而非 adverb
+die-wahrheit	B1	general	word	y	
+wahrscheinlich	B1	general	word	y	詞性為副詞/形容詞，釋義「可能」
+der-wald	A2	nature	word	y	
+wandern	A2	leisure	word	y	
+wandern-gehen	A2	leisure	phrase	n	
+die-wanderung	A2	leisure	word	y	
+wann	A1	grammar	word	y	
+wann-genau	A1	time	phrase	n	
+die-warmmiete	B1	home	word	n	
+warten-auf	A2	grammar	phrase	y	
+was-haeltst-du-davon	B1	daily	phrase	n	
+was-laeuft-im-kino	A2	leisure	phrase	n	
+die-waschanlage	B1	travel	word	n	
+die-waesche	A2	home	word	y	
+waesche-waschen	A1	home	phrase	n	
+waschen	A1	home	word	y	
+das-wasser	A1	food	word	y	
+das-webradio	B1	media	word	n	
+die-webseite	A2	media	word	y	
+die-wechselstube	B1	shop	word	n	
+weder-noch	B2	grammar	phrase	n	
+weg	A2	grammar	word	y	
+der-weg	A2	travel	word	y	
+weg-sein	A2	daily	phrase	n	詞性應為 phrase 而非 verb
+wegen	B1	grammar	word	y	
+wegwerfen	A2	home	word	y	
+die-wehrpflicht	B2	society	word	n	
+wehtun	A2	health	word	y	
+das-weib	C1	people	word	n	現代多貶義，不建議推送
+weiblich	A2	people	word	y	
+weil	A1	grammar	word	y	
+der-wein	A1	food	word	y	
+weinen	A2	feel	word	y	
+weinend	B2	feel	word	n	現在分詞形容詞，釋義 weinend 不需獨立詞條？
+die-weinstube	B1	food	word	n	
+weiter	A2	grammar	word	y	
+welchen	A1	grammar	phrase	n	應併入 welcher
+die-welt	A2	society	word	y	
+die-weltkarte	A2	travel	word	n	
+weltoffen	B2	people	word	y	srcLevel B1，程度？B1/B2
+wenig	A2	time	word	y	
+weniger	A2	time	word	y	
+weniger-als	A2	time	phrase	n	
+wenn	A1	grammar	word	y	
+wer-wen-wem	A1	grammar	phrase	n	
+die-werbung	B1	media	word	y	
+werden	A1	grammar	word	y	
+werfen	A2	leisure	word	y	
+wertvoll	B2	general	word	y	srcLevel B1，程度？B1/B2
+der-westen	A2	travel	word	y	
+der-wettbewerb	B2	leisure	word	y	
+das-wetter	A1	nature	word	y	
+wetterbedingt	B2	nature	word	n	
+der-wettkampf	B2	leisure	word	y	
+wichtig	A1	general	word	y	
+wie-hoch	A2	time	phrase	n	
+wiederholen	A2	school	word	y	
+die-wiederholung	A2	school	word	y	
+wiederkommen	A2	daily	word	y	
+wiedersehen	A2	people	word	y	
+das-wiedersehen	A2	people	word	y	
+die-wiese	A2	nature	word	y	
+wieso	A2	grammar	word	y	
+wild	B1	nature	word	y	
+das-wildtier	B1	nature	word	y	
+windig	A2	nature	word	y	
+der-winter	A1	nature	word	y	
+die-wirkung	B1	general	word	y	
+die-wirtschaft	B1	society	word	y	
+wissen	A1	general	word	y	
+das-wissen	B1	school	word	y	
+die-wissenschaft	B1	school	word	y	
+der-wissenschaftler	B1	work	word	y	
+die-wissenschaftlerin	B1	work	word	y	
+der-witz	B1	leisure	word	y	
+witzig	B1	feel	word	y	
+wo	A1	grammar	word	y	
+wo-noch	A1	grammar	phrase	n	
+die-woche	A1	time	word	y	
+das-wochenende	A1	time	word	y	
+woher-kommst-du	A1	people	phrase	n	
+wohin	A1	grammar	word	y	
+wohin-gehst-du	A1	travel	phrase	n	
+die-wohngemeinschaft	B1	home	word	y	
+die-wohnsiedlung	B2	home	word	n	srcLevel B1，程度？B1/B2
+die-wohnung	A1	home	word	y	
+die-wohnungsnot	B2	society	word	n	
+die-wolke	A2	nature	word	y	
+die-wolle	B1	shop	word	y	
+wollen	A1	grammar	word	y	
+das-wort	A1	school	word	y	
+das-woerterbuch	A2	school	word	y	
+woertlich	B2	school	word	y	srcLevel B1，程度？B1/B2
+der-wortschatz	B1	school	word	y	
+worueber	B1	grammar	word	n	
+worum-geht-es	B1	daily	phrase	n	
+die-wunde	B1	health	word	y	
+der-wunsch	B1	feel	word	y	
+die-wurst	A1	food	word	y	
+wuerzen	B2	food	word	y	
+wueten	C1	feel	word	n	
+wuetend	B1	feel	word	y	
+zahlen	A1	shop	word	y	
+zaehlen	A2	time	word	y	釋義含兩義（計數；算數），可能需拆
+die-zahlung	B1	shop	word	y	
+der-zahn	A1	health	word	y	
+die-zahnbuerste	A1	health	word	y	
+die-zahncreme	A2	health	word	y	與 Zahnpasta 重複，可合併
+die-zahnpasta	A2	health	word	y	與 Zahncreme 重複，可合併
+das-zahnradgetriebe	C1	work	word	n	
+zaubern	B2	leisure	word	y	srcLevel B1，程度？B1/B2
+das-zeichen	B1	general	word	y	
+zeigen	A1	general	word	y	
+die-zeit	A1	time	word	y	
+zeitaufwendig	B2	work	word	y	
+zeitgemaess	B2	society	word	y	srcLevel B1，程度？B1/B2
+der-zeitpunkt	B1	time	word	y	
+die-zeitschrift	A2	media	word	y	
+die-zeitung	A1	media	word	y	
+das-zelt	A2	leisure	word	y	
+das-zentrum	A2	city	word	y	
+das-zertifikat	B1	school	word	y	
+das-zeugnis	B1	school	word	y	
+das-ziel	B1	general	word	y	
+das-zimmer	A1	home	word	y	
+zimmer-mit-aussicht	A2	travel	phrase	n	
+die-zimtschnecke	A2	food	word	n	
+die-zinsen	B2	shop	word	n	通常只用複數
+zu	A1	grammar	word	y	詞性含介系詞與不定詞標記，多義
+zu-abend-essen	A2	food	phrase	n	
+zu-der-zeit	B1	time	phrase	n	
+zu-hause	A1	home	phrase	y	
+zu-mittag-essen	A2	food	phrase	n	
+zu-viel	A2	time	phrase	n	
+zu-weihnachten	A2	time	phrase	n	
+zubereiten	B1	food	word	y	
+die-zubereitung	B1	food	word	y	
+zuerst	A2	time	word	y	
+der-zufall	B1	general	word	y	
+zufaellig	B2	general	word	y	srcLevel B1，程度？B1/B2
+zufrieden-mit	B1	feel	phrase	y	
+die-zufriedenheit	B2	feel	word	y	srcLevel B1，程度？B1/B2
+der-zug	A1	travel	word	y	多義，常用義為火車
+das-zuhause	B1	home	word	y	
+die-zukunft	A2	time	word	y	
+zulassen	B2	society	word	y	
+zum-geburtstag	A1	time	phrase	n	
+zum-glueck	A2	feel	phrase	y	
+zum-mitnehmen	A2	food	phrase	n	
+zum-schluss	A2	time	phrase	n	
+zumachen	A2	daily	word	y	
+zumindest	B1	grammar	word	y	
+zunaechst	B1	grammar	word	y	
+zunehmen	B1	health	word	y	
+zur-arbeit-gehen	A1	work	phrase	n	
+zur-zeit	B1	time	phrase	n	應併入 zurzeit
+zurueckerstatten	B2	shop	word	y	srcLevel B1，程度？B1/B2
+zurzeit	B1	time	word	y	
+der-zusammenhang	B2	general	word	y	srcLevel B1，程度？B1/B2
+zusammenleben	B1	people	word	y	
+der-zuschauer	B1	media	word	y	
+zustaendig	B2	work	word	y	
+zustimmen	B1	general	word	y	
+die-zutat	B1	food	word	y	
+zuverlaessig	B2	people	word	y	srcLevel B1，程度？B1/B2
+zwar	B1	grammar	word	y	
+zwei-bis-dreimal-pro-woche	A2	time	chunk	n	
+der-zweifel	B2	feel	word	y	
+zweimal-am-tag	A2	time	chunk	n	
+zweitens	B1	grammar	word	y	
+die-zwiebel	A2	food	word	y	
+zwingen	B2	general	word	y	
+zwischendurch	B2	time	word	y	

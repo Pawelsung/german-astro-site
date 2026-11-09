@@ -1,0 +1,2337 @@
+[
+ {
+  "word": "Vertrauen",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "信任",
+  "exampleDe": "Nach dem Streit hat es lange gedauert, bis sie wieder Vertrauen zu ihm hatte.",
+  "exampleZh": "那次爭吵之後，她過了很久才重新信任他。"
+ },
+ {
+  "word": "Geduld",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "耐心",
+  "exampleDe": "Mit kleinen Kindern braucht man viel Geduld.",
+  "exampleZh": "帶小孩需要很多耐心。"
+ },
+ {
+  "word": "Erleichterung",
+  "article": "die",
+  "plural": "die Erleichterungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "鬆一口氣的感覺",
+  "exampleDe": "Zu meiner Erleichterung war das Handy noch im Auto.",
+  "exampleZh": "手機還在車上，讓我鬆了一口氣。"
+ },
+ {
+  "word": "Sehnsucht",
+  "article": "die",
+  "plural": "die Sehnsüchte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "思念；渴望",
+  "exampleDe": "Im Winter habe ich oft Sehnsucht nach dem Meer.",
+  "exampleZh": "冬天時我常常想念大海。"
+ },
+ {
+  "word": "Mitleid",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "同情",
+  "exampleDe": "Ich hatte großes Mitleid mit dem verletzten Hund.",
+  "exampleZh": "我非常同情那隻受傷的狗。"
+ },
+ {
+  "word": "Aufregung",
+  "article": "die",
+  "plural": "die Aufregungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "激動；緊張不安",
+  "exampleDe": "Vor lauter Aufregung konnte sie in der Nacht vor der Hochzeit nicht schlafen.",
+  "exampleZh": "婚禮前一晚，她緊張得睡不著。"
+ },
+ {
+  "word": "erwarten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "期待；預料",
+  "exampleDe": "Ich habe nicht erwartet, dass so viele Gäste kommen.",
+  "exampleZh": "我沒想到會來這麼多客人。",
+  "verb": {
+   "praesens3": "erwartet",
+   "praeteritum": "erwartete",
+   "perfekt": "hat erwartet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "sich schämen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "感到羞愧",
+  "exampleDe": "Er schämt sich, weil er seine Mutter angelogen hat.",
+  "exampleZh": "他對媽媽說了謊，覺得很羞愧。",
+  "verb": {
+   "praesens3": "schämt sich",
+   "praeteritum": "schämte sich",
+   "perfekt": "hat sich geschämt",
+   "aux": "haben",
+   "note": "反身：sich schämen (für + A)"
+  }
+ },
+ {
+  "word": "aufregen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "使激動；使生氣",
+  "exampleDe": "Reg dich nicht auf, wir finden bestimmt eine Lösung!",
+  "exampleZh": "別生氣，我們一定能找到解決辦法！",
+  "verb": {
+   "praesens3": "regt auf",
+   "praeteritum": "regte auf",
+   "perfekt": "hat aufgeregt",
+   "aux": "haben",
+   "note": "可分動詞；常用反身：sich aufregen über + A"
+  }
+ },
+ {
+  "word": "befürchten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "擔心（發生不好的事）",
+  "exampleDe": "Ich befürchte, dass wir den letzten Bus schon verpasst haben.",
+  "exampleZh": "我擔心我們已經錯過末班公車了。",
+  "verb": {
+   "praesens3": "befürchtet",
+   "praeteritum": "befürchtete",
+   "perfekt": "hat befürchtet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "trösten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "安慰",
+  "exampleDe": "Als ihre Katze gestorben war, hat ihre beste Freundin sie getröstet.",
+  "exampleZh": "她的貓過世時，最好的朋友安慰了她。",
+  "verb": {
+   "praesens3": "tröstet",
+   "praeteritum": "tröstete",
+   "perfekt": "hat getröstet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "zweifeln",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "懷疑",
+  "exampleDe": "Manchmal zweifle ich daran, ob die Entscheidung richtig war.",
+  "exampleZh": "我有時會懷疑這個決定是否正確。",
+  "verb": {
+   "praesens3": "zweifelt",
+   "praeteritum": "zweifelte",
+   "perfekt": "hat gezweifelt",
+   "aux": "haben",
+   "note": "zweifeln an + D"
+  }
+ },
+ {
+  "word": "erschrecken",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "受到驚嚇",
+  "exampleDe": "Sie erschrak, als plötzlich das Licht ausging.",
+  "exampleZh": "燈突然熄滅時，她嚇了一跳。",
+  "verb": {
+   "praesens3": "erschrickt",
+   "praeteritum": "erschrak",
+   "perfekt": "ist erschrocken",
+   "aux": "sein",
+   "note": "表「嚇到別人」時為規則變化：erschreckt, erschreckte, hat erschreckt"
+  }
+ },
+ {
+  "word": "begeistert",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "興致高昂的；熱衷的",
+  "exampleDe": "Die Kinder waren von dem Ausflug in den Zoo total begeistert.",
+  "exampleZh": "孩子們對這趟動物園之旅非常興奮。"
+ },
+ {
+  "word": "peinlich",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "令人尷尬的",
+  "exampleDe": "Es war mir sehr peinlich, dass ich seinen Namen vergessen hatte.",
+  "exampleZh": "我忘了他的名字，覺得非常尷尬。"
+ },
+ {
+  "word": "verzweifelt",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "絕望的",
+  "exampleDe": "Verzweifelt suchte er überall nach seinem Schlüssel.",
+  "exampleZh": "他絕望地到處找鑰匙。"
+ },
+ {
+  "word": "Beziehung",
+  "article": "die",
+  "plural": "die Beziehungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "關係；戀愛關係",
+  "exampleDe": "Sie führen seit drei Jahren eine Beziehung, wohnen aber noch getrennt.",
+  "exampleZh": "他們交往三年了，但還是分開住。"
+ },
+ {
+  "word": "Ehe",
+  "article": "die",
+  "plural": "die Ehen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "婚姻",
+  "exampleDe": "Nach zwanzig Jahren Ehe sind die beiden immer noch sehr glücklich.",
+  "exampleZh": "結婚二十年後，兩人依然很幸福。"
+ },
+ {
+  "word": "Scheidung",
+  "article": "die",
+  "plural": "die Scheidungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "離婚",
+  "exampleDe": "Nach der Scheidung blieben die Kinder bei ihrem Vater.",
+  "exampleZh": "離婚後，孩子們跟著爸爸住。"
+ },
+ {
+  "word": "Verwandte",
+  "article": "der",
+  "plural": "die Verwandten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "親戚",
+  "exampleDe": "Zu Weihnachten besuchen wir unsere Verwandten in Hamburg.",
+  "exampleZh": "聖誕節時我們會去漢堡探望親戚。"
+ },
+ {
+  "word": "Bekannte",
+  "article": "der",
+  "plural": "die Bekannten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "熟人",
+  "exampleDe": "Ein Bekannter von mir hat mir diese Wohnung empfohlen.",
+  "exampleZh": "我的一位熟人向我推薦了這間公寓。"
+ },
+ {
+  "word": "Kindheit",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "童年",
+  "exampleDe": "In meiner Kindheit habe ich jeden Sommer bei meiner Oma verbracht.",
+  "exampleZh": "小時候我每年夏天都在外婆家度過。"
+ },
+ {
+  "word": "Verständnis",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "理解；體諒",
+  "exampleDe": "Danke für dein Verständnis, ich konnte wirklich nicht früher kommen.",
+  "exampleZh": "謝謝你的體諒，我真的沒辦法早點來。"
+ },
+ {
+  "word": "Eigenschaft",
+  "article": "die",
+  "plural": "die Eigenschaften",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "特質；特性",
+  "exampleDe": "Ehrlichkeit ist die Eigenschaft, die ich an ihr am meisten schätze.",
+  "exampleZh": "誠實是我最欣賞她的特質。"
+ },
+ {
+  "word": "Verhalten",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "行為；舉止",
+  "exampleDe": "Sein Verhalten auf der Party fanden alle ziemlich seltsam.",
+  "exampleZh": "大家都覺得他在派對上的舉止很奇怪。"
+ },
+ {
+  "word": "vorschlagen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "提議；建議",
+  "exampleDe": "Ich schlage vor, dass wir uns am Samstag treffen.",
+  "exampleZh": "我提議我們星期六見面。",
+  "verb": {
+   "praesens3": "schlägt vor",
+   "praeteritum": "schlug vor",
+   "perfekt": "hat vorgeschlagen",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "versöhnen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "和好",
+  "exampleDe": "Nach dem Streit haben sich die beiden Schwestern schnell wieder versöhnt.",
+  "exampleZh": "吵架後，兩姊妹很快就和好了。",
+  "verb": {
+   "praesens3": "versöhnt",
+   "praeteritum": "versöhnte",
+   "perfekt": "hat versöhnt",
+   "aux": "haben",
+   "note": "常用反身：sich versöhnen mit + D"
+  }
+ },
+ {
+  "word": "trennen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "分開；分手",
+  "exampleDe": "Nach fünf Jahren hat sie sich von ihrem Freund getrennt.",
+  "exampleZh": "交往五年後，她和男友分手了。",
+  "verb": {
+   "praesens3": "trennt",
+   "praeteritum": "trennte",
+   "perfekt": "hat getrennt",
+   "aux": "haben",
+   "note": "也可反身：sich trennen von + D"
+  }
+ },
+ {
+  "word": "sich verlieben",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "愛上",
+  "exampleDe": "Im Sommerurlaub hat er sich in eine Spanierin verliebt.",
+  "exampleZh": "暑假旅行時，他愛上了一位西班牙女孩。",
+  "verb": {
+   "praesens3": "verliebt sich",
+   "praeteritum": "verliebte sich",
+   "perfekt": "hat sich verliebt",
+   "aux": "haben",
+   "note": "反身：sich verlieben in + A"
+  }
+ },
+ {
+  "word": "verzeihen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "原諒",
+  "exampleDe": "Kannst du mir verzeihen, dass ich deinen Geburtstag vergessen habe?",
+  "exampleZh": "你能原諒我忘了你的生日嗎？",
+  "verb": {
+   "praesens3": "verzeiht",
+   "praeteritum": "verzieh",
+   "perfekt": "hat verziehen",
+   "aux": "haben",
+   "note": "接人用第三格：jemandem verzeihen"
+  }
+ },
+ {
+  "word": "widersprechen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "反駁；與……矛盾",
+  "exampleDe": "Meine Tochter widerspricht mir in letzter Zeit bei jeder Kleinigkeit.",
+  "exampleZh": "我女兒最近連小事都要跟我唱反調。",
+  "verb": {
+   "praesens3": "widerspricht",
+   "praeteritum": "widersprach",
+   "perfekt": "hat widersprochen",
+   "aux": "haben",
+   "note": "接第三格；不可分動詞"
+  }
+ },
+ {
+  "word": "sich benehmen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "（在行為舉止上）表現",
+  "exampleDe": "Die Kinder haben sich beim Essen sehr gut benommen.",
+  "exampleZh": "孩子們吃飯時表現得很好。",
+  "verb": {
+   "praesens3": "benimmt sich",
+   "praeteritum": "benahm sich",
+   "perfekt": "hat sich benommen",
+   "aux": "haben",
+   "note": "反身：sich benehmen"
+  }
+ },
+ {
+  "word": "hilfsbereit",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "樂於助人的",
+  "exampleDe": "Unsere neue Nachbarin ist sehr hilfsbereit und trägt mir oft die Einkäufe hoch.",
+  "exampleZh": "我們的新鄰居很樂於助人，常幫我把買的東西提上樓。"
+ },
+ {
+  "word": "geduldig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "有耐心的",
+  "exampleDe": "Mein Opa hat mir geduldig das Schachspielen beigebracht.",
+  "exampleZh": "爺爺很有耐心地教我下西洋棋。"
+ },
+ {
+  "word": "vernünftig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "理智的；合理的",
+  "exampleDe": "Sei doch vernünftig und fahr bei diesem Schnee nicht mit dem Rad!",
+  "exampleZh": "理智一點，這種下雪天別騎腳踏車！"
+ },
+ {
+  "word": "selbstbewusst",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "有自信的",
+  "exampleDe": "Seit sie im Theaterkurs ist, wirkt meine Tochter viel selbstbewusster.",
+  "exampleZh": "自從上了戲劇課，我女兒看起來有自信多了。"
+ },
+ {
+  "word": "Behandlung",
+  "article": "die",
+  "plural": "die Behandlungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "治療",
+  "exampleDe": "Die Behandlung beim Zahnarzt hat zum Glück nicht wehgetan.",
+  "exampleZh": "幸好看牙醫的治療過程並不痛。"
+ },
+ {
+  "word": "Spritze",
+  "article": "die",
+  "plural": "die Spritzen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "針劑；打針",
+  "exampleDe": "Die Ärztin hat ihm gegen die Schmerzen eine Spritze gegeben.",
+  "exampleZh": "醫生替他打了一針止痛。"
+ },
+ {
+  "word": "Knochen",
+  "article": "der",
+  "plural": "die Knochen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "骨頭",
+  "exampleDe": "Beim Skifahren hat er sich einen Knochen im Arm gebrochen.",
+  "exampleZh": "他滑雪時摔斷了手臂的骨頭。"
+ },
+ {
+  "word": "Blutdruck",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "血壓",
+  "exampleDe": "Mein Vater muss jeden Morgen seinen Blutdruck messen.",
+  "exampleZh": "我爸爸每天早上都要量血壓。"
+ },
+ {
+  "word": "schädlich",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "有害的",
+  "exampleDe": "Zu viel Zucker ist schädlich für die Zähne.",
+  "exampleZh": "吃太多糖對牙齒有害。"
+ },
+ {
+  "word": "schwanger",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "懷孕的",
+  "exampleDe": "Meine Schwester ist im sechsten Monat schwanger.",
+  "exampleZh": "我姊姊懷孕六個月了。"
+ },
+ {
+  "word": "ansteckend",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "會傳染的",
+  "exampleDe": "Bleib zu Hause, deine Erkältung ist noch ansteckend!",
+  "exampleZh": "留在家裡吧，你的感冒還會傳染！"
+ },
+ {
+  "word": "blass",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "health",
+  "meaning": "臉色蒼白的",
+  "exampleDe": "Du siehst heute so blass aus, geht es dir nicht gut?",
+  "exampleZh": "你今天臉色好蒼白，身體不舒服嗎？"
+ },
+ {
+  "word": "Schublade",
+  "article": "die",
+  "plural": "die Schubladen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "抽屜",
+  "exampleDe": "Die Rechnungen liegen in der oberen Schublade.",
+  "exampleZh": "帳單放在上面的抽屜裡。"
+ },
+ {
+  "word": "Hausmeister",
+  "article": "der",
+  "plural": "die Hausmeister",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "大樓管理員",
+  "exampleDe": "Der Hausmeister hat die kaputte Lampe im Treppenhaus repariert.",
+  "exampleZh": "管理員修好了樓梯間壞掉的燈。"
+ },
+ {
+  "word": "Werkzeug",
+  "article": "das",
+  "plural": "die Werkzeuge",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "工具",
+  "exampleDe": "Für das Regal brauche ich nur einfaches Werkzeug.",
+  "exampleZh": "組裝這個架子只需要簡單的工具。"
+ },
+ {
+  "word": "Leiter",
+  "article": "die",
+  "plural": "die Leitern",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "梯子",
+  "exampleDe": "Um die Lampe zu wechseln, musste ich auf die Leiter steigen.",
+  "exampleZh": "為了換燈泡，我得爬上梯子。"
+ },
+ {
+  "word": "heizen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "開暖氣；取暖",
+  "exampleDe": "Im Oktober heizen wir normalerweise noch nicht.",
+  "exampleZh": "我們十月通常還不開暖氣。",
+  "verb": {
+   "praesens3": "heizt",
+   "praeteritum": "heizte",
+   "perfekt": "hat geheizt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "lüften",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "通風；開窗換氣",
+  "exampleDe": "Nach dem Kochen lüfte ich immer die Küche.",
+  "exampleZh": "做完菜我一定會開窗讓廚房通風。",
+  "verb": {
+   "praesens3": "lüftet",
+   "praeteritum": "lüftete",
+   "perfekt": "hat gelüftet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "streichen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "home",
+  "meaning": "粉刷；塗抹",
+  "exampleDe": "Am Wochenende streichen wir das Kinderzimmer gelb.",
+  "exampleZh": "這個週末我們要把兒童房漆成黃色。",
+  "verb": {
+   "praesens3": "streicht",
+   "praeteritum": "strich",
+   "perfekt": "hat gestrichen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "Portion",
+  "article": "die",
+  "plural": "die Portionen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "一份（餐點）",
+  "exampleDe": "Die Portionen in diesem Restaurant sind riesig, deshalb teilen wir uns meistens eine.",
+  "exampleZh": "這家餐廳的份量超大，所以我們通常合吃一份。"
+ },
+ {
+  "word": "Vorspeise",
+  "article": "die",
+  "plural": "die Vorspeisen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "前菜",
+  "exampleDe": "Als Vorspeise nehme ich die Tomatensuppe.",
+  "exampleZh": "前菜我要番茄湯。"
+ },
+ {
+  "word": "Trinkgeld",
+  "article": "das",
+  "plural": "die Trinkgelder",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "小費",
+  "exampleDe": "In Deutschland gibt man im Restaurant meistens etwas Trinkgeld.",
+  "exampleZh": "在德國，上餐廳通常會給一些小費。"
+ },
+ {
+  "word": "Geschmack",
+  "article": "der",
+  "plural": "die Geschmäcker",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "味道；品味",
+  "exampleDe": "Die Suppe hat einen leichten Geschmack nach Ingwer.",
+  "exampleZh": "這道湯帶有淡淡的薑味。"
+ },
+ {
+  "word": "Knoblauch",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "大蒜",
+  "exampleDe": "Ohne Knoblauch schmeckt mir diese Soße einfach nicht.",
+  "exampleZh": "沒有大蒜的話，這種醬我就覺得不好吃。"
+ },
+ {
+  "word": "braten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "煎；烤（肉）",
+  "exampleDe": "Brate die Zwiebeln kurz in etwas Öl, bevor du das Fleisch dazugibst.",
+  "exampleZh": "加肉之前，先用一點油稍微煎一下洋蔥。",
+  "verb": {
+   "praesens3": "brät",
+   "praeteritum": "briet",
+   "perfekt": "hat gebraten",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "schälen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "削皮",
+  "exampleDe": "Während ich die Kartoffeln schäle, kannst du den Tisch decken.",
+  "exampleZh": "我削馬鈴薯皮的時候，你可以擺餐具。",
+  "verb": {
+   "praesens3": "schält",
+   "praeteritum": "schälte",
+   "perfekt": "hat geschält",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "servieren",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "上菜",
+  "exampleDe": "Das Frühstück wird im Hotel bis zehn Uhr serviert.",
+  "exampleZh": "飯店早餐供應到十點。",
+  "verb": {
+   "praesens3": "serviert",
+   "praeteritum": "servierte",
+   "perfekt": "hat serviert",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "roh",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "生的",
+  "exampleDe": "Rohes Fleisch solltest du nicht lange außerhalb des Kühlschranks lassen.",
+  "exampleZh": "生肉不該在冰箱外放太久。"
+ },
+ {
+  "word": "fettig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "油膩的",
+  "exampleDe": "Abends esse ich nichts Fettiges mehr, weil ich sonst schlecht schlafe.",
+  "exampleZh": "我晚上不再吃油膩的東西，不然會睡不好。"
+ },
+ {
+  "word": "Reklamation",
+  "article": "die",
+  "plural": "die Reklamationen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "客訴；退換貨申訴",
+  "exampleDe": "Für eine Reklamation brauchen Sie unbedingt den Kassenbon.",
+  "exampleZh": "要申訴退換貨，您一定要有收據。"
+ },
+ {
+  "word": "Schnäppchen",
+  "article": "das",
+  "plural": "die Schnäppchen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "便宜好貨",
+  "exampleDe": "Die Jacke war ein echtes Schnäppchen, sie hat nur zwanzig Euro gekostet.",
+  "exampleZh": "這件外套真的很划算，只要二十歐元。"
+ },
+ {
+  "word": "Schulden",
+  "article": "die",
+  "plural": "(只有複數)",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "債務；欠款",
+  "exampleDe": "Nach dem Hauskauf hatten sie jahrelang hohe Schulden bei der Bank.",
+  "exampleZh": "買房後，他們多年來都背著銀行的高額債務。"
+ },
+ {
+  "word": "Verpackung",
+  "article": "die",
+  "plural": "die Verpackungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "包裝",
+  "exampleDe": "Ich versuche, Produkte mit wenig Verpackung zu kaufen.",
+  "exampleZh": "我盡量買包裝少的商品。"
+ },
+ {
+  "word": "Ware",
+  "article": "die",
+  "plural": "die Waren",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "商品；貨物",
+  "exampleDe": "Reduzierte Ware kann leider nicht umgetauscht werden.",
+  "exampleZh": "特價商品恕不退換。"
+ },
+ {
+  "word": "verschwenden",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "浪費",
+  "exampleDe": "Wer jeden Tag Essen wegwirft, verschwendet viel Geld.",
+  "exampleZh": "每天丟掉食物的人浪費了很多錢。",
+  "verb": {
+   "praesens3": "verschwendet",
+   "praeteritum": "verschwendete",
+   "perfekt": "hat verschwendet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "preiswert",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "價格實惠的",
+  "exampleDe": "In dem kleinen Laden an der Ecke kann man ziemlich preiswert einkaufen.",
+  "exampleZh": "在轉角那家小店可以買到相當實惠的東西。"
+ },
+ {
+  "word": "gültig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "有效的",
+  "exampleDe": "Der Gutschein ist nur noch bis Ende März gültig.",
+  "exampleZh": "這張禮券只到三月底有效。"
+ },
+ {
+  "word": "ausverkauft",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "shop",
+  "meaning": "售完的",
+  "exampleDe": "Als wir ankamen, waren die günstigen Karten schon ausverkauft.",
+  "exampleZh": "我們到的時候，便宜的票已經賣完了。"
+ },
+ {
+  "word": "Tagesablauf",
+  "article": "der",
+  "plural": "die Tagesabläufe",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "daily",
+  "meaning": "一天的作息",
+  "exampleDe": "Seit das Baby da ist, hat sich unser Tagesablauf völlig verändert.",
+  "exampleZh": "寶寶出生後，我們的作息完全變了。"
+ },
+ {
+  "word": "Unordnung",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "daily",
+  "meaning": "雜亂",
+  "exampleDe": "In seinem Zimmer herrscht immer eine schreckliche Unordnung.",
+  "exampleZh": "他的房間總是亂得可怕。"
+ },
+ {
+  "word": "Schmuck",
+  "article": "der",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "daily",
+  "meaning": "首飾",
+  "exampleDe": "Sie trägt nur selten Schmuck, höchstens einen schmalen Ring.",
+  "exampleZh": "她很少戴首飾，頂多戴一枚細戒指。"
+ },
+ {
+  "word": "verschlafen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "daily",
+  "meaning": "睡過頭",
+  "exampleDe": "Heute habe ich verschlafen und musste ohne Frühstück los.",
+  "exampleZh": "我今天睡過頭，沒吃早餐就得出門。",
+  "verb": {
+   "praesens3": "verschläft",
+   "praeteritum": "verschlief",
+   "perfekt": "hat verschlafen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "nähen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "daily",
+  "meaning": "縫",
+  "exampleDe": "Kannst du mir bitte den Knopf wieder annähen? Ich kann nicht gut nähen.",
+  "exampleZh": "你可以幫我把鈕扣縫回去嗎？我不太會縫東西。",
+  "verb": {
+   "praesens3": "näht",
+   "praeteritum": "nähte",
+   "perfekt": "hat genäht",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "Sieg",
+  "article": "der",
+  "plural": "die Siege",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "勝利",
+  "exampleDe": "Nach dem Sieg feierte die ganze Mannschaft bis spät in die Nacht.",
+  "exampleZh": "勝利之後，全隊一直慶祝到深夜。"
+ },
+ {
+  "word": "Niederlage",
+  "article": "die",
+  "plural": "die Niederlagen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "失敗；敗仗",
+  "exampleDe": "Trotz der Niederlage waren die Fans stolz auf ihr Team.",
+  "exampleZh": "儘管輸了，球迷仍以他們的球隊為榮。"
+ },
+ {
+  "word": "Publikum",
+  "article": "das",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "觀眾",
+  "exampleDe": "Das Publikum klatschte so lange, dass die Band noch ein Lied spielte.",
+  "exampleZh": "觀眾鼓掌了好久，樂團於是又多唱了一首歌。"
+ },
+ {
+  "word": "Bühne",
+  "article": "die",
+  "plural": "die Bühnen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "舞台",
+  "exampleDe": "Vor ihrem ersten Auftritt auf der Bühne hatte sie große Angst.",
+  "exampleZh": "第一次上台演出前，她非常害怕。"
+ },
+ {
+  "word": "Gemälde",
+  "article": "das",
+  "plural": "die Gemälde",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "畫作",
+  "exampleDe": "Im Museum hängt ein berühmtes Gemälde aus dem 17. Jahrhundert.",
+  "exampleZh": "博物館裡掛著一幅十七世紀的名畫。"
+ },
+ {
+  "word": "Sammlung",
+  "article": "die",
+  "plural": "die Sammlungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "收藏",
+  "exampleDe": "Mein Onkel hat eine riesige Sammlung alter Briefmarken.",
+  "exampleZh": "我叔叔收藏了非常多舊郵票。"
+ },
+ {
+  "word": "zelten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "露營",
+  "exampleDe": "Im August wollen wir eine Woche lang am See zelten.",
+  "exampleZh": "八月我們想在湖邊露營一週。",
+  "verb": {
+   "praesens3": "zeltet",
+   "praeteritum": "zeltete",
+   "perfekt": "hat gezeltet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "sammeln",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "收集",
+  "exampleDe": "Als Kind habe ich im Herbst immer bunte Blätter gesammelt.",
+  "exampleZh": "小時候我每年秋天都會收集彩色的葉子。",
+  "verb": {
+   "praesens3": "sammelt",
+   "praeteritum": "sammelte",
+   "perfekt": "hat gesammelt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "klettern",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "leisure",
+  "meaning": "攀爬",
+  "exampleDe": "Am Wochenende sind wir mit den Kindern auf einen Baum geklettert.",
+  "exampleZh": "週末我們和孩子們一起爬樹。",
+  "verb": {
+   "praesens3": "klettert",
+   "praeteritum": "kletterte",
+   "perfekt": "ist geklettert",
+   "aux": "sein"
+  }
+ },
+ {
+  "word": "Landschaft",
+  "article": "die",
+  "plural": "die Landschaften",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "風景；地貌",
+  "exampleDe": "Die Landschaft in den Alpen hat uns sehr beeindruckt.",
+  "exampleZh": "阿爾卑斯山的風景令我們印象深刻。"
+ },
+ {
+  "word": "Küste",
+  "article": "die",
+  "plural": "die Küsten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "海岸",
+  "exampleDe": "An der Küste weht fast immer ein starker Wind.",
+  "exampleZh": "海岸邊幾乎總是吹著強風。"
+ },
+ {
+  "word": "Hitze",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "炎熱",
+  "exampleDe": "Bei dieser Hitze bleibe ich nachmittags lieber in der Wohnung.",
+  "exampleZh": "這麼熱的天氣，我下午寧可待在家裡。"
+ },
+ {
+  "word": "Haustier",
+  "article": "das",
+  "plural": "die Haustiere",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "寵物",
+  "exampleDe": "In unserem Mietshaus sind Haustiere leider nicht erlaubt.",
+  "exampleZh": "可惜我們的出租公寓不准養寵物。"
+ },
+ {
+  "word": "Ernte",
+  "article": "die",
+  "plural": "die Ernten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "收成",
+  "exampleDe": "Wegen des trockenen Sommers war die Ernte dieses Jahr schlecht.",
+  "exampleZh": "由於夏天乾旱，今年收成不好。"
+ },
+ {
+  "word": "gießen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "澆水",
+  "exampleDe": "Könntest du meine Blumen gießen, während ich weg bin?",
+  "exampleZh": "我不在的時候，你可以幫我澆花嗎？",
+  "verb": {
+   "praesens3": "gießt",
+   "praeteritum": "goss",
+   "perfekt": "hat gegossen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "frieren",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "覺得冷；結冰",
+  "exampleDe": "Ohne Mütze friere ich im Winter sofort an den Ohren.",
+  "exampleZh": "冬天不戴帽子，我的耳朵馬上就冷。",
+  "verb": {
+   "praesens3": "friert",
+   "praeteritum": "fror",
+   "perfekt": "hat gefroren",
+   "aux": "haben/sein",
+   "note": "表「結冰」時助動詞用 sein"
+  }
+ },
+ {
+  "word": "pflanzen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "種植",
+  "exampleDe": "Im Frühling haben wir einen Apfelbaum im Garten gepflanzt.",
+  "exampleZh": "春天時我們在花園裡種了一棵蘋果樹。",
+  "verb": {
+   "praesens3": "pflanzt",
+   "praeteritum": "pflanzte",
+   "perfekt": "hat gepflanzt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "Zeitraum",
+  "article": "der",
+  "plural": "die Zeiträume",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "一段期間",
+  "exampleDe": "In diesem Zeitraum ist unser Büro leider geschlossen.",
+  "exampleZh": "很抱歉，這段期間我們的辦公室不開放。"
+ },
+ {
+  "word": "Gegenwart",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "現在；當下",
+  "exampleDe": "Man sollte weniger an früher denken und mehr in der Gegenwart leben.",
+  "exampleZh": "應該少想過去，多活在當下。"
+ },
+ {
+  "word": "Jahrhundert",
+  "article": "das",
+  "plural": "die Jahrhunderte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "世紀",
+  "exampleDe": "Dieses Haus wurde im 19. Jahrhundert gebaut.",
+  "exampleZh": "這棟房子建於十九世紀。"
+ },
+ {
+  "word": "Jahrzehnt",
+  "article": "das",
+  "plural": "die Jahrzehnte",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "十年",
+  "exampleDe": "In den letzten Jahrzehnten hat sich unser Dorf stark verändert.",
+  "exampleZh": "過去幾十年來，我們的村子改變很大。"
+ },
+ {
+  "word": "Anzahl",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "數量；人數",
+  "exampleDe": "Die Anzahl der Gäste steht noch nicht genau fest.",
+  "exampleZh": "客人的人數還沒有確定。"
+ },
+ {
+  "word": "Menge",
+  "article": "die",
+  "plural": "die Mengen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "數量；大量",
+  "exampleDe": "Für das Fest haben wir eine große Menge Kartoffelsalat gemacht.",
+  "exampleZh": "為了這場聚會，我們做了一大堆馬鈴薯沙拉。"
+ },
+ {
+  "word": "Dauer",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "持續時間",
+  "exampleDe": "Die Dauer der Reparatur hängt davon ab, welches Teil kaputt ist.",
+  "exampleZh": "維修時間長短取決於壞掉的是哪個零件。"
+ },
+ {
+  "word": "damals",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "當時；那時候",
+  "exampleDe": "Damals hatten wir noch kein Auto und sind überall mit dem Rad hingefahren.",
+  "exampleZh": "當時我們還沒有車，到哪裡都騎腳踏車。"
+ },
+ {
+  "word": "inzwischen",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "這段時間；如今",
+  "exampleDe": "Früher war er sehr schüchtern, inzwischen hält er sogar Reden.",
+  "exampleZh": "他以前很害羞，如今甚至會上台演講。"
+ },
+ {
+  "word": "rechtzeitig",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "及時地；準時地",
+  "exampleDe": "Melde dich bitte rechtzeitig, wenn du am Freitag nicht kommen kannst.",
+  "exampleZh": "如果你星期五不能來，請及早告訴我。"
+ },
+ {
+  "word": "ständig",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "不斷地；老是",
+  "exampleDe": "Mein Handy klingelt heute ständig, ich komme zu nichts.",
+  "exampleZh": "我的手機今天響個不停，什麼事都做不了。"
+ },
+ {
+  "word": "regelmäßig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "規律的；定期的",
+  "exampleDe": "Wer regelmäßig Sport treibt, schläft meistens besser.",
+  "exampleZh": "規律運動的人通常睡得比較好。"
+ },
+ {
+  "word": "bisher",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "到目前為止",
+  "exampleDe": "Bisher hat mir noch niemand auf meine Anzeige geantwortet.",
+  "exampleZh": "到目前為止還沒有人回覆我的廣告。"
+ },
+ {
+  "word": "längst",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "早就",
+  "exampleDe": "Das habe ich dir doch längst gesagt!",
+  "exampleZh": "這件事我早就跟你說過了！"
+ },
+ {
+  "word": "vorhin",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "剛才",
+  "exampleDe": "Vorhin hat deine Mutter angerufen, ruf sie bitte zurück.",
+  "exampleZh": "剛才你媽媽打電話來，請回電給她。"
+ },
+ {
+  "word": "jemals",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "time",
+  "meaning": "曾經；有朝一日",
+  "exampleDe": "Hast du jemals so einen schönen Sonnenuntergang gesehen?",
+  "exampleZh": "你曾經看過這麼美的夕陽嗎？"
+ },
+ {
+  "word": "Möglichkeit",
+  "article": "die",
+  "plural": "die Möglichkeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "可能性；機會",
+  "exampleDe": "Gibt es hier eine Möglichkeit, das Fahrrad abzustellen?",
+  "exampleZh": "這裡有地方可以停腳踏車嗎？"
+ },
+ {
+  "word": "Fähigkeit",
+  "article": "die",
+  "plural": "die Fähigkeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "能力",
+  "exampleDe": "Meine Großmutter hat die Fähigkeit, jeden zum Lachen zu bringen.",
+  "exampleZh": "我外婆有逗每個人笑的本事。"
+ },
+ {
+  "word": "Zweck",
+  "article": "der",
+  "plural": "die Zwecke",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "目的；用途",
+  "exampleDe": "Das Geld ist für einen guten Zweck gedacht.",
+  "exampleZh": "這筆錢是要用在公益用途上的。"
+ },
+ {
+  "word": "Erklärung",
+  "article": "die",
+  "plural": "die Erklärungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "解釋；說明",
+  "exampleDe": "Für sein Zuspätkommen hatte er keine gute Erklärung.",
+  "exampleZh": "他對遲到沒有好的解釋。"
+ },
+ {
+  "word": "Zustand",
+  "article": "der",
+  "plural": "die Zustände",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "狀態；狀況",
+  "exampleDe": "Das Auto ist alt, aber noch in einem guten Zustand.",
+  "exampleZh": "這輛車雖舊，但狀況還很好。"
+ },
+ {
+  "word": "Veränderung",
+  "article": "die",
+  "plural": "die Veränderungen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "改變",
+  "exampleDe": "Ein Umzug ins Ausland bringt viele Veränderungen mit sich.",
+  "exampleZh": "搬到國外會帶來許多改變。"
+ },
+ {
+  "word": "Ausnahme",
+  "article": "die",
+  "plural": "die Ausnahmen",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "例外",
+  "exampleDe": "Normalerweise rauche ich nicht, aber heute mache ich eine Ausnahme.",
+  "exampleZh": "我平常不抽菸，但今天破例一次。"
+ },
+ {
+  "word": "Hinweis",
+  "article": "der",
+  "plural": "die Hinweise",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "提示；線索",
+  "exampleDe": "Danke für den Hinweis, das hatte ich gar nicht bemerkt.",
+  "exampleZh": "謝謝你的提醒，我完全沒注意到。"
+ },
+ {
+  "word": "Versuch",
+  "article": "der",
+  "plural": "die Versuche",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "嘗試",
+  "exampleDe": "Erst beim dritten Versuch ist mir der Kuchen gelungen.",
+  "exampleZh": "我試到第三次才把蛋糕做成功。"
+ },
+ {
+  "word": "Ansicht",
+  "article": "die",
+  "plural": "die Ansichten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "看法；見解",
+  "exampleDe": "Meiner Ansicht nach sollten wir noch etwas warten.",
+  "exampleZh": "依我看，我們應該再等一等。"
+ },
+ {
+  "word": "Risiko",
+  "article": "das",
+  "plural": "die Risiken",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "風險",
+  "exampleDe": "Mit so alten Reifen zu fahren, ist ein großes Risiko.",
+  "exampleZh": "輪胎這麼舊還開車上路，風險很大。"
+ },
+ {
+  "word": "Vorsicht",
+  "article": "die",
+  "plural": "",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "小心",
+  "exampleDe": "Vorsicht, die Treppe ist noch nass!",
+  "exampleZh": "小心，樓梯還是濕的！"
+ },
+ {
+  "word": "Bedürfnis",
+  "article": "das",
+  "plural": "die Bedürfnisse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "需求",
+  "exampleDe": "Nach dem langen Tag hatte ich das Bedürfnis, allein zu sein.",
+  "exampleZh": "度過漫長的一天後，我想一個人靜一靜。"
+ },
+ {
+  "word": "Missverständnis",
+  "article": "das",
+  "plural": "die Missverständnisse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "誤會",
+  "exampleDe": "Das war nur ein Missverständnis, ich wollte dich nicht kritisieren.",
+  "exampleZh": "那只是誤會，我並不是想批評你。"
+ },
+ {
+  "word": "Verlust",
+  "article": "der",
+  "plural": "die Verluste",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "損失；失去",
+  "exampleDe": "Der Verlust seines Hundes hat ihn sehr getroffen.",
+  "exampleZh": "失去愛犬讓他非常難過。"
+ },
+ {
+  "word": "Geheimnis",
+  "article": "das",
+  "plural": "die Geheimnisse",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "秘密",
+  "exampleDe": "Kannst du ein Geheimnis für dich behalten?",
+  "exampleZh": "你能保守秘密嗎？"
+ },
+ {
+  "word": "Pflicht",
+  "article": "die",
+  "plural": "die Pflichten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "義務；責任",
+  "exampleDe": "Als Eltern hat man nicht nur Rechte, sondern auch Pflichten.",
+  "exampleZh": "身為父母，不只有權利，還有義務。"
+ },
+ {
+  "word": "verbessern",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "改善",
+  "exampleDe": "Durch das tägliche Üben hat sie ihre Aussprache deutlich verbessert.",
+  "exampleZh": "透過每天練習，她的發音明顯進步了。",
+  "verb": {
+   "praesens3": "verbessert",
+   "praeteritum": "verbesserte",
+   "perfekt": "hat verbessert",
+   "aux": "haben",
+   "note": "也可反身：sich verbessern"
+  }
+ },
+ {
+  "word": "sich bemühen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "努力；設法",
+  "exampleDe": "Ich bemühe mich, jeden Tag ein bisschen früher aufzustehen.",
+  "exampleZh": "我努力每天早起一點。",
+  "verb": {
+   "praesens3": "bemüht sich",
+   "praeteritum": "bemühte sich",
+   "perfekt": "hat sich bemüht",
+   "aux": "haben",
+   "note": "反身：sich bemühen um + A"
+  }
+ },
+ {
+  "word": "beachten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "注意；遵守",
+  "exampleDe": "Bitte beachten Sie, dass die Tür ab 22 Uhr abgeschlossen ist.",
+  "exampleZh": "請注意，大門晚上十點起會上鎖。",
+  "verb": {
+   "praesens3": "beachtet",
+   "praeteritum": "beachtete",
+   "perfekt": "hat beachtet",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "beweisen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "證明",
+  "exampleDe": "Kannst du beweisen, dass du den Brief wirklich abgeschickt hast?",
+  "exampleZh": "你能證明你真的把信寄出去了嗎？",
+  "verb": {
+   "praesens3": "beweist",
+   "praeteritum": "bewies",
+   "perfekt": "hat bewiesen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "klappen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "順利成功",
+  "exampleDe": "Hat es mit dem Termin beim Friseur geklappt?",
+  "exampleZh": "預約理髮有順利嗎？",
+  "verb": {
+   "praesens3": "klappt",
+   "praeteritum": "klappte",
+   "perfekt": "hat geklappt",
+   "aux": "haben",
+   "note": "口語常用"
+  }
+ },
+ {
+  "word": "scheitern",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "失敗",
+  "exampleDe": "Unser Plan ist am Wetter gescheitert.",
+  "exampleZh": "我們的計畫因為天氣泡湯了。",
+  "verb": {
+   "praesens3": "scheitert",
+   "praeteritum": "scheiterte",
+   "perfekt": "ist gescheitert",
+   "aux": "sein",
+   "note": "scheitern an + D"
+  }
+ },
+ {
+  "word": "ersetzen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "取代；更換",
+  "exampleDe": "Ein Telefonat kann ein persönliches Gespräch nicht immer ersetzen.",
+  "exampleZh": "一通電話不一定能取代當面談話。",
+  "verb": {
+   "praesens3": "ersetzt",
+   "praeteritum": "ersetzte",
+   "perfekt": "hat ersetzt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "enthalten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "包含",
+  "exampleDe": "Dieser Saft enthält überhaupt keinen Zucker.",
+  "exampleZh": "這種果汁完全不含糖。",
+  "verb": {
+   "praesens3": "enthält",
+   "praeteritum": "enthielt",
+   "perfekt": "hat enthalten",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "betreffen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "涉及；影響到",
+  "exampleDe": "Die neue Regelung betrifft alle Mieter im Haus.",
+  "exampleZh": "新規定適用於這棟樓所有房客。",
+  "verb": {
+   "praesens3": "betrifft",
+   "praeteritum": "betraf",
+   "perfekt": "hat betroffen",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "gelten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "有效；適用",
+  "exampleDe": "Das Angebot gilt nur für Kinder unter zwölf Jahren.",
+  "exampleZh": "此優惠僅適用於十二歲以下兒童。",
+  "verb": {
+   "praesens3": "gilt",
+   "praeteritum": "galt",
+   "perfekt": "hat gegolten",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "herausfinden",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "查明；發現",
+  "exampleDe": "Wir müssen herausfinden, warum die Heizung nicht funktioniert.",
+  "exampleZh": "我們得查明暖氣為什麼不運作。",
+  "verb": {
+   "praesens3": "findet heraus",
+   "praeteritum": "fand heraus",
+   "perfekt": "hat herausgefunden",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "verlangen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "要求",
+  "exampleDe": "Für eine kleine Reparatur hat er fast hundert Euro verlangt.",
+  "exampleZh": "他修個小東西竟然要價將近一百歐元。",
+  "verb": {
+   "praesens3": "verlangt",
+   "praeteritum": "verlangte",
+   "perfekt": "hat verlangt",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "annehmen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "接受；認為",
+  "exampleDe": "Ich nehme an, dass sie heute etwas später kommt.",
+  "exampleZh": "我想她今天會晚一點到。",
+  "verb": {
+   "praesens3": "nimmt an",
+   "praeteritum": "nahm an",
+   "perfekt": "hat angenommen",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "zugeben",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "承認",
+  "exampleDe": "Er hat endlich zugegeben, dass er sich geirrt hat.",
+  "exampleZh": "他終於承認自己搞錯了。",
+  "verb": {
+   "praesens3": "gibt zu",
+   "praeteritum": "gab zu",
+   "perfekt": "hat zugegeben",
+   "aux": "haben",
+   "note": "可分動詞"
+  }
+ },
+ {
+  "word": "verzichten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "放棄；不要",
+  "exampleDe": "Wegen meiner Allergie muss ich auf Milchprodukte verzichten.",
+  "exampleZh": "我因為過敏不能吃乳製品。",
+  "verb": {
+   "praesens3": "verzichtet",
+   "praeteritum": "verzichtete",
+   "perfekt": "hat verzichtet",
+   "aux": "haben",
+   "note": "verzichten auf + A"
+  }
+ },
+ {
+  "word": "warnen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "警告",
+  "exampleDe": "Die Polizei warnt die Autofahrer vor Glatteis.",
+  "exampleZh": "警方提醒駕駛人注意路面結冰。",
+  "verb": {
+   "praesens3": "warnt",
+   "praeteritum": "warnte",
+   "perfekt": "hat gewarnt",
+   "aux": "haben",
+   "note": "warnen vor + D"
+  }
+ },
+ {
+  "word": "notwendig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "必要的",
+  "exampleDe": "Ist es wirklich notwendig, dass wir alle dabei sind?",
+  "exampleZh": "我們全部人都到場真的有必要嗎？"
+ },
+ {
+  "word": "unterschiedlich",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "不同的",
+  "exampleDe": "Meine Geschwister und ich haben ganz unterschiedliche Interessen.",
+  "exampleZh": "我和兄弟姊妹的興趣很不一樣。"
+ },
+ {
+  "word": "häufig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "常見的；頻繁的",
+  "exampleDe": "Bei Kindern kommen solche Erkältungen häufig vor.",
+  "exampleZh": "孩子常常會得這種感冒。"
+ },
+ {
+  "word": "gemeinsam",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "共同的；一起的",
+  "exampleDe": "Am Sonntag kochen wir immer gemeinsam.",
+  "exampleZh": "星期天我們總是一起做飯。"
+ },
+ {
+  "word": "vorsichtig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "小心的",
+  "exampleDe": "Fahr bitte vorsichtig, die Straßen sind glatt!",
+  "exampleZh": "請小心開車，路面很滑！"
+ },
+ {
+  "word": "dringend",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "緊急的",
+  "exampleDe": "Ich muss dringend mit dir sprechen, hast du kurz Zeit?",
+  "exampleZh": "我有急事要跟你說，你現在有空嗎？"
+ },
+ {
+  "word": "abhängig",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "依賴的；取決於",
+  "exampleDe": "Ob wir grillen, ist vom Wetter abhängig.",
+  "exampleZh": "要不要烤肉，要看天氣而定。"
+ },
+ {
+  "word": "bereit",
+  "article": "",
+  "plural": "",
+  "pos": "adjective",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "準備好的；願意的",
+  "exampleDe": "Ich bin bereit, dir beim Umzug zu helfen.",
+  "exampleZh": "我願意幫你搬家。"
+ },
+ {
+  "word": "möglicherweise",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "或許；有可能",
+  "exampleDe": "Möglicherweise müssen wir den Ausflug verschieben.",
+  "exampleZh": "我們有可能得把郊遊延期。"
+ },
+ {
+  "word": "dennoch",
+  "article": "",
+  "plural": "",
+  "pos": "connector",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "儘管如此",
+  "exampleDe": "Es regnete stark, dennoch gingen wir spazieren.",
+  "exampleZh": "雨下得很大，我們仍然去散步了。"
+ },
+ {
+  "word": "jedoch",
+  "article": "",
+  "plural": "",
+  "pos": "connector",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "然而",
+  "exampleDe": "Das Hotel war schön, das Essen jedoch hat uns enttäuscht.",
+  "exampleZh": "飯店很好，但餐點卻讓我們失望。"
+ },
+ {
+  "word": "seitdem",
+  "article": "",
+  "plural": "",
+  "pos": "conjunction",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "自從",
+  "exampleDe": "Seitdem ich jeden Tag zu Fuß gehe, fühle ich mich fitter.",
+  "exampleZh": "自從我每天走路後，覺得身體變好了。"
+ },
+ {
+  "word": "sobald",
+  "article": "",
+  "plural": "",
+  "pos": "conjunction",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "一……就",
+  "exampleDe": "Ich rufe dich an, sobald ich zu Hause bin.",
+  "exampleZh": "我一到家就打給你。"
+ },
+ {
+  "word": "solange",
+  "article": "",
+  "plural": "",
+  "pos": "conjunction",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "只要；在……期間",
+  "exampleDe": "Solange das Baby schläft, können wir in Ruhe reden.",
+  "exampleZh": "趁寶寶睡覺的時候，我們可以好好聊聊。"
+ },
+ {
+  "word": "indem",
+  "article": "",
+  "plural": "",
+  "pos": "conjunction",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "藉由；透過",
+  "exampleDe": "Du kannst Geld sparen, indem du selbst kochst.",
+  "exampleZh": "你可以靠自己煮飯來省錢。"
+ },
+ {
+  "word": "anstatt",
+  "article": "",
+  "plural": "",
+  "pos": "conjunction",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "而不是",
+  "exampleDe": "Anstatt fernzusehen, könntest du mir in der Küche helfen.",
+  "exampleZh": "與其看電視，你不如來廚房幫我。"
+ },
+ {
+  "word": "stattdessen",
+  "article": "",
+  "plural": "",
+  "pos": "connector",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "取而代之",
+  "exampleDe": "Der Film war ausverkauft, stattdessen sind wir essen gegangen.",
+  "exampleZh": "電影票賣完了，我們改去吃飯。"
+ },
+ {
+  "word": "aufgrund",
+  "article": "",
+  "plural": "",
+  "pos": "preposition",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "由於",
+  "exampleDe": "Aufgrund des Regens fand das Fest in der Halle statt.",
+  "exampleZh": "由於下雨，慶典改在室內舉行。"
+ },
+ {
+  "word": "übrigens",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "順帶一提",
+  "exampleDe": "Übrigens, Anna lässt dich herzlich grüßen.",
+  "exampleZh": "順帶一提，安娜要我向你問好。"
+ },
+ {
+  "word": "tatsächlich",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "確實；果真",
+  "exampleDe": "Der Bus kam tatsächlich pünktlich, das hätte ich nicht gedacht.",
+  "exampleZh": "公車居然準時到了，真沒想到。"
+ },
+ {
+  "word": "beispielsweise",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "例如",
+  "exampleDe": "Manche Tiere, beispielsweise Igel, schlafen im Winter.",
+  "exampleZh": "有些動物，例如刺蝟，冬天會冬眠。"
+ },
+ {
+  "word": "kaum",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "幾乎不",
+  "exampleDe": "Ich habe heute kaum geschlafen und bin total müde.",
+  "exampleZh": "我今天幾乎沒睡，累死了。"
+ },
+ {
+  "word": "sogar",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "甚至",
+  "exampleDe": "Mein Vater hat sogar im Urlaub E-Mails gelesen.",
+  "exampleZh": "我爸爸甚至在度假時也看電子郵件。"
+ },
+ {
+  "word": "nämlich",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "因為；也就是",
+  "exampleDe": "Ich kann nicht kommen, ich habe nämlich Fieber.",
+  "exampleZh": "我沒辦法來，因為我發燒了。"
+ },
+ {
+  "word": "vermutlich",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "大概；據推測",
+  "exampleDe": "Sie hat vermutlich den Zug verpasst.",
+  "exampleZh": "她大概錯過火車了。"
+ },
+ {
+  "word": "irgendwie",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "不知怎麼地；以某種方式",
+  "exampleDe": "Irgendwie schaffen wir das schon.",
+  "exampleZh": "我們總會想辦法做到的。"
+ },
+ {
+  "word": "einerseits ... andererseits",
+  "article": "",
+  "plural": "",
+  "pos": "connector",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "一方面……另一方面",
+  "exampleDe": "Einerseits möchte ich umziehen, andererseits fühle ich mich hier wohl.",
+  "exampleZh": "我一方面想搬家，另一方面又覺得這裡住得很舒服。"
+ },
+ {
+  "word": "anschließend",
+  "article": "",
+  "plural": "",
+  "pos": "connector",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "接著；隨後",
+  "exampleDe": "Zuerst gehen wir einkaufen, anschließend kochen wir zusammen.",
+  "exampleZh": "我們先去買東西，接著一起做飯。"
+ },
+ {
+  "word": "mindestens",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "至少",
+  "exampleDe": "Du solltest mindestens zwei Liter Wasser am Tag trinken.",
+  "exampleZh": "你一天應該至少喝兩公升水。"
+ },
+ {
+  "word": "wenigstens",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "至少；起碼",
+  "exampleDe": "Es regnet zwar, aber wenigstens ist es nicht kalt.",
+  "exampleZh": "雖然下雨，但至少不冷。"
+ },
+ {
+  "word": "sowieso",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "反正",
+  "exampleDe": "Ich kann dich mitnehmen, ich fahre sowieso in die Stadt.",
+  "exampleZh": "我可以順路載你，反正我要進城。"
+ },
+ {
+  "word": "überhaupt",
+  "article": "",
+  "plural": "",
+  "pos": "adverb",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "根本；到底",
+  "exampleDe": "Hast du überhaupt Zeit, mir zu helfen?",
+  "exampleZh": "你到底有沒有時間幫我？"
+ },
+ {
+  "word": "je ... desto",
+  "article": "",
+  "plural": "",
+  "pos": "connector",
+  "level": "B1",
+  "topic": "grammar",
+  "meaning": "越……越",
+  "exampleDe": "Je mehr ich übe, desto leichter fällt mir das Sprechen.",
+  "exampleZh": "我練習得越多，說話就越輕鬆。"
+ },
+ {
+  "word": "bereuen",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "後悔",
+  "exampleDe": "Ich bereue es bis heute, dass ich damals nicht mit ihr gesprochen habe.",
+  "exampleZh": "我到今天都後悔當時沒有跟她談談。",
+  "verb": {
+   "praesens3": "bereut",
+   "praeteritum": "bereute",
+   "perfekt": "hat bereut",
+   "aux": "haben"
+  }
+ },
+ {
+  "word": "fürchten",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "feel",
+  "meaning": "害怕；擔心",
+  "exampleDe": "Viele Kinder fürchten sich im Dunkeln.",
+  "exampleZh": "許多孩子怕黑。",
+  "verb": {
+   "praesens3": "fürchtet",
+   "praeteritum": "fürchtete",
+   "perfekt": "hat gefürchtet",
+   "aux": "haben",
+   "note": "常用反身：sich fürchten vor + D"
+  }
+ },
+ {
+  "word": "Gewohnheit",
+  "article": "die",
+  "plural": "die Gewohnheiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "daily",
+  "meaning": "習慣",
+  "exampleDe": "Aus alter Gewohnheit trinke ich morgens zuerst einen Tee.",
+  "exampleZh": "出於老習慣，我早上會先喝杯茶。"
+ },
+ {
+  "word": "Freundschaft",
+  "article": "die",
+  "plural": "die Freundschaften",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "友誼",
+  "exampleDe": "Unsere Freundschaft hat auch die Jahre im Ausland überstanden.",
+  "exampleZh": "我們的友誼也撐過了在國外的那幾年。"
+ },
+ {
+  "word": "Persönlichkeit",
+  "article": "die",
+  "plural": "die Persönlichkeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "people",
+  "meaning": "個性；人格",
+  "exampleDe": "Meine Schwester hat eine starke Persönlichkeit und sagt immer ihre Meinung.",
+  "exampleZh": "我姊姊個性很強，總是直說自己的想法。"
+ },
+ {
+  "word": "Ähnlichkeit",
+  "article": "die",
+  "plural": "die Ähnlichkeiten",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "相似之處",
+  "exampleDe": "Zwischen dir und deinem Bruder gibt es eine große Ähnlichkeit.",
+  "exampleZh": "你和你哥哥長得很像。"
+ },
+ {
+  "word": "Ausrede",
+  "article": "die",
+  "plural": "die Ausreden",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "藉口",
+  "exampleDe": "Das ist doch nur eine Ausrede, du hattest einfach keine Lust!",
+  "exampleZh": "那只是藉口，你根本就是不想做！"
+ },
+ {
+  "word": "verstecken",
+  "article": "",
+  "plural": "",
+  "pos": "verb",
+  "level": "B1",
+  "topic": "general",
+  "meaning": "藏；隱藏",
+  "exampleDe": "Die Kinder haben die Ostereier im Garten versteckt.",
+  "exampleZh": "孩子們把復活節彩蛋藏在花園裡。",
+  "verb": {
+   "praesens3": "versteckt",
+   "praeteritum": "versteckte",
+   "perfekt": "hat versteckt",
+   "aux": "haben",
+   "note": "也可反身：sich verstecken"
+  }
+ },
+ {
+  "word": "Ufer",
+  "article": "das",
+  "plural": "die Ufer",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "nature",
+  "meaning": "河岸；湖岸",
+  "exampleDe": "Am Ufer des Flusses haben wir eine lange Pause gemacht.",
+  "exampleZh": "我們在河岸邊休息了很久。"
+ },
+ {
+  "word": "Geruch",
+  "article": "der",
+  "plural": "die Gerüche",
+  "pos": "noun",
+  "level": "B1",
+  "topic": "food",
+  "meaning": "氣味",
+  "exampleDe": "Der Geruch von frischem Brot zieht aus der Bäckerei bis auf die Straße.",
+  "exampleZh": "新鮮麵包的香味從麵包店一路飄到街上。"
+ }
+]
