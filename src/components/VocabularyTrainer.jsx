@@ -6,6 +6,7 @@ import { useStoredProgress } from '../hooks/useStoredProgress';
 import { useSwipe } from '../hooks/useSwipe';
 import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chaptersFor, filterVocabulary, articleExplanation } from '../lib/vocabulary.mjs';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { migrateLessonProgress, mergeImportedReview, readStoredReview, recordLessonPractice } from '../lib/reviewBridge.js';
 import { genderKey } from '../lib/grammarColors.mjs';
 import { MISS_REASONS, checkTyped, findClozeTarget, productionAnswer } from '../lib/vocabPractice.mjs';
 
@@ -148,6 +149,7 @@ export default function VocabularyTrainer() {
     setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); setHint(false); submitting.current = false;
   }
   useEffect(() => { writeJSON(UI_KEY, ui); }, [ui]);
+  useEffect(() => { migrateLessonProgress().catch(e => console.warn('review migration skipped', e)); }, []);
   useEffect(() => {
     if (!message) return undefined;
     const timer = setTimeout(() => setMessage(''), 4000);
@@ -216,6 +218,7 @@ export default function VocabularyTrainer() {
     answerCue(correct, `${current.article ? `${current.article} ` : ''}${current.word}（${current.meaning}）`);
     setAnsweredWord(current); setFeedback({ correct, expected, given: value, reason: check?.reason, note: check?.note, base: cloze?.base });
     updateWord({ errors: correct ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(correct) });
+    recordLessonPractice(current, { mode: ui.mode, correct, reason: check?.reason });
     setSession(s => ({ done: s.done + 1, correct: s.correct + Number(correct) }));
   }
   function move(delta) {
@@ -231,6 +234,7 @@ export default function VocabularyTrainer() {
     if (!current) return;
     answerCue(known, `${current.article ? `${current.article} ` : ''}${current.word}（${current.meaning}）`);
     updateWord({ errors: known ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(known) });
+    recordLessonPractice(current, { mode: 'card', correct: known });
     setSession(s => ({ done: s.done + 1, correct: s.correct + Number(known) }));
     // A known word leaves the review deck, so the next word slides into the same index.
     const leaves = known && ui.filter === 'review';
@@ -272,16 +276,18 @@ export default function VocabularyTrainer() {
   function exportBackup() {
     const archive = readJSON(CACHE_KEY, {});
     words.forEach(w => { archive[wordKey(w)] = w; });
-    const blob = new Blob([JSON.stringify({ vocabulary: Object.values(archive), stats: readJSON(PROGRESS_KEYS.lesson1Stats, {}) }, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify({ vocabulary: Object.values(archive), stats: readJSON(PROGRESS_KEYS.lesson1Stats, {}), review: readStoredReview() }, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'german-vocabulary-backup.json'; a.click(); URL.revokeObjectURL(url);
   }
   async function importBackup(event) {
     const file = event.target.files?.[0]; if (!file) return;
     try {
       if (file.size > 5 * 1024 * 1024) throw new Error('請使用 5 MB 以下的 JSON 字庫。');
-      const imported = normalizeVocabulary(JSON.parse(await file.text()));
+      const parsed = JSON.parse(await file.text());
+      const imported = normalizeVocabulary(parsed);
       if (!imported.length) throw new Error('找不到有效單字，請確認 word 與 meaning 欄位。');
       const archive = readJSON(CACHE_KEY, {}); words.forEach(w => { archive[wordKey(w)] = w; }); writeJSON(CACHE_KEY, archive);
+      if (parsed.review) mergeImportedReview(parsed.review);
       setWords(mergeVocabularyProgress(imported, Object.values(archive))); change({ preset: 'custom', chapter: 'all', filter: 'all' }); setQuery(''); setError(''); setMessage(`已匯入 ${imported.length} 個單字，原字庫紀錄已保留。`);
     } catch (e) { setError(`匯入失敗：${e.message}`); }
     event.target.value = '';

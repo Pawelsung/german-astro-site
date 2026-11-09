@@ -10,9 +10,12 @@ import {
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
 import { collectLocalProgress, mergeRemoteProgress, PROGRESS_KEYS } from '../lib/progressStorage';
+import { changedKeys, hashProgress, readSyncState, shouldDownload, writeSyncState } from '../lib/cloudSync.mjs';
 
 const provider = new GoogleAuthProvider();
-const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7'];
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7', 'review'];
+const REVIEW_SYNC_DELAY = 5000;
+const LESSON_SYNC_DELAY = 700;
 
 function mergeUnique(a = [], b = []) {
   return [...new Set([...(Array.isArray(a) ? a : []), ...(Array.isArray(b) ? b : [])])];
@@ -98,9 +101,10 @@ async function loadRemoteProgress(db, uid) {
   return remote;
 }
 
-async function saveRemoteProgress(db, uid, progress) {
+async function saveRemoteProgress(db, uid, progress, keys) {
+  if (!keys.length) return;
   await Promise.all(
-    PROGRESS_DOCS.map((key) =>
+    keys.map((key) =>
       setDoc(
         doc(db, 'users', uid, 'learning', key),
         {
@@ -138,7 +142,10 @@ export default function UserAccount({ compact = false }) {
     if (!services || !currentUser) return;
 
     try {
-      await saveRemoteProgress(services.db, currentUser.uid, collectLocalProgress());
+      const progress = collectLocalProgress();
+      const state = readSyncState(currentUser.uid);
+      await saveRemoteProgress(services.db, currentUser.uid, progress, changedKeys(progress, PROGRESS_DOCS, state.hashes));
+      writeSyncState(currentUser.uid, { ...state, hashes: hashProgress(progress, PROGRESS_DOCS) });
       setStatus(nextStatus);
     } catch (error) {
       console.error(error);
@@ -159,6 +166,12 @@ export default function UserAccount({ compact = false }) {
         return;
       }
 
+      // Moving between pages should not download every document again.
+      if (!shouldDownload(readSyncState(nextUser.uid))) {
+        await syncLocalProgress('已同步');
+        return;
+      }
+
       syncingRef.current = true;
       setStatus('同步中...');
 
@@ -166,7 +179,8 @@ export default function UserAccount({ compact = false }) {
         const remoteProgress = await loadRemoteProgress(services.db, nextUser.uid);
         if (userRef.current?.uid !== nextUser.uid) return;
         const merged = mergeRemoteProgress(remoteProgress);
-        await saveRemoteProgress(services.db, nextUser.uid, merged);
+        await saveRemoteProgress(services.db, nextUser.uid, merged, changedKeys(merged, PROGRESS_DOCS, hashProgress(remoteProgress, PROGRESS_DOCS)));
+        writeSyncState(nextUser.uid, { downloadedAt: Date.now(), hashes: hashProgress(merged, PROGRESS_DOCS) });
         window.dispatchEvent(new CustomEvent('learning-progress-updated'));
         setStatus('已同步');
       } catch (error) {
@@ -176,7 +190,7 @@ export default function UserAccount({ compact = false }) {
         syncingRef.current = false;
       }
     });
-  }, []);
+  }, [syncLocalProgress]);
 
   useEffect(() => {
     if (!user) return;
@@ -186,14 +200,25 @@ export default function UserAccount({ compact = false }) {
       if (event.detail?.key && !Object.values(PROGRESS_KEYS).includes(event.detail.key)) return;
       window.clearTimeout(syncTimerRef.current);
       syncTimerRef.current = window.setTimeout(() => {
+        syncTimerRef.current = null;
         setStatus('自動同步中...');
         syncLocalProgress('已自動同步');
-      }, 700);
+      }, event.detail?.key === PROGRESS_KEYS.review ? REVIEW_SYNC_DELAY : LESSON_SYNC_DELAY);
+    };
+
+    // A review session ends by leaving the page, so anything still waiting goes out now.
+    const flushWhenHidden = () => {
+      if (document.visibilityState !== 'hidden' || !syncTimerRef.current) return;
+      window.clearTimeout(syncTimerRef.current);
+      syncTimerRef.current = null;
+      syncLocalProgress('已自動同步');
     };
 
     window.addEventListener('learning-progress-updated', handleProgressUpdated);
+    document.addEventListener('visibilitychange', flushWhenHidden);
     return () => {
       window.removeEventListener('learning-progress-updated', handleProgressUpdated);
+      document.removeEventListener('visibilitychange', flushWhenHidden);
       window.clearTimeout(syncTimerRef.current);
     };
   }, [user, syncLocalProgress]);

@@ -1,3 +1,5 @@
+import { REVIEW_KEY, decodeReview, encodeReview, mergeReview } from './reviewStore.mjs';
+
 export const PROGRESS_KEYS = {
   lesson1Words: 'deutschLernkartenDB_vPro',
   lesson1Stats: 'deutschLernkartenStats',
@@ -6,7 +8,8 @@ export const PROGRESS_KEYS = {
   lesson4: 'kasus-quest-trainer-v1',
   lesson5: 'german-lesson5-connectors-progress',
   lesson6: 'german-lesson6-adjective-declension-progress',
-  lesson7: 'german-lesson7-konjunktiv-progress'
+  lesson7: 'german-lesson7-konjunktiv-progress',
+  review: REVIEW_KEY
 };
 
 export const defaultLesson2Progress = {
@@ -67,9 +70,9 @@ export function saveLesson6Progress(progress: any) {
   writeJSON(PROGRESS_KEYS.lesson6, progress);
 }
 
-export function getReviewAction(summary: ReturnType<typeof getLearningSummary>) {
+export function getReviewAction(summary: ReturnType<typeof getLearningSummary>, { skipLesson1 = false } = {}) {
   const lessons = [
-    [summary.lesson1ErrorCount, '/lesson1-wort/', '單字練習'],
+    ...(skipLesson1 ? [] : [[summary.lesson1ErrorCount, '/lesson1-wort/', '單字練習']]),
     [summary.lesson2ReviewCount, '/lesson2-VerbWithPreposition/', '動詞與介系詞'],
     [summary.lesson3WrongCount, '/lesson3-irregular-verbs/', '不規則動詞'],
     [summary.lesson4WrongCount, '/lesson4-kasus/', '格位練習'],
@@ -243,6 +246,7 @@ export function collectLocalProgress() {
     lesson5: readJSON(PROGRESS_KEYS.lesson5, {}),
     lesson6: readJSON(PROGRESS_KEYS.lesson6, {}),
     lesson7: readJSON(PROGRESS_KEYS.lesson7, {}),
+    review: readJSON(PROGRESS_KEYS.review, null),
     updatedAt: new Date().toISOString()
   };
 }
@@ -262,6 +266,9 @@ export function mergeRemoteProgress(remoteProgress: any = {}) {
     },
     lesson6: mergeObjects(local.lesson6, remoteProgress.lesson6),
     lesson7: mergeObjects(local.lesson7, remoteProgress.lesson7),
+    review: local.review || remoteProgress.review
+      ? encodeReview(mergeReview(decodeReview(local.review), decodeReview(remoteProgress.review)))
+      : null,
     updatedAt: new Date().toISOString()
   };
 
@@ -273,6 +280,7 @@ export function mergeRemoteProgress(remoteProgress: any = {}) {
   writeJSON(PROGRESS_KEYS.lesson5, merged.lesson5);
   writeJSON(PROGRESS_KEYS.lesson6, merged.lesson6);
   writeJSON(PROGRESS_KEYS.lesson7, merged.lesson7);
+  if (merged.review) writeJSON(PROGRESS_KEYS.review, merged.review);
 
   return merged;
 }
