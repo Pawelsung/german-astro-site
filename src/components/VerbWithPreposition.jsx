@@ -14,9 +14,9 @@ import { blankPreposition } from '../lib/prepositionBlank.mjs';
 import { WO_DA_KIND_LABEL, WO_DA_RULES, fillWoDa, woDaAnswer, woDaOptions } from '../lib/woDa.mjs';
 
 const CASE_NAME = { A: 'Akkusativ', D: 'Dativ' };
-const PRACTICE_LABELS = { flash: '字卡', word: '單字模式', sentence: '例句填空', case: '格位判斷', woda: 'wo/da 代換' };
+const PRACTICE_LABELS = { flash: '字卡', word: '單字測驗', sentence: '例句測驗', case: '格位測驗', woda: 'wo/da 測驗' };
 const FILTERS = [
-  { id: 'practice', label: '練習方式', alwaysShow: true, options: Object.entries(PRACTICE_LABELS).map(([id, label]) => ({ id, label })) },
+  { id: 'practice', label: '練習方式', onStart: true, options: Object.entries(PRACTICE_LABELS).map(([id, label]) => ({ id, label })) },
   { id: 'only', label: '篩選', options: [{ id: 'all', label: '全部' }, { id: 'saved', label: '只看收藏' }] }
 ];
 const ALL_PREPS = [...new Set(verbData.map(item => item.prep))];
@@ -183,7 +183,7 @@ export default function VerbWithPreposition() {
     const starred = userData.starred.includes(item.id);
     return <FlipCard
       key={key}
-      tag={`+ ${item.prep}`}
+      tag="字卡"
       actions={<button type="button" className="lc-flag" aria-label={starred ? '取消收藏' : '收藏'} aria-pressed={starred} onClick={() => toggleStar(item.id)}><Star size={16} fill={starred ? 'currentColor' : 'none'}/></button>}
       front={<div className="calm-word-block">
         <p className="calm-word" lang="de">{item.verb}</p>

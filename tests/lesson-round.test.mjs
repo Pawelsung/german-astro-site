@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { nextChoiceRecord, roundVerdict, takeRound } from '../src/lib/lessonRound.mjs';
+import { nextChoiceRecord, revealsAnswer, roundVerdict, scrambled, takeRound } from '../src/lib/lessonRound.mjs';
 import { needsReview, mergeLessonValue, mergeRemoteProgress, PROGRESS_KEYS } from '../src/lib/progressStorage.ts';
 
 const data = new Map();
@@ -81,4 +81,24 @@ test('sign-in merge still handles a lesson 5 record missing on one side', () => 
   data.clear();
   data.set(PROGRESS_KEYS.lesson5, JSON.stringify({ answers: { a: { correct: false } }, mistakes: ['a'], bookmarks: [] }));
   assert.deepEqual(mergeRemoteProgress({}).lesson5.mistakes, ['a']);
+});
+
+test('word tiles are never shown already in the right order', () => {
+  const tiles = ['weil', 'ich', 'müde', 'bin'];
+  for (let i = 0; i < 200; i++) {
+    const mixed = scrambled(tiles);
+    assert.deepEqual([...mixed].sort(), [...tiles].sort());
+    assert.notDeepEqual(mixed, tiles);
+  }
+  assert.notDeepEqual(scrambled(['a', 'b']), ['a', 'b']);
+  assert.deepEqual(scrambled(['a']), ['a']);
+  assert.deepEqual(scrambled(['a', 'a']), ['a', 'a']);
+});
+
+test('a hint gives the answer away only when it contains the whole word', () => {
+  assert.equal(revealsAnswer('sich etwas merken', 'sich'), true);
+  assert.equal(revealsAnswer('der Mann', 'Der'), true);
+  assert.equal(revealsAnswer('der Mann', 'den'), false);
+  assert.equal(revealsAnswer('für', 'ü'), false);
+  assert.equal(revealsAnswer('', 'der'), false);
 });

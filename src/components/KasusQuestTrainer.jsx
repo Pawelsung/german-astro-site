@@ -9,7 +9,7 @@ import { useStoredProgress } from '../hooks/useStoredProgress';
 import { kasusSpeechText } from '../lib/lessonSpeech.mjs';
 import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
 import data from '../data/lesson4-kasus-quest-data.json';
-import { nextChoiceRecord } from '../lib/lessonRound.mjs';
+import { nextChoiceRecord, revealsAnswer } from '../lib/lessonRound.mjs';
 import { analyzeCaseSentence } from '../lib/caseDiagram.mjs';
 import { genderKey } from '../lib/grammarColors.mjs';
 import CaseDiagram from './CaseDiagram.jsx';
@@ -230,14 +230,17 @@ const FILTERS = [
 
 function KasusPrompt({ item, picked, style }) {
   const [hint, setHint] = useState(false);
-  const showClue = style === 'guided' || hint || picked;
+  const clue = triggerText(item.trigger, !!picked);
+  const showClue = (style === 'guided' || hint || picked) && (picked || !revealsAnswer(clue, item.answer));
+  // A dictionary form like "der Mann" would give away a Nominativ answer; the colored dot still shows the gender.
+  const target = !picked && revealsAnswer(item.targetNoun, item.answer) ? String(item.targetNoun).replace(/^(der|die|das)\s+/i, '') : item.targetNoun;
   return <>
     <p className="lc-sub">{item.prompt}</p>
     <p className="lc-sentence" lang="de">{item.sentence}</p>
     <p className="lc-sub">{item.translation}</p>
     <div className="lc-chips">
-      <span>{genderKey(item.gender) && <i className={`g-dot g-${genderKey(item.gender)}`} />}目標詞：{item.targetNoun || '-'}</span>
-      {showClue && <span>線索：{triggerText(item.trigger, !!picked)}</span>}
+      <span>{genderKey(item.gender) && <i className={`g-dot g-${genderKey(item.gender)}`} />}目標詞：{target || '-'}</span>
+      {showClue && <span>線索：{clue}</span>}
       {picked && <span className={CASE_STYLES[item.case]}>{item.case}</span>}
     </div>
     {style === 'detective' && !hint && !picked && <button type="button" className="calm-link" onClick={() => setHint(true)}>顯示提示</button>}

@@ -32,6 +32,21 @@ export function cleanSelection(saved, filters) {
   return Object.fromEntries(filters.map(filter => [filter.id, filter.options.some(option => option.id === saved?.[filter.id]) ? saved[filter.id] : filter.options[0].id]));
 }
 
+// A shuffled copy that is never in the original order, because the original order is the answer.
+export function scrambled(list, random = Math.random) {
+  if (new Set(list).size < 2) return [...list];
+  let result;
+  do { result = shuffle(list, random); } while (result.every((item, index) => item === list[index]));
+  return result;
+}
+
+// True when a hint shown before answering already contains the answer as a whole word.
+export function revealsAnswer(hint, answer) {
+  if (!hint || !answer) return false;
+  const escaped = String(answer).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(^|[^\\p{L}])${escaped}($|[^\\p{L}])`, 'iu').test(hint);
+}
+
 export function roundVerdict(correct, total) {
   const ratio = correct / total;
   if (ratio === 1) return '滿分！太厲害了 🎉';

@@ -6,6 +6,7 @@ import SpeakButton from './lesson/SpeakButton.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { connectorSpeechText } from '../lib/lessonSpeech.mjs';
+import { scrambled } from '../lib/lessonRound.mjs';
 import { readProgressMap } from '../lib/progressStorage';
 import { useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import data from '../data/connectors-question-bank.json';
@@ -158,7 +159,8 @@ function CardsPanel({ selection, progress, onBookmark, speak }) {
 
 function OrderInput({ question, value, onChange, locked }) {
   const selected = Array.isArray(value) ? value : [];
-  const tokens = question.tokens.map((token, index) => ({ token, index }));
+  // The question bank stores tokens in the correct order, so they must be mixed up before showing them.
+  const [tokens] = useState(() => scrambled(question.tokens.map((token, index) => ({ token, index }))));
   const remaining = tokens.filter(item => !selected.some(chosen => chosen.index === item.index));
   return <>
     <div className="lc-tray" lang="de">

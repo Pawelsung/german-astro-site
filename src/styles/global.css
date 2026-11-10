@@ -902,3 +902,12 @@ body:has(.picker-sheet[open]) { overflow: hidden; }
 .speak-btn:hover { background: var(--calm-soft); }
 .speak-btn:focus-visible { outline: 3px solid var(--calm-accent); outline-offset: 2px; }
 .lc-listen { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--calm-muted); }
+.lf-modes { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 8px; }
+.lf-modes button { min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 15px; font-weight: 800; color: var(--calm-ink); background: var(--calm-surface); border: 1px solid var(--calm-line); }
+.lf-modes button[aria-pressed="true"] { background: var(--calm-accent); border-color: var(--calm-accent); color: var(--calm-on-accent); }
+.lf-modes button:focus-visible { outline: 3px solid var(--calm-accent); outline-offset: 2px; }
+/* All seven lesson 1 practice modes stay visible: a hidden scrollbar made the last ones look missing. */
+@media (max-width: 640px) {
+  .calm-page .vocab-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; }
+  .calm-page .vocab-tabs button { padding: 8px 2px; font-size: 13px; }
+}

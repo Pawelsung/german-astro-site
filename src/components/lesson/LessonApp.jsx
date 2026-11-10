@@ -13,7 +13,8 @@ const KEEP_ORDER = () => 0.9999;
 
 // The same start, question and result screens for every grammar lesson.
 // A lesson supplies its items and renderQuestion; progress stays in that lesson's own storage.
-// filters: [{ id, label, options: [{ id, label }], alwaysShow? }], the first option being the default; itemsFor gets { [filterId]: optionId }.
+// filters: [{ id, label, options: [{ id, label }], onStart? }], the first option being the default; itemsFor gets { [filterId]: optionId }.
+// A filter with onStart (flashcards or a quiz) is shown as buttons on the start page rather than in the range sheet.
 // panels open from the ⋯ menu (see LessonMenu); featuredPanels also get a link on the start page.
 // report(null) records a card that was looked at but not scored.
 export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, reviewItems, records = [], panels = [], featuredPanels = [], isSequential, unit = () => '題', renderQuestion }) {
@@ -28,9 +29,11 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
   const menu = useRef(null);
   const reviewCount = reviewItems().length;
   const scopeCount = itemsFor(selection).length;
-  const scopeLabels = filters.flatMap(filter => {
+  const startFilters = filters.filter(filter => filter.onStart);
+  const rangeFilters = filters.filter(filter => !filter.onStart);
+  const scopeLabels = rangeFilters.flatMap(filter => {
     const chosen = filter.options.find(option => option.id === selection[filter.id]);
-    return chosen && (filter.alwaysShow || chosen.id !== filter.options[0].id) ? [chosen.label] : [];
+    return chosen && chosen.id !== filter.options[0].id ? [chosen.label] : [];
   });
   const results = run ? Object.values(run.results) : [];
 
@@ -60,7 +63,7 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
     setSelection(next);
     queue.current = [];
     writeJSON(scopeKey, next);
-    if (filters.length === 1) scopeSheet.current?.close();
+    if (rangeFilters.length === 1 && rangeFilters[0].id === filterId) scopeSheet.current?.close();
   }
 
   function advance() {
@@ -99,6 +102,9 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
       {phase === 'start' && <section className="lf-start fx-enter">
         <h1>{title}</h1>
         <p>{blurb}</p>
+        {startFilters.map(filter => <div key={filter.id} className="lf-modes" role="group" aria-label={filter.label}>
+          {filter.options.map(option => <button key={option.id} type="button" aria-pressed={selection[filter.id] === option.id} onClick={() => chooseFilter(filter.id, option.id)}>{option.label}</button>)}
+        </div>)}
         <button type="button" className="picker-trigger" aria-haspopup="dialog" onClick={() => scopeSheet.current?.open()}>
           <span>{scopeLabels.join(' · ') || '全部範圍'}</span>
           <span className="picker-trigger-group">{scopeCount} {unit(selection)}</span>
@@ -148,15 +154,15 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
 
     <BottomSheet ref={scopeSheet} title="選擇範圍">
       <div className="picker-list">
-        {filters.map(filter => <React.Fragment key={filter.id}>
-          {filters.length > 1 && <p className="picker-status">{filter.label}</p>}
+        {rangeFilters.map(filter => <React.Fragment key={filter.id}>
+          {rangeFilters.length > 1 && <p className="picker-status">{filter.label}</p>}
           {filter.options.map(option => {
             const count = itemsFor({ ...selection, [filter.id]: option.id }).length;
             return <PickerRow key={option.id} title={option.label} detail={`${count} ${unit({ ...selection, [filter.id]: option.id })}`} selected={selection[filter.id] === option.id} disabled={!count && selection[filter.id] !== option.id} onClick={() => chooseFilter(filter.id, option.id)}/>;
           })}
         </React.Fragment>)}
       </div>
-      {filters.length > 1 && <button type="button" className="calm-primary picker-done" onClick={() => scopeSheet.current?.close()}>完成（{scopeCount} {unit(selection)}）</button>}
+      {rangeFilters.length > 1 && <button type="button" className="calm-primary picker-done" onClick={() => scopeSheet.current?.close()}>完成（{scopeCount} {unit(selection)}）</button>}
     </BottomSheet>
 
     <LessonMenu ref={menu} records={records} panels={panels} panelArgs={{ item: currentItem, selection, setFilters: applyFilters }}/>
