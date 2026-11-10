@@ -1,18 +1,10 @@
+import React, { useMemo, useState } from 'react';
+import { CheckCircle, Star, XCircle } from 'lucide-react';
+import LessonApp from './lesson/LessonApp.jsx';
+import ChoiceCard from './lesson/ChoiceCard.jsx';
 import { useStoredProgress } from '../hooks/useStoredProgress';
-import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
-import { isReviewRequested } from '../lib/progressStorage';
-import React, { useEffect, useMemo, useState } from 'react';
-import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
-import {
-  ArrowRight,
-  BookOpen,
-  CheckCircle,
-  ListChecks,
-  RotateCcw,
-  Shuffle,
-  Star,
-  XCircle
-} from 'lucide-react';
+import { readProgressMap } from '../lib/progressStorage';
+import { useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import data from '../data/connectors-question-bank.json';
 
 const STORAGE_KEY = 'german-lesson5-connectors-progress';
@@ -56,18 +48,6 @@ const TYPE_LABELS = {
   cloze: '短文填空',
   sentence_builder: '造句'
 };
-
-const SYNTAX_STYLES = {
-  coordinating: 'border-sky-200 bg-sky-50 text-sky-800',
-  connector_adverb: 'border-orange-200 bg-orange-50 text-orange-800',
-  subordinating: 'border-violet-200 bg-violet-50 text-violet-800',
-  infinitive_construction: 'border-emerald-200 bg-emerald-50 text-emerald-800',
-  paired_connector: 'border-rose-200 bg-rose-50 text-rose-800'
-};
-
-function cx(...values) {
-  return values.filter(Boolean).join(' ');
-}
 
 function loadProgress() {
   const stored = readProgressMap(STORAGE_KEY);
@@ -124,651 +104,254 @@ function getAnswerText(question) {
     return question.answer.map((item) => `${item.left} + ${item.right}: ${item.meaningZh}`).join(' / ');
   }
   if (question.type === 'cloze') return question.fullAnswer;
-  return question.answer;
+  const option = question.options?.find((entry) => entry.id === question.answer);
+  return option?.textZh || option?.text || question.answer;
 }
 
-function FilterButton({ active, children, onClick }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cx(
-        'min-w-0 rounded-xl border px-1 py-2 text-xs font-black transition active:scale-95 sm:px-3',
-        active ? 'border-violet-600 bg-violet-600 text-white shadow-sm' : 'border-slate-200 bg-white text-slate-600 hover:bg-violet-50'
-      )}
-    >
-      {children}
-    </button>
-  );
-}
+const CHOICE_TYPES = new Set(['classify_syntax', 'choose_connector']);
+const FILTERS = [
+  { id: 'module', label: '模組', options: MODULES },
+  { id: 'level', label: '等級', options: [{ id: 'all', label: '全部等級' }, ...['A2', 'B1', 'B2'].map(id => ({ id, label: id }))] }
+];
+const syntaxById = Object.fromEntries(data.syntaxTypes.map(item => [item.id, item]));
+const questionText = question => question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe;
 
-function ConnectorCard({ connector, syntaxType, bookmarked, onBookmark }) {
-  return (
-    <article className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
-      <div className="mb-3 flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="break-words text-2xl font-black text-slate-900">{connector.word}</p>
-          <p className="mt-1 text-sm font-bold text-slate-500">{connector.meaningZh}</p>
-        </div>
-        <button
-          type="button"
-          onClick={() => onBookmark(connector.id)}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-violet-100 bg-violet-50 text-violet-700 active:scale-95"
-          aria-label="收藏"
-          title="收藏"
-        >
-          <Star className={cx('h-5 w-5', bookmarked && 'fill-violet-500')} />
-        </button>
+function ConnectorCard({ connector, bookmarked, onBookmark }) {
+  return <article className="lf-card">
+    <div className="lc-top">
+      <div>
+        <p className="lc-sentence" lang="de">{connector.word}</p>
+        <p>{connector.meaningZh}</p>
       </div>
-
-      <div className={cx('mb-3 inline-flex rounded-full border px-3 py-1 text-[11px] font-black', SYNTAX_STYLES[connector.syntaxType])}>
-        {syntaxType?.labelZh || connector.syntaxType}
-      </div>
-
-      <div className="space-y-3 text-sm">
-        <div className="min-w-0 rounded-xl bg-slate-50 p-3">
-          <p className="break-words font-black text-slate-800">{connector.exampleDe}</p>
-          <p className="mt-1 break-words font-bold text-slate-500">{connector.exampleZh}</p>
-        </div>
-        <p className="break-words font-bold leading-relaxed text-slate-600">{connector.usageNoteZh}</p>
-        {connector.confusableWith?.length > 0 && (
-          <p className="break-words text-xs font-black text-slate-400">
-            易混淆：{connector.confusableWith.join(' / ')}
-          </p>
-        )}
-      </div>
-    </article>
-  );
-}
-
-function LearnView({ connectors, progress, onBookmark }) {
-  const syntaxById = Object.fromEntries(data.syntaxTypes.map((item) => [item.id, item]));
-
-  return (
-    <div className="space-y-4">
-      {connectors.length === 0 ? (
-        <div className="min-w-0 rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
-          <p className="font-black text-slate-500">目前篩選沒有連接詞卡片</p>
-        </div>
-      ) : (
-        <section className="grid min-w-0 gap-4 md:grid-cols-2">
-          {connectors.map((connector) => (
-            <ConnectorCard
-              key={connector.id}
-              connector={connector}
-              syntaxType={syntaxById[connector.syntaxType]}
-              bookmarked={progress.bookmarks.includes(connector.id)}
-              onBookmark={onBookmark}
-            />
-          ))}
-        </section>
-      )}
+      <button type="button" className="lc-flag" aria-label={bookmarked ? '取消收藏' : '收藏'} aria-pressed={bookmarked} onClick={() => onBookmark(connector.id)}><Star size={16} fill={bookmarked ? 'currentColor' : 'none'}/></button>
     </div>
-  );
+    <div className="lc-chips"><span>{syntaxById[connector.syntaxType]?.labelZh || connector.syntaxType}</span></div>
+    <p lang="de"><b>{connector.exampleDe}</b></p>
+    <p>{connector.exampleZh}</p>
+    <p>{connector.usageNoteZh}</p>
+    {connector.confusableWith?.length > 0 && <p>易混淆：<span lang="de">{connector.confusableWith.join(' / ')}</span></p>}
+  </article>;
 }
 
-function ChoiceQuestion({ question, value, onChange, locked }) {
-  return (
-    <div className="grid min-w-0 gap-2 sm:grid-cols-2">
-      {question.options.map((option) => (
-        <button
-          key={option.id}
-          type="button"
-          disabled={locked}
-          onClick={() => onChange(option.id)}
-          className={cx(
-            'min-h-12 min-w-0 break-words rounded-xl border px-4 py-3 text-left text-sm font-black transition active:scale-[0.98]',
-            value === option.id ? 'border-violet-600 bg-violet-600 text-white' : 'border-slate-200 bg-white text-slate-700 hover:bg-violet-50'
-          )}
-        >
-          {option.textZh || option.text}
-        </button>
-      ))}
-    </div>
-  );
+function CardsPanel({ selection, progress, onBookmark }) {
+  const [syntax, setSyntax] = useState('all');
+  const connectors = data.connectors.filter(connector => {
+    const ids = MODULE_CONNECTORS[selection.module];
+    if (selection.module !== 'all' && ids?.length && !ids.includes(connector.id)) return false;
+    if (selection.level !== 'all' && !String(connector.level).includes(selection.level)) return false;
+    return syntax === 'all' || connector.syntaxType === syntax;
+  });
+  return <>
+    <div className="lf-form"><label>語序類型
+      <select value={syntax} onChange={event => setSyntax(event.target.value)}>
+        <option value="all">全部</option>
+        {data.syntaxTypes.map(item => <option key={item.id} value={item.id}>{item.labelZh}</option>)}
+      </select>
+    </label></div>
+    {connectors.length === 0 ? <p className="picker-status">目前篩選沒有連接詞卡片</p>
+      : connectors.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked={progress.bookmarks.includes(connector.id)} onBookmark={onBookmark}/>)}
+  </>;
 }
 
-function OrderQuestion({ question, value, onChange, locked }) {
+function OrderInput({ question, value, onChange, locked }) {
   const selected = Array.isArray(value) ? value : [];
-  const tokenItems = question.tokens.map((token, index) => ({ token, index }));
-  const remaining = tokenItems.filter((item) => !selected.some((selectedItem) => selectedItem.index === item.index));
-
-  return (
-    <div className="space-y-3">
-      <div className="min-h-16 min-w-0 rounded-xl border border-violet-100 bg-violet-50 p-3">
-        <div className="flex flex-wrap gap-2">
-          {selected.length === 0 && <span className="text-sm font-bold text-violet-400">依序點選詞塊</span>}
-          {selected.map((item) => (
-            <button
-              key={`${item.token}-${item.index}`}
-              type="button"
-              disabled={locked}
-              onClick={() => onChange(selected.filter((part) => part.index !== item.index))}
-              className="min-w-0 break-words rounded-lg bg-violet-600 px-3 py-2 text-sm font-black text-white"
-            >
-              {item.token}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {remaining.map(({ token, index }) => {
-          return (
-            <button
-              key={`${token}-${index}`}
-              type="button"
-              disabled={locked}
-              onClick={() => onChange([...selected, { token, index }])}
-              className="min-w-0 break-words rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-black text-slate-700 active:scale-95"
-            >
-              {token}
-            </button>
-          );
-        })}
-      </div>
+  const tokens = question.tokens.map((token, index) => ({ token, index }));
+  const remaining = tokens.filter(item => !selected.some(chosen => chosen.index === item.index));
+  return <>
+    <div className="lc-tray" lang="de">
+      {selected.length === 0 && <span className="lc-sub">依序點選詞塊</span>}
+      {selected.map(item => <button key={item.index} type="button" className="lc-token is-picked" disabled={locked} onClick={() => onChange(selected.filter(part => part.index !== item.index))}>{item.token}</button>)}
     </div>
-  );
-}
-
-function TextQuestion({ question, value, onChange, locked }) {
-  return (
-    <textarea
-      value={value || ''}
-      disabled={locked}
-      onChange={(event) => onChange(event.target.value)}
-      rows={3}
-      className="w-full min-w-0 rounded-xl border border-slate-200 bg-white p-3 text-sm font-bold text-slate-800 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
-      placeholder="輸入你的答案"
-    />
-  );
-}
-
-function PairQuestion({ question, value, onChange, locked }) {
-  const pairs = value || {};
-
-  return (
-    <div className="space-y-3">
-      {question.left.map((left) => (
-        <div key={left.id} className="grid min-w-0 gap-2 rounded-xl border border-slate-100 bg-white p-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.4fr)] sm:items-center">
-          <div className="min-w-0 break-words font-black text-slate-800">{left.text}</div>
-          <ArrowRight className="hidden h-4 w-4 text-slate-300 sm:block" />
-          <select
-            disabled={locked}
-            value={pairs[left.id] || ''}
-            onChange={(event) => onChange({ ...pairs, [left.id]: event.target.value })}
-            className="w-full min-w-0 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700"
-          >
-            <option value="">選擇後半</option>
-            {question.right.map((right) => (
-              <option key={right.id} value={right.id}>{right.text}</option>
-            ))}
-          </select>
-        </div>
-      ))}
+    <div className="lc-tokens" lang="de">
+      {remaining.map(item => <button key={item.index} type="button" className="lc-token" disabled={locked} onClick={() => onChange([...selected, item])}>{item.token}</button>)}
     </div>
-  );
+  </>;
 }
 
-function ClozeQuestion({ question, value, onChange, locked }) {
-  const answers = value || {};
-
-  return (
-    <div className="space-y-4">
-      <p className="min-w-0 break-words rounded-xl bg-slate-50 p-3 text-sm font-bold leading-relaxed text-slate-700">{question.textWithBlanks}</p>
-      {question.blanks.map((blank) => (
-        <label key={blank.blankIndex} className="block">
-          <span className="mb-1 block text-xs font-black text-slate-500">空格 {blank.blankIndex}</span>
-          <select
-            disabled={locked}
-            value={answers[blank.blankIndex] || ''}
-            onChange={(event) => onChange({ ...answers, [blank.blankIndex]: event.target.value })}
-            className="w-full min-w-0 rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black text-slate-700"
-          >
-            <option value="">選擇答案</option>
-            {blank.options.map((option) => (
-              <option key={option} value={option}>{option}</option>
-            ))}
-          </select>
-        </label>
-      ))}
-    </div>
-  );
-}
-
-function QuestionInput({ question, value, onChange, locked }) {
-  if (question.type === 'order_words') return <OrderQuestion question={question} value={value} onChange={onChange} locked={locked} />;
-  if (question.type === 'pair_connector') return <PairQuestion question={question} value={value} onChange={onChange} locked={locked} />;
-  if (question.type === 'cloze') return <ClozeQuestion question={question} value={value} onChange={onChange} locked={locked} />;
-  if (question.type === 'error_correction' || question.type === 'transform_sentence' || question.type === 'sentence_builder') {
-    return <TextQuestion question={question} value={value} onChange={onChange} locked={locked} />;
+function BuildInput({ question, value, onChange, locked }) {
+  if (question.type === 'order_words') return <OrderInput question={question} value={value} onChange={onChange} locked={locked}/>;
+  if (question.type === 'pair_connector') {
+    const pairs = value || {};
+    return <div className="lf-form">{question.left.map(left => <label key={left.id}><span lang="de">{left.text}</span>
+      <select disabled={locked} value={pairs[left.id] || ''} onChange={event => onChange({ ...pairs, [left.id]: event.target.value })}>
+        <option value="">選擇後半</option>
+        {question.right.map(right => <option key={right.id} value={right.id}>{right.text}</option>)}
+      </select>
+    </label>)}</div>;
   }
-  return <ChoiceQuestion question={question} value={value} onChange={onChange} locked={locked} />;
+  if (question.type === 'cloze') {
+    const answers = value || {};
+    return <div className="lf-form">
+      <p className="lc-fact" lang="de">{question.textWithBlanks}</p>
+      {question.blanks.map(blank => <label key={blank.blankIndex}>空格 {blank.blankIndex}
+        <select disabled={locked} value={answers[blank.blankIndex] || ''} onChange={event => onChange({ ...answers, [blank.blankIndex]: event.target.value })}>
+          <option value="">選擇答案</option>
+          {blank.options.map(option => <option key={option} value={option}>{option}</option>)}
+        </select>
+      </label>)}
+    </div>;
+  }
+  return <div className="lf-form"><textarea lang="de" rows={3} autoCapitalize="none" spellCheck={false} disabled={locked} value={value || ''} onChange={event => onChange(event.target.value)} placeholder="輸入你的答案"/></div>;
 }
 
-function QuestionPrompt({ question }) {
-  return (
-    <div className="min-w-0 space-y-3">
-      <div className="flex flex-wrap gap-2">
-        <span className="rounded-full bg-violet-50 px-3 py-1 text-[11px] font-black text-violet-700">{TYPE_LABELS[question.type] || question.type}</span>
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-black text-slate-500">{question.level}</span>
-      </div>
-      <h3 className="break-words text-lg font-black leading-snug text-slate-900">{question.promptZh}</h3>
-      {question.promptDe && <p className="break-words text-3xl font-black text-violet-700">{question.promptDe}</p>}
-      {question.sentenceWithBlank && <p className="min-w-0 break-words rounded-xl bg-slate-50 p-3 text-base font-black text-slate-800">{question.sentenceWithBlank}</p>}
-      {question.wrongSentence && <p className="min-w-0 break-words rounded-xl bg-rose-50 p-3 text-base font-black text-rose-800">{question.wrongSentence}</p>}
-      {question.sourceSentence && <p className="min-w-0 break-words rounded-xl bg-slate-50 p-3 text-base font-black text-slate-800">{question.sourceSentence}</p>}
-    </div>
-  );
+function hasDraft(question, draft) {
+  if (question.type === 'pair_connector') return Object.values(draft || {}).filter(Boolean).length === question.left.length;
+  if (question.type === 'cloze') return question.blanks.every(blank => draft?.[blank.blankIndex]);
+  if (Array.isArray(draft)) return draft.length > 0;
+  return !!String(draft || '').trim();
 }
 
-function QuizView({ questions, progress, setProgress }) {
-  const [index, setIndex] = useState(0);
+function BuildCard({ question, onFinish, onNext, onPrev, isLast }) {
   const [draft, setDraft] = useState(null);
   const [result, setResult] = useState(null);
+  const answered = result === true || result === false;
+  useAnswerShortcuts({ answered, onNext });
+  const feedbackRef = useRevealOnShow(result !== null);
 
-  const question = questions[index] || null;
-
-  useEffect(() => {
-    setIndex(0);
-    setDraft(null);
-    setResult(null);
-  }, [questions]);
-
-  useEffect(() => {
-    setDraft(null);
-    setResult(null);
-  }, [question?.id]);
-
-  useAnswerShortcuts({ answered: result === true || result === false, onNext: () => setIndex((current) => (current + 1) % questions.length), enabled: !!question });
-  const resultRef = useRevealOnShow(result !== null);
-
-  if (!question) {
-    return (
-      <div className="min-w-0 rounded-2xl border border-dashed border-slate-200 bg-white p-8 text-center">
-        <p className="font-black text-slate-500">目前篩選沒有題目</p>
-      </div>
-    );
-  }
-
-  const submit = () => {
-    if (result !== null) return;
-    const correct = isAnswerCorrect(
-      question,
-      question.type === 'order_words' ? (draft || []).map((item) => item.token) : draft
-    );
+  function submit() {
+    if (result !== null || !hasDraft(question, draft)) return;
+    const correct = isAnswerCorrect(question, question.type === 'order_words' ? draft.map(item => item.token) : draft);
     if (!correct && SELF_CHECK_TYPES.has(question.type)) { setResult('check'); return; }
     finish(correct);
-  };
-
-  const finish = (correct) => {
-    answerCue(correct, getAnswerText(question));
+  }
+  function finish(correct) {
     setResult(correct);
-    setProgress((current) => {
-      const answers = {
-        ...current.answers,
-        [question.id]: { correct, answeredAt: new Date().toISOString() }
-      };
-      const mistakes = correct
-        ? current.mistakes.filter((id) => id !== question.id)
-        : [...new Set([...current.mistakes, question.id])];
-      return { ...current, answers, mistakes };
-    });
-  };
+    onFinish(correct);
+  }
 
-  const next = () => {
-    setIndex((current) => (current + 1) % questions.length);
-  };
-
-  const resetQuestion = () => {
-    setDraft(null);
-    setResult(null);
-  };
-
-  return (
-    <section className="min-w-0 overflow-hidden rounded-2xl border border-violet-100 bg-white p-4 shadow-sm md:p-5">
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-        <div className="text-sm font-black text-slate-500">
-          {index + 1} / {questions.length}
-        </div>
-        <button
-          type="button"
-          onClick={() => {
-            const shuffled = Math.floor(Math.random() * questions.length);
-            setIndex(shuffled);
-          }}
-          className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-black text-slate-600"
-        >
-          <Shuffle className="h-4 w-4" />
-          隨機題
-        </button>
+  return <div className="lc fx-question">
+    <div className="lc-prompt">
+      <div className="lc-top"><p className="lc-tags"><span>{TYPE_LABELS[question.type] || question.type}</span><span>{question.level}</span></p></div>
+      <div className="lc-body">
+        <p className="lc-sub">{question.promptZh}</p>
+        {question.promptDe && <p className="lc-sentence is-center" lang="de">{question.promptDe}</p>}
+        {question.sentenceWithBlank && <p className="lc-fact" lang="de">{question.sentenceWithBlank}</p>}
+        {question.wrongSentence && <p className="lc-fact is-bad" lang="de">{question.wrongSentence}</p>}
+        {question.sourceSentence && <p className="lc-fact" lang="de">{question.sourceSentence}</p>}
       </div>
-
-      <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <QuestionPrompt question={question} />
-        <div className="min-w-0 space-y-4">
-          <div className={cx(result === false && 'fx-wrong', result === true && 'fx-correct rounded-xl')}>
-            <QuestionInput question={question} value={draft} onChange={setDraft} locked={result !== null} />
-          </div>
-
-          {result === 'check' && (
-            <div role="status" className="fx-enter rounded-xl border border-violet-200 bg-violet-50 p-4">
-              <p className="text-sm font-black text-violet-800">和範例寫法不同，請自己對照：</p>
-              <p className="mt-2 break-words text-sm font-bold text-slate-600">你的答案：<span lang="de" className="text-slate-800">{draft}</span></p>
-              <p className="mt-1 break-words text-sm font-bold text-slate-600">範例答案：<span lang="de" className="text-slate-800">{question.sampleAnswer}</span></p>
-              <p className="mt-2 text-xs font-bold text-slate-500">子句放前或放後、換一個詞序，只要動詞位置正確都算對。</p>
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                <button type="button" onClick={() => finish(true)} className="rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-2.5 text-sm font-black text-emerald-700">我的寫法也正確</button>
-                <button type="button" onClick={() => finish(false)} className="rounded-xl border border-rose-300 bg-rose-50 px-3 py-2.5 text-sm font-black text-rose-700">我寫錯了</button>
-              </div>
-            </div>
-          )}
-
-          {(result === true || result === false) && (
-            <div ref={resultRef} role="status" className={cx('fx-enter scroll-mb-24 rounded-xl border p-4', result ? 'border-emerald-200 bg-emerald-50' : 'border-rose-200 bg-rose-50')}>
-              <div className="mb-2 flex items-center gap-2 font-black">
-                {result ? <CheckCircle className="h-5 w-5 text-emerald-600" /> : <XCircle className="h-5 w-5 text-rose-600" />}
-                <span className={result ? 'text-emerald-800' : 'text-rose-800'}>
-                  {result ? '正確' : '需要修正'}
-                </span>
-              </div>
-              <p className="break-words text-sm font-black text-slate-800">答案：{getAnswerText(question)}</p>
-              <p className="mt-2 break-words text-sm font-bold leading-relaxed text-slate-600">{question.explanationZh}</p>
-            </div>
-          )}
-
-          <div className="grid gap-2 sm:grid-cols-3">
-            <button
-              type="button"
-              onClick={submit}
-              disabled={result !== null}
-              className="rounded-xl bg-violet-600 px-4 py-3 text-sm font-black text-white disabled:cursor-not-allowed disabled:bg-slate-300"
-            >
-              送出
-            </button>
-            <button
-              type="button"
-              onClick={resetQuestion}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-600"
-            >
-              <RotateCcw className="h-4 w-4" />
-              重做
-            </button>
-            <button
-              type="button"
-              onClick={next}
-              className={cx('inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-black transition-all active:scale-[0.98]', result !== null ? 'border-violet-600 bg-violet-600 text-white ring-4 ring-violet-400/30' : 'border-violet-200 bg-violet-50 text-violet-700')}
-            >
-              下一題
-              {result !== null && <span className="kbd-hint !border-white/30 !bg-white/15 !text-white" aria-hidden="true">Enter</span>}
-            </button>
-          </div>
-        </div>
+    </div>
+    <div className={result === false ? 'fx-wrong' : result === true ? 'fx-correct' : undefined}><BuildInput question={question} value={draft} onChange={setDraft} locked={result !== null}/></div>
+    {result === null && <>
+      <button type="button" className="calm-primary" disabled={!hasDraft(question, draft)} onClick={submit}>送出</button>
+      <div className="lc-nav">
+        {onPrev && <button type="button" className="calm-link" onClick={onPrev}>上一題</button>}
+        <button type="button" className="calm-link" onClick={() => setDraft(null)}>清除</button>
+        <button type="button" className="calm-link" onClick={onNext}>跳過</button>
       </div>
-    </section>
-  );
-}
-
-function MistakesView({ questions, progress, setMode }) {
-  const mistakes = questions.filter((question) => progress.mistakes.includes(question.id));
-
-  return (
-    <section className="min-w-0 overflow-hidden rounded-2xl border border-rose-100 bg-white p-4 shadow-sm md:p-5">
-      <h2 className="mb-3 text-base font-black text-slate-800">錯題整理</h2>
-      {mistakes.length === 0 ? (
-        <p className="rounded-xl bg-slate-50 p-4 text-sm font-bold text-slate-500">目前沒有錯題。答錯後會自動收進這裡。</p>
-      ) : (
-        <div className="space-y-3">
-          {mistakes.map((question) => (
-            <div key={question.id} className="rounded-xl border border-rose-100 bg-rose-50 p-3">
-              <p className="break-words text-sm font-black text-rose-900">{question.promptZh}</p>
-              <p className="mt-1 break-words text-sm font-bold text-slate-700">{question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe}</p>
-              <p className="mt-2 break-words text-xs font-bold leading-relaxed text-slate-600">{question.explanationZh}</p>
-            </div>
-          ))}
-        </div>
-      )}
-      <button
-        type="button"
-        onClick={() => setMode('quiz')}
-        className="mt-4 rounded-xl bg-rose-600 px-4 py-3 text-sm font-black text-white"
-      >
-        回到練習
-      </button>
-    </section>
-  );
-}
-
-function RecordsView({ questions, progress, setMode }) {
-  const answeredQuestions = questions
-    .filter((question) => progress.answers[question.id])
-    .sort((a, b) => {
-      const aTime = progress.answers[a.id]?.answeredAt || '';
-      const bTime = progress.answers[b.id]?.answeredAt || '';
-      return bTime.localeCompare(aTime);
-    });
-
-  return (
-    <section className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm md:p-5">
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-base font-black text-slate-800">答題紀錄</h2>
-        <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700">
-          {answeredQuestions.length} 題已作答
-        </span>
+    </>}
+    {result === 'check' && <div role="status" className="lc-feedback fx-enter">
+      <p className="lc-verdict">和範例寫法不同，請自己對照</p>
+      <p className="lc-note">你的答案：<span lang="de">{draft}</span></p>
+      <p className="lc-note">範例答案：<span lang="de">{question.sampleAnswer}</span></p>
+      <p className="lc-note">子句放前或放後、換一個詞序，只要動詞位置正確都算對。</p>
+      <div className="calm-actions calm-actions-two">
+        <button type="button" className="calm-rate" onClick={() => finish(false)}>我寫錯了</button>
+        <button type="button" className="calm-rate" data-tone="know" onClick={() => finish(true)}>我的寫法也正確</button>
       </div>
-
-      {answeredQuestions.length === 0 ? (
-        <p className="rounded-xl bg-slate-50 p-4 text-sm font-bold text-slate-500">目前還沒有答題紀錄。</p>
-      ) : (
-        <div className="space-y-3">
-          {answeredQuestions.map((question) => {
-            const answer = progress.answers[question.id];
-            return (
-              <div
-                key={question.id}
-                className={cx(
-                  'rounded-xl border p-3',
-                  answer.correct ? 'border-emerald-100 bg-emerald-50' : 'border-rose-100 bg-rose-50'
-                )}
-              >
-                <div className="mb-2 flex flex-wrap items-center gap-2">
-                  <span className={cx('rounded-full px-2.5 py-1 text-[11px] font-black', answer.correct ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white')}>
-                    {answer.correct ? '答對' : '答錯'}
-                  </span>
-                  <span className="rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-black text-slate-500">
-                    {TYPE_LABELS[question.type] || question.type}
-                  </span>
-                  <span className="text-[11px] font-bold text-slate-400">
-                    {answer.answeredAt ? new Date(answer.answeredAt).toLocaleString('zh-TW') : ''}
-                  </span>
-                </div>
-                <p className="break-words text-sm font-black text-slate-900">{question.promptZh}</p>
-                <p className="mt-1 break-words text-sm font-bold text-slate-700">{question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe}</p>
-                <p className="mt-2 break-words text-xs font-bold leading-relaxed text-slate-600">答案：{getAnswerText(question)}</p>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      <button
-        type="button"
-        onClick={() => setMode('quiz')}
-        className="mt-4 rounded-xl bg-emerald-600 px-4 py-3 text-sm font-black text-white"
-      >
-        回到練習
-      </button>
-    </section>
-  );
+    </div>}
+    {answered && <div ref={feedbackRef} role="status" className="lc-feedback fx-enter" data-correct={result}>
+      <p className="lc-verdict">{result ? <CheckCircle size={20}/> : <XCircle size={20}/>}{result ? '答對了' : '需要修正'}</p>
+      <p className="lc-solved" lang="de"><span>{getAnswerText(question)}</span></p>
+      <p className="lc-note">{question.explanationZh}</p>
+      <button type="button" className="calm-primary" onClick={onNext}>{isLast ? '看結果' : '下一題'}<span className="kbd-hint" aria-hidden="true">Enter</span></button>
+    </div>}
+  </div>;
 }
 
 export default function ConnectorTrainer() {
-  const [mode, setMode] = useState('learn');
-  const [reviewIds, setReviewIds] = useState(null);
-  const [moduleId, setModuleId] = useState('all');
-  const [level, setLevel] = useState('all');
-  const [syntax, setSyntax] = useState('all');
-  // Phones only: stats and the three selects stay folded so the card is on the first screen.
-  const [showTools, setShowTools] = useState(false);
   const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
 
-  useEffect(() => {
-    if (isReviewRequested()) { setMode('quiz'); setReviewIds([...progress.mistakes]); }
-  }, []);
+  const itemsFor = ({ module, level }) => data.questions.filter(question =>
+    (module === 'all' || question.moduleId === module) && (level === 'all' || String(question.level).includes(level)));
+  const reviewItems = () => data.questions.filter(question => progress.mistakes.includes(question.id));
 
+  const records = useMemo(() => {
+    const answers = Object.values(progress.answers);
+    return [
+      ['連接詞卡片', data.connectors.length],
+      ['答對', `${answers.filter(answer => answer.correct).length}/${answers.length}`],
+      ['錯題', progress.mistakes.length]
+    ];
+  }, [progress]);
 
-  const connectors = useMemo(() => {
-    return data.connectors.filter((connector) => {
-      const connectorIds = MODULE_CONNECTORS[moduleId];
-      if (moduleId !== 'all' && connectorIds?.length && !connectorIds.includes(connector.id)) return false;
-      if (level !== 'all' && !String(connector.level).includes(level)) return false;
-      if (syntax !== 'all' && connector.syntaxType !== syntax) return false;
-      return true;
-    });
-  }, [moduleId, level, syntax]);
+  const toggleBookmark = id => setProgress(current => ({
+    ...current,
+    bookmarks: current.bookmarks.includes(id) ? current.bookmarks.filter(item => item !== id) : [...current.bookmarks, id]
+  }));
 
-  const questions = useMemo(() => {
-    return data.questions.filter((question) => {
-      if (reviewIds && !reviewIds.includes(question.id)) return false;
-      if (moduleId !== 'all' && question.moduleId !== moduleId) return false;
-      if (level !== 'all' && !String(question.level).includes(level)) return false;
-      return true;
-    });
-  }, [moduleId, level, reviewIds]);
+  function saveAnswer(question, correct) {
+    setProgress(current => ({
+      ...current,
+      answers: { ...current.answers, [question.id]: { correct, answeredAt: new Date().toISOString() } },
+      mistakes: correct ? current.mistakes.filter(id => id !== question.id) : [...new Set([...current.mistakes, question.id])]
+    }));
+  }
 
-  const answeredCount = Object.keys(progress.answers).length;
-  const correctCount = Object.values(progress.answers).filter((answer) => answer.correct).length;
-  const stats = [
-    {
-      label: '卡片',
-      desktopLabel: '連接詞卡片',
-      value: data.connectors.length,
-      icon: BookOpen,
-      className: 'border-violet-100 text-violet-600'
-    },
-    {
-      label: '題目',
-      desktopLabel: '練習題',
-      value: data.questions.length,
-      icon: ListChecks,
-      className: 'border-violet-100 text-violet-600'
-    },
-    {
-      label: '答對',
-      desktopLabel: '答對紀錄',
-      value: `${correctCount}/${answeredCount || 0}`,
-      icon: CheckCircle,
-      className: 'border-emerald-100 text-emerald-600'
-    },
-    {
-      label: '錯題',
-      desktopLabel: '錯題',
-      value: progress.mistakes.length,
-      icon: XCircle,
-      className: 'border-rose-100 text-rose-600'
-    }
+  const panels = [
+    { id: 'cards', title: '連接詞卡片', render: ({ selection }) => <CardsPanel selection={selection} progress={progress} onBookmark={toggleBookmark}/> },
+    { id: 'saved', title: '收藏', render: () => {
+      const saved = data.connectors.filter(connector => progress.bookmarks.includes(connector.id));
+      return saved.length === 0 ? <p className="picker-status">還沒有收藏的連接詞。</p> : saved.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked onBookmark={toggleBookmark}/>);
+    } },
+    { id: 'mistakes', title: '錯題整理', render: () => {
+      const wrong = reviewItems();
+      return wrong.length === 0 ? <p className="picker-status">目前沒有錯題。答錯後會自動收進這裡。</p> : wrong.map(question => (
+        <div key={question.id} className="lf-card"><p><b>{question.promptZh}</b></p><p lang="de">{questionText(question)}</p><p>{question.explanationZh}</p></div>
+      ));
+    } },
+    { id: 'log', title: '答題紀錄', render: () => {
+      const answered = data.questions.filter(question => progress.answers[question.id])
+        .sort((a, b) => (progress.answers[b.id]?.answeredAt || '').localeCompare(progress.answers[a.id]?.answeredAt || ''));
+      return answered.length === 0 ? <p className="picker-status">目前還沒有答題紀錄。</p> : answered.map(question => {
+        const answer = progress.answers[question.id];
+        return <div key={question.id} className="lf-card">
+          <p className={answer.correct ? 'is-good' : 'is-bad'}><b>{answer.correct ? '答對' : '答錯'}</b> · {TYPE_LABELS[question.type] || question.type}{answer.answeredAt ? ` · ${new Date(answer.answeredAt).toLocaleString('zh-TW')}` : ''}</p>
+          <p><b>{question.promptZh}</b></p>
+          <p lang="de">{questionText(question)}</p>
+          <p>答案：<span lang="de">{getAnswerText(question)}</span></p>
+        </div>;
+      });
+    } }
   ];
 
-  const toggleBookmark = (id) => {
-    setProgress((current) => ({
-      ...current,
-      bookmarks: current.bookmarks.includes(id)
-        ? current.bookmarks.filter((item) => item !== id)
-        : [...current.bookmarks, id]
-    }));
-  };
+  function renderQuestion({ key, item, isLast, report, next, prev }) {
+    const finish = correct => { report(correct, getAnswerText(item)); saveAnswer(item, correct); };
+    if (!CHOICE_TYPES.has(item.type)) return <BuildCard key={key} question={item} isLast={isLast} onFinish={finish} onNext={next} onPrev={prev}/>;
+    const textOf = id => { const option = item.options.find(entry => entry.id === id); return option?.textZh || option?.text || id; };
+    return <ChoiceCard
+      key={key}
+      tag={TYPE_LABELS[item.type] || item.type}
+      level={item.level}
+      prompt={() => <>
+        <p className="lc-sub">{item.promptZh}</p>
+        {item.promptDe && <p className="lc-sentence is-center" lang="de">{item.promptDe}</p>}
+        {item.sentenceWithBlank && <p className="lc-sentence" lang="de">{item.sentenceWithBlank}</p>}
+      </>}
+      options={item.options.map(option => option.id)}
+      answer={item.answer}
+      wide={item.options.some(option => String(option.textZh || option.text).length > 14)}
+      optionLang={item.options[0]?.textZh ? undefined : 'de'}
+      formatOption={textOf}
+      wrongTitle={`正確答案：${textOf(item.answer)}`}
+      explain={item.explanationZh}
+      isLast={isLast}
+      onPrev={prev}
+      onSkip={next}
+      onNext={next}
+      onChoose={(_, correct) => finish(correct)}
+    />;
+  }
 
-  return (
-    <div className="w-full max-w-full min-w-0 overflow-x-hidden space-y-5">
-      <section className="hidden min-w-0 grid-cols-4 gap-3 md:grid">
-        {stats.map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <div
-              key={stat.desktopLabel}
-              className={cx(
-                'min-w-0 rounded-xl border bg-white px-1.5 py-2 text-center md:rounded-2xl md:p-4 md:text-left md:shadow-sm',
-                stat.className
-              )}
-            >
-              <Icon className="mx-auto mb-1 h-4 w-4 md:mx-0 md:mb-2 md:h-5 md:w-5" />
-              <p className="truncate text-base font-black leading-tight text-slate-900 md:text-2xl">{stat.value}</p>
-              <p className="truncate text-[10px] font-black leading-tight text-slate-400 md:text-xs">
-                <span className="md:hidden">{stat.label}</span>
-                <span className="hidden md:inline">{stat.desktopLabel}</span>
-              </p>
-            </div>
-          );
-        })}
-      </section>
-
-      <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-3 shadow-sm md:p-4">
-        <div className="grid grid-cols-5 gap-1.5 md:mb-4 md:flex md:flex-wrap md:gap-2">
-          <FilterButton active={mode === 'learn'} onClick={() => setMode('learn')}>學習卡</FilterButton>
-          <FilterButton active={mode === 'quiz'} onClick={() => { setReviewIds(null); setMode('quiz'); }}>練習</FilterButton>
-          <FilterButton active={mode === 'records'} onClick={() => setMode('records')}>紀錄</FilterButton>
-          <FilterButton active={mode === 'mistakes'} onClick={() => setMode('mistakes')}>錯題</FilterButton>
-          <FilterButton active={mode === 'bookmarks'} onClick={() => setMode('bookmarks')}>收藏</FilterButton>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setShowTools((value) => !value)}
-          aria-expanded={showTools}
-          className="mt-2 flex w-full min-w-0 items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-sm font-black text-slate-700 md:hidden"
-        >
-          <span className="min-w-0 truncate">
-            篩選
-            <span className="ml-2 text-xs font-bold text-slate-500">
-              {[
-                MODULES.find((item) => item.id === moduleId)?.label,
-                level !== 'all' && level,
-                syntax !== 'all' && data.syntaxTypes.find((item) => item.id === syntax)?.labelZh,
-                `答對 ${correctCount}/${answeredCount}`,
-                progress.mistakes.length > 0 && `錯題 ${progress.mistakes.length}`
-              ].filter(Boolean).join(' · ')}
-            </span>
-          </span>
-          <span aria-hidden="true" className={cx('text-slate-400 transition-transform', showTools && 'rotate-180')}>▾</span>
-        </button>
-
-        <div className={cx('mt-3 min-w-0 gap-3 md:mt-0 md:grid md:grid-cols-3', showTools ? 'grid' : 'hidden')}>
-          <label className="block min-w-0">
-            <span className="mb-1 block text-xs font-black text-slate-400">模組</span>
-            <select value={moduleId} onChange={(event) => setModuleId(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
-              {MODULES.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
-            </select>
-          </label>
-          <label className="block min-w-0">
-            <span className="mb-1 block text-xs font-black text-slate-400">等級</span>
-            <select value={level} onChange={(event) => setLevel(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
-              <option value="all">全部</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-            </select>
-          </label>
-          <label className="block min-w-0">
-            <span className="mb-1 block text-xs font-black text-slate-400">語序類型</span>
-            <select value={syntax} onChange={(event) => setSyntax(event.target.value)} className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-black text-slate-700">
-              <option value="all">全部</option>
-              {data.syntaxTypes.map((item) => <option key={item.id} value={item.id}>{item.labelZh}</option>)}
-            </select>
-          </label>
-        </div>
-      </section>
-
-      {mode === 'learn' && <LearnView connectors={connectors} progress={progress} onBookmark={toggleBookmark} />}
-      {reviewIds && mode === 'quiz' && <p className="text-sm font-bold text-rose-700">錯題複習 · 本輪 {reviewIds.length} 題 <button className="underline" onClick={() => setReviewIds(null)}>切換全部題目</button></p>}
-      {mode === 'quiz' && <QuizView questions={questions} progress={progress} setProgress={setProgress} />}
-      {mode === 'records' && <RecordsView questions={data.questions} progress={progress} setMode={setMode} />}
-      {mode === 'mistakes' && <MistakesView questions={data.questions} progress={progress} setMode={setMode} />}
-      {mode === 'bookmarks' && (
-        <LearnView
-          connectors={data.connectors.filter((connector) => progress.bookmarks.includes(connector.id))}
-          progress={progress}
-          onBookmark={toggleBookmark}
-        />
-      )}
-    </div>
-  );
+  return <LessonApp
+    lessonKey="l5"
+    title="連接詞與語序"
+    blurb="先判斷連接詞會不會改變動詞的位置。"
+    filters={FILTERS}
+    itemsFor={itemsFor}
+    reviewItems={reviewItems}
+    records={records}
+    panels={panels}
+    featuredPanels={['cards']}
+    renderQuestion={renderQuestion}
+  />;
 }

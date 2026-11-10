@@ -1,10 +1,12 @@
+import React, { useCallback, useMemo, useState } from 'react';
+import { Star } from 'lucide-react';
+import LessonApp from './lesson/LessonApp.jsx';
+import ChoiceCard from './lesson/ChoiceCard.jsx';
+import { PickerRow } from './lesson/BottomSheet.jsx';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
-import { isReviewRequested } from '../lib/progressStorage';
-import React, { useEffect, useMemo, useState } from 'react';
-import { CheckCircle, RotateCcw, Star, XCircle } from 'lucide-react';
 import data from '../data/lesson4-kasus-quest-data.json';
-import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { nextChoiceRecord } from '../lib/lessonRound.mjs';
 import { analyzeCaseSentence } from '../lib/caseDiagram.mjs';
 import { genderKey } from '../lib/grammarColors.mjs';
 import CaseDiagram from './CaseDiagram.jsx';
@@ -123,10 +125,6 @@ function cx(...values) {
   return values.filter(Boolean).join(' ');
 }
 
-function getExerciseProgress(progress, id) {
-  return progress[id] || {};
-}
-
 function cleanPathTitle(title = '') {
   return title
     .replace('格位急救站', '格位基礎整理')
@@ -194,8 +192,8 @@ function ReferenceTable({ title, table }) {
   const cases = ['Nominativ', 'Akkusativ', 'Dativ', 'Genitiv'];
 
   return (
-    <div className="rounded-2xl border border-teal-100 bg-white p-4 shadow-sm">
-      <h4 className="mb-3 text-sm font-black text-slate-700">{title}</h4>
+    <div className="lf-card">
+      <h4 className="mb-3 text-sm font-black">{title}</h4>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[440px] text-left text-xs font-bold">
           <thead className="text-slate-400">
@@ -220,413 +218,141 @@ function ReferenceTable({ title, table }) {
   );
 }
 
+const EXERCISES = data.exercises || [];
+const FILTERS = [
+  { id: 'level', label: '程度', options: [{ id: 'all', label: '全部程度' }, ...['A1', 'A2', 'B1'].map(id => ({ id, label: id }))] },
+  { id: 'mode', label: '題型', options: [{ id: 'all', label: '全部題型' }, ...Object.keys(MODE_LABELS).filter(mode => EXERCISES.some(item => item.mode === mode)).map(mode => ({ id: mode, label: MODE_LABELS[mode] }))] },
+  { id: 'only', label: '篩選', options: [{ id: 'all', label: '全部題目' }, { id: 'saved', label: '已整理' }] }
+];
+
+function KasusPrompt({ item, picked, style }) {
+  const [hint, setHint] = useState(false);
+  const showClue = style === 'guided' || hint || picked;
+  return <>
+    <p className="lc-sub">{item.prompt}</p>
+    <p className="lc-sentence" lang="de">{item.sentence}</p>
+    <p className="lc-sub">{item.translation}</p>
+    <div className="lc-chips">
+      <span>{genderKey(item.gender) && <i className={`g-dot g-${genderKey(item.gender)}`} />}目標詞：{item.targetNoun || '-'}</span>
+      {showClue && <span>線索：{triggerText(item.trigger, !!picked)}</span>}
+      {picked && <span className={CASE_STYLES[item.case]}>{item.case}</span>}
+    </div>
+    {style === 'detective' && !hint && !picked && <button type="button" className="calm-link" onClick={() => setHint(true)}>顯示提示</button>}
+  </>;
+}
+
 export default function KasusQuestTrainer() {
-  const [level, setLevel] = useState('ALL');
-  const [mode, setMode] = useState('ALL');
   const [style, setStyle] = useState('guided');
-  const [mistakeOnly, setMistakeOnly] = useState(false);
-  const [savedOnly, setSavedOnly] = useState(false);
-  const [activePath, setActivePath] = useState('ALL');
-  const [showReference, setShowReference] = useState(false);
-  const [showHint, setShowHint] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selected, setSelected] = useState(null);
-  const [answeredExercise, setAnsweredExercise] = useState(null);
   const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
 
-  useEffect(() => {
-    if (isReviewRequested()) setMistakeOnly(true);
-  }, []);
+  const itemsFor = useCallback(({ level, mode, only }) => EXERCISES.filter(item => {
+    const record = progress[item.id] || {};
+    return (level === 'all' || item.level === level) && (mode === 'all' || item.mode === mode) && (only !== 'saved' || record.starred || record.needsReview);
+  }), [progress]);
+  const reviewItems = () => EXERCISES.filter(item => itemNeedsReview(progress[item.id] || {}));
 
+  const summary = useMemo(() => {
+    const values = Object.values(progress);
+    const correct = values.reduce((sum, item) => sum + (item?.correct || 0), 0);
+    const wrong = values.reduce((sum, item) => sum + (item?.wrong || 0), 0);
+    return [
+      ['已作答', values.filter(item => item?.answered).length],
+      ['正確率', correct + wrong ? `${Math.round((correct / (correct + wrong)) * 100)}%` : '—'],
+      ['錯誤紀錄', wrong],
+      ['需複習', values.filter(itemNeedsReview).length],
+      ['已整理', values.filter(item => item?.starred || item?.needsReview).length]
+    ];
+  }, [progress]);
 
-
-  const exercises = data.exercises || [];
-  const modes = Object.keys(MODE_LABELS).filter((item) => exercises.some((exercise) => exercise.mode === item));
-
-  const filtered = useMemo(() => {
-    let next = exercises;
-    if (level !== 'ALL') next = next.filter((exercise) => exercise.level === level);
-    if (mode !== 'ALL') next = next.filter((exercise) => exercise.mode === mode);
-    if (mistakeOnly) next = next.filter((exercise) => itemNeedsReview(getExerciseProgress(progress, exercise.id)));
-    if (savedOnly) next = next.filter((exercise) => {
-      const item = getExerciseProgress(progress, exercise.id);
-      return item.starred || item.needsReview;
-    });
-    return next;
-  }, [exercises, level, mode, mistakeOnly, savedOnly, progress]);
-
-  const current = answeredExercise || filtered[currentIndex % Math.max(filtered.length, 1)] || null;
-  const currentProgress = current ? getExerciseProgress(progress, current.id) : {};
-  const currentGuide = MODE_GUIDES[current?.mode] || MODE_GUIDES['case-detective'];
-  const compactOptions = isCompactOptionSet(current);
-  const answered = Object.values(progress).filter((item) => item?.answered).length;
-  const correct = Object.values(progress).reduce((sum, item) => sum + (item?.correct || 0), 0);
-  const wrong = Object.values(progress).reduce((sum, item) => sum + (item?.wrong || 0), 0);
-  const accuracy = correct + wrong > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
-  const needsReview = Object.values(progress).filter(itemNeedsReview).length;
-  const savedItems = Object.values(progress).filter((item) => item?.starred || item?.needsReview).length;
-  const mistakeStats = Object.values(progress).reduce((acc, item) => {
-    if (!item?.wrong) return acc;
-    for (const mistakeType of item.mistakeTypes || []) {
-      acc[mistakeType] = (acc[mistakeType] || 0) + item.wrong;
+  const topMistakes = useMemo(() => {
+    const totals = {};
+    for (const record of Object.values(progress)) {
+      if (!record?.wrong) continue;
+      for (const type of record.mistakeTypes || []) totals[type] = (totals[type] || 0) + record.wrong;
     }
-    return acc;
-  }, {});
-  const topMistakes = Object.entries(mistakeStats)
-    .sort(([, a], [, b]) => b - a)
-    .slice(0, 4);
+    return Object.entries(totals).sort(([, a], [, b]) => b - a).slice(0, 4);
+  }, [progress]);
 
-  function resetAnswer(nextIndex = currentIndex) {
-    setSelected(null);
-    setAnsweredExercise(null);
-    setShowHint(style === 'guided');
-    setCurrentIndex(nextIndex);
+  function toggleFlag(id, flag) {
+    setProgress(prev => ({ ...prev, [id]: { ...(prev[id] || {}), [flag]: !prev[id]?.[flag], updatedAt: new Date().toISOString() } }));
   }
 
-  useEffect(() => {
-    setCurrentIndex(0);
-    setSelected(null);
-    setAnsweredExercise(null);
-    setShowHint(style === 'guided');
-  }, [level, mode, mistakeOnly, savedOnly, style]);
+  const panels = [
+    { id: 'style', title: `作答方式：${STYLE_LABELS[style]}`, render: ({ close }) => Object.entries(STYLE_LABELS).map(([key, label]) => (
+      <PickerRow key={key} title={label} detail={{ guided: '一開始就顯示線索', detective: '需要時才點開提示', challenge: '答完才顯示線索' }[key]} selected={style === key} onClick={() => { setStyle(key); close(); }}/>
+    )) },
+    { id: 'guide', title: '題型說明', render: ({ item }) => {
+      const guide = MODE_GUIDES[item?.mode] || MODE_GUIDES['case-detective'];
+      return <div className="lf-card"><p><b>{guide.title}</b></p><p>{guide.focus}</p><ol>{guide.steps.map(step => <li key={step}>{step}</li>)}</ol></div>;
+    } },
+    { id: 'reference', title: '參考表', render: () => <>
+      {data.caseGuide.map(item => (
+        <div key={item.case} className={`lf-card ${CASE_STYLES[item.case] || ''}`}><p><b>{item.case} · {item.questionWords.join(' / ')}</b></p><p>{item.zh}</p><p>{item.simpleRule}</p></div>
+      ))}
+      <ReferenceTable title="定冠詞" table={data.articleTables.definiteArticle} />
+      <ReferenceTable title="不定冠詞" table={data.articleTables.indefiniteArticle} />
+    </> },
+    { id: 'path', title: '學習路徑', render: ({ setFilters }) => data.learningPath.map(item => {
+      const { level, mode } = getPathFilter(item);
+      return <PickerRow key={item.level} title={cleanPathTitle(item.title)} detail={`${cleanPathLevel(item.level)} · ${item.targetCEFR} · ${item.goals.join('、')}`} onClick={() => setFilters({ level: level === 'ALL' ? 'all' : level, mode: mode === 'ALL' ? 'all' : mode })}/>;
+    }) },
+    { id: 'mistakes', title: '錯誤類型', render: () => (topMistakes.length === 0
+      ? <p className="picker-status">完成幾題後，這裡會整理需要加強的文法點。</p>
+      : topMistakes.map(([type, count]) => <div key={type} className="lf-card"><p><b>{MISTAKE_LABELS[type] || type}</b> · {count} 次</p></div>)) }
+  ];
 
-  function answer(option) {
-    if (!current || selected) return;
-    const isCorrect = option === current.answer;
-    answerCue(isCorrect, cleanOption(current.fullSentence));
-    setAnsweredExercise(current);
-    setSelected(option);
-    setShowHint(true);
-    setProgress((prev) => {
-      const item = prev[current.id] || {};
-      return {
-        ...prev,
-        [current.id]: {
-          ...item,
-          answered: true,
-          needsReview: !isCorrect,
-          updatedAt: new Date().toISOString(),
-          correct: (item.correct || 0) + (isCorrect ? 1 : 0),
-          wrong: (item.wrong || 0) + (isCorrect ? 0 : 1),
-          lastAnswer: option,
-          lastCorrect: isCorrect,
-          lastAnsweredAt: new Date().toISOString(),
-          mistakeTypes: isCorrect ? item.mistakeTypes || [] : current.mistakeTypes || []
-        }
-      };
-    });
+  function renderQuestion({ key, item, isLast, report, next, prev }) {
+    const record = progress[item.id] || {};
+    return <ChoiceCard
+      key={key}
+      tag={MODE_LABELS[item.mode]}
+      level={item.level}
+      actions={<>
+        <button type="button" className="lc-flag" aria-label={record.starred ? '取消收藏' : '收藏'} aria-pressed={!!record.starred} onClick={() => toggleFlag(item.id, 'starred')}><Star size={16} fill={record.starred ? 'currentColor' : 'none'}/></button>
+        <button type="button" className="lc-flag" aria-pressed={!!record.needsReview} onClick={() => toggleFlag(item.id, 'needsReview')}>複習</button>
+      </>}
+      prompt={picked => <KasusPrompt item={item} picked={picked} style={style}/>}
+      options={item.options}
+      answer={item.answer}
+      wide={!isCompactOptionSet(item)}
+      formatOption={cleanOption}
+      wrongTitle={`正確答案：${cleanOption(item.answer)}`}
+      extra={<>
+        {analyzeCaseSentence(item) ? <CaseDiagram exercise={item} /> : <p className="lc-solved" lang="de">{cleanOption(item.fullSentence)}</p>}
+        <p className="lc-note">{item.explanationZh}</p>
+        <details className="lc-details">
+          <summary>判斷線索</summary>
+          <dl>
+            <div><dt>提問方式</dt><dd>{item.questionWord}</dd></div>
+            <div><dt>性別 / 數</dt><dd>{item.gender || '依句意判斷'}</dd></div>
+            <div><dt>可能錯誤</dt><dd>{(item.mistakeTypes || []).map(type => MISTAKE_LABELS[type] || type).join('、')}</dd></div>
+          </dl>
+        </details>
+      </>}
+      isLast={isLast}
+      onPrev={prev}
+      onSkip={next}
+      onNext={next}
+      onChoose={(option, correct) => {
+        report(correct, cleanOption(item.fullSentence));
+        const now = new Date().toISOString();
+        setProgress(prevProgress => {
+          const before = prevProgress[item.id] || {};
+          return { ...prevProgress, [item.id]: { ...nextChoiceRecord(before, correct, now), lastAnswer: option, lastAnsweredAt: now, mistakeTypes: correct ? before.mistakeTypes || [] : item.mistakeTypes || [] } };
+        });
+      }}
+    />;
   }
 
-  function toggleFlag(flag) {
-    if (!current) return;
-    setProgress((prev) => {
-      const item = prev[current.id] || {};
-      return {
-        ...prev,
-        [current.id]: {
-          ...item,
-          [flag]: !item[flag],
-          updatedAt: new Date().toISOString()
-        }
-      };
-    });
-  }
-
-  useAnswerShortcuts({ options: current?.options || [], answered: !!selected, onSelect: answer, onNext: () => next() });
-  const feedbackRef = useRevealOnShow(selected);
-
-  function next() {
-    if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
-    resetAnswer((currentIndex + (answeredExercise && !filtered.some(item => item.id === answeredExercise.id) ? 0 : 1)) % filtered.length);
-  }
-
-  function prev() {
-    if (filtered.length === 0) { setSelected(null); setAnsweredExercise(null); return; }
-    resetAnswer((currentIndex - 1 + filtered.length) % filtered.length);
-  }
-
-  function applyPath(item) {
-    const nextFilter = getPathFilter(item);
-    setActivePath(item.level);
-    setLevel(nextFilter.level);
-    setMode(nextFilter.mode);
-    setMistakeOnly(false);
-    setSavedOnly(false);
-  }
-
-  const showInlineHint = style === 'guided' || showHint || selected;
-  const showGuidance = showHint || selected;
-
-  return (
-    <div className="text-slate-800">
-      <details className="mb-3 rounded-2xl border border-teal-100 bg-white p-3 shadow-sm">
-        <summary className="grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-3">
-          <div className="min-w-0">
-            <div className="truncate text-sm font-black text-slate-700">篩選與紀錄</div>
-            <div className="mt-0.5 truncate text-xs font-bold text-slate-400">
-              {level === 'ALL' ? '全部程度' : level} · {mode === 'ALL' ? '全部題型' : MODE_LABELS[mode]} · {filtered.length} 題
-            </div>
-          </div>
-          <span className="rounded-xl bg-teal-50 px-3 py-2 text-xs font-black text-teal-700">設定</span>
-        </summary>
-
-        <div className="mt-3 grid gap-3">
-          <div className="grid gap-2 md:grid-cols-[110px_1fr_140px_auto_auto_auto] md:items-center">
-            <select value={level} onChange={(event) => { setLevel(event.target.value); setActivePath('ALL'); }} className="min-h-10 rounded-xl border border-teal-100 bg-teal-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100">
-              <option value="ALL">全部程度</option>
-              <option value="A1">A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-            </select>
-
-            <select value={mode} onChange={(event) => { setMode(event.target.value); setActivePath('ALL'); }} className="min-h-10 rounded-xl border border-teal-100 bg-teal-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100">
-              <option value="ALL">全部題型</option>
-              {modes.map((item) => <option key={item} value={item}>{MODE_LABELS[item]}</option>)}
-            </select>
-
-            <select value={style} onChange={(event) => setStyle(event.target.value)} className="min-h-10 rounded-xl border border-teal-100 bg-teal-50/60 px-3 py-2 text-sm font-bold outline-none focus:border-teal-400 focus:ring-2 focus:ring-teal-100">
-              {Object.entries(STYLE_LABELS).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
-            </select>
-
-            <button type="button" onClick={() => setMistakeOnly((value) => !value)} className={cx('min-h-10 rounded-xl border px-3 py-2 text-sm font-black shadow-sm', mistakeOnly ? 'border-rose-600 bg-rose-600 text-white' : 'border-teal-100 bg-white text-slate-700 hover:border-teal-300 hover:bg-teal-50')}>
-              錯誤紀錄
-            </button>
-
-            <button type="button" onClick={() => setSavedOnly((value) => !value)} className={cx('min-h-10 rounded-xl border px-3 py-2 text-sm font-black shadow-sm', savedOnly ? 'border-amber-500 bg-amber-500 text-white' : 'border-teal-100 bg-white text-slate-700 hover:border-amber-300 hover:bg-amber-50')}>
-              已整理
-            </button>
-
-            <button type="button" onClick={() => setShowReference((value) => !value)} className={cx('min-h-10 rounded-xl border px-3 py-2 text-sm font-black shadow-sm', showReference ? 'border-teal-700 bg-teal-700 text-white' : 'border-teal-100 bg-white text-slate-700 hover:border-teal-300 hover:bg-teal-50')}>
-              參考表
-            </button>
-          </div>
-
-          <div className="grid grid-cols-5 gap-2 overflow-x-auto">
-            {[
-              ['已作答', answered],
-              ['正確率', correct + wrong > 0 ? `${accuracy}%` : '—'],
-              ['錯誤紀錄', wrong],
-              ['目前範圍', filtered.length],
-              ['已整理', savedItems]
-            ].map(([label, value]) => (
-              <div key={label} className="min-w-24 rounded-xl bg-teal-50/70 px-3 py-2">
-                <div className="text-[11px] font-black text-slate-400">{label}</div>
-                <div className="text-lg font-black text-slate-800">{value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </details>
-
-      {!current ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center font-bold text-slate-500">
-          目前篩選條件沒有可練習的題目。
-        </div>
-      ) : (
-        <div className="grid justify-center gap-4 xl:grid-cols-[minmax(0,760px)_320px]">
-          <div className="w-full max-w-[760px] min-w-0 rounded-2xl border border-teal-200 bg-teal-50/70 p-2 shadow-md shadow-teal-900/10 md:p-4 dark:bg-slate-900 dark:border-teal-900/60 dark:shadow-black/20">
-            <div key={current.id} className="fx-question rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 via-cyan-50/60 to-white p-3 md:p-5 dark:from-teal-950/35 dark:via-cyan-950/20 dark:to-slate-900 dark:border-teal-900/60">
-              <div className="mb-3 grid grid-cols-[1fr_auto] items-center gap-3">
-                <div className="min-w-0">
-                  <div className="flex min-w-0 flex-wrap gap-1.5">
-                    <span className="rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-black text-teal-800">{current.level}</span>
-                    <span className="rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-black text-teal-800">{MODE_LABELS[current.mode]}</span>
-                    {selected && (
-                      <span className={cx('rounded-full border px-2.5 py-1 text-[11px] font-black', CASE_STYLES[current.case] || 'border-slate-200 bg-white text-slate-600')}>{current.case}</span>
-                    )}
-                  </div>
-                </div>
-                <div className="flex shrink-0 gap-1.5">
-                  <button type="button" aria-label={currentProgress.starred ? "取消收藏" : "收藏"} aria-pressed={!!currentProgress.starred} onClick={() => toggleFlag('starred')} className={cx('grid h-9 w-9 place-items-center rounded-xl border shadow-sm transition-colors', currentProgress.starred ? 'border-amber-500 bg-amber-500 text-white' : 'border-teal-100 bg-white text-slate-500 hover:border-amber-300 hover:bg-amber-50')}>
-                    <Star size={16} className={cx(currentProgress.starred && 'fill-white')} />
-                  </button>
-                  <button type="button" onClick={() => toggleFlag('needsReview')} className={cx('h-9 rounded-xl border px-2.5 text-[11px] font-black shadow-sm transition-colors', currentProgress.needsReview ? 'border-rose-600 bg-rose-600 text-white' : 'border-teal-100 bg-white text-slate-500 hover:border-rose-300 hover:bg-rose-50')}>
-                    複習
-                  </button>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-teal-200 bg-white/90 p-3 shadow-sm md:p-5 dark:bg-slate-900/75 dark:border-teal-900/50">
-                <div className="text-xs font-black text-slate-400 md:text-sm">{current.prompt}</div>
-                <h2 className="mt-2 break-words text-xl font-black leading-relaxed text-slate-800 md:text-3xl">{current.sentence}</h2>
-                <p className="mt-2 text-sm font-bold text-slate-500 md:text-base">{current.translation}</p>
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  <span className="inline-flex items-center rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-black text-teal-700">{genderKey(current.gender) && <i className={`g-dot g-${genderKey(current.gender)}`} />}目標詞：{current.targetNoun || '-'}</span>
-                  {showInlineHint && <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-black text-cyan-700">線索：{triggerText(current.trigger, !!selected)}</span>}
-                </div>
-              </div>
-
-              <div className={cx('mt-3 grid gap-2 md:mt-4 md:grid-cols-2', compactOptions && 'grid-cols-2')}>
-                {current.options.map((option, optionIndex) => {
-                  const isAnswer = option === current.answer;
-                  const isSelected = option === selected;
-                  return (
-                    <button
-                      key={`${current.id}-${option}`}
-                      type="button"
-                      data-answer-option
-                      onClick={() => answer(option)}
-                      className={cx(
-                        'flex min-h-14 items-center gap-2 rounded-2xl border-2 px-3 py-3 text-left text-base font-black shadow-sm transition-all active:scale-[0.98] md:px-4',
-                        selected && isAnswer && 'fx-correct',
-                        selected && isSelected && !isAnswer && 'fx-wrong',
-                        compactOptions && 'text-center',
-                        !selected && 'border-teal-100 bg-white text-slate-800 hover:border-teal-400 hover:bg-teal-50 hover:text-teal-900',
-                        selected && isAnswer && 'border-emerald-600 bg-emerald-100 text-emerald-900 shadow-emerald-100',
-                        selected && isSelected && !isAnswer && 'border-rose-600 bg-rose-100 text-rose-900 shadow-rose-100',
-                        selected && !isSelected && !isAnswer && 'border-slate-100 bg-slate-50 text-slate-400 shadow-none'
-                      )}
-                    >
-                      {!selected && optionIndex < 9 && <span className="kbd-hint" aria-hidden="true">{optionIndex + 1}</span>}
-                      <span className={cx('min-w-0 flex-1', compactOptions && 'text-center')}>{cleanOption(option)}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {selected && (
-                <div ref={feedbackRef} role="status" className={cx('fx-enter mt-4 scroll-mb-24 rounded-2xl border-2 p-4 shadow-sm', selected === current.answer ? 'border-emerald-500 bg-emerald-50' : 'border-rose-500 bg-rose-50')}>
-                  <div className="flex items-center gap-2">
-                    {selected === current.answer ? <CheckCircle className="text-emerald-700" size={20} /> : <XCircle className="text-rose-700" size={20} />}
-                  <div className={cx('font-black', selected === current.answer ? 'text-emerald-900' : 'text-rose-900')}>{selected === current.answer ? '正確' : `正確答案：${cleanOption(current.answer)}`}</div>
-                  </div>
-                  {analyzeCaseSentence(current)
-                    ? <CaseDiagram exercise={current} />
-                    : <div className="mt-3 break-words text-lg font-black text-slate-800">{cleanOption(current.fullSentence)}</div>}
-                  <p className="mt-2 text-sm font-bold leading-relaxed text-slate-600">{current.explanationZh}</p>
-                </div>
-              )}
-
-              <div className="mt-3">
-                {style === 'detective' && !showHint && !selected ? (
-                  <button type="button" onClick={() => setShowHint(true)} className="rounded-xl border border-teal-200 bg-white px-4 py-2 text-sm font-black text-teal-700 shadow-sm hover:bg-teal-50">
-                    顯示提示
-                  </button>
-                ) : (
-                  showGuidance && (
-                    <details className="rounded-xl border border-teal-100 bg-white px-3 py-2 shadow-sm">
-                      <summary className="cursor-pointer list-none text-sm font-black text-teal-700">判斷線索</summary>
-                      <div className="mt-3 grid gap-2 md:grid-cols-3">
-                        <div className="rounded-xl bg-teal-50 px-3 py-2">
-                          <div className="text-xs font-black text-slate-400">提問方式</div>
-                          <div className="mt-1 font-black">{current.questionWord}</div>
-                        </div>
-                        <div className="rounded-xl bg-teal-50 px-3 py-2">
-                          <div className="text-xs font-black text-slate-400">性別 / 數</div>
-                          <div className="mt-1 font-black">{current.gender || '依句意判斷'}</div>
-                        </div>
-                        <div className="rounded-xl bg-teal-50 px-3 py-2">
-                          <div className="text-xs font-black text-slate-400">可能錯誤</div>
-                          <div className="mt-1 font-black">{(current.mistakeTypes || []).map((item) => MISTAKE_LABELS[item] || item).join('、')}</div>
-                        </div>
-                      </div>
-                    </details>
-                  )
-                )}
-              </div>
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              <button type="button" onClick={prev} className="rounded-2xl border border-teal-100 bg-white px-4 py-3 text-sm font-black text-teal-700 shadow-sm hover:border-teal-300 hover:bg-teal-50">
-                ← 上一題
-              </button>
-              <button type="button" onClick={next} className={cx('inline-flex items-center justify-center gap-2 rounded-2xl bg-teal-700 px-4 py-3 text-sm font-black text-white shadow-sm shadow-teal-900/20 transition-all hover:bg-teal-800 active:scale-[0.98]', selected && 'ring-4 ring-teal-400/40')}>
-                下一題 →
-                {selected && <span className="kbd-hint !border-white/30 !bg-white/15 !text-white" aria-hidden="true">Enter</span>}
-              </button>
-            </div>
-          </div>
-
-          <aside className="grid gap-3 xl:self-start">
-            <div className="rounded-2xl border border-teal-100 bg-white p-4 shadow-sm">
-              <div className="mb-3 flex items-center justify-between gap-3">
-                <div>
-                  <h3 className="text-sm font-black text-slate-700">目前題型</h3>
-                  <p className="mt-1 text-xs font-bold text-slate-400">{currentGuide.title}</p>
-                </div>
-                <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-black text-teal-700">{STYLE_LABELS[style]}</span>
-              </div>
-              <p className="text-sm font-bold leading-relaxed text-slate-600">{currentGuide.focus}</p>
-              <div className="mt-3 grid gap-2">
-                {currentGuide.steps.map((step, index) => (
-                  <div key={step} className="rounded-xl bg-teal-50 px-3 py-2 text-xs font-bold leading-relaxed text-slate-600">
-                    <span className="mr-1 text-teal-500">{index + 1}.</span>{step}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-teal-100 bg-white p-4 shadow-sm">
-              <div className="mb-3 flex items-center justify-between">
-                <h3 className="text-sm font-black text-slate-700">錯誤類型</h3>
-                <span className="text-xs font-black text-slate-400">{needsReview} 題需要複習</span>
-              </div>
-              {topMistakes.length === 0 ? (
-                <p className="rounded-xl bg-teal-50 px-3 py-5 text-center text-sm font-bold text-slate-400">完成幾題後，這裡會整理需要加強的文法點。</p>
-              ) : (
-                <div className="grid gap-2">
-                  {topMistakes.map(([mistakeType, count]) => (
-                    <div key={mistakeType} className="grid grid-cols-[1fr_auto] items-center gap-3 rounded-xl bg-teal-50 px-3 py-2">
-                      <div className="min-w-0">
-                        <div className="text-xs font-black text-slate-700">{MISTAKE_LABELS[mistakeType] || mistakeType}</div>
-                        <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white">
-                          <div className="h-full rounded-full bg-rose-400" style={{ width: `${Math.min(100, count * 18)}%` }} />
-                        </div>
-                      </div>
-                      <div className="text-sm font-black text-rose-500">{count}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {showReference && (
-              <div className="grid gap-3">
-                <div className="rounded-2xl border border-teal-100 bg-white p-4 shadow-sm">
-                  <h3 className="mb-3 text-sm font-black text-slate-700">格位判斷流程</h3>
-                  <div className="grid gap-2">
-                    {data.caseGuide.map((item) => (
-                      <div key={item.case} className={cx('rounded-xl border p-3 text-sm', CASE_STYLES[item.case] || 'border-slate-200 bg-slate-50')}>
-                        <div className="font-black">{item.case} · {item.questionWords.join(' / ')}</div>
-                        <div className="mt-1 font-bold">{item.zh}</div>
-                        <div className="mt-1 text-xs opacity-80">{item.simpleRule}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <ReferenceTable title="定冠詞" table={data.articleTables.definiteArticle} />
-                <ReferenceTable title="不定冠詞" table={data.articleTables.indefiniteArticle} />
-              </div>
-            )}
-
-            <div className="rounded-2xl border border-teal-100 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center gap-2">
-              <RotateCcw size={16} className="text-slate-400" />
-              <h3 className="text-sm font-black text-slate-700">學習路徑</h3>
-            </div>
-            <div className="grid gap-2">
-              {data.learningPath.map((item) => (
-                <button
-                  key={item.level}
-                  type="button"
-                  onClick={() => applyPath(item)}
-                  className={cx(
-                    'rounded-xl p-3 text-left transition-all',
-                    activePath === item.level
-                      ? 'border border-teal-500 bg-teal-50 shadow-sm'
-                      : 'border border-transparent bg-slate-50 hover:border-teal-200 hover:bg-teal-50'
-                  )}
-                >
-                  <div className="text-xs font-black text-slate-400">{cleanPathLevel(item.level)} · {item.targetCEFR}</div>
-                  <div className="mt-1 font-black text-slate-800">{cleanPathTitle(item.title)}</div>
-                  <div className="mt-1 text-xs font-bold leading-relaxed text-slate-500">{item.goals.join('、')}</div>
-                </button>
-              ))}
-            </div>
-          </div>
-          </aside>
-        </div>
-      )}
-    </div>
-  );
+  return <LessonApp
+    lessonKey="l4"
+    title="格位練習"
+    blurb="先找句子裡的角色，再決定冠詞和代名詞。"
+    filters={FILTERS}
+    itemsFor={itemsFor}
+    reviewItems={reviewItems}
+    records={summary}
+    panels={panels}
+    renderQuestion={renderQuestion}
+  />;
 }

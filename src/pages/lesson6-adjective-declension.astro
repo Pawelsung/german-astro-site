@@ -1,6 +1,5 @@
 ---
-import LessonShell from '../components/LessonShell.astro';
-import LessonSkeleton from '../components/LessonSkeleton.astro';
+import LessonFrame from '../components/LessonFrame.astro';
 import AdjectiveDeclensionTrainer from '../components/AdjectiveDeclensionTrainer.jsx';
 
 export const frontmatter = {
@@ -15,10 +14,8 @@ export const frontmatter = {
 };
 ---
 
-<LessonShell frontmatter={frontmatter}>
-  <div class="max-w-6xl mx-auto">
-    <AdjectiveDeclensionTrainer client:only="react"><LessonSkeleton slot="fallback" /></AdjectiveDeclensionTrainer>
-  </div>
+<LessonFrame frontmatter={frontmatter}>
+  <AdjectiveDeclensionTrainer client:only="react" />
 
   <li slot="tips" class="flex items-start gap-2">
     <span class="text-current opacity-70 mt-0.5">•</span>
@@ -32,4 +29,4 @@ export const frontmatter = {
     <span class="text-current opacity-70 mt-0.5">•</span>
     <span>無冠詞題是 B1 挑戰，重點是形容詞要承擔更多文法資訊。</span>
   </li>
-</LessonShell>
+</LessonFrame>

@@ -1,6 +1,8 @@
 # 第 2～7 課改新風格（2026-11-10 使用者已確認）
 
-進度：步驟 0、1、2 已完成；第 7 課先上線看手感，其餘依序進行。
+進度：第 1～7 課都已換上新外框。第 2～7 課是完整新畫面；第 1 課只換外框和選單，7 種練習的內部畫面維持原樣。
+
+改版時拿掉的項目：第 2 課測驗的積分和連勝（改看每輪結果）、第 5 課「隨機題」（每輪本來就打亂）、第 3 課練習中的搜尋（搜尋留在「動詞列表」）。
 
 ## 要解決的問題
 
@@ -57,7 +59,7 @@
 
 ## 影響的檔案
 
-- 新增：`src/components/LessonFrame.astro`（新外框，不用 `LessonShell`，第 1 課先不受影響）、`src/components/lesson/`（開始頁、題目頁、結果頁、底部選單）。`VocabPicker` 的底部選單抽成共用元件。
+- 新增：`src/components/LessonFrame.astro`（新外框，已取代 `LessonShell`）、`src/components/lesson/`（開始頁、題目頁、結果頁、底部選單）。`VocabPicker` 的底部選單抽成共用元件。
 - 改寫畫面、保留計分邏輯：`VerbWithPreposition.jsx`、`IrregularVerbTrainer.jsx`、`KasusQuestTrainer.jsx`、`ConnectorTrainer.jsx`、`AdjectiveDeclensionTrainer.jsx`、`KonjunktivTrainer.jsx`。
 - 沿用：`answerFeedback.js`（音效、快捷鍵、每輪計分）、`progressStorage.ts`、`?review=1` 連結、`ConceptCard.astro`。
 - 要保留隱藏的 `UserAccount`，否則新頁面不會同步。
@@ -98,5 +100,5 @@
 ## 新課程的接法
 
 - 頁面用 `LessonFrame.astro`，保留 `frontmatter` 和 `tips`；訓練元件 `client:only="react"`。
-- 元件回傳 `LessonApp`（`components/lesson/`），提供 `scopes`、`itemsFor`、`reviewItems`、`records`、`renderQuestion`。選擇題用 `ChoiceCard`，第 7 課是範例。
+- 元件回傳 `LessonApp`（`components/lesson/`），提供 `filters`、`itemsFor`、`reviewItems`、`records`、`panels`、`renderQuestion`。選擇題用 `ChoiceCard`，字卡用 `FlipCard`；第 5 課的 `BuildCard` 是非選擇題的範例。第一個選項是篩選的預設值。
 - 版面樣式 `.lf-*`、`.lc-*`，底部選單 `.picker-*`，顏色只用 `--calm-*`；`.dark header` 這類全域規則要留意。

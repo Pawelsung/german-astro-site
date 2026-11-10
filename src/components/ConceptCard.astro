@@ -1,14 +1,10 @@
 ---
-// "1-minute concept" card shown above each trainer: the rule first, then practice.
-// Open on the first visit to a lesson, collapsed afterwards (remembered per lesson in localStorage).
+// "1-minute concept": the rule for each lesson, shown in a sheet from the lesson screens.
 interface Props {
   lesson: string;
-  // Inside a sheet the card is always open, so it has no collapsing header.
-  bare?: boolean;
 }
 
-const { lesson, bare = false } = Astro.props;
-const Card = bare ? 'section' : 'details';
+const { lesson } = Astro.props;
 const titles: Record<string, string> = {
   l1: '背單字的三個重點',
   l2: '動詞＋介系詞要整組記',
@@ -32,14 +28,8 @@ const ablaut = [
 ---
 
 {titles[lesson] && (
-  <Card id="concept-card" class={bare ? 'concept-card is-bare' : 'concept-card'} data-concept={lesson} open={bare ? undefined : true}>
-    {bare ? <h3 class="concept-bare-title">{titles[lesson]}</h3> : (
-      <summary>
-        <span class="concept-badge">1 分鐘重點</span>
-        <span class="concept-title">{titles[lesson]}</span>
-        <span class="concept-toggle" aria-hidden="true"></span>
-      </summary>
-    )}
+  <section id="concept-card" class="concept-card">
+    <h3 class="concept-bare-title">{titles[lesson]}</h3>
 
     <div class="concept-body">
       {lesson === 'l1' && (
@@ -251,20 +241,6 @@ const ablaut = [
         </>
       )}
     </div>
-  </Card>
+  </section>
 )}
 
-<script is:inline>
-  // Runs while the page is parsed, so a remembered card is collapsed before the first paint (no jump).
-  (() => {
-    const card = document.getElementById('concept-card');
-    if (!card || card.tagName !== 'DETAILS') return;
-    const key = 'gw-concept-seen-' + card.dataset.concept;
-    try {
-      if (localStorage.getItem(key)) card.open = false;
-      else localStorage.setItem(key, '1');
-    } catch (error) {
-      // Without storage the card simply stays open.
-    }
-  })();
-</script>

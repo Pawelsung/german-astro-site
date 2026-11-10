@@ -25,6 +25,13 @@ export function takeRound(queue, pool, { size = ROUND_SIZE, random = Math.random
   return { round, queue: rest };
 }
 
+export const emptySelection = filters => Object.fromEntries(filters.map(filter => [filter.id, filter.options[0].id]));
+
+// Keeps a saved choice only while that option still exists.
+export function cleanSelection(saved, filters) {
+  return Object.fromEntries(filters.map(filter => [filter.id, filter.options.some(option => option.id === saved?.[filter.id]) ? saved[filter.id] : filter.options[0].id]));
+}
+
 export function roundVerdict(correct, total) {
   const ratio = correct / total;
   if (ratio === 1) return '滿分！太厲害了 🎉';

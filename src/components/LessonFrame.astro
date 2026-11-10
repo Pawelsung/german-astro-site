@@ -27,7 +27,7 @@ const shortTitle = frontmatter.title.split('｜').pop();
         <form method="dialog"><button class="calm-icon" aria-label="關閉">✕</button></form>
       </header>
       <div class="picker-list lf-concept">
-        <ConceptCard lesson={conceptKey} bare />
+        <ConceptCard lesson={conceptKey} />
         {hasTips && <section class="lf-tips"><h3>學習提示</h3><ul><slot name="tips" /></ul></section>}
       </div>
     </div>

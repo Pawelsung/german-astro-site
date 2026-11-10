@@ -1,6 +1,5 @@
 ---
-import LessonShell from '../components/LessonShell.astro';
-import LessonSkeleton from '../components/LessonSkeleton.astro';
+import LessonFrame from '../components/LessonFrame.astro';
 import KasusQuestTrainer from '../components/KasusQuestTrainer.jsx';
 
 export const frontmatter = {
@@ -15,10 +14,8 @@ export const frontmatter = {
 };
 ---
 
-<LessonShell frontmatter={frontmatter}>
-  <div class="max-w-6xl mx-auto">
-    <KasusQuestTrainer client:only="react"><LessonSkeleton slot="fallback" /></KasusQuestTrainer>
-  </div>
+<LessonFrame frontmatter={frontmatter}>
+  <KasusQuestTrainer client:only="react" />
 
   <li slot="tips" class="flex items-start gap-2">
     <span class="text-current opacity-70 mt-0.5">•</span>
@@ -32,4 +29,4 @@ export const frontmatter = {
     <span class="text-current opacity-70 mt-0.5">•</span>
     <span>答錯的題目會保留在錯誤紀錄，也可以手動標成需要複習，之後集中整理。</span>
   </li>
-</LessonShell>
+</LessonFrame>

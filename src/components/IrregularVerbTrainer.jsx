@@ -1,49 +1,28 @@
+import React, { useEffect, useMemo, useState } from 'react';
+import { Star } from 'lucide-react';
+import LessonApp from './lesson/LessonApp.jsx';
+import ChoiceCard from './lesson/ChoiceCard.jsx';
+import FlipCard from './lesson/FlipCard.jsx';
+import VoiceSettings from './lesson/VoiceSettings.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
-import { isReviewRequested } from '../lib/progressStorage';
-import React, { useEffect, useMemo, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
+import { useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { shuffle } from '../lib/lessonRound.mjs';
 import { irregularVerbs } from '../data/irregular-verbs';
-import { getFirebaseServices } from '../lib/firebase';
-import { answerCue, useRevealOnShow } from '../lib/answerFeedback';
-import { useSwipe } from '../hooks/useSwipe';
-import { FLIP_BACK_STYLE, FLIP_FACE_STYLE, flipInnerStyle } from '../lib/flipStyles.mjs';
-
-// Colors a choice button after answering: the right answer pops green, a wrong pick shakes red.
-function choiceTone(option, picked, correct, feedback, pickedClass) {
-  if (feedback && option === correct) return 'fx-correct bg-emerald-100 text-emerald-800 border-emerald-500';
-  if (feedback && option === picked) return 'fx-wrong bg-rose-100 text-rose-800 border-rose-500';
-  if (option === picked) return pickedClass;
-  return 'bg-white text-slate-700 border-slate-200 hover:border-violet-300';
-}
 
 const STORAGE_KEY = 'irregular-verbs-trainer-v3';
-
-const MODES = {
-  FLASHCARD: 'flashcard',
-  TYPING: 'typing',
-  HABEN_SEIN: 'habenSein',
-  LIST: 'list',
-  WRONG: 'wrong',
-  HARD: 'hard',
-  STARRED: 'starred',
-  MODAL: 'modal'
-};
-
-const CARD_ORDER = {
-  SEQUENTIAL: 'sequential',
-  RANDOM: 'random'
-};
-
-function shuffle(array) {
-  const copied = [...array];
-  for (let i = copied.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copied[i], copied[j]] = [copied[j], copied[i]];
-  }
-  return copied;
-}
+const PRACTICE_LABELS = { flash: '字卡', typing: '拼寫', aux: '助動詞', modal: '情態動詞' };
+const LEVELS = [...new Set(irregularVerbs.map(verb => verb.level))];
+const FILTERS = [
+  { id: 'practice', label: '練習方式', alwaysShow: true, options: Object.entries(PRACTICE_LABELS).map(([id, label]) => ({ id, label })) },
+  { id: 'level', label: '程度', options: [{ id: 'all', label: '全部等級' }, ...LEVELS.map(id => ({ id, label: id }))] },
+  { id: 'type', label: '動詞類型', options: [{ id: 'all', label: '全部類型' }, { id: 'strong', label: '強變化' }, { id: 'mixed', label: '混合變化' }, { id: 'modal', label: '情態動詞' }, { id: 'special', label: '特殊核心' }] },
+  { id: 'aux', label: 'Perfekt 助動詞', options: [{ id: 'all', label: '全部助動詞' }, { id: 'hat', label: 'haben' }, { id: 'ist', label: 'sein' }] },
+  { id: 'only', label: '篩選', options: [{ id: 'all', label: '全部動詞' }, { id: 'wrong', label: '錯誤紀錄' }, { id: 'hard', label: '需要複習' }, { id: 'starred', label: '已收藏' }] },
+  { id: 'order', label: '字卡順序', options: [{ id: 'seq', label: '依序' }, { id: 'random', label: '隨機' }] }
+];
+const MODAL_FORMS = ['darf', 'kann', 'mag', 'muss', 'soll', 'will'];
 
 function normalizeText(value = '') {
   return value.trim().toLowerCase().replace(/\s+/g, ' ');
@@ -64,10 +43,6 @@ function loadProgress() {
   return readProgressMap(STORAGE_KEY);
 }
 
-
-function mergeProgress(local = {}, remote = {}) {
-  return { ...remote, ...local };
-}
 
 function stripEndingForCompare(word = '') {
   const lower = word.toLowerCase();
@@ -199,39 +174,6 @@ function deriveLearningState(item = {}) {
   return { label: '未開始', cls: 'bg-slate-100 text-slate-600 border-slate-200' };
 }
 
-function getModeTone(mode) {
-  if (mode === MODES.MODAL) return 'indigo';
-  if (mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) return 'rose';
-  return 'violet';
-}
-
-function getToneClasses(tone) {
-  if (tone === 'rose') {
-    return {
-      outer: 'border-rose-200 dark:border-rose-900/60',
-      inner: 'border-rose-100 bg-rose-50/80 dark:border-rose-900/60 dark:bg-rose-950/30',
-      next: 'bg-rose-500 text-white',
-      nav: 'bg-white/95 border-rose-200 text-rose-600 dark:bg-slate-900 dark:border-rose-900/60 dark:text-rose-200'
-    };
-  }
-
-  if (tone === 'indigo') {
-    return {
-      outer: 'border-indigo-200 dark:border-indigo-900/60',
-      inner: 'border-indigo-100 bg-indigo-50/70 dark:border-indigo-900/60 dark:bg-indigo-950/30',
-      next: 'bg-indigo-600 text-white',
-      nav: 'bg-white/95 border-indigo-200 text-indigo-600 dark:bg-slate-900 dark:border-indigo-900/60 dark:text-indigo-200'
-    };
-  }
-
-  return {
-    outer: 'border-slate-200 dark:border-violet-900/60',
-    inner: 'border-violet-100 bg-violet-50/80 dark:border-violet-900/60 dark:bg-violet-950/30',
-    next: 'bg-violet-600 text-white',
-    nav: 'bg-white/95 border-slate-200 text-slate-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-200'
-  };
-}
-
 function AudioPill({ onClick, label }) {
   return (
     <button
@@ -246,1229 +188,26 @@ function AudioPill({ onClick, label }) {
   );
 }
 
-function MainModeButton({ active, onClick, children }) {
-  return (
-    <button
-      onClick={onClick}
-      className={`min-h-10 px-1.5 py-2 sm:px-3 md:px-3.5 rounded-xl text-xs sm:text-sm font-black border transition-all whitespace-nowrap ${
-        active
-          ? 'bg-violet-600 text-white border-violet-600 shadow-sm'
-          : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
-      }`}
-      type="button"
-    >
-      {children}
-    </button>
-  );
+function matchesFilters(verb, { level, type, aux }) {
+  return (level === 'all' || verb.level === level) && (type === 'all' || verb.type === type) && (aux === 'all' || verb.auxiliary === aux);
 }
 
-function FilterChip({ active, onClick, children, activeClass }) {
-  return (
-    <button
-      onClick={onClick}
-      aria-pressed={!!active}
-      className={`px-3 py-1.5 rounded-xl text-sm font-black border transition-all ${
-        active
-          ? activeClass
-          : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
-      }`}
-      type="button"
-    >
-      {children}
-    </button>
-  );
-}
-
-function ActionToggle({ active, onClick, activeClass, inactiveClass, children }) {
-  return (
-    <button
-      onClick={onClick}
-      className={`px-3 py-1.5 rounded-xl text-sm font-black border transition-all ${
-        active ? activeClass : inactiveClass
-      }`}
-      type="button"
-    >
-      {children}
-    </button>
-  );
-}
-
-function SideNavButton({ direction, onClick, label, tone = 'violet' }) {
-  const isPrev = direction === 'prev';
-  const toneClass = getToneClasses(tone).nav;
-
-  return (
-    <button
-      onClick={onClick}
-      type="button"
-      aria-label={label}
-      title={label}
-      className={`absolute top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center
-        w-12 h-12 rounded-xl border shadow-sm hover:bg-white active:scale-95 transition-all
-        ${toneClass}
-        ${isPrev ? 'left-2' : 'right-2'}`}
-    >
-      <span className="text-2xl font-black">{isPrev ? '←' : '→'}</span>
-    </button>
-  );
-}
-
-function MetaPills({
-  currentLearningState,
-  currentTypeMeta,
-  currentAuxHint,
-  currentVerb,
-  currentIndex,
-  deckLength
-}) {
-  if (!currentVerb) return null;
-
-  return (
-    <div className="mb-3 flex flex-wrap items-center gap-2">
-      {currentLearningState && (
-        <span className={`px-2.5 py-1 rounded-full text-xs font-black border opacity-80 ${currentLearningState.cls}`}>
-          {currentLearningState.label}
-        </span>
-      )}
-
-      {currentTypeMeta && (
-        <span className={`px-2.5 py-1 rounded-full text-xs font-black border opacity-80 ${currentTypeMeta.cls}`}>
-          {currentTypeMeta.label}
-        </span>
-      )}
-
-      {currentAuxHint && (
-        <span className={`px-2.5 py-1 rounded-full text-xs font-black border opacity-80 ${currentAuxHint.cls}`}>
-          {currentAuxHint.label}
-        </span>
-      )}
-
-      <span className="px-2.5 py-1 rounded-full text-xs font-black border bg-white text-violet-600 border-violet-200 opacity-80">
-        {currentVerb.level}
-      </span>
-
-      <span className="px-2.5 py-1 rounded-full text-xs font-black border bg-slate-100 text-slate-600 border-slate-200 opacity-80">
-        {currentIndex + 1} / {deckLength}
-      </span>
-    </div>
-  );
-}
-
-function FixedCardFrame({
-  tone = 'violet',
-  children,
-  topRight,
-  onPrev,
-  onNext
-}) {
-  const toneStyles = getToneClasses(tone);
-
-  return (
-    <div className="space-y-4">
-      <div className="relative mx-auto w-full max-w-3xl px-0 md:px-6">
-        <SideNavButton direction="prev" onClick={onPrev} label="上一張" tone={tone} />
-        <SideNavButton direction="next" onClick={onNext} label="下一張" tone={tone} />
-
-        <div className={`bg-violet-50/70 rounded-2xl shadow-md shadow-violet-900/10 border ${toneStyles.outer} p-3.5 md:p-4 dark:bg-slate-900 dark:shadow-black/20`}>
-          <div className="relative">
-            {topRight && <div className="absolute right-3 top-3 z-10 flex gap-2">{topRight}</div>}
-
-            <div
-              className={`min-h-[390px] sm:min-h-[460px] md:min-h-[520px] rounded-2xl border ${toneStyles.inner} flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 overflow-hidden`}
-            >
-              {children}
-            </div>
-
-            <div className="mt-4 flex justify-between gap-3 md:hidden">
-              <button
-                onClick={onPrev}
-                className="flex-1 px-3 py-3 rounded-2xl bg-white border border-slate-200 font-black text-sm"
-                type="button"
-              >
-                ← 上一張
-              </button>
-
-              <button
-                onClick={onNext}
-                className={`flex-1 px-3 py-3 rounded-2xl font-black text-sm ${toneStyles.next}`}
-                type="button"
-              >
-                下一張 →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function FlashcardLikeMode({
-  tone,
-  currentVerb,
-  currentStats,
-  onToggleStar,
-  onToggleHard,
-  onMastered,
-  onFlip,
-  onPrev,
-  onNext,
-  showBack,
-  speak,
-  frontBadge
-}) {
-  const [dragX, setDragX] = useState(0);
-  // Swipe left/right to change card; works on iPhone where touch-action: pan-y is ignored.
-  const swipe = useSwipe({ onDrag: setDragX, onSwipe: (direction) => { setDragX(0); (direction === 'left' ? onNext : onPrev)(); } });
-  return (
-    <FixedCardFrame
-      tone={tone}
-      onPrev={onPrev}
-      onNext={onNext}
-      topRight={
-        <>
-          <ActionToggle
-            active={currentStats?.starred}
-            onClick={() => onToggleStar(currentVerb.id)}
-            activeClass="bg-yellow-500 text-white border-yellow-500"
-            inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
-          >
-            {currentStats?.starred ? '★ 取消收藏' : '☆ 收藏'}
-          </ActionToggle>
-
-          <ActionToggle
-            active={currentStats?.hard}
-            onClick={() => onToggleHard(currentVerb.id)}
-            activeClass="bg-orange-500 text-white border-orange-500"
-            inactiveClass="bg-white/90 text-slate-700 border-slate-200 hover:bg-white"
-          >
-            需要複習
-          </ActionToggle>
-          {onMastered && showBack && <button type="button" onClick={() => onMastered(currentVerb.id)} className="rounded-xl bg-emerald-600 px-4 py-2 font-bold text-white">已掌握，移出複習</button>}
-        </>
-      }
-    >
-      <div
-        ref={swipe.ref}
-        onClickCapture={swipe.onClickCapture}
-        onClick={onFlip}
-        style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined, transition: dragX ? 'none' : 'transform 200ms ease' }}
-        className="cursor-pointer w-full max-w-3xl mx-auto [perspective:1200px] touch-pan-y select-none"
-      >
-        <div
-          className="relative min-h-[310px] sm:min-h-[380px] md:min-h-[420px]"
-          style={flipInnerStyle(showBack)}
-        >
-          <div aria-hidden={showBack} inert={showBack} style={{ ...FLIP_FACE_STYLE, visibility: showBack ? 'hidden' : 'visible' }} className="absolute inset-0 flex flex-col justify-center items-center text-center min-w-0">
-            {frontBadge && (
-              <div className="mb-3 flex justify-center">
-                <span className="px-3 py-1 rounded-full bg-white text-rose-500 text-sm font-black border border-rose-200">
-                  {frontBadge}
-                </span>
-              </div>
-            )}
-
-            <div className="flex items-center justify-center gap-3 flex-wrap mb-4">
-              <div className="text-[clamp(2.5rem,15vw,4.5rem)] font-black leading-none break-words max-w-full">
-                {currentVerb.infinitive}
-              </div>
-              <AudioPill
-                onClick={(e) => {
-                  e.stopPropagation();
-                  speak(currentVerb.infinitive);
-                }}
-                label="播放動詞發音"
-              />
-            </div>
-
-            <div className="text-base sm:text-xl md:text-2xl text-slate-500 font-bold mb-2 break-words">
-              {currentVerb.meaningZh}
-            </div>
-
-            <div className="mt-6 rounded-full bg-white/70 px-3 py-1.5 text-xs text-slate-400 font-bold">
-              點擊翻面
-            </div>
-          </div>
-
-          <div aria-hidden={!showBack} inert={!showBack} style={{ ...FLIP_FACE_STYLE, ...FLIP_BACK_STYLE, visibility: showBack ? 'visible' : 'hidden' }} className="absolute inset-0 flex flex-col justify-center">
-            <div className="grid sm:grid-cols-2 gap-4 text-left auto-rows-fr">
-              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
-                <div className="text-xs font-black text-slate-400 mb-2">Infinitiv</div>
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-xl sm:text-2xl font-black break-words min-w-0">{currentVerb.infinitive}</div>
-                  <AudioPill
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      speak(currentVerb.infinitive);
-                    }}
-                    label="播放動詞發音"
-                  />
-                </div>
-              </div>
-
-              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
-                <div className="text-xs font-black text-slate-400 mb-2">3. Person</div>
-                <div className="text-xl sm:text-2xl font-black break-words">
-                  {highlightChangedVowel(currentVerb.infinitive, currentVerb.present3rd)}
-                </div>
-              </div>
-
-              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
-                <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-xl sm:text-2xl font-black break-words min-w-0">
-                    {highlightChangedVowel(currentVerb.infinitive, currentVerb.praeteritum)}
-                  </div>
-                  <AudioPill
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      speak(currentVerb.praeteritum);
-                    }}
-                    label="播放過去式發音"
-                  />
-                </div>
-              </div>
-
-              <div className="bg-violet-50/80 rounded-2xl p-4 border border-violet-100 min-h-[112px] dark:bg-slate-900/75 dark:border-violet-900/50">
-                <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-xl sm:text-2xl font-black break-words min-w-0">
-                    {renderPerfektWithAuxHighlight(currentVerb.perfekt)}
-                  </div>
-                  <AudioPill
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      speak(currentVerb.perfekt);
-                    }}
-                    label="播放完成式發音"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-4 bg-violet-50/80 rounded-2xl p-4 border border-violet-100 text-left min-h-[116px] flex items-start dark:bg-slate-900/75 dark:border-violet-900/50">
-              <div className="w-full">
-                <div className="text-xs font-black text-slate-400 mb-2">例句</div>
-                <div className="flex items-start justify-between gap-3">
-                <div className="text-base sm:text-lg font-bold flex-1 break-words min-w-0">{currentVerb.example}</div>
-                  <AudioPill
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      speak(currentVerb.example);
-                    }}
-                    label="播放例句發音"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </FixedCardFrame>
-  );
-}
-
-export default function IrregularVerbTrainer() {
-  const [mode, setMode] = useState(MODES.FLASHCARD);
-  const [level, setLevel] = useState('ALL');
+function VerbListPanel({ selection, progress, speak }) {
   const [search, setSearch] = useState('');
-  const [showBack, setShowBack] = useState(false);
-  const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
-  const [deck, setDeck] = useState(irregularVerbs);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [showAudioPanel, setShowAudioPanel] = useState(false);
-  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
-  // Phones only: level, search, filters and voice stay folded so the card is on the first screen.
-  const [showTools, setShowTools] = useState(false);
-  const [cardOrder, setCardOrder] = useState(CARD_ORDER.SEQUENTIAL);
-  const [typeFilter, setTypeFilter] = useState('ALL');
-  const [auxFilter, setAuxFilter] = useState('ALL');
-
-  const [typingPraeteritum, setTypingPraeteritum] = useState('');
-  const [typingPerfekt, setTypingPerfekt] = useState('');
-  const [typingFeedback, setTypingFeedback] = useState(null);
-
-  const [auxAnswer, setAuxAnswer] = useState('');
-  const [auxFeedback, setAuxFeedback] = useState(null);
-
-  const [modalAnswer, setModalAnswer] = useState('');
-  const [modalFeedback, setModalFeedback] = useState(null);
-
-  const [voiceURI, setVoiceURI] = useState('');
-  const [rate, setRate] = useState(0.9);
-  const [pitch, setPitch] = useState(1.0);
-  const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI, rate, pitch });
-  const [autoSpeak, setAutoSpeak] = useState(false);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    if (isReviewRequested()) setMode(MODES.WRONG);
-  }, []);
-
-
-
-  useEffect(() => {
-    const services = getFirebaseServices();
-    if (!services) return;
-
-    const unsubscribe = onAuthStateChanged(services.auth, setUser);
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    const handleKeydown = (e) => {
-      if (!deck.length || document.querySelector('[data-round-summary]')) return;
-
-      const tag = document.activeElement?.tagName?.toLowerCase();
-      const isTypingField = tag === 'input' || tag === 'textarea';
-
-      if (e.key === 'ArrowLeft' && !isTypingField) {
-        e.preventDefault();
-        prevCard();
-      }
-
-      if (e.key === 'ArrowRight' && !isTypingField) {
-        e.preventDefault();
-        nextCard();
-      }
-
-      if (
-        e.key === ' ' &&
-        !isTypingField &&
-        (mode === MODES.FLASHCARD ||
-          mode === MODES.WRONG ||
-          mode === MODES.HARD ||
-          mode === MODES.STARRED)
-      ) {
-        e.preventDefault();
-        handleFlip();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeydown);
-    return () => window.removeEventListener('keydown', handleKeydown);
-  }, [deck.length, mode, showBack, currentIndex]);
-
-  const typingFeedbackRef = useRevealOnShow(typingFeedback);
-  const auxFeedbackRef = useRevealOnShow(auxFeedback);
-  const modalFeedbackRef = useRevealOnShow(modalFeedback);
-
-  const filteredByLevel = useMemo(() => {
-    if (level === 'ALL') return irregularVerbs;
-    return irregularVerbs.filter((verb) => verb.level === level);
-  }, [level]);
-
-  const filteredByType = useMemo(() => {
-    if (typeFilter === 'ALL') return filteredByLevel;
-    return filteredByLevel.filter((verb) => verb.type === typeFilter);
-  }, [filteredByLevel, typeFilter]);
-
-  const filteredByAux = useMemo(() => {
-    if (auxFilter === 'ALL') return filteredByType;
-    return filteredByType.filter((verb) => verb.auxiliary === auxFilter);
-  }, [filteredByType, auxFilter]);
-
-  const wrongList = useMemo(() => {
-    return filteredByAux.filter((verb) => itemNeedsReview(progress[verb.id]));
-  }, [filteredByAux, progress]);
-
-  const hardList = useMemo(() => {
-    return filteredByAux.filter((verb) => progress[verb.id]?.isHard);
-  }, [filteredByAux, progress]);
-
-  const starredList = useMemo(() => {
-    return filteredByAux.filter((verb) => progress[verb.id]?.starred);
-  }, [filteredByAux, progress]);
-
-  const modalList = useMemo(() => {
-    return filteredByAux.filter((verb) => verb.type === 'modal');
-  }, [filteredByAux]);
-
-  const visibleList = useMemo(() => {
-    let base = filteredByAux;
-
-    if (mode === MODES.WRONG) base = wrongList;
-    if (mode === MODES.HARD) base = hardList;
-    if (mode === MODES.STARRED) base = starredList;
-    if (mode === MODES.MODAL) base = modalList;
-
-    if (!search.trim()) return base;
-
-    const q = normalizeText(search);
-
-    return base.filter((verb) => {
-      const haystack = [
-        verb.infinitive,
-        verb.present3rd,
-        verb.praeteritum,
-        verb.perfekt,
-        verb.meaningZh,
-        verb.level,
-        verb.group || '',
-        verb.type || ''
-      ]
-        .join(' ')
-        .toLowerCase();
-
-      return haystack.includes(q);
-    });
-  }, [filteredByAux, wrongList, hardList, starredList, modalList, search, mode]);
-
-  useEffect(() => {
-    let nextDeck = visibleList;
-
-    const shouldShuffle =
-      mode === MODES.TYPING ||
-      mode === MODES.HABEN_SEIN ||
-      mode === MODES.MODAL ||
-      mode === MODES.WRONG ||
-      mode === MODES.HARD ||
-      (mode === MODES.FLASHCARD && cardOrder === CARD_ORDER.RANDOM);
-
-    if (shouldShuffle) {
-      nextDeck = shuffle(visibleList);
-    }
-
-    setDeck(nextDeck);
-    setCurrentIndex(0);
-    setShowBack(false);
-    setTypingPraeteritum('');
-    setTypingPerfekt('');
-    setTypingFeedback(null);
-    setAuxAnswer('');
-    setAuxFeedback(null);
-    setModalAnswer('');
-    setModalFeedback(null);
-  }, [visibleList.map(verb => verb.id).join(','), mode, cardOrder]);
-
-  const currentVerb = deck[currentIndex] || null;
-
-  useEffect(() => {
-    if (!autoSpeak || !currentVerb) return;
-    const t = setTimeout(() => {
-      speak(currentVerb.infinitive);
-    }, 180);
-    return () => clearTimeout(t);
-  }, [currentVerb, autoSpeak]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  function updateItemProgress(verbId, updater) {
-    setProgress((prev) => {
-      const current = prev[verbId] || {};
-      return {
-        ...prev,
-        [verbId]: { ...updater(current), updatedAt: new Date().toISOString() }
-      };
-    });
-  }
-
-  function markSeen(verbId) {
-    updateItemProgress(verbId, (current) => ({
-      ...current,
-      seenCount: (current.seenCount || 0) + 1
-    }));
-  }
-
-  function markCorrect(verbId) {
-    updateItemProgress(verbId, (current) => ({
-      ...current,
-      correctCount: (current.correctCount || 0) + 1,
-      lastCorrect: true, isHard: false
-    }));
-  }
-
-  function markWrong(verbId) {
-    updateItemProgress(verbId, (current) => ({
-      ...current,
-      wrongCount: (current.wrongCount || 0) + 1,
-      lastCorrect: false,
-      isHard: true
-    }));
-  }
-
-  function toggleStar(verbId) {
-    updateItemProgress(verbId, (current) => ({
-      ...current,
-      starred: !current.starred
-    }));
-  }
-
-  function toggleHard(verbId) {
-    updateItemProgress(verbId, (current) => ({
-      ...current,
-      isHard: !current.isHard
-    }));
-  }
-
-  function resetCardUI() {
-    setShowBack(false);
-    setTypingPraeteritum('');
-    setTypingPerfekt('');
-    setTypingFeedback(null);
-    setAuxAnswer('');
-    setAuxFeedback(null);
-    setModalAnswer('');
-    setModalFeedback(null);
-  }
-
-  function nextCard() {
-    if (!deck.length) return;
-    setCurrentIndex((prev) => (prev + 1) % deck.length);
-    resetCardUI();
-  }
-
-  function prevCard() {
-    if (!deck.length) return;
-    setCurrentIndex((prev) => (prev - 1 + deck.length) % deck.length);
-    resetCardUI();
-  }
-
-  function handleFlip() {
-    if (!currentVerb) return;
-    if (!showBack) markSeen(currentVerb.id);
-    setShowBack((prev) => !prev);
-  }
-
-  function handleTypingSubmit(e) {
-    e.preventDefault();
-    if (!currentVerb || typingFeedback) return;
-
-    const praeteritumOk =
-      normalizeText(typingPraeteritum) === normalizeText(currentVerb.praeteritum);
-    const perfektOk =
-      normalizeText(typingPerfekt) === normalizeText(currentVerb.perfekt);
-
-    const ok = praeteritumOk && perfektOk;
-    answerCue(ok, `${currentVerb.infinitive} – ${currentVerb.praeteritum} – ${currentVerb.perfekt}`);
-
-    if (ok) {
-      markCorrect(currentVerb.id);
-      setTypingFeedback({
-        type: 'success',
-        text: '答對了！'
-      });
-
-    } else {
-      markWrong(currentVerb.id);
-      setTypingFeedback({
-        type: 'error',
-        text: `正確答案：${currentVerb.praeteritum} / ${currentVerb.perfekt}`
-      });
-    }
-  }
-
-  function handleAuxAnswer(answer) {
-    if (!currentVerb || auxFeedback) return;
-    setAuxAnswer(answer);
-    answerCue(answer === currentVerb.auxiliary, `${currentVerb.infinitive} → ${currentVerb.perfekt}`);
-
-    if (answer === currentVerb.auxiliary) {
-      markCorrect(currentVerb.id);
-      setAuxFeedback({
-        type: 'success',
-        text: `答對了：${currentVerb.perfekt}`
-      });
-
-    } else {
-      markWrong(currentVerb.id);
-      setAuxFeedback({
-        type: 'error',
-        text: `錯了，正確是 ${currentVerb.auxiliary} → ${currentVerb.perfekt}`
-      });
-    }
-  }
-
-  function handleModalSubmit(answer) {
-    if (!currentVerb || modalFeedback) return;
-    setModalAnswer(answer);
-    answerCue(answer === currentVerb.present3rd, `${currentVerb.infinitive} → er ${currentVerb.present3rd}`);
-
-    if (answer === currentVerb.present3rd) {
-      markCorrect(currentVerb.id);
-      setModalFeedback({
-        type: 'success',
-        text: `答對了：${currentVerb.infinitive} → ${currentVerb.present3rd}`
-      });
-
-    } else {
-      markWrong(currentVerb.id);
-      setModalFeedback({
-        type: 'error',
-        text: `錯了，正確是 ${currentVerb.present3rd}；Präteritum 是 ${currentVerb.praeteritum}`
-      });
-    }
-  }
-
-  function generateModalOptions(verb) {
-    const core = ['darf', 'kann', 'mag', 'muss', 'soll', 'will'];
-    const set = new Set([verb.present3rd]);
-
-    while (set.size < 4) {
-      const random = core[Math.floor(Math.random() * core.length)];
-      set.add(random);
-    }
-
-    return shuffle([...set]);
-  }
-
-  function renderStats(verb) {
+  const verbs = useMemo(() => {
+    const query = normalizeText(search);
+    return irregularVerbs.filter(verb => matchesFilters(verb, selection)
+      && (!query || [verb.infinitive, verb.present3rd, verb.praeteritum, verb.perfekt, verb.meaningZh, verb.level, verb.group || '', verb.type || ''].join(' ').toLowerCase().includes(query)));
+  }, [search, selection]);
+  const renderStats = verb => {
     const item = progress[verb.id] || {};
-    return {
-      seen: item.seenCount || 0,
-      correct: item.correctCount || 0,
-      wrong: item.wrongCount || 0,
-      starred: !!item.starred,
-      hard: !!item.isHard
-    };
-  }
-
-  const currentStats = currentVerb ? renderStats(currentVerb) : null;
-  const currentTypeMeta = currentVerb ? getTypeMeta(currentVerb.type) : null;
-  const currentAuxHint = currentVerb ? inferAuxHint(currentVerb) : null;
-  const currentLearningState = currentVerb ? deriveLearningState(progress[currentVerb.id]) : null;
-  // Shuffle once per verb; recomputing every render made the buttons jump after each click.
-  const modalOptions = useMemo(
-    () => (currentVerb && mode === MODES.MODAL ? generateModalOptions(currentVerb) : []),
-    [currentVerb?.id, mode]
-  );
-
-  const advancedCount =
-    (mode === MODES.MODAL ? 1 : 0) +
-    (mode === MODES.WRONG ? 1 : 0) +
-    (mode === MODES.HARD ? 1 : 0) +
-    (mode === MODES.STARRED ? 1 : 0) +
-    (typeFilter !== 'ALL' ? 1 : 0) +
-    (auxFilter !== 'ALL' ? 1 : 0) +
-    (mode === MODES.FLASHCARD && cardOrder === CARD_ORDER.RANDOM ? 1 : 0);
-
-  return (
-    <div className="text-slate-800">
-      {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
-      <div className="mb-3 rounded-xl md:rounded-2xl bg-white shadow-sm border border-slate-200 p-2.5 md:p-3">
-        <div className="flex flex-col gap-2">
-          <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
-            <MainModeButton active={mode === MODES.FLASHCARD} onClick={() => setMode(MODES.FLASHCARD)}>
-              字卡
-            </MainModeButton>
-            <MainModeButton active={mode === MODES.TYPING} onClick={() => setMode(MODES.TYPING)}>
-              拼寫
-            </MainModeButton>
-            <MainModeButton active={mode === MODES.HABEN_SEIN} onClick={() => setMode(MODES.HABEN_SEIN)}>
-              助動詞
-            </MainModeButton>
-            <MainModeButton active={mode === MODES.LIST} onClick={() => setMode(MODES.LIST)}>
-              列表
-            </MainModeButton>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => setShowTools((prev) => !prev)}
-            aria-expanded={showTools}
-            className="md:hidden flex min-h-10 items-center justify-between gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-left text-sm font-black text-slate-700"
-          >
-            <span className="min-w-0 truncate">
-              篩選與語音
-              <span className="ml-2 text-xs font-bold text-slate-500">
-                {[level === 'ALL' ? '全部等級' : level, search && `搜尋「${search}」`, advancedCount > 0 && `篩選 ${advancedCount}`].filter(Boolean).join(' · ')}
-              </span>
-            </span>
-            <span aria-hidden="true" className={`text-slate-400 transition-transform ${showTools ? 'rotate-180' : ''}`}>▾</span>
-          </button>
-
-          <div className={`${showTools ? 'grid' : 'hidden'} md:grid grid-cols-2 gap-2 md:grid-cols-[128px_minmax(0,1fr)_auto_auto] md:items-center`}>
-            <select
-              value={level}
-              onChange={(e) => setLevel(e.target.value)}
-              className="min-h-10 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm font-bold outline-none"
-            >
-              <option value="ALL">全部等級</option>
-              <option value="A1">A1</option>
-              <option value="A2">A2</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-            </select>
-
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="搜尋動詞、中文、時態..."
-              className="col-span-2 md:col-span-1 min-h-10 w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm font-bold outline-none"
-            />
-
-            <button
-              onClick={() => setShowAdvancedFilters((prev) => !prev)}
-              className={`min-h-10 px-3 py-2 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
-                showAdvancedFilters
-                  ? 'bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200'
-                  : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
-              }`}
-              type="button"
-            >
-              篩選{advancedCount > 0 ? ` (${advancedCount})` : ''}
-            </button>
-
-            <button
-              onClick={() => setShowAudioPanel((prev) => !prev)}
-              className={`min-h-10 px-3 py-2 rounded-xl text-sm font-black border transition-all whitespace-nowrap ${
-                showAudioPanel
-                  ? 'bg-indigo-600 text-white border-indigo-600'
-                  : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
-              }`}
-              type="button"
-            >
-              🔊 語音
-            </button>
-          </div>
-
-          {showAdvancedFilters && (
-            <div className={`${showTools ? '' : 'max-md:hidden '}rounded-xl border border-slate-200 bg-slate-50 p-3 space-y-4`}>
-              <div>
-                <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
-                  專項與清單
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <FilterChip
-                    active={mode === MODES.MODAL}
-                    onClick={() => setMode(MODES.MODAL)}
-                    activeClass="bg-indigo-600 text-white border-indigo-600"
-                  >
-                    情態專練
-                  </FilterChip>
-                  <FilterChip
-                    active={mode === MODES.WRONG}
-                    onClick={() => setMode(MODES.WRONG)}
-                    activeClass="bg-rose-500 text-white border-rose-500"
-                  >
-                    錯誤紀錄
-                  </FilterChip>
-                  <FilterChip
-                    active={mode === MODES.HARD}
-                    onClick={() => setMode(MODES.HARD)}
-                    activeClass="bg-orange-500 text-white border-orange-500"
-                  >
-                    需要複習
-                  </FilterChip>
-                  <FilterChip
-                    active={mode === MODES.STARRED}
-                    onClick={() => setMode(MODES.STARRED)}
-                    activeClass="bg-yellow-500 text-white border-yellow-500"
-                  >
-                    已收藏
-                  </FilterChip>
-                </div>
-              </div>
-
-              <div>
-                <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
-                  類型篩選
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <FilterChip
-                    active={typeFilter === 'ALL'}
-                    onClick={() => setTypeFilter('ALL')}
-                    activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
-                  >
-                    全部類型
-                  </FilterChip>
-                  <FilterChip
-                    active={typeFilter === 'strong'}
-                    onClick={() => setTypeFilter('strong')}
-                    activeClass="bg-rose-500 text-white border-rose-500"
-                  >
-                    強變化
-                  </FilterChip>
-                  <FilterChip
-                    active={typeFilter === 'mixed'}
-                    onClick={() => setTypeFilter('mixed')}
-                    activeClass="bg-orange-500 text-white border-orange-500"
-                  >
-                    混合變化
-                  </FilterChip>
-                  <FilterChip
-                    active={typeFilter === 'modal'}
-                    onClick={() => setTypeFilter('modal')}
-                    activeClass="bg-indigo-600 text-white border-indigo-600"
-                  >
-                    情態動詞
-                  </FilterChip>
-                  <FilterChip
-                    active={typeFilter === 'special'}
-                    onClick={() => setTypeFilter('special')}
-                    activeClass="bg-violet-600 text-white border-violet-600"
-                  >
-                    特殊核心
-                  </FilterChip>
-                </div>
-              </div>
-
-              <div>
-                <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
-                  助動詞篩選
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <FilterChip
-                    active={auxFilter === 'ALL'}
-                    onClick={() => setAuxFilter('ALL')}
-                    activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
-                  >
-                    全部助動詞
-                  </FilterChip>
-                  <FilterChip
-                    active={auxFilter === 'hat'}
-                    onClick={() => setAuxFilter('hat')}
-                    activeClass="bg-sky-500 text-white border-sky-500"
-                  >
-                    Perfekt 用 haben
-                  </FilterChip>
-                  <FilterChip
-                    active={auxFilter === 'ist'}
-                    onClick={() => setAuxFilter('ist')}
-                    activeClass="bg-emerald-500 text-white border-emerald-500"
-                  >
-                    Perfekt 用 sein
-                  </FilterChip>
-                </div>
-              </div>
-
-              {mode === MODES.FLASHCARD && (
-                <div>
-                  <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-2">
-                    字卡順序
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <FilterChip
-                      active={cardOrder === CARD_ORDER.SEQUENTIAL}
-                      onClick={() => setCardOrder(CARD_ORDER.SEQUENTIAL)}
-                      activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
-                    >
-                      依序字卡
-                    </FilterChip>
-                    <FilterChip
-                      active={cardOrder === CARD_ORDER.RANDOM}
-                      onClick={() => setCardOrder(CARD_ORDER.RANDOM)}
-                      activeClass="bg-slate-800 text-white border-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:border-slate-200"
-                    >
-                      隨機字卡
-                    </FilterChip>
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-
-          {showAudioPanel && (
-            <div className={`${showTools ? '' : 'max-md:hidden '}rounded-xl border border-slate-200 bg-slate-50 p-3`}>
-              <div className="text-sm font-black text-slate-500 mb-3">德語語音設定</div>
-
-              <div className="grid md:grid-cols-4 gap-3">
-                <div>
-                  <label className="block text-xs font-black text-slate-400 mb-2">德語人聲</label>
-                  <select
-                    value={voiceURI}
-                    onChange={(e) => setVoiceURI(e.target.value)}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 font-bold outline-none"
-                  >
-                    <option value="">自然人聲（預設）</option>
-                    {voices.map((voice) => (
-                      <option key={voice.voiceURI} value={voice.voiceURI}>
-                        {voice.name} ({voice.lang})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black text-slate-400 mb-2">
-                    語速 {rate.toFixed(1)}x
-                  </label>
-                  <input
-                    type="range"
-                    min="0.5"
-                    max="1.3"
-                    step="0.1"
-                    value={rate}
-                    onChange={(e) => setRate(parseFloat(e.target.value))}
-                    className="w-full"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black text-slate-400 mb-2">
-                    音高 {pitch.toFixed(1)}
-                  </label>
-                  <input
-                    type="range"
-                    min="0.7"
-                    max="1.5"
-                    step="0.1"
-                    value={pitch}
-                    onChange={(e) => setPitch(parseFloat(e.target.value))}
-                    className="w-full"
-                  />
-                </div>
-
-                <div className="flex items-end">
-                  <label className="inline-flex items-center gap-2 font-black text-slate-700">
-                    <input
-                      type="checkbox"
-                      checked={autoSpeak}
-                      onChange={(e) => setAutoSpeak(e.target.checked)}
-                    />
-                    自動播放
-                  </label>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {!currentVerb && (
-        <div className="bg-white rounded-2xl p-10 text-center shadow-sm border border-slate-200">
-          <div className="text-5xl mb-4">📭</div>
-          <div className="text-2xl font-black mb-2">目前沒有資料</div>
-          <p className="text-slate-500 font-medium">請切換等級、搜尋條件，或調整進階篩選。</p>
-        </div>
-      )}
-
-      {currentVerb && mode !== MODES.LIST && (
-        <MetaPills
-          currentLearningState={currentLearningState}
-          currentTypeMeta={currentTypeMeta}
-          currentAuxHint={currentAuxHint}
-          currentVerb={currentVerb}
-          currentIndex={currentIndex}
-          deckLength={deck.length}
-        />
-      )}
-
-      {currentVerb && mode === MODES.FLASHCARD && (
-        <FlashcardLikeMode
-          tone="violet"
-          currentVerb={currentVerb}
-          currentStats={currentStats}
-          onToggleStar={toggleStar}
-          onToggleHard={toggleHard}
-          onFlip={handleFlip}
-          onPrev={prevCard}
-          onNext={nextCard}
-          showBack={showBack}
-          speak={speak}
-        />
-      )}
-
-      {(mode === MODES.WRONG || mode === MODES.HARD || mode === MODES.STARRED) && currentVerb && (
-        <FlashcardLikeMode
-          tone="rose"
-          onMastered={mode !== MODES.STARRED ? markCorrect : undefined}
-          currentVerb={currentVerb}
-          currentStats={currentStats}
-          onToggleStar={toggleStar}
-          onToggleHard={toggleHard}
-          onFlip={handleFlip}
-          onPrev={prevCard}
-          onNext={nextCard}
-          showBack={showBack}
-          speak={speak}
-          frontBadge={mode === MODES.WRONG ? '錯誤紀錄' : mode === MODES.HARD ? '需要複習' : '已收藏'}
-        />
-      )}
-
-      {currentVerb && mode === MODES.TYPING && (
-        <div className="space-y-4">
-          <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
-            <div className="w-full max-w-2xl mx-auto min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center min-w-0">
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                  <div className="text-[clamp(2rem,12vw,3rem)] font-black break-words max-w-full">{currentVerb.infinitive}</div>
-                  <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
-                </div>
-
-                <div className="text-base sm:text-xl font-bold text-slate-500 break-words">{currentVerb.meaningZh}</div>
-              </div>
-
-              <form onSubmit={handleTypingSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-black text-slate-500 mb-2">Präteritum</label>
-                  <input
-                    value={typingPraeteritum}
-                    onChange={(e) => setTypingPraeteritum(e.target.value)}
-                    className="w-full bg-white border border-slate-200 rounded-2xl px-4 py-4 text-xl font-bold outline-none"
-                    placeholder="請輸入過去式"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-black text-slate-500 mb-2">Perfekt</label>
-                  <input
-                    value={typingPerfekt}
-                    onChange={(e) => setTypingPerfekt(e.target.value)}
-                    className="w-full bg-white border border-slate-200 rounded-2xl px-4 py-4 text-xl font-bold outline-none"
-                    placeholder="請輸入完成式"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-violet-600 text-white py-4 rounded-2xl font-black text-lg"
-                >
-                  檢查答案
-                </button>
-              </form>
-            </div>
-          </FixedCardFrame>
-
-          {typingFeedback && (
-            <div
-              ref={typingFeedbackRef}
-              role="status"
-              className={`fx-enter scroll-mb-6 rounded-2xl px-5 py-4 font-black ${
-                typingFeedback.type === 'success'
-                  ? 'bg-emerald-100 text-emerald-700'
-                  : 'bg-rose-100 text-rose-700'
-              }`}
-            >
-              {typingFeedback.text}
-            </div>
-          )}
-        </div>
-      )}
-
-      {currentVerb && mode === MODES.HABEN_SEIN && (
-        <div className="space-y-4">
-          <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
-            <div className="w-full max-w-2xl mx-auto min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center text-center min-w-0">
-              <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                <div className="text-[clamp(2rem,12vw,3rem)] font-black break-words max-w-full">{currentVerb.infinitive}</div>
-                <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
-              </div>
-
-              <div className="text-base sm:text-xl font-bold text-slate-500 mb-6 break-words">{currentVerb.meaningZh}</div>
-
-              <div className="text-sm font-black text-slate-400 mb-2">
-                請選擇 Perfekt 要用的 Hilfsverb
-              </div>
-
-              <div className="flex items-center justify-center gap-3 flex-wrap mb-6">
-                <div className="text-lg font-black text-slate-600">
-                  {splitPerfekt(currentVerb.perfekt).participle}
-                </div>
-                <AudioPill
-                  onClick={() => speak(splitPerfekt(currentVerb.perfekt).participle)}
-                  label="播放分詞發音"
-                />
-              </div>
-
-              <div className="flex justify-center gap-3 sm:gap-4">
-                <button
-                  onClick={() => handleAuxAnswer('hat')}
-                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border-2 transition-all active:scale-95 ${
-                    choiceTone('hat', auxAnswer, currentVerb.auxiliary, auxFeedback, 'bg-violet-600 text-white border-violet-600')
-                  }`}
-                  type="button"
-                >
-                  hat
-                </button>
-                <button
-                  onClick={() => handleAuxAnswer('ist')}
-                  className={`flex-1 sm:flex-none px-6 sm:px-8 py-4 rounded-2xl font-black text-lg sm:text-xl border-2 transition-all active:scale-95 ${
-                    choiceTone('ist', auxAnswer, currentVerb.auxiliary, auxFeedback, 'bg-violet-600 text-white border-violet-600')
-                  }`}
-                  type="button"
-                >
-                  ist
-                </button>
-              </div>
-            </div>
-          </FixedCardFrame>
-
-          {auxFeedback && (
-            <div
-              ref={auxFeedbackRef}
-              role="status"
-              className={`fx-enter scroll-mb-6 rounded-2xl px-5 py-4 font-black ${
-                auxFeedback.type === 'success'
-                  ? 'bg-emerald-100 text-emerald-700'
-                  : 'bg-rose-100 text-rose-700'
-              }`}
-            >
-              {auxFeedback.text}
-            </div>
-          )}
-        </div>
-      )}
-
-      {currentVerb && mode === MODES.MODAL && (
-        <div className="space-y-4">
-          <FixedCardFrame tone={getModeTone(mode)} onPrev={prevCard} onNext={nextCard}>
-            <div className="w-full max-w-3xl mx-auto min-h-[310px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-center text-center min-w-0">
-              <div className="mb-3 px-3 py-1 rounded-full inline-block self-center bg-indigo-50 text-indigo-600 text-sm font-black border border-indigo-200">
-                情態動詞專練
-              </div>
-
-              <div className="flex items-center justify-center gap-3 flex-wrap mb-3">
-                <div className="text-[clamp(2rem,12vw,3rem)] font-black break-words max-w-full">{currentVerb.infinitive}</div>
-                <AudioPill onClick={() => speak(currentVerb.infinitive)} label="播放動詞發音" />
-              </div>
-
-              <div className="text-base sm:text-xl font-bold text-slate-500 mb-2 break-words">{currentVerb.meaningZh}</div>
-              <div className="text-sm text-slate-400 font-black mb-8">請選第三人稱現在式</div>
-
-              <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto w-full">
-                {modalOptions.map((option) => (
-                  <button
-                    key={option}
-                    onClick={() => handleModalSubmit(option)}
-                    className={`px-4 sm:px-6 py-4 rounded-2xl font-black text-lg sm:text-xl border-2 break-words transition-all active:scale-95 ${
-                      choiceTone(option, modalAnswer, currentVerb.present3rd, modalFeedback, 'bg-indigo-600 text-white border-indigo-600')
-                    }`}
-                    type="button"
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-
-              <div className="mt-8 grid md:grid-cols-2 gap-4 text-left">
-                <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                  <div className="text-xs font-black text-slate-400 mb-2">Präteritum</div>
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="font-black text-xl">{currentVerb.praeteritum}</div>
-                    <AudioPill onClick={() => speak(currentVerb.praeteritum)} label="播放過去式發音" />
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-2xl p-4 border border-slate-100">
-                  <div className="text-xs font-black text-slate-400 mb-2">Perfekt</div>
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="font-black text-xl">{currentVerb.perfekt}</div>
-                    <AudioPill onClick={() => speak(currentVerb.perfekt)} label="播放完成式發音" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FixedCardFrame>
-
-          {modalFeedback && (
-            <div
-              ref={modalFeedbackRef}
-              role="status"
-              className={`fx-enter scroll-mb-6 rounded-2xl px-5 py-4 font-black ${
-                modalFeedback.type === 'success'
-                  ? 'bg-emerald-100 text-emerald-700'
-                  : 'bg-rose-100 text-rose-700'
-              }`}
-            >
-              {modalFeedback.text}
-            </div>
-          )}
-        </div>
-      )}
-
-      {mode === MODES.LIST && (
-        <div className="grid gap-4">
-          {visibleList.map((verb) => {
+    return { seen: item.seenCount || 0, correct: item.correctCount || 0, wrong: item.wrongCount || 0, starred: !!item.starred, hard: !!item.isHard };
+  };
+  return <>
+    <div className="lf-form"><input type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder="搜尋動詞、中文、時態..." aria-label="搜尋動詞"/></div>
+    <p className="picker-status">共 {verbs.length} 個動詞</p>
+    <div className="grid gap-3">
+          {verbs.map((verb) => {
             const stats = renderStats(verb);
             const typeMeta = getTypeMeta(verb.type);
             const auxHint = inferAuxHint(verb);
@@ -1477,9 +216,9 @@ export default function IrregularVerbTrainer() {
             return (
               <div
                 key={verb.id}
-                className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5"
+                className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4"
               >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                <div className="grid gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
                       <div className="text-2xl font-black">{verb.infinitive}</div>
@@ -1503,7 +242,7 @@ export default function IrregularVerbTrainer() {
                       </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 gap-3">
                       <div className="bg-slate-50 rounded-2xl p-3">
                         <div className="text-xs font-black text-slate-400 mb-1">3. Person</div>
                         <div className="font-black">
@@ -1544,7 +283,7 @@ export default function IrregularVerbTrainer() {
                     </div>
                   </div>
 
-                  <div className="min-w-[220px] bg-slate-50 rounded-2xl p-4">
+                  <div className="bg-slate-50 rounded-2xl p-4">
                     <div className="text-sm font-black text-slate-500 mb-2">學習紀錄</div>
                     <div className="text-sm font-bold text-slate-700">看過：{stats.seen}</div>
                     <div className="text-sm font-bold text-slate-700">答對：{stats.correct}</div>
@@ -1556,8 +295,196 @@ export default function IrregularVerbTrainer() {
               </div>
             );
           })}
-        </div>
-      )}
     </div>
-  );
+  </>;
+}
+
+function VerbForms({ verb, speak }) {
+  return <div className="lf-forms">
+    <div><small>3. Person</small><p lang="de">{highlightChangedVowel(verb.infinitive, verb.present3rd)}</p></div>
+    <div><small>Präteritum</small><p lang="de">{highlightChangedVowel(verb.infinitive, verb.praeteritum)}</p><AudioPill onClick={() => speak(verb.praeteritum)} label="播放過去式發音"/></div>
+    <div className="is-wide"><small>Perfekt</small><div lang="de" className="lf-perfekt">{renderPerfektWithAuxHighlight(verb.perfekt)}</div><AudioPill onClick={() => speak(verb.perfekt)} label="播放完成式發音"/></div>
+  </div>;
+}
+
+function TypingCard({ verb, level, speak, actions, onResult, onNext, onPrev, isLast }) {
+  const [past, setPast] = useState('');
+  const [perfect, setPerfect] = useState('');
+  const [result, setResult] = useState(null);
+  useAnswerShortcuts({ answered: result !== null, onNext });
+  const feedbackRef = useRevealOnShow(result !== null);
+
+  function submit(event) {
+    event.preventDefault();
+    if (result !== null || !past.trim() || !perfect.trim()) return;
+    const correct = normalizeText(past) === normalizeText(verb.praeteritum) && normalizeText(perfect) === normalizeText(verb.perfekt);
+    setResult(correct);
+    onResult(correct);
+  }
+
+  return <form className="lc fx-question" onSubmit={submit}>
+    <div className="lc-prompt">
+      <div className="lc-top"><p className="lc-tags"><span>{PRACTICE_LABELS.typing}</span><span>{level}</span></p><div className="lc-actions">{actions}</div></div>
+      <div className="lc-body">
+        <p className="lc-sentence is-center" lang="de">{verb.infinitive}</p>
+        <p className="lc-sub is-center">{verb.meaningZh}</p>
+        <div className="lc-center"><AudioPill onClick={() => speak(verb.infinitive)} label="播放動詞發音"/></div>
+      </div>
+    </div>
+    <div className="lf-form">
+      <label>Präteritum<input lang="de" autoCapitalize="none" autoComplete="off" spellCheck={false} disabled={result !== null} value={past} onChange={event => setPast(event.target.value)} placeholder="請輸入過去式"/></label>
+      <label>Perfekt<input lang="de" autoCapitalize="none" autoComplete="off" spellCheck={false} disabled={result !== null} value={perfect} onChange={event => setPerfect(event.target.value)} placeholder="請輸入完成式"/></label>
+    </div>
+    {result === null ? <>
+      <button className="calm-primary" disabled={!past.trim() || !perfect.trim()}>檢查答案</button>
+      <div className="lc-nav">
+        {onPrev && <button type="button" className="calm-link" onClick={onPrev}>上一題</button>}
+        <button type="button" className="calm-link" onClick={onNext}>跳過</button>
+      </div>
+    </> : <div ref={feedbackRef} role="status" className="lc-feedback fx-enter" data-correct={result}>
+      <p className="lc-verdict">{result ? '答對了' : '正確答案'}</p>
+      <p className="lc-solved" lang="de"><span>{verb.infinitive} – {verb.praeteritum} – {verb.perfekt}</span></p>
+      <p className="lc-note" lang="de">{verb.example}</p>
+      <button type="button" className="calm-primary" onClick={onNext}>{isLast ? '看結果' : '下一題'}</button>
+    </div>}
+  </form>;
+}
+
+export default function IrregularVerbTrainer() {
+  const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
+  const [voice, setVoice] = useState('');
+  const [rate, setRate] = useState(0.9);
+  const [pitch, setPitch] = useState(1);
+  const [autoSpeak, setAutoSpeak] = useState(false);
+  const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI: voice, rate, pitch });
+
+  const itemsFor = selection => irregularVerbs.filter(verb => {
+    const item = progress[verb.id];
+    return matchesFilters(verb, selection)
+      && (selection.practice !== 'modal' || verb.type === 'modal')
+      && (selection.only !== 'wrong' || itemNeedsReview(item))
+      && (selection.only !== 'hard' || item?.isHard)
+      && (selection.only !== 'starred' || item?.starred);
+  });
+  const reviewItems = () => irregularVerbs.filter(verb => itemNeedsReview(progress[verb.id]));
+
+  function updateItem(id, updater) {
+    setProgress(prev => ({ ...prev, [id]: { ...updater(prev[id] || {}), updatedAt: new Date().toISOString() } }));
+  }
+  const markSeen = id => updateItem(id, item => ({ ...item, seenCount: (item.seenCount || 0) + 1 }));
+  const markCorrect = id => updateItem(id, item => ({ ...item, correctCount: (item.correctCount || 0) + 1, lastCorrect: true, isHard: false }));
+  const markWrong = id => updateItem(id, item => ({ ...item, wrongCount: (item.wrongCount || 0) + 1, lastCorrect: false, isHard: true }));
+  const markResult = (id, correct) => (correct ? markCorrect(id) : markWrong(id));
+
+  const records = useMemo(() => {
+    const items = Object.values(progress);
+    return [
+      ['練習過', items.filter(item => (item?.seenCount || 0) + (item?.correctCount || 0) + (item?.wrongCount || 0) > 0).length],
+      ['需要複習', items.filter(itemNeedsReview).length],
+      ['已收藏', items.filter(item => item?.starred).length]
+    ];
+  }, [progress]);
+
+  const panels = [
+    { id: 'list', title: '動詞列表', render: ({ selection }) => <VerbListPanel selection={selection} progress={progress} speak={speak}/> },
+    { id: 'voice', title: '語音設定', render: () => <VoiceSettings voices={voices} voice={voice} onVoice={setVoice} rate={rate} onRate={setRate} pitch={pitch} onPitch={setPitch} autoSpeak={autoSpeak} onAutoSpeak={setAutoSpeak} speak={speak}/> }
+  ];
+
+  function flagButtons(verb) {
+    const item = progress[verb.id] || {};
+    return <>
+      <button type="button" className="lc-flag" aria-label={item.starred ? '取消收藏' : '收藏'} aria-pressed={!!item.starred} onClick={() => updateItem(verb.id, current => ({ ...current, starred: !current.starred }))}><Star size={16} fill={item.starred ? 'currentColor' : 'none'}/></button>
+      <button type="button" className="lc-flag" aria-pressed={!!item.isHard} onClick={() => updateItem(verb.id, current => ({ ...current, isHard: !current.isHard }))}>複習</button>
+    </>;
+  }
+
+  function renderQuestion({ key, item: verb, isLast, report, next, prev, selection, review }) {
+    const practice = review ? 'flash' : selection.practice;
+    if (practice === 'flash') {
+      const canClear = review || selection.only === 'wrong' || selection.only === 'hard';
+      return <FlipCard
+        key={key}
+        tag={getTypeMeta(verb.type).label}
+        level={verb.level}
+        actions={flagButtons(verb)}
+        front={<div className="calm-word-block">
+          <AutoSpeak enabled={autoSpeak} text={verb.infinitive} speak={speak}/>
+          <p className="calm-word" lang="de">{verb.infinitive}</p>
+          <p className="lc-sub is-center">{verb.meaningZh}</p>
+          <AudioPill onClick={() => speak(verb.infinitive)} label="播放動詞發音"/>
+        </div>}
+        back={<div className="calm-answer">
+          <p className="lc-sentence is-center" lang="de">{verb.infinitive}</p>
+          <p className="lc-sub is-center">{verb.meaningZh}</p>
+          <VerbForms verb={verb} speak={speak}/>
+          <div className="calm-example"><p lang="de">{verb.example}</p></div>
+        </div>}
+        footer={<div className={`calm-actions${canClear ? ' calm-actions-two' : ' lc-single'}`}>
+          {canClear && <button type="button" className="calm-rate" onClick={() => { markCorrect(verb.id); next(); }}>已掌握，移出複習</button>}
+          <button type="button" className="calm-rate" data-tone="know" onClick={next}>{isLast ? '看結果' : '下一張'}</button>
+        </div>}
+        onFirstReveal={() => { markSeen(verb.id); report(null, ''); }}
+        isLast={isLast}
+        onNext={next}
+        onPrev={prev}
+      />;
+    }
+    if (practice === 'typing') {
+      return <TypingCard key={key} verb={verb} level={verb.level} speak={speak} actions={flagButtons(verb)} isLast={isLast} onNext={next} onPrev={prev}
+        onResult={correct => { report(correct, `${verb.infinitive} – ${verb.praeteritum} – ${verb.perfekt}`); markResult(verb.id, correct); }}/>;
+    }
+    const isAux = practice === 'aux';
+    const answer = isAux ? verb.auxiliary : verb.present3rd;
+    const options = isAux ? ['hat', 'ist'] : [verb.present3rd, ...shuffle(MODAL_FORMS.filter(form => form !== verb.present3rd)).slice(0, 3)];
+    const label = isAux ? `${verb.infinitive} → ${verb.perfekt}` : `${verb.infinitive} → er ${verb.present3rd}`;
+    return <ChoiceCard
+      key={key}
+      tag={PRACTICE_LABELS[practice]}
+      level={verb.level}
+      actions={flagButtons(verb)}
+      hint={isAux ? 'Perfekt 要用 haben 還是 sein？' : 'er／sie／es 的現在式是？'}
+      prompt={() => <>
+        <p className="lc-sentence is-center" lang="de">{isAux ? `${verb.infinitive} · ${splitPerfekt(verb.perfekt).participle}` : verb.infinitive}</p>
+        <p className="lc-sub is-center">{verb.meaningZh}</p>
+        <div className="lc-center"><AudioPill onClick={() => speak(verb.infinitive)} label="播放動詞發音"/></div>
+      </>}
+      options={options}
+      answer={answer}
+      wrongTitle={`正確答案：${answer}`}
+      solved={label}
+      extra={!isAux && <VerbForms verb={verb} speak={speak}/>}
+      isLast={isLast}
+      onPrev={prev}
+      onSkip={next}
+      onNext={next}
+      onChoose={(_, correct) => { report(correct, label); markResult(verb.id, correct); }}
+    />;
+  }
+
+  return <>
+    {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
+    <LessonApp
+      lessonKey="l3"
+      title="不規則動詞"
+      blurb="Infinitiv、Präteritum、Perfekt 三態一起記。"
+      filters={FILTERS}
+      itemsFor={itemsFor}
+      reviewItems={reviewItems}
+      records={records}
+      panels={panels}
+      featuredPanels={['list']}
+      unit={selection => (selection.practice === 'flash' ? '張' : '題')}
+      isSequential={selection => selection.practice === 'flash' && selection.order === 'seq'}
+      renderQuestion={renderQuestion}
+    />
+  </>;
+}
+
+function AutoSpeak({ enabled, text, speak }) {
+  useEffect(() => {
+    if (!enabled) return undefined;
+    const timer = setTimeout(() => speak(text), 180);
+    return () => clearTimeout(timer);
+  }, [enabled, text]);
+  return null;
 }

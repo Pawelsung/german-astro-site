@@ -59,11 +59,7 @@ export default function RoundSummary() {
 
   function openConcept() {
     setSummary(null);
-    const card = document.getElementById('concept-card');
-    if (!card) return;
-    card.open = true;
-    // Scroll once the overlay is gone, otherwise the page's own scroll restoration wins.
-    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+    document.getElementById('lesson-concept')?.showModal();
   }
 
   return (
@@ -98,7 +94,7 @@ export default function RoundSummary() {
             )}
             <div className="round-actions">
               <button ref={primary} type="button" className="round-primary" onClick={() => setSummary(null)}>再來一輪</button>
-              {document.getElementById('concept-card') && <button type="button" className="round-secondary" onClick={openConcept}>看重點卡</button>}
+              {document.getElementById('lesson-concept') && <button type="button" className="round-secondary" onClick={openConcept}>看重點卡</button>}
               <a className="round-secondary" href="/">回首頁</a>
             </div>
           </section>

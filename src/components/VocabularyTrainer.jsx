@@ -1,6 +1,6 @@
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, Download, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Download, MoreHorizontal, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
 import { PROGRESS_KEYS, readJSON, writeJSON, isReviewRequested } from '../lib/progressStorage';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { useSwipe } from '../hooks/useSwipe';
@@ -8,6 +8,8 @@ import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chap
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import { alignSavedWords, loadLevelPresets, loadLevelWords, migrateLessonProgress, mergeImportedReview, readStoredReview, recordLessonPractice } from '../lib/reviewBridge.js';
 import VocabPicker from './VocabPicker.jsx';
+import RoundSummary from './RoundSummary.jsx';
+import { LessonMenu } from './lesson/LessonMenu.jsx';
 import { genderKey } from '../lib/grammarColors.mjs';
 import { MISS_REASONS, checkTyped, findClozeTarget, productionAnswer } from '../lib/vocabPractice.mjs';
 
@@ -132,6 +134,7 @@ export default function VocabularyTrainer() {
   const [session, setSession] = useState({ done: 0, correct: 0 });
   const request = useRef(0);
   const fileInput = useRef(null);
+  const menu = useRef(null);
   const submitting = useRef(false);
   // Freeze current question after answering so a resolved review item stays visible.
   const [answeredWord, setAnsweredWord] = useState(null);
@@ -302,7 +305,16 @@ export default function VocabularyTrainer() {
     } catch (e) { setError(`匯入失敗：${e.message}`); }
     event.target.value = '';
   }
-  return <div className="vocab-workspace">
+  const practised = words.filter(w => w.attempts > 0 || w.seen > 0).length;
+  const records = [['已練', `${practised} / ${words.length}`], ['待複習', words.filter(w => w.errors > 0).length], ['收藏', words.filter(w => w.starred).length]];
+  return <div className="calm-page">
+    <header className="calm-bar">
+      <div className="calm-bar-side"><a className="calm-icon" href="/" aria-label="回首頁"><ArrowLeft size={22}/></a></div>
+      <div className="calm-bar-center"><RoundSummary/></div>
+      <div className="calm-bar-side calm-bar-end"><button type="button" className="calm-icon" aria-label="更多選項" aria-haspopup="dialog" onClick={() => menu.current?.open()}><MoreHorizontal size={22}/></button></div>
+    </header>
+    <main className="calm-main">
+    <div className="vocab-workspace">
     <VocabPicker presets={presets} presetId={ui.preset} chapterKey={ui.chapter} chapters={chapters} words={words} loading={loading} error={error} onOpen={refreshLevels} onPickPreset={loadPreset} onPickChapter={key => change({ chapter: key })}/>
     <section className="vocab-study" aria-label="單字練習">
       <div className="vocab-toolbar"><div role="group" aria-label="練習模式" className="vocab-tabs">{modes.map(([id,label]) => <button key={id} aria-pressed={ui.mode === id} onClick={() => change({ mode:id })}>{label}</button>)}</div><button className={button} aria-label="語音與資料設定" aria-expanded={tools} onClick={() => setTools(v => !v)}><Settings2 size={18}/></button></div>
@@ -325,5 +337,8 @@ export default function VocabularyTrainer() {
         <div className="vocab-navigation"><button className={button} onClick={() => move(-1)}><ArrowLeft size={17}/>上一個</button><span>本次作答 {session.done} · 答對 {session.correct}</span><button className={`vocab-primary${feedback ? ' is-ready' : ''}`} onClick={() => move(1)}>下一個<ArrowRight size={17}/>{(feedback || ui.mode === 'learn') && <span className="kbd-hint" aria-hidden="true">{feedback ? 'Enter' : '→'}</span>}</button></div>
       </>}
     </section>
+    </div>
+    </main>
+    <LessonMenu ref={menu} records={records}/>
   </div>;
 }

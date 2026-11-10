@@ -1,464 +1,48 @@
+import React, { useMemo, useState } from 'react';
+import { Star, Search, ChevronDown, ChevronUp, Volume2, Calendar } from 'lucide-react';
+import LessonApp from './lesson/LessonApp.jsx';
+import ChoiceCard from './lesson/ChoiceCard.jsx';
+import FlipCard from './lesson/FlipCard.jsx';
+import VoiceSettings from './lesson/VoiceSettings.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
-import { isReviewRequested, isLesson2Due } from '../lib/progressStorage';
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import {
-  Brain, Settings, List, Volume2, RotateCw,
-  CheckCircle, XCircle, Trophy, Search, ChevronDown, ChevronUp,
-  Play, Star, Cloud, CloudOff, Calendar
-} from 'lucide-react';
-
-import { onAuthStateChanged } from 'firebase/auth';
-import { verbPrepositions } from '../data/verb-prepositions';
-import { getFirebaseServices } from '../lib/firebase';
-import { loadLesson2Progress, saveLesson2Progress } from '../lib/progressStorage';
-import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
+import { isLesson2Due, loadLesson2Progress } from '../lib/progressStorage';
+import { verbPrepositions as verbData } from '../data/verb-prepositions';
+import { woDaPractice } from '../data/wo-da-practice';
 import { blankPreposition } from '../lib/prepositionBlank.mjs';
 import { WO_DA_KIND_LABEL, WO_DA_RULES, fillWoDa, woDaAnswer, woDaOptions } from '../lib/woDa.mjs';
-import { woDaPractice } from '../data/wo-da-practice';
-import { useSwipe } from '../hooks/useSwipe';
-import { FLIP_BACK_STYLE, FLIP_FACE_STYLE, flipInnerStyle } from '../lib/flipStyles.mjs';
 
-const verbData = verbPrepositions;
+const CASE_NAME = { A: 'Akkusativ', D: 'Dativ' };
+const PRACTICE_LABELS = { flash: '字卡', word: '單字模式', sentence: '例句填空', case: '格位判斷', woda: 'wo/da 代換' };
+const FILTERS = [
+  { id: 'practice', label: '練習方式', alwaysShow: true, options: Object.entries(PRACTICE_LABELS).map(([id, label]) => ({ id, label })) },
+  { id: 'only', label: '篩選', options: [{ id: 'all', label: '全部' }, { id: 'saved', label: '只看收藏' }] }
+];
+const ALL_PREPS = [...new Set(verbData.map(item => item.prep))];
+const randomly = list => [...list].sort(() => 0.5 - Math.random());
+const entryFor = item => verbData.find(entry => entry.id === item.entryId);
 
-const useSpeech = () => {
-  const [selectedVoiceURI, setSelectedVoiceURI] = useState('');
-  const [rate, setRate] = useState(0.9);
-  const speech = useGermanSpeech({ voiceURI: selectedVoiceURI, rate });
-  return { ...speech, selectedVoiceURI, setSelectedVoiceURI, rate, setRate };
-};
+function WordPrompt({ item, picked }) {
+  const [hint, setHint] = useState(false);
+  const blank = blankPreposition(item.example, item.prep);
+  return <>
+    <p className="lc-sentence is-center" lang="de">{item.verb}</p>
+    <p className="lc-sub is-center">{item.verbTrans}</p>
+    {hint && <p className="lc-fact" lang="de">提示：{blank ? `${blank.before}___${blank.after}` : item.example}</p>}
+    {!hint && !picked && <button type="button" className="calm-link" onClick={() => setHint(true)}>顯示提示例句</button>}
+  </>;
+}
 
-// --- 3.1 Flashcard Component ---
-const Flashcard = ({ card, speak, toggleStar, isStarred, handleSRS, nextCard, prevCard }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [dragX, setDragX] = useState(0);
-  // Swipe left/right to change card; works on iPhone where touch-action: pan-y is ignored.
-  const swipe = useSwipe({ onDrag: setDragX, onSwipe: (direction) => { setDragX(0); (direction === 'left' ? nextCard : prevCard)(); } });
-  useEffect(() => {
-    setIsFlipped(false);
-  }, [card]);
-
-  return (
-    <div className="flex flex-col items-center justify-center w-full max-w-3xl mx-auto mb-4">
-      <div className="relative w-full px-0 md:px-6">
-        <button
-          onClick={prevCard}
-          className="absolute left-2 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-xl border border-amber-200 bg-white/95 text-2xl font-black text-amber-600 shadow-sm hover:bg-amber-50 active:scale-95 md:flex"
-          type="button"
-          aria-label="上一張"
-          title="上一張"
-        >
-          ←
-        </button>
-        <button
-          onClick={nextCard}
-          className="absolute right-2 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-xl border border-amber-200 bg-white/95 text-2xl font-black text-amber-600 shadow-sm hover:bg-amber-50 active:scale-95 md:flex"
-          type="button"
-          aria-label="下一張"
-          title="下一張"
-        >
-          →
-        </button>
-      <div
-        ref={swipe.ref}
-        onClickCapture={swipe.onClickCapture}
-        style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined, transition: dragX ? 'none' : 'transform 200ms ease' }}
-        className="relative w-full min-h-[390px] sm:min-h-[460px] md:min-h-[520px] cursor-pointer group perspective-1000 touch-pan-y select-none"
-      >
-        <div className="absolute w-full h-full" style={flipInnerStyle(isFlipped)}>
-
-          <div
-            aria-hidden={isFlipped} inert={isFlipped}
-            style={{ ...FLIP_FACE_STYLE, visibility: isFlipped ? 'hidden' : 'visible', pointerEvents: isFlipped ? 'none' : 'auto' }}
-            className="absolute w-full h-full bg-gradient-to-br from-amber-50 via-orange-50/50 to-white rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-5 md:p-8 flex flex-col items-center justify-center backface-hidden transition-shadow dark:from-slate-900 dark:via-amber-950/25 dark:to-slate-950 dark:shadow-black/20"
-            onClick={(e) => {
-              if (e.target.closest('button')) return;
-              setIsFlipped(true);
-            }}
-          >
-            <button
-                aria-label={isStarred ? "取消收藏" : "收藏"} aria-pressed={isStarred} onClick={(e) => { e.stopPropagation(); toggleStar(card.id); }}
-                className="absolute top-4 right-4 w-11 h-11 flex items-center justify-center rounded-xl z-10 bg-white/80 border border-amber-100 shadow-sm"
-            >
-                <Star size={24} className={isStarred ? "fill-amber-400 text-amber-400" : "text-gray-300"} />
-            </button>
-            <div className="text-amber-400 mb-4 opacity-50 md:group-hover:opacity-100 transition-opacity">
-              <RotateCw size={28} />
-            </div>
-            <h2 className="text-[clamp(2rem,12vw,4.5rem)] font-extrabold text-gray-800 mb-3 text-center tracking-tight leading-tight px-2 break-words max-w-full">{card.verb}</h2>
-            <p className="text-base sm:text-xl md:text-2xl text-amber-700 font-medium mb-6 break-words text-center">{card.verbTrans}</p>
-            <button
-              aria-label="播放動詞發音" onClick={(e) => { e.stopPropagation(); speak(card.verb); }}
-              className="p-4 sm:p-5 rounded-xl bg-amber-50 text-amber-600 hover:bg-amber-100 active:scale-95 transition-all mb-4 shadow-sm"
-            >
-              <Volume2 size={24} className="sm:w-7 sm:h-7" />
-            </button>
-            <span className="text-[11px] text-gray-400 font-medium mt-auto bg-gray-50 px-3 py-1.5 rounded-full">
-              點擊翻面
-            </span>
-          </div>
-
-          <div
-            aria-hidden={!isFlipped} inert={!isFlipped}
-            style={{ ...FLIP_FACE_STYLE, ...FLIP_BACK_STYLE, visibility: isFlipped ? 'visible' : 'hidden', pointerEvents: isFlipped ? 'auto' : 'none' }}
-            className="absolute w-full h-full bg-gradient-to-br from-amber-100 via-orange-50 to-amber-50 rounded-2xl shadow-md shadow-amber-900/10 border border-amber-200 p-4 sm:p-5 md:p-8 flex flex-col items-center justify-between backface-hidden overflow-hidden dark:from-amber-950/35 dark:via-orange-950/25 dark:to-slate-900 dark:shadow-black/20"
-            onClick={(e) => {
-              if (e.target.closest('button') || e.target.closest('[data-no-flip]')) return;
-              setIsFlipped(false);
-            }}
-          >
-            <div className="w-full text-center flex-1 overflow-y-auto hide-scrollbar pb-2 min-w-0">
-              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2 mt-2">
-                 <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800 break-words">{card.verb}</h2>
-                 <span className="text-lg sm:text-2xl md:text-3xl font-extrabold text-amber-600">+ {card.prep}</span>
-              </div>
-              <div className="inline-block px-3 py-1 rounded-full bg-amber-200 text-amber-900 text-[10px] sm:text-xs font-bold mb-3 shadow-sm">
-                + {card.case === 'A' ? 'Akkusativ' : 'Dativ'}
-              </div>
-              <div className="w-full bg-amber-50/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-200/70 mb-2.5 text-left dark:bg-slate-900/75 dark:border-amber-900/50">
-                <p className="text-amber-600/80 uppercase text-[9px] sm:text-[10px] font-bold tracking-wider mb-1">Präteritum / Perfekt</p>
-                <p className="text-gray-800 font-medium text-sm sm:text-base break-words">{card.forms}</p>
-              </div>
-              <div className="w-full bg-amber-50/80 backdrop-blur p-2.5 sm:p-3 rounded-2xl shadow-sm border border-amber-200/70 text-left relative dark:bg-slate-900/75 dark:border-amber-900/50">
-                <div className="flex justify-between items-start mb-1 gap-2">
-                   <p className="text-gray-800 text-sm sm:text-base leading-snug font-medium break-words min-w-0">{card.example}</p>
-                   <button
-                    aria-label="播放例句發音" onClick={(e) => { e.stopPropagation(); speak(card.example); }}
-                    className="p-1.5 sm:p-2 rounded-xl text-amber-500 bg-amber-50 hover:bg-amber-100 active:scale-95 transition-colors shrink-0"
-                  >
-                    <Volume2 size={16} />
-                  </button>
-                </div>
-                <p className="text-gray-500 text-xs sm:text-sm">{card.exampleTrans}</p>
-              </div>
-            </div>
-
-            <div
-              className="w-full pt-2 sm:pt-3 mt-1 border-t border-amber-200/50 shrink-0"
-              data-no-flip
-              onClick={(e) => e.stopPropagation()}
-            >
-              <p className="text-[9px] sm:text-[10px] text-center text-amber-700 font-bold mb-1.5 sm:mb-2 tracking-widest uppercase">記憶程度評估</p>
-              <div className="flex gap-1.5 sm:gap-2 w-full justify-center">
-                <button
-                    onClick={(e) => { e.stopPropagation(); handleSRS(card.id, 'hard'); }}
-                    className="flex-1 py-2 sm:py-3 bg-red-100 text-red-700 font-bold rounded-xl text-xs sm:text-sm active:scale-95 transition-transform"
-                >
-                    困難(1天)
-                </button>
-                <button
-                    onClick={(e) => { e.stopPropagation(); handleSRS(card.id, 'good'); }}
-                    className="flex-1 py-2 sm:py-3 bg-amber-200 text-amber-800 font-bold rounded-xl text-xs sm:text-sm active:scale-95 transition-transform"
-                >
-                    普通(3天)
-                </button>
-                <button
-                    onClick={(e) => { e.stopPropagation(); handleSRS(card.id, 'easy'); }}
-                    className="flex-1 py-2 sm:py-3 bg-green-100 text-green-700 font-bold rounded-xl text-xs sm:text-sm active:scale-95 transition-transform"
-                >
-                    簡單(7天)
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-
-      <div className="mt-4 grid grid-cols-2 gap-3 w-full md:hidden">
-        <button
-          onClick={prevCard}
-          className="rounded-2xl bg-white border border-amber-100 px-4 py-3 text-sm font-black text-amber-700 shadow-sm active:scale-95"
-          type="button"
-        >
-          ← 上一張
-        </button>
-        <button
-          onClick={nextCard}
-          className="rounded-2xl bg-amber-600 px-4 py-3 text-sm font-black text-white shadow-sm active:scale-95"
-          type="button"
-        >
-          下一張 →
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// --- 3.2 Quiz Component ---
-const Quiz = ({ data, speak, addHistory, userData, onlyStarred }) => {
-  const [mode, setMode] = useState('word');
-  const [question, setQuestion] = useState(null);
-  const [options, setOptions] = useState([]);
-  const [score, setScore] = useState(0);
-  const [streak, setStreak] = useState(0);
-  const [answered, setAnswered] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [showHint, setShowHint] = useState(false);
-  const [picked, setPicked] = useState(null);
-
-  const quizPool = useMemo(() => {
-    let pool = data;
-    if (onlyStarred) {
-        pool = data.filter(d => userData.starred.includes(d.id));
-    }
-    return pool.length > 0 ? pool : data;
-  }, [data, userData.starred, onlyStarred]);
-
-  // wo/da items follow the starred filter through the entry they belong to.
-  const woDaPool = useMemo(() => {
-    const ids = new Set(quizPool.map(d => d.id));
-    const pool = woDaPractice.filter(item => ids.has(item.entryId));
-    return pool.length > 0 ? pool : woDaPractice;
-  }, [quizPool]);
-
-  const generateQuestion = useCallback(() => {
-    if (mode === 'woda') {
-      const item = woDaPool[Math.floor(Math.random() * woDaPool.length)];
-      const entry = data.find(d => d.id === item.entryId);
-      const otherPreps = [...new Set(data.map(d => d.prep))].sort(() => 0.5 - Math.random());
-      setQuestion({ ...entry, woda: item, answer: woDaAnswer(item, entry), key: `woda-${item.id}` });
-      setOptions(woDaOptions(item, entry, otherPreps).sort(() => 0.5 - Math.random()));
-      setAnswered(false);
-      setIsCorrect(false);
-      setShowHint(false);
-      setPicked(null);
-      return;
-    }
-    const randomIdx = Math.floor(Math.random() * quizPool.length);
-    const q = quizPool[randomIdx];
-    setQuestion(q);
-    setAnswered(false);
-    setIsCorrect(false);
-    setShowHint(false);
-    setPicked(null);
-
-    let correctOpt = "";
-    let distractors = [];
-
-    if (mode === 'case') {
-      correctOpt = q.case === 'A' ? 'Akkusativ' : 'Dativ';
-      setOptions(['Akkusativ', 'Dativ']);
-    } else {
-      correctOpt = q.prep;
-      const allPreps = [...new Set(data.map(d => d.prep))];
-      // Verbs like sprechen (über/mit) have two right answers; never offer the other one as a distractor.
-      const validPreps = data.filter(d => d.verb === q.verb).map(d => d.prep);
-      const wrongPreps = allPreps.filter(p => !validPreps.includes(p));
-      distractors = wrongPreps.sort(() => 0.5 - Math.random()).slice(0, 3);
-      setOptions([correctOpt, ...distractors].sort(() => 0.5 - Math.random()));
-    }
-  }, [quizPool, woDaPool, mode, data]);
-
-  useEffect(() => {
-    generateQuestion();
-  }, [generateQuestion]);
-
-  const handleAnswer = (opt) => {
-    if (answered) return;
-
-    let correct = false;
-    if (mode === 'woda') {
-      correct = opt === question.answer;
-    } else if (mode === 'case') {
-      correct = (opt === 'Akkusativ' && question.case === 'A') || (opt === 'Dativ' && question.case === 'D');
-    } else {
-      correct = opt === question.prep;
-    }
-
-    answerCue(correct, mode === 'woda' ? fillWoDa(question.woda, question.answer) : `${question.verb} ${question.prep} + ${question.case === 'A' ? 'Akkusativ' : 'Dativ'}`);
-    setAnswered(true);
-    setIsCorrect(correct);
-    setPicked(opt);
-
-    if (correct) {
-      setScore(s => s + 10);
-      setStreak(s => s + 1);
-    } else {
-      setStreak(0);
-    }
-    // wo/da: read the completed sentence either way, so the right form is heard in context.
-    if (mode === 'woda') speak(fillWoDa(question.woda, question.answer));
-    else if (correct) speak("Richtig!");
-    else speak(`Falsch. Die Antwort ist ${mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`);
-
-    addHistory({
-      mode,
-      score: correct ? 10 : 0,
-      verb: question.verb,
-      correct: correct,
-      date: new Date().toISOString()
-    });
-  };
-
-  useAnswerShortcuts({ options, answered, onSelect: handleAnswer, onNext: generateQuestion, enabled: !!question });
-  const feedbackRef = useRevealOnShow(answered);
-
-  if (!question) return <div className="p-8 text-center text-gray-500">準備測驗中...</div>;
-
-  return (
-    <div className="w-full max-w-xl mx-auto bg-white rounded-3xl shadow-lg border border-amber-100 p-4 sm:p-5 md:p-6">
-
-      {onlyStarred && quizPool.length < data.length && (
-          <div className="mb-4 bg-amber-100 text-amber-800 px-3 py-2 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 font-bold text-center">
-              <Star size={16} className="fill-amber-500 text-amber-500 shrink-0"/>
-              <span>專屬單字本 ({quizPool.length} 個單字)</span>
-          </div>
-      )}
-
-      <div className="flex justify-between items-center mb-5 bg-amber-50 p-3 sm:p-4 rounded-2xl">
-        <div className="flex items-center gap-1.5 sm:gap-2 text-amber-700">
-          <Trophy size={20} className="sm:w-6 sm:h-6" />
-          <span className="font-extrabold text-base sm:text-lg">{score} Pts</span>
-        </div>
-        <div className="flex items-center gap-1.5 sm:gap-2 text-orange-600">
-          <span className="text-xs sm:text-sm font-bold">連勝: {streak}</span>
-          <div className="flex gap-1">
-            {[...Array(Math.min(streak, 5))].map((_, i) => (
-                <div key={i} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-orange-500 shadow-sm" />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-4 gap-1.5 mb-6 sm:flex sm:gap-2 sm:overflow-x-auto sm:pb-2 hide-scrollbar">
-        {['word', 'sentence', 'case', 'woda'].map(m => (
-            <button
-                key={m}
-                onClick={() => setMode(m)}
-                className={`px-1 sm:px-5 py-2.5 rounded-full text-[11px] sm:text-sm font-bold whitespace-nowrap transition-all flex-1 ${mode === m ? 'bg-amber-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
-            >
-                {{ word: '單字模式', sentence: '例句填空', case: '格位判斷', woda: 'wo/da 代換' }[m]}
-            </button>
-        ))}
-      </div>
-
-      <div className="text-center mb-6 min-h-[110px] sm:min-h-[120px] flex flex-col items-center justify-center px-1 min-w-0">
-        {mode === 'word' && (
-          <>
-            <h2 className="text-[clamp(1.9rem,11vw,2.75rem)] sm:text-4xl font-extrabold text-gray-800 mb-2 break-words max-w-full">{question.verb}</h2>
-            <p className="text-base sm:text-lg text-amber-700 font-medium break-words">{question.verbTrans}</p>
-            {showHint && <p className="mt-4 text-xs sm:text-sm text-gray-500 font-medium bg-gray-50 p-3 rounded-xl border border-gray-100">提示：{(() => { const b = blankPreposition(question.example, question.prep); return b ? `${b.before}___${b.after}` : question.example; })()}</p>}
-          </>
-        )}
-        {mode === 'sentence' && (
-          <>
-            {(() => {
-              const blank = blankPreposition(question.example, question.prep);
-              if (!blank) return <p className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">{question.example}</p>;
-              return (
-                <>
-                  <p className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">
-                    {blank.before}
-                    {answered
-                      ? <span className="mx-1 rounded-md bg-amber-100 px-1.5 text-amber-800">{blank.found}</span>
-                      : <span className="inline-block w-12 sm:w-16 border-b-4 border-amber-400 mx-1 sm:mx-2 mb-1"></span>}
-                    {blank.after}
-                  </p>
-                  {blank.contraction && (
-                    <p className="mt-2 text-xs sm:text-sm font-bold text-gray-500">
-                      {answered ? `${blank.contraction.form} = ${blank.contraction.expansion}` : '空格處是縮寫或複合形式，請選出原本的介系詞'}
-                    </p>
-                  )}
-                </>
-              );
-            })()}
-            <p className="text-sm sm:text-base text-amber-700 font-medium mt-4 bg-amber-50 px-3 sm:px-4 py-1.5 rounded-full inline-block">{question.verb} ({question.verbTrans})</p>
-          </>
-        )}
-        {mode === 'woda' && question.woda && (
-          <>
-            <p className="mb-3 text-xs sm:text-sm font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full">{WO_DA_KIND_LABEL[question.woda.kind]}</p>
-            <p lang="de" className="text-base sm:text-xl md:text-2xl font-bold text-gray-800 leading-relaxed break-words">
-              {(() => {
-                const [before, after] = question.woda.sentence.split('___');
-                return <>
-                  {before}
-                  {answered
-                    ? <span className="mx-1 rounded-md bg-amber-100 px-1.5 text-amber-800">{question.answer}</span>
-                    : <span className="inline-block w-16 sm:w-20 border-b-4 border-amber-400 mx-1 sm:mx-2 mb-1"></span>}
-                  {after}
-                </>;
-              })()}
-            </p>
-            {answered && (
-              <div className="mt-4 space-y-2 text-sm text-left w-full">
-                <p className="text-gray-600">{question.woda.trans}</p>
-                <p className="rounded-xl bg-amber-50 border border-amber-100 px-3 py-2 text-amber-800 font-medium">
-                  <span lang="de" className="font-extrabold">{question.verb} {question.prep} + {question.case === 'A' ? 'Akk' : 'Dat'}</span>　{WO_DA_RULES[question.woda.kind]}
-                </p>
-              </div>
-            )}
-          </>
-        )}
-        {mode === 'case' && (
-          <>
-            <h2 className="text-[clamp(1.5rem,8vw,2.5rem)] md:text-4xl font-extrabold text-gray-800 mb-3 break-words">
-              {question.verb} <span className="text-amber-600">+ {question.prep}</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-500 font-medium bg-gray-50 px-4 py-2 rounded-full">後面應該接什麼格位？</p>
-          </>
-        )}
-
-        {mode === 'word' && !showHint && !answered && (
-          <button
-            onClick={() => setShowHint(true)}
-            className="mt-5 text-xs sm:text-sm font-bold text-amber-600 bg-amber-50 px-4 py-2 rounded-full hover:bg-amber-100"
-          >
-            💡 顯示提示例句
-          </button>
-        )}
-      </div>
-
-      <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-2">
-        {options.map((opt, idx) => {
-          let btnClass = "py-4 sm:py-5 rounded-2xl border-2 font-bold text-base sm:text-lg transition-all duration-200 active:scale-95 shadow-sm ";
-          if (answered) {
-            const isThisCorrect = mode === 'woda' ? opt === question.answer : mode === 'case'
-              ? ((opt === 'Akkusativ' && question.case === 'A') || (opt === 'Dativ' && question.case === 'D'))
-              : (opt === question.prep);
-
-            if (isThisCorrect) {
-              btnClass += "fx-correct bg-green-100 border-green-500 text-green-700 scale-[1.02] shadow-md";
-            } else if (opt === picked) {
-               btnClass += "fx-wrong bg-red-100 border-red-500 text-red-700";
-            } else {
-               btnClass += "bg-gray-50 border-gray-100 text-gray-400 opacity-60";
-            }
-          } else {
-            btnClass += "bg-white border-gray-200 hover:border-amber-400 hover:bg-amber-50 hover:text-amber-700 text-gray-700";
-          }
-
-          return (
-            <button key={`${question.key || question.id}-${opt}`} data-answer-option disabled={answered} onClick={() => handleAnswer(opt)} className={`${btnClass} inline-flex items-center justify-center gap-2`}>
-              {!answered && idx < 9 && <span className="kbd-hint" aria-hidden="true">{idx + 1}</span>}
-              {opt}
-            </button>
-          )
-        })}
-      </div>
-
-      <div ref={feedbackRef} key={answered ? 'answered' : 'open'} role="status" className={`${answered ? 'fx-enter ' : ''}scroll-mb-6 p-3 sm:p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 mt-5 ${answered ? (isCorrect ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200') : 'bg-slate-50 text-slate-600 border border-slate-100'}`}>
-        <div className="flex items-center gap-2">
-          {answered && (isCorrect ? <CheckCircle size={20} className="sm:w-6 sm:h-6" /> : <XCircle size={20} className="sm:w-6 sm:h-6" />)}
-          <span className="font-extrabold text-sm sm:text-base">
-            {answered
-              ? (isCorrect ? '正確' : `正確答案: ${mode === 'woda' ? question.answer : mode === 'case' ? (question.case === 'A' ? 'Akkusativ' : 'Dativ') : question.prep}`)
-              : '可以作答，也可以先看下一題'}
-          </span>
-        </div>
-        <button
-          onClick={generateQuestion}
-          className="w-full md:w-auto px-5 py-2.5 sm:py-3 bg-white rounded-xl shadow font-extrabold text-sm border hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 active:scale-95"
-        >
-          {answered ? '下一題' : '跳過'} <Play size={16} className="fill-current" />
-          {answered && <span className="kbd-hint" aria-hidden="true">Enter</span>}
-        </button>
-      </div>
-    </div>
-  );
-};
+function SentencePrompt({ item, picked }) {
+  const blank = blankPreposition(item.example, item.prep);
+  return <>
+    {blank
+      ? <p className="lc-sentence" lang="de">{blank.before}{picked ? <span className="lc-filled">{blank.found}</span> : <span className="lc-blank"/>}{blank.after}</p>
+      : <p className="lc-sentence" lang="de">{item.example}</p>}
+    {blank?.contraction && <p className="lc-sub">{picked ? `${blank.contraction.form} = ${blank.contraction.expansion}` : '空格處是縮寫或複合形式，請選出原本的介系詞'}</p>}
+    <p className="lc-sub"><span lang="de">{item.verb}</span>（{item.verbTrans}）</p>
+  </>;
+}
 
 // --- 3.3 List View Component ---
 const VerbList = ({ data, speak, userData, toggleStar }) => {
@@ -477,8 +61,8 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
   }, [data, searchTerm, showOnlyStarred, userData.starred]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto pb-4">
-      <div className="bg-white p-3 sm:p-4 rounded-3xl shadow-sm border border-gray-100 mb-5 sticky top-2 z-10 flex flex-col gap-3">
+    <div className="w-full">
+      <div className="bg-white p-3 sm:p-4 rounded-3xl shadow-sm border border-gray-100 mb-3 flex flex-col gap-3">
         <div className="relative">
             <Search className="absolute left-4 top-3.5 text-gray-400" size={18} />
             <input
@@ -570,278 +154,145 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
   );
 };
 
-// --- 3.4 Settings & Cloud Sync Component ---
-const SettingsView = ({ voiceData, userData, user }) => {
-  const { voices, selectedVoiceURI, setSelectedVoiceURI, rate, setRate, speak } = voiceData;
-
-  const formatDate = (isoString) => {
-    return new Date(isoString).toLocaleString('zh-TW', {
-      month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
-    });
-  };
-
-  return (
-    <div className="w-full max-w-lg mx-auto space-y-5 sm:space-y-6 pb-6 px-1">
-      <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-5 sm:p-6 rounded-3xl shadow-lg text-white">
-        <div className="flex items-center gap-2.5 sm:gap-3 mb-2">
-            {user ? <Cloud size={24} className="text-blue-200" /> : <CloudOff size={24} className="text-blue-200" />}
-            <h2 className="text-xl sm:text-2xl font-extrabold">學習紀錄同步</h2>
-        </div>
-        <p className="text-blue-100 text-xs sm:text-sm font-medium mb-4">
-            {user ? `已連線 (ID: ${user.uid.slice(0,6)}...)` : '目前使用本機紀錄'}
-        </p>
-        <div className="bg-white/20 backdrop-blur rounded-2xl p-3 sm:p-4 flex justify-between items-center">
-            <div className="text-center">
-                <div className="text-xl sm:text-2xl font-black">{userData.starred.length}</div>
-                <div className="text-[10px] sm:text-xs text-blue-100 font-bold">已收藏單字</div>
-            </div>
-            <div className="text-center">
-                <div className="text-xl sm:text-2xl font-black">{Object.keys(userData.srs).length}</div>
-                <div className="text-[10px] sm:text-xs text-blue-100 font-bold">已複習卡片</div>
-            </div>
-            <div className="text-center">
-                <div className="text-xl sm:text-2xl font-black">{userData.history.length}</div>
-                <div className="text-[10px] sm:text-xs text-blue-100 font-bold">測驗紀錄</div>
-            </div>
-        </div>
-      </div>
-
-      <div className="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-gray-100">
-        <h2 className="text-lg sm:text-xl font-extrabold text-gray-800 mb-4 sm:mb-5 flex items-center gap-2">
-          <Settings size={20} className="text-amber-500" /> 語音設定
-        </h2>
-
-        <div className="space-y-4 sm:space-y-5">
-          <div>
-            <label className="block text-xs sm:text-sm font-bold text-gray-700 mb-2">選擇語音 (德語)</label>
-            <div className="relative">
-                <select
-                value={selectedVoiceURI || ''}
-                onChange={(e) => {
-                    setSelectedVoiceURI(e.target.value);
-
-                }}
-                className="w-full p-3 sm:p-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-amber-500 outline-none text-sm sm:text-base font-medium appearance-none"
-                >
-                <option value="">自然人聲（預設）</option>
-                {voices.map(v => (
-                    <option key={v.voiceURI} value={v.voiceURI}>
-                    {v.name} ({v.lang})
-                    </option>
-                ))}
-                </select>
-                <ChevronDown className="absolute right-3 sm:right-4 top-3.5 sm:top-4 text-gray-400 pointer-events-none" size={16} />
-            </div>
-          </div>
-
-          <div>
-            <div className="flex justify-between items-center mb-2">
-                <label className="text-xs sm:text-sm font-bold text-gray-700">語速</label>
-                <span className="text-xs sm:text-sm font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">{rate}x</span>
-            </div>
-            <input
-              type="range"
-              min="0.5" max="1.5" step="0.1"
-              value={rate}
-              onChange={(e) => setRate(parseFloat(e.target.value))}
-              className="w-full h-1.5 sm:h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
-            />
-          </div>
-
-          <button
-            onClick={() => speak("Das ist ein Test für die Aussprache.")}
-            className="w-full py-3 sm:py-3.5 bg-amber-100 text-amber-700 rounded-xl hover:bg-amber-200 active:scale-95 transition-all text-sm sm:text-base font-bold flex justify-center items-center gap-2"
-          >
-            <Volume2 size={18} /> 測試發音
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 
 export default function VerbWithPreposition() {
-  const [activeTab, setActiveTab] = useState('flashcards');
-  const [reviewOnly, setReviewOnly] = useState(false);
-  useEffect(() => { if (isReviewRequested()) setReviewOnly(true); }, []);
-  const [flashcardIndex, setFlashcardIndex] = useState(0);
-  const speechData = useSpeech();
-  const [onlyStarredFlashcards, setOnlyStarredFlashcards] = useState(false);
-
-  const [user, setUser] = useState(null);
+  const [voice, setVoice] = useState('');
+  const [rate, setRate] = useState(0.9);
+  const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI: voice, rate });
   const [userData, setUserData] = useStoredProgress('verb-preposition-trainer-v1', loadLesson2Progress);
 
-  useEffect(() => {
-    const services = getFirebaseServices();
-    if (!services) return;
-
-    const unsubscribe = onAuthStateChanged(services.auth, setUser);
-    return () => unsubscribe();
-  }, []);
-
-  const updateCloudData = (newData) => {
-    setUserData(previous => ({ ...previous, ...newData }));
+  const itemsFor = ({ practice, only }) => {
+    const saved = id => only !== 'saved' || userData.starred.includes(id);
+    return practice === 'woda' ? woDaPractice.filter(item => saved(item.entryId)) : verbData.filter(item => saved(item.id));
   };
+  const reviewItems = () => verbData.filter(item => isLesson2Due(userData.srs[item.id]));
 
-  const toggleStar = (verbId) => {
-      const isStarred = userData.starred.includes(verbId);
-      const newStarred = isStarred
-        ? userData.starred.filter(id => id !== verbId)
-        : [...userData.starred, verbId];
-      updateCloudData({ starred: newStarred });
-  };
+  const toggleStar = id => setUserData(prev => ({ ...prev, starred: prev.starred.includes(id) ? prev.starred.filter(entry => entry !== id) : [...prev.starred, id] }));
+  const addHistory = record => setUserData(prev => ({ ...prev, history: [...prev.history, record] }));
 
-  const addHistory = (record) => {
-      updateCloudData({ history: [...userData.history, record] });
-  };
+  function rateCard(id, rating) {
+    setUserData(prev => {
+      const current = prev.srs[id]?.interval || 0;
+      const interval = rating === 'hard' ? 1 : rating === 'good' ? (current === 0 ? 3 : current * 2) : (current === 0 ? 7 : current * 3);
+      return { ...prev, srs: { ...prev.srs, [id]: { interval, nextReview: Date.now() + interval * 86400000, updatedAt: new Date().toISOString() } } };
+    });
+  }
 
-  const handleSRS = (verbId, rating) => {
-      const now = Date.now();
-      let currentInterval = userData.srs[verbId]?.interval || 0;
-      let nextInterval = 0;
+  const records = [
+    ['已收藏', userData.starred.length],
+    ['已複習卡片', Object.keys(userData.srs).length],
+    ['測驗紀錄', userData.history.length]
+  ];
+  const panels = [
+    { id: 'list', title: '動詞列表', render: () => <VerbList data={verbData} speak={speak} userData={userData} toggleStar={toggleStar}/> },
+    { id: 'voice', title: '語音設定', render: () => <VoiceSettings voices={voices} voice={voice} onVoice={setVoice} rate={rate} onRate={setRate} speak={speak}/> }
+  ];
 
-      if (rating === 'hard') {
-          nextInterval = 1;
-      } else if (rating === 'good') {
-          nextInterval = currentInterval === 0 ? 3 : currentInterval * 2;
-      } else if (rating === 'easy') {
-          nextInterval = currentInterval === 0 ? 7 : currentInterval * 3;
-      }
-
-      const nextReviewDate = now + (nextInterval * 24 * 60 * 60 * 1000);
-
-      const newSrs = {
-          ...userData.srs,
-          [verbId]: { interval: nextInterval, nextReview: nextReviewDate, updatedAt: new Date().toISOString() }
-      };
-      updateCloudData({ srs: newSrs });
-      if (!reviewOnly) setFlashcardIndex(i => (i + 1) % (deck.length || 1));
-  };
-
-  const deck = useMemo(() => {
-      if (reviewOnly) return verbData.filter(v => isLesson2Due(userData.srs[v.id]));
-      if (onlyStarredFlashcards && userData.starred.length > 0) {
-          return verbData.filter(v => userData.starred.includes(v.id));
-      }
-      return verbData;
-  }, [onlyStarredFlashcards, userData.starred, userData.srs, reviewOnly]);
-
-  useEffect(() => {
-      if (flashcardIndex >= deck.length) setFlashcardIndex(0);
-  }, [deck, flashcardIndex]);
-
-  const currentCard = deck[flashcardIndex] || deck[0];
-  const nextCard = useCallback(() => setFlashcardIndex((i) => (i + 1) % (deck.length || 1)), [deck.length]);
-  const prevCard = useCallback(() => setFlashcardIndex((i) => (i - 1 + deck.length) % (deck.length || 1)), [deck.length]);
-
-  useEffect(() => {
-    const handleGlobalKeyDown = (e) => {
-      if (activeTab !== 'flashcards') return;
-      if (e.key === 'ArrowRight') nextCard();
-      if (e.key === 'ArrowLeft') prevCard();
-    };
-    window.addEventListener('keydown', handleGlobalKeyDown);
-    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
-  }, [activeTab, nextCard, prevCard]);
-
-  return (
-    <div className="w-full relative pb-24 md:pb-8 text-gray-800 font-sans selection:bg-amber-200">
-
-      {speechData.speechMessage && <p role="status" className="speech-toast">{speechData.speechMessage}</p>}
-      {/* 電腦版/平板版專用的頂部工具列 */}
-      <div className="hidden md:grid grid-cols-4 gap-2 mb-3 rounded-2xl bg-white shadow-sm border border-slate-200 p-3">
-        {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {
-              const icons = { 'flashcards': RotateCw, 'quiz': Brain, 'list': List, 'settings': Settings };
-              const labels = { 'flashcards': '字卡', 'quiz': '測驗', 'list': '列表', 'settings': '設定' };
-              const Icon = icons[tab];
-              const isActive = activeTab === tab;
-
-              return (
-                  <button key={tab} onClick={() => setActiveTab(tab)} className={`min-h-10 flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl font-black text-sm border transition-all ${isActive ? 'bg-amber-600 text-white border-amber-600 shadow-sm' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'}`}>
-                      <Icon size={18} strokeWidth={isActive ? 2.5 : 2} />
-                      {labels[tab]}
-                  </button>
-              )
-          })}
-      </div>
-
-      <main className="w-full">
-
-        {activeTab === 'flashcards' && currentCard && (
-          <div className="flex flex-col items-center">
-
-            <div className="w-full flex justify-center items-center mb-3 max-w-3xl px-1">
-              <div className="flex flex-col items-center">
-                  <span className="text-gray-500 font-black font-mono bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 text-base sm:text-lg">
-                      {deck.length ? flashcardIndex + 1 : 0} / {deck.length}
-                  </span>
-                  {userData.starred.length > 0 && (
-                      <button
-                          onClick={() => setOnlyStarredFlashcards(!onlyStarredFlashcards)}
-                          className="text-[10px] sm:text-xs mt-1.5 font-bold flex items-center gap-1 text-gray-400 hover:text-amber-500"
-                      >
-                          <Star size={12} className={onlyStarredFlashcards ? "fill-amber-400 text-amber-400" : ""} />
-                          {onlyStarredFlashcards ? '顯示全部' : '僅顯示已收藏'}
-                      </button>
-                  )}
-              </div>
-            </div>
-
-            {reviewOnly && <button onClick={() => setReviewOnly(false)} className="mb-3 rounded-xl border px-4 py-2">今日到期複習 · 顯示全部</button>}
-            {currentCard ? <Flashcard
-                card={currentCard}
-                speak={speechData.speak}
-                isStarred={userData.starred.includes(currentCard.id)}
-                toggleStar={toggleStar}
-                handleSRS={handleSRS}
-                nextCard={nextCard}
-                prevCard={prevCard}
-            /> : <p role="status" className="p-6 text-center">目前沒有到期的複習內容。</p>}
-          </div>
-        )}
-
-        {activeTab === 'quiz' && (
-          <Quiz data={verbData} speak={speechData.speak} addHistory={addHistory} userData={userData} onlyStarred={onlyStarredFlashcards} />
-        )}
-
-        {activeTab === 'list' && (
-          <VerbList data={verbData} speak={speechData.speak} userData={userData} toggleStar={toggleStar} />
-        )}
-
-        {activeTab === 'settings' && (
-          <SettingsView voiceData={speechData} userData={userData} user={user} />
-        )}
-
-      </main>
-
-      {/* 手機版底部導覽列 (改為 fixed 貼合手機最底部，不會因為內容長度而亂跑) */}
-      <nav className="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden z-50 pb-safe">
-        <div className="flex justify-around items-center h-[72px]">
-          {['flashcards', 'quiz', 'list', 'settings'].map((tab) => {
-              const icons = { 'flashcards': RotateCw, 'quiz': Brain, 'list': List, 'settings': Settings };
-              const labels = { 'flashcards': '字卡', 'quiz': '測驗', 'list': '列表', 'settings': '設定' };
-              const Icon = icons[tab];
-              const isActive = activeTab === tab;
-
-              return (
-                  <button key={tab} onClick={() => setActiveTab(tab)} className={`flex flex-col items-center justify-center w-full h-full gap-1 ${isActive ? 'text-amber-600' : 'text-gray-400 hover:text-amber-400'}`}>
-                      <Icon size={22} strokeWidth={isActive ? 2.5 : 2} className={`transition-all ${isActive ? 'scale-110' : ''}`} />
-                      <span className={`text-[10px] ${isActive ? 'font-extrabold' : 'font-medium'}`}>{labels[tab]}</span>
-                  </button>
-              )
-          })}
+  function renderFlash({ key, item, isLast, report, next, prev }) {
+    const starred = userData.starred.includes(item.id);
+    return <FlipCard
+      key={key}
+      tag={`+ ${item.prep}`}
+      actions={<button type="button" className="lc-flag" aria-label={starred ? '取消收藏' : '收藏'} aria-pressed={starred} onClick={() => toggleStar(item.id)}><Star size={16} fill={starred ? 'currentColor' : 'none'}/></button>}
+      front={<div className="calm-word-block">
+        <p className="calm-word" lang="de">{item.verb}</p>
+        <p className="lc-sub is-center">{item.verbTrans}</p>
+        <button type="button" className="calm-icon" aria-label="播放動詞發音" onClick={() => speak(item.verb)}><Volume2 size={22}/></button>
+      </div>}
+      back={<div className="calm-answer">
+        <p className="lc-sentence is-center" lang="de">{item.verb} + {item.prep}</p>
+        <div className="calm-tags"><span>+ {CASE_NAME[item.case]}</span></div>
+        <p className="calm-forms" lang="de">{item.forms}</p>
+        <div className="calm-example">
+          <p lang="de">{item.example} <button type="button" className="calm-icon calm-inline-sound" aria-label="播放例句發音" onClick={() => speak(item.example)}><Volume2 size={16}/></button></p>
+          <p className="calm-example-zh">{item.exampleTrans}</p>
         </div>
-      </nav>
+      </div>}
+      footer={<div className="calm-actions">
+        {[['hard', '困難', '1 天'], ['good', '普通', '3 天'], ['easy', '簡單', '7 天']].map(([rating, label, days]) => (
+          <button key={rating} type="button" className="calm-rate lc-rate" data-tone={rating === 'easy' ? 'know' : undefined} onClick={() => { rateCard(item.id, rating); next(); }}>{label}<small>{days}</small></button>
+        ))}
+      </div>}
+      onFirstReveal={() => report(null, '')}
+      isLast={isLast}
+      onNext={next}
+      onPrev={prev}
+    />;
+  }
 
-      <style>{`
-          .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
-          .perspective-1000 { perspective: 1000px; }
-          .preserve-3d { transform-style: preserve-3d; }
-          .backface-hidden { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
-          .hide-scrollbar::-webkit-scrollbar { display: none; }
-          .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
-    </div>
-  );
+  function renderQuestion(args) {
+    const { key, item, isLast, report, next, prev, selection, review } = args;
+    const practice = review ? 'flash' : selection.practice;
+    if (practice === 'flash') return renderFlash(args);
+    if (practice === 'woda') {
+      const entry = entryFor(item);
+      const answer = woDaAnswer(item, entry);
+      const solved = fillWoDa(item, answer);
+      const [before, after] = item.sentence.split('___');
+      return <ChoiceCard
+        key={key}
+        tag={PRACTICE_LABELS.woda}
+        hint={WO_DA_KIND_LABEL[item.kind]}
+        prompt={picked => <p className="lc-sentence" lang="de">{before}{picked ? <span className="lc-filled">{answer}</span> : <span className="lc-blank"/>}{after}</p>}
+        options={woDaOptions(item, entry, randomly(ALL_PREPS))}
+        answer={answer}
+        wrongTitle={`正確答案：${answer}`}
+        solved={solved}
+        translation={item.trans}
+        extra={<p className="lc-rule"><span lang="de">{entry.verb} {entry.prep} + {entry.case === 'A' ? 'Akk' : 'Dat'}</span>　{WO_DA_RULES[item.kind]}</p>}
+        isLast={isLast}
+        onSpeak={() => speak(solved)}
+        onPrev={prev}
+        onSkip={next}
+        onNext={next}
+        onChoose={(_, correct) => {
+          report(correct, solved);
+          speak(solved);
+          addHistory({ mode: 'woda', score: correct ? 10 : 0, verb: entry.verb, correct, date: new Date().toISOString() });
+        }}
+      />;
+    }
+    const isCase = practice === 'case';
+    const answer = isCase ? CASE_NAME[item.case] : item.prep;
+    // Verbs like sprechen (über/mit) have two right answers; never offer the other one as a distractor.
+    const validPreps = verbData.filter(entry => entry.verb === item.verb).map(entry => entry.prep);
+    const options = isCase ? ['Akkusativ', 'Dativ'] : [item.prep, ...randomly(ALL_PREPS.filter(prep => !validPreps.includes(prep))).slice(0, 3)];
+    return <ChoiceCard
+      key={key}
+      tag={PRACTICE_LABELS[practice]}
+      prompt={picked => practice === 'word' ? <WordPrompt item={item} picked={picked}/>
+        : practice === 'sentence' ? <SentencePrompt item={item} picked={picked}/>
+        : <><p className="lc-sentence is-center" lang="de">{item.verb} + {item.prep}</p><p className="lc-sub is-center">後面應該接什麼格位？</p></>}
+      options={options}
+      answer={answer}
+      wrongTitle={`正確答案：${answer}`}
+      solved={`${item.verb} ${item.prep} + ${CASE_NAME[item.case]}`}
+      isLast={isLast}
+      onPrev={prev}
+      onSkip={next}
+      onNext={next}
+      onChoose={(_, correct) => {
+        report(correct, `${item.verb} ${item.prep} + ${CASE_NAME[item.case]}`);
+        speak(correct ? 'Richtig!' : `Falsch. Die Antwort ist ${answer}`);
+        addHistory({ mode: practice, score: correct ? 10 : 0, verb: item.verb, correct, date: new Date().toISOString() });
+      }}
+    />;
+  }
+
+  return <>
+    {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
+    <LessonApp
+      lessonKey="l2"
+      title="動詞與介系詞"
+      blurb="動詞＋介系詞＋格位要整組記。"
+      filters={FILTERS}
+      itemsFor={itemsFor}
+      reviewItems={reviewItems}
+      records={records}
+      panels={panels}
+      featuredPanels={['list']}
+      unit={selection => (selection.practice === 'flash' ? '張' : '題')}
+      renderQuestion={renderQuestion}
+    />
+  </>;
 }

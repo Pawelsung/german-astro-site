@@ -62,6 +62,12 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-10 第 1～6 課換新外框（Claude Code，已部署）
+
+- 做了什麼：第 6、4、5、2、3 課改用 `LessonApp`，全部題型都保留，進度沿用原本的 key 和格式；第 1 課換外框，內部 7 種練習不變。刪除 `LessonShell`、`LessonModes`、`LessonSkeleton` 和對應樣式。各課詳細做法見 `docs/phase2-lesson-redesign.md`。
+- 驗證：119 個測試通過、建置通過；本機手機寬度用腳本走完第 2～6 課各練習方式的整輪（第 2 課字卡、wo/da、例句，第 3 課字卡、拼寫、助動詞、情態動詞，第 4、5、6 課），無橫向捲動、無主控台錯誤，第 5 課的排序、改寫、改錯、自我對照也走過；進度有寫入原本的 key。淺色和深色看過字卡、範圍選單、列表、文法速查。
+- 還沒做什麼：未用真實帳號和 iPhone 實機測試；第 2 課的格位判斷、第 5 課的配對和短文填空只走過共用流程，抽到才會測到。
+
 ### 2026-11-10 第 7 課換新畫面、共用外框、課程進度上傳合併（Claude Code，已部署）
 
 - 做了什麼：`LessonFrame.astro` 加 `components/lesson/`（`LessonApp`、`ChoiceCard`、`BottomSheet`）；第 7 課改用新外框，進度仍寫在原本的 key，格式不變。`VocabPicker` 改用共用的 `BottomSheet`，樣式前綴由 `.vp-` 改成 `.picker-`。第 2～7 課上傳前先和雲端合併（`mergeLessonValue`），第 2 課歷史紀錄重複合併不會變多。

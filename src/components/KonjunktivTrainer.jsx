@@ -10,10 +10,7 @@ import { STAGES, konjunktivExercises } from '../data/lesson7-konjunktiv';
 
 const ALL_ITEMS = [...formExercises(), ...konjunktivExercises];
 const loadProgress = () => readProgressMap(PROGRESS_KEYS.lesson7);
-const SCOPES = [
-  { id: 'all', label: '全部範圍', count: ALL_ITEMS.length },
-  ...STAGES.map(stage => ({ id: stage.id, label: stage.label, count: ALL_ITEMS.filter(item => item.stage === stage.id).length }))
-];
+const FILTERS = [{ id: 'stage', label: '範圍', options: [{ id: 'all', label: '全部範圍' }, ...STAGES.map(({ id, label }) => ({ id, label }))] }];
 
 // The German text read aloud and shown in the feedback once the item is answered.
 function solvedText(item) {
@@ -56,10 +53,10 @@ export default function KonjunktivTrainer() {
     ];
   }, [progress]);
 
-  const itemsFor = useCallback(scope => ALL_ITEMS.filter(item => scope === 'all' || item.stage === scope), []);
+  const itemsFor = useCallback(({ stage }) => ALL_ITEMS.filter(item => stage === 'all' || item.stage === stage), []);
   const reviewItems = () => ALL_ITEMS.filter(item => needsReview(progress[item.id]));
 
-  function renderQuestion({ key, item, isLast, report, next }) {
+  function renderQuestion({ key, item, isLast, report, next, prev }) {
     const stage = STAGES.find(entry => entry.id === item.stage);
     const answer = item.options[0];
     const solved = solvedText(item);
@@ -79,6 +76,7 @@ export default function KonjunktivTrainer() {
       wrongTitle={item.stage === 'transform' ? '正確答案如上' : `正確答案：${answer}`}
       isLast={isLast}
       onSpeak={() => speak(solved)}
+      onPrev={prev}
       onSkip={next}
       onNext={next}
       onChoose={(_, correct) => {
@@ -93,7 +91,7 @@ export default function KonjunktivTrainer() {
     lessonKey="l7"
     title="Konjunktiv II"
     blurb="用 würde、hätte、wäre、könnte 表達假設、願望和客氣語氣。"
-    scopes={SCOPES}
+    filters={FILTERS}
     itemsFor={itemsFor}
     reviewItems={reviewItems}
     records={records}
