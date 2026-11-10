@@ -40,7 +40,7 @@ function Prompt({ item, picked }) {
 
 export default function KonjunktivTrainer() {
   const [progress, setProgress] = useStoredProgress(PROGRESS_KEYS.lesson7, loadProgress);
-  const { speak } = useGermanSpeech();
+  const { speak, speechMessage } = useGermanSpeech();
 
   const records = useMemo(() => {
     const items = Object.values(progress);
@@ -87,7 +87,9 @@ export default function KonjunktivTrainer() {
     />;
   }
 
-  return <LessonApp
+  return <>
+    {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
+    <LessonApp
     lessonKey="l7"
     title="Konjunktiv II"
     blurb="用 würde、hätte、wäre、könnte 表達假設、願望和客氣語氣。"
@@ -96,5 +98,6 @@ export default function KonjunktivTrainer() {
     reviewItems={reviewItems}
     records={records}
     renderQuestion={renderQuestion}
-  />;
+    />
+  </>;
 }

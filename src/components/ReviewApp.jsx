@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowLeft, Settings, Volume2 } from 'lucide-react';
+import { ArrowLeft, Settings } from 'lucide-react';
+import SpeakButton from './lesson/SpeakButton.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { answerCue } from '../lib/answerFeedback';
 import { genderKey } from '../lib/grammarColors.mjs';
@@ -70,7 +71,7 @@ function WordCard({ row, detail, revealed, onReveal, speak }) {
       onClick={onReveal}
       onKeyDown={event => { if (!revealed && (event.key === ' ' || event.key === 'Enter')) { event.preventDefault(); onReveal(); } }}
     >
-      <button type="button" className="calm-icon calm-card-sound" aria-label="播放發音" onClick={say(word)}><Volume2 size={22} /></button>
+      <SpeakButton className="calm-card-sound" onSpeak={() => speak(word)}/>
       <div className="calm-word-block">
         {revealed && article && <span className="calm-article fx-enter" data-gender={gender || undefined}>{article}</span>}
         <h1 className="calm-word" lang="de">{word}</h1>
@@ -88,7 +89,7 @@ function WordCard({ row, detail, revealed, onReveal, speak }) {
       {exampleDe && (
         <div className="calm-example">
           <p lang="de">{exampleDe}
-            <button type="button" className="calm-icon calm-inline-sound" aria-label="播放例句" onClick={say(exampleDe)}><Volume2 size={16} /></button>
+            <SpeakButton small label="播放例句" onSpeak={() => speak(exampleDe)}/>
           </p>
           {revealed && exampleZh && <p className="calm-example-zh fx-enter">{exampleZh}</p>}
         </div>

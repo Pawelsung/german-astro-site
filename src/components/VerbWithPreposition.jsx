@@ -1,9 +1,10 @@
 import React, { useMemo, useState } from 'react';
-import { Star, Search, ChevronDown, ChevronUp, Volume2, Calendar } from 'lucide-react';
+import { Star, Search, ChevronDown, ChevronUp, Calendar } from 'lucide-react';
 import LessonApp from './lesson/LessonApp.jsx';
 import ChoiceCard from './lesson/ChoiceCard.jsx';
 import FlipCard from './lesson/FlipCard.jsx';
 import VoiceSettings from './lesson/VoiceSettings.jsx';
+import SpeakButton from './lesson/SpeakButton.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { isLesson2Due, loadLesson2Progress } from '../lib/progressStorage';
@@ -115,12 +116,7 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
                 </div>
               </div>
               <div className="flex items-center gap-1 sm:gap-2">
-                <button
-                  onClick={(e) => { e.stopPropagation(); speak(item.verb); }}
-                  className="p-2 sm:p-3 text-amber-600 bg-amber-50 hover:bg-amber-100 rounded-full transition-colors"
-                >
-                  <Volume2 size={18} />
-                </button>
+                <SpeakButton label="播放動詞發音" onSpeak={() => speak(item.verb)}/>
                 <div className="p-1 sm:p-2 text-gray-300">
                   {expandedId === item.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </div>
@@ -136,13 +132,8 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
                    </div>
                    <div className="bg-white p-3 sm:p-4 rounded-xl border border-amber-100 shadow-sm">
                      <p className="text-gray-800 mb-1 font-medium text-sm sm:text-base">{item.example}</p>
-                     <p className="text-gray-500 text-xs sm:text-sm mb-3">{item.exampleTrans}</p>
-                     <button
-                        onClick={() => speak(item.example)}
-                        className="text-xs sm:text-sm flex items-center gap-1 sm:gap-1.5 text-amber-700 font-bold bg-amber-100/50 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg w-fit hover:bg-amber-100"
-                      >
-                        <Volume2 size={14} /> 朗讀例句
-                      </button>
+                     <p className="text-gray-500 text-xs sm:text-sm mb-2">{item.exampleTrans}</p>
+                     <SpeakButton small label="播放例句" onSpeak={() => speak(item.example)}/>
                    </div>
                 </div>
               </div>
@@ -197,14 +188,14 @@ export default function VerbWithPreposition() {
       front={<div className="calm-word-block">
         <p className="calm-word" lang="de">{item.verb}</p>
         <p className="lc-sub is-center">{item.verbTrans}</p>
-        <button type="button" className="calm-icon" aria-label="播放動詞發音" onClick={() => speak(item.verb)}><Volume2 size={22}/></button>
+        <SpeakButton label="播放動詞發音" onSpeak={() => speak(item.verb)}/>
       </div>}
       back={<div className="calm-answer">
         <p className="lc-sentence is-center" lang="de">{item.verb} + {item.prep}</p>
         <div className="calm-tags"><span>+ {CASE_NAME[item.case]}</span></div>
         <p className="calm-forms" lang="de">{item.forms}</p>
         <div className="calm-example">
-          <p lang="de">{item.example} <button type="button" className="calm-icon calm-inline-sound" aria-label="播放例句發音" onClick={() => speak(item.example)}><Volume2 size={16}/></button></p>
+          <p lang="de">{item.example} <SpeakButton small label="播放例句" onSpeak={() => speak(item.example)}/></p>
           <p className="calm-example-zh">{item.exampleTrans}</p>
         </div>
       </div>}
@@ -266,7 +257,10 @@ export default function VerbWithPreposition() {
       options={options}
       answer={answer}
       wrongTitle={`正確答案：${answer}`}
-      solved={`${item.verb} ${item.prep} + ${CASE_NAME[item.case]}`}
+      solved={item.example}
+      translation={item.exampleTrans}
+      extra={<p className="lc-rule"><span lang="de">{item.verb} {item.prep} + {CASE_NAME[item.case]}</span></p>}
+      onSpeak={() => speak(item.example)}
       isLast={isLast}
       onPrev={prev}
       onSkip={next}

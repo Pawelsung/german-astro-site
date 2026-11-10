@@ -2,7 +2,10 @@ import React, { useMemo, useState } from 'react';
 import { CheckCircle, Star, XCircle } from 'lucide-react';
 import LessonApp from './lesson/LessonApp.jsx';
 import ChoiceCard from './lesson/ChoiceCard.jsx';
+import SpeakButton from './lesson/SpeakButton.jsx';
+import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
+import { connectorSpeechText } from '../lib/lessonSpeech.mjs';
 import { readProgressMap } from '../lib/progressStorage';
 import { useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
 import data from '../data/connectors-question-bank.json';
@@ -116,7 +119,7 @@ const FILTERS = [
 const syntaxById = Object.fromEntries(data.syntaxTypes.map(item => [item.id, item]));
 const questionText = question => question.sentenceWithBlank || question.wrongSentence || question.sourceSentence || question.promptDe;
 
-function ConnectorCard({ connector, bookmarked, onBookmark }) {
+function ConnectorCard({ connector, bookmarked, onBookmark, speak }) {
   return <article className="lf-card">
     <div className="lc-top">
       <div>
@@ -126,14 +129,14 @@ function ConnectorCard({ connector, bookmarked, onBookmark }) {
       <button type="button" className="lc-flag" aria-label={bookmarked ? '取消收藏' : '收藏'} aria-pressed={bookmarked} onClick={() => onBookmark(connector.id)}><Star size={16} fill={bookmarked ? 'currentColor' : 'none'}/></button>
     </div>
     <div className="lc-chips"><span>{syntaxById[connector.syntaxType]?.labelZh || connector.syntaxType}</span></div>
-    <p lang="de"><b>{connector.exampleDe}</b></p>
+    <p lang="de"><b>{connector.exampleDe}</b> <SpeakButton small label="播放例句" onSpeak={() => speak(connector.exampleDe)}/></p>
     <p>{connector.exampleZh}</p>
     <p>{connector.usageNoteZh}</p>
     {connector.confusableWith?.length > 0 && <p>易混淆：<span lang="de">{connector.confusableWith.join(' / ')}</span></p>}
   </article>;
 }
 
-function CardsPanel({ selection, progress, onBookmark }) {
+function CardsPanel({ selection, progress, onBookmark, speak }) {
   const [syntax, setSyntax] = useState('all');
   const connectors = data.connectors.filter(connector => {
     const ids = MODULE_CONNECTORS[selection.module];
@@ -149,7 +152,7 @@ function CardsPanel({ selection, progress, onBookmark }) {
       </select>
     </label></div>
     {connectors.length === 0 ? <p className="picker-status">目前篩選沒有連接詞卡片</p>
-      : connectors.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked={progress.bookmarks.includes(connector.id)} onBookmark={onBookmark}/>)}
+      : connectors.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked={progress.bookmarks.includes(connector.id)} onBookmark={onBookmark} speak={speak}/>)}
   </>;
 }
 
@@ -201,10 +204,11 @@ function hasDraft(question, draft) {
   return !!String(draft || '').trim();
 }
 
-function BuildCard({ question, onFinish, onNext, onPrev, isLast }) {
+function BuildCard({ question, speak, onFinish, onNext, onPrev, isLast }) {
   const [draft, setDraft] = useState(null);
   const [result, setResult] = useState(null);
   const answered = result === true || result === false;
+  const spoken = connectorSpeechText(question);
   useAnswerShortcuts({ answered, onNext });
   const feedbackRef = useRevealOnShow(result !== null);
 
@@ -251,7 +255,10 @@ function BuildCard({ question, onFinish, onNext, onPrev, isLast }) {
     </div>}
     {answered && <div ref={feedbackRef} role="status" className="lc-feedback fx-enter" data-correct={result}>
       <p className="lc-verdict">{result ? <CheckCircle size={20}/> : <XCircle size={20}/>}{result ? '答對了' : '需要修正'}</p>
-      <p className="lc-solved" lang="de"><span>{getAnswerText(question)}</span></p>
+      <p className="lc-solved" lang="de">
+        {spoken && <SpeakButton small label="再聽一次" onSpeak={() => speak(spoken)}/>}
+        <span>{getAnswerText(question)}</span>
+      </p>
       <p className="lc-note">{question.explanationZh}</p>
       <button type="button" className="calm-primary" onClick={onNext}>{isLast ? '看結果' : '下一題'}<span className="kbd-hint" aria-hidden="true">Enter</span></button>
     </div>}
@@ -260,6 +267,7 @@ function BuildCard({ question, onFinish, onNext, onPrev, isLast }) {
 
 export default function ConnectorTrainer() {
   const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
+  const { speak, speechMessage } = useGermanSpeech();
 
   const itemsFor = ({ module, level }) => data.questions.filter(question =>
     (module === 'all' || question.moduleId === module) && (level === 'all' || String(question.level).includes(level)));
@@ -288,10 +296,10 @@ export default function ConnectorTrainer() {
   }
 
   const panels = [
-    { id: 'cards', title: '連接詞卡片', render: ({ selection }) => <CardsPanel selection={selection} progress={progress} onBookmark={toggleBookmark}/> },
+    { id: 'cards', title: '連接詞卡片', render: ({ selection }) => <CardsPanel selection={selection} progress={progress} onBookmark={toggleBookmark} speak={speak}/> },
     { id: 'saved', title: '收藏', render: () => {
       const saved = data.connectors.filter(connector => progress.bookmarks.includes(connector.id));
-      return saved.length === 0 ? <p className="picker-status">還沒有收藏的連接詞。</p> : saved.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked onBookmark={toggleBookmark}/>);
+      return saved.length === 0 ? <p className="picker-status">還沒有收藏的連接詞。</p> : saved.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked onBookmark={toggleBookmark} speak={speak}/>);
     } },
     { id: 'mistakes', title: '錯題整理', render: () => {
       const wrong = reviewItems();
@@ -316,7 +324,8 @@ export default function ConnectorTrainer() {
 
   function renderQuestion({ key, item, isLast, report, next, prev }) {
     const finish = correct => { report(correct, getAnswerText(item)); saveAnswer(item, correct); };
-    if (!CHOICE_TYPES.has(item.type)) return <BuildCard key={key} question={item} isLast={isLast} onFinish={finish} onNext={next} onPrev={prev}/>;
+    if (!CHOICE_TYPES.has(item.type)) return <BuildCard key={key} question={item} speak={speak} isLast={isLast} onFinish={finish} onNext={next} onPrev={prev}/>;
+    const spoken = connectorSpeechText(item);
     const textOf = id => { const option = item.options.find(entry => entry.id === id); return option?.textZh || option?.text || id; };
     return <ChoiceCard
       key={key}
@@ -333,6 +342,8 @@ export default function ConnectorTrainer() {
       optionLang={item.options[0]?.textZh ? undefined : 'de'}
       formatOption={textOf}
       wrongTitle={`正確答案：${textOf(item.answer)}`}
+      solved={spoken}
+      onSpeak={spoken ? () => speak(spoken) : undefined}
       explain={item.explanationZh}
       isLast={isLast}
       onPrev={prev}
@@ -342,7 +353,9 @@ export default function ConnectorTrainer() {
     />;
   }
 
-  return <LessonApp
+  return <>
+    {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
+    <LessonApp
     lessonKey="l5"
     title="連接詞與語序"
     blurb="先判斷連接詞會不會改變動詞的位置。"
@@ -353,5 +366,6 @@ export default function ConnectorTrainer() {
     panels={panels}
     featuredPanels={['cards']}
     renderQuestion={renderQuestion}
-  />;
+    />
+  </>;
 }

@@ -62,6 +62,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-10 全站例句語音與播放鍵統一（Claude Code，已部署、已合併 main）
+
+- 做了什麼：所有播放鍵統一用 `components/lesson/SpeakButton.jsx`。第 4、5、6 課原本完全沒有語音，答完可播整句；第 2 課測驗、第 3 課字卡與助動詞／情態動詞、第 1 課字典和答題回饋都補上例句播放。朗讀文字規則在 `lib/lessonSpeech.mjs`，需要錄音的清單在 `tools/audioTexts.mjs`，新增 549 段 Chirp 3 HD 音檔（約 19,500 字元，音檔總量 70 MB）。
+- 驗證：121 個測試通過，`tests/audio-coverage.test.mjs` 確認每段朗讀文字都有錄音檔；本機逐課點按播放鍵都走錄音，沒有退回系統語音。
+- 新增會朗讀的文字時：改 `audioTexts.mjs`，先 `--dry-run` 再產生，否則覆蓋測試會失敗。
+- 還沒做什麼：第 5 課「配對」題（1 題）答案是中德混合，沒有語音；重點卡裡的示範短句沒有播放鍵；未在 iPhone 實機試聽。
+
 ### 2026-11-10 第 1～6 課換新外框（Claude Code，已部署）
 
 - 做了什麼：第 6、4、5、2、3 課改用 `LessonApp`，全部題型都保留，進度沿用原本的 key 和格式；第 1 課換外框，內部 7 種練習不變。刪除 `LessonShell`、`LessonModes`、`LessonSkeleton` 和對應樣式。各課詳細做法見 `docs/phase2-lesson-redesign.md`。

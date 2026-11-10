@@ -3,7 +3,10 @@ import { Star } from 'lucide-react';
 import LessonApp from './lesson/LessonApp.jsx';
 import ChoiceCard from './lesson/ChoiceCard.jsx';
 import { PickerRow } from './lesson/BottomSheet.jsx';
+import SpeakButton from './lesson/SpeakButton.jsx';
+import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
+import { kasusSpeechText } from '../lib/lessonSpeech.mjs';
 import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
 import data from '../data/lesson4-kasus-quest-data.json';
 import { nextChoiceRecord } from '../lib/lessonRound.mjs';
@@ -243,6 +246,7 @@ function KasusPrompt({ item, picked, style }) {
 
 export default function KasusQuestTrainer() {
   const [style, setStyle] = useState('guided');
+  const { speak, speechMessage } = useGermanSpeech();
   const [progress, setProgress] = useStoredProgress(STORAGE_KEY, loadProgress);
 
   const itemsFor = useCallback(({ level, mode, only }) => EXERCISES.filter(item => {
@@ -303,6 +307,7 @@ export default function KasusQuestTrainer() {
 
   function renderQuestion({ key, item, isLast, report, next, prev }) {
     const record = progress[item.id] || {};
+    const spoken = kasusSpeechText(item);
     return <ChoiceCard
       key={key}
       tag={MODE_LABELS[item.mode]}
@@ -319,6 +324,7 @@ export default function KasusQuestTrainer() {
       wrongTitle={`正確答案：${cleanOption(item.answer)}`}
       extra={<>
         {analyzeCaseSentence(item) ? <CaseDiagram exercise={item} /> : <p className="lc-solved" lang="de">{cleanOption(item.fullSentence)}</p>}
+        {spoken && <div className="lc-listen"><SpeakButton small label="播放整句" onSpeak={() => speak(spoken)}/><span>聽整句</span></div>}
         <p className="lc-note">{item.explanationZh}</p>
         <details className="lc-details">
           <summary>判斷線索</summary>
@@ -344,7 +350,9 @@ export default function KasusQuestTrainer() {
     />;
   }
 
-  return <LessonApp
+  return <>
+    {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
+    <LessonApp
     lessonKey="l4"
     title="格位練習"
     blurb="先找句子裡的角色，再決定冠詞和代名詞。"
@@ -354,5 +362,6 @@ export default function KasusQuestTrainer() {
     records={summary}
     panels={panels}
     renderQuestion={renderQuestion}
-  />;
+    />
+  </>;
 }

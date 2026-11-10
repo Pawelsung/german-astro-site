@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { CheckCircle, Volume2, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
+import SpeakButton from './SpeakButton.jsx';
 import { useAnswerShortcuts, useRevealOnShow } from '../../lib/answerFeedback';
 import { shuffle } from '../../lib/lessonRound.mjs';
 
@@ -42,7 +43,7 @@ export default function ChoiceCard({ tag, level, hint, prompt, options, answer, 
     {picked ? <div ref={feedbackRef} role="status" className="lc-feedback fx-enter" data-correct={correct}>
       <p className="lc-verdict">{correct ? <CheckCircle size={20}/> : <XCircle size={20}/>}{correct ? '答對了' : wrongTitle}</p>
       {solved && <p className="lc-solved" lang={solvedLang}>
-        {onSpeak && <button type="button" className="calm-icon calm-inline-sound" aria-label="再聽一次" onClick={onSpeak}><Volume2 size={16}/></button>}
+        {onSpeak && <SpeakButton small label="再聽一次" onSpeak={onSpeak}/>}
         <span>{solved}</span>
       </p>}
       {translation && <p className="lc-note">{translation}</p>}

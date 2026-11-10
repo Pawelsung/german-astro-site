@@ -3,7 +3,10 @@ import { RotateCcw, Star } from 'lucide-react';
 import LessonApp from './lesson/LessonApp.jsx';
 import ChoiceCard from './lesson/ChoiceCard.jsx';
 import { PickerRow } from './lesson/BottomSheet.jsx';
+import SpeakButton from './lesson/SpeakButton.jsx';
+import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
+import { adjectiveSpeechText } from '../lib/lessonSpeech.mjs';
 import { loadLesson6Progress, needsReview as itemNeedsReview } from '../lib/progressStorage';
 import lessonData from '../data/lesson6-adjective-declension';
 import { nextChoiceRecord } from '../lib/lessonRound.mjs';
@@ -110,7 +113,7 @@ function DeclensionTable({ table }) {
   );
 }
 
-function ConceptPanel() {
+function ConceptPanel({ speak }) {
   const [activeTab, setActiveTab] = useState('concepts');
   const tableTabs = [
     ['definite', '定冠詞'],
@@ -152,6 +155,7 @@ function ConceptPanel() {
                         <HighlightedGerman text={example.german} />
                       </div>
                       <div className="mt-0.5 text-xs font-bold text-slate-500">{example.chinese}</div>
+                      <SpeakButton small label="播放例句" onSpeak={() => speak(example.german)}/>
                     </div>
                   ))}
                 </div>
@@ -193,6 +197,7 @@ function GivenChips({ given }) {
 
 export default function AdjectiveDeclensionTrainer() {
   const [progress, setProgress] = useStoredProgress('german-lesson6-adjective-declension-progress', loadLesson6Progress);
+  const { speak, speechMessage } = useGermanSpeech();
 
   const itemsFor = useCallback(({ stage, mode, only }) => EXERCISES.filter(item =>
     (stage === 'all' || String(item.stage) === stage)
@@ -226,7 +231,7 @@ export default function AdjectiveDeclensionTrainer() {
   }
 
   const panels = [
-    { id: 'tables', title: '文法速查', render: () => <ConceptPanel /> },
+    { id: 'tables', title: '文法速查', render: () => <ConceptPanel speak={speak}/> },
     { id: 'flow', title: '學習流程', render: ({ setFilters }) => lessonData.studyFlow.filter(step => !step.modes.includes('concept')).map(step => (
       <PickerRow key={step.step} title={`Step ${step.step} · ${step.title}`} detail={`${step.minutes} 分鐘 · ${step.description}`}
         onClick={() => setFilters({ stage: String(step.step), mode: step.modes.find(entry => EXERCISES.some(item => item.mode === entry)) || 'all' })}/>
@@ -249,6 +254,7 @@ export default function AdjectiveDeclensionTrainer() {
   function renderQuestion({ key, item, isLast, report, next, prev }) {
     const hasBlank = item.prompt.includes('____');
     const record = progress[item.id] || {};
+    const spoken = adjectiveSpeechText(item);
     return <ChoiceCard
       key={key}
       tag={STAGE_LABELS[item.stage] || `Stage ${item.stage}`}
@@ -267,6 +273,8 @@ export default function AdjectiveDeclensionTrainer() {
       answer={item.answer}
       wide={optionIsLong(item.options)}
       wrongTitle={`正確答案：${item.answer}`}
+      solved={spoken}
+      onSpeak={spoken ? () => speak(spoken) : undefined}
       extra={<>
         {item.explanation.map(line => <p key={line} className="lc-note">{line}</p>)}
         <p className="lc-rule">{item.miniRule}</p>
@@ -283,7 +291,9 @@ export default function AdjectiveDeclensionTrainer() {
     />;
   }
 
-  return <LessonApp
+  return <>
+    {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
+    <LessonApp
     lessonKey="l6"
     title="形容詞字尾"
     blurb="先看冠詞有沒有露出性別，再決定字尾。"
@@ -293,5 +303,6 @@ export default function AdjectiveDeclensionTrainer() {
     records={summary}
     panels={panels}
     renderQuestion={renderQuestion}
-  />;
+    />
+  </>;
 }

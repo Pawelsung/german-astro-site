@@ -4,6 +4,7 @@ import LessonApp from './lesson/LessonApp.jsx';
 import ChoiceCard from './lesson/ChoiceCard.jsx';
 import FlipCard from './lesson/FlipCard.jsx';
 import VoiceSettings from './lesson/VoiceSettings.jsx';
+import SpeakButton from './lesson/SpeakButton.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { needsReview as itemNeedsReview, readProgressMap } from '../lib/progressStorage';
@@ -174,19 +175,7 @@ function deriveLearningState(item = {}) {
   return { label: '未開始', cls: 'bg-slate-100 text-slate-600 border-slate-200' };
 }
 
-function AudioPill({ onClick, label }) {
-  return (
-    <button
-      onClick={onClick}
-      className="shrink-0 w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:scale-95 transition-all flex items-center justify-center"
-      aria-label={label}
-      title={label}
-      type="button"
-    >
-      🔊
-    </button>
-  );
-}
+const AudioPill = ({ onClick, label }) => <SpeakButton label={label} onSpeak={onClick}/>;
 
 function matchesFilters(verb, { level, type, aux }) {
   return (level === 'all' || verb.level === level) && (type === 'all' || verb.type === type) && (aux === 'all' || verb.auxiliary === aux);
@@ -344,7 +333,7 @@ function TypingCard({ verb, level, speak, actions, onResult, onNext, onPrev, isL
     </> : <div ref={feedbackRef} role="status" className="lc-feedback fx-enter" data-correct={result}>
       <p className="lc-verdict">{result ? '答對了' : '正確答案'}</p>
       <p className="lc-solved" lang="de"><span>{verb.infinitive} – {verb.praeteritum} – {verb.perfekt}</span></p>
-      <p className="lc-note" lang="de">{verb.example}</p>
+      <p className="lc-solved" lang="de"><SpeakButton small label="播放例句" onSpeak={() => speak(verb.example)}/><span>{verb.example}</span></p>
       <button type="button" className="calm-primary" onClick={onNext}>{isLast ? '看結果' : '下一題'}</button>
     </div>}
   </form>;
@@ -417,7 +406,7 @@ export default function IrregularVerbTrainer() {
           <p className="lc-sentence is-center" lang="de">{verb.infinitive}</p>
           <p className="lc-sub is-center">{verb.meaningZh}</p>
           <VerbForms verb={verb} speak={speak}/>
-          <div className="calm-example"><p lang="de">{verb.example}</p></div>
+          <div className="calm-example"><p lang="de">{verb.example} <SpeakButton small label="播放例句" onSpeak={() => speak(verb.example)}/></p></div>
         </div>}
         footer={<div className={`calm-actions${canClear ? ' calm-actions-two' : ' lc-single'}`}>
           {canClear && <button type="button" className="calm-rate" onClick={() => { markCorrect(verb.id); next(); }}>已掌握，移出複習</button>}
@@ -451,8 +440,12 @@ export default function IrregularVerbTrainer() {
       options={options}
       answer={answer}
       wrongTitle={`正確答案：${answer}`}
-      solved={label}
-      extra={!isAux && <VerbForms verb={verb} speak={speak}/>}
+      solved={verb.example}
+      onSpeak={() => speak(verb.example)}
+      extra={<>
+        <p className="lc-rule" lang="de">{label}</p>
+        {!isAux && <VerbForms verb={verb} speak={speak}/>}
+      </>}
       isLast={isLast}
       onPrev={prev}
       onSkip={next}
