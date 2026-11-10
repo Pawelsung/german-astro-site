@@ -62,6 +62,18 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-10 第 7 課換新畫面、共用外框、課程進度上傳合併（Claude Code，已部署）
+
+- 做了什麼：`LessonFrame.astro` 加 `components/lesson/`（`LessonApp`、`ChoiceCard`、`BottomSheet`）；第 7 課改用新外框，進度仍寫在原本的 key，格式不變。`VocabPicker` 改用共用的 `BottomSheet`，樣式前綴由 `.vp-` 改成 `.picker-`。第 2～7 課上傳前先和雲端合併（`mergeLessonValue`），第 2 課歷史紀錄重複合併不會變多。
+- 驗證：119 個測試通過、建置通過；本機手機寬度走完整輪 10 題、`?review=1`、鍵盤 1 和 Enter、範圍記憶、「⋯」選單、重點卡，淺色和深色都看過；題目和答案不用捲動。
+- 還沒做什麼：第 6、4、5、2、3 課與第 1 課外框，順序見 `docs/phase2-lesson-redesign.md`；未用真實帳號測上傳合併。
+
+### 2026-11-10 規劃第 2～7 課改新風格（Claude Code）
+
+- 做了什麼：規格草案在 `docs/phase2-lesson-redesign.md`，含手機實測數據、步驟和 4 個待使用者決定的事項。沒有改程式。
+- 驗證了什麼：實際量過六課手機版的練習區位置、頁面高度和控制項數量，並讀過各課模式與進度格式。
+- 還沒做什麼：等使用者確認後才實作。發現第 2～7 課上傳時沒有先和雲端合併，可能跨裝置互相覆蓋，列為步驟 0。
+
 ### 2026-11-10 第 1 課加入分級字庫與新選單（Claude Code，已部署）
 
 - 做了什麼：`src/lib/vocabLevels.mjs` 把主字庫轉成第 1 課用的字庫（只收出題池的字：A1 680、A2 648、B1 1100、B2 160），依主題分組，超過 40 字自動切開，B2 整包一組。瀏覽器銜接在 `reviewBridge.js`（`loadLevelPresets`、`loadLevelWords`、`alignSavedWords`）。字庫 id 是 `level-A1` 這種格式，存在 `ui.preset`。

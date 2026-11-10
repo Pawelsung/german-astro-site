@@ -1,0 +1,44 @@
+---
+// Lesson page for the calm layout: one question at a time, with the concept and tips one tap away.
+import Layout from '../layouts/Layout.astro';
+import UserAccount from './UserAccount.jsx';
+import ConceptCard from './ConceptCard.astro';
+import { LESSON_LINKS } from '../lib/lessonLinks.mjs';
+
+interface Props {
+  frontmatter: { title: string };
+}
+
+const { frontmatter } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '');
+const conceptKey = `l${LESSON_LINKS.findIndex(([href]) => path === href.replace(/\/$/, '')) + 1}`;
+const hasTips = await Astro.slots.has('tips');
+const shortTitle = frontmatter.title.split('｜').pop();
+---
+
+<Layout title={frontmatter.title}>
+  <div hidden data-lesson-title={shortTitle}><UserAccount client:only="react" compact /></div>
+  <slot />
+  <dialog id="lesson-concept" class="picker-sheet" aria-label="1 分鐘重點">
+    <div class="picker-panel">
+      <header class="picker-head">
+        <span></span>
+        <h2>1 分鐘重點</h2>
+        <form method="dialog"><button class="calm-icon" aria-label="關閉">✕</button></form>
+      </header>
+      <div class="picker-list lf-concept">
+        <ConceptCard lesson={conceptKey} bare />
+        {hasTips && <section class="lf-tips"><h3>學習提示</h3><ul><slot name="tips" /></ul></section>}
+      </div>
+    </div>
+  </dialog>
+  <script>
+    import { recordLessonVisit } from '../lib/dailyActivity.mjs';
+
+    const lessonTitle = document.querySelector('[data-lesson-title]')?.getAttribute('data-lesson-title');
+    if (lessonTitle) recordLessonVisit(location.pathname, lessonTitle);
+
+    const concept = document.getElementById('lesson-concept') as HTMLDialogElement | null;
+    concept?.addEventListener('click', (event) => { if (event.target === concept) concept.close(); });
+  </script>
+</Layout>

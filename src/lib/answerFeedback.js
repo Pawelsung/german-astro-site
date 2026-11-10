@@ -109,7 +109,7 @@ export function useAnswerShortcuts({ options = [], answered, onSelect, onNext, e
     if (!enabled) return undefined;
     const handler = (event) => {
       if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
-      if (document.querySelector('[data-round-summary]')) return;
+      if (document.querySelector('[data-round-summary], dialog[open]')) return;
       if (isTypingTarget(event.target)) return;
       const { options: opts, answered: done, onSelect: select, onNext: goNext } = latest.current;
       if (!done && /^[1-9]$/.test(event.key)) {

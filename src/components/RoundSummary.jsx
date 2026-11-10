@@ -1,17 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ROUND_EVENT, ROUND_PROGRESS_EVENT, playAnswerSound, roundProgress } from '../lib/answerFeedback';
 import { getActivity } from '../lib/dailyActivity.mjs';
+import { roundVerdict as verdict } from '../lib/lessonRound.mjs';
 
 // Delay so the explanation of the tenth answer can be seen before the summary covers it.
 const OPEN_DELAY_MS = 1200;
-
-function verdict(correct, total) {
-  const ratio = correct / total;
-  if (ratio === 1) return '滿分！太厲害了 🎉';
-  if (ratio >= 0.8) return '很棒，繼續保持！';
-  if (ratio >= 0.5) return '不錯！把錯的再看一次會更穩。';
-  return '先看一下重點卡，再來一輪會更順。';
-}
 
 function ScoreRing({ correct, total }) {
   const radius = 44;
