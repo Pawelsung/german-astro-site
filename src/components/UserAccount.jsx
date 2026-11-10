@@ -9,7 +9,7 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
-import { collectLocalProgress, mergeRemoteProgress, PROGRESS_KEYS, readJSON, writeJSON } from '../lib/progressStorage';
+import { collectLocalProgress, mergeLessonValue, mergeRemoteProgress, MERGED_LESSON_KEYS, PROGRESS_KEYS, readJSON, writeJSON } from '../lib/progressStorage';
 import { changedKeys, hashProgress, mergeReviewValues, readSyncState, shouldDownload, stableStringify, writeSyncState } from '../lib/cloudSync.mjs';
 
 const provider = new GoogleAuthProvider();
@@ -153,17 +153,23 @@ export default function UserAccount({ compact = false }) {
       const progress = collectLocalProgress();
       const state = readSyncState(currentUser.uid);
       const keys = changedKeys(progress, PROGRESS_DOCS, state.hashes);
-      if (keys.includes('review')) {
-        const snap = await getDoc(doc(services.db, 'users', currentUser.uid, 'learning', 'review'));
-        // Read local again after the wait, in case another card was rated meanwhile.
-        const current = readJSON(PROGRESS_KEYS.review, null);
-        progress.review = mergeReviewValues(current, snap.exists() ? snap.data()?.value : null);
-        if (stableStringify(progress.review) !== stableStringify(current)) {
-          syncingRef.current = true;
-          writeJSON(PROGRESS_KEYS.review, progress.review);
-          window.dispatchEvent(new CustomEvent('learning-progress-updated'));
-          syncingRef.current = false;
-        }
+      const toMerge = keys.filter((key) => key === 'review' || MERGED_LESSON_KEYS.includes(key));
+      if (toMerge.length) {
+        const snaps = await Promise.all(toMerge.map((key) => getDoc(doc(services.db, 'users', currentUser.uid, 'learning', key))));
+        // Read local again after the wait, in case another answer was saved meanwhile.
+        syncingRef.current = true;
+        let changed = false;
+        toMerge.forEach((key, index) => {
+          const remote = snaps[index].exists() ? snaps[index].data()?.value : null;
+          const current = readJSON(PROGRESS_KEYS[key], null);
+          progress[key] = key === 'review' ? mergeReviewValues(current, remote) : mergeLessonValue(key, current, remote);
+          if (stableStringify(progress[key]) !== stableStringify(current)) {
+            writeJSON(PROGRESS_KEYS[key], progress[key]);
+            changed = true;
+          }
+        });
+        if (changed) window.dispatchEvent(new CustomEvent('learning-progress-updated'));
+        syncingRef.current = false;
       }
       await saveRemoteProgress(services.db, currentUser.uid, progress, keys);
       writeSyncState(currentUser.uid, { ...state, remoteAt: keys.length ? progress.updatedAt : state.remoteAt, hashes: hashProgress(progress, PROGRESS_DOCS) });

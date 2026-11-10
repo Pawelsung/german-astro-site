@@ -232,8 +232,30 @@ function mergeLesson2(local: any = defaultLesson2Progress, remote: any = default
   return {
     starred: mergeUnique(local.starred, remote.starred),
     srs: mergeObjects(local.srs, remote.srs),
-    history: [...(remote.history || []), ...(local.history || [])].slice(-250)
+    // Merging runs on every upload, so the same record arriving twice must count once.
+    history: [...new Map([...(remote.history || []), ...(local.history || [])].map((record) => [JSON.stringify(record), record])).values()].slice(-250)
   };
+}
+
+function mergeLesson5(local: any = {}, remote: any = {}) {
+  const answers = mergeObjects(local?.answers, remote?.answers);
+  return {
+    answers,
+    mistakes: Object.entries(answers).filter(([, value]: any) => !value.correct).map(([key]) => key),
+    bookmarks: mergeUnique(local?.bookmarks, remote?.bookmarks)
+  };
+}
+
+const LESSON_MERGERS: Record<string, (local: any, remote: any) => any> = {
+  lesson2: mergeLesson2, lesson3: mergeObjects, lesson4: mergeObjects, lesson5: mergeLesson5, lesson6: mergeObjects, lesson7: mergeObjects
+};
+export const MERGED_LESSON_KEYS = Object.keys(LESSON_MERGERS);
+
+// An upload replaces the cloud copy, so it must first take in what other devices put there.
+export function mergeLessonValue(key: string, local: any, remote: any) {
+  if (remote === undefined || remote === null) return local ?? null;
+  if (local === undefined || local === null) return remote;
+  return LESSON_MERGERS[key](local, remote);
 }
 
 export function collectLocalProgress() {
@@ -259,11 +281,7 @@ export function mergeRemoteProgress(remoteProgress: any = {}) {
     lesson2: mergeLesson2(local.lesson2, remoteProgress.lesson2),
     lesson3: mergeObjects(local.lesson3, remoteProgress.lesson3),
     lesson4: mergeObjects(local.lesson4, remoteProgress.lesson4),
-    lesson5: {
-      answers: mergeObjects(local.lesson5?.answers, remoteProgress.lesson5?.answers),
-      mistakes: Object.entries(mergeObjects(local.lesson5?.answers, remoteProgress.lesson5?.answers)).filter(([, value]: any) => !value.correct).map(([key]) => key),
-      bookmarks: mergeUnique(local.lesson5?.bookmarks, remoteProgress.lesson5?.bookmarks)
-    },
+    lesson5: mergeLesson5(local.lesson5, remoteProgress.lesson5),
     lesson6: mergeObjects(local.lesson6, remoteProgress.lesson6),
     lesson7: mergeObjects(local.lesson7, remoteProgress.lesson7),
     review: local.review || remoteProgress.review
