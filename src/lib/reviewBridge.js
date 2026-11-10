@@ -9,6 +9,7 @@ import c1Url from '../data/lexicon/site/C1.json?url';
 import { PROGRESS_KEYS, readJSON, writeJSON } from './progressStorage';
 import { applyLessonAnswer, decodeReview, encodeReview, mergeReview } from './reviewStore.mjs';
 import { buildResolver, migrateLegacyWords } from './reviewMigrate.mjs';
+import { alignSavedWords as alignWithResolver, levelPresets, levelWords } from './vocabLevels.mjs';
 
 const ARCHIVE_KEY = 'german-vocabulary-library-v1';
 const DETAIL_URLS = { A1: a1Url, A2: a2Url, B1: b1Url, B2: b2Url, C1: c1Url };
@@ -45,6 +46,15 @@ export async function loadLevelDetails(levels) {
   await Promise.all(levels.filter(level => !details.has(level)).map(async level => { details.set(level, await fetchJson(DETAIL_URLS[level])); }));
   return Object.assign({}, ...levels.map(level => details.get(level)));
 }
+
+export const loadLevelPresets = () => loadIndex().then(rows => levelPresets(rows, decodeReview(readStoredReview())));
+
+export async function loadLevelWords(level) {
+  const [rows, levelDetails] = await Promise.all([loadIndex(), loadLevelDetails([level])]);
+  return levelWords(rows, levelDetails, level);
+}
+
+export const alignSavedWords = saved => loadResolver().then(resolve => alignWithResolver(saved, resolve));
 
 export const readStoredReview = () => readJSON(PROGRESS_KEYS.review, null);
 

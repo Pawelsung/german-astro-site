@@ -1,20 +1,19 @@
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Download, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Download, RotateCcw, Search, Settings2, Star, Upload, Volume2 } from 'lucide-react';
 import { PROGRESS_KEYS, readJSON, writeJSON, isReviewRequested } from '../lib/progressStorage';
 import { useStoredProgress } from '../hooks/useStoredProgress';
 import { useSwipe } from '../hooks/useSwipe';
 import { POS_LABELS, wordKey, normalizeVocabulary, mergeVocabularyProgress, chaptersFor, filterVocabulary, articleExplanation } from '../lib/vocabulary.mjs';
 import { answerCue, useAnswerShortcuts, useRevealOnShow } from '../lib/answerFeedback';
-import { migrateLessonProgress, mergeImportedReview, readStoredReview, recordLessonPractice } from '../lib/reviewBridge.js';
+import { alignSavedWords, loadLevelPresets, loadLevelWords, migrateLessonProgress, mergeImportedReview, readStoredReview, recordLessonPractice } from '../lib/reviewBridge.js';
+import VocabPicker from './VocabPicker.jsx';
 import { genderKey } from '../lib/grammarColors.mjs';
 import { MISS_REASONS, checkTyped, findClozeTarget, productionAnswer } from '../lib/vocabPractice.mjs';
 
 const UI_KEY = 'german-vocabulary-workspace-v1';
 const CACHE_KEY = 'german-vocabulary-library-v1';
 const DEFAULT_PRESET = 'schritte-b1-1';
-const NOTES_PRESET = 'course-notes';
-const LEVEL_PRESETS = { b1: DEFAULT_PRESET, mixed: 'a1-b1-part1', notes: NOTES_PRESET };
 const modes = [['learn', '字卡'], ['produce', '中→德'], ['cloze', '填空'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
 const TYPED_MODES = ['produce', 'cloze'];
 const readWords = () => { try { return normalizeVocabulary(readJSON(PROGRESS_KEYS.lesson1Words, [])); } catch { return []; } };
@@ -127,7 +126,6 @@ export default function VocabularyTrainer() {
   const answerInput = useRef(null);
   const [feedback, setFeedback] = useState(null);
   const [tools, setTools] = useState(false);
-  const [libraryOpen, setLibraryOpen] = useState(false);
   const [voice, setVoice] = useState(() => readJSON(PROGRESS_KEYS.lesson1Stats, {})?.voices?.selectedURI || '');
   const [rate, setRate] = useState(() => readJSON(PROGRESS_KEYS.lesson1Stats, {})?.voices?.rate || 0.9);
   const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI: voice, rate });
@@ -141,8 +139,6 @@ export default function VocabularyTrainer() {
   const filtered = useMemo(() => filterVocabulary(words, { ...ui, query }), [words, ui.chapter, ui.filter, ui.mode, query]);
   const current = answeredWord || filtered[ui.index % Math.max(filtered.length, 1)];
   const selectedPreset = presets.find(p => p.id === ui.preset);
-  const isB1 = ui.preset.startsWith('schritte-');
-  const activeLevel = ui.preset === 'custom' ? 'custom' : isB1 ? 'b1' : ui.preset === NOTES_PRESET ? 'notes' : 'mixed';
 
   function change(patch) {
     setUI(prev => ({ ...prev, ...patch, index: 0 }));
@@ -161,8 +157,10 @@ export default function VocabularyTrainer() {
       if (!res.ok) throw new Error('無法載入字庫清單，請重新整理再試。');
       return res.json();
     }).then(async list => {
-      setPresets(list);
-      if (!words.length) await loadPreset(list.find(p => p.id === ui.preset) || list.find(p => p.id === DEFAULT_PRESET), true);
+      // Older banks must keep working even if the graded lexicon cannot be fetched.
+      const all = [...await loadLevelPresets().catch(() => []), ...list];
+      setPresets(all);
+      if (!words.length) await loadPreset(all.find(p => p.id === ui.preset) || all.find(p => p.id === DEFAULT_PRESET), true);
       else {
         if (!readJSON(UI_KEY, null)) change({ preset: words.some(w => w.lesson) ? DEFAULT_PRESET : 'custom' });
         setLoading(false);
@@ -185,22 +183,34 @@ export default function VocabularyTrainer() {
     writeJSON(PROGRESS_KEYS.lesson1Stats, { ...previous, voices: { ...previous?.voices, rate, selectedURI: voice, ...next } });
   }
   async function loadPreset(preset, initial = false) {
-    if (!preset) return;
+    if (!preset) return 0;
     const id = ++request.current; setLoading(true); setError('');
     try {
-      const res = await fetch(preset.path);
-      if (!res.ok) throw new Error('字庫暫時無法載入，原有紀錄已保留。');
-      const incoming = normalizeVocabulary(await res.json());
+      let raw;
+      if (preset.level) raw = await loadLevelWords(preset.level).catch(() => { throw new Error('字庫暫時無法載入，原有紀錄已保留。'); });
+      else {
+        const res = await fetch(preset.path);
+        if (!res.ok) throw new Error('字庫暫時無法載入，原有紀錄已保留。');
+        raw = await res.json();
+      }
+      const incoming = normalizeVocabulary(raw);
       if (!incoming.length) throw new Error('字庫沒有可用的單字。');
-      if (id !== request.current) return;
+      if (id !== request.current) return 0;
       const archive = readJSON(CACHE_KEY, {});
       for (const w of readWords()) archive[wordKey(w)] = w;
       writeJSON(CACHE_KEY, archive);
-      setWords(mergeVocabularyProgress(incoming, Object.values(archive)));
+      const saved = preset.level ? await alignSavedWords(Object.values(archive)) : Object.values(archive);
+      if (id !== request.current) return 0;
+      const merged = mergeVocabularyProgress(incoming, saved);
+      setWords(merged);
       setQuery(''); change({ preset: preset.id, chapter: 'all', filter: initial && isReviewRequested() ? 'review' : 'all' });
       setMessage(`已載入 ${preset.label}，既有錯題與收藏已保留。`);
-    } catch (e) { if (id === request.current) setError(e.message); }
+      return chaptersFor(merged).length;
+    } catch (e) { if (id === request.current) setError(e.message); return 0; }
     finally { if (id === request.current) setLoading(false); }
+  }
+  function refreshLevels() {
+    loadLevelPresets().then(levels => setPresets(prev => [...levels, ...prev.filter(p => !p.level)])).catch(() => {});
   }
   function updateWord(patch) {
     if (!current) return;
@@ -293,24 +303,11 @@ export default function VocabularyTrainer() {
     event.target.value = '';
   }
   return <div className="vocab-workspace">
-    <section className="vocab-library" aria-label="選擇學習範圍">
-      <button type="button" className="vocab-library-heading" aria-expanded={libraryOpen} onClick={() => setLibraryOpen(v => !v)}><BookOpen size={20}/><div><h2>我的單字課程</h2><p>先選教材，再選這次想練習的課次。</p><span className="vocab-library-current">{selectedPreset?.label || '自訂字庫'} · {chapters.find(c => c.key === ui.chapter)?.label || '全部課次'}</span></div><ChevronDown size={18} className="vocab-library-chevron" aria-hidden="true"/></button><div className="vocab-library-body" data-open={libraryOpen}>
-      <div className="vocab-selectors">
-        <label>程度／教材<select className={field} aria-label="程度與教材" disabled={loading} value={activeLevel} onChange={e => loadPreset(presets.find(p => p.id === LEVEL_PRESETS[e.target.value]))}><option value="b1">B1 · Schritte B1.1</option><option value="mixed">A1–B1 · 綜合主題</option>{presets.some(p => p.id === NOTES_PRESET) && <option value="notes">課程筆記 · 依出現頻率</option>}{activeLevel === 'custom' && <option value="custom">自訂字庫</option>}</select></label>
-        <label>字庫<select className={field} aria-label="字庫" disabled={loading} value={ui.preset} onChange={e => loadPreset(presets.find(p => p.id === e.target.value))}>{presets.filter(p => activeLevel === 'b1' ? p.id.startsWith('schritte-') : p.id === LEVEL_PRESETS[activeLevel]).map(p => <option key={p.id} value={p.id}>{p.label} · {p.count} 字</option>)}{ui.preset === 'custom' && <option value="custom">已匯入字庫</option>}</select></label>
-        <label>{isB1 ? '課次' : '課次／主題'}<select className={field} aria-label="課次" value={ui.chapter} onChange={e => change({ chapter: e.target.value })}><option value="all">全部 · {words.length} 字</option>{chapters.map(c => <option key={c.key} value={c.key}>{c.label} · {c.count} 字</option>)}</select></label>
-      </div>
-      {activeLevel === 'mixed' && <p className="vocab-note">這份字庫依主題整理，未標示每字的個別 CEFR 等級。</p>}
-      {activeLevel === 'notes' && <p className="vocab-note">依筆記中出現的次數分組（不是課本課次），★ 越多代表上課越常出現。</p>}
-      <details className="vocab-chapters"><summary>瀏覽{isB1 ? '各課' : activeLevel === 'notes' ? '分組' : '主題'}進度 <span>{chapters.length} 個單元</span></summary><div className="vocab-chapter-grid">{chapters.map(c => {
-        const items = words.filter(w => String(w.lesson || w.category) === c.key); const learned = items.filter(w => w.attempts > 0 || w.seen > 0).length;
-        return <button key={c.key} className={ui.chapter === c.key ? 'selected' : ''} aria-pressed={ui.chapter === c.key} onClick={() => change({ chapter: c.key })}><strong>{c.label}</strong><span>{c.count} 字 · 已練 {learned} · 待複習 {items.filter(w => w.errors > 0).length}</span><progress max={c.count} value={learned} aria-label={`${c.label}已練習進度`}/></button>;
-      })}</div></details></div>
-    </section>
+    <VocabPicker presets={presets} presetId={ui.preset} chapterKey={ui.chapter} chapters={chapters} words={words} loading={loading} error={error} onOpen={refreshLevels} onPickPreset={loadPreset} onPickChapter={key => change({ chapter: key })}/>
     <section className="vocab-study" aria-label="單字練習">
       <div className="vocab-toolbar"><div role="group" aria-label="練習模式" className="vocab-tabs">{modes.map(([id,label]) => <button key={id} aria-pressed={ui.mode === id} onClick={() => change({ mode:id })}>{label}</button>)}</div><button className={button} aria-label="語音與資料設定" aria-expanded={tools} onClick={() => setTools(v => !v)}><Settings2 size={18}/></button></div>
       <div className="vocab-filter-row"><div role="group" aria-label="單字篩選" className="vocab-filters">{[['all','全部'],['review','待複習'],['starred','收藏']].map(([id,label]) => <button key={id} aria-pressed={ui.filter === id} onClick={() => change({filter:id})}>{label}</button>)}</div><label className="vocab-search"><Search size={16}/><input aria-label="搜尋單字或中文" placeholder="搜尋單字或中文" value={query} onChange={e => { setQuery(e.target.value); change({}); }}/></label></div>
-      {tools && <div className="vocab-tools"><label className="md:hidden">切換字庫<select className={field} aria-label="手機字庫" value={ui.preset} disabled={loading} onChange={e => loadPreset(presets.find(p => p.id === e.target.value))}>{presets.map(p => <option key={p.id} value={p.id}>{p.label}</option>)}{ui.preset === 'custom' && <option value="custom">自訂字庫</option>}</select></label><label>德語人聲<select className={field} value={voice} onChange={e => { setVoice(e.target.value); saveAudio({selectedURI:e.target.value}); }}><option value="">自然人聲（預設）</option>{voices.map(v => <option key={v.voiceURI} value={v.voiceURI}>{v.name}</option>)}</select></label><label>語速<select className={field} value={rate} onChange={e => { setRate(Number(e.target.value)); saveAudio({rate:Number(e.target.value)}); }}>{[0.6,0.8,0.9,1,1.2].map(r => <option key={r} value={r}>{r}×</option>)}</select></label><button className={button} onClick={exportBackup}><Download size={16}/>匯出備份</button><button className={button} onClick={() => fileInput.current?.click()}><Upload size={16}/>匯入 JSON</button><input type="file" accept=".json,application/json" ref={fileInput} hidden onChange={importBackup}/></div>}
+      {tools && <div className="vocab-tools"><label>德語人聲<select className={field} value={voice} onChange={e => { setVoice(e.target.value); saveAudio({selectedURI:e.target.value}); }}><option value="">自然人聲（預設）</option>{voices.map(v => <option key={v.voiceURI} value={v.voiceURI}>{v.name}</option>)}</select></label><label>語速<select className={field} value={rate} onChange={e => { setRate(Number(e.target.value)); saveAudio({rate:Number(e.target.value)}); }}>{[0.6,0.8,0.9,1,1.2].map(r => <option key={r} value={r}>{r}×</option>)}</select></label><button className={button} onClick={exportBackup}><Download size={16}/>匯出備份</button><button className={button} onClick={() => fileInput.current?.click()}><Upload size={16}/>匯入 JSON</button><input type="file" accept=".json,application/json" ref={fileInput} hidden onChange={importBackup}/></div>}
       {speechMessage && <p role="status" className="speech-toast">{speechMessage}</p>}
       {error && <p role="alert" className="vocab-error">{error} <button onClick={() => loadPreset(selectedPreset || presets.find(p => p.id === DEFAULT_PRESET))}>重新載入字庫</button></p>}
       {message && <div className="speech-toast is-dismissible" role="status">{message}<button aria-label="關閉訊息" onClick={() => setMessage('')}>×</button></div>}

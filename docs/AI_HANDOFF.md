@@ -62,6 +62,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-10 第 1 課加入分級字庫與新選單（Claude Code，已部署）
+
+- 做了什麼：`src/lib/vocabLevels.mjs` 把主字庫轉成第 1 課用的字庫（只收出題池的字：A1 680、A2 648、B1 1100、B2 160），依主題分組，超過 40 字自動切開，B2 整包一組。瀏覽器銜接在 `reviewBridge.js`（`loadLevelPresets`、`loadLevelWords`、`alignSavedWords`）。字庫 id 是 `level-A1` 這種格式，存在 `ui.preset`。
+- 介面：`src/components/VocabPicker.jsx` 取代原本三個下拉選單，用原生 `<dialog>` 做底部選單，樣式 `.vp-*` 用 `--calm-*` 色票。舊字庫放在「我的教材」，一份都沒刪。
+- 進度：舊字庫和主字庫的中文釋義可能不同，切到分級字庫時用詞條 id 對應舊的錯題與收藏（`alignSavedWords`）。
+- 順手修：`.speech-toast` 的動畫蓋掉置中用的 transform，手機上提示會被切掉，改用 `margin-inline: auto` 置中。
+- 驗證：110 個測試通過；本機手機寬度、深色模式實際操作選程度、選主題、7 種練習都有字。
+- 還沒做什麼：未用真實帳號測；第 2～7 課改新風格（使用者已要求，要先規劃、確認再做）。
+
 ### 2026-11-09 修正跨裝置同步（Claude Code，已部署）
 
 - 使用者實測跨裝置沒有同步。查出四個原因並修正：
