@@ -364,6 +364,7 @@ export default function KasusQuestTrainer() {
     reviewItems={reviewItems}
     records={summary}
     panels={panels}
+    featuredPanels={['reference']}
     renderQuestion={renderQuestion}
     />
   </>;

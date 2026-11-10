@@ -13,14 +13,15 @@ import { shuffle } from '../lib/lessonRound.mjs';
 import { irregularVerbs } from '../data/irregular-verbs';
 
 const STORAGE_KEY = 'irregular-verbs-trainer-v3';
-const PRACTICE_LABELS = { flash: '字卡', typing: '拼寫測驗', aux: '助動詞測驗', modal: '情態動詞測驗' };
+// The first entry is the default, so a lesson opens on a quiz; flashcards are for reviewing.
+const PRACTICE_LABELS = { typing: '拼寫測驗', aux: '助動詞測驗', modal: '情態動詞測驗', flash: '字卡' };
 const LEVELS = [...new Set(irregularVerbs.map(verb => verb.level))];
 const FILTERS = [
   { id: 'practice', label: '練習方式', onStart: true, options: Object.entries(PRACTICE_LABELS).map(([id, label]) => ({ id, label })) },
   { id: 'level', label: '程度', options: [{ id: 'all', label: '全部等級' }, ...LEVELS.map(id => ({ id, label: id }))] },
   { id: 'type', label: '動詞類型', options: [{ id: 'all', label: '全部類型' }, { id: 'strong', label: '強變化' }, { id: 'mixed', label: '混合變化' }, { id: 'modal', label: '情態動詞' }, { id: 'special', label: '特殊核心' }] },
   { id: 'aux', label: 'Perfekt 助動詞', options: [{ id: 'all', label: '全部助動詞' }, { id: 'hat', label: 'haben' }, { id: 'ist', label: 'sein' }] },
-  { id: 'only', label: '篩選', options: [{ id: 'all', label: '全部動詞' }, { id: 'wrong', label: '錯誤紀錄' }, { id: 'hard', label: '需要複習' }, { id: 'starred', label: '已收藏' }] },
+  { id: 'only', label: '篩選', onStart: true, options: [{ id: 'all', label: '全部動詞' }, { id: 'wrong', label: '錯誤紀錄' }, { id: 'hard', label: '需要複習' }, { id: 'starred', label: '已收藏' }] },
   { id: 'order', label: '字卡順序', options: [{ id: 'seq', label: '依序' }, { id: 'random', label: '隨機' }] }
 ];
 const MODAL_FORMS = ['darf', 'kann', 'mag', 'muss', 'soll', 'will'];

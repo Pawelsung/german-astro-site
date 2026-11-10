@@ -911,3 +911,4 @@ body:has(.picker-sheet[open]) { overflow: hidden; }
   .calm-page .vocab-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; }
   .calm-page .vocab-tabs button { padding: 8px 2px; font-size: 13px; }
 }
+.lc-score { font-size: 13px; font-weight: 800; color: var(--calm-accent); white-space: nowrap; }

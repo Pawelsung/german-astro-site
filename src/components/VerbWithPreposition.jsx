@@ -14,7 +14,8 @@ import { blankPreposition } from '../lib/prepositionBlank.mjs';
 import { WO_DA_KIND_LABEL, WO_DA_RULES, fillWoDa, woDaAnswer, woDaOptions } from '../lib/woDa.mjs';
 
 const CASE_NAME = { A: 'Akkusativ', D: 'Dativ' };
-const PRACTICE_LABELS = { flash: '字卡', word: '單字測驗', sentence: '例句測驗', case: '格位測驗', woda: 'wo/da 測驗' };
+// The first entry is the default, so a lesson opens on a quiz; flashcards are for reviewing.
+const PRACTICE_LABELS = { word: '單字測驗', sentence: '例句測驗', case: '格位測驗', woda: 'wo/da 測驗', flash: '字卡' };
 const FILTERS = [
   { id: 'practice', label: '練習方式', onStart: true, options: Object.entries(PRACTICE_LABELS).map(([id, label]) => ({ id, label })) },
   { id: 'only', label: '篩選', options: [{ id: 'all', label: '全部' }, { id: 'saved', label: '只看收藏' }] }
@@ -151,6 +152,7 @@ export default function VerbWithPreposition() {
   const [rate, setRate] = useState(0.9);
   const { voices, speak, speechMessage } = useGermanSpeech({ voiceURI: voice, rate });
   const [userData, setUserData] = useStoredProgress('verb-preposition-trainer-v1', loadLesson2Progress);
+  const [score, setScore] = useState({ points: 0, streak: 0 });
 
   const itemsFor = ({ practice, only }) => {
     const saved = id => only !== 'saved' || userData.starred.includes(id);
@@ -159,6 +161,8 @@ export default function VerbWithPreposition() {
   const reviewItems = () => verbData.filter(item => isLesson2Due(userData.srs[item.id]));
 
   const toggleStar = id => setUserData(prev => ({ ...prev, starred: prev.starred.includes(id) ? prev.starred.filter(entry => entry !== id) : [...prev.starred, id] }));
+  const scoreAnswer = correct => setScore(prev => (correct ? { points: prev.points + 10, streak: prev.streak + 1 } : { ...prev, streak: 0 }));
+  const scoreBadge = <span className="lc-score">{score.points} 分 · 連勝 {score.streak}</span>;
   const addHistory = record => setUserData(prev => ({ ...prev, history: [...prev.history, record] }));
 
   function rateCard(id, rating) {
@@ -223,6 +227,7 @@ export default function VerbWithPreposition() {
       return <ChoiceCard
         key={key}
         tag={PRACTICE_LABELS.woda}
+        actions={scoreBadge}
         hint={WO_DA_KIND_LABEL[item.kind]}
         prompt={picked => <p className="lc-sentence" lang="de">{before}{picked ? <span className="lc-filled">{answer}</span> : <span className="lc-blank"/>}{after}</p>}
         options={woDaOptions(item, entry, randomly(ALL_PREPS))}
@@ -238,6 +243,7 @@ export default function VerbWithPreposition() {
         onNext={next}
         onChoose={(_, correct) => {
           report(correct, solved);
+          scoreAnswer(correct);
           speak(solved);
           addHistory({ mode: 'woda', score: correct ? 10 : 0, verb: entry.verb, correct, date: new Date().toISOString() });
         }}
@@ -251,6 +257,7 @@ export default function VerbWithPreposition() {
     return <ChoiceCard
       key={key}
       tag={PRACTICE_LABELS[practice]}
+      actions={scoreBadge}
       prompt={picked => practice === 'word' ? <WordPrompt item={item} picked={picked}/>
         : practice === 'sentence' ? <SentencePrompt item={item} picked={picked}/>
         : <><p className="lc-sentence is-center" lang="de">{item.verb} + {item.prep}</p><p className="lc-sub is-center">後面應該接什麼格位？</p></>}
@@ -267,6 +274,7 @@ export default function VerbWithPreposition() {
       onNext={next}
       onChoose={(_, correct) => {
         report(correct, `${item.verb} ${item.prep} + ${CASE_NAME[item.case]}`);
+        scoreAnswer(correct);
         speak(correct ? 'Richtig!' : `Falsch. Die Antwort ist ${answer}`);
         addHistory({ mode: practice, score: correct ? 10 : 0, verb: item.verb, correct, date: new Date().toISOString() });
       }}

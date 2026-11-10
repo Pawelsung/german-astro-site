@@ -302,6 +302,7 @@ export default function AdjectiveDeclensionTrainer() {
     reviewItems={reviewItems}
     records={summary}
     panels={panels}
+    featuredPanels={['tables']}
     renderQuestion={renderQuestion}
     />
   </>;
