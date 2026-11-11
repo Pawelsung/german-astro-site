@@ -9,6 +9,7 @@ import c1Url from '../data/lexicon/site/C1.json?url';
 import { PROGRESS_KEYS, readJSON, writeJSON } from './progressStorage';
 import { applyLessonAnswer, decodeReview, encodeReview, mergeReview } from './reviewStore.mjs';
 import { buildResolver, migrateLegacyWords } from './reviewMigrate.mjs';
+import { importLangLoopWords } from './langloopWords.mjs';
 import { alignSavedWords as alignWithResolver, levelPresets, levelWords } from './vocabLevels.mjs';
 
 const ARCHIVE_KEY = 'german-vocabulary-library-v1';
@@ -90,4 +91,12 @@ export function recordLessonPractice(word, outcome) {
 
 export function mergeImportedReview(stored) {
   return saveReview(mergeReview(decodeReview(readStoredReview()), decodeReview(stored)));
+}
+
+// Words saved in LangLoop's word list join the review here; returns how many were added.
+export async function importFromLangLoop(words) {
+  const { pool } = await loadLexicon();
+  const { review, added } = importLangLoopWords(decodeReview(readStoredReview()), words, new Set(pool.map(word => word.id)));
+  if (added.length) saveReview(review);
+  return added.length;
 }

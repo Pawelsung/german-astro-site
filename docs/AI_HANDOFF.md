@@ -62,6 +62,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-11 LangLoop 生字本排進複習（Claude Code，已部署）
+
+- 使用者需求：在 LangLoop 播放器點不會的單字，看詞性、相關單字、例句並儲存，存下的字要進這裡的複習。
+- 做法：LangLoop 把字存在自己的 Supabase（`saved_words`），這裡不給 LangLoop 寫 Firestore 的權限。首頁 `LangLoopCard` 確認是受邀帳號後，呼叫 LangLoop `GET /api/words`（Firebase ID token），`reviewBridge.importFromLangLoop` → `src/lib/langloopWords.mjs` 在本機 review 紀錄裡加星號，並記一次「不會」、當天到期，再由原本的雲端同步帶到其他裝置。**儲存格式沒有改。**
+- 規則：只收複習字庫（index 第 7 欄為 1）裡的 id；星號的時間 = LangLoop 儲存時間，用來避免重複匯入，在這裡取消星號後，除非在 LangLoop 重新儲存，否則不會再加回來。
+- LangLoop 用的字庫是 `LangLoop/scripts/sync-lexicon.mjs` 從這裡的 `src/data/lexicon/site/` 複製過去的；這裡的字庫改了要在 LangLoop 重跑。
+- 驗證：129 個測試通過（新增 `tests/langloop-words.test.mjs`），`npm run build` 成功。
+- 還沒做什麼：LangLoop 字庫裡沒有的字還不會進這裡的複習（要收非字庫字才需要改格式）。
+
 ### 2026-11-10 第 2、3 課預設測驗與常用入口（Claude Code，已部署）
 
 - 使用者決定：加回第 2 課測驗的積分和連勝（本次開啟頁面內計算，不存檔，和改版前相同）；第 2、3 課開始頁預設選測驗，字卡排最後；第 3 課「錯誤紀錄／需要複習／已收藏」放到開始頁；第 4 課參考表、第 6 課文法速查放到開始頁連結。
