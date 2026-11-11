@@ -84,7 +84,7 @@ function highlightChangedVowel(baseWord = '', targetWord = '') {
   return (
     <>
       {targetWord.slice(0, index)}
-      <span className="font-black text-rose-600 underline decoration-2 underline-offset-4">
+      <span className="font-black text-rose-ink underline decoration-2 underline-offset-4">
         {targetWord.slice(index, index + targetVowel.length)}
       </span>
       {targetWord.slice(index + targetVowel.length)}
@@ -99,8 +99,8 @@ function renderPerfektWithAuxHighlight(perfekt = '') {
 
   const auxClass =
     aux === 'ist'
-      ? 'bg-emerald-100 text-emerald-700 border-emerald-200'
-      : 'bg-sky-100 text-sky-700 border-sky-200';
+      ? 'bg-emerald-soft text-emerald-ink border-emerald-line'
+      : 'bg-sky-soft text-sky-ink border-sky-line';
 
   return (
     <span className="flex flex-wrap items-center gap-2">
@@ -116,25 +116,25 @@ function getTypeMeta(type) {
   const map = {
     strong: {
       label: '強變化',
-      cls: 'bg-rose-100 text-rose-700 border-rose-200'
+      cls: 'bg-rose-soft text-rose-ink border-rose-line'
     },
     mixed: {
       label: '混合變化',
-      cls: 'bg-orange-100 text-orange-700 border-orange-200'
+      cls: 'bg-amber-soft text-amber-ink border-amber-line'
     },
     modal: {
       label: '情態動詞',
-      cls: 'bg-indigo-100 text-indigo-700 border-indigo-200'
+      cls: 'bg-indigo-soft text-indigo-ink border-indigo-line'
     },
     special: {
       label: '特殊核心',
-      cls: 'bg-violet-100 text-violet-700 border-violet-200'
+      cls: 'bg-violet-soft text-violet-ink border-violet-line'
     }
   };
 
   return map[type] || {
     label: '未分類',
-    cls: 'bg-slate-100 text-slate-700 border-slate-200'
+    cls: 'bg-surface-muted text-ink-soft border-line'
   };
 }
 
@@ -142,14 +142,14 @@ function inferAuxHint(verb) {
   if (verb?.auxiliary === 'ist') {
     return {
       label: 'Perfekt 用 sein',
-      cls: 'bg-emerald-100 text-emerald-700 border-emerald-200'
+      cls: 'bg-emerald-soft text-emerald-ink border-emerald-line'
     };
   }
 
   if (verb?.auxiliary === 'hat') {
     return {
       label: 'Perfekt 用 haben',
-      cls: 'bg-sky-100 text-sky-700 border-sky-200'
+      cls: 'bg-sky-soft text-sky-ink border-sky-line'
     };
   }
 
@@ -162,18 +162,18 @@ function deriveLearningState(item = {}) {
   const pending = itemNeedsReview(item);
 
   if (correct >= 5 && !pending) {
-    return { label: '已熟記', cls: 'bg-emerald-100 text-emerald-700 border-emerald-200' };
+    return { label: '已熟記', cls: 'bg-emerald-soft text-emerald-ink border-emerald-line' };
   }
 
   if (pending) {
-    return { label: '需要複習', cls: 'bg-rose-100 text-rose-600 border-rose-200' };
+    return { label: '需要複習', cls: 'bg-rose-soft text-rose-ink border-rose-line' };
   }
 
   if (seen > 0) {
-    return { label: '學習中', cls: 'bg-violet-100 text-violet-700 border-violet-200' };
+    return { label: '學習中', cls: 'bg-violet-soft text-violet-ink border-violet-line' };
   }
 
-  return { label: '未開始', cls: 'bg-slate-100 text-slate-600 border-slate-200' };
+  return { label: '未開始', cls: 'bg-surface-muted text-ink-soft border-line' };
 }
 
 const AudioPill = ({ onClick, label }) => <SpeakButton label={label} onSpeak={onClick}/>;
@@ -206,7 +206,7 @@ function VerbListPanel({ selection, progress, speak }) {
             return (
               <div
                 key={verb.id}
-                className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4"
+                className="bg-surface rounded-2xl shadow-sm border border-line p-4"
               >
                 <div className="grid gap-4">
                   <div className="flex-1">
@@ -215,7 +215,7 @@ function VerbListPanel({ selection, progress, speak }) {
                       <AudioPill onClick={() => speak(verb.infinitive)} label="播放動詞發音" />
 
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="px-3 py-1 rounded-full bg-violet-50 text-violet-600 text-sm font-black border border-violet-200">
+                        <span className="px-3 py-1 rounded-full bg-violet-soft/60 text-violet-ink text-sm font-black border border-violet-line">
                           {verb.level}
                         </span>
                         <span className={`px-3 py-1 rounded-full text-sm font-black border ${learningState.cls}`}>
@@ -233,15 +233,15 @@ function VerbListPanel({ selection, progress, speak }) {
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-slate-50 rounded-2xl p-3">
-                        <div className="text-xs font-black text-slate-400 mb-1">3. Person</div>
+                      <div className="bg-surface-soft rounded-2xl p-3">
+                        <div className="text-xs font-black text-ink-muted mb-1">3. Person</div>
                         <div className="font-black">
                           {highlightChangedVowel(verb.infinitive, verb.present3rd)}
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 rounded-2xl p-3">
-                        <div className="text-xs font-black text-slate-400 mb-1">Präteritum</div>
+                      <div className="bg-surface-soft rounded-2xl p-3">
+                        <div className="text-xs font-black text-ink-muted mb-1">Präteritum</div>
                         <div className="flex items-center justify-between gap-2">
                           <div className="font-black">
                             {highlightChangedVowel(verb.infinitive, verb.praeteritum)}
@@ -250,36 +250,36 @@ function VerbListPanel({ selection, progress, speak }) {
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 rounded-2xl p-3">
-                        <div className="text-xs font-black text-slate-400 mb-1">Perfekt</div>
+                      <div className="bg-surface-soft rounded-2xl p-3">
+                        <div className="text-xs font-black text-ink-muted mb-1">Perfekt</div>
                         <div className="flex items-center justify-between gap-2">
                           <div className="font-black">{renderPerfektWithAuxHighlight(verb.perfekt)}</div>
                           <AudioPill onClick={() => speak(verb.perfekt)} label="播放完成式發音" />
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 rounded-2xl p-3">
-                        <div className="text-xs font-black text-slate-400 mb-1">中文</div>
+                      <div className="bg-surface-soft rounded-2xl p-3">
+                        <div className="text-xs font-black text-ink-muted mb-1">中文</div>
                         <div className="font-black">{verb.meaningZh}</div>
                       </div>
                     </div>
 
-                    <div className="mt-4 bg-slate-50 rounded-2xl p-3">
-                      <div className="text-xs font-black text-slate-400 mb-2">例句</div>
+                    <div className="mt-4 bg-surface-soft rounded-2xl p-3">
+                      <div className="text-xs font-black text-ink-muted mb-2">例句</div>
                       <div className="flex items-start justify-between gap-3">
-                        <div className="text-slate-600 font-medium flex-1">{verb.example}</div>
+                        <div className="text-ink-soft font-medium flex-1">{verb.example}</div>
                         <AudioPill onClick={() => speak(verb.example)} label="播放例句發音" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-2xl p-4">
-                    <div className="text-sm font-black text-slate-500 mb-2">學習紀錄</div>
-                    <div className="text-sm font-bold text-slate-700">看過：{stats.seen}</div>
-                    <div className="text-sm font-bold text-slate-700">答對：{stats.correct}</div>
-                    <div className="text-sm font-bold text-slate-700">答錯：{stats.wrong}</div>
-                    <div className="text-sm font-bold text-slate-700">已收藏：{stats.starred ? '是' : '否'}</div>
-                    <div className="text-sm font-bold text-slate-700">需要複習：{stats.hard ? '是' : '否'}</div>
+                  <div className="bg-surface-soft rounded-2xl p-4">
+                    <div className="text-sm font-black text-ink-muted mb-2">學習紀錄</div>
+                    <div className="text-sm font-bold text-ink-soft">看過：{stats.seen}</div>
+                    <div className="text-sm font-bold text-ink-soft">答對：{stats.correct}</div>
+                    <div className="text-sm font-bold text-ink-soft">答錯：{stats.wrong}</div>
+                    <div className="text-sm font-bold text-ink-soft">已收藏：{stats.starred ? '是' : '否'}</div>
+                    <div className="text-sm font-bold text-ink-soft">需要複習：{stats.hard ? '是' : '否'}</div>
                   </div>
                 </div>
               </div>

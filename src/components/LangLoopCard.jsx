@@ -92,7 +92,8 @@ export default function LangLoopCard() {
       type="button"
       onClick={handleOpen}
       disabled={opening}
-      className="langloop-card group relative flex flex-col rounded-3xl p-5 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg disabled:cursor-wait"
+      aria-label={opening ? 'LangLoop 跟讀練習，開啟中' : '開啟 LangLoop 跟讀練習'}
+      className="langloop-card group relative flex flex-col rounded-3xl p-5 text-left shadow-sm transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-lg disabled:cursor-wait"
     >
       <div className="flex items-start justify-between gap-3">
         <span className="langloop-card-icon grid h-11 w-11 place-items-center rounded-2xl">
@@ -103,7 +104,7 @@ export default function LangLoopCard() {
           受邀課程
         </span>
       </div>
-      <p className="langloop-card-muted mt-4 text-xs font-black tracking-wide">特別課程 · 聽力與跟讀</p>
+      <p className="langloop-card-muted mt-4 text-xs font-bold">特別課程，聽力與跟讀</p>
       <h3 className="langloop-card-title mt-0.5 text-lg font-black leading-snug">LangLoop 跟讀練習</h3>
       <p className="langloop-card-muted mt-1.5 line-clamp-2 text-sm leading-relaxed">
         上傳音檔或貼上文章產生語音，逐句循環播放，字幕會跟著發音亮起。

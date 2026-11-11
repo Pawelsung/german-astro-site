@@ -20,8 +20,8 @@ const DEFAULT_PRESET = 'schritte-b1-1';
 const modes = [['learn', '字卡'], ['produce', '中→德'], ['cloze', '填空'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
 const TYPED_MODES = ['produce', 'cloze'];
 const readWords = () => { try { return normalizeVocabulary(readJSON(PROGRESS_KEYS.lesson1Words, [])); } catch { return []; } };
-const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-bold transition-colors hover:border-sky-400 hover:bg-sky-50 disabled:opacity-40';
-const field = 'min-h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm';
+const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-3 py-2 text-sm font-bold transition-colors hover:border-sky-solid hover:bg-sky-soft/60 disabled:opacity-40';
+const field = 'min-h-11 w-full rounded-xl border border-line bg-surface px-3 py-2 text-sm';
 const emptyUI = { preset: DEFAULT_PRESET, chapter: 'all', mode: 'learn', index: 0, filter: 'all' };
 
 const SWIPE_THRESHOLD = 90;

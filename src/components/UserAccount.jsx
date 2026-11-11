@@ -329,20 +329,20 @@ export default function UserAccount({ compact = false }) {
   if (compact) {
     return (
       <div className="flex shrink-0 items-center gap-2">
-        <span className="hidden max-w-[14rem] truncate rounded-full bg-white/90 border border-amber-100 px-3 py-1.5 text-xs font-black text-slate-500 sm:inline-block">
+        <span className="hidden max-w-[14rem] truncate rounded-full bg-surface/90 border border-amber-line px-3 py-1.5 text-xs font-black text-ink-muted sm:inline-block">
           {user ? user.email || '已登入' : status}
         </span>
         {user ? (
           <>
-            <button onClick={handleManualSync} className="rounded-full bg-amber-100 px-3 py-1.5 text-xs font-black text-amber-700" type="button">
+            <button onClick={handleManualSync} className="rounded-full bg-amber-soft px-3 py-1.5 text-xs font-black text-amber-ink" type="button">
               同步
             </button>
-            <button onClick={handleLogout} className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-black text-slate-600" type="button">
+            <button onClick={handleLogout} className="rounded-full bg-surface-muted px-3 py-1.5 text-xs font-black text-ink-soft" type="button">
               登出
             </button>
           </>
         ) : (
-          <button onClick={handleGoogleLogin} className="rounded-full bg-amber-600 px-3 py-1.5 text-xs font-black text-white disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
+          <button onClick={handleGoogleLogin} className="rounded-full bg-amber-strong px-3 py-1.5 text-xs font-black text-on-solid disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
             <span className="sm:hidden">登入</span><span className="hidden sm:inline">登入同步紀錄</span>
           </button>
         )}
@@ -351,32 +351,31 @@ export default function UserAccount({ compact = false }) {
   }
 
   return (
-    <div className="rounded-2xl border border-amber-100 bg-amber-50/80 p-4">
+    <div className="rounded-2xl border border-amber-line bg-amber-soft/80 p-4">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-xs font-black tracking-widest text-amber-500">學習紀錄同步</p>
-          <h3 className="mt-1 text-base md:text-lg font-black text-slate-800">
-            {user ? user.email || '已登入帳號' : '登入後同步學習紀錄'}
+          <h3 className="text-base md:text-lg font-black text-ink">
+            {user ? `學習紀錄同步到 ${user.email || '這個帳號'}` : '登入後同步學習紀錄'}
           </h3>
-          <p className="mt-1 text-xs md:text-sm font-bold text-slate-500">{status}</p>
+          <p className="mt-1 text-xs md:text-sm font-bold text-ink-muted">{status}</p>
         </div>
 
         <div className="flex flex-wrap gap-2">
           {user ? (
             <>
-              <button onClick={handleManualSync} className="rounded-2xl bg-amber-600 px-4 py-2.5 text-sm font-black text-white" type="button">
+              <button onClick={handleManualSync} className="rounded-2xl bg-amber-strong px-4 py-2.5 text-sm font-black text-on-solid" type="button">
                 立即同步
               </button>
-              <button onClick={handleLogout} className="rounded-2xl bg-white px-4 py-2.5 text-sm font-black text-slate-600 border border-slate-200" type="button">
+              <button onClick={handleLogout} className="rounded-2xl bg-surface px-4 py-2.5 text-sm font-black text-ink-soft border border-line" type="button">
                 登出
               </button>
             </>
           ) : (
             <>
-              <button onClick={handleGoogleLogin} className="rounded-2xl bg-amber-600 px-4 py-2.5 text-sm font-black text-white disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
+              <button onClick={handleGoogleLogin} className="rounded-2xl bg-amber-strong px-4 py-2.5 text-sm font-black text-on-solid disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
                 Google 登入
               </button>
-              <button onClick={() => setShowEmailForm((value) => !value)} className="rounded-2xl bg-white px-4 py-2.5 text-sm font-black text-slate-600 border border-slate-200" type="button">
+              <button onClick={() => setShowEmailForm((value) => !value)} className="rounded-2xl bg-surface px-4 py-2.5 text-sm font-black text-ink-soft border border-line" type="button">
                 Email
               </button>
             </>
@@ -385,19 +384,19 @@ export default function UserAccount({ compact = false }) {
       </div>
 
       {!hasFirebaseConfig && (
-        <p className="mt-4 rounded-2xl bg-white px-4 py-3 text-sm font-bold text-slate-500">
+        <p className="mt-4 rounded-2xl bg-surface px-4 py-3 text-sm font-bold text-ink-muted">
           尚未設定 Firebase 環境變數，目前使用本機紀錄。
         </p>
       )}
 
       {showEmailForm && !user && (
         <form className="mt-4 grid gap-2 md:grid-cols-[1fr_1fr_auto_auto]">
-          <input value={email} onChange={(event) => setEmail(event.target.value)} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold outline-none focus:ring-2 focus:ring-amber-400" placeholder="email" type="email" required />
-          <input value={password} onChange={(event) => setPassword(event.target.value)} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold outline-none focus:ring-2 focus:ring-amber-400" placeholder="password" type="password" minLength={6} required />
-          <button onClick={(event) => handleEmailSubmit(event, 'signin')} className="rounded-2xl bg-slate-800 px-4 py-3 text-sm font-black text-white" type="submit">
+          <input value={email} onChange={(event) => setEmail(event.target.value)} className="rounded-2xl border border-line bg-surface px-4 py-3 text-sm font-bold outline-none focus:ring-2 focus:ring-amber-solid" placeholder="email" type="email" required />
+          <input value={password} onChange={(event) => setPassword(event.target.value)} className="rounded-2xl border border-line bg-surface px-4 py-3 text-sm font-bold outline-none focus:ring-2 focus:ring-amber-solid" placeholder="password" type="password" minLength={6} required />
+          <button onClick={(event) => handleEmailSubmit(event, 'signin')} className="rounded-2xl bg-ink px-4 py-3 text-sm font-black text-surface" type="submit">
             登入
           </button>
-          <button onClick={(event) => handleEmailSubmit(event, 'signup')} className="rounded-2xl bg-white px-4 py-3 text-sm font-black text-slate-700 border border-slate-200" type="submit">
+          <button onClick={(event) => handleEmailSubmit(event, 'signup')} className="rounded-2xl bg-surface px-4 py-3 text-sm font-black text-ink-soft border border-line" type="submit">
             註冊
           </button>
         </form>

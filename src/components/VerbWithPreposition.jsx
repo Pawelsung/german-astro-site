@@ -64,25 +64,25 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
 
   return (
     <div className="w-full">
-      <div className="bg-white p-3 sm:p-4 rounded-3xl shadow-sm border border-gray-100 mb-3 flex flex-col gap-3">
+      <div className="bg-surface p-3 sm:p-4 rounded-3xl shadow-sm border border-line mb-3 flex flex-col gap-3">
         <div className="relative">
-            <Search className="absolute left-4 top-3.5 text-gray-400" size={18} />
+            <Search className="absolute left-4 top-3.5 text-ink-muted" size={18} />
             <input
             type="text"
             placeholder="搜尋動詞或意思..."
-            className="w-full pl-11 pr-4 py-3 rounded-2xl bg-gray-50 border-none focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base font-medium"
+            className="w-full pl-11 pr-4 py-3 rounded-2xl bg-surface-soft border-none focus:outline-none focus:ring-2 focus:ring-amber-solid text-sm sm:text-base font-medium"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             />
         </div>
         <div className="flex items-center justify-between px-1 sm:px-2">
-            <span className="text-xs sm:text-sm font-bold text-gray-500">共 {filteredData.length} 個</span>
+            <span className="text-xs sm:text-sm font-bold text-ink-muted">共 {filteredData.length} 個</span>
             <button
                 onClick={() => setShowOnlyStarred(!showOnlyStarred)}
                 aria-pressed={showOnlyStarred}
-                className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-colors ${showOnlyStarred ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-600'}`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-colors ${showOnlyStarred ? 'bg-amber-soft text-amber-ink' : 'bg-surface-muted text-ink-soft'}`}
             >
-                <Star size={14} className={showOnlyStarred ? "fill-amber-500 text-amber-500" : ""} />
+                <Star size={14} className={showOnlyStarred ? "fill-amber-solid text-amber-solid" : ""} />
                 已收藏
             </button>
         </div>
@@ -95,9 +95,9 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
           const nextReview = srsData?.nextReview ? new Date(srsData.nextReview).toLocaleDateString() : '尚未複習';
 
           return (
-          <div key={item.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div key={item.id} className="bg-surface rounded-2xl shadow-sm border border-line overflow-hidden">
             <div
-              className="p-3.5 sm:p-4 md:p-5 flex items-center justify-between cursor-pointer hover:bg-amber-50/50 transition-colors"
+              className="p-3.5 sm:p-4 md:p-5 flex items-center justify-between cursor-pointer hover:bg-amber-soft/50 transition-colors"
               onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
             >
               <div className="flex-1 flex items-start gap-2 sm:gap-3">
@@ -105,35 +105,35 @@ const VerbList = ({ data, speak, userData, toggleStar }) => {
                     onClick={(e) => { e.stopPropagation(); toggleStar(item.id); }}
                     className="mt-0.5 sm:mt-1 flex-shrink-0"
                 >
-                    <Star size={20} className={isStarred ? "fill-amber-400 text-amber-400" : "text-gray-300"} />
+                    <Star size={20} className={isStarred ? "fill-amber-solid text-amber-solid" : "text-ink-muted"} />
                 </button>
                 <div>
                     <div className="flex flex-wrap items-baseline gap-1.5 sm:gap-2 mb-1">
-                        <span className="font-extrabold text-base sm:text-lg text-gray-800">{item.verb}</span>
-                        <span className="text-amber-600 font-extrabold text-sm sm:text-base">+ {item.prep}</span>
-                        <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-bold border border-gray-200">+{item.case}</span>
+                        <span className="font-extrabold text-base sm:text-lg text-ink">{item.verb}</span>
+                        <span className="text-amber-ink font-extrabold text-sm sm:text-base">+ {item.prep}</span>
+                        <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded bg-surface-muted text-ink-soft font-bold border border-line">+{item.case}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">{item.verbTrans}</p>
+                    <p className="text-xs sm:text-sm text-ink-muted font-medium">{item.verbTrans}</p>
                 </div>
               </div>
               <div className="flex items-center gap-1 sm:gap-2">
                 <SpeakButton label="播放動詞發音" onSpeak={() => speak(item.verb)}/>
-                <div className="p-1 sm:p-2 text-gray-300">
+                <div className="p-1 sm:p-2 text-ink-muted">
                   {expandedId === item.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </div>
               </div>
             </div>
 
             {expandedId === item.id && (
-              <div className="px-4 sm:px-5 pb-4 sm:pb-5 bg-gradient-to-b from-transparent to-amber-50/30">
-                <div className="pt-2 sm:pt-3 border-t border-gray-100 space-y-2.5 sm:space-y-3">
+              <div className="px-4 sm:px-5 pb-4 sm:pb-5 bg-gradient-to-b from-transparent to-amber-soft/30">
+                <div className="pt-2 sm:pt-3 border-t border-line space-y-2.5 sm:space-y-3">
                    <div className="flex justify-between items-center text-[10px] sm:text-xs">
-                     <div><span className="font-bold text-gray-500">三態: </span><span className="text-gray-800 font-medium">{item.forms}</span></div>
-                     <div className="bg-blue-50 text-blue-700 px-1.5 py-1 rounded font-bold flex items-center gap-1"><Calendar size={10}/> 複習: {nextReview}</div>
+                     <div><span className="font-bold text-ink-muted">三態: </span><span className="text-ink font-medium">{item.forms}</span></div>
+                     <div className="bg-sky-soft/60 text-sky-ink px-1.5 py-1 rounded font-bold flex items-center gap-1"><Calendar size={10}/> 複習: {nextReview}</div>
                    </div>
-                   <div className="bg-white p-3 sm:p-4 rounded-xl border border-amber-100 shadow-sm">
-                     <p className="text-gray-800 mb-1 font-medium text-sm sm:text-base">{item.example}</p>
-                     <p className="text-gray-500 text-xs sm:text-sm mb-2">{item.exampleTrans}</p>
+                   <div className="bg-surface p-3 sm:p-4 rounded-xl border border-amber-line shadow-sm">
+                     <p className="text-ink mb-1 font-medium text-sm sm:text-base">{item.example}</p>
+                     <p className="text-ink-muted text-xs sm:text-sm mb-2">{item.exampleTrans}</p>
                      <SpeakButton small label="播放例句" onSpeak={() => speak(item.example)}/>
                    </div>
                 </div>

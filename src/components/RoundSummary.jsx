@@ -65,15 +65,14 @@ export default function RoundSummary() {
   return (
     <>
       <span className="round-pill" title="每 10 題為一輪，做完會顯示結算" aria-label={`本輪進度 ${progress.answered} / ${progress.size}`}>
-        <span className="round-pill-bar"><span style={{ width: `${(progress.answered / progress.size) * 100}%` }} /></span>
+        <span className="round-pill-bar"><span style={{ transform: `scaleX(${progress.answered / progress.size})` }} /></span>
         <span>{progress.answered}/{progress.size}</span>
       </span>
 
       {summary && (
         <div className="round-overlay" data-round-summary onClick={(event) => { if (event.target === event.currentTarget) setSummary(null); }}>
           <section className="round-modal" role="dialog" aria-modal="true" aria-labelledby="round-title">
-            <p className="round-kicker">第 {summary.round} 輪完成</p>
-            <h2 id="round-title" className="round-title">{verdict(summary.correct, summary.total)}</h2>
+            <h2 id="round-title" className="round-title">第 {summary.round} 輪完成：{verdict(summary.correct, summary.total)}</h2>
             <div className="round-score">
               <ScoreRing correct={summary.correct} total={summary.total} />
               {activity && (

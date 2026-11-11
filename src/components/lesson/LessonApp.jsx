@@ -119,7 +119,7 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
       </section>}
 
       {phase === 'session' && <div className="lf-session">
-        <div className="calm-progress" aria-hidden="true"><span style={{ width: `${((run.pos + 1) / run.items.length) * 100}%` }}/></div>
+        <div className="calm-progress" aria-hidden="true"><span style={{ transform: `scaleX(${(run.pos + 1) / run.items.length})` }}/></div>
         {renderQuestion({
           key: `${run.number}-${run.pos}`,
           item: currentItem,

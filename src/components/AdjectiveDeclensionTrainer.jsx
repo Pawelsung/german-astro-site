@@ -73,7 +73,7 @@ function HighlightedGerman({ text }) {
         return (
           <React.Fragment key={`${word}-${index}`}>
             {stem}
-            <span className="rounded bg-rose-100 px-0.5 font-black text-rose-700">{match[0]}</span>
+            <span className="rounded bg-rose-soft px-0.5 font-black text-rose-ink">{match[0]}</span>
             {trailing}
           </React.Fragment>
         );
@@ -90,8 +90,8 @@ function DeclensionTable({ table }) {
   return (
     <div className="grid gap-2">
       {table.rows.map((row) => (
-        <div key={row.caseName} className="rounded-xl border border-slate-100 bg-slate-50 p-3">
-          <div className="mb-2 text-xs font-black text-slate-500">{row.caseName}</div>
+        <div key={row.caseName} className="rounded-xl border border-line bg-surface-soft p-3">
+          <div className="mb-2 text-xs font-black text-ink-muted">{row.caseName}</div>
           <div className="grid grid-cols-2 gap-2 text-xs font-bold sm:grid-cols-4">
             {[
               ['陽性', row.masculine],
@@ -99,9 +99,9 @@ function DeclensionTable({ table }) {
               ['中性', row.neuter],
               ['複數', row.plural]
             ].map(([label, value]) => (
-              <div key={label} className="min-w-0 rounded-lg bg-white px-2.5 py-2">
-                <div className="text-[10px] font-black text-slate-400">{label}</div>
-                <div className="mt-0.5 break-words text-slate-800">
+              <div key={label} className="min-w-0 rounded-lg bg-surface px-2.5 py-2">
+                <div className="text-[10px] font-black text-ink-muted">{label}</div>
+                <div className="mt-0.5 break-words text-ink">
                   <HighlightedGerman text={value} />
                 </div>
               </div>
@@ -125,9 +125,9 @@ function ConceptPanel({ speak }) {
 
   return (
     <section className="grid gap-1">
-      <div className="grid grid-cols-2 gap-1 rounded-xl bg-slate-100 p-1 sm:grid-cols-5">
+      <div className="grid grid-cols-2 gap-1 rounded-xl bg-surface-muted p-1 sm:grid-cols-5">
         {[['concepts', '概念'], ...tableTabs].map(([key, label]) => (
-          <button key={key} type="button" onClick={() => setActiveTab(key)} className={cx('min-h-10 rounded-lg px-3 py-2 text-xs font-black', activeTab === key ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:bg-white/70')}>
+          <button key={key} type="button" onClick={() => setActiveTab(key)} className={cx('min-h-10 rounded-lg px-3 py-2 text-xs font-black', activeTab === key ? 'bg-surface text-ink shadow-sm' : 'text-ink-muted hover:bg-surface/70')}>
             {label}
           </button>
         ))}
@@ -136,25 +136,25 @@ function ConceptPanel({ speak }) {
       {activeTab === 'concepts' ? (
         <div className="mt-3 grid gap-2">
           {lessonData.conceptCards.map((card) => (
-            <details key={card.id} className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2">
+            <details key={card.id} className="rounded-xl border border-line bg-surface-soft px-3 py-2">
               <summary className="cursor-pointer list-none">
                 <div className="grid grid-cols-[1fr_auto] items-center gap-3">
                   <div className="min-w-0">
-                    <div className="truncate text-sm font-black text-slate-800">{card.title}</div>
-                    <div className="mt-0.5 truncate text-xs font-bold text-slate-500">{card.shortRule}</div>
+                    <div className="truncate text-sm font-black text-ink">{card.title}</div>
+                    <div className="mt-0.5 truncate text-xs font-bold text-ink-muted">{card.shortRule}</div>
                   </div>
-                  <span className="rounded-lg bg-white px-2 py-1 text-[10px] font-black text-amber-700">{card.focus}</span>
+                  <span className="rounded-lg bg-surface px-2 py-1 text-[10px] font-black text-amber-ink">{card.focus}</span>
                 </div>
               </summary>
-              <div className="mt-3 grid gap-2 border-t border-slate-200 pt-3 text-sm">
-                <p className="font-bold leading-relaxed text-slate-600">{card.explanation}</p>
+              <div className="mt-3 grid gap-2 border-t border-line pt-3 text-sm">
+                <p className="font-bold leading-relaxed text-ink-soft">{card.explanation}</p>
                 <div className="grid gap-2 sm:grid-cols-3">
                   {card.examples.slice(0, 3).map((example) => (
-                    <div key={example.german} className="rounded-lg bg-white px-3 py-2">
-                      <div className="font-black text-slate-800">
+                    <div key={example.german} className="rounded-lg bg-surface px-3 py-2">
+                      <div className="font-black text-ink">
                         <HighlightedGerman text={example.german} />
                       </div>
-                      <div className="mt-0.5 text-xs font-bold text-slate-500">{example.chinese}</div>
+                      <div className="mt-0.5 text-xs font-bold text-ink-muted">{example.chinese}</div>
                       <SpeakButton small label="播放例句" onSpeak={() => speak(example.german)}/>
                     </div>
                   ))}
@@ -164,10 +164,10 @@ function ConceptPanel({ speak }) {
           ))}
         </div>
       ) : (
-        <div className="mt-3 rounded-xl border border-slate-100 bg-white p-3">
+        <div className="mt-3 rounded-xl border border-line bg-surface p-3">
           <div className="mb-3">
-            <h4 className="text-sm font-black text-slate-800">{activeTable.title}</h4>
-            <p className="mt-1 text-xs font-bold text-slate-500">{activeTable.note}</p>
+            <h4 className="text-sm font-black text-ink">{activeTable.title}</h4>
+            <p className="mt-1 text-xs font-bold text-ink-muted">{activeTable.note}</p>
           </div>
           <DeclensionTable table={activeTable} />
         </div>

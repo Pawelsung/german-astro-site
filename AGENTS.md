@@ -15,7 +15,7 @@
 - `git push`、`firebase deploy`、資料庫變更，都要先問過使用者。
 - `git stash` 是所有 worktree 共用的，不要用沒有標記的 `git stash` 或 `git stash pop`。
 - 收工前在 `docs/AI_HANDOFF.md` 的「進度紀錄」最上方加一筆：做了什麼、驗證了什麼、還沒做什麼。下一個工具只能靠這份文件接手。
-- 程式慣例（深色模式覆寫、`answerFeedback.js`、`fx-*` 動畫）寫在 `docs/AI_HANDOFF.md`，請照做。
+- 程式慣例（顏色規則、`answerFeedback.js`、`fx-*` 動畫）寫在 `docs/AI_HANDOFF.md`，請照做。改顏色前一定先讀「顏色規則」：只用色彩變數，不用 Tailwind 編號色、不寫色碼、不寫 `.dark` 覆寫，`npm test` 會檢查。
 
 ## 固定限制
 

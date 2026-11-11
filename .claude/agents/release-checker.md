@@ -11,7 +11,7 @@ model: sonnet
 1. `git status` 和 `git diff`，掌握改動範圍，確認沒有混入無關檔案，也沒有金鑰或服務帳號憑證。
 2. `npm test` 和 `npm run build`，記錄實際結果。
 3. 依 `docs/AI_HANDOFF.md` 的慣例檢查改動：
-   - 新的淺色背景或 `hover:bg-*` 是否在 `global.css` 補了 `.dark` 覆寫。
+   - 顏色是否照 `docs/AI_HANDOFF.md` 的「顏色規則」：只用色彩變數（`bg-surface`、`text-ink-muted`、`bg-sky-soft`），沒有 Tailwind 編號色、色碼或 `.dark` 覆寫（`tests/design-tokens.test.mjs` 會擋）。
    - 新題型是否使用 `src/lib/answerFeedback.js` 的 `answerCue`（否則每日目標不會計數）。
    - 答案按鈕是否有 `data-answer-option`。
    - 動畫是否使用共用的 `fx-*` class。
