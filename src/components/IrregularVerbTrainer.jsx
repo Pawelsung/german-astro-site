@@ -206,7 +206,7 @@ function VerbListPanel({ selection, progress, speak }) {
             return (
               <div
                 key={verb.id}
-                className="bg-surface rounded-2xl shadow-sm border border-line p-4"
+                className="bg-surface rounded-2xl border border-line p-4"
               >
                 <div className="grid gap-4">
                   <div className="flex-1">

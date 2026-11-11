@@ -20,7 +20,7 @@ const DEFAULT_PRESET = 'schritte-b1-1';
 const modes = [['learn', '字卡'], ['produce', '中→德'], ['cloze', '填空'], ['article', '冠詞'], ['spell', '聽寫'], ['pos', '詞性'], ['list', '字典']];
 const TYPED_MODES = ['produce', 'cloze'];
 const readWords = () => { try { return normalizeVocabulary(readJSON(PROGRESS_KEYS.lesson1Words, [])); } catch { return []; } };
-const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-3 py-2 text-sm font-bold transition-colors hover:border-sky-solid hover:bg-sky-soft/60 disabled:opacity-40';
+const button = 'inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-3 py-2 text-sm font-bold transition-colors hover:border-sky-solid hover:bg-sky-soft/60 disabled:opacity-40';
 const field = 'min-h-11 w-full rounded-xl border border-line bg-surface px-3 py-2 text-sm';
 const emptyUI = { preset: DEFAULT_PRESET, chapter: 'all', mode: 'learn', index: 0, filter: 'all' };
 
@@ -303,7 +303,7 @@ export default function VocabularyTrainer() {
       const archive = readJSON(CACHE_KEY, {}); words.forEach(w => { archive[wordKey(w)] = w; }); writeJSON(CACHE_KEY, archive);
       if (parsed.review) mergeImportedReview(parsed.review);
       setWords(mergeVocabularyProgress(imported, Object.values(archive))); change({ preset: 'custom', chapter: 'all', filter: 'all' }); setQuery(''); setError(''); setMessage(`已匯入 ${imported.length} 個單字，原字庫紀錄已保留。`);
-    } catch (e) { setError(`匯入失敗：${e.message}`); }
+    } catch (e) { console.error(e); setError(e instanceof SyntaxError ? '這個檔案讀不出來。請選擇從這裡匯出的 JSON 備份檔，再匯入一次。' : `匯入沒有完成：${e.message}`); }
     event.target.value = '';
   }
   const practised = words.filter(w => w.attempts > 0 || w.seen > 0).length;

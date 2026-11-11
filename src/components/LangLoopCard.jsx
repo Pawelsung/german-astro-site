@@ -99,7 +99,7 @@ export default function LangLoopCard() {
         <span className="langloop-card-icon grid h-11 w-11 place-items-center rounded-2xl">
           <AudioLines size={22} />
         </span>
-        <span className="langloop-card-badge inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-black">
+        <span className="langloop-card-badge inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-black">
           <Lock size={11} />
           受邀課程
         </span>

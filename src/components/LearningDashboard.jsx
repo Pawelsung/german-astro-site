@@ -52,7 +52,7 @@ function LessonCard({ lesson, stats, ready }) {
     >
       <div className="flex items-start justify-between gap-3">
         <span className={`grid h-11 w-11 place-items-center rounded-2xl text-lg font-black ${theme.badge}`}>{lesson.order}</span>
-        <div className="flex flex-wrap justify-end gap-1.5 text-[11px] font-black">
+        <div className="flex flex-wrap justify-end gap-1.5 text-xs font-black">
           {ready && stats.review > 0 && (
             <span className="rounded-full bg-rose-soft px-2.5 py-1 text-rose-ink">{stats.review} 待複習</span>
           )}

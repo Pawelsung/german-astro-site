@@ -87,6 +87,13 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
           button.addEventListener('click', () => applyTheme(button.dataset.themeChoice));
         });
 
+        document.addEventListener('keydown', (event) => {
+          if (event.key !== 'Escape' || switcher?.getAttribute('data-open') !== 'true') return;
+          switcher.setAttribute('data-open', 'false');
+          toggle?.setAttribute('aria-expanded', 'false');
+          toggle?.focus();
+        });
+
         document.addEventListener('click', (event) => {
           if (!switcher || switcher.contains(event.target)) return;
           switcher.setAttribute('data-open', 'false');

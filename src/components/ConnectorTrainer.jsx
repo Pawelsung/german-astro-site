@@ -152,7 +152,7 @@ function CardsPanel({ selection, progress, onBookmark, speak }) {
         {data.syntaxTypes.map(item => <option key={item.id} value={item.id}>{item.labelZh}</option>)}
       </select>
     </label></div>
-    {connectors.length === 0 ? <p className="picker-status">目前篩選沒有連接詞卡片</p>
+    {connectors.length === 0 ? <div className="picker-status"><p>這個語序類型在目前範圍沒有連接詞卡片。</p>{syntax !== 'all' && <button type="button" className="calm-link" onClick={() => setSyntax('all')}>顯示全部語序類型</button>}</div>
       : connectors.map(connector => <ConnectorCard key={connector.id} connector={connector} bookmarked={progress.bookmarks.includes(connector.id)} onBookmark={onBookmark} speak={speak}/>)}
   </>;
 }

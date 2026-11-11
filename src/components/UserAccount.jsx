@@ -52,35 +52,38 @@ function mergeRemoteValue(key, legacyValue, splitValue) {
 function getAuthErrorMessage(error) {
   const code = error?.code || '';
 
+  // Setup problems (configuration, domain, provider) are for the site owner and stay in the console.
   const messages = {
-    'auth/configuration-not-found': 'Firebase Authentication 尚未啟用，請到 Console 按 Get started。',
-    'auth/operation-not-allowed': '這個登入方式尚未在 Firebase Authentication 啟用。',
-    'auth/unauthorized-domain': '目前網域未加入 Firebase Auth Authorized domains。',
-    'auth/popup-closed-by-user': '登入視窗已關閉，尚未完成登入。',
-    'auth/cancelled-popup-request': '已取消前一個登入視窗。',
-    'auth/email-already-in-use': '這個 Email 已註冊，請改用登入。',
-    'auth/user-not-found': '找不到這個帳號，請先註冊。',
-    'auth/wrong-password': '密碼不正確。',
-    'auth/invalid-credential': '帳號或密碼不正確。',
-    'auth/invalid-email': 'Email 格式不正確。',
-    'auth/weak-password': '密碼至少需要 6 個字元。'
+    'auth/configuration-not-found': '目前無法登入，學習紀錄先存在這台裝置。',
+    'auth/operation-not-allowed': '目前無法用這個方式登入，學習紀錄先存在這台裝置。',
+    'auth/unauthorized-domain': '這個網址目前無法登入，請改用正式網站登入。',
+    'auth/popup-closed-by-user': '登入視窗已關閉。要同步紀錄，請再按一次登入。',
+    'auth/cancelled-popup-request': '已改用新開的登入視窗。',
+    'auth/popup-blocked': '登入視窗被瀏覽器擋住了，請允許彈出視窗後再按一次登入。',
+    'auth/network-request-failed': '連不上網路，請確認連線後再按一次登入。',
+    'auth/email-already-in-use': '這個 Email 已經註冊過，請改按登入。',
+    'auth/user-not-found': '找不到這個 Email 的帳號，可以按註冊建立。',
+    'auth/wrong-password': 'Email 或密碼不對，請再試一次。',
+    'auth/invalid-credential': 'Email 或密碼不對，請再試一次。',
+    'auth/invalid-email': 'Email 格式看起來不對，請檢查後再試一次。',
+    'auth/weak-password': '密碼至少要 6 個字元。'
   };
 
-  return messages[code] || error?.message || '登入失敗，請稍後再試。';
+  return messages[code] || '登入沒有完成，請稍後再按一次登入。';
 }
 
 function getSyncErrorMessage(error) {
   const code = error?.code || '';
 
   const messages = {
-    'permission-denied': '同步失敗：Firestore 權限不足',
-    'unauthenticated': '同步失敗：尚未完成登入',
-    'resource-exhausted': '同步失敗：資料太大或超過限制',
-    'unavailable': '同步失敗：Firestore 暫時無法連線',
-    'not-found': '同步失敗：Firestore 尚未初始化'
+    'permission-denied': '同步沒有完成，紀錄仍在這台裝置。請重新登入後再按同步。',
+    'unauthenticated': '登入已過期，紀錄仍在這台裝置。請重新登入後再按同步。',
+    'resource-exhausted': '今天的雲端同步量已滿，紀錄仍在這台裝置，明天會自動再同步。',
+    'unavailable': '暫時連不上雲端，紀錄仍在這台裝置，稍後會自動再同步。',
+    'not-found': '雲端還沒準備好，紀錄仍在這台裝置，請稍後再按同步。'
   };
 
-  return messages[code] || `同步失敗${code ? `：${code}` : ''}`;
+  return messages[code] || '同步沒有完成，紀錄仍在這台裝置，請稍後再按同步。';
 }
 
 async function loadRemoteProgress(db, uid) {
@@ -138,6 +141,15 @@ export default function UserAccount({ compact = false }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showEmailForm, setShowEmailForm] = useState(false);
+  // Problems the person must see even on a phone, where the header status is hidden.
+  const [notice, setNotice] = useState('');
+  const notify = (message) => { setStatus(message); setNotice(message); };
+
+  useEffect(() => {
+    if (!notice) return undefined;
+    const timer = setTimeout(() => setNotice(''), 7000);
+    return () => clearTimeout(timer);
+  }, [notice]);
   const userRef = useRef(null);
   const syncingRef = useRef(false);
   const syncTimerRef = useRef(null);
@@ -197,7 +209,7 @@ export default function UserAccount({ compact = false }) {
       }
 
       syncingRef.current = true;
-      setStatus('同步中...');
+      setStatus('同步中…');
       const remoteProgress = await loadRemoteProgress(services.db, uid);
       if (userRef.current?.uid !== uid) return;
       const merged = mergeRemoteProgress(remoteProgress);
@@ -241,7 +253,7 @@ export default function UserAccount({ compact = false }) {
       window.clearTimeout(syncTimerRef.current);
       syncTimerRef.current = window.setTimeout(() => {
         syncTimerRef.current = null;
-        setStatus('自動同步中...');
+        setStatus('自動同步中…');
         syncLocalProgress('已自動同步');
       }, event.detail?.key === PROGRESS_KEYS.review ? REVIEW_SYNC_DELAY : LESSON_SYNC_DELAY);
     };
@@ -269,7 +281,7 @@ export default function UserAccount({ compact = false }) {
   }, [user, syncLocalProgress, pullRemote]);
 
   useEffect(() => {
-    const warn = () => setStatus('本機儲存空間不足，請先匯出備份');
+    const warn = () => notify('這台裝置的儲存空間不夠了，請先到第 1 課匯出備份。');
     window.addEventListener('learning-storage-error', warn);
     return () => window.removeEventListener('learning-storage-error', warn);
   }, []);
@@ -277,16 +289,16 @@ export default function UserAccount({ compact = false }) {
   async function handleGoogleLogin() {
     const services = getFirebaseServices();
     if (!services) {
-      setStatus('需設定 Firebase');
+      notify('目前沒有雲端同步，學習紀錄存在這台裝置。');
       return;
     }
 
-    setStatus('登入中...');
+    setStatus('登入中…');
     try {
       await signInWithPopup(services.auth, provider);
     } catch (error) {
       console.error(error);
-      setStatus(getAuthErrorMessage(error));
+      notify(getAuthErrorMessage(error));
     }
   }
 
@@ -294,11 +306,11 @@ export default function UserAccount({ compact = false }) {
     event.preventDefault();
     const services = getFirebaseServices();
     if (!services) {
-      setStatus('需設定 Firebase');
+      notify('目前沒有雲端同步，學習紀錄存在這台裝置。');
       return;
     }
 
-    setStatus('登入中...');
+    setStatus('登入中…');
 
     try {
       if (action === 'signup') {
@@ -308,7 +320,7 @@ export default function UserAccount({ compact = false }) {
       }
     } catch (error) {
       console.error(error);
-      setStatus(getAuthErrorMessage(error));
+      notify(getAuthErrorMessage(error));
     }
   }
 
@@ -316,7 +328,7 @@ export default function UserAccount({ compact = false }) {
     const services = getFirebaseServices();
     if (!services || !user) return;
 
-    setStatus('同步中...');
+    setStatus('同步中…');
     await syncLocalProgress('已同步');
   }
 
@@ -329,20 +341,21 @@ export default function UserAccount({ compact = false }) {
   if (compact) {
     return (
       <div className="flex shrink-0 items-center gap-2">
+        {notice && <p role="alert" className="speech-toast sm:hidden">{notice}</p>}
         <span className="hidden max-w-[14rem] truncate rounded-full bg-surface/90 border border-amber-line px-3 py-1.5 text-xs font-black text-ink-muted sm:inline-block">
           {user ? user.email || '已登入' : status}
         </span>
         {user ? (
           <>
-            <button onClick={handleManualSync} className="rounded-full bg-amber-soft px-3 py-1.5 text-xs font-black text-amber-ink" type="button">
+            <button onClick={handleManualSync} className="min-h-11 rounded-full bg-amber-soft px-4 text-xs font-black text-amber-ink" type="button">
               同步
             </button>
-            <button onClick={handleLogout} className="rounded-full bg-surface-muted px-3 py-1.5 text-xs font-black text-ink-soft" type="button">
+            <button onClick={handleLogout} className="min-h-11 rounded-full bg-surface-muted px-4 text-xs font-black text-ink-soft" type="button">
               登出
             </button>
           </>
         ) : (
-          <button onClick={handleGoogleLogin} className="rounded-full bg-amber-strong px-3 py-1.5 text-xs font-black text-on-solid disabled:opacity-50" type="button" disabled={!hasFirebaseConfig}>
+          <button onClick={handleGoogleLogin} className="min-h-11 rounded-full bg-amber-strong px-4 text-xs font-black text-on-solid disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-ink-muted" type="button" disabled={!hasFirebaseConfig}>
             <span className="sm:hidden">登入</span><span className="hidden sm:inline">登入同步紀錄</span>
           </button>
         )}

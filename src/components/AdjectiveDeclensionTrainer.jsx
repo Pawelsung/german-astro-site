@@ -100,7 +100,7 @@ function DeclensionTable({ table }) {
               ['複數', row.plural]
             ].map(([label, value]) => (
               <div key={label} className="min-w-0 rounded-lg bg-surface px-2.5 py-2">
-                <div className="text-[10px] font-black text-ink-muted">{label}</div>
+                <div className="text-xs font-black text-ink-muted">{label}</div>
                 <div className="mt-0.5 break-words text-ink">
                   <HighlightedGerman text={value} />
                 </div>
@@ -127,7 +127,7 @@ function ConceptPanel({ speak }) {
     <section className="grid gap-1">
       <div className="grid grid-cols-2 gap-1 rounded-xl bg-surface-muted p-1 sm:grid-cols-5">
         {[['concepts', '概念'], ...tableTabs].map(([key, label]) => (
-          <button key={key} type="button" onClick={() => setActiveTab(key)} className={cx('min-h-10 rounded-lg px-3 py-2 text-xs font-black', activeTab === key ? 'bg-surface text-ink shadow-sm' : 'text-ink-muted hover:bg-surface/70')}>
+          <button key={key} type="button" onClick={() => setActiveTab(key)} className={cx('min-h-11 rounded-lg px-3 py-2 text-xs font-black', activeTab === key ? 'bg-surface text-ink' : 'text-ink-muted hover:bg-surface/70')}>
             {label}
           </button>
         ))}
@@ -143,7 +143,7 @@ function ConceptPanel({ speak }) {
                     <div className="truncate text-sm font-black text-ink">{card.title}</div>
                     <div className="mt-0.5 truncate text-xs font-bold text-ink-muted">{card.shortRule}</div>
                   </div>
-                  <span className="rounded-lg bg-surface px-2 py-1 text-[10px] font-black text-amber-ink">{card.focus}</span>
+                  <span className="rounded-lg bg-surface px-2 py-1 text-xs font-black text-amber-ink">{card.focus}</span>
                 </div>
               </summary>
               <div className="mt-3 grid gap-2 border-t border-line pt-3 text-sm">
