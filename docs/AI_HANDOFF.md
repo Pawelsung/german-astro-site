@@ -109,6 +109,14 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-12 字體改成霞鶩文楷 + Atkinson（Claude Code，已部署）
+
+- 使用者從字體比較頁選定「文楷」組合（比較頁：claude.ai artifact「德語工作台字體」）。
+- 做法：`Layout.astro` 從 Google Fonts 載入 LXGW WenKai TC（400、700）和 Atkinson Hyperlegible Next（400、700、800）。`global.css` 的 `--font-body` 把 Atkinson 放第一：它沒有中文字，所以中文自動落到霞鶩文楷，所有拉丁字母（德文、數字）都用 Atkinson，不需要逐一標 `lang`。**新增字型時順序不能改。**
+- Atkinson 的 0 中間有一條斜線，是為了和 O 區分，屬於刻意的設計。
+- 配色還是現行墨綠，使用者還沒決定要不要換成第二輪的 E（Reclam 黃）或 F（作業簿）。
+- 驗證：134 個測試通過、建置成功；瀏覽器確認兩套字型都有載入、首頁與第 1 課顯示正常。
+
 ### 2026-11-12 全站改用同一套暖色中性色並部署（Claude Code，已部署）
 
 - 使用者回饋：實際使用感覺不出顏色有變。原因：前一輪是把顏色改成變數（結構整理），刻意不改外觀。

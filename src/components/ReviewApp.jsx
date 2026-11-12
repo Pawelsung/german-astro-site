@@ -73,7 +73,7 @@ function WordCard({ row, detail, revealed, onReveal, speak }) {
     >
       <SpeakButton className="calm-card-sound" onSpeak={() => speak(word)}/>
       <div className="calm-word-block">
-        {revealed && article && <span className="calm-article fx-enter" data-gender={gender || undefined}>{article}</span>}
+        {revealed && article && <span className="calm-article fx-enter" lang="de" data-gender={gender || undefined}>{article}</span>}
         <h1 className="calm-word" lang="de">{word}</h1>
       </div>
       {revealed ? (
