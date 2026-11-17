@@ -7,11 +7,11 @@ import { getActivity, getLastLesson } from '../lib/dailyActivity.mjs';
 import LangLoopCard from './LangLoopCard.jsx';
 
 const THEMES = {
-  sky: { badge: 'bg-sky-100 text-sky-700', bar: 'bg-sky-500', ring: 'hover:border-sky-300', accent: 'text-sky-600' },
-  emerald: { badge: 'bg-emerald-100 text-emerald-700', bar: 'bg-emerald-500', ring: 'hover:border-emerald-300', accent: 'text-emerald-600' },
-  amber: { badge: 'bg-amber-100 text-amber-700', bar: 'bg-amber-500', ring: 'hover:border-amber-300', accent: 'text-amber-600' },
-  violet: { badge: 'bg-violet-100 text-violet-700', bar: 'bg-violet-500', ring: 'hover:border-violet-300', accent: 'text-violet-600' },
-  teal: { badge: 'bg-teal-100 text-teal-700', bar: 'bg-teal-500', ring: 'hover:border-teal-300', accent: 'text-teal-600' }
+  sky: { badge: 'bg-sky-soft text-sky-ink', bar: 'bg-sky-solid', ring: 'hover:border-sky-solid', accent: 'text-sky-ink' },
+  emerald: { badge: 'bg-emerald-soft text-emerald-ink', bar: 'bg-emerald-solid', ring: 'hover:border-emerald-solid', accent: 'text-emerald-ink' },
+  amber: { badge: 'bg-amber-soft text-amber-ink', bar: 'bg-amber-solid', ring: 'hover:border-amber-solid', accent: 'text-amber-ink' },
+  violet: { badge: 'bg-violet-soft text-violet-ink', bar: 'bg-violet-solid', ring: 'hover:border-violet-solid', accent: 'text-violet-ink' },
+  teal: { badge: 'bg-teal-soft text-teal-ink', bar: 'bg-teal-solid', ring: 'hover:border-teal-solid', accent: 'text-teal-ink' }
 };
 
 // Progress per lesson, keyed by frontmatter order. `total` falls back to the static item count.
@@ -48,30 +48,30 @@ function LessonCard({ lesson, stats, ready }) {
   return (
     <a
       href={lesson.href}
-      className={`group relative flex flex-col rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${theme.ring}`}
+      className={`group relative flex flex-col rounded-3xl border border-line bg-surface p-5 shadow-sm transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-lg ${theme.ring}`}
     >
       <div className="flex items-start justify-between gap-3">
         <span className={`grid h-11 w-11 place-items-center rounded-2xl text-lg font-black ${theme.badge}`}>{lesson.order}</span>
-        <div className="flex flex-wrap justify-end gap-1.5 text-[11px] font-black">
+        <div className="flex flex-wrap justify-end gap-1.5 text-xs font-black">
           {ready && stats.review > 0 && (
-            <span className="rounded-full bg-rose-100 px-2.5 py-1 text-rose-700">{stats.review} 待複習</span>
+            <span className="rounded-full bg-rose-soft px-2.5 py-1 text-rose-ink">{stats.review} 待複習</span>
           )}
-          {lesson.level && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-600">{lesson.level}</span>}
+          {lesson.level && <span className="rounded-full bg-surface-muted px-2.5 py-1 text-ink-soft">{lesson.level}</span>}
         </div>
       </div>
-      <p className="mt-4 text-xs font-black tracking-wide text-slate-400">{kicker}</p>
-      <h3 className="mt-0.5 text-lg font-black leading-snug text-slate-900">{heading}</h3>
-      <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-slate-500">{lesson.description}</p>
+      <p className="mt-4 text-xs font-bold text-ink-muted">{kicker}</p>
+      <h3 className="mt-0.5 text-lg font-black leading-snug text-ink">{heading}</h3>
+      <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-ink-muted">{lesson.description}</p>
       <div className="mt-auto pt-5">
-        <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-slate-500">
+        <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-ink-muted">
           <span>{ready && total ? `已練 ${done} / ${total}` : `${lesson.minutes || 15} 分鐘`}</span>
           <span className={`inline-flex items-center gap-1 font-black ${theme.accent}`}>
             {ready && done > 0 ? '繼續' : '開始'}
             <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
           </span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-          <div className={`h-full rounded-full ${theme.bar}`} style={{ width: `${ready ? percent : 0}%`, transition: 'width 700ms ease' }} />
+        <div className="h-2 overflow-hidden rounded-full bg-surface-muted">
+          <div className={`h-full w-full origin-left ${theme.bar}`} style={{ transform: `scaleX(${ready ? percent / 100 : 0})`, transition: 'transform 700ms ease-out' }} />
         </div>
       </div>
     </a>
@@ -127,7 +127,7 @@ export default function LearningDashboard({ lessons = [] }) {
         </div>
         <h1>{today ? headline : '今日複習'}</h1>
         <p className="today-sub">{today ? subline : '\u00a0'}</p>
-        <div className="today-bar" role="progressbar" aria-valuemin={0} aria-valuemax={goal} aria-valuenow={Math.min(done, goal)} aria-label="今日複習進度"><span style={{ width: `${percent}%` }} /></div>
+        <div className="today-bar" role="progressbar" aria-valuemin={0} aria-valuemax={goal} aria-valuenow={Math.min(done, goal)} aria-label="今日複習進度"><span style={{ transform: `scaleX(${percent / 100})` }} /></div>
         <a href="/review/" className="today-cta">{cta}<ArrowRight size={18} /></a>
         {ready && (grammarReview > 0 || lastLesson) && (
           <p className="today-more">
@@ -140,8 +140,8 @@ export default function LearningDashboard({ lessons = [] }) {
 
       <section>
         <div className="mb-4 flex items-baseline justify-between gap-3">
-          <h2 className="text-lg font-black text-slate-900">全部課程</h2>
-          <span className="text-xs font-bold text-slate-500">{lessons.length} 個主題</span>
+          <h2 className="text-lg font-black text-ink">全部課程</h2>
+          <span className="text-xs font-bold text-ink-muted">{lessons.length} 個主題</span>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {lessons.map((lesson) => (

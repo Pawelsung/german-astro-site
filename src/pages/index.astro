@@ -47,11 +47,11 @@ const lessons = allLessons.map(({ url, frontmatter }: any) => ({
 <Layout title="德語學習工作台 | German Learning Workspace">
   <header class="home-header">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4">
-      <a href="/" class="flex min-w-0 items-center gap-3">
+      <a href="/" class="flex min-h-11 min-w-0 items-center gap-3">
         <span class="home-logo" aria-hidden="true">DE</span>
         <span class="min-w-0">
-          <span class="block truncate text-lg font-black leading-tight text-slate-900">德語學習工作台</span>
-          <span class="hidden text-xs font-bold text-slate-500 sm:block">詞彙、動詞與文法的系統化練習</span>
+          <span class="block truncate text-lg font-black leading-tight text-ink">德語學習工作台</span>
+          <span class="hidden text-xs font-bold text-ink-muted sm:block">詞彙、動詞與文法的系統化練習</span>
         </span>
       </a>
       <UserAccount client:only="react" compact />
@@ -60,9 +60,9 @@ const lessons = allLessons.map(({ url, frontmatter }: any) => ({
 
   <main class="mx-auto max-w-6xl px-4 pb-24 pt-4 md:pt-6">
     {lessons.length === 0 ? (
-      <div class="rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center">
-        <p class="text-xl font-bold text-gray-400">目前還沒有符合條件的課程檔案</p>
-        <p class="mt-2 text-sm text-gray-400">請檢查檔案頂部是否有正確的 title 與 category 設定</p>
+      <div class="rounded-2xl border border-dashed border-line bg-surface p-12 text-center">
+        <p class="text-xl font-bold text-ink-muted">目前還沒有符合條件的課程檔案</p>
+        <p class="mt-2 text-sm text-ink-muted">請檢查檔案頂部是否有正確的 title 與 category 設定</p>
       </div>
     ) : (
       <LearningDashboard client:load lessons={lessons} />

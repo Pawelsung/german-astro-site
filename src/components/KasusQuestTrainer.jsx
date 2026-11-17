@@ -199,7 +199,7 @@ function ReferenceTable({ title, table }) {
       <h4 className="mb-3 text-sm font-black">{title}</h4>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[440px] text-left text-xs font-bold">
-          <thead className="text-slate-400">
+          <thead className="text-ink-muted">
             <tr>
               <th className="py-2">格位</th>
               {genders.map((gender) => <th key={gender} className="py-2">{gender}</th>)}
@@ -207,10 +207,10 @@ function ReferenceTable({ title, table }) {
           </thead>
           <tbody>
             {cases.map((caseName) => (
-              <tr key={caseName} className="border-t border-slate-100">
-                <td className="py-2 text-slate-500">{caseName}</td>
+              <tr key={caseName} className="border-t border-line">
+                <td className="py-2 text-ink-muted">{caseName}</td>
                 {genders.map((gender) => (
-                  <td key={gender} className="py-2 text-slate-800">{table?.[gender]?.[caseName] || '-'}</td>
+                  <td key={gender} className="py-2 text-ink">{table?.[gender]?.[caseName] || '-'}</td>
                 ))}
               </tr>
             ))}

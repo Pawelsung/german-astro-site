@@ -20,10 +20,57 @@
 
 ## 重要慣例與陷阱
 
-- **深色模式是用 `global.css` 覆寫 Tailwind class 做的**（`.dark .bg-emerald-50 {...}` 等），不是 Tailwind 的 `dark:` 變體。新增任何淺色背景、`-900` 文字色或 `hover:bg-*` 時，必須在 `global.css` 補對應的 `.dark` 覆寫，否則深色模式下會出現「深字配深底」看不到的問題。
+- **顏色一律用色彩變數，深色模式自動切換**（2026-11-11 起，取代舊的 `.dark .bg-*` 覆寫做法）。完整規則見下方「顏色規則」，`tests/design-tokens.test.mjs` 會擋下違規。
 - 動畫一律寫成 `global.css` 的共用 class（`fx-*`），並且受 `prefers-reduced-motion` 規則保護。
 - 答題回饋請使用共用模組 `src/lib/answerFeedback.js`，不要在各元件重寫。
 - Git：2026-10-24 已將累積的未提交工作依主題拆成 6 個 commit（見下方進度紀錄），目前工作區乾淨。之後請維持「一個主題一個 commit」，push／deploy 前先和使用者確認。
+
+## 顏色規則（Codex、Claude Code 都要照做）
+
+所有顏色都定義在 `src/styles/global.css` 最上方：淺色值放 `:root`，深色值放 `:root.dark`。元件只用變數，深色模式就會自動正確，不需要再補任何 `.dark` 覆寫。`npm test` 會檢查以下四條，違反就失敗。
+
+1. **元件和頁面只用色彩 class**，不用 Tailwind 的編號色（`bg-sky-100`、`text-slate-500`）或 `bg-white`、`text-white`。
+2. **元件裡不寫色碼**（`#xxxxxx`、`rgb()`、`style={{ color: ... }}` 裡的色碼都不行）。
+3. **`global.css` 的色碼只能出現在變數那一行**（`--name: value;`），規則裡一律寫 `var(--name)`。半透明用 `color-mix(in srgb, var(--name) 30%, transparent)`。
+4. **不要再寫 `.dark .bg-*`、`.dark .text-*` 覆寫。** 深色要不一樣，就在 `:root.dark` 給該變數一個深色值。
+
+### 該用哪個 class
+
+| 用途 | class | 舊寫法（不要再用） |
+| --- | --- | --- |
+| 卡片、面板底色 | `bg-surface` | `bg-white` |
+| 淡底區塊 | `bg-surface-soft` | `bg-slate-50` |
+| 更明顯的灰底、膠囊 | `bg-surface-muted` | `bg-slate-100`、`bg-gray-100` |
+| 分隔線、外框 | `border-line` | `border-slate-200`、`border-gray-100` |
+| 主要文字 | `text-ink` | `text-slate-800`、`text-slate-900` |
+| 次要文字 | `text-ink-soft` | `text-slate-600`、`text-slate-700` |
+| 說明、提示小字 | `text-ink-muted` | `text-slate-400`、`text-slate-500` |
+| 深色按鈕上的字 | `text-on-solid` | `text-white` |
+| 彩色淡底（標籤、提示框） | `bg-{色}-soft` | `bg-sky-100`、`bg-emerald-50` |
+| 彩色外框 | `border-{色}-line` | `border-sky-200` |
+| 彩色文字 | `text-{色}-ink` | `text-sky-700` |
+| 彩色進度條、圖示、強調外框 | `bg-{色}-solid`、`text-{色}-solid`、`border-{色}-solid` | `bg-sky-500` |
+| 彩色實心按鈕（配 `text-on-solid`） | `bg-{色}-strong` | `bg-amber-600` |
+
+`{色}` 只有七種：`sky`、`indigo`、`violet`、`emerald`、`teal`、`rose`、`amber`（藍系用 sky，綠系用 emerald，紅系用 rose，橘黃系用 amber）。
+
+透明度照常加：`bg-surface/90`、`bg-sky-soft/60`。
+
+### 自訂 CSS 該用哪個變數
+
+- 版面：`--page-bg`、`--surface`、`--surface-soft`、`--surface-muted`、`--border`、`--text`、`--text-muted`、`--text-faint`
+- 互動：`--accent-ink`（選中、連結字色）、`--accent-line`（外框、底線）、`--accent-hover`、`--focus-ring`
+- 答對、答錯：`--good-*`、`--bad-*`，各有 `strong`、`soft`、`tint`、`line`、`ink`
+- 課程頁（安靜版面）：`--calm-*`；冠詞與格位：`--g-der`、`--g-die`、`--g-das`、`--g-pl`、`--case-*`
+- 陰影、遮罩：`color-mix(in srgb, var(--shadow) 12%, transparent)`
+- LangLoop 深色卡（兩種模式都一樣深）：`--night-*`
+
+### 需要新顏色時
+
+1. 先找上面有沒有能用的。
+2. 真的沒有：在 `:root` 和 `:root.dark` **各加一行**，名字寫用途（`--streak-ink`），不要寫色名（`--orange-500`）。
+3. 要給 Tailwind class 用，再到 `@theme inline` 加一行 `--color-xxx: var(--xxx);`，就能寫 `bg-xxx`、`text-xxx`。
+4. 跑 `npm test`，再用淺色、深色各看一次。
 
 ## 共用答題回饋模組 `src/lib/answerFeedback.js`
 
@@ -69,6 +116,91 @@ CSS class（`src/styles/global.css` 檔尾）：
 - 修正：`global.css` 新增 `min-width: 641px` 的 `.calm-page .vocab-tabs`（按鈕平分整列）和 `.vocab-tools`（匯出／匯入按鈕依內容寬、不換行）。
 - 驗證：本機 1280px（深色）和 700px（淺色）模式列不溢出、設定按鈕在「字典」右邊、匯出／匯入按鈕單行 44px；375px 手機版維持 4 欄兩排，未受影響。
 - 還沒做什麼：未跑 `npm test`／build（只改 CSS）；未在使用者的電腦瀏覽器實際確認。
+
+### 2026-11-12 配色改成柔和版 Reclam 黃（Claude Code，已部署）
+
+- 使用者從配色比較頁選 E（Reclam 黃），要求更柔和。比較頁：claude.ai artifact「德語工作台配色」。
+- 做法（都在 `global.css` 的 `--calm-*` 區塊，全站中性色本來就指向它）：
+  - 底色暖紙 #f7f3ea、文字暖黑 #2b2722、強調色（文字、焦點框、進度條）赭黃 #7a5a0c，深色模式為 #ebcb6b。
+  - 新增 `--calm-fill`（奶油黃 #f3d36b）＋ `--calm-on-fill`、`--calm-fill-line`：主要按鈕、選中的模式／分頁／篩選、評分「記住了」、結算彈窗主按鈕都改用它。
+  - 新增 `--calm-card`、`--calm-card-line`：首頁「今日複習」卡改成淡黃卡；`--calm-cta`、`--calm-on-cta`：卡上的按鈕淺色模式為暖黑底黃字，深色模式為黃底暖黑字。
+- 冠詞色、答對答錯的紅綠都沒動；黃色是唯一不和冠詞色衝突的色相。
+- 驗證：134 個測試通過、建置成功；9 頁加各課入口畫面，淺色、深色對比全部達標；手機寬度截圖確認首頁、第 1、2 課。
+
+### 2026-11-12 字體改成霞鶩文楷 + Atkinson（Claude Code，已部署）
+
+- 使用者從字體比較頁選定「文楷」組合（比較頁：claude.ai artifact「德語工作台字體」）。
+- 做法：`Layout.astro` 從 Google Fonts 載入 LXGW WenKai TC（400、700）和 Atkinson Hyperlegible Next（400、700、800）。`global.css` 的 `--font-body` 把 Atkinson 放第一：它沒有中文字，所以中文自動落到霞鶩文楷，所有拉丁字母（德文、數字）都用 Atkinson，不需要逐一標 `lang`。**新增字型時順序不能改。**
+- Atkinson 的 0 中間有一條斜線，是為了和 O 區分，屬於刻意的設計。
+- 配色還是現行墨綠，使用者還沒決定要不要換成第二輪的 E（Reclam 黃）或 F（作業簿）。
+- 驗證：134 個測試通過、建置成功；瀏覽器確認兩套字型都有載入、首頁與第 1 課顯示正常。
+
+### 2026-11-12 全站改用同一套暖色中性色並部署（Claude Code，已部署）
+
+- 使用者回饋：實際使用感覺不出顏色有變。原因：前一輪是把顏色改成變數（結構整理），刻意不改外觀。
+- 這次修的是看得出來的問題：課程頁和首頁的「今日複習」卡用暖色（米白／炭灰），首頁其他部分還是冷色（淺色藍白、深色藏青），同一個畫面兩套色系。
+- 做法：`:root` 的中性色（`--page-bg`、`--surface`、`--border`、`--text`、`--ink-*`、`--accent-*`、`--focus-ring`）全部指向 `--calm-*`，深色由 calm 的深色值自動切換；原本只在課程頁生效的 `body:has(.calm-page)` 對應刪掉，全站一致。深色 `--calm-muted` #a3a1a8 → #aeacb3（第 5 課提示字對比）。
+- 各課的識別色（藍、綠、琥珀、紫、青）沒有變。
+- 驗證：134 個測試通過、建置成功；9 頁加各課入口畫面，淺色、深色對比全部達標。
+- 另外：使用者同意後，把主資料夾裡沒追蹤的 `audit/`（10 月的截圖和 TTS 試聽檔，沒有任何地方引用）移到垃圾桶（`~/.Trash/german-astro-site-audit-2026-10`）。
+
+### 2026-11-11 VectorLab 與 ui-consistency 檢查與修正（Claude Code，未部署）
+
+- VectorLab（表單、錯誤、空白、載入、鍵盤、點擊面積）修正：
+  - 登入、同步錯誤訊息改成使用者看得懂、附下一步的句子；不再顯示 Firebase 原始訊息或代碼（開發用細節留在 console）。手機上首頁頁首的狀態字是隱藏的，所以登入失敗、儲存空間不足改用 `speech-toast` 提示（`UserAccount.jsx` 的 `notify`）。
+  - 第 1 課匯入備份失敗不再顯示 JSON 解析的原始錯誤。
+  - 結算彈窗：Tab 只在彈窗內循環，關閉後焦點回到原本的位置；背景不再從透明淡入（動畫不跑時會整個看不到）。底部選單 `picker-rise` 同理只做位移。
+  - 深淺色選單可按 Esc 關閉，焦點回到按鈕。
+  - 圖示按鈕（`.calm-icon`）滑過或鍵盤聚焦時顯示 aria-label 文字提示。
+  - 手機點擊面積補到 44px：首頁登入／同步／登出、深淺色按鈕、第 1 課分頁與篩選、收藏、小播放鈕、第 6 課速查分頁。
+  - 第 5 課連接詞卡片篩選後沒有結果時，提供「顯示全部語序類型」。
+- ui-consistency（課程頁一致性，清單見下）修正：
+  - 色彩變數在課程頁（`body:has(.calm-page)`）改指向 calm 色系，取代原本 `.calm-page` 上的同類設定，對話框也一起套用。第 2、3、6 課自己寫的卡片因此和其他課一致；並拿掉卡片陰影。
+  - 第 1 課主要按鈕與選中狀態由藍色改為 calm 主色，和其他課相同。
+  - 第 2 課動詞列表：展開列原本是可點的 div，鍵盤無法操作，改成按鈕（含 aria-expanded），收藏按鈕補 aria-label；搜尋框不再拿掉焦點框。
+  - 10、11px 的小字改成 12px（第 2、6 課、首頁課程卡、LangLoop 卡）。
+  - 對比微調：`--calm-bad` #c2344d → #b42d45。
+- 課程頁一致性約定（新功能請照做）：外框 `.calm-page`、圖示鈕 `.calm-icon`（要有 aria-label）、主要按鈕 calm 主色、次要連結 `.calm-link`、空白／狀態文字 `.picker-status`、展開卡片 `lc-details`／`lf-card`、朗讀用 `SpeakButton`、提示用 `.speech-toast`、字級不小於 12px、可展開的列用 `<button aria-expanded>`。
+- 驗證：134 個測試通過、`npm run build` 成功；9 頁加各課入口畫面，淺色、深色對比全數達標；手機寬度掃過所有按鈕都 ≥ 44px；結算彈窗的 Tab 循環、Esc、焦點返回，與深淺色選單 Esc 都用瀏覽器實測過。
+- 還沒做什麼：首頁的 Email 登入表單目前沒有任何地方會顯示（只用到精簡版），沒有改它。
+
+### 2026-11-11 顏色改成色彩變數，深色模式不再靠覆寫（Claude Code，未 commit、未部署）
+
+- 使用者要求：把顏色一次整理好，並寫成 Codex 也能照做的規則。
+- 做法：
+  - `global.css` 最上方是唯一的色彩來源：`:root` 淺色、`:root.dark` 深色，`@theme inline` 把它們變成 Tailwind class（`bg-surface`、`text-ink-muted`、`bg-sky-soft`⋯）。
+  - 8 個元件／頁面的 216 個 Tailwind 編號色（`bg-sky-100`、`text-slate-500`、`bg-white`⋯）全部換成色彩 class；刪掉約 180 條 `.dark .bg-*`、`.dark .text-*` 覆寫；自訂 CSS 的色碼全部改成 `var(--…)`，陰影改 `color-mix(var(--shadow) …)`。
+  - 新增 `tests/design-tokens.test.mjs`：元件用編號色、寫色碼、CSS 規則裡寫色碼、再寫 `.dark` 覆寫，`npm test` 都會失敗。
+  - 規則寫在本文件「顏色規則」，`AGENTS.md`、`release-checker`、`ux-reviewer` 已同步。
+- 視覺上的變化（刻意的）：`text-slate-400` 這類太淡的說明字一律改用 `text-ink-muted`；淺色 `--ink-muted`/`--text-muted` 由 #64748b 調深為 #5b6474；冠詞綠 `--g-das` #16a34a → #15803d、紅 `--g-die` #dc2626 → #b91c1c（淺色），都是為了對比達 4.5:1。amber 實心按鈕改 #b45309（白字對比夠）。
+- 驗證：134 個測試通過、`npm run build` 成功。用瀏覽器在 9 個頁面，以及各課開始頁上的每個入口（動詞列表、錯誤紀錄、參考表、文法速查、1 分鐘重點等），淺色和深色各跑一次對比檢查，全部達標。
+- 還沒做什麼：sloplint 的 FAIL 48 剩下的都是 `:root.dark` 的變數宣告（工具不認得這種深色區塊，不是問題）；WARN 74 是色票本身取自 Tailwind 預設色，要換整體配色才會消失，屬於設計決定，沒有動。
+
+### 2026-11-11 Hallmark 介面整體檢查與修正（Claude Code，未 commit、未部署）
+
+- 範圍：9 個路由，sloplint（app scope）＋內建瀏覽器實看桌面、手機、深淺色。檢查報告在 worktree `claude/hallmark-detailed-check-ddca47` 的 `.hallmark/audit.md`（未進 git）。
+- 已修：
+  - 第 1 課結算彈窗：紫藍漸層改成 `--calm-accent`，彈窗不再回彈；「第 N 輪完成」併進標題。
+  - 所有進度條（`.calm-progress`、`.today-bar`、`.round-pill-bar`、首頁課程卡）改用 `transform: scaleX`，JSX 傳 `scaleX(比例)`，不再傳 width。**新增進度條請照這個做法。**
+  - `transition-all` 改成只轉場 transform、box-shadow（首頁課程卡、LangLoop 卡）。
+  - 停用狀態：`.vocab-answers button:disabled`、`.calm-primary:disabled` 改用底色＋字色＋游標，不再只靠透明度。
+  - 對比：`.kbd-hint` 改 `--text-muted`；淺色 `--calm-muted` #76747c → #68666e；新增 `--accent-ink`（選中分頁）、`--focus-ring`（焦點框），深色各有一組值。
+  - `.fx-enter` 只做位移、不從透明開始，動畫沒跑時內容仍看得到。
+  - `html, body` 改 `overflow-x: clip`（原本 hidden，sticky 頁首會失效）。
+  - 手機首頁深淺色按鈕移到右下角，頁面底部留空，不再蓋住課程卡。
+  - 拿掉字距小標（`UserAccount`、首頁課程卡、LangLoop 卡），課程卡小字由 slate-400 改 slate-500；`h1–h3` 加 `text-wrap: balance`。
+  - 刪除沒用的 `Welcome.astro`、`NounChallengeApp.jsx`、`src/assets/astro.svg`、`background.svg`、`.home-hero`、`.home-cta`（使用者同意）。
+- 驗證：129 個測試通過，`npm run build` 成功；手機寬度看過首頁、第 1、2 課的淺色和深色，sticky 頁首正常、沒有橫向捲動。sloplint FAIL 從 246 降到 178，剩下的是寫死色碼（48）與已判定保留的項目（文法列表的中間點、動詞三態的破折號）。
+- 還沒做什麼：結算彈窗沒有實際答完 10 題看過（只改顏色和動畫）；`global.css` 寫死色碼改成變數、深色覆寫逐步移除，是另一件較大的工作。
+
+### 2026-11-11 LangLoop 生字本排進複習（Claude Code，已部署）
+
+- 使用者需求：在 LangLoop 播放器點不會的單字，看詞性、相關單字、例句並儲存，存下的字要進這裡的複習。
+- 做法：LangLoop 把字存在自己的 Supabase（`saved_words`），這裡不給 LangLoop 寫 Firestore 的權限。首頁 `LangLoopCard` 確認是受邀帳號後，呼叫 LangLoop `GET /api/words`（Firebase ID token），`reviewBridge.importFromLangLoop` → `src/lib/langloopWords.mjs` 在本機 review 紀錄裡加星號，並記一次「不會」、當天到期，再由原本的雲端同步帶到其他裝置。**儲存格式沒有改。**
+- 規則：只收複習字庫（index 第 7 欄為 1）裡的 id；星號的時間 = LangLoop 儲存時間，用來避免重複匯入，在這裡取消星號後，除非在 LangLoop 重新儲存，否則不會再加回來。
+- LangLoop 用的字庫是 `LangLoop/scripts/sync-lexicon.mjs` 從這裡的 `src/data/lexicon/site/` 複製過去的；這裡的字庫改了要在 LangLoop 重跑。
+- 驗證：129 個測試通過（新增 `tests/langloop-words.test.mjs`），`npm run build` 成功。
+- 還沒做什麼：LangLoop 字庫裡沒有的字還不會進這裡的複習（要收非字庫字才需要改格式）。
 
 ### 2026-11-10 第 2、3 課預設測驗與常用入口（Claude Code，已部署）
 

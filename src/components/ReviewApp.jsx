@@ -73,7 +73,7 @@ function WordCard({ row, detail, revealed, onReveal, speak }) {
     >
       <SpeakButton className="calm-card-sound" onSpeak={() => speak(word)}/>
       <div className="calm-word-block">
-        {revealed && article && <span className="calm-article fx-enter" data-gender={gender || undefined}>{article}</span>}
+        {revealed && article && <span className="calm-article fx-enter" lang="de" data-gender={gender || undefined}>{article}</span>}
         <h1 className="calm-word" lang="de">{word}</h1>
       </div>
       {revealed ? (
@@ -401,7 +401,7 @@ export default function ReviewApp() {
   const total = Math.max(state.goal, state.done + state.items.slice(state.pos).filter(it => !it.repeat && it.kind !== 'weekly').length);
   return (
     <PageFrame left={<BackHome />} center={item.kind === 'weekly' ? '每週抽考' : `${Math.min(state.done + 1, total)} / ${total}`} right={gear}>
-      <div className="calm-progress" aria-hidden="true"><span style={{ width: `${Math.min(100, (state.done / total) * 100)}%` }} /></div>
+      <div className="calm-progress" aria-hidden="true"><span style={{ transform: `scaleX(${Math.min(1, state.done / total)})` }} /></div>
       <div className="calm-session">
         <WordCard key={`${item.id}-${state.pos}`} row={row} detail={details[item.id]} revealed={revealed} onReveal={() => setRevealed(true)} speak={speak} />
         {revealed ? (

@@ -23,6 +23,9 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Atkinson+Hyperlegible+Next:wght@400;700;800&display=swap" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -85,6 +88,13 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
 
         buttons.forEach((button) => {
           button.addEventListener('click', () => applyTheme(button.dataset.themeChoice));
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key !== 'Escape' || switcher?.getAttribute('data-open') !== 'true') return;
+          switcher.setAttribute('data-open', 'false');
+          toggle?.setAttribute('aria-expanded', 'false');
+          toggle?.focus();
         });
 
         document.addEventListener('click', (event) => {

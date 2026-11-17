@@ -25,6 +25,7 @@ export default function RoundSummary() {
   const [summary, setSummary] = useState(null);
   const [activity, setActivity] = useState(null);
   const primary = useRef(null);
+  const modal = useRef(null);
 
   useEffect(() => {
     let timer = null;
@@ -51,10 +52,22 @@ export default function RoundSummary() {
 
   useEffect(() => {
     if (!summary) return undefined;
+    const returnTo = document.activeElement;
     primary.current?.focus();
-    const onKey = (event) => { if (event.key === 'Escape') setSummary(null); };
+    const onKey = (event) => {
+      if (event.key === 'Escape') { setSummary(null); return; }
+      if (event.key !== 'Tab') return;
+      const items = [...(modal.current?.querySelectorAll('button, a[href]') || [])];
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      if (returnTo instanceof HTMLElement && returnTo.isConnected) returnTo.focus();
+    };
   }, [summary]);
 
   function openConcept() {
@@ -65,15 +78,14 @@ export default function RoundSummary() {
   return (
     <>
       <span className="round-pill" title="每 10 題為一輪，做完會顯示結算" aria-label={`本輪進度 ${progress.answered} / ${progress.size}`}>
-        <span className="round-pill-bar"><span style={{ width: `${(progress.answered / progress.size) * 100}%` }} /></span>
+        <span className="round-pill-bar"><span style={{ transform: `scaleX(${progress.answered / progress.size})` }} /></span>
         <span>{progress.answered}/{progress.size}</span>
       </span>
 
       {summary && (
         <div className="round-overlay" data-round-summary onClick={(event) => { if (event.target === event.currentTarget) setSummary(null); }}>
-          <section className="round-modal" role="dialog" aria-modal="true" aria-labelledby="round-title">
-            <p className="round-kicker">第 {summary.round} 輪完成</p>
-            <h2 id="round-title" className="round-title">{verdict(summary.correct, summary.total)}</h2>
+          <section ref={modal} className="round-modal" role="dialog" aria-modal="true" aria-labelledby="round-title">
+            <h2 id="round-title" className="round-title">第 {summary.round} 輪完成：{verdict(summary.correct, summary.total)}</h2>
             <div className="round-score">
               <ScoreRing correct={summary.correct} total={summary.total} />
               {activity && (
