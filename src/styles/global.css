@@ -911,4 +911,11 @@ body:has(.picker-sheet[open]) { overflow: hidden; }
   .calm-page .vocab-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; }
   .calm-page .vocab-tabs button { padding: 8px 2px; font-size: 13px; }
 }
+/* The calm column is ~530px on desktop too: tabs share the row instead of pushing the settings button over 字典. */
+@media (min-width: 641px) {
+  .calm-page .vocab-tabs { flex: 1; }
+  .calm-page .vocab-tabs button { flex: 1 1 0; min-width: 0; padding: 8px 4px; }
+  .calm-page .vocab-tools { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto auto; }
+  .calm-page .vocab-tools button { white-space: nowrap; }
+}
 .lc-score { font-size: 13px; font-weight: 800; color: var(--calm-accent); white-space: nowrap; }
