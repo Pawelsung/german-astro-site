@@ -1,0 +1,21 @@
+---
+import LessonFrame from '../components/LessonFrame.astro';
+import PassivTrainer from '../components/PassivTrainer.jsx';
+export const frontmatter = {
+  title: "Lektion 8｜Passiv 被動語態",
+  description: "練習現在式、過去式、完成式，以及搭配情態動詞的被動，描述動作與結果狀態。",
+  category: "文法練習",
+  tags: ["A2", "B1", "Passiv", "worden"],
+  order: 8,
+  level: "A2-B1",
+  estimatedMinutes: 20,
+  theme: "teal"
+};
+---
+<LessonFrame frontmatter={frontmatter}>
+  <PassivTrainer client:only="react" />
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>現在式：Das Paket wird geliefert. 過去式：Das Paket wurde geliefert. 主動句的受詞變成被動句的主詞。</span></li>
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>完成式用 sein＋過去分詞＋worden：Das Paket ist geliefert worden. 被動助動詞不用 geworden。</span></li>
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>情態動詞：Das Paket muss geliefert werden. von＋Dativ 常表示執行者；durch＋Akkusativ 常表示原因或媒介。</span></li>
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>Die Tür wird geöffnet 強調開門的動作；Die Tür ist geöffnet 描述門開著的狀態。</span></li>
+</LessonFrame>

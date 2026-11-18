@@ -61,6 +61,17 @@ test('an upload keeps what another device answered, and the newer answer wins', 
   assert.equal(mergeLessonValue('lesson7', null, undefined), null);
 });
 
+test('an upload keeps what another device answered in lesson 8, and the newer answer wins', () => {
+  const local = { a: { wrong: 1, updatedAt: '2026-02-01' }, shared: { correct: 1, updatedAt: '2026-01-01' } };
+  const remote = { b: { correct: 1, updatedAt: '2026-01-15' }, shared: { correct: 5, updatedAt: '2026-03-01' } };
+  const merged = mergeLessonValue('lesson8', local, remote);
+  assert.deepEqual(Object.keys(merged).sort(), ['a', 'b', 'shared']);
+  assert.equal(merged.shared.correct, 5);
+  assert.equal(mergeLessonValue('lesson8', local, null), local);
+  assert.equal(mergeLessonValue('lesson8', null, remote), remote);
+  assert.equal(mergeLessonValue('lesson8', null, undefined), null);
+});
+
 test('lesson 5 rebuilds mistakes from merged answers and joins bookmarks', () => {
   const merged = mergeLessonValue('lesson5',
     { answers: { a: { correct: false, updatedAt: '1' } }, mistakes: ['a'], bookmarks: ['x'] },

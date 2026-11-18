@@ -13,7 +13,7 @@ import { collectLocalProgress, mergeLessonValue, mergeRemoteProgress, MERGED_LES
 import { changedKeys, hashProgress, mergeReviewValues, readSyncState, shouldDownload, stableStringify, writeSyncState } from '../lib/cloudSync.mjs';
 
 const provider = new GoogleAuthProvider();
-const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7', 'review'];
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7', 'lesson8', 'review'];
 const REVIEW_SYNC_DELAY = 5000;
 const LESSON_SYNC_DELAY = 700;
 const PULL_GAP = 30000;
@@ -42,7 +42,7 @@ function mergeRemoteValue(key, legacyValue, splitValue) {
     return splitValue || legacyValue;
   }
 
-  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5' || key === 'lesson6' || key === 'lesson7') {
+  if (key === 'lesson3' || key === 'lesson4' || key === 'lesson5' || key === 'lesson6' || key === 'lesson7' || key === 'lesson8') {
     return { ...(legacyValue || {}), ...(splitValue || {}) };
   }
 
