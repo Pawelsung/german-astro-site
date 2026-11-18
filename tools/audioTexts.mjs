@@ -12,6 +12,9 @@ import { fillBlank, formExercises, formPhrase } from '../src/lib/konjunktiv.mjs'
 import adjectiveData from '../src/data/lesson6-adjective-declension.ts';
 import { adjectiveSpeechText, connectorSpeechText, kasusSpeechText } from '../src/lib/lessonSpeech.mjs';
 
+import { passivExercises } from '../src/data/lesson8-passiv.ts';
+import { solvedText } from '../src/lib/passiv.mjs';
+
 const ROOT = new URL('..', import.meta.url).pathname;
 
 export function collectTexts() {
@@ -50,6 +53,8 @@ export function collectTexts() {
     else if (item.stage === 'function') add(item.sentence);
     else add(fillBlank(item.sentence, item.options[0]));
   }
+
+  for (const item of passivExercises) add(solvedText(item));
 
   // Lesson 3: forms, participle (speak(splitPerfekt(perfekt).participle)) and examples.
   for (const verb of irregularVerbs) {
