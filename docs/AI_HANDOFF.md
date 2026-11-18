@@ -109,6 +109,17 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-18 第 8 課 Passiv（Codex 實作、Claude Code 審查，已部署）
+
+- 分工：Codex CLI 在 worktree `codex-passiv`（分支 `codex/passiv-lesson`）實作，Claude Code 審查程式並操作瀏覽器，`german-reviewer` 獨立校對德文兩輪。
+- 新增 `lesson8-passiv.astro`、`PassivTrainer.jsx`、`lesson8-passiv.ts`、`passiv.mjs`（朗讀用的完成句）、`tests/passiv.test.mjs`：A2～B1 原創 49 題，7 階段各 7 題（現在式形式、主動改被動、Präteritum、Perfekt、情態動詞、von／durch、狀態與過程判斷）。結構照抄第 7 課（LessonApp／ChoiceCard），首頁題數、導覽、複習入口、雲端同步、進度摘要都已接上；新 key `german-lesson8-passiv-progress`，既有 key 與格式沒變。
+- 德文校對後修正：干擾選項不能靠作答後才出現的 trans／explain 排除，所以 modal-3 的 sein、past-1～7 的 würde／würden、forms-7 的 kochen 都換成明確錯誤的形式；transform-3、agent-6 的翻譯改成和德文一致；8 處翻譯腔改成口語。
+- 音檔：新增 49 段 Chirp 3 HD（1,591 字元）。
+- 驗證：138 個測試全過、建置 10 頁；本機手機寬度淺色、深色走過作答與回饋；正式站 `/`、`/lesson8-passiv/`、新音檔都回 200，第 8 課頁面主控台沒有錯誤。
+- 部署：`main` 快轉到 `codex/passiv-lesson` 後，在主資料夾（有 `.env`）建置，`npx -y firebase-tools@14 deploy --only hosting`。沒有 push。
+- Codex 協作注意：`codex exec -s workspace-write` 不能寫 worktree 的 git index，所以 commit 由 Claude Code 代做；worktree 的 `node_modules` 不要用符號連結（Vite 開發伺服器會 403、頁面空白），用 `cp -cR` 複製。
+- 還沒做什麼：未在 iPhone 實機試；沒有「完成式＋情態動詞」（hat … werden müssen）題目，若要涵蓋 B1+ 可再補。
+
 ### 2026-11-17 第 1 課電腦版練習模式列溢出（Claude Code，已部署）
 
 - 使用者回報：電腦上第 1 課 7 個練習模式按鈕超出欄寬，設定按鈕蓋住「字典」；「匯出備份／匯入 JSON」文字被擠成兩行。
@@ -601,7 +612,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
 - [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）
 - [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
-- [ ] 新增 Passiv 課（可沿用第 7 課的元件結構）
+- [x] 新增 Passiv 課（2026-11-18，第 8 課 49 題；待獨立校對、介面檢查與音檔）
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
 - [ ] 課程筆記字庫「初次收錄」組 540 句樣板例句改寫成真正例句（改 `tools/vocab-review/examples.json` 後重跑 fix.py 與 `npm run audio`）
 - [ ] 9 筆無法辨識的筆記詞條（Putzhilfer、Frumgung、Sonnenunteraufgang 等）需使用者對照原始筆記確認
