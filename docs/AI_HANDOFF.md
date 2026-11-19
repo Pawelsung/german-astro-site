@@ -109,6 +109,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-19 主字庫缺例句補寫（Codex 撰寫、獨立校對，已部署）
+
+- 背景：課程筆記字庫原本有大量樣板例句（「Im Unterricht lernen wir heute das Wort …」），網站早已排除，所以主字庫有 445 筆沒有例句（其中 307 筆在第 1 課出題範圍）。舊做法（改 `tools/vocab-review/examples.json`）已不適用，改成直接補主字庫。
+- 流程：Codex 在 worktree `codex-examples`（分支 `codex/lexicon-examples`）照 `content-writer` 規則撰寫；5 個 `german-reviewer` 各校一批（文法硬錯 1 句，其餘多為翻譯腔、時態、不自然），Codex 依表修正，Claude Code 審查程式與資料差異、代為 commit。使用者指示不必抽查、直接部署。
+- 接線：`apply-tags.mjs` 在 corrections（含 rename／merge）之後讀 `tools/lexicon/examples/*.json`（不讀 `todo/`），只補空的 examples；id 不存在、已有例句、空白內容都會丟錯；不清 flag。`corrections.json` 新增 `preserveFlags`。新測試 `tests/lexicon-examples.test.mjs`。之後要補例句就加檔到 `tools/lexicon/examples/`，再跑 `apply-tags.mjs` → `build-site-data.mjs`。
+- 結果：441 句例句與音檔（Chirp 3 HD，26,688 字元）。順帶修正 6 筆釋義（das-handwerk、der-lohn、der-brokkoli-auflauf、der-unterrichtsplan、allerheiligen、die-bauchspeicheldruese），`das-karamell` 改名為 `der-karamell`（有 redirect，進度不遺失）。逐欄比對確認主字庫只有這些變動。
+- 驗證：140 個測試全過、建置成功；正式站 A1 字庫資料含新例句、新音檔回 200。
+- 還沒做什麼：4 筆可能是筆記誤記，**沒有例句，等使用者對照原始筆記**（見 `tools/lexicon/examples/notes.md`）：der-kunstwerkladen（常用 Kunstladen／Kunsthandlung）、das-bildmodell（可能是 AI 圖像生成模型）、die-sonderkraefte（常用 Spezialkräfte）、das-bauarbeitsgeraet（常用 Baugerät）。未在瀏覽器逐字檢視第 1 課的例句顯示。校對另提：der-objekt 釋義排序、der-sonnenstich 用「中暑」、der-knick 程度偏高、der-gleichstrombeschleuniger 過於專門，都未處理。
+
 ### 2026-11-18 第 8 課 Passiv（Codex 實作、Claude Code 審查，已部署）
 
 - 分工：Codex CLI 在 worktree `codex-passiv`（分支 `codex/passiv-lesson`）實作，Claude Code 審查程式並操作瀏覽器，`german-reviewer` 獨立校對德文兩輪。
@@ -614,7 +623,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
 - [x] 新增 Passiv 課（2026-11-18，第 8 課 49 題；待獨立校對、介面檢查與音檔）
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
-- [ ] 課程筆記字庫「初次收錄」組 540 句樣板例句改寫成真正例句（改 `tools/vocab-review/examples.json` 後重跑 fix.py 與 `npm run audio`）
+- [x] 主字庫缺例句補寫（2026-11-19，441 句已部署）
+- [ ] 4 個可疑詞條（Kunstwerkladen、Bildmodell、Sonderkräfte、Bauarbeitsgerät）需使用者對照原始筆記，確認後補例句
 - [ ] 9 筆無法辨識的筆記詞條（Putzhilfer、Frumgung、Sonnenunteraufgang 等）需使用者對照原始筆記確認
 
 ### 介面（使用者目前最在意）
