@@ -2,14 +2,16 @@
 
 已依獨立德文校對表 batch-01～05 修正，共保留 441 句；仍待使用者抽查，不產生音檔、不部署。
 
-## 待使用者確認
+## 4 筆可疑詞條的處理（2026-11-19）
 
-以下 4 筆均不放入例句檔，待確認詞形或原始語境後再補寫：
+使用者請 Claude Code 自行判斷合理寫法，例句在 `batch-06.json`，已經獨立德文校對：
 
-- `der-kunstwerkladen`（batch-05）：詞形不常見；校對建議藝術品商店通常用 Kunstladen／Kunsthandlung，需對照原始筆記。
-- `das-bildmodell`（batch-05）：釋義只有「圖像模型」，可能指 AI 圖像生成模型，需原始語境確認領域。
-- `die-sonderkraefte`（batch-05）：詞形可疑，常用 Spezialkräfte；依校對意見移除例句，待確認。
-- `das-bauarbeitsgeraet`（batch-05）：詞形罕見，常用 Baugerät；依校對意見移除例句，待確認。
+- `der-kunstwerkladen` → 改名 `der-kunstladen`（der Kunstladen，複數 die Kunstläden），釋義「藝術品店」。
+- `das-bildmodell`：保留詞形，釋義改為「（AI）圖像生成模型」。德文較常說 KI-Bildgenerator，但詞形來自原始筆記，C1 保留。
+- `die-sonderkraefte` → 改名 `die-spezialkraefte`（只用複數），釋義「特種部隊；（警方的）特勤人員」。
+- `das-bauarbeitsgeraet` → 改名 `das-baugeraet`（das Baugerät，複數 die Baugeräte），釋義「施工機具」。
+
+改名都透過 `corrections.rename`，舊 id 寫進 `redirects.json`，學習進度不會遺失。
 
 `bedingt` 採 batch-05 校對版本（銀行的有條件承諾），覆蓋 batch-03 的建議。`das-karamell` 透過 corrections.rename 改為 `der-karamell`，例句使用新 id。
 

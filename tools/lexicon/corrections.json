@@ -35,6 +35,36 @@
     "das-karamell": {
       "id": "der-karamell",
       "article": "der"
+    },
+    "der-kunstwerkladen": {
+      "id": "der-kunstladen",
+      "word": "Kunstladen",
+      "plural": "die Kunstläden",
+      "practice": {
+        "type": "noun",
+        "article": "der",
+        "plural": "die Kunstläden"
+      }
+    },
+    "die-sonderkraefte": {
+      "id": "die-spezialkraefte",
+      "word": "Spezialkräfte",
+      "plural": "",
+      "practice": {
+        "type": "noun",
+        "article": "die",
+        "plural": null
+      }
+    },
+    "das-bauarbeitsgeraet": {
+      "id": "das-baugeraet",
+      "word": "Baugerät",
+      "plural": "die Baugeräte",
+      "practice": {
+        "type": "noun",
+        "article": "das",
+        "plural": "die Baugeräte"
+      }
     }
   },
   "meaning": {
@@ -70,7 +100,11 @@
     "der-brokkoli-auflauf": "綠花椰菜焗烤",
     "der-unterrichtsplan": "教學計畫",
     "allerheiligen": "諸聖節",
-    "die-bauchspeicheldruese": "胰臟"
+    "die-bauchspeicheldruese": "胰臟",
+    "der-kunstwerkladen": "藝術品店",
+    "das-bildmodell": "（AI）圖像生成模型",
+    "die-sonderkraefte": "特種部隊；（警方的）特勤人員",
+    "das-bauarbeitsgeraet": "施工機具"
   },
   "example": {
     "ersparen": {

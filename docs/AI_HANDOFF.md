@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-19 處理 4 個可疑詞條（Claude Code 撰寫、german-reviewer 校對，已部署）
+
+- 使用者請 Claude Code 自行判斷。`corrections.json`：Kunstwerkladen → der Kunstladen、Sonderkräfte → die Spezialkräfte（只用複數）、Bauarbeitsgerät → das Baugerät 三筆改名（舊 id 進 `redirects.json`，進度不遺失）；Bildmodell 保留，釋義改為「（AI）圖像生成模型」。4 句例句放在 `tools/lexicon/examples/batch-06.json`，細節見 `tools/lexicon/examples/notes.md`。
+- 獨立校對沒有必須修正；採納 4 項建議（複製畫、fotorealistische Bilder、「生成」、Spezialkräfte 譯為警方特勤人員），並把「只用複數」移出釋義，避免中翻德時洩漏答案。
+- 驗證：重新執行 `apply-tags.mjs`、`build-site-data.mjs`；`npm test` 全過；`npm run audio` 產生 7 段（344 字元）。
+- 還沒做什麼：使用者抽查。
+
 ### 2026-11-19 每日活動跨裝置同步（Codex 實作、Claude Code 審查，已部署）
 
 - 限定 `codex-activity-sync` worktree／`codex/activity-sync`。修改 `dailyActivity.mjs`、`progressStorage.ts`、`UserAccount.jsx`；新增／擴充 `activity.test.mjs`、`activity-sync.test.mjs`。舊 days 直接歸這台裝置，recordAnswer 保留 others；顯示今日／近 7 天／連續天數時跨裝置加總。純函式合併同裝置同日各欄取 max，回補自己的雲端紀錄，忽略壞資料並修剪最近 60 天、移除空裝置。
@@ -648,7 +655,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 新增 Passiv 課（2026-11-18，第 8 課 49 題；待獨立校對、介面檢查與音檔）
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
 - [x] 主字庫缺例句補寫（2026-11-19，441 句已部署）
-- [ ] 4 個可疑詞條（Kunstwerkladen、Bildmodell、Sonderkräfte、Bauarbeitsgerät）需使用者對照原始筆記，確認後補例句
+- [x] 4 個可疑詞條（Kunstwerkladen、Bildmodell、Sonderkräfte、Bauarbeitsgerät）已處理並補例句（2026-11-19）
 - [ ] 9 筆無法辨識的筆記詞條（Putzhilfer、Frumgung、Sonnenunteraufgang 等）需使用者對照原始筆記確認
 
 ### 介面（使用者目前最在意）
