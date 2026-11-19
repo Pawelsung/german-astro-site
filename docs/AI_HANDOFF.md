@@ -116,7 +116,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - 接線：`apply-tags.mjs` 在 corrections（含 rename／merge）之後讀 `tools/lexicon/examples/*.json`（不讀 `todo/`），只補空的 examples；id 不存在、已有例句、空白內容都會丟錯；不清 flag。`corrections.json` 新增 `preserveFlags`。新測試 `tests/lexicon-examples.test.mjs`。之後要補例句就加檔到 `tools/lexicon/examples/`，再跑 `apply-tags.mjs` → `build-site-data.mjs`。
 - 結果：441 句例句與音檔（Chirp 3 HD，26,688 字元）。順帶修正 6 筆釋義（das-handwerk、der-lohn、der-brokkoli-auflauf、der-unterrichtsplan、allerheiligen、die-bauchspeicheldruese），`das-karamell` 改名為 `der-karamell`（有 redirect，進度不遺失）。逐欄比對確認主字庫只有這些變動。
 - 驗證：140 個測試全過、建置成功；正式站 A1 字庫資料含新例句、新音檔回 200。
-- 還沒做什麼：4 筆可能是筆記誤記，**沒有例句，等使用者對照原始筆記**（見 `tools/lexicon/examples/notes.md`）：der-kunstwerkladen（常用 Kunstladen／Kunsthandlung）、das-bildmodell（可能是 AI 圖像生成模型）、die-sonderkraefte（常用 Spezialkräfte）、das-bauarbeitsgeraet（常用 Baugerät）。未在瀏覽器逐字檢視第 1 課的例句顯示。校對另提：der-objekt 釋義排序、der-sonnenstich 用「中暑」、der-knick 程度偏高、der-gleichstrombeschleuniger 過於專門，都未處理。
+- 還沒做什麼：4 筆可能是筆記誤記，**沒有例句，等使用者對照原始筆記**（見 `tools/lexicon/examples/notes.md`）：der-kunstwerkladen（常用 Kunstladen／Kunsthandlung）、das-bildmodell（可能是 AI 圖像生成模型）、die-sonderkraefte（常用 Spezialkräfte）、das-bauarbeitsgeraet（常用 Baugerät）。未在瀏覽器逐字檢視第 1 課的例句顯示。校對另提：das-objekt 釋義排序、der-sonnenstich 用「中暑」、der-knick 程度偏高、der-gleichstrombeschleuniger 過於專門，都未處理。
 
 ### 2026-11-18 第 8 課 Passiv（Codex 實作、Claude Code 審查，已部署）
 
