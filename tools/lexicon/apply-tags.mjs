@@ -102,8 +102,30 @@ for (const [from, to] of Object.entries(fix.merge)) {
   redirects.set(from, to);
 }
 
+// Example supplements never resolve grading flags.
+const EXAMPLES = new URL('examples/', DIR);
+let supplemented = 0;
+if (existsSync(EXAMPLES)) {
+  for (const file of readdirSync(EXAMPLES, { withFileTypes: true })
+    .filter(f => f.isFile() && f.name.endsWith('.json')).map(f => f.name).sort()) {
+    for (const [id, { de, zh }] of Object.entries(readJson(new URL(file, EXAMPLES)))) {
+      const entry = byId.get(id);
+      if (!entry) throw new Error(`例句檔 ${file} 找不到 ${id}`);
+      if (entry.examples.length) throw new Error(`例句檔 ${file} 的 ${id} 已經有例句，不可覆蓋`);
+      if (typeof de !== 'string' || !de.trim() || typeof zh !== 'string' || !zh.trim()) {
+        throw new Error(`例句檔 ${file} 的 ${id} 德文或中文為空`);
+      }
+      entry.examples = [{ de, zh }];
+      supplemented++;
+    }
+  }
+}
+console.log(`補了 ${supplemented} 句例句`);
+
 const graded = [...byId.values()].sort((a, b) => a.word.localeCompare(b.word, 'de') || a.article.localeCompare(b.article));
-for (const e of graded) if (touched.has(e.id) || INFORMATIONAL.test(e.flag)) e.flag = '';
+// Meaning-only corrections may retain an outstanding grading annotation.
+const preserveFlags = new Set(fix.preserveFlags || []);
+for (const e of graded) if (!preserveFlags.has(e.id) && (touched.has(e.id) || INFORMATIONAL.test(e.flag))) e.flag = '';
 
 // Review records are keyed by id, so an id may never disappear without a redirect.
 const LOCK = new URL('ids.lock', DATA);
