@@ -31,6 +31,10 @@
     "jemand-jemanden-jemandem": {
       "id": "jemand",
       "word": "jemand"
+    },
+    "das-karamell": {
+      "id": "der-karamell",
+      "article": "der"
     }
   },
   "meaning": {
@@ -60,7 +64,13 @@
     "die-praxis": "診所；實踐",
     "der-strom": "電；電流；大河",
     "sich-entscheiden-fuer-gegen": "決定支持；決定反對",
-    "die-kohlensaeure": "碳酸；（飲料的）氣泡"
+    "die-kohlensaeure": "碳酸；（飲料的）氣泡",
+    "das-handwerk": "手藝行業；手工業",
+    "der-lohn": "工資",
+    "der-brokkoli-auflauf": "綠花椰菜焗烤",
+    "der-unterrichtsplan": "教學計畫",
+    "allerheiligen": "諸聖節",
+    "die-bauchspeicheldruese": "胰臟"
   },
   "example": {
     "ersparen": {
@@ -158,5 +168,8 @@
     "die-zahnpasta",
     "zu",
     "der-zug"
+  ],
+  "preserveFlags": [
+    "der-brokkoli-auflauf"
   ]
 }

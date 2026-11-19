@@ -1,0 +1,1112 @@
+[
+ {
+  "id": "die-kleidung",
+  "article": "die",
+  "word": "Kleidung",
+  "pos": "noun",
+  "meanings": [
+   "衣服（集合名詞）"
+  ],
+  "level": "A1",
+  "topic": "daily",
+  "push": true
+ },
+ {
+  "id": "die-nummer",
+  "article": "die",
+  "word": "Nummer",
+  "pos": "noun",
+  "plural": "die Nummern",
+  "meanings": [
+   "號碼"
+  ],
+  "level": "A1",
+  "topic": "daily",
+  "push": true
+ },
+ {
+  "id": "das-abendessen",
+  "article": "das",
+  "word": "Abendessen",
+  "pos": "noun",
+  "plural": "die Abendessen",
+  "meanings": [
+   "晚餐"
+  ],
+  "level": "A1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-eis",
+  "article": "das",
+  "word": "Eis",
+  "pos": "noun",
+  "meanings": [
+   "冰；冰淇淋"
+  ],
+  "level": "A1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-rotwein",
+  "article": "der",
+  "word": "Rotwein",
+  "pos": "noun",
+  "meanings": [
+   "紅酒"
+  ],
+  "level": "A1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "fertig",
+  "word": "fertig",
+  "pos": "adjective",
+  "meanings": [
+   "完成的"
+  ],
+  "level": "A1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "stark",
+  "word": "stark",
+  "pos": "adjective",
+  "meanings": [
+   "強的"
+  ],
+  "level": "A1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "wichtig",
+  "word": "wichtig",
+  "pos": "adjective",
+  "meanings": [
+   "重要的"
+  ],
+  "level": "A1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "der-mund",
+  "article": "der",
+  "word": "Mund",
+  "pos": "noun",
+  "plural": "die Münder",
+  "meanings": [
+   "嘴巴"
+  ],
+  "level": "A1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "das-klavier",
+  "article": "das",
+  "word": "Klavier",
+  "pos": "noun",
+  "plural": "die Klaviere",
+  "meanings": [
+   "鋼琴"
+  ],
+  "level": "A1",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "das-foto",
+  "article": "das",
+  "word": "Foto",
+  "pos": "noun",
+  "plural": "die Fotos",
+  "meanings": [
+   "照片"
+  ],
+  "level": "A1",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "der-chinese",
+  "article": "der",
+  "word": "Chinese",
+  "pos": "noun",
+  "plural": "die Chinesen",
+  "meanings": [
+   "中國男性"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-chinesin",
+  "article": "die",
+  "word": "Chinesin",
+  "pos": "noun",
+  "plural": "die Chinesinnen",
+  "meanings": [
+   "中國女性"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-geschwister",
+  "article": "die",
+  "word": "Geschwister",
+  "pos": "noun",
+  "meanings": [
+   "兄弟姊妹"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-grossmutter",
+  "article": "die",
+  "word": "Großmutter",
+  "pos": "noun",
+  "plural": "die Großmütter",
+  "meanings": [
+   "祖母／外祖母"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "der-japaner",
+  "article": "der",
+  "word": "Japaner",
+  "pos": "noun",
+  "plural": "die Japaner",
+  "meanings": [
+   "日本男性"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-japanerin",
+  "article": "die",
+  "word": "Japanerin",
+  "pos": "noun",
+  "plural": "die Japanerinnen",
+  "meanings": [
+   "日本女性"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "der-junge",
+  "article": "der",
+  "word": "Junge",
+  "pos": "noun",
+  "plural": "die Jungen",
+  "meanings": [
+   "男孩"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-gruppe",
+  "article": "die",
+  "word": "Gruppe",
+  "pos": "noun",
+  "plural": "die Gruppen",
+  "meanings": [
+   "團體"
+  ],
+  "level": "A1",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "polnisch",
+  "word": "polnisch",
+  "pos": "adjective",
+  "meanings": [
+   "波蘭的；波蘭語的"
+  ],
+  "level": "A1",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-schuelerin",
+  "article": "die",
+  "word": "Schülerin",
+  "pos": "noun",
+  "plural": "die Schülerinnen",
+  "meanings": [
+   "中小學生（女）"
+  ],
+  "level": "A1",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-baeckerei",
+  "article": "die",
+  "word": "Bäckerei",
+  "pos": "noun",
+  "plural": "die Bäckereien",
+  "meanings": [
+   "麵包店"
+  ],
+  "level": "A1",
+  "topic": "shop",
+  "push": true
+ },
+ {
+  "id": "der-nachmittag",
+  "article": "der",
+  "word": "Nachmittag",
+  "pos": "noun",
+  "plural": "die Nachmittage",
+  "meanings": [
+   "下午"
+  ],
+  "level": "A1",
+  "topic": "time",
+  "push": true
+ },
+ {
+  "id": "der-abflug",
+  "article": "der",
+  "word": "Abflug",
+  "pos": "noun",
+  "plural": "die Abflüge",
+  "meanings": [
+   "起飛；出發航班"
+  ],
+  "level": "A1",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "die-ankunft",
+  "article": "die",
+  "word": "Ankunft",
+  "pos": "noun",
+  "plural": "die Ankünfte",
+  "meanings": [
+   "抵達"
+  ],
+  "level": "A1",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "der-rucksack",
+  "article": "der",
+  "word": "Rucksack",
+  "pos": "noun",
+  "plural": "die Rucksäcke",
+  "meanings": [
+   "背包"
+  ],
+  "level": "A1",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "das-amt",
+  "article": "das",
+  "word": "Amt",
+  "pos": "noun",
+  "plural": "die Ämter",
+  "meanings": [
+   "機關；公職"
+  ],
+  "level": "A2",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "die-hausfrau",
+  "article": "die",
+  "word": "Hausfrau",
+  "pos": "noun",
+  "plural": "die Hausfrauen",
+  "meanings": [
+   "家庭主婦"
+  ],
+  "level": "A2",
+  "topic": "daily",
+  "push": true
+ },
+ {
+  "id": "die-ruhe",
+  "article": "die",
+  "word": "Ruhe",
+  "pos": "noun",
+  "meanings": [
+   "安靜；休息"
+  ],
+  "level": "A2",
+  "topic": "daily",
+  "push": true
+ },
+ {
+  "id": "bloed",
+  "word": "blöd",
+  "pos": "adjective",
+  "meanings": [
+   "笨的；愚蠢的"
+  ],
+  "level": "A2",
+  "topic": "feel",
+  "push": true
+ },
+ {
+  "id": "komisch",
+  "word": "komisch",
+  "pos": "adjective",
+  "meanings": [
+   "奇怪的；好笑的"
+  ],
+  "level": "A2",
+  "topic": "feel",
+  "push": true
+ },
+ {
+  "id": "schlimm",
+  "word": "schlimm",
+  "pos": "adjective",
+  "meanings": [
+   "糟糕的"
+  ],
+  "level": "A2",
+  "topic": "feel",
+  "push": true
+ },
+ {
+  "id": "der-becher",
+  "article": "der",
+  "word": "Becher",
+  "pos": "noun",
+  "plural": "die Becher",
+  "meanings": [
+   "杯子（通常無把手）"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-kanne",
+  "article": "die",
+  "word": "Kanne",
+  "pos": "noun",
+  "plural": "die Kannen",
+  "meanings": [
+   "壺"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-nuss",
+  "article": "die",
+  "word": "Nuss",
+  "pos": "noun",
+  "plural": "die Nüsse",
+  "meanings": [
+   "堅果"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-pilz",
+  "article": "der",
+  "word": "Pilz",
+  "pos": "noun",
+  "plural": "die Pilze",
+  "meanings": [
+   "菇；真菌"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-ruehrei",
+  "article": "das",
+  "word": "Rührei",
+  "pos": "noun",
+  "plural": "die Rühreier",
+  "meanings": [
+   "炒蛋"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-salami",
+  "article": "die",
+  "word": "Salami",
+  "pos": "noun",
+  "plural": "die Salamis",
+  "meanings": [
+   "薩拉米香腸"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-schafskaese",
+  "article": "der",
+  "word": "Schafskäse",
+  "pos": "noun",
+  "meanings": [
+   "羊乳起司"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-spiegelei",
+  "article": "das",
+  "word": "Spiegelei",
+  "pos": "noun",
+  "plural": "die Spiegeleier",
+  "meanings": [
+   "煎蛋／荷包蛋"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-toast",
+  "article": "der",
+  "word": "Toast",
+  "pos": "noun",
+  "plural": "die Toasts",
+  "meanings": [
+   "吐司"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-vegetarier",
+  "article": "der",
+  "word": "Vegetarier",
+  "pos": "noun",
+  "plural": "die Vegetarier",
+  "meanings": [
+   "素食者"
+  ],
+  "level": "A2",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-ding",
+  "article": "das",
+  "word": "Ding",
+  "pos": "noun",
+  "plural": "die Dinge",
+  "meanings": [
+   "東西"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "direkt",
+  "word": "direkt",
+  "pos": "adjective",
+  "meanings": [
+   "直接的"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "gefaehrlich",
+  "word": "gefährlich",
+  "pos": "adjective",
+  "meanings": [
+   "危險的"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "klar",
+  "word": "klar",
+  "pos": "adjective",
+  "meanings": [
+   "清澈的；清楚的"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "das-stueck",
+  "article": "das",
+  "word": "Stück",
+  "pos": "noun",
+  "plural": "die Stücke",
+  "meanings": [
+   "件；塊"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "trocken",
+  "word": "trocken",
+  "pos": "adjective",
+  "meanings": [
+   "乾的；不甜的（酒）"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "verschieden",
+  "word": "verschieden",
+  "pos": "adjective",
+  "meanings": [
+   "不同的"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "der-vorschlag",
+  "article": "der",
+  "word": "Vorschlag",
+  "pos": "noun",
+  "plural": "die Vorschläge",
+  "meanings": [
+   "建議"
+  ],
+  "level": "A2",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-erkaeltung",
+  "article": "die",
+  "word": "Erkältung",
+  "pos": "noun",
+  "plural": "die Erkältungen",
+  "meanings": [
+   "感冒"
+  ],
+  "level": "A2",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "die-grippe",
+  "article": "die",
+  "word": "Grippe",
+  "pos": "noun",
+  "meanings": [
+   "流感"
+  ],
+  "level": "A2",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "bequem",
+  "word": "bequem",
+  "pos": "adjective",
+  "meanings": [
+   "舒適的"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-hausarbeit",
+  "article": "die",
+  "word": "Hausarbeit",
+  "pos": "noun",
+  "plural": "die Hausarbeiten",
+  "meanings": [
+   "家事；學期論文"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-kerze",
+  "article": "die",
+  "word": "Kerze",
+  "pos": "noun",
+  "plural": "die Kerzen",
+  "meanings": [
+   "蠟燭"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-klimaanlage",
+  "article": "die",
+  "word": "Klimaanlage",
+  "pos": "noun",
+  "plural": "die Klimaanlagen",
+  "meanings": [
+   "空調設備"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "das-licht",
+  "article": "das",
+  "word": "Licht",
+  "pos": "noun",
+  "plural": "die Lichter",
+  "meanings": [
+   "光；燈"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-mikrowelle",
+  "article": "die",
+  "word": "Mikrowelle",
+  "pos": "noun",
+  "plural": "die Mikrowellen",
+  "meanings": [
+   "微波爐"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-muelltonne",
+  "article": "die",
+  "word": "Mülltonne",
+  "pos": "noun",
+  "plural": "die Mülltonnen",
+  "meanings": [
+   "垃圾桶"
+  ],
+  "level": "A2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-ausstellung",
+  "article": "die",
+  "word": "Ausstellung",
+  "pos": "noun",
+  "plural": "die Ausstellungen",
+  "meanings": [
+   "展覽"
+  ],
+  "level": "A2",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "die-oper",
+  "article": "die",
+  "word": "Oper",
+  "pos": "noun",
+  "plural": "die Opern",
+  "meanings": [
+   "歌劇；歌劇院"
+  ],
+  "level": "A2",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "der-torwart",
+  "article": "der",
+  "word": "Torwart",
+  "pos": "noun",
+  "plural": "die Torwarte",
+  "meanings": [
+   "守門員"
+  ],
+  "level": "A2",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "die-tv-sendung",
+  "article": "die",
+  "word": "TV-Sendung",
+  "pos": "noun",
+  "plural": "die TV-Sendungen",
+  "meanings": [
+   "電視節目"
+  ],
+  "level": "A2",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "windig",
+  "word": "windig",
+  "pos": "adjective",
+  "meanings": [
+   "有風的"
+  ],
+  "level": "A2",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "dumm",
+  "word": "dumm",
+  "pos": "adjective",
+  "meanings": [
+   "愚蠢的"
+  ],
+  "level": "A2",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "faul",
+  "word": "faul",
+  "pos": "adjective",
+  "meanings": [
+   "懶惰的"
+  ],
+  "level": "A2",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "schlank",
+  "word": "schlank",
+  "pos": "adjective",
+  "meanings": [
+   "苗條的"
+  ],
+  "level": "A2",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "der-schwager",
+  "article": "der",
+  "word": "Schwager",
+  "pos": "noun",
+  "plural": "die Schwager",
+  "meanings": [
+   "姊夫；妹夫；配偶的兄弟"
+  ],
+  "level": "A2",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-schwaegerin",
+  "article": "die",
+  "word": "Schwägerin",
+  "pos": "noun",
+  "plural": "die Schwägerinnen",
+  "meanings": [
+   "嫂嫂；弟媳；配偶的姊妹"
+  ],
+  "level": "A2",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "die-grundschule",
+  "article": "die",
+  "word": "Grundschule",
+  "pos": "noun",
+  "plural": "die Grundschulen",
+  "meanings": [
+   "小學"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "das-gymnasium",
+  "article": "das",
+  "word": "Gymnasium",
+  "pos": "noun",
+  "plural": "die Gymnasien",
+  "meanings": [
+   "文理中學"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-klassenfahrt",
+  "article": "die",
+  "word": "Klassenfahrt",
+  "pos": "noun",
+  "plural": "die Klassenfahrten",
+  "meanings": [
+   "班級旅行"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-mathematik",
+  "article": "die",
+  "word": "Mathematik",
+  "pos": "noun",
+  "meanings": [
+   "數學"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "der-online-unterricht",
+  "article": "der",
+  "word": "Online-Unterricht",
+  "pos": "noun",
+  "meanings": [
+   "線上課程"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "der-schulausflug",
+  "article": "der",
+  "word": "Schulausflug",
+  "pos": "noun",
+  "plural": "die Schulausflüge",
+  "meanings": [
+   "學校出遊"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "das-schuljahr",
+  "article": "das",
+  "word": "Schuljahr",
+  "pos": "noun",
+  "plural": "die Schuljahre",
+  "meanings": [
+   "學年"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-unterrichtsstunde",
+  "article": "die",
+  "word": "Unterrichtsstunde",
+  "pos": "noun",
+  "plural": "die Unterrichtsstunden",
+  "meanings": [
+   "一堂課；課時"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-uebung",
+  "article": "die",
+  "word": "Übung",
+  "pos": "noun",
+  "plural": "die Übungen",
+  "meanings": [
+   "練習"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "das-bargeld",
+  "article": "das",
+  "word": "Bargeld",
+  "pos": "noun",
+  "meanings": [
+   "現金"
+  ],
+  "level": "A2",
+  "topic": "shop",
+  "push": true
+ },
+ {
+  "id": "guenstig",
+  "word": "günstig",
+  "pos": "adjective",
+  "meanings": [
+   "便宜的；有利的"
+  ],
+  "level": "A2",
+  "topic": "shop",
+  "push": true
+ },
+ {
+  "id": "das-sonderangebot",
+  "article": "das",
+  "word": "Sonderangebot",
+  "pos": "noun",
+  "plural": "die Sonderangebote",
+  "meanings": [
+   "特價優惠"
+  ],
+  "level": "A2",
+  "topic": "shop",
+  "push": true
+ },
+ {
+  "id": "der-dieb",
+  "article": "der",
+  "word": "Dieb",
+  "pos": "noun",
+  "plural": "die Diebe",
+  "meanings": [
+   "男竊賊"
+  ],
+  "level": "A2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "die-diebin",
+  "article": "die",
+  "word": "Diebin",
+  "pos": "noun",
+  "plural": "die Diebinnen",
+  "meanings": [
+   "女竊賊"
+  ],
+  "level": "A2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "der-heiligabend",
+  "article": "der",
+  "word": "Heiligabend",
+  "pos": "noun",
+  "plural": "die Heiligabende",
+  "meanings": [
+   "平安夜"
+  ],
+  "level": "A2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "das-mitglied",
+  "article": "das",
+  "word": "Mitglied",
+  "pos": "noun",
+  "plural": "die Mitglieder",
+  "meanings": [
+   "會員；成員"
+  ],
+  "level": "A2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "das-quadrat",
+  "article": "das",
+  "word": "Quadrat",
+  "pos": "noun",
+  "plural": "die Quadrate",
+  "meanings": [
+   "正方形"
+  ],
+  "level": "A2",
+  "topic": "time",
+  "push": true
+ },
+ {
+  "id": "die-abreise",
+  "article": "die",
+  "word": "Abreise",
+  "pos": "noun",
+  "meanings": [
+   "離開；啟程"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "der-hinflug",
+  "article": "der",
+  "word": "Hinflug",
+  "pos": "noun",
+  "plural": "die Hinflüge",
+  "meanings": [
+   "去程航班"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "die-kreuzung",
+  "article": "die",
+  "word": "Kreuzung",
+  "pos": "noun",
+  "plural": "die Kreuzungen",
+  "meanings": [
+   "十字路口"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ }
+]

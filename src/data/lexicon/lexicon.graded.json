@@ -178,7 +178,12 @@
    "meanings": [
     "晚餐"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Abendessen gibt es heute Suppe.",
+     "zh": "今天晚餐喝湯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -510,7 +515,12 @@
    "meanings": [
     "起飛；出發航班"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Abflug ist um neun Uhr.",
+     "zh": "飛機九點起飛。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -773,7 +783,12 @@
    "meanings": [
     "德國中學畢業暨升學資格考"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Abitur möchte sie ein Jahr im Ausland verbringen.",
+     "zh": "高中畢業後，她想去國外待一年。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -1099,7 +1114,12 @@
    "meanings": [
     "離開；啟程"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vor der Abreise kontrolliere ich meinen Pass.",
+     "zh": "啟程前，我檢查護照。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -1128,7 +1148,12 @@
    "meanings": [
     "離開／退房日"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Abreisetag müssen wir das Zimmer bis elf Uhr verlassen.",
+     "zh": "退房當天，我們必須在十一點前離開房間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -1849,7 +1874,12 @@
    "meanings": [
     "將臨期"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Advent backen wir oft zusammen Plätzchen.",
+     "zh": "將臨期時，我們常一起烤小餅乾。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -1878,7 +1908,12 @@
    "meanings": [
     "倒數聖誕月曆"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Jeden Morgen öffnet das Kind ein Türchen am Adventskalender.",
+     "zh": "孩子每天早上都打開倒數聖誕月曆上的一扇小門。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -1907,7 +1942,12 @@
    "meanings": [
     "將臨圈"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf unserem Adventskranz stehen vier Kerzen.",
+     "zh": "我們的將臨圈上有四根蠟燭。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -1936,7 +1976,12 @@
    "meanings": [
     "副詞"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Adverb „dort“ sagt uns, wo jemand ist.",
+     "zh": "副詞 dort 告訴我們某人在哪裡。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -2133,7 +2178,12 @@
    "meanings": [
     "受格／第四格"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Präposition „ohne“ steht der Akkusativ.",
+     "zh": "介系詞 ohne 後面使用受格。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -2480,9 +2530,14 @@
    "kind": "word",
    "plural": "",
    "meanings": [
-    "諸聖節（不是一般「掃墓」的德文）"
+    "諸聖節"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "An Allerheiligen besuchen viele Familien die Gräber ihrer Angehörigen.",
+     "zh": "諸聖節時，許多家庭會去親人的墓前追思。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -3051,7 +3106,12 @@
    "meanings": [
     "美洲；語境中也指美國"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Karte zeigt uns die Lehrerin Amerika von Kanada bis Chile.",
+     "zh": "老師在地圖上指給我們看從加拿大到智利的美洲。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -3110,7 +3170,12 @@
    "meanings": [
     "機關；公職"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ich habe morgen einen Termin beim Amt.",
+     "zh": "我明天預約了到公家機關辦事。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -3411,7 +3476,12 @@
    "meanings": [
     "供應商；提供者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bevor ich einen Vertrag unterschreibe, vergleiche ich mehrere Anbieter.",
+     "zh": "簽約前，我會比較幾家供應商。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -3732,7 +3802,12 @@
    "meanings": [
     "家屬；親屬"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Als Angehöriger darf er seine Mutter auch außerhalb der Besuchszeiten sehen.",
+     "zh": "身為家屬，他在探病時間之外也能探望母親。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -4005,7 +4080,12 @@
    "meanings": [
     "抵達"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Ankunft rufe ich dich an.",
+     "zh": "抵達後我打電話給你。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -4303,7 +4383,12 @@
    "meanings": [
     "抵達日"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Anreisetag können wir erst ab drei Uhr ins Zimmer.",
+     "zh": "抵達當天，我們下午三點以後才能進房。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -4752,7 +4837,12 @@
    "meanings": [
     "比例；份額"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Anteil der Menschen, die mit dem Rad zur Arbeit fahren, ist gestiegen.",
+     "zh": "騎腳踏車上班的人所占比例提高了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -4781,7 +4871,12 @@
    "meanings": [
     "舊書店"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Antiquariat habe ich eine alte Ausgabe meines Lieblingsromans gefunden.",
+     "zh": "我在舊書店找到我最愛那本小說的舊版本。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -5556,7 +5651,12 @@
    "meanings": [
     "工作流程"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir dokumentieren jeden Arbeitsprozess, damit neue Mitarbeiter sich schneller zurechtfinden.",
+     "zh": "我們記錄每項工作流程，讓新員工能更快上手。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -5585,7 +5685,12 @@
    "meanings": [
     "工作職位；工作地點"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sie sucht eine Arbeitsstelle in der Nähe ihrer Wohnung.",
+     "zh": "她在找住家附近的工作職位。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -5649,7 +5754,12 @@
    "meanings": [
     "工作方式"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Durch seine genaue Arbeitsweise macht er nur selten Fehler.",
+     "zh": "他的工作方式很仔細，很少出錯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -6117,7 +6227,12 @@
    "meanings": [
     "灰燼（通常不可數）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nachdem das Feuer erloschen war, blieb nur Asche zurück.",
+     "zh": "火熄滅後，只剩下灰燼。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -6146,7 +6261,12 @@
    "meanings": [
     "菸灰缸"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Aschenbecher auf dem Balkon muss noch geleert werden.",
+     "zh": "陽台上的菸灰缸還沒清。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -6175,7 +6295,12 @@
    "meanings": [
     "亞洲"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Schwester reist zum ersten Mal nach Asien.",
+     "zh": "我姊姊第一次去亞洲旅行。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -6264,7 +6389,12 @@
    "meanings": [
     "氣氛；大氣"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Kerzen sorgen im Restaurant für eine gemütliche Atmosphäre.",
+     "zh": "蠟燭讓餐廳的氣氛很溫馨。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -7975,7 +8105,12 @@
    "meanings": [
     "奧斯威辛"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vor dem Besuch der Gedenkstätte Auschwitz sprechen wir im Kurs über die Verbrechen der Nationalsozialisten.",
+     "zh": "參觀奧斯威辛紀念館前，我們在課堂上討論納粹的罪行。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -9138,7 +9273,12 @@
    "meanings": [
     "外星的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In dem Film landet ein außerirdisches Raumschiff mitten in der Stadt.",
+     "zh": "電影裡，一艘外星太空船降落在城市正中央。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -9371,7 +9511,12 @@
    "meanings": [
     "展覽"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Museum gibt es eine Ausstellung mit alten Fotos.",
+     "zh": "博物館有一個老照片展。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -9992,7 +10137,12 @@
    "meanings": [
     "麵包店"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Bäckerei kaufe ich zwei Brötchen.",
+     "zh": "我在麵包店買兩個小麵包。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10071,7 +10221,12 @@
    "meanings": [
     "烘焙工作室"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Schon um vier Uhr morgens brennt in der Backstube Licht.",
+     "zh": "凌晨四點，烘焙工作室就已經亮著燈。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10100,7 +10255,12 @@
    "meanings": [
     "烘焙比賽"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Backwettbewerb bewertet die Jury nicht nur den Geschmack, sondern auch das Aussehen.",
+     "zh": "烘焙比賽中，評審團不只評口味，也評外觀。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10172,7 +10332,12 @@
    "meanings": [
     "鐵路職員"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem historischen Foto steht ein Bahnbeamter in Uniform vor dem Bahnhof.",
+     "zh": "那張歷史照片中，一名穿制服的鐵路職員站在車站前。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10295,7 +10460,12 @@
    "meanings": [
     "纈草"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Teepackung steht, dass die Mischung neben Melisse auch Baldrian enthält.",
+     "zh": "茶包包裝上寫著，配方除了香蜂草，也含有纈草。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10453,7 +10623,12 @@
    "meanings": [
     "現金"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Bus kann man nur mit Bargeld bezahlen.",
+     "zh": "公車上只能付現金。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10632,9 +10807,14 @@
    "kind": "word",
    "plural": "die Bauchspeicheldrüsen",
    "meanings": [
-    "胰臟（器官名，本詞本身不是胰臟癌）"
+    "胰臟"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Ärztin erläutert, welche Rolle die Bauchspeicheldrüse bei der Verdauung und der Blutzuckerregulation spielt.",
+     "zh": "醫師說明胰臟在消化與血糖調節上扮演的角色。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10819,7 +10999,12 @@
    "meanings": [
     "建築物；建築工程"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das historische Bauwerk wird restauriert, damit es auch künftig besucht werden kann.",
+     "zh": "這棟歷史建築正在修復，讓未來也能開放參觀。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -10885,7 +11070,12 @@
    "meanings": [
     "男性公務員（形容詞名詞化）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Beamte prüft meinen Antrag und erklärt mir den nächsten Schritt.",
+     "zh": "那位公務員審核我的申請，並向我說明下一步。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -11038,7 +11228,12 @@
    "meanings": [
     "杯子（通常無把手）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Picknick nehme ich vier Becher mit.",
+     "zh": "我要帶四個杯子去野餐。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -11067,7 +11262,12 @@
    "meanings": [
     "水池；盆；骨盆"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im flachen Becken vor dem Hotel schwimmen kleine Fische.",
+     "zh": "飯店前的淺水池裡有小魚在游。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -11216,7 +11416,12 @@
    "meanings": [
     "有條件的；受……影響的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Bank hat uns nur eine bedingte Zusage gegeben: Zuerst muss der Arbeitsvertrag vorliegen.",
+     "zh": "銀行只給了我們有條件的承諾：要先拿到工作合約才行。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -11243,7 +11448,12 @@
    "meanings": [
     "條件"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Eine Bedingung für den Kurs ist, dass man schwimmen kann.",
+     "zh": "參加這門課的條件之一是會游泳。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -11304,7 +11514,12 @@
    "meanings": [
     "葬禮；土葬"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zur Beerdigung ihres Onkels ist die ganze Familie gekommen.",
+     "zh": "全家人都來參加了她叔叔的葬禮。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -11414,7 +11629,12 @@
    "meanings": [
     "有天賦的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sie ist musikalisch begabt und spielt schon mit fünf Jahren Klavier.",
+     "zh": "她有音樂天分，五歲就會彈鋼琴。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -11735,7 +11955,12 @@
    "meanings": [
     "葬禮；埋葬"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Begräbnis kamen auch Freunde, die ihn seit der Schulzeit kannten.",
+     "zh": "從學生時代就認識他的朋友也來參加了葬禮。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -12331,7 +12556,12 @@
    "meanings": [
     "配菜"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Als Beilage zum Fisch nehme ich Kartoffeln.",
+     "zh": "魚的配菜我選馬鈴薯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -12731,7 +12961,12 @@
    "meanings": [
     "活化；振興"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Stadt erhofft sich von der neuen Markthalle eine Belebung des bislang wenig besuchten Viertels.",
+     "zh": "市政府希望新的室內市場能帶動這個過去人潮稀少的街區。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -12997,7 +13232,12 @@
    "meanings": [
     "舒適的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf diesem Sofa sitze ich sehr bequem.",
+     "zh": "坐在這張沙發上很舒服。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -13096,7 +13336,12 @@
    "meanings": [
     "領域；範圍"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sie möchte später im Bereich Gesundheit arbeiten.",
+     "zh": "她以後想在健康領域工作。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -13751,7 +13996,12 @@
    "meanings": [
     "描述"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit deiner Beschreibung habe ich das Haus sofort gefunden.",
+     "zh": "照著你的描述，我馬上就找到那棟房子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -14025,7 +14275,12 @@
    "meanings": [
     "會議；討論"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Besprechung verteilen wir die Aufgaben für nächste Woche.",
+     "zh": "我們在會議中分配下週的工作。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -14123,7 +14378,12 @@
    "meanings": [
     "確認；證明"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Buchung erhältst du eine Bestätigung per E-Mail.",
+     "zh": "訂房後，你會收到電子郵件確認信。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -14152,7 +14412,12 @@
    "meanings": [
     "安葬；葬儀"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Familie hat sich für eine Bestattung auf dem Friedhof im Heimatort entschieden.",
+     "zh": "家人決定把逝者安葬在故鄉的墓園。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -14626,7 +14891,12 @@
    "meanings": [
     "指導者；照護者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Betreuer an der Universität gibt mir Hinweise zum Aufbau der Abschlussarbeit.",
+     "zh": "我的大學指導老師針對畢業論文的架構給了我建議。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -15059,7 +15329,12 @@
    "meanings": [
     "求職面試"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Bewerbungsgespräch habe ich mich über die Firma informiert.",
+     "zh": "為了求職面試，我已經查過這間公司的資料。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -15165,7 +15440,12 @@
    "meanings": [
     "意識"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Sturz vom Fahrrad verlor er kurz das Bewusstsein.",
+     "zh": "從腳踏車上摔下來後，他短暫失去了意識。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -15679,7 +15959,12 @@
    "meanings": [
     "主教"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Bischof besucht die Gemeinde und spricht mit den Menschen über ihre Sorgen.",
+     "zh": "主教探訪這個堂區，和信眾談他們的煩惱。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -15851,7 +16136,12 @@
    "meanings": [
     "葉菜類"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Frisches Blattgemüse bewahre ich im Gemüsefach des Kühlschranks auf.",
+     "zh": "我把新鮮葉菜放在冰箱的蔬果室保存。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -15946,7 +16236,12 @@
    "meanings": [
     "藍黴"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Blauschimmel verleiht diesem Käse seinen kräftigen Geschmack.",
+     "zh": "藍黴賦予這款起司濃郁的風味。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -16077,7 +16372,12 @@
    "meanings": [
     "笨的；愚蠢的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Es war blöd von mir, den Schlüssel im Auto zu lassen.",
+     "zh": "我把鑰匙留在車裡，真是笨。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -16904,9 +17204,14 @@
    "kind": "word",
    "plural": "die Brokkoli-Aufläufe",
    "meanings": [
-    "花椰菜焗烤"
+    "綠花椰菜焗烤"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für den Brokkoli-Auflauf brauchen wir noch Käse und Sahne.",
+     "zh": "做綠花椰菜焗烤，我們還需要起司和鮮奶油。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17040,7 +17345,12 @@
    "meanings": [
     "兩個休息日之間的工作日"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Weil der Feiertag auf einen Donnerstag fällt, nehme ich den Freitag als Brückentag frei.",
+     "zh": "因為國定假日在星期四，我在中間的星期五請假，接著休到週末。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17113,7 +17423,12 @@
    "meanings": [
     "井；噴泉"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Aus dem alten Brunnen holen wir Wasser für den Garten.",
+     "zh": "我們從那口老井打水澆花園。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17294,7 +17609,12 @@
    "meanings": [
     "預算"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unser Budget reicht nicht aus, um alle Räume gleichzeitig zu renovieren.",
+     "zh": "我們的預算不足以同時整修所有房間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17467,7 +17787,12 @@
    "meanings": [
     "德國聯邦國防軍"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Schule überlegt sie, ob sie zur Bundeswehr gehen möchte.",
+     "zh": "離開學校後，她在考慮是否加入德國聯邦國防軍。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17558,7 +17883,12 @@
    "meanings": [
     "市民服務處"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Bürgeramt beantrage ich einen neuen Personalausweis.",
+     "zh": "我到市民服務處申請新的身分證。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17619,7 +17949,12 @@
    "meanings": [
     "人行道"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Stell dein Fahrrad bitte so ab, dass der Bürgersteig frei bleibt.",
+     "zh": "請把腳踏車停好，讓人行道保持暢通。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -17833,7 +18168,12 @@
    "meanings": [
     "凱撒"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Ausstellung wird erläutert, wie Cäsar seinen politischen Einfluss in Rom ausbaute.",
+     "zh": "展覽說明凱撒如何在羅馬擴大政治影響力。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -18039,7 +18379,12 @@
    "meanings": [
     "中國"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Freundin besucht ihre Familie in China.",
+     "zh": "我朋友去中國探望家人。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -18068,7 +18413,12 @@
    "meanings": [
     "中國男性"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Nachbar ist Chinese und kommt aus Shanghai.",
+     "zh": "我的鄰居是中國人，來自上海。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -18097,7 +18447,12 @@
    "meanings": [
     "中國女性"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Chinesin neben mir heißt Lin.",
+     "zh": "坐我旁邊的那位中國女生叫林。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -19270,7 +19625,12 @@
    "meanings": [
     "持續降雨"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen des Dauerregens sind die Wege im Wald sehr matschig.",
+     "zh": "因為持續下雨，森林步道變得很泥濘。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -19396,7 +19756,12 @@
    "meanings": [
     "人口結構方面的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der demografische Wandel stellt die Gemeinde vor die Frage, wie sie die Versorgung älterer Menschen sichern kann.",
+     "zh": "人口結構的變化，讓這個市鎮必須思考如何確保長者獲得照顧。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -20540,7 +20905,12 @@
    "meanings": [
     "男竊賊"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Polizei hat den Dieb am Bahnhof gefasst.",
+     "zh": "警察在火車站抓到了那個小偷。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -20569,7 +20939,12 @@
    "meanings": [
     "女竊賊"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Diebin hat mein Handy aus meiner Tasche genommen.",
+     "zh": "那個女小偷從我的包包裡拿走了手機。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -20598,7 +20973,12 @@
    "meanings": [
     "偷竊"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Diebstahl meiner Tasche habe ich sofort die Polizei angerufen.",
+     "zh": "包包遭竊後，我立刻報警。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -20869,7 +21249,12 @@
    "meanings": [
     "東西"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Was ist das für ein Ding unter dem Sofa?",
+     "zh": "沙發底下那個是什麼東西？"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -20930,7 +21315,12 @@
    "meanings": [
     "直接的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Dieser Bus fährt direkt zum Bahnhof.",
+     "zh": "這班公車直達火車站。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -21023,7 +21413,12 @@
    "meanings": [
     "女主任；女校長"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Direktorin begrüßt die neuen Kinder auf dem Schulhof.",
+     "zh": "女校長在校園裡歡迎新生。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -21211,7 +21606,12 @@
    "meanings": [
     "大教堂"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vom Bahnhof aus können wir den Dom schon sehen.",
+     "zh": "我們從火車站就看得到大教堂。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -21240,7 +21640,12 @@
    "meanings": [
     "多瑙河"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf einer Brücke über die Donau bleiben wir stehen und machen Fotos.",
+     "zh": "我們在多瑙河上的一座橋停下來拍照。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -21409,7 +21814,12 @@
    "meanings": [
     "風箏節"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Drachenfest steigen bunte Drachen über der Wiese in den Himmel.",
+     "zh": "風箏節上，繽紛的風箏從草地上升空。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -21470,7 +21880,12 @@
    "meanings": [
     "劇本"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bevor die Dreharbeiten beginnen, wird das Drehbuch noch einmal überarbeitet.",
+     "zh": "開拍前，劇本還會再修改一次。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -21905,7 +22320,12 @@
    "meanings": [
     "愚蠢的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das war eine dumme Idee.",
+     "zh": "那是個笨主意。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -22031,7 +22451,12 @@
    "meanings": [
     "腹瀉"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen Durchfall musste er die Reise verschieben.",
+     "zh": "他因為腹瀉，只好延後旅行。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -22650,7 +23075,12 @@
    "meanings": [
     "雞蛋短缺／雞蛋危機"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Während der Eierkrise mussten mehrere Bäckereien ihre Rezepte vorübergehend anpassen, weil Lieferungen ausblieben.",
+     "zh": "雞蛋短缺期間，由於供貨中斷，好幾間麵包店只好暫時調整配方。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -23064,7 +23494,12 @@
    "meanings": [
     "火化"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Angehörigen besprechen mit dem Bestattungsunternehmen, wie die Einäscherung und die anschließende Beisetzung organisiert werden.",
+     "zh": "家屬和葬儀公司商量火化及後續安葬的安排。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -23225,7 +23660,12 @@
    "meanings": [
     "闖入；竊盜入侵"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Einbruch in die Bäckerei wurde die Kasse gestohlen.",
+     "zh": "麵包店遭闖入行竊，收銀機被偷走了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -23793,7 +24233,12 @@
    "meanings": [
     "導入；介紹"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Einführung der neuen Software hat unseren Arbeitsalltag verändert.",
+     "zh": "導入新軟體改變了我們的日常工作。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -23987,7 +24432,12 @@
    "meanings": [
     "收入"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit ihrem Einkommen kann sie die Miete kaum bezahlen.",
+     "zh": "靠她的收入，幾乎付不起房租。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -24259,7 +24709,12 @@
    "meanings": [
     "入境日"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Einreisetag wurde unser Gepäck am Flughafen genau kontrolliert.",
+     "zh": "入境那天，我們的行李在機場被仔細檢查。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -24799,7 +25254,12 @@
    "meanings": [
     "冰；冰淇淋"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Winter liegt Eis auf dem See.",
+     "zh": "冬天湖面上結了冰。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -24828,7 +25288,12 @@
    "meanings": [
     "蛋白質含量"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Verpackung ist der Eiweißanteil pro hundert Gramm angegeben.",
+     "zh": "包裝上標示了每一百公克的蛋白質含量。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -25084,7 +25549,12 @@
    "meanings": [
     "敏感的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Haut ist empfindlich und verträgt diese Seife nicht.",
+     "zh": "我的皮膚很敏感，用這款肥皂會不舒服。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -25909,7 +26379,12 @@
    "meanings": [
     "失望"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Absage des Turniers war eine große Enttäuschung für das ganze Team.",
+     "zh": "比賽取消，讓整個團隊非常失望。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -26040,7 +26515,12 @@
    "meanings": [
     "開發者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Entwickler prüft, warum die App auf älteren Geräten abstürzt.",
+     "zh": "開發者正在查明，為什麼這個應用程式會在舊裝置上當掉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -26152,7 +26632,12 @@
    "meanings": [
     "發炎"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Ärztin hat eine Entzündung im Knie festgestellt.",
+     "zh": "醫師發現膝蓋有發炎的情況。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -26213,7 +26698,12 @@
    "meanings": [
     "地震"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Erdbeben haben viele Menschen die Nacht draußen verbracht.",
+     "zh": "地震後，很多人在戶外過夜。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -26744,7 +27234,12 @@
    "meanings": [
     "感冒"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen einer Erkältung bleibe ich heute zu Hause.",
+     "zh": "我感冒了，今天待在家。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -27391,7 +27886,12 @@
    "meanings": [
     "備用鑰匙"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Einen Ersatzschlüssel habe ich bei meiner Schwester hinterlegt.",
+     "zh": "我在姊姊那裡放了一把備用鑰匙。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -27877,7 +28377,12 @@
    "meanings": [
     "成年的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Kinder sind inzwischen erwachsen und wohnen nicht mehr hier.",
+     "zh": "我的孩子現在都成年了，已經不住這裡。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -27904,7 +28409,12 @@
    "meanings": [
     "成年人（形容詞名詞化）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für Erwachsene kostet der Eintritt zehn Euro.",
+     "zh": "成人入場費是十歐元。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -28088,7 +28598,12 @@
    "meanings": [
     "敘事；故事"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ihre Erzählung über die lange Zugreise hat mich zum Lachen gebracht.",
+     "zh": "她講的長途火車旅行故事讓我笑了出來。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -28489,7 +29004,12 @@
    "meanings": [
     "食量／飲食習慣方面的「食客」"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Sohn ist ein langsamer Esser und braucht für jede Mahlzeit viel Zeit.",
+     "zh": "我兒子吃東西慢，每餐都要花很多時間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -28758,7 +29278,12 @@
    "meanings": [
     "永遠的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sie versprechen sich ewige Liebe.",
+     "zh": "他們向彼此許下永恆的愛。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -28785,7 +29310,12 @@
    "meanings": [
     "一本；一份"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Von diesem Buch ist nur noch ein Exemplar in der Bibliothek verfügbar.",
+     "zh": "圖書館裡這本書只剩一本可借。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -28814,7 +29344,12 @@
    "meanings": [
     "實驗"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei diesem Experiment beobachten wir, wie sich Zucker in Wasser löst.",
+     "zh": "在這個實驗中，我們觀察糖如何溶於水。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -28843,7 +29378,12 @@
    "meanings": [
     "額外一份"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Weil ich großen Hunger habe, bestelle ich eine Extraportion Reis.",
+     "zh": "因為我很餓，我要多點一份飯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -29064,7 +29604,12 @@
    "meanings": [
     "任課老師"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei Fragen zur Prüfung wenden sich die Eltern direkt an den Fachlehrer.",
+     "zh": "家長對考試有疑問時，會直接找任課老師。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -29613,7 +30158,12 @@
    "meanings": [
     "偽造品；偽造"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die angeblich antike Münze erwies sich als Fälschung.",
+     "zh": "那枚號稱古物的硬幣，後來證實是偽造品。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -29784,7 +30334,12 @@
    "meanings": [
     "懶惰的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Heute bin ich faul und bleibe auf dem Sofa.",
+     "zh": "今天我很懶，窩在沙發上。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -29811,7 +30366,12 @@
    "meanings": [
     "傳真"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bitte schicken Sie die Bestellung per Fax.",
+     "zh": "請把訂單傳真給我們。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -29840,7 +30400,12 @@
    "meanings": [
     "結論"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Fazit nach dem Kurs ist, dass regelmäßiges Üben am meisten hilft.",
+     "zh": "上完課後，我的結論是規律練習最有幫助。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -30115,7 +30680,12 @@
    "meanings": [
     "敵人"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Geschichte werden zwei alte Freunde zu Feinden.",
+     "zh": "故事中，兩個老朋友成了敵人。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -30342,7 +30912,12 @@
    "meanings": [
     "完成的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Suppe ist fertig, wir können essen.",
+     "zh": "湯好了，我們可以吃飯了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -30642,7 +31217,12 @@
    "meanings": [
     "煙火"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vom Balkon aus schauen wir uns das Feuerwerk an.",
+     "zh": "我們從陽台看煙火。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -30979,7 +31559,12 @@
    "meanings": [
     "佛羅倫薩（義大利語；德語 Florenz）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf unserem Zugticket steht Firenze, der italienische Name für Florenz.",
+     "zh": "我們的火車票上寫著 Firenze，也就是佛羅倫薩的義大利文名稱。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -31216,7 +31801,12 @@
    "meanings": [
     "面積"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Wohnung hat eine Fläche von siebzig Quadratmetern.",
+     "zh": "這間公寓的面積是七十平方公尺。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -31328,7 +31918,12 @@
    "meanings": [
     "肉販；屠夫"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Fleischer schneidet mir zwei dünne Scheiben Schinken ab.",
+     "zh": "肉販幫我切兩片薄薄的火腿。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -31684,7 +32279,12 @@
    "meanings": [
     "難民家庭"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Eine Flüchtlingsfamilie aus unserer Straße sucht eine größere Wohnung.",
+     "zh": "我們這條街上一個難民家庭正在找更大的住處。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -31743,7 +32343,12 @@
    "meanings": [
     "航空公司"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Fluggesellschaft hat unseren Flug wegen des Sturms gestrichen.",
+     "zh": "航空公司因暴風雨取消了我們的航班。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -31862,7 +32467,12 @@
    "meanings": [
     "液態的；流暢的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Butter ist noch flüssig, weil sie gerade geschmolzen ist.",
+     "zh": "奶油剛融化，還是液態的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -32085,7 +32695,12 @@
    "meanings": [
     "鱒魚"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Koch brät die Forelle mit etwas Butter in der Pfanne.",
+     "zh": "廚師在平底鍋裡加一點奶油煎鱒魚。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -32419,7 +33034,12 @@
    "meanings": [
     "照片"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem Foto steht meine Mutter am Meer.",
+     "zh": "照片裡，我媽媽站在海邊。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -32557,7 +33177,12 @@
    "meanings": [
     "瑞士法郎（貨幣）；弗蘭肯地區（依語境）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Mittagessen in Zürich habe ich zwanzig Franken bezahlt.",
+     "zh": "在蘇黎世吃午餐，我付了二十瑞士法郎。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -32586,7 +33211,12 @@
    "meanings": [
     "法國"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Sommer fahren wir nach Frankreich.",
+     "zh": "夏天我們要去法國。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -32615,7 +33245,12 @@
    "meanings": [
     "法國男性"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Franzose an unserem Tisch kommt aus Lyon.",
+     "zh": "跟我們同桌的那個法國人來自里昂。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -32644,7 +33279,12 @@
    "meanings": [
     "法國女性"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Französin wohnt seit Mai in Berlin.",
+     "zh": "那位法國女性從五月起住在柏林。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -33234,7 +33874,12 @@
    "meanings": [
     "墓園"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Sonntag besucht sie das Grab ihres Vaters auf dem Friedhof.",
+     "zh": "星期天她去墓園看父親的墓。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -33549,7 +34194,12 @@
    "meanings": [
     "春季節慶；（華人）春節"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Frühlingsfest im Stadtpark gibt es Musik und Stände mit Essen.",
+     "zh": "市立公園的春季節慶有音樂表演和美食攤位。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -33716,7 +34366,12 @@
    "meanings": [
     "命運的安排"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Dass sie gerade an diesem Tag ihren späteren Mann kennenlernte, betrachtet sie als glückliche Fügung.",
+     "zh": "她認為，偏偏在那天認識後來的丈夫，是命運的美好安排。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -34294,7 +34949,12 @@
    "meanings": [
     "岔路"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "An der Gabelung nehmen wir den schmaleren Weg, der zum See führt.",
+     "zh": "到了岔路，我們走通往湖邊的那條較窄小路。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -34323,7 +34983,12 @@
    "meanings": [
     "四季胎"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vor dem Winter lässt sie prüfen, ob die Ganzjahresreifen noch genügend Profil haben.",
+     "zh": "入冬前，她請人檢查四季胎的胎紋是否還夠深。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -34527,7 +35192,12 @@
    "meanings": [
     "主人；東道主"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unser Gastgeber hat für alle Gäste gekocht.",
+     "zh": "主人為所有客人煮了飯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -34676,7 +35346,12 @@
    "meanings": [
     "領域；地區"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem Gebiet der Medizin gibt es ständig neue Entwicklungen.",
+     "zh": "醫學領域持續有新的發展。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -34803,7 +35478,12 @@
    "meanings": [
     "詩"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für den Geburtstag seiner Mutter hat er ein Gedicht geschrieben.",
+     "zh": "他為媽媽的生日寫了一首詩。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -34959,7 +35639,12 @@
    "meanings": [
     "危險的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei Schnee ist diese Straße gefährlich.",
+     "zh": "下雪時，這條路很危險。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -35873,7 +36558,12 @@
    "meanings": [
     "共同體"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Dorf ist die Gemeinschaft stark: Wenn jemand Hilfe braucht, sind die Nachbarn da.",
+     "zh": "這個村子的人很團結，有人需要幫忙時，鄰居都會出手。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -35902,7 +36592,12 @@
    "meanings": [
     "社區共用花園"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Gemeinschaftsgarten teilen sich die Nachbarn die Arbeit und später auch die Ernte.",
+     "zh": "鄰居們分擔社區共用花園的工作，之後也分享收成。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -35931,7 +36626,12 @@
    "meanings": [
     "混合的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Mittagessen bestelle ich einen gemischten Salat.",
+     "zh": "午餐我點了一份綜合沙拉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -36414,7 +37114,12 @@
    "meanings": [
     "公平的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir suchen eine gerechte Lösung, mit der alle Beteiligten leben können.",
+     "zh": "我們在找一個所有當事人都能接受的公平解決方案。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -36441,7 +37146,12 @@
    "meanings": [
     "餐點；法院"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Dieses Gericht mit Reis und Gemüse schmeckt auch ohne Fleisch.",
+     "zh": "這道米飯蔬菜料理即使不加肉也很好吃。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -36642,7 +37352,12 @@
    "meanings": [
     "商業夥伴"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unser Geschäftspartner aus Wien besucht nächste Woche die Firma.",
+     "zh": "我們在維也納的商業夥伴下週要來公司。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -36842,7 +37557,12 @@
    "meanings": [
     "兄弟姊妹"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Geschwister wohnen noch bei unseren Eltern.",
+     "zh": "我的兄弟姊妹還住在爸媽家。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -37208,7 +37928,12 @@
    "meanings": [
     "健康檢查"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für den Gesundheitscheck muss ich morgen früh in die Praxis gehen.",
+     "zh": "我明天一早得去診所做健康檢查。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -37894,7 +38619,12 @@
    "meanings": [
     "直流加速器"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Labor erklärt die Physikerin, wie ein Gleichstrombeschleuniger geladene Teilchen mithilfe eines elektrischen Feldes beschleunigt.",
+     "zh": "實驗室裡，物理學家說明直流加速器如何利用電場加速帶電粒子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38002,7 +38732,12 @@
    "meanings": [
     "肢體；環節"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem langen Sitzen im Zug musste sie ihre müden Glieder strecken.",
+     "zh": "在火車上坐了很久後，她得伸展疲累的四肢。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38031,7 +38766,12 @@
    "meanings": [
     "四肢酸痛"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Seit gestern habe ich Fieber und Gliederschmerzen.",
+     "zh": "我從昨天起就發燒、四肢酸痛。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38234,7 +38974,12 @@
    "meanings": [
     "貢多拉；纜車車廂"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In Venedig fahren wir mit einer Gondel durch einen schmalen Kanal.",
+     "zh": "在威尼斯，我們搭貢多拉穿過一條狹窄的運河。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38263,7 +39008,12 @@
    "meanings": [
     "戈貢佐拉藍紋起司"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Soße lasse ich den Gorgonzola bei niedriger Hitze schmelzen.",
+     "zh": "做醬汁時，我用小火把戈貢佐拉藍紋起司融化。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38292,7 +39042,12 @@
    "meanings": [
     "墳墓"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sie legt frische Blumen auf das Grab ihrer Großmutter.",
+     "zh": "她在祖母的墳上放了鮮花。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38692,7 +39447,12 @@
    "meanings": [
     "燒烤餐廳"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für Samstag haben wir einen Tisch im Grillrestaurant reserviert.",
+     "zh": "我們已經訂好星期六燒烤餐廳的位子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38721,7 +39481,12 @@
    "meanings": [
     "流感"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Kollegin hat Grippe und bleibt im Bett.",
+     "zh": "我同事得了流感，臥床休息。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -38876,7 +39641,12 @@
    "meanings": [
     "祖母／外祖母"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Großmutter backt heute einen Kuchen.",
+     "zh": "我祖母今天烤蛋糕。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -39206,7 +39976,12 @@
    "meanings": [
     "小學"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unsere Tochter geht seit August in die Grundschule.",
+     "zh": "我們女兒從八月起開始上小學。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -39235,7 +40010,12 @@
    "meanings": [
     "初級"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Grundstufe lernen die Teilnehmenden, einfache Gespräche im Alltag zu führen.",
+     "zh": "初級班的學員學習如何進行簡單的日常對話。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -39264,7 +40044,12 @@
    "meanings": [
     "團體"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unsere Gruppe trifft sich vor der Schule.",
+     "zh": "我們這組在學校前面集合。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -39293,7 +40078,12 @@
    "meanings": [
     "可怕的；毛骨悚然的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Dunkeln wirkt der verlassene Bahnhof ziemlich gruselig.",
+     "zh": "黑暗中，那座廢棄車站顯得相當陰森。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -39352,7 +40142,12 @@
    "meanings": [
     "便宜的；有利的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem Markt sind die Äpfel heute günstig.",
+     "zh": "今天市場的蘋果很便宜。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -39547,7 +40342,12 @@
    "meanings": [
     "文理中學"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Grundschule möchte Tim aufs Gymnasium gehen.",
+     "zh": "提姆小學畢業後想讀文理中學。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -39685,7 +40485,12 @@
    "meanings": [
     "半膳住宿（通常含早晚餐）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir buchen ein Zimmer mit Halbpension, damit Frühstück und Abendessen dabei sind.",
+     "zh": "我們訂含早晚餐的半膳住宿。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -40180,9 +40985,14 @@
    "kind": "word",
    "plural": "",
    "meanings": [
-    "手工藝；技藝"
+    "手藝行業；手工業"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Schwester lernt ein Handwerk: Sie macht eine Ausbildung zur Tischlerin.",
+     "zh": "我妹妹在學一門手藝，她正在接受木工職業訓練。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -40608,7 +41418,12 @@
    "meanings": [
     "家事；學期論文"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir teilen uns die Hausarbeit.",
+     "zh": "我們分擔家事。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -40681,7 +41496,12 @@
    "meanings": [
     "家庭主婦"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Tante ist Hausfrau und kümmert sich um die Kinder.",
+     "zh": "我阿姨是家庭主婦，負責照顧孩子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -40854,7 +41674,12 @@
    "meanings": [
     "神聖的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Dieser Berg ist für die Menschen der Region heilig.",
+     "zh": "這座山對當地人來說是神聖的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -40881,7 +41706,12 @@
    "meanings": [
     "平安夜"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "An Heiligabend essen wir bei meinen Eltern.",
+     "zh": "平安夜我們在我爸媽家吃飯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -40944,7 +41774,12 @@
    "meanings": [
     "故鄉"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auch nach vielen Jahren im Ausland vermisst er seine Heimat.",
+     "zh": "即使在國外住了很多年，他還是想念故鄉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -41361,7 +42196,12 @@
    "meanings": [
     "顧慮；心理障礙"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Anfangs hatte sie Hemmungen, vor der Gruppe zu sprechen.",
+     "zh": "一開始，她不太敢在大家面前說話。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -42103,7 +42943,12 @@
    "meanings": [
     "去程航班"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unser Hinflug nach Wien ist am Montag.",
+     "zh": "我們飛往維也納的去程航班在星期一。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -42345,7 +43190,12 @@
    "meanings": [
     "熱浪"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Während der Hitzewelle bleibt die Bibliothek abends länger geöffnet.",
+     "zh": "熱浪期間，圖書館晚間延長開放。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -42404,7 +43254,12 @@
    "meanings": [
     "高度資優的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Obwohl das Kind hochbegabt ist, braucht es im Schulalltag Unterstützung.",
+     "zh": "這個孩子雖然高度資優，在學校的日常生活中還是需要協助。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -42431,7 +43286,12 @@
    "meanings": [
     "資優培育"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das neue Programm zur Hochbegabtenförderung soll auch Kinder erreichen, deren Fähigkeiten bisher übersehen wurden.",
+     "zh": "新的資優培育計畫也希望涵蓋那些能力至今未被發現的孩子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -42460,7 +43320,12 @@
    "meanings": [
     "高速列車"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit dem Hochgeschwindigkeitszug erreichen wir die Hauptstadt in zwei Stunden.",
+     "zh": "搭高速列車，我們兩小時就能到首都。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -42758,7 +43623,12 @@
    "meanings": [
     "高潮；重頭戲"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Höhepunkt des Festes war ein Konzert auf dem Marktplatz.",
+     "zh": "節慶的重頭戲是市集廣場上的音樂會。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -44048,7 +44918,12 @@
    "meanings": [
     "小吃店；點心"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Imbiss neben dem Bahnhof kaufen wir Pommes.",
+     "zh": "我們在車站旁的小吃店買薯條。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -44250,7 +45125,12 @@
    "meanings": [
     "疫苗"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Ärztin erklärt mir, welcher Impfstoff für die Reise empfohlen wird.",
+     "zh": "醫師向我說明，這趟旅行建議接種哪種疫苗。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -44279,7 +45159,12 @@
    "meanings": [
     "印象派的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die impressionistischen Gemälde der Ausstellung zeigen, wie unterschiedlich sich Licht auf Wasser darstellen lässt.",
+     "zh": "展覽中的印象派畫作呈現了水面光影的多種表現方式。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -44719,7 +45604,12 @@
    "meanings": [
     "間接的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Von ihrer Kündigung habe ich nur indirekt über einen Kollegen erfahren.",
+     "zh": "她辭職的事，我只是透過同事間接聽說的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -44778,7 +45668,12 @@
    "meanings": [
     "工業"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In dieser Region bietet die Industrie viele Arbeitsplätze.",
+     "zh": "這個地區的工業提供很多工作機會。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -44881,7 +45776,12 @@
    "meanings": [
     "內容"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Den Inhalt des Pakets habe ich noch nicht gesehen.",
+     "zh": "我還沒看過包裹裡的東西。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -45623,7 +46523,12 @@
    "meanings": [
     "網路語言"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Studie untersucht, wie Abkürzungen aus der Internetsprache in alltägliche Gespräche gelangen.",
+     "zh": "這項研究探討網路語言中的縮寫如何進入日常對話。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -45716,7 +46621,12 @@
    "meanings": [
     "iPad 平板電腦"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf meinem iPad lese ich die Zeitung.",
+     "zh": "我用 iPad 看報紙。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -45857,7 +46767,12 @@
    "meanings": [
     "諷刺的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sein ironischer Kommentar über das schlechte Wetter brachte uns zum Lachen.",
+     "zh": "他對壞天氣的諷刺評論讓我們笑了出來。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -45884,7 +46799,12 @@
    "meanings": [
     "冰島"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In Island möchte ich die heißen Quellen sehen.",
+     "zh": "我想在冰島看溫泉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -46084,7 +47004,12 @@
    "meanings": [
     "年級；同一出生年份者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Schülerinnen und Schüler des zehnten Jahrgangs bereiten ein Theaterstück vor.",
+     "zh": "十年級的學生正在準備一齣戲。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -46209,7 +47134,12 @@
    "meanings": [
     "日本男性"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Japaner in unserer Gruppe kommt aus Osaka.",
+     "zh": "我們這組的那個日本男生來自大阪。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -46238,7 +47168,12 @@
    "meanings": [
     "日本女性"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Japanerin arbeitet hier im Café.",
+     "zh": "那位日本女生在這間咖啡店工作。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -46897,7 +47832,12 @@
    "meanings": [
     "男孩"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Junge sucht seinen Ball im Garten.",
+     "zh": "男孩在花園裡找他的球。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -46958,7 +47898,12 @@
    "meanings": [
     "法律方面的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bevor sie den Vertrag unterschreibt, holt sie juristischen Rat ein.",
+     "zh": "簽約前，她先尋求法律方面的建議。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -46985,7 +47930,12 @@
    "meanings": [
     "評審團"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Jury entscheidet heute, welcher Film den Hauptpreis erhält.",
+     "zh": "評審團今天要決定哪部電影獲得首獎。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47014,7 +47964,12 @@
    "meanings": [
     "司法"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Vertrauen in die Justiz hängt auch davon ab, ob Verfahren fair ablaufen.",
+     "zh": "人民對司法的信任，也取決於訴訟程序是否公平。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47073,7 +48028,12 @@
    "meanings": [
     "甲蟲"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ein kleiner Käfer krabbelt über das Blatt.",
+     "zh": "一隻小甲蟲爬過葉子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47177,7 +48137,12 @@
    "meanings": [
     "咖啡種植園"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Kaffeeplantage erklärt uns eine Mitarbeiterin, wann die Früchte geerntet werden.",
+     "zh": "咖啡種植園的工作人員向我們說明果實何時採收。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47206,7 +48171,12 @@
    "meanings": [
     "皇帝"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Museum sehen wir ein altes Porträt des Kaisers.",
+     "zh": "我們在博物館裡看到一幅皇帝的古老肖像。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47269,7 +48239,12 @@
    "meanings": [
     "蟑螂"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Als ich das Licht einschaltete, verschwand eine Kakerlake unter dem Kühlschrank.",
+     "zh": "我打開燈時，一隻蟑螂鑽到冰箱底下。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47298,7 +48273,12 @@
    "meanings": [
     "小牛；小牛肉"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Kalb bleibt auf der Weide dicht bei seiner Mutter.",
+     "zh": "小牛在牧場上緊緊跟著媽媽。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47519,7 +48499,12 @@
    "meanings": [
     "小壺"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Frühstück bringt der Kellner mir ein Kännchen Kaffee.",
+     "zh": "早餐時，服務生端來一小壺咖啡。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47548,7 +48533,12 @@
    "meanings": [
     "壺"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem Tisch steht eine Kanne Tee.",
+     "zh": "桌上有一壺茶。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47601,7 +48591,7 @@
    "flag": ""
   },
   {
-   "article": "das",
+   "article": "der",
    "word": "Karamell",
    "pos": "noun",
    "kind": "word",
@@ -47609,7 +48599,12 @@
    "meanings": [
     "焦糖"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Soße lasse ich Zucker langsam im Topf zu Karamell schmelzen.",
+     "zh": "做醬汁時，我先把糖放在鍋裡慢慢熬成焦糖。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47623,11 +48618,14 @@
      "group": "初次收錄（1 次）"
     }
    ],
-   "id": "das-karamell",
+   "id": "der-karamell",
    "level": "B1",
    "topic": "food",
    "push": true,
-   "flag": ""
+   "flag": "",
+   "variants": [
+    "das Karamell"
+   ]
   },
   {
    "id": "die-karriere",
@@ -47818,7 +48816,12 @@
    "meanings": [
     "起司鍋"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Käsefondue tauchen wir Brotstücke in den heißen Käse.",
+     "zh": "吃起司鍋時，我們把麵包塊沾進熱起司裡。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47907,7 +48910,12 @@
    "meanings": [
     "類別"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Unter welcher Kategorie finde ich die Bücher über Reisen?",
+     "zh": "旅遊書在哪個類別底下？"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -47936,7 +48944,12 @@
    "meanings": [
     "大教堂"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die bunten Fenster der Kathedrale leuchten in der Nachmittagssonne.",
+     "zh": "大教堂的彩色玻璃窗在午後陽光下閃耀。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -48611,7 +49624,12 @@
    "meanings": [
     "蠟燭"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem Geburtstagstisch brennen fünf Kerzen.",
+     "zh": "生日餐桌上點著五根蠟燭。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -48784,7 +49802,12 @@
    "meanings": [
     "奇趣蛋／兒童驚喜蛋"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Supermarkt hat sich mein Neffe eine Kinderüberraschung ausgesucht.",
+     "zh": "我姪子在超市挑了一顆奇趣蛋。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -48978,7 +50001,12 @@
    "meanings": [
     "櫻花"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zur Kirschblüte fahren wir jedes Jahr nach Bonn.",
+     "zh": "每年櫻花季我們都會去波昂。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49045,7 +50073,12 @@
    "meanings": [
     "清澈的；清楚的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Wasser im See ist klar.",
+     "zh": "湖水很清澈。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -49104,7 +50137,12 @@
    "meanings": [
     "班級旅行"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Klassenfahrt packe ich warme Kleidung ein.",
+     "zh": "我要參加班級旅行，把保暖衣物放進行李。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49199,7 +50237,12 @@
    "meanings": [
     "鋼琴"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Sonntag spielt Lea Klavier.",
+     "zh": "星期天蕾雅彈鋼琴。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49258,7 +50301,12 @@
    "meanings": [
     "衣服（集合名詞）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Winter brauche ich warme Kleidung.",
+     "zh": "冬天我需要保暖的衣服。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49319,7 +50367,12 @@
    "meanings": [
     "小事；瑣事"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir streiten oft über Kleinigkeiten wie offene Schubladen.",
+     "zh": "我們常為抽屜沒關這類小事吵架。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49462,7 +50515,12 @@
    "meanings": [
     "空調設備"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Sommer läuft im Büro jeden Tag die Klimaanlage.",
+     "zh": "夏天辦公室每天都開冷氣。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49761,7 +50819,12 @@
    "meanings": [
     "折痕；彎折"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Transport hat der Umschlag einen Knick bekommen, aber das Dokument ist unbeschädigt geblieben.",
+     "zh": "信封在運送途中被折到了，還好裡面的文件沒有受損。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49931,7 +50994,12 @@
    "meanings": [
     "碳水化合物"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Kartoffeln enthalten viele Kohlenhydrate und machen lange satt.",
+     "zh": "馬鈴薯含有許多碳水化合物，能讓飽足感維持很久。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -49960,7 +51028,12 @@
    "meanings": [
     "碳酸；（飲料的）氣泡"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ich mag Wasser ohne Kohlensäure lieber.",
+     "zh": "我比較喜歡沒有氣泡的水。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -50051,7 +51124,12 @@
    "meanings": [
     "奇怪的；好笑的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Milch riecht komisch.",
+     "zh": "牛奶聞起來怪怪的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -50078,7 +51156,12 @@
    "meanings": [
     "逗號"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vor „aber“ fehlt in deinem Satz ein Komma.",
+     "zh": "你的句子在 aber 前面少了一個逗號。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -50415,7 +51498,12 @@
    "meanings": [
     "衝突"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ein ruhiges Gespräch hat geholfen, den Konflikt zu lösen.",
+     "zh": "一場平和的談話幫助化解了衝突。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -50523,7 +51611,12 @@
    "meanings": [
     "建構；構念"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Vorstellung vom vollkommen unabhängigen Menschen ist ein theoretisches Konstrukt, das soziale Bindungen weitgehend ausblendet.",
+     "zh": "完全獨立的個人這種想像，是個大幅忽略社會連結的理論建構。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -50614,7 +51707,12 @@
    "meanings": [
     "集中營（KZ）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Gedenkstätte erfahren wir, unter welchen Bedingungen die Gefangenen im Konzentrationslager leben mussten.",
+     "zh": "在紀念館，我們了解到集中營囚犯被迫生活的環境。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -50888,7 +51986,12 @@
    "meanings": [
     "機動車輛（Kfz）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In dieser Straße dürfen keine Kraftfahrzeuge parken.",
+     "zh": "這條街禁止機動車輛停車。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -50917,7 +52020,12 @@
    "meanings": [
     "強壯的；有力的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Onkel ist kräftig und kann die schwere Kiste allein tragen.",
+     "zh": "我叔叔很強壯，能一個人搬那箱重物。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -51348,7 +52456,12 @@
    "meanings": [
     "癌症；螃蟹"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Seit der Diagnose Krebs bekommt er Unterstützung von seiner Familie.",
+     "zh": "自從確診癌症後，他一直有家人的支持。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -51481,7 +52594,12 @@
    "meanings": [
     "十字路口"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "An der nächsten Kreuzung biegen wir links ab.",
+     "zh": "我們在下一個十字路口左轉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -51787,7 +52905,12 @@
    "meanings": [
     "蛋糕比賽"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit ihrem Apfelkuchen hat sie beim Kuchenwettbewerb den zweiten Platz gewonnen.",
+     "zh": "她的蘋果蛋糕在蛋糕比賽中拿到第二名。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -52244,7 +53367,12 @@
    "meanings": [
     "精巧的；富有藝術性的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die kunstvoll bemalte Schale steht hinter Glas.",
+     "zh": "那只彩繪精巧的碗放在玻璃後方。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -52271,7 +53399,12 @@
    "meanings": [
     "藝術作品"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Dieses Kunstwerk besteht aus alten Fahrradteilen.",
+     "zh": "這件藝術作品是用舊腳踏車零件做的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -52645,7 +53778,12 @@
    "meanings": [
     "店面面積"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Ladenfläche ist groß genug, um neben den Regalen auch eine kleine Sitzecke einzurichten.",
+     "zh": "店面面積夠大，除了擺貨架，還能設一個小休息區。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -52806,7 +53944,12 @@
    "meanings": [
     "地圖"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Landkarte suchen wir unser Hotel.",
+     "zh": "我們在地圖上找飯店的位置。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -53212,7 +54355,12 @@
    "meanings": [
     "心情"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Spaziergang hat sie wieder gute Laune.",
+     "zh": "散步後，她的心情又好了起來。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -53496,7 +54644,12 @@
    "meanings": [
     "肝轉移病灶"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Befund wird eine Lebermetastase beschrieben, deren Behandlung das Ärzteteam nun gemeinsam plant.",
+     "zh": "檢查報告記載了一處肝轉移病灶，醫療團隊現在正共同規劃治療方式。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -53525,7 +54678,12 @@
    "meanings": [
     "活潑的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der kleine Junge ist sehr lebhaft und möchte ständig draußen spielen.",
+     "zh": "那個小男孩很活潑，一直想去外面玩。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -53680,7 +54838,12 @@
    "meanings": [
     "空無；空虛"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Auszug der Kinder spürte er eine ungewohnte Leere.",
+     "zh": "孩子搬出去後，他感受到一股不習慣的空虛。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -54115,7 +55278,12 @@
    "meanings": [
     "自來水"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In unserer Wohnung können wir das Leitungswasser trinken.",
+     "zh": "我們住處的自來水可以直接喝。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -54428,7 +55596,12 @@
    "meanings": [
     "光；燈"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Durch das Fenster kommt viel Licht ins Zimmer.",
+     "zh": "許多光線從窗戶照進房間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -54918,7 +56091,12 @@
    "meanings": [
     "文學博物館"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Literaturmuseum können Besucher die handschriftlichen Entwürfe der Autorin betrachten.",
+     "zh": "在文學博物館，訪客可以觀看這位女作家的手稿。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -55021,9 +56199,14 @@
    "kind": "word",
    "plural": "die Löhne",
    "meanings": [
-    "工資（不一定專指時薪）"
+    "工資"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die zusätzliche Arbeit bekommt er einen höheren Lohn.",
+     "zh": "他做了額外的工作，因此得到較高的工資。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -55406,7 +56589,12 @@
    "meanings": [
     "奢侈"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ein eigenes Gästezimmer wäre für uns ein Luxus.",
+     "zh": "對我們來說，有一間獨立客房會是一種奢侈。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -55467,7 +56655,12 @@
    "meanings": [
     "可行的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit zwei zusätzlichen Helfern wäre der Umzug an einem Tag machbar.",
+     "zh": "如果多兩個人幫忙，一天搬完家是可行的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -55541,7 +56734,12 @@
    "meanings": [
     "權力"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Wahl hat eine neue Partei die Macht übernommen.",
+     "zh": "選舉後，一個新政黨掌握了權力。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -55570,7 +56768,12 @@
    "meanings": [
     "權力鬥爭"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Machtkampf innerhalb der Partei verzögert die Entscheidung über die neue Führung.",
+     "zh": "黨內的權力鬥爭拖延了新領導人選的決定。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -55732,7 +56935,12 @@
    "meanings": [
     "一餐；餐食"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach einer warmen Mahlzeit fühlt er sich wieder besser.",
+     "zh": "吃了一餐熱食後，他覺得好多了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -55793,7 +57001,12 @@
    "meanings": [
     "語音信箱；電子信箱"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Hinterlass mir bitte eine Nachricht auf der Mailbox.",
+     "zh": "請在語音信箱留言給我。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -56382,7 +57595,12 @@
    "meanings": [
     "口罩；面具"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Wartezimmer trägt sie eine Maske.",
+     "zh": "她在候診室戴著口罩。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -56411,7 +57629,12 @@
    "meanings": [
     "材料"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Regal brauchen wir stabiles Material.",
+     "zh": "做這個架子需要堅固的材料。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -56440,7 +57663,12 @@
    "meanings": [
     "數學"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In Mathematik üben wir heute das Rechnen mit Geld.",
+     "zh": "今天數學課練習金錢計算。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -56736,7 +57964,12 @@
    "meanings": [
     "麵粉製甜點／麵食"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In diesem Wiener Café werden warme Mehlspeisen wie Kaiserschmarrn serviert.",
+     "zh": "這間維也納咖啡店供應皇帝煎餅這類熱甜點。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -57408,7 +58641,12 @@
    "meanings": [
     "展覽會；彌撒"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Messe stellen viele Firmen ihre neuen Produkte vor.",
+     "zh": "許多公司在展覽會上介紹新產品。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -57586,7 +58824,12 @@
    "meanings": [
     "肉販；屠夫"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Metzger bestelle ich Fleisch für sechs Personen.",
+     "zh": "我跟肉舖訂六人份的肉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -57870,7 +59113,12 @@
    "meanings": [
     "微波爐"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ich wärme die Suppe in der Mikrowelle auf.",
+     "zh": "我用微波爐把湯加熱。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -58596,7 +59844,12 @@
    "meanings": [
     "會員；成員"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Seit Mai bin ich Mitglied im Sportverein.",
+     "zh": "從五月起，我就是運動社團的會員。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -59087,7 +60340,12 @@
    "meanings": [
     "中級"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für den Kurs in der Mittelstufe solltest du schon einfache Texte verstehen können.",
+     "zh": "要上中級課程，你應該已經能看懂簡單的文章。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -59318,7 +60576,12 @@
    "meanings": [
     "霸凌預防"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zur Mobbing-Prävention führt die Schule regelmäßig Gespräche und gemeinsame Übungen durch.",
+     "zh": "為了預防霸凌，學校定期安排談話和團體練習。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -59455,7 +60718,12 @@
    "meanings": [
     "情態動詞"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Satz „Ich kann schwimmen“ steht das Modalverb vor dem Infinitiv.",
+     "zh": "在「Ich kann schwimmen」這個句子裡，情態動詞放在不定詞前面。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -59484,7 +60752,12 @@
    "meanings": [
     "時裝公司"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Cousine entwirft Kleidung für eine kleine Modefirma.",
+     "zh": "我表姊為一間小型時裝公司設計服裝。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -60185,7 +61458,12 @@
    "meanings": [
     "蚊子"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Eine Mücke hat mich nachts am Arm gestochen.",
+     "zh": "夜裡有隻蚊子叮了我的手臂。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -60369,7 +61647,12 @@
    "meanings": [
     "垃圾間"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bitte stell keine Kartons vor die Tür zum Müllraum.",
+     "zh": "請不要把紙箱放在垃圾間門口。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -60398,7 +61681,12 @@
    "meanings": [
     "垃圾桶"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Mülltonne steht hinter dem Haus.",
+     "zh": "垃圾桶在房子後面。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -60459,7 +61747,12 @@
    "meanings": [
     "嘴巴"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Zahnarzt sagt: „Bitte machen Sie den Mund auf.“",
+     "zh": "牙醫說：「請把嘴巴張開。」"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -61366,7 +62659,12 @@
    "meanings": [
     "鄰里互助"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Durch die Nachbarschaftshilfe bekommt meine Oma Unterstützung beim Einkaufen.",
+     "zh": "透過鄰里互助，我奶奶買東西時有人幫忙。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -61395,7 +62693,12 @@
    "meanings": [
     "餘震"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem starken Erdbeben waren noch mehrere Nachbeben zu spüren.",
+     "zh": "強震過後，還能感覺到好幾次餘震。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -61580,7 +62883,12 @@
    "meanings": [
     "後代"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Nachkommen der Familie treffen sich jedes Jahr im alten Stammhaus.",
+     "zh": "這個家族的後代每年都在祖宅聚會。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -61609,7 +62917,12 @@
    "meanings": [
     "下午"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Nachmittag gehen wir in den Park.",
+     "zh": "下午我們去公園。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -62090,7 +63403,12 @@
    "meanings": [
     "鼻竇炎"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen einer Nasennebenhöhlenentzündung hat sie seit Tagen Druckschmerzen im Gesicht.",
+     "zh": "她因為鼻竇炎，臉部已經脹痛好幾天。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -62191,7 +63509,12 @@
    "meanings": [
     "自然知識"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das alte Buch über Naturkunde erklärt, wie Pflanzen und Tiere in einem Teich zusammenleben.",
+     "zh": "那本介紹自然知識的舊書說明，池塘裡的動植物如何共同生活。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -62220,7 +63543,12 @@
    "meanings": [
     "自然博物館"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Naturmuseum schauen wir uns die Tiere an.",
+     "zh": "我們在自然博物館看動物展品。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -62347,7 +63675,12 @@
    "meanings": [
     "兼職"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit meinem Nebenjob im Café verdiene ich etwas Geld.",
+     "zh": "我在咖啡店兼職，賺一點錢。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -62623,7 +63956,12 @@
    "meanings": [
     "神經"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Schwellung drückt auf einen Nerv und verursacht Schmerzen im Arm.",
+     "zh": "腫脹壓迫到神經，造成手臂疼痛。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -63361,7 +64699,12 @@
    "meanings": [
     "荷蘭"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Wochenende fahren wir in die Niederlande.",
+     "zh": "週末我們要去荷蘭。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -63537,7 +64880,12 @@
    "meanings": [
     "北歐的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für unsere Reise durch die nordischen Länder packen wir auch im Sommer warme Kleidung ein.",
+     "zh": "要去北歐各國旅行，即使是夏天，我們也會帶保暖衣物。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -63564,7 +64912,12 @@
    "meanings": [
     "東北方"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Nordosten der Stadt liegt ein großer See.",
+     "zh": "城市的東北方有一座大湖。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -63593,7 +64946,12 @@
    "meanings": [
     "北海"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir machen im Sommer Urlaub an der Nordsee.",
+     "zh": "我們夏天要去北海度假。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -63882,7 +65240,12 @@
    "meanings": [
     "號碼"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Welche Nummer steht auf deinem Ticket?",
+     "zh": "你的票上是幾號？"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -63944,7 +65307,12 @@
    "meanings": [
     "堅果"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Müsli sind Nüsse und Obst.",
+     "zh": "麥片裡有堅果和水果。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -64150,7 +65518,12 @@
    "meanings": [
     "中學高年級（高中階段）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Oberstufe muss sie sich entscheiden, welche Fächer sie vertiefen möchte.",
+     "zh": "到了中學高年級，她必須決定要深入學習哪些科目。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -64179,7 +65552,12 @@
    "meanings": [
     "受詞；物體"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In diesem Satz ist der Name des Kindes das Objekt.",
+     "zh": "在這個句子裡，孩子的名字是受詞。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -64733,7 +66111,12 @@
    "meanings": [
     "線上課程"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für den Online-Unterricht brauche ich einen Computer.",
+     "zh": "上線上課需要電腦。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -64794,7 +66177,12 @@
    "meanings": [
     "歌劇；歌劇院"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Heute Abend sehen wir eine Oper von Mozart.",
+     "zh": "今晚我們看一齣莫札特的歌劇。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -65064,7 +66452,12 @@
    "meanings": [
     "東德；德國東部"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Großeltern leben in Ostdeutschland, in der Nähe von Leipzig.",
+     "zh": "我的祖父母住在德國東部，靠近萊比錫。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -65159,7 +66552,12 @@
    "meanings": [
     "穿搭；服裝"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Bewerbungsgespräch wählt sie ein schlichtes Outfit.",
+     "zh": "她為求職面試選了一套簡單的服裝。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -65282,7 +66680,12 @@
    "meanings": [
     "鸚鵡"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Papagei sitzt auf einem Ast und schreit laut.",
+     "zh": "鸚鵡站在樹枝上大聲尖叫。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66236,7 +67639,12 @@
    "meanings": [
     "魚素者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Als Pescetarier isst er Fisch, verzichtet aber auf Fleisch.",
+     "zh": "他是魚素者，吃魚但不吃肉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66414,7 +67822,12 @@
    "meanings": [
     "植物性的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für diesen Kuchen verwende ich nur pflanzliche Zutaten.",
+     "zh": "這個蛋糕我只用植物性食材製作。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -66503,7 +67916,12 @@
    "meanings": [
     "物理研究"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Physikforschung entwickelt das Team ein besonders empfindliches Messgerät.",
+     "zh": "團隊正在為物理研究開發一台特別靈敏的測量儀器。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66532,7 +67950,12 @@
    "meanings": [
     "痘痘"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Kurz vor dem Treffen habe ich einen Pickel auf der Nase bekommen.",
+     "zh": "見面前不久，我的鼻子長了一顆痘痘。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66561,7 +67984,12 @@
    "meanings": [
     "菇；真菌"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Soße schneide ich die Pilze klein.",
+     "zh": "我要做醬汁，把菇切小塊。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66671,7 +68099,12 @@
    "meanings": [
     "天文館"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Planetarium zeigt uns eine Mitarbeiterin, welche Sterne wir im Winter sehen können.",
+     "zh": "天文館的工作人員向我們介紹冬天能看到哪些星星。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66821,7 +68254,12 @@
    "meanings": [
     "破產的；沒錢的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Urlaub bin ich fast pleite und muss sparen.",
+     "zh": "度假後，我幾乎沒錢了，得省著花。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -66913,7 +68351,12 @@
    "meanings": [
     "過去完成式"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit dem Plusquamperfekt zeigen wir, was schon vor einem anderen Ereignis passiert war.",
+     "zh": "我們用過去完成式表達在另一件事之前就已發生的事。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -66942,7 +68385,12 @@
    "meanings": [
     "極地的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Ausstellung zeigt, wie Tiere unter polaren Bedingungen überleben.",
+     "zh": "展覽介紹動物如何在極地環境下生存。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -67065,7 +68513,12 @@
    "meanings": [
     "政治學"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Sie studiert Politikwissenschaft, weil sie verstehen möchte, wie politische Entscheidungen entstehen.",
+     "zh": "她讀政治學，因為她想了解政治決策如何形成。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -67186,7 +68639,12 @@
    "meanings": [
     "波蘭的；波蘭語的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Freundin hört gern polnische Musik.",
+     "zh": "我朋友喜歡聽波蘭音樂。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -67964,7 +69422,12 @@
    "meanings": [
     "專業的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Mitarbeiterin hat sehr professionell auf die Beschwerde reagiert.",
+     "zh": "那位員工很專業地處理了客訴。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -68115,7 +69578,12 @@
    "meanings": [
     "博士學位取得程序"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Master plant er eine Promotion an derselben Universität.",
+     "zh": "取得碩士學位後，他打算在同一所大學攻讀博士。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68181,7 +69649,12 @@
    "meanings": [
     "程序；過程"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Prozedur am Schalter dauerte länger, als ich erwartet hatte.",
+     "zh": "櫃檯的辦理程序比我預期的久。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68210,7 +69683,12 @@
    "meanings": [
     "以百分比計的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Mieterhöhung wird im Brief auch prozentual angegeben.",
+     "zh": "信裡也用百分比列出房租的漲幅。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -68346,7 +69824,12 @@
    "meanings": [
     "緩衝區"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zwischen dem Naturschutzgebiet und den Feldern wurde eine Pufferzone eingerichtet, um empfindliche Lebensräume zu schützen.",
+     "zh": "自然保護區與農田之間設立了緩衝區，以保護脆弱的棲地。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68474,7 +69957,12 @@
    "meanings": [
     "清潔女工"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Putzfrau reinigt morgens die Büroräume.",
+     "zh": "那位清潔女工早上打掃辦公室。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68503,7 +69991,12 @@
    "meanings": [
     "正方形"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zeichne bitte ein Quadrat auf das Papier.",
+     "zh": "請在紙上畫一個正方形。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68808,7 +70301,12 @@
    "meanings": [
     "泉水"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Quellwasser fließt hier direkt aus dem Felsen.",
+     "zh": "這裡的泉水直接從岩石流出。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68944,7 +70442,12 @@
    "meanings": [
     "渡鴉"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ein Rabe landet auf dem Dach der Scheune.",
+     "zh": "一隻渡鴉降落在穀倉屋頂上。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -68973,7 +70476,12 @@
    "meanings": [
     "拉克萊特起司料理"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Raclette stellen wir Käse, Kartoffeln und Gemüse auf den Tisch.",
+     "zh": "我們把起司、馬鈴薯和蔬菜擺上桌，準備吃拉克萊特起司料理。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -69146,7 +70654,12 @@
    "meanings": [
     "指南；提供建議的人"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In einem Ratgeber für Mieter habe ich hilfreiche Informationen zur Kaution gefunden.",
+     "zh": "我在一本租屋指南裡找到關於押金的實用資訊。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -69258,7 +70771,12 @@
    "meanings": [
     "反應"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf meine Nachricht kam bisher keine Reaktion.",
+     "zh": "到目前為止，我的訊息還沒得到回應。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -69866,7 +71384,12 @@
    "meanings": [
     "雨具"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Pack deine Regensachen ein, denn morgen soll es den ganzen Tag regnen.",
+     "zh": "把雨具帶上，因為明天預報會下整天雨。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -69925,7 +71448,12 @@
    "meanings": [
     "政府"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Regierung plant mehr Geld für den öffentlichen Verkehr ein.",
+     "zh": "政府規劃投入更多經費在大眾運輸上。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71126,7 +72654,12 @@
    "meanings": [
     "接待櫃檯"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "An der Rezeption bekomme ich den Zimmerschlüssel.",
+     "zh": "我在接待櫃檯拿到房間鑰匙。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71291,7 +72824,12 @@
    "meanings": [
     "牛；牛肉"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Wiese steht ein Rind neben dem Zaun.",
+     "zh": "草地上有一頭牛站在圍欄旁。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71565,7 +73103,12 @@
    "meanings": [
     "紅酒"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Fleisch trinkt Paul ein Glas Rotwein.",
+     "zh": "保羅吃肉時喝一杯紅酒。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71624,7 +73167,12 @@
    "meanings": [
     "回程航班"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Rückflug ist am Freitag um zehn Uhr.",
+     "zh": "回程班機是星期五早上十點。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71702,7 +73250,12 @@
    "meanings": [
     "背包"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In meinem Rucksack sind Wasser und Brot.",
+     "zh": "我的背包裡有水和麵包。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71826,7 +73379,12 @@
    "meanings": [
     "安靜；休息"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bitte sei leise, ich brauche Ruhe.",
+     "zh": "請小聲一點，我需要安靜。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71887,7 +73445,12 @@
    "meanings": [
     "休息日；公休日"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Montag hat das Restaurant Ruhetag.",
+     "zh": "這間餐廳星期一公休。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -71948,7 +73511,12 @@
    "meanings": [
     "炒蛋"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Frühstück mache ich Rührei mit Tomaten.",
+     "zh": "早餐我做番茄炒蛋。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -72117,7 +73685,12 @@
    "meanings": [
     "廣播電視費"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bis 2013 hing die Rundfunkgebühr davon ab, welche Geräte man zu Hause hatte.",
+     "zh": "2013 年以前，廣播電視費要看家裡有哪些設備來計算。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -72146,7 +73719,12 @@
    "meanings": [
     "非虛構知識類書籍"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für mein Referat lese ich ein Sachbuch über Vulkane.",
+     "zh": "為了做報告，我在讀一本介紹火山的知識類書籍。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -72262,7 +73840,12 @@
    "meanings": [
     "傳說"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Einer alten Sage nach schläft unter diesem Berg ein Drache.",
+     "zh": "根據一則古老傳說，這座山底下睡著一條龍。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -72328,7 +73911,12 @@
    "meanings": [
     "季節；旺季"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In dieser Saison sind die Hotels am See fast alle ausgebucht.",
+     "zh": "這個旺季，湖邊的飯店幾乎都客滿了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -72357,7 +73945,12 @@
    "meanings": [
     "薩拉米香腸"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf meiner Pizza liegt Salami.",
+     "zh": "我的披薩上有薩拉米香腸。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -72974,7 +74567,12 @@
    "meanings": [
     "損失；損害"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Sturm hat am Dach großen Schaden verursacht.",
+     "zh": "暴風雨讓屋頂嚴重受損。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -73065,7 +74663,12 @@
    "meanings": [
     "羊乳起司"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In den Salat kommt etwas Schafskäse.",
+     "zh": "沙拉裡加一點羊乳起司。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -73720,7 +75323,12 @@
    "meanings": [
     "睡眠障礙"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Seit dem Wechsel in die Nachtschicht leidet er unter Schlafstörungen.",
+     "zh": "自從改上夜班後，他就有睡眠障礙。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -73813,7 +75421,12 @@
    "meanings": [
     "苗條的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Hose passt meinem Bruder, er ist sehr schlank.",
+     "zh": "這條褲子我哥哥穿得下，他很瘦。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -74013,7 +75626,12 @@
    "meanings": [
     "糟糕的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Unfall war schlimm, zwei Menschen sind im Krankenhaus.",
+     "zh": "車禍很嚴重，有兩個人住院了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -74402,7 +76020,12 @@
    "meanings": [
     "蝸牛"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Regen kriecht eine Schnecke über den Gartenweg.",
+     "zh": "下雨後，一隻蝸牛爬過花園小徑。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -74597,7 +76220,12 @@
    "meanings": [
     "切口；平均"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Schnitt am Finger ist nicht tief, blutet aber stark.",
+     "zh": "手指上的切口不深，但流了很多血。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -74778,7 +76406,12 @@
    "meanings": [
     "蘇格蘭"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Reise nach Schottland nehmen wir warme Jacken mit.",
+     "zh": "去蘇格蘭旅行，我們會帶保暖外套。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75065,7 +76698,12 @@
    "meanings": [
     "推力；一波"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Start erzeugen die Triebwerke den nötigen Schub, um das Flugzeug zu beschleunigen.",
+     "zh": "起飛時，引擎產生讓飛機加速所需的推力。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75188,7 +76826,12 @@
    "meanings": [
     "學校出遊"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Schulausflug besuchen wir einen Bauernhof.",
+     "zh": "學校出遊時，我們參觀一座農場。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75334,7 +76977,12 @@
    "meanings": [
     "中小學生（女）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Schülerin fährt jeden Morgen mit dem Bus zur Schule.",
+     "zh": "那位女學生每天早上搭公車上學。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75363,7 +77011,12 @@
    "meanings": [
     "學年"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das neue Schuljahr beginnt nächste Woche.",
+     "zh": "新學年下週開始。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75489,7 +77142,12 @@
    "meanings": [
     "施瓦本人"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Als Schwabe wird er oft nach den regionalen Spezialitäten seiner Heimat gefragt.",
+     "zh": "身為施瓦本人，他常被問到家鄉的地方特產。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75518,7 +77176,12 @@
    "meanings": [
     "施瓦本方言"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wenn mein Großvater mit seinen Geschwistern telefoniert, spricht er Schwäbisch.",
+     "zh": "我祖父跟兄弟姊妹講電話時，會說施瓦本方言。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75597,7 +77260,12 @@
    "meanings": [
     "姊夫；妹夫；配偶的兄弟"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Schwester und mein Schwager kommen zum Essen.",
+     "zh": "我姊姊和姊夫要來吃飯。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75626,7 +77294,12 @@
    "meanings": [
     "嫂嫂；弟媳；配偶的姊妹"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Bruder und meine Schwägerin wohnen in Bonn.",
+     "zh": "我哥哥和嫂嫂住在波昂。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75719,7 +77392,12 @@
    "meanings": [
     "硫"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die gelbe Farbe der Probe deutet auf Schwefel hin, das muss aber noch durch eine Analyse bestätigt werden.",
+     "zh": "樣本的黃色顯示可能含有硫，不過還需要分析才能確認。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -75792,7 +77470,12 @@
    "meanings": [
     "豬圈"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Bauer reinigt den Schweinestall, bevor die Tiere wieder hineinkommen.",
+     "zh": "農夫在豬回來之前先清理豬圈。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -76261,7 +77944,12 @@
    "meanings": [
     "鰨魚"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Seezunge wird mit Zitronenbutter und kleinen Kartoffeln serviert.",
+     "zh": "鰨魚搭配檸檬奶油和小馬鈴薯一起上桌。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -76676,7 +78364,12 @@
    "meanings": [
     "氣泡酒"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zur Feier öffnen wir eine Flasche Sekt.",
+     "zh": "我們開一瓶氣泡酒慶祝。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -76872,7 +78565,12 @@
    "meanings": [
     "奇怪的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Aus dem Keller kommt ein seltsames Geräusch.",
+     "zh": "地下室傳來奇怪的聲音。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -76933,7 +78631,12 @@
    "meanings": [
     "學期報告"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Semesterarbeit muss ich bis Ende Juli abgeben.",
+     "zh": "我的學期報告必須在七月底前交。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -80606,7 +82309,12 @@
    "meanings": [
     "意義"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Gespräch verstehe ich den Sinn dieser Regel besser.",
+     "zh": "談過之後，我更了解這條規定的意義。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -80719,7 +82427,12 @@
    "meanings": [
     "鼻竇炎"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Da die Beschwerden auf eine Sinusitis hindeuten, untersucht die Ärztin auch die Nasennebenhöhlen.",
+     "zh": "由於症狀顯示可能是鼻竇炎，醫師也檢查了鼻竇。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -80850,7 +82563,12 @@
    "meanings": [
     "雕塑"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Vor dem Museum steht eine Skulptur aus rostigem Metall.",
+     "zh": "博物館前有一座用生鏽金屬做成的雕塑。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -81349,7 +83067,12 @@
    "meanings": [
     "特價優惠"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Kaffee ist diese Woche im Sonderangebot.",
+     "zh": "咖啡這週有特價。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -81378,7 +83101,12 @@
    "meanings": [
     "特殊情況"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für diesen Sonderfall müssen wir eine eigene Lösung finden.",
+     "zh": "針對這個特殊情況，我們得另外找解決方法。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -81501,7 +83229,12 @@
    "meanings": [
     "特殊教育"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Studium der Sonderpädagogik beschäftigt sie sich damit, wie Unterricht an unterschiedliche Lernbedürfnisse angepasst werden kann.",
+     "zh": "她就讀特殊教育，探討如何依不同學習需求調整教學。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -81610,7 +83343,12 @@
    "meanings": [
     "日出"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Um den Sonnenaufgang zu sehen, sind wir heute besonders früh aufgestanden.",
+     "zh": "為了看日出，我們今天特別早起。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -81639,7 +83377,12 @@
    "meanings": [
     "日射病"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach mehreren Stunden ohne Hut in der Sonne bekam sie einen Sonnenstich.",
+     "zh": "她沒戴帽子在太陽下待了好幾個小時，結果得了日射病。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -81952,7 +83695,12 @@
    "meanings": [
     "從容自信的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Trotz der kritischen Nachfragen blieb die Sprecherin souverän und erläuterte ihre Position ruhig.",
+     "zh": "即使面對尖銳的追問，發言人依然從容自信，平靜地說明自己的立場。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -82419,7 +84167,12 @@
    "meanings": [
     "小玩笑"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit einem kleinen Späßchen versuchte sie, die angespannte Stimmung vor dem Gespräch zu lockern.",
+     "zh": "談話前，她試著開個小玩笑，緩和緊張的氣氛。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -82630,7 +84383,12 @@
    "meanings": [
     "貨運公司"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Speditionsunternehmen übernimmt nicht nur den Transport, sondern koordiniert auch die Zollabfertigung.",
+     "zh": "這家貨運公司不只負責運送，也協調清關事宜。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -82797,7 +84555,12 @@
    "meanings": [
     "特色菜；特產"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Frag den Kellner, welche Spezialität er empfiehlt.",
+     "zh": "問問服務生推薦哪道特色菜。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -82885,7 +84648,12 @@
    "meanings": [
     "煎蛋／荷包蛋"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Spiegelei esse ich eine Scheibe Brot.",
+     "zh": "我吃荷包蛋時配一片麵包。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -83027,7 +84795,12 @@
    "meanings": [
     "自發地；臨時起意地"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wir haben spontan beschlossen, am Wochenende ans Meer zu fahren.",
+     "zh": "我們臨時決定週末去海邊。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -83607,7 +85380,12 @@
    "meanings": [
     "市立的；城市的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das städtische Schwimmbad bietet günstige Kurse für Kinder an.",
+     "zh": "市立游泳池提供價格實惠的兒童課程。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -83768,7 +85546,12 @@
    "meanings": [
     "市區中的行政／街區區域"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In unserem Stadtteil gibt es seit Kurzem eine Bibliothek.",
+     "zh": "我們這個街區最近有了圖書館。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -84029,7 +85812,12 @@
    "meanings": [
     "強的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Bruder ist stark und trägt den schweren Tisch.",
+     "zh": "我哥哥很強壯，正在搬那張很重的桌子。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -84468,7 +86256,12 @@
    "meanings": [
     "陡峭的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Weg zum Schloss ist steil, deshalb machen wir oft Pause.",
+     "zh": "通往城堡的路很陡，所以我們經常停下來休息。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -85267,7 +87060,12 @@
    "meanings": [
     "路面電車"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mit der Straßenbahn sind wir in zehn Minuten am Markt.",
+     "zh": "我們搭路面電車，十分鐘就到市場。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -85296,7 +87094,12 @@
    "meanings": [
     "路程；距離"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Strecke vom Hotel zum Strand gehen wir zu Fuß.",
+     "zh": "飯店到海灘這段路，我們用走的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -85639,7 +87442,12 @@
    "meanings": [
     "水流；氣流；潮流"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen der starken Strömung ist das Schwimmen an dieser Stelle verboten.",
+     "zh": "因為水流很強，這裡禁止游泳。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -85668,7 +87476,12 @@
    "meanings": [
     "件；塊"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Möchtest du noch ein Stück Kuchen?",
+     "zh": "你還要一塊蛋糕嗎？"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -86003,7 +87816,12 @@
    "meanings": [
     "階段；級別；台階"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Grundkurs beginnt die nächste Stufe der Ausbildung.",
+     "zh": "基礎課程結束後，就開始下一階段的訓練。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -86137,7 +87955,12 @@
    "meanings": [
     "斯圖加特"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Morgen fährt mein Bruder nach Stuttgart.",
+     "zh": "我哥哥明天去斯圖加特。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -86166,7 +87989,12 @@
    "meanings": [
     "主詞"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In dem Satz „Meine Schwester kocht“ ist „meine Schwester“ das Subjekt.",
+     "zh": "在「我姊姊煮飯」這個句子裡，「我姊姊」是主詞。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -86753,7 +88581,12 @@
    "meanings": [
     "颱風"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen des Taifuns bleiben die Schulen auf der Insel morgen geschlossen.",
+     "zh": "受颱風影響，島上的學校明天停課。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -86862,7 +88695,12 @@
    "meanings": [
     "有才華的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die junge Sängerin ist talentiert, muss aber noch viel üben.",
+     "zh": "那位年輕歌手很有才華，但還需要多練習。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -87197,7 +89035,12 @@
    "meanings": [
     "事實"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Tatsache, dass der Laden schließt, macht viele Nachbarn traurig.",
+     "zh": "這家店要收掉了，這件事讓許多鄰居很難過。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -87430,7 +89273,12 @@
    "meanings": [
     "科技博物館"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Technikmuseum dürfen die Kinder eine alte Druckmaschine ausprobieren.",
+     "zh": "孩子們在科技博物館可以試用一台老印刷機。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -87569,7 +89417,12 @@
    "meanings": [
     "茶點"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Zum Nachmittagstee stellt sie eine Schale mit Teegebäck auf den Tisch.",
+     "zh": "喝下午茶時，她會在桌上擺一碟茶點。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -87598,7 +89451,12 @@
    "meanings": [
     "包餡的麵食（類似餃子）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Diese Teigtasche ist mit Gemüse und Pilzen gefüllt.",
+     "zh": "這個包餡的麵食裡包的是蔬菜和菇類。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -88266,7 +90124,12 @@
    "meanings": [
     "櫃檯；吧台"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "An der Theke bestellen wir zwei Getränke.",
+     "zh": "我們在吧台點兩杯飲料。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -88370,7 +90233,12 @@
    "meanings": [
     "溫泉浴場"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Wanderung entspannen wir uns in der Therme.",
+     "zh": "健行後，我們到溫泉浴場放鬆。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -88688,7 +90556,12 @@
    "meanings": [
     "吐司"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Toast ist noch warm.",
+     "zh": "吐司還是熱的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -88958,7 +90831,12 @@
    "meanings": [
     "守門員"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Torhüter konnte den letzten Schuss nicht halten.",
+     "zh": "守門員沒能擋住最後那記射門。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -89021,7 +90899,12 @@
    "meanings": [
     "守門員"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Torwart hält den Ball fest.",
+     "zh": "守門員把球牢牢接住。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -89121,7 +91004,12 @@
    "meanings": [
     "傳統的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei diesem Fest tragen viele Menschen traditionelle Kleidung.",
+     "zh": "在這個節慶上，很多人穿傳統服飾。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -89306,7 +91194,12 @@
    "meanings": [
     "告別式；追思儀式"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei der Trauerfeier erinnern Freunde mit persönlichen Geschichten an die Verstorbene.",
+     "zh": "在追思儀式上，朋友們透過親身故事懷念逝者。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -89654,7 +91547,12 @@
    "meanings": [
     "乾的；不甜的（酒）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach zwei Stunden in der Sonne ist das Handtuch trocken.",
+     "zh": "毛巾在太陽下曬了兩小時，已經乾了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -89847,7 +91745,12 @@
    "meanings": [
     "腫瘤"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei der Untersuchung wurde ein Tumor entdeckt, der nun genauer abgeklärt werden muss.",
+     "zh": "檢查時發現了一個腫瘤，現在需要進一步確認。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -90053,7 +91956,12 @@
    "meanings": [
     "電視節目"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Diese TV-Sendung beginnt um acht Uhr.",
+     "zh": "這個電視節目八點開始。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -90483,7 +92391,12 @@
    "meanings": [
     "值得考慮的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Vorschlag, die Räume gemeinsam zu nutzen, ist durchaus überlegenswert.",
+     "zh": "共同使用這些空間的提議很值得考慮。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -90510,7 +92423,12 @@
    "meanings": [
     "超人的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Filmszene hebt die Heldin mit übermenschlicher Kraft ein Auto an.",
+     "zh": "電影中的這一幕，女主角以超人的力量抬起一輛汽車。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -90537,7 +92455,12 @@
    "meanings": [
     "下下個"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Übernächste Woche beginnt mein neuer Kurs.",
+     "zh": "我的新課程下下週開始。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -90768,7 +92691,12 @@
    "meanings": [
     "驚喜派對"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Überraschungsparty verstecken wir uns alle im Wohnzimmer.",
+     "zh": "為了驚喜派對，我們全都躲在客廳裡。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -91292,7 +93220,12 @@
    "meanings": [
     "練習"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Diese Übung mache ich noch einmal.",
+     "zh": "這個練習我再做一次。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -91397,7 +93330,12 @@
    "meanings": [
     "烏克蘭"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Meine Nachbarin kommt aus der Ukraine.",
+     "zh": "我的鄰居來自烏克蘭。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -91570,7 +93508,12 @@
    "meanings": [
     "周遭環境"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Umgebung unseres Hotels gibt es viele Wanderwege.",
+     "zh": "我們飯店周圍有很多步道。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -91876,7 +93819,12 @@
    "meanings": [
     "轉變；調整"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Umstellung auf die neue Arbeitszeit fällt mir noch schwer.",
+     "zh": "我還不太適應新的工作時間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -92186,7 +94134,12 @@
    "meanings": [
     "無意識的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Während sie nachdenkt, dreht sie unbewusst an ihrem Ring.",
+     "zh": "她思考時，會無意識地轉動戒指。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -92546,7 +94499,12 @@
    "meanings": [
     "大學城"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In dieser Universitätsstadt sind viele Cafés auch abends gut besucht.",
+     "zh": "在這座大學城，許多咖啡店到了晚上仍然有很多客人。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -92861,7 +94819,12 @@
    "meanings": [
     "地下的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ein unterirdischer Gang verbindet die beiden Gebäude.",
+     "zh": "一條地下通道連接這兩棟建築。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -92998,7 +94961,12 @@
    "meanings": [
     "企業"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Unternehmen stellt dieses Jahr zehn neue Mitarbeiter ein.",
+     "zh": "這間企業今年要聘用十名新員工。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -93125,9 +95093,14 @@
    "kind": "word",
    "plural": "die Unterrichtspläne",
    "meanings": [
-    "課程表"
+    "教學計畫"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Lehrerin schreibt einen Unterrichtsplan für die nächste Woche.",
+     "zh": "老師正在撰寫下週的教學計畫。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -93156,7 +95129,12 @@
    "meanings": [
     "一堂課；課時"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der zweiten Unterrichtsstunde haben wir Pause.",
+     "zh": "上完第二堂課後，我們有休息時間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -93556,7 +95534,12 @@
    "meanings": [
     "檢查；調查"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Untersuchung bespricht der Arzt die Ergebnisse mit mir.",
+     "zh": "檢查後，醫師和我討論結果。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -93685,7 +95668,12 @@
    "meanings": [
     "惡劣天氣；暴風雨"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen des Unwetters fällt das Konzert im Park aus.",
+     "zh": "因為天氣惡劣，公園裡的音樂會取消了。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -93854,7 +95842,12 @@
    "meanings": [
     "骨灰罈；票箱"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der Einäscherung wurde die Urne im Familiengrab beigesetzt.",
+     "zh": "火化後，骨灰罈安葬在家族墓地。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94036,7 +96029,12 @@
    "meanings": [
     "純素食者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Als Veganer verzichtet mein Bruder auch auf Eier und Milch.",
+     "zh": "我哥哥吃全素，也不吃蛋、不喝牛奶。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94065,7 +96063,12 @@
    "meanings": [
     "素食者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Mein Bruder ist Vegetarier und isst kein Fleisch.",
+     "zh": "我哥哥是素食者，不吃肉。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94094,7 +96097,12 @@
    "meanings": [
     "電風扇"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bei der Hitze stelle ich einen Ventilator neben den Schreibtisch.",
+     "zh": "天氣太熱，我在書桌旁放了一台電風扇。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94163,7 +96171,12 @@
    "meanings": [
     "過時的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Informationen auf dieser Webseite sind veraltet und sollten überprüft werden.",
+     "zh": "這個網頁的資訊過時了，應該重新確認。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -94302,7 +96315,12 @@
    "meanings": [
     "主辦者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Veranstalter informiert die Gäste per E-Mail über den neuen Termin.",
+     "zh": "主辦者用電子郵件通知來賓新的活動日期。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94331,7 +96349,12 @@
    "meanings": [
     "活動（由人籌辦）"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für die Veranstaltung am Samstag sind noch Plätze frei.",
+     "zh": "星期六的活動還有名額。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94442,7 +96465,12 @@
    "meanings": [
     "動詞"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bitte markiere das Verb im zweiten Satz.",
+     "zh": "請標出第二個句子裡的動詞。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -94964,7 +96992,12 @@
    "meanings": [
     "燒傷；燃燒"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Verbrennung an seiner Hand entstand durch einen Spritzer heißen Öls.",
+     "zh": "他手上的燒傷是被濺出的熱油造成的。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -95464,7 +97497,12 @@
    "meanings": [
     "遊樂園"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Vergnügungspark möchte mein Sohn zuerst mit der Achterbahn fahren.",
+     "zh": "到了遊樂園，我兒子想先坐雲霄飛車。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -95772,7 +97810,12 @@
    "meanings": [
     "攤位"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Verkaufsstand vor dem Bahnhof gibt es frisches Obst.",
+     "zh": "火車站前的攤位有新鮮水果。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -96913,7 +98956,12 @@
    "meanings": [
     "不同的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die beiden Schwestern haben verschiedene Hobbys.",
+     "zh": "這兩姊妹的興趣不同。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -97861,7 +99909,12 @@
    "meanings": [
     "行政；管理"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Verwaltung der Ferienwohnungen übernimmt eine örtliche Firma.",
+     "zh": "這些度假公寓交由當地一家公司管理。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -97890,7 +99943,12 @@
    "meanings": [
     "行政工作"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die neue Software soll den Zeitaufwand für Verwaltungsarbeit deutlich verringern.",
+     "zh": "新軟體預計能大幅減少行政工作所需的時間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -98398,7 +100456,12 @@
    "meanings": [
     "多樣化的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf dem Markt gibt es ein vielfältiges Angebot an regionalen Produkten.",
+     "zh": "市場上有各式各樣的在地產品。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -98724,7 +100787,12 @@
    "meanings": [
     "禽流感"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen eines Ausbruchs der Vogelgrippe dürfen Besucher den Geflügelhof vorerst nicht betreten.",
+     "zh": "因為爆發禽流感，訪客暫時不能進入這座養禽場。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -98753,7 +100821,12 @@
    "meanings": [
     "民間信仰"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Volksglauben der Region gilt dieser Baum als Beschützer des Dorfes.",
+     "zh": "在這個地區的民間信仰中，這棵樹被視為村莊的守護者。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -99456,7 +101529,12 @@
    "meanings": [
     "祖先"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ihre Vorfahren kamen vor über hundert Jahren aus Italien in diese Stadt.",
+     "zh": "她的祖先一百多年前從義大利來到這座城市。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -99758,7 +101836,12 @@
    "meanings": [
     "朗讀者"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Vorleser verändert seine Stimme, sobald im Märchen eine andere Figur spricht.",
+     "zh": "童話裡一換角色說話，朗讀者就會跟著變換聲音。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -99819,7 +101902,12 @@
    "meanings": [
     "倒數第二個"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Ich steige an der vorletzten Haltestelle aus.",
+     "zh": "我在倒數第二站下車。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -99943,7 +102031,12 @@
    "meanings": [
     "建議"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Dein Vorschlag für den Ausflug gefällt mir.",
+     "zh": "我喜歡你對這次出遊的建議。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -100267,7 +102360,12 @@
    "meanings": [
     "演講；報告"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Morgen halte ich einen Vortrag über erneuerbare Energien.",
+     "zh": "明天我要做一場關於再生能源的報告。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -100488,7 +102586,12 @@
    "meanings": [
     "投票箱"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nachdem sie ihren Stimmzettel gefaltet hatte, warf sie ihn in die Wahlurne.",
+     "zh": "她摺好選票後，把它投入投票箱。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -101269,7 +103372,12 @@
    "meanings": [
     "洗車設備；自動洗車場"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach der langen Fahrt fahren wir mit dem Auto durch die Waschanlage.",
+     "zh": "開完長途後，我們把車開去自動洗車。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -101479,7 +103587,12 @@
    "meanings": [
     "網路廣播"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Beim Kochen höre ich im Webradio Nachrichten aus meiner Heimat.",
+     "zh": "煮飯時，我透過網路廣播聽家鄉的新聞。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -101659,7 +103772,12 @@
    "meanings": [
     "外幣兌換處"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In der Wechselstube tausche ich Euro in Franken.",
+     "zh": "我在外幣兌換處把歐元換成瑞士法郎。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -101991,7 +104109,12 @@
    "meanings": [
     "義務兵役"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Unterricht diskutieren wir, welche Argumente für und gegen die Wehrpflicht sprechen.",
+     "zh": "課堂上，我們討論支持和反對義務兵役的各種理由。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -102272,7 +104395,12 @@
    "meanings": [
     "正在哭的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Kind saß weinend auf der Treppe, weil sein Ball verschwunden war.",
+     "zh": "那個孩子因為球不見了，坐在樓梯上哭。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -102299,7 +104427,12 @@
    "meanings": [
     "葡萄酒館"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach dem Spaziergang kehren wir in einer kleinen Weinstube ein.",
+     "zh": "散步後，我們走進一間小葡萄酒館歇腳。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -102505,7 +104638,12 @@
    "meanings": [
     "世界地圖"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Auf der Weltkarte suchen die Kinder Taiwan.",
+     "zh": "孩子們在世界地圖上找台灣。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -103227,7 +105365,12 @@
    "meanings": [
     "受天氣影響的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Das Konzert musste wetterbedingt in die Halle verlegt werden.",
+     "zh": "音樂會因為天氣因素，只好改到室內場館舉行。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -103320,7 +105463,12 @@
    "meanings": [
     "重要的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Deine Adresse ist für die Anmeldung wichtig.",
+     "zh": "你的地址對報名很重要。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -103862,7 +106010,12 @@
    "meanings": [
     "野生的；狂野的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "In diesem Wald leben noch wilde Pferde.",
+     "zh": "這座森林裡還有野馬。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -103889,7 +106042,12 @@
    "meanings": [
     "野生動物"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Bitte füttert keine Wildtiere, auch wenn sie zutraulich wirken.",
+     "zh": "請不要餵野生動物，即使牠們看起來很親人。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -103950,7 +106108,12 @@
    "meanings": [
     "有風的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Am Meer ist es heute sehr windig.",
+     "zh": "今天海邊風很大。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -104198,7 +106361,12 @@
    "meanings": [
     "知識"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Im Praktikum kann ich mein Wissen aus dem Kurs anwenden.",
+     "zh": "實習時，我可以運用課堂上學到的知識。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -104868,7 +107036,12 @@
    "meanings": [
     "住房短缺"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Wegen der Wohnungsnot müssen viele Studierende lange nach einem bezahlbaren Zimmer suchen.",
+     "zh": "因為住房短缺，許多大學生得找很久才有租得起的房間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -104959,7 +107132,12 @@
    "meanings": [
     "羊毛"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Der Pullover ist aus Wolle und hält schön warm.",
+     "zh": "這件毛衣是羊毛做的，穿起來很保暖。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -105486,7 +107664,12 @@
    "meanings": [
     "憤怒的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Er ist wütend, weil jemand sein Fahrrad beschädigt hat.",
+     "zh": "有人弄壞他的腳踏車，他很生氣。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -105625,7 +107808,12 @@
    "meanings": [
     "付款"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Zahlung ist gestern auf unserem Konto eingegangen.",
+     "zh": "款項昨天已匯入我們的帳戶。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -106006,7 +108194,12 @@
    "meanings": [
     "耗時的"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Suche nach einer passenden Wohnung ist zeitaufwendig.",
+     "zh": "找一間合適的房子很耗時間。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "adjective"
@@ -106350,7 +108543,12 @@
    "meanings": [
     "證書"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Nach bestandener Prüfung bekommt man ein Zertifikat.",
+     "zh": "考試通過後，就能拿到證書。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -106970,7 +109168,12 @@
    "meanings": [
     "料理方式；製作"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Die Zubereitung der Suppe dauert etwa eine halbe Stunde.",
+     "zh": "這道湯大約需要半小時製作。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",
@@ -108378,7 +110581,12 @@
    "meanings": [
     "食材"
    ],
-   "examples": [],
+   "examples": [
+    {
+     "de": "Für das Rezept fehlt mir noch eine Zutat.",
+     "zh": "這個食譜需要的食材，我還少一樣。"
+    }
+   ],
    "sourceLevel": null,
    "practice": {
     "type": "noun",

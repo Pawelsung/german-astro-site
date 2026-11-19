@@ -1,0 +1,1125 @@
+[
+ {
+  "id": "die-landkarte",
+  "article": "die",
+  "word": "Landkarte",
+  "pos": "noun",
+  "plural": "die Landkarten",
+  "meanings": [
+   "地圖"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "der-nordosten",
+  "article": "der",
+  "word": "Nordosten",
+  "pos": "noun",
+  "meanings": [
+   "東北方"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "die-rezeption",
+  "article": "die",
+  "word": "Rezeption",
+  "pos": "noun",
+  "plural": "die Rezeptionen",
+  "meanings": [
+   "接待櫃檯"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "der-rueckflug",
+  "article": "der",
+  "word": "Rückflug",
+  "pos": "noun",
+  "plural": "die Rückflüge",
+  "meanings": [
+   "回程航班"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "die-strassenbahn",
+  "article": "die",
+  "word": "Straßenbahn",
+  "pos": "noun",
+  "plural": "die Straßenbahnen",
+  "meanings": [
+   "路面電車"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": true
+ },
+ {
+  "id": "das-fax",
+  "article": "das",
+  "word": "Fax",
+  "pos": "noun",
+  "plural": "die Faxe",
+  "meanings": [
+   "傳真"
+  ],
+  "level": "A2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "der-nebenjob",
+  "article": "der",
+  "word": "Nebenjob",
+  "pos": "noun",
+  "plural": "die Nebenjobs",
+  "meanings": [
+   "兼職"
+  ],
+  "level": "A2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "die-putzfrau",
+  "article": "die",
+  "word": "Putzfrau",
+  "pos": "noun",
+  "plural": "die Putzfrauen",
+  "meanings": [
+   "清潔女工"
+  ],
+  "level": "A2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "der-brunnen",
+  "article": "der",
+  "word": "Brunnen",
+  "pos": "noun",
+  "plural": "die Brunnen",
+  "meanings": [
+   "井；噴泉"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "das-buergeramt",
+  "article": "das",
+  "word": "Bürgeramt",
+  "pos": "noun",
+  "plural": "die Bürgerämter",
+  "meanings": [
+   "市民服務處"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "der-buergersteig",
+  "article": "der",
+  "word": "Bürgersteig",
+  "pos": "noun",
+  "plural": "die Bürgersteige",
+  "meanings": [
+   "人行道"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "der-dom",
+  "article": "der",
+  "word": "Dom",
+  "pos": "noun",
+  "plural": "die Dome",
+  "meanings": [
+   "大教堂"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "der-friedhof",
+  "article": "der",
+  "word": "Friedhof",
+  "pos": "noun",
+  "plural": "die Friedhöfe",
+  "meanings": [
+   "墓園"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "der-stadtteil",
+  "article": "der",
+  "word": "Stadtteil",
+  "pos": "noun",
+  "plural": "die Stadtteile",
+  "meanings": [
+   "市區中的行政／街區區域"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "staedtisch",
+  "word": "städtisch",
+  "pos": "adjective",
+  "meanings": [
+   "市立的；城市的"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "die-umgebung",
+  "article": "die",
+  "word": "Umgebung",
+  "pos": "noun",
+  "plural": "die Umgebungen",
+  "meanings": [
+   "周遭環境"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": true
+ },
+ {
+  "id": "die-enttaeuschung",
+  "article": "die",
+  "word": "Enttäuschung",
+  "pos": "noun",
+  "plural": "die Enttäuschungen",
+  "meanings": [
+   "失望"
+  ],
+  "level": "B1",
+  "topic": "feel",
+  "push": true
+ },
+ {
+  "id": "die-laune",
+  "article": "die",
+  "word": "Laune",
+  "pos": "noun",
+  "plural": "die Launen",
+  "meanings": [
+   "心情"
+  ],
+  "level": "B1",
+  "topic": "feel",
+  "push": true
+ },
+ {
+  "id": "wuetend",
+  "word": "wütend",
+  "pos": "adjective",
+  "meanings": [
+   "憤怒的"
+  ],
+  "level": "B1",
+  "topic": "feel",
+  "push": true
+ },
+ {
+  "id": "die-beilage",
+  "article": "die",
+  "word": "Beilage",
+  "pos": "noun",
+  "plural": "die Beilagen",
+  "meanings": [
+   "配菜"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-fleischer",
+  "article": "der",
+  "word": "Fleischer",
+  "pos": "noun",
+  "plural": "die Fleischer",
+  "meanings": [
+   "肉販；屠夫"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-gericht",
+  "article": "das",
+  "word": "Gericht",
+  "pos": "noun",
+  "plural": "die Gerichte",
+  "meanings": [
+   "餐點；法院"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-imbiss",
+  "article": "der",
+  "word": "Imbiss",
+  "pos": "noun",
+  "plural": "die Imbisse",
+  "meanings": [
+   "小吃店；點心"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-karamell",
+  "article": "das",
+  "word": "Karamell",
+  "pos": "noun",
+  "meanings": [
+   "焦糖"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-kohlensaeure",
+  "article": "die",
+  "word": "Kohlensäure",
+  "pos": "noun",
+  "meanings": [
+   "碳酸；（飲料的）氣泡"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-kaesefondue",
+  "article": "das",
+  "word": "Käsefondue",
+  "pos": "noun",
+  "meanings": [
+   "起司鍋"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-leitungswasser",
+  "article": "das",
+  "word": "Leitungswasser",
+  "pos": "noun",
+  "meanings": [
+   "自來水"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-mahlzeit",
+  "article": "die",
+  "word": "Mahlzeit",
+  "pos": "noun",
+  "plural": "die Mahlzeiten",
+  "meanings": [
+   "一餐；餐食"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-metzger",
+  "article": "der",
+  "word": "Metzger",
+  "pos": "noun",
+  "plural": "die Metzger",
+  "meanings": [
+   "肉販；屠夫"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "pflanzlich",
+  "word": "pflanzlich",
+  "pos": "adjective",
+  "meanings": [
+   "植物性的"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-quellwasser",
+  "article": "das",
+  "word": "Quellwasser",
+  "pos": "noun",
+  "meanings": [
+   "泉水"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-raclette",
+  "article": "das",
+  "word": "Raclette",
+  "pos": "noun",
+  "meanings": [
+   "拉克萊特起司料理"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "das-rind",
+  "article": "das",
+  "word": "Rind",
+  "pos": "noun",
+  "plural": "die Rinder",
+  "meanings": [
+   "牛；牛肉"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-sekt",
+  "article": "der",
+  "word": "Sekt",
+  "pos": "noun",
+  "meanings": [
+   "氣泡酒"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-spezialitaet",
+  "article": "die",
+  "word": "Spezialität",
+  "pos": "noun",
+  "plural": "die Spezialitäten",
+  "meanings": [
+   "特色菜；特產"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-theke",
+  "article": "die",
+  "word": "Theke",
+  "pos": "noun",
+  "plural": "die Theken",
+  "meanings": [
+   "櫃檯；吧台"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "der-veganer",
+  "article": "der",
+  "word": "Veganer",
+  "pos": "noun",
+  "plural": "die Veganer",
+  "meanings": [
+   "純素食者"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-zubereitung",
+  "article": "die",
+  "word": "Zubereitung",
+  "pos": "noun",
+  "plural": "die Zubereitungen",
+  "meanings": [
+   "料理方式；製作"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-zutat",
+  "article": "die",
+  "word": "Zutat",
+  "pos": "noun",
+  "plural": "die Zutaten",
+  "meanings": [
+   "食材"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": true
+ },
+ {
+  "id": "die-atmosphaere",
+  "article": "die",
+  "word": "Atmosphäre",
+  "pos": "noun",
+  "meanings": [
+   "氣氛；大氣"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-bedingung",
+  "article": "die",
+  "word": "Bedingung",
+  "pos": "noun",
+  "plural": "die Bedingungen",
+  "meanings": [
+   "條件"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "der-bereich",
+  "article": "der",
+  "word": "Bereich",
+  "pos": "noun",
+  "plural": "die Bereiche",
+  "meanings": [
+   "領域；範圍"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-beschreibung",
+  "article": "die",
+  "word": "Beschreibung",
+  "pos": "noun",
+  "plural": "die Beschreibungen",
+  "meanings": [
+   "描述"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-bestaetigung",
+  "article": "die",
+  "word": "Bestätigung",
+  "pos": "noun",
+  "plural": "die Bestätigungen",
+  "meanings": [
+   "確認；證明"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-flaeche",
+  "article": "die",
+  "word": "Fläche",
+  "pos": "noun",
+  "plural": "die Flächen",
+  "meanings": [
+   "面積"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "fluessig",
+  "word": "flüssig",
+  "pos": "adjective",
+  "meanings": [
+   "液態的；流暢的"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "das-gebiet",
+  "article": "das",
+  "word": "Gebiet",
+  "pos": "noun",
+  "plural": "die Gebiete",
+  "meanings": [
+   "領域；地區"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "gemischt",
+  "word": "gemischt",
+  "pos": "adjective",
+  "meanings": [
+   "混合的"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "indirekt",
+  "word": "indirekt",
+  "pos": "adjective",
+  "meanings": [
+   "間接的"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "der-inhalt",
+  "article": "der",
+  "word": "Inhalt",
+  "pos": "noun",
+  "plural": "die Inhalte",
+  "meanings": [
+   "內容"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-kategorie",
+  "article": "die",
+  "word": "Kategorie",
+  "pos": "noun",
+  "plural": "die Kategorien",
+  "meanings": [
+   "類別"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-kleinigkeit",
+  "article": "die",
+  "word": "Kleinigkeit",
+  "pos": "noun",
+  "plural": "die Kleinigkeiten",
+  "meanings": [
+   "小事；瑣事"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "das-material",
+  "article": "das",
+  "word": "Material",
+  "pos": "noun",
+  "plural": "die Materialien",
+  "meanings": [
+   "材料"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-reaktion",
+  "article": "die",
+  "word": "Reaktion",
+  "pos": "noun",
+  "plural": "die Reaktionen",
+  "meanings": [
+   "反應"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "der-schaden",
+  "article": "der",
+  "word": "Schaden",
+  "pos": "noun",
+  "plural": "die Schäden",
+  "meanings": [
+   "損失；損害"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "seltsam",
+  "word": "seltsam",
+  "pos": "adjective",
+  "meanings": [
+   "奇怪的"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "der-sinn",
+  "article": "der",
+  "word": "Sinn",
+  "pos": "noun",
+  "meanings": [
+   "意義"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "spontan",
+  "word": "spontan",
+  "pos": "adjective",
+  "meanings": [
+   "自發地；臨時起意地"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-stufe",
+  "article": "die",
+  "word": "Stufe",
+  "pos": "noun",
+  "plural": "die Stufen",
+  "meanings": [
+   "階段；級別；台階"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "die-tatsache",
+  "article": "die",
+  "word": "Tatsache",
+  "pos": "noun",
+  "plural": "die Tatsachen",
+  "meanings": [
+   "事實"
+  ],
+  "level": "B1",
+  "topic": "general",
+  "push": true
+ },
+ {
+  "id": "das-objekt",
+  "article": "das",
+  "word": "Objekt",
+  "pos": "noun",
+  "plural": "die Objekte",
+  "meanings": [
+   "受詞；物體"
+  ],
+  "level": "B1",
+  "topic": "grammar",
+  "push": true
+ },
+ {
+  "id": "der-durchfall",
+  "article": "der",
+  "word": "Durchfall",
+  "pos": "noun",
+  "meanings": [
+   "腹瀉"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "empfindlich",
+  "word": "empfindlich",
+  "pos": "adjective",
+  "meanings": [
+   "敏感的"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "die-gliederschmerzen",
+  "article": "die",
+  "word": "Gliederschmerzen",
+  "pos": "noun",
+  "meanings": [
+   "四肢酸痛"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "der-impfstoff",
+  "article": "der",
+  "word": "Impfstoff",
+  "pos": "noun",
+  "plural": "die Impfstoffe",
+  "meanings": [
+   "疫苗"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "der-krebs",
+  "article": "der",
+  "word": "Krebs",
+  "pos": "noun",
+  "meanings": [
+   "癌症；螃蟹"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "kraeftig",
+  "word": "kräftig",
+  "pos": "adjective",
+  "meanings": [
+   "強壯的；有力的"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "die-maske",
+  "article": "die",
+  "word": "Maske",
+  "pos": "noun",
+  "plural": "die Masken",
+  "meanings": [
+   "口罩；面具"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "der-pickel",
+  "article": "der",
+  "word": "Pickel",
+  "pos": "noun",
+  "plural": "die Pickel",
+  "meanings": [
+   "痘痘"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "die-untersuchung",
+  "article": "die",
+  "word": "Untersuchung",
+  "pos": "noun",
+  "plural": "die Untersuchungen",
+  "meanings": [
+   "檢查；調查"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "der-aschenbecher",
+  "article": "der",
+  "word": "Aschenbecher",
+  "pos": "noun",
+  "plural": "die Aschenbecher",
+  "meanings": [
+   "菸灰缸"
+  ],
+  "level": "B1",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "der-ventilator",
+  "article": "der",
+  "word": "Ventilator",
+  "pos": "noun",
+  "plural": "die Ventilatoren",
+  "meanings": [
+   "電風扇"
+  ],
+  "level": "B1",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "das-feuerwerk",
+  "article": "das",
+  "word": "Feuerwerk",
+  "pos": "noun",
+  "plural": "die Feuerwerke",
+  "meanings": [
+   "煙火"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "das-kunstwerk",
+  "article": "das",
+  "word": "Kunstwerk",
+  "pos": "noun",
+  "plural": "die Kunstwerke",
+  "meanings": [
+   "藝術作品"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "die-therme",
+  "article": "die",
+  "word": "Therme",
+  "pos": "noun",
+  "plural": "die Thermen",
+  "meanings": [
+   "溫泉浴場"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "die-veranstaltung",
+  "article": "die",
+  "word": "Veranstaltung",
+  "pos": "noun",
+  "plural": "die Veranstaltungen",
+  "meanings": [
+   "活動（由人籌辦）"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "der-vergnuegungspark",
+  "article": "der",
+  "word": "Vergnügungspark",
+  "pos": "noun",
+  "plural": "die Vergnügungsparks",
+  "meanings": [
+   "遊樂園"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "die-erzaehlung",
+  "article": "die",
+  "word": "Erzählung",
+  "pos": "noun",
+  "plural": "die Erzählungen",
+  "meanings": [
+   "敘事；故事"
+  ],
+  "level": "B1",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "die-mailbox",
+  "article": "die",
+  "word": "Mailbox",
+  "pos": "noun",
+  "plural": "die Mailboxen",
+  "meanings": [
+   "語音信箱；電子信箱"
+  ],
+  "level": "B1",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "das-sachbuch",
+  "article": "das",
+  "word": "Sachbuch",
+  "pos": "noun",
+  "plural": "die Sachbücher",
+  "meanings": [
+   "非虛構知識類書籍"
+  ],
+  "level": "B1",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "der-dauerregen",
+  "article": "der",
+  "word": "Dauerregen",
+  "pos": "noun",
+  "meanings": [
+   "持續降雨"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "das-erdbeben",
+  "article": "das",
+  "word": "Erdbeben",
+  "pos": "noun",
+  "plural": "die Erdbeben",
+  "meanings": [
+   "地震"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "die-hitzewelle",
+  "article": "die",
+  "word": "Hitzewelle",
+  "pos": "noun",
+  "plural": "die Hitzewellen",
+  "meanings": [
+   "熱浪"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "das-kalb",
+  "article": "das",
+  "word": "Kalb",
+  "pos": "noun",
+  "plural": "die Kälber",
+  "meanings": [
+   "小牛；小牛肉"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "die-kirschbluete",
+  "article": "die",
+  "word": "Kirschblüte",
+  "pos": "noun",
+  "plural": "die Kirschblüten",
+  "meanings": [
+   "櫻花"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "der-kaefer",
+  "article": "der",
+  "word": "Käfer",
+  "pos": "noun",
+  "plural": "die Käfer",
+  "meanings": [
+   "甲蟲"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "die-muecke",
+  "article": "die",
+  "word": "Mücke",
+  "pos": "noun",
+  "plural": "die Mücken",
+  "meanings": [
+   "蚊子"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "der-papagei",
+  "article": "der",
+  "word": "Papagei",
+  "pos": "noun",
+  "plural": "die Papageien",
+  "meanings": [
+   "鸚鵡"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "der-rabe",
+  "article": "der",
+  "word": "Rabe",
+  "pos": "noun",
+  "plural": "die Raben",
+  "meanings": [
+   "渡鴉"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": true
+ }
+]

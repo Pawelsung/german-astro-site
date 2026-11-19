@@ -1,0 +1,1114 @@
+[
+ {
+  "id": "die-nasennebenhoehlenentzuendung",
+  "article": "die",
+  "word": "Nasennebenhöhlenentzündung",
+  "pos": "noun",
+  "plural": "die Nasennebenhöhlenentzündungen",
+  "meanings": [
+   "鼻竇炎"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "der-nerv",
+  "article": "der",
+  "word": "Nerv",
+  "pos": "noun",
+  "plural": "die Nerven",
+  "meanings": [
+   "神經"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "die-schlafstoerung",
+  "article": "die",
+  "word": "Schlafstörung",
+  "pos": "noun",
+  "plural": "die Schlafstörungen",
+  "meanings": [
+   "睡眠障礙"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "der-sonnenstich",
+  "article": "der",
+  "word": "Sonnenstich",
+  "pos": "noun",
+  "meanings": [
+   "日射病"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": true
+ },
+ {
+  "id": "das-becken",
+  "article": "das",
+  "word": "Becken",
+  "pos": "noun",
+  "plural": "die Becken",
+  "meanings": [
+   "水池；盆；骨盆"
+  ],
+  "level": "B2",
+  "topic": "home",
+  "push": true
+ },
+ {
+  "id": "die-jury",
+  "article": "die",
+  "word": "Jury",
+  "pos": "noun",
+  "plural": "die Jurys",
+  "meanings": [
+   "評審團"
+  ],
+  "level": "B2",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "kunstvoll",
+  "word": "kunstvoll",
+  "pos": "adjective",
+  "meanings": [
+   "精巧的；富有藝術性的"
+  ],
+  "level": "B2",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "die-skulptur",
+  "article": "die",
+  "word": "Skulptur",
+  "pos": "noun",
+  "plural": "die Skulpturen",
+  "meanings": [
+   "雕塑"
+  ],
+  "level": "B2",
+  "topic": "leisure",
+  "push": true
+ },
+ {
+  "id": "das-drehbuch",
+  "article": "das",
+  "word": "Drehbuch",
+  "pos": "noun",
+  "plural": "die Drehbücher",
+  "meanings": [
+   "劇本"
+  ],
+  "level": "B2",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "der-ratgeber",
+  "article": "der",
+  "word": "Ratgeber",
+  "pos": "noun",
+  "plural": "die Ratgeber",
+  "meanings": [
+   "指南；提供建議的人"
+  ],
+  "level": "B2",
+  "topic": "media",
+  "push": true
+ },
+ {
+  "id": "die-asche",
+  "article": "die",
+  "word": "Asche",
+  "pos": "noun",
+  "meanings": [
+   "灰燼（通常不可數）"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "die-kakerlake",
+  "article": "die",
+  "word": "Kakerlake",
+  "pos": "noun",
+  "plural": "die Kakerlaken",
+  "meanings": [
+   "蟑螂"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "das-nachbeben",
+  "article": "das",
+  "word": "Nachbeben",
+  "pos": "noun",
+  "plural": "die Nachbeben",
+  "meanings": [
+   "餘震"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "polar",
+  "word": "polar",
+  "pos": "adjective",
+  "meanings": [
+   "極地的"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "der-taifun",
+  "article": "der",
+  "word": "Taifun",
+  "pos": "noun",
+  "plural": "die Taifune",
+  "meanings": [
+   "颱風"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": true
+ },
+ {
+  "id": "hochbegabt",
+  "word": "hochbegabt",
+  "pos": "adjective",
+  "meanings": [
+   "高度資優的"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "der-jahrgang",
+  "article": "der",
+  "word": "Jahrgang",
+  "pos": "noun",
+  "plural": "die Jahrgänge",
+  "meanings": [
+   "年級；同一出生年份者"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-politikwissenschaft",
+  "article": "die",
+  "word": "Politikwissenschaft",
+  "pos": "noun",
+  "plural": "die Politikwissenschaften",
+  "meanings": [
+   "政治學"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "die-promotion",
+  "article": "die",
+  "word": "Promotion",
+  "pos": "noun",
+  "plural": "die Promotionen",
+  "meanings": [
+   "博士學位取得程序"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": true
+ },
+ {
+  "id": "das-budget",
+  "article": "das",
+  "word": "Budget",
+  "pos": "noun",
+  "plural": "die Budgets",
+  "meanings": [
+   "預算"
+  ],
+  "level": "B2",
+  "topic": "shop",
+  "push": true
+ },
+ {
+  "id": "der-luxus",
+  "article": "der",
+  "word": "Luxus",
+  "pos": "noun",
+  "meanings": [
+   "奢侈"
+  ],
+  "level": "B2",
+  "topic": "shop",
+  "push": true
+ },
+ {
+  "id": "das-begraebnis",
+  "article": "das",
+  "word": "Begräbnis",
+  "pos": "noun",
+  "plural": "die Begräbnisse",
+  "meanings": [
+   "葬禮；埋葬"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "die-bestattung",
+  "article": "die",
+  "word": "Bestattung",
+  "pos": "noun",
+  "plural": "die Bestattungen",
+  "meanings": [
+   "安葬；葬儀"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "der-feind",
+  "article": "der",
+  "word": "Feind",
+  "pos": "noun",
+  "plural": "die Feinde",
+  "meanings": [
+   "敵人"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "die-faelschung",
+  "article": "die",
+  "word": "Fälschung",
+  "pos": "noun",
+  "plural": "die Fälschungen",
+  "meanings": [
+   "偽造品；偽造"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "die-gemeinschaft",
+  "article": "die",
+  "word": "Gemeinschaft",
+  "pos": "noun",
+  "plural": "die Gemeinschaften",
+  "meanings": [
+   "共同體"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "gerecht",
+  "word": "gerecht",
+  "pos": "adjective",
+  "meanings": [
+   "公平的"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "das-grab",
+  "article": "das",
+  "word": "Grab",
+  "pos": "noun",
+  "plural": "die Gräber",
+  "meanings": [
+   "墳墓"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "juristisch",
+  "word": "juristisch",
+  "pos": "adjective",
+  "meanings": [
+   "法律方面的"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "die-justiz",
+  "article": "die",
+  "word": "Justiz",
+  "pos": "noun",
+  "meanings": [
+   "司法"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "nordisch",
+  "word": "nordisch",
+  "pos": "adjective",
+  "meanings": [
+   "北歐的"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "die-sage",
+  "article": "die",
+  "word": "Sage",
+  "pos": "noun",
+  "plural": "die Sagen",
+  "meanings": [
+   "傳說"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": true
+ },
+ {
+  "id": "der-brueckentag",
+  "article": "der",
+  "word": "Brückentag",
+  "pos": "noun",
+  "plural": "die Brückentage",
+  "meanings": [
+   "兩個休息日之間的工作日"
+  ],
+  "level": "B2",
+  "topic": "time",
+  "push": true
+ },
+ {
+  "id": "prozentual",
+  "word": "prozentual",
+  "pos": "adjective",
+  "meanings": [
+   "以百分比計的"
+  ],
+  "level": "B2",
+  "topic": "time",
+  "push": true
+ },
+ {
+  "id": "der-arbeitsprozess",
+  "article": "der",
+  "word": "Arbeitsprozess",
+  "pos": "noun",
+  "plural": "die Arbeitsprozesse",
+  "meanings": [
+   "工作流程"
+  ],
+  "level": "B2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "der-betreuer",
+  "article": "der",
+  "word": "Betreuer",
+  "pos": "noun",
+  "plural": "die Betreuer",
+  "meanings": [
+   "指導者；照護者"
+  ],
+  "level": "B2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "der-entwickler",
+  "article": "der",
+  "word": "Entwickler",
+  "pos": "noun",
+  "plural": "die Entwickler",
+  "meanings": [
+   "開發者"
+  ],
+  "level": "B2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "die-verwaltung",
+  "article": "die",
+  "word": "Verwaltung",
+  "pos": "noun",
+  "plural": "die Verwaltungen",
+  "meanings": [
+   "行政；管理"
+  ],
+  "level": "B2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "zeitaufwendig",
+  "word": "zeitaufwendig",
+  "pos": "adjective",
+  "meanings": [
+   "耗時的"
+  ],
+  "level": "B2",
+  "topic": "work",
+  "push": true
+ },
+ {
+  "id": "souveraen",
+  "word": "souverän",
+  "pos": "adjective",
+  "meanings": [
+   "從容自信的"
+  ],
+  "level": "C1",
+  "topic": "people",
+  "push": true
+ },
+ {
+  "id": "der-akkusativ",
+  "article": "der",
+  "word": "Akkusativ",
+  "pos": "noun",
+  "meanings": [
+   "受格／第四格"
+  ],
+  "level": "A1",
+  "topic": "grammar",
+  "push": false
+ },
+ {
+  "id": "der-franzose",
+  "article": "der",
+  "word": "Franzose",
+  "pos": "noun",
+  "plural": "die Franzosen",
+  "meanings": [
+   "法國男性"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": false
+ },
+ {
+  "id": "die-franzoesin",
+  "article": "die",
+  "word": "Französin",
+  "pos": "noun",
+  "plural": "die Französinnen",
+  "meanings": [
+   "法國女性"
+  ],
+  "level": "A1",
+  "topic": "people",
+  "push": false
+ },
+ {
+  "id": "china",
+  "word": "China",
+  "pos": "noun",
+  "meanings": [
+   "中國"
+  ],
+  "level": "A1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "amerika",
+  "word": "Amerika",
+  "pos": "noun",
+  "meanings": [
+   "美洲；語境中也指美國"
+  ],
+  "level": "A1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "asien",
+  "word": "Asien",
+  "pos": "noun",
+  "meanings": [
+   "亞洲"
+  ],
+  "level": "A1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "frankreich",
+  "word": "Frankreich",
+  "pos": "noun",
+  "meanings": [
+   "法國"
+  ],
+  "level": "A1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "firenze",
+  "word": "Firenze",
+  "pos": "noun",
+  "meanings": [
+   "佛羅倫薩（義大利語；德語 Florenz）"
+  ],
+  "level": "A2",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "das-naturmuseum",
+  "article": "das",
+  "word": "Naturmuseum",
+  "pos": "noun",
+  "plural": "die Naturmuseen",
+  "meanings": [
+   "自然博物館"
+  ],
+  "level": "A2",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "stuttgart",
+  "word": "Stuttgart",
+  "pos": "noun",
+  "meanings": [
+   "斯圖加特"
+  ],
+  "level": "A2",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "die-ukraine",
+  "article": "die",
+  "word": "Ukraine",
+  "pos": "noun",
+  "meanings": [
+   "烏克蘭"
+  ],
+  "level": "A2",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "das-adverb",
+  "article": "das",
+  "word": "Adverb",
+  "pos": "noun",
+  "plural": "die Adverbien",
+  "meanings": [
+   "副詞"
+  ],
+  "level": "A2",
+  "topic": "grammar",
+  "push": false
+ },
+ {
+  "id": "das-modalverb",
+  "article": "das",
+  "word": "Modalverb",
+  "pos": "noun",
+  "plural": "die Modalverben",
+  "meanings": [
+   "情態動詞"
+  ],
+  "level": "A2",
+  "topic": "grammar",
+  "push": false
+ },
+ {
+  "id": "das-plusquamperfekt",
+  "article": "das",
+  "word": "Plusquamperfekt",
+  "pos": "noun",
+  "meanings": [
+   "過去完成式"
+  ],
+  "level": "A2",
+  "topic": "grammar",
+  "push": false
+ },
+ {
+  "id": "das-subjekt",
+  "article": "das",
+  "word": "Subjekt",
+  "pos": "noun",
+  "plural": "die Subjekte",
+  "meanings": [
+   "主詞"
+  ],
+  "level": "A2",
+  "topic": "grammar",
+  "push": false
+ },
+ {
+  "id": "das-verb",
+  "article": "das",
+  "word": "Verb",
+  "pos": "noun",
+  "plural": "die Verben",
+  "meanings": [
+   "動詞"
+  ],
+  "level": "A2",
+  "topic": "grammar",
+  "push": false
+ },
+ {
+  "id": "das-ipad",
+  "article": "das",
+  "word": "iPad",
+  "pos": "noun",
+  "plural": "die iPads",
+  "meanings": [
+   "iPad 平板電腦"
+  ],
+  "level": "A2",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "die-nordsee",
+  "article": "die",
+  "word": "Nordsee",
+  "pos": "noun",
+  "meanings": [
+   "北海"
+  ],
+  "level": "A2",
+  "topic": "nature",
+  "push": false
+ },
+ {
+  "id": "das-komma",
+  "article": "das",
+  "word": "Komma",
+  "pos": "noun",
+  "plural": "die Kommas",
+  "meanings": [
+   "逗號"
+  ],
+  "level": "A2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-niederlande",
+  "article": "die",
+  "word": "Niederlande",
+  "pos": "noun",
+  "meanings": [
+   "荷蘭"
+  ],
+  "level": "A2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "island",
+  "word": "Island",
+  "pos": "noun",
+  "meanings": [
+   "冰島"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "die-weltkarte",
+  "article": "die",
+  "word": "Weltkarte",
+  "pos": "noun",
+  "plural": "die Weltkarten",
+  "meanings": [
+   "世界地圖"
+  ],
+  "level": "A2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "der-ruhetag",
+  "article": "der",
+  "word": "Ruhetag",
+  "pos": "noun",
+  "plural": "die Ruhetage",
+  "meanings": [
+   "休息日；公休日"
+  ],
+  "level": "A2",
+  "topic": "work",
+  "push": false
+ },
+ {
+  "id": "das-planetarium",
+  "article": "das",
+  "word": "Planetarium",
+  "pos": "noun",
+  "plural": "die Planetarien",
+  "meanings": [
+   "天文館"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "das-technikmuseum",
+  "article": "das",
+  "word": "Technikmuseum",
+  "pos": "noun",
+  "plural": "die Technikmuseen",
+  "meanings": [
+   "科技博物館"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "die-universitaetsstadt",
+  "article": "die",
+  "word": "Universitätsstadt",
+  "pos": "noun",
+  "plural": "die Universitätsstädte",
+  "meanings": [
+   "大學城"
+  ],
+  "level": "B1",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "die-regensachen",
+  "article": "die",
+  "word": "Regensachen",
+  "pos": "noun",
+  "meanings": [
+   "雨具"
+  ],
+  "level": "B1",
+  "topic": "daily",
+  "push": false
+ },
+ {
+  "id": "der-brokkoli-auflauf",
+  "article": "der",
+  "word": "Brokkoli-Auflauf",
+  "pos": "noun",
+  "plural": "die Brokkoli-Aufläufe",
+  "meanings": [
+   "花椰菜焗烤"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-extraportion",
+  "article": "die",
+  "word": "Extraportion",
+  "pos": "noun",
+  "plural": "die Extraportionen",
+  "meanings": [
+   "額外一份"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-forelle",
+  "article": "die",
+  "word": "Forelle",
+  "pos": "noun",
+  "plural": "die Forellen",
+  "meanings": [
+   "鱒魚"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "das-grillrestaurant",
+  "article": "das",
+  "word": "Grillrestaurant",
+  "pos": "noun",
+  "plural": "die Grillrestaurants",
+  "meanings": [
+   "燒烤餐廳"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-teigtasche",
+  "article": "die",
+  "word": "Teigtasche",
+  "pos": "noun",
+  "plural": "die Teigtaschen",
+  "meanings": [
+   "包餡的麵食（類似餃子）"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-weinstube",
+  "article": "die",
+  "word": "Weinstube",
+  "pos": "noun",
+  "plural": "die Weinstuben",
+  "meanings": [
+   "葡萄酒館"
+  ],
+  "level": "B1",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "der-gesundheitscheck",
+  "article": "der",
+  "word": "Gesundheitscheck",
+  "pos": "noun",
+  "plural": "die Gesundheitschecks",
+  "meanings": [
+   "健康檢查"
+  ],
+  "level": "B1",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "der-ersatzschluessel",
+  "article": "der",
+  "word": "Ersatzschlüssel",
+  "pos": "noun",
+  "plural": "die Ersatzschlüssel",
+  "meanings": [
+   "備用鑰匙"
+  ],
+  "level": "B1",
+  "topic": "home",
+  "push": false
+ },
+ {
+  "id": "der-muellraum",
+  "article": "der",
+  "word": "Müllraum",
+  "pos": "noun",
+  "plural": "die Müllräume",
+  "meanings": [
+   "垃圾間"
+  ],
+  "level": "B1",
+  "topic": "home",
+  "push": false
+ },
+ {
+  "id": "das-fruehlingsfest",
+  "article": "das",
+  "word": "Frühlingsfest",
+  "pos": "noun",
+  "plural": "die Frühlingsfeste",
+  "meanings": [
+   "春季節慶；（華人）春節"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "der-kuchenwettbewerb",
+  "article": "der",
+  "word": "Kuchenwettbewerb",
+  "pos": "noun",
+  "plural": "die Kuchenwettbewerbe",
+  "meanings": [
+   "蛋糕比賽"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "der-torhueter",
+  "article": "der",
+  "word": "Torhüter",
+  "pos": "noun",
+  "plural": "die Torhüter",
+  "meanings": [
+   "守門員"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "die-ueberraschungsparty",
+  "article": "die",
+  "word": "Überraschungsparty",
+  "pos": "noun",
+  "plural": "die Überraschungspartys",
+  "meanings": [
+   "驚喜派對"
+  ],
+  "level": "B1",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "das-webradio",
+  "article": "das",
+  "word": "Webradio",
+  "pos": "noun",
+  "plural": "die Webradios",
+  "meanings": [
+   "網路廣播"
+  ],
+  "level": "B1",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "die-donau",
+  "article": "die",
+  "word": "Donau",
+  "pos": "noun",
+  "meanings": [
+   "多瑙河"
+  ],
+  "level": "B1",
+  "topic": "nature",
+  "push": false
+ },
+ {
+  "id": "die-grundstufe",
+  "article": "die",
+  "word": "Grundstufe",
+  "pos": "noun",
+  "plural": "die Grundstufen",
+  "meanings": [
+   "初級"
+  ],
+  "level": "B1",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-mittelstufe",
+  "article": "die",
+  "word": "Mittelstufe",
+  "pos": "noun",
+  "plural": "die Mittelstufen",
+  "meanings": [
+   "中級"
+  ],
+  "level": "B1",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-semesterarbeit",
+  "article": "die",
+  "word": "Semesterarbeit",
+  "pos": "noun",
+  "plural": "die Semesterarbeiten",
+  "meanings": [
+   "學期報告"
+  ],
+  "level": "B1",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "der-unterrichtsplan",
+  "article": "der",
+  "word": "Unterrichtsplan",
+  "pos": "noun",
+  "plural": "die Unterrichtspläne",
+  "meanings": [
+   "課程表"
+  ],
+  "level": "B1",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "franken",
+  "word": "Franken",
+  "pos": "noun",
+  "meanings": [
+   "瑞士法郎（貨幣）；弗蘭肯地區（依語境）"
+  ],
+  "level": "B1",
+  "topic": "shop",
+  "push": false
+ },
+ {
+  "id": "der-verkaufsstand",
+  "article": "der",
+  "word": "Verkaufsstand",
+  "pos": "noun",
+  "plural": "die Verkaufsstände",
+  "meanings": [
+   "攤位"
+  ],
+  "level": "B1",
+  "topic": "shop",
+  "push": false
+ },
+ {
+  "id": "die-wechselstube",
+  "article": "die",
+  "word": "Wechselstube",
+  "pos": "noun",
+  "plural": "die Wechselstuben",
+  "meanings": [
+   "外幣兌換處"
+  ],
+  "level": "B1",
+  "topic": "shop",
+  "push": false
+ }
+]

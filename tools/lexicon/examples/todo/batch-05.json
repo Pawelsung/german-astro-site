@@ -1,0 +1,1109 @@
+[
+ {
+  "id": "allerheiligen",
+  "word": "Allerheiligen",
+  "pos": "noun",
+  "meanings": [
+   "諸聖節（不是一般「掃墓」的德文）"
+  ],
+  "level": "B1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "auschwitz",
+  "word": "Auschwitz",
+  "pos": "noun",
+  "meanings": [
+   "奧斯威辛"
+  ],
+  "level": "B1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-fluechtlingsfamilie",
+  "article": "die",
+  "word": "Flüchtlingsfamilie",
+  "pos": "noun",
+  "plural": "die Flüchtlingsfamilien",
+  "meanings": [
+   "難民家庭"
+  ],
+  "level": "B1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "ostdeutschland",
+  "word": "Ostdeutschland",
+  "pos": "noun",
+  "meanings": [
+   "東德；德國東部"
+  ],
+  "level": "B1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "der-abreisetag",
+  "article": "der",
+  "word": "Abreisetag",
+  "pos": "noun",
+  "plural": "die Abreisetage",
+  "meanings": [
+   "離開／退房日"
+  ],
+  "level": "B1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "der-anreisetag",
+  "article": "der",
+  "word": "Anreisetag",
+  "pos": "noun",
+  "plural": "die Anreisetage",
+  "meanings": [
+   "抵達日"
+  ],
+  "level": "B1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "der-einreisetag",
+  "article": "der",
+  "word": "Einreisetag",
+  "pos": "noun",
+  "plural": "die Einreisetage",
+  "meanings": [
+   "入境日"
+  ],
+  "level": "B1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "schottland",
+  "word": "Schottland",
+  "pos": "noun",
+  "meanings": [
+   "蘇格蘭"
+  ],
+  "level": "B1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "die-waschanlage",
+  "article": "die",
+  "word": "Waschanlage",
+  "pos": "noun",
+  "plural": "die Waschanlagen",
+  "meanings": [
+   "洗車設備；自動洗車場"
+  ],
+  "level": "B1",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "die-modefirma",
+  "article": "die",
+  "word": "Modefirma",
+  "pos": "noun",
+  "plural": "die Modefirmen",
+  "meanings": [
+   "時裝公司"
+  ],
+  "level": "B1",
+  "topic": "work",
+  "push": false
+ },
+ {
+  "id": "das-literaturmuseum",
+  "article": "das",
+  "word": "Literaturmuseum",
+  "pos": "noun",
+  "plural": "die Literaturmuseen",
+  "meanings": [
+   "文學博物館"
+  ],
+  "level": "B2",
+  "topic": "city",
+  "push": false
+ },
+ {
+  "id": "weinend",
+  "word": "weinend",
+  "pos": "adjective",
+  "meanings": [
+   "正在哭的"
+  ],
+  "level": "B2",
+  "topic": "feel",
+  "push": false
+ },
+ {
+  "id": "das-blattgemuese",
+  "article": "das",
+  "word": "Blattgemüse",
+  "pos": "noun",
+  "meanings": [
+   "葉菜類"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "der-blauschimmel",
+  "article": "der",
+  "word": "Blauschimmel",
+  "pos": "noun",
+  "meanings": [
+   "藍黴"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "der-esser",
+  "article": "der",
+  "word": "Esser",
+  "pos": "noun",
+  "plural": "die Esser",
+  "meanings": [
+   "食量／飲食習慣方面的「食客」"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "der-gorgonzola",
+  "article": "der",
+  "word": "Gorgonzola",
+  "pos": "noun",
+  "meanings": [
+   "戈貢佐拉藍紋起司"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-kinderueberraschung",
+  "article": "die",
+  "word": "Kinderüberraschung",
+  "pos": "noun",
+  "plural": "die Kinderüberraschungen",
+  "meanings": [
+   "奇趣蛋／兒童驚喜蛋"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-mehlspeise",
+  "article": "die",
+  "word": "Mehlspeise",
+  "pos": "noun",
+  "plural": "die Mehlspeisen",
+  "meanings": [
+   "麵粉製甜點／麵食"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "der-pescetarier",
+  "article": "der",
+  "word": "Pescetarier",
+  "pos": "noun",
+  "plural": "die Pescetarier",
+  "meanings": [
+   "魚素者"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "die-seezunge",
+  "article": "die",
+  "word": "Seezunge",
+  "pos": "noun",
+  "plural": "die Seezungen",
+  "meanings": [
+   "鰨魚"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "das-teegebaeck",
+  "article": "das",
+  "word": "Teegebäck",
+  "pos": "noun",
+  "meanings": [
+   "茶點"
+  ],
+  "level": "B2",
+  "topic": "food",
+  "push": false
+ },
+ {
+  "id": "ueberlegenswert",
+  "word": "überlegenswert",
+  "pos": "adjective",
+  "meanings": [
+   "值得考慮的"
+  ],
+  "level": "B2",
+  "topic": "general",
+  "push": false
+ },
+ {
+  "id": "der-eiweissanteil",
+  "article": "der",
+  "word": "Eiweißanteil",
+  "pos": "noun",
+  "meanings": [
+   "蛋白質含量"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "der-tumor",
+  "article": "der",
+  "word": "Tumor",
+  "pos": "noun",
+  "plural": "die Tumore",
+  "meanings": [
+   "腫瘤"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "die-verbrennung",
+  "article": "die",
+  "word": "Verbrennung",
+  "pos": "noun",
+  "plural": "die Verbrennungen",
+  "meanings": [
+   "燒傷；燃燒"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "die-vogelgrippe",
+  "article": "die",
+  "word": "Vogelgrippe",
+  "pos": "noun",
+  "meanings": [
+   "禽流感"
+  ],
+  "level": "B2",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "der-backwettbewerb",
+  "article": "der",
+  "word": "Backwettbewerb",
+  "pos": "noun",
+  "plural": "die Backwettbewerbe",
+  "meanings": [
+   "烘焙比賽"
+  ],
+  "level": "B2",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "das-drachenfest",
+  "article": "das",
+  "word": "Drachenfest",
+  "pos": "noun",
+  "plural": "die Drachenfeste",
+  "meanings": [
+   "風箏節"
+  ],
+  "level": "B2",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "der-veranstalter",
+  "article": "der",
+  "word": "Veranstalter",
+  "pos": "noun",
+  "plural": "die Veranstalter",
+  "meanings": [
+   "主辦者"
+  ],
+  "level": "B2",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "die-internetsprache",
+  "article": "die",
+  "word": "Internetsprache",
+  "pos": "noun",
+  "meanings": [
+   "網路語言"
+  ],
+  "level": "B2",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "die-rundfunkgebuehr",
+  "article": "die",
+  "word": "Rundfunkgebühr",
+  "pos": "noun",
+  "plural": "die Rundfunkgebühren",
+  "meanings": [
+   "廣播電視費"
+  ],
+  "level": "B2",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "der-vorleser",
+  "article": "der",
+  "word": "Vorleser",
+  "pos": "noun",
+  "plural": "die Vorleser",
+  "meanings": [
+   "朗讀者"
+  ],
+  "level": "B2",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "die-kaffeeplantage",
+  "article": "die",
+  "word": "Kaffeeplantage",
+  "pos": "noun",
+  "plural": "die Kaffeeplantagen",
+  "meanings": [
+   "咖啡種植園"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": false
+ },
+ {
+  "id": "der-schweinestall",
+  "article": "der",
+  "word": "Schweinestall",
+  "pos": "noun",
+  "plural": "die Schweineställe",
+  "meanings": [
+   "豬圈"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": false
+ },
+ {
+  "id": "wetterbedingt",
+  "word": "wetterbedingt",
+  "pos": "adjective",
+  "meanings": [
+   "受天氣影響的"
+  ],
+  "level": "B2",
+  "topic": "nature",
+  "push": false
+ },
+ {
+  "id": "die-nachkommen",
+  "article": "die",
+  "word": "Nachkommen",
+  "pos": "noun",
+  "meanings": [
+   "後代"
+  ],
+  "level": "B2",
+  "topic": "people",
+  "push": false
+ },
+ {
+  "id": "der-schwabe",
+  "article": "der",
+  "word": "Schwabe",
+  "pos": "noun",
+  "plural": "die Schwaben",
+  "meanings": [
+   "施瓦本人"
+  ],
+  "level": "B2",
+  "topic": "people",
+  "push": false
+ },
+ {
+  "id": "die-vorfahren",
+  "article": "die",
+  "word": "Vorfahren",
+  "pos": "noun",
+  "meanings": [
+   "祖先"
+  ],
+  "level": "B2",
+  "topic": "people",
+  "push": false
+ },
+ {
+  "id": "der-fachlehrer",
+  "article": "der",
+  "word": "Fachlehrer",
+  "pos": "noun",
+  "plural": "die Fachlehrer",
+  "meanings": [
+   "任課老師"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-mobbing-praevention",
+  "article": "die",
+  "word": "Mobbing-Prävention",
+  "pos": "noun",
+  "meanings": [
+   "霸凌預防"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-naturkunde",
+  "article": "die",
+  "word": "Naturkunde",
+  "pos": "noun",
+  "meanings": [
+   "自然知識"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-oberstufe",
+  "article": "die",
+  "word": "Oberstufe",
+  "pos": "noun",
+  "plural": "die Oberstufen",
+  "meanings": [
+   "中學高年級（高中階段）"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-physikforschung",
+  "article": "die",
+  "word": "Physikforschung",
+  "pos": "noun",
+  "meanings": [
+   "物理研究"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "schwaebisch",
+  "word": "Schwäbisch",
+  "pos": "noun",
+  "meanings": [
+   "施瓦本方言"
+  ],
+  "level": "B2",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "der-kunstwerkladen",
+  "article": "der",
+  "word": "Kunstwerkladen",
+  "pos": "noun",
+  "plural": "die Kunstwerkläden",
+  "meanings": [
+   "藝術品商店"
+  ],
+  "level": "B2",
+  "topic": "shop",
+  "push": false
+ },
+ {
+  "id": "die-ladenflaeche",
+  "article": "die",
+  "word": "Ladenfläche",
+  "pos": "noun",
+  "plural": "die Ladenflächen",
+  "meanings": [
+   "店面面積"
+  ],
+  "level": "B2",
+  "topic": "shop",
+  "push": false
+ },
+ {
+  "id": "der-bischof",
+  "article": "der",
+  "word": "Bischof",
+  "pos": "noun",
+  "plural": "die Bischöfe",
+  "meanings": [
+   "主教"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-bundeswehr",
+  "article": "die",
+  "word": "Bundeswehr",
+  "pos": "noun",
+  "meanings": [
+   "德國聯邦國防軍"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "der-gemeinschaftsgarten",
+  "article": "der",
+  "word": "Gemeinschaftsgarten",
+  "pos": "noun",
+  "plural": "die Gemeinschaftsgärten",
+  "meanings": [
+   "社區共用花園"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "das-konzentrationslager",
+  "article": "das",
+  "word": "Konzentrationslager",
+  "pos": "noun",
+  "plural": "die Konzentrationslager",
+  "meanings": [
+   "集中營（KZ）"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "der-machtkampf",
+  "article": "der",
+  "word": "Machtkampf",
+  "pos": "noun",
+  "plural": "die Machtkämpfe",
+  "meanings": [
+   "權力鬥爭"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-stroemung",
+  "article": "die",
+  "word": "Strömung",
+  "pos": "noun",
+  "plural": "die Strömungen",
+  "meanings": [
+   "水流；氣流；潮流"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-trauerfeier",
+  "article": "die",
+  "word": "Trauerfeier",
+  "pos": "noun",
+  "plural": "die Trauerfeiern",
+  "meanings": [
+   "告別式；追思儀式"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-urne",
+  "article": "die",
+  "word": "Urne",
+  "pos": "noun",
+  "plural": "die Urnen",
+  "meanings": [
+   "骨灰罈；票箱"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-wehrpflicht",
+  "article": "die",
+  "word": "Wehrpflicht",
+  "pos": "noun",
+  "meanings": [
+   "義務兵役"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-wohnungsnot",
+  "article": "die",
+  "word": "Wohnungsnot",
+  "pos": "noun",
+  "meanings": [
+   "住房短缺"
+  ],
+  "level": "B2",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "der-bahnbeamte",
+  "article": "der",
+  "word": "Bahnbeamte",
+  "pos": "noun",
+  "plural": "die Bahnbeamten",
+  "meanings": [
+   "鐵路職員"
+  ],
+  "level": "B2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "die-gabelung",
+  "article": "die",
+  "word": "Gabelung",
+  "pos": "noun",
+  "plural": "die Gabelungen",
+  "meanings": [
+   "岔路"
+  ],
+  "level": "B2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "der-ganzjahresreifen",
+  "article": "der",
+  "word": "Ganzjahresreifen",
+  "pos": "noun",
+  "plural": "die Ganzjahresreifen",
+  "meanings": [
+   "四季胎"
+  ],
+  "level": "B2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "die-gondel",
+  "article": "die",
+  "word": "Gondel",
+  "pos": "noun",
+  "plural": "die Gondeln",
+  "meanings": [
+   "貢多拉；纜車車廂"
+  ],
+  "level": "B2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "das-kraftfahrzeug",
+  "article": "das",
+  "word": "Kraftfahrzeug",
+  "pos": "noun",
+  "plural": "die Kraftfahrzeuge",
+  "meanings": [
+   "機動車輛（Kfz）"
+  ],
+  "level": "B2",
+  "topic": "travel",
+  "push": false
+ },
+ {
+  "id": "die-verwaltungsarbeit",
+  "article": "die",
+  "word": "Verwaltungsarbeit",
+  "pos": "noun",
+  "meanings": [
+   "行政工作"
+  ],
+  "level": "B2",
+  "topic": "work",
+  "push": false
+ },
+ {
+  "id": "die-fuegung",
+  "article": "die",
+  "word": "Fügung",
+  "pos": "noun",
+  "plural": "die Fügungen",
+  "meanings": [
+   "命運的安排"
+  ],
+  "level": "C1",
+  "topic": "general",
+  "push": false
+ },
+ {
+  "id": "der-knick",
+  "article": "der",
+  "word": "Knick",
+  "pos": "noun",
+  "plural": "die Knicke",
+  "meanings": [
+   "折痕；彎折"
+  ],
+  "level": "C1",
+  "topic": "general",
+  "push": false
+ },
+ {
+  "id": "das-konstrukt",
+  "article": "das",
+  "word": "Konstrukt",
+  "pos": "noun",
+  "plural": "die Konstrukte",
+  "meanings": [
+   "建構；構念"
+  ],
+  "level": "C1",
+  "topic": "general",
+  "push": false
+ },
+ {
+  "id": "der-schub",
+  "article": "der",
+  "word": "Schub",
+  "pos": "noun",
+  "meanings": [
+   "推力；一波"
+  ],
+  "level": "C1",
+  "topic": "general",
+  "push": false
+ },
+ {
+  "id": "uebermenschlich",
+  "word": "übermenschlich",
+  "pos": "adjective",
+  "meanings": [
+   "超人的"
+  ],
+  "level": "C1",
+  "topic": "general",
+  "push": false
+ },
+ {
+  "id": "der-baldrian",
+  "article": "der",
+  "word": "Baldrian",
+  "pos": "noun",
+  "meanings": [
+   "纈草"
+  ],
+  "level": "C1",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "die-bauchspeicheldruese",
+  "article": "die",
+  "word": "Bauchspeicheldrüse",
+  "pos": "noun",
+  "plural": "die Bauchspeicheldrüsen",
+  "meanings": [
+   "胰臟（器官名，本詞本身不是胰臟癌）"
+  ],
+  "level": "C1",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "die-lebermetastase",
+  "article": "die",
+  "word": "Lebermetastase",
+  "pos": "noun",
+  "plural": "die Lebermetastasen",
+  "meanings": [
+   "肝轉移病灶"
+  ],
+  "level": "C1",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "die-sinusitis",
+  "article": "die",
+  "word": "Sinusitis",
+  "pos": "noun",
+  "meanings": [
+   "鼻竇炎"
+  ],
+  "level": "C1",
+  "topic": "health",
+  "push": false
+ },
+ {
+  "id": "impressionistisch",
+  "word": "impressionistisch",
+  "pos": "adjective",
+  "meanings": [
+   "印象派的"
+  ],
+  "level": "C1",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "das-spaesschen",
+  "article": "das",
+  "word": "Späßchen",
+  "pos": "noun",
+  "plural": "die Späßchen",
+  "meanings": [
+   "小玩笑"
+  ],
+  "level": "C1",
+  "topic": "leisure",
+  "push": false
+ },
+ {
+  "id": "das-bildmodell",
+  "article": "das",
+  "word": "Bildmodell",
+  "pos": "noun",
+  "plural": "die Bildmodelle",
+  "meanings": [
+   "圖像模型"
+  ],
+  "level": "C1",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "der-gleichstrombeschleuniger",
+  "article": "der",
+  "word": "Gleichstrombeschleuniger",
+  "pos": "noun",
+  "plural": "die Gleichstrombeschleuniger",
+  "meanings": [
+   "直流加速器"
+  ],
+  "level": "C1",
+  "topic": "media",
+  "push": false
+ },
+ {
+  "id": "der-schwefel",
+  "article": "der",
+  "word": "Schwefel",
+  "pos": "noun",
+  "meanings": [
+   "硫"
+  ],
+  "level": "C1",
+  "topic": "nature",
+  "push": false
+ },
+ {
+  "id": "die-hochbegabtenfoerderung",
+  "article": "die",
+  "word": "Hochbegabtenförderung",
+  "pos": "noun",
+  "meanings": [
+   "資優培育"
+  ],
+  "level": "C1",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-sonderpaedagogik",
+  "article": "die",
+  "word": "Sonderpädagogik",
+  "pos": "noun",
+  "meanings": [
+   "特殊教育"
+  ],
+  "level": "C1",
+  "topic": "school",
+  "push": false
+ },
+ {
+  "id": "die-belebung",
+  "article": "die",
+  "word": "Belebung",
+  "pos": "noun",
+  "meanings": [
+   "活化；振興"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "caesar",
+  "word": "Cäsar",
+  "pos": "noun",
+  "meanings": [
+   "凱撒"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "demografisch",
+  "word": "demografisch",
+  "pos": "adjective",
+  "meanings": [
+   "人口結構方面的"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-eierkrise",
+  "article": "die",
+  "word": "Eierkrise",
+  "pos": "noun",
+  "meanings": [
+   "雞蛋短缺／雞蛋危機"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-einaescherung",
+  "article": "die",
+  "word": "Einäscherung",
+  "pos": "noun",
+  "plural": "die Einäscherungen",
+  "meanings": [
+   "火化"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-pufferzone",
+  "article": "die",
+  "word": "Pufferzone",
+  "pos": "noun",
+  "plural": "die Pufferzonen",
+  "meanings": [
+   "緩衝區"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-sonderkraefte",
+  "article": "die",
+  "word": "Sonderkräfte",
+  "pos": "noun",
+  "meanings": [
+   "特種部隊；（虛構作品）特殊能力"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "der-volksglaube",
+  "article": "der",
+  "word": "Volksglaube",
+  "pos": "noun",
+  "meanings": [
+   "民間信仰"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "die-wahlurne",
+  "article": "die",
+  "word": "Wahlurne",
+  "pos": "noun",
+  "plural": "die Wahlurnen",
+  "meanings": [
+   "投票箱"
+  ],
+  "level": "C1",
+  "topic": "society",
+  "push": false
+ },
+ {
+  "id": "das-bauarbeitsgeraet",
+  "article": "das",
+  "word": "Bauarbeitsgerät",
+  "pos": "noun",
+  "plural": "die Bauarbeitsgeräte",
+  "meanings": [
+   "施工工具／設備"
+  ],
+  "level": "C1",
+  "topic": "work",
+  "push": false
+ },
+ {
+  "id": "das-speditionsunternehmen",
+  "article": "das",
+  "word": "Speditionsunternehmen",
+  "pos": "noun",
+  "plural": "die Speditionsunternehmen",
+  "meanings": [
+   "貨運公司"
+  ],
+  "level": "C1",
+  "topic": "work",
+  "push": false
+ }
+]

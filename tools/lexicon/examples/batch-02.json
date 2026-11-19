@@ -1,0 +1,358 @@
+{
+  "die-landkarte": {
+    "de": "Auf der Landkarte suchen wir unser Hotel.",
+    "zh": "我們在地圖上找飯店的位置。"
+  },
+  "der-nordosten": {
+    "de": "Im Nordosten der Stadt liegt ein großer See.",
+    "zh": "城市的東北方有一座大湖。"
+  },
+  "die-rezeption": {
+    "de": "An der Rezeption bekomme ich den Zimmerschlüssel.",
+    "zh": "我在接待櫃檯拿到房間鑰匙。"
+  },
+  "der-rueckflug": {
+    "de": "Der Rückflug ist am Freitag um zehn Uhr.",
+    "zh": "回程班機是星期五早上十點。"
+  },
+  "die-strassenbahn": {
+    "de": "Mit der Straßenbahn sind wir in zehn Minuten am Markt.",
+    "zh": "我們搭路面電車，十分鐘就到市場。"
+  },
+  "das-fax": {
+    "de": "Bitte schicken Sie die Bestellung per Fax.",
+    "zh": "請把訂單傳真給我們。"
+  },
+  "der-nebenjob": {
+    "de": "Mit meinem Nebenjob im Café verdiene ich etwas Geld.",
+    "zh": "我在咖啡店兼職，賺一點錢。"
+  },
+  "die-putzfrau": {
+    "de": "Die Putzfrau reinigt morgens die Büroräume.",
+    "zh": "那位清潔女工早上打掃辦公室。"
+  },
+  "der-brunnen": {
+    "de": "Aus dem alten Brunnen holen wir Wasser für den Garten.",
+    "zh": "我們從那口老井打水澆花園。"
+  },
+  "das-buergeramt": {
+    "de": "Beim Bürgeramt beantrage ich einen neuen Personalausweis.",
+    "zh": "我到市民服務處申請新的身分證。"
+  },
+  "der-buergersteig": {
+    "de": "Stell dein Fahrrad bitte so ab, dass der Bürgersteig frei bleibt.",
+    "zh": "請把腳踏車停好，讓人行道保持暢通。"
+  },
+  "der-dom": {
+    "de": "Vom Bahnhof aus können wir den Dom schon sehen.",
+    "zh": "我們從火車站就看得到大教堂。"
+  },
+  "der-friedhof": {
+    "de": "Am Sonntag besucht sie das Grab ihres Vaters auf dem Friedhof.",
+    "zh": "星期天她去墓園看父親的墓。"
+  },
+  "der-stadtteil": {
+    "de": "In unserem Stadtteil gibt es seit Kurzem eine Bibliothek.",
+    "zh": "我們這個街區最近有了圖書館。"
+  },
+  "staedtisch": {
+    "de": "Das städtische Schwimmbad bietet günstige Kurse für Kinder an.",
+    "zh": "市立游泳池提供價格實惠的兒童課程。"
+  },
+  "die-umgebung": {
+    "de": "In der Umgebung unseres Hotels gibt es viele Wanderwege.",
+    "zh": "我們飯店周圍有很多步道。"
+  },
+  "die-enttaeuschung": {
+    "de": "Die Absage des Turniers war eine große Enttäuschung für das ganze Team.",
+    "zh": "比賽取消，讓整個團隊非常失望。"
+  },
+  "die-laune": {
+    "de": "Nach dem Spaziergang hat sie wieder gute Laune.",
+    "zh": "散步後，她的心情又好了起來。"
+  },
+  "wuetend": {
+    "de": "Er ist wütend, weil jemand sein Fahrrad beschädigt hat.",
+    "zh": "有人弄壞他的腳踏車，他很生氣。"
+  },
+  "die-beilage": {
+    "de": "Als Beilage zum Fisch nehme ich Kartoffeln.",
+    "zh": "魚的配菜我選馬鈴薯。"
+  },
+  "der-fleischer": {
+    "de": "Der Fleischer schneidet mir zwei dünne Scheiben Schinken ab.",
+    "zh": "肉販幫我切兩片薄薄的火腿。"
+  },
+  "das-gericht": {
+    "de": "Dieses Gericht mit Reis und Gemüse schmeckt auch ohne Fleisch.",
+    "zh": "這道米飯蔬菜料理即使不加肉也很好吃。"
+  },
+  "der-imbiss": {
+    "de": "Am Imbiss neben dem Bahnhof kaufen wir Pommes.",
+    "zh": "我們在車站旁的小吃店買薯條。"
+  },
+  "die-kohlensaeure": {
+    "de": "Ich mag Wasser ohne Kohlensäure lieber.",
+    "zh": "我比較喜歡沒有氣泡的水。"
+  },
+  "das-kaesefondue": {
+    "de": "Beim Käsefondue tauchen wir Brotstücke in den heißen Käse.",
+    "zh": "吃起司鍋時，我們把麵包塊沾進熱起司裡。"
+  },
+  "das-leitungswasser": {
+    "de": "In unserer Wohnung können wir das Leitungswasser trinken.",
+    "zh": "我們住處的自來水可以直接喝。"
+  },
+  "die-mahlzeit": {
+    "de": "Nach einer warmen Mahlzeit fühlt er sich wieder besser.",
+    "zh": "吃了一餐熱食後，他覺得好多了。"
+  },
+  "der-metzger": {
+    "de": "Beim Metzger bestelle ich Fleisch für sechs Personen.",
+    "zh": "我跟肉舖訂六人份的肉。"
+  },
+  "pflanzlich": {
+    "de": "Für diesen Kuchen verwende ich nur pflanzliche Zutaten.",
+    "zh": "這個蛋糕我只用植物性食材製作。"
+  },
+  "das-quellwasser": {
+    "de": "Das Quellwasser fließt hier direkt aus dem Felsen.",
+    "zh": "這裡的泉水直接從岩石流出。"
+  },
+  "das-raclette": {
+    "de": "Für das Raclette stellen wir Käse, Kartoffeln und Gemüse auf den Tisch.",
+    "zh": "我們把起司、馬鈴薯和蔬菜擺上桌，準備吃拉克萊特起司料理。"
+  },
+  "das-rind": {
+    "de": "Auf der Wiese steht ein Rind neben dem Zaun.",
+    "zh": "草地上有一頭牛站在圍欄旁。"
+  },
+  "der-sekt": {
+    "de": "Zur Feier öffnen wir eine Flasche Sekt.",
+    "zh": "我們開一瓶氣泡酒慶祝。"
+  },
+  "die-spezialitaet": {
+    "de": "Frag den Kellner, welche Spezialität er empfiehlt.",
+    "zh": "問問服務生推薦哪道特色菜。"
+  },
+  "die-theke": {
+    "de": "An der Theke bestellen wir zwei Getränke.",
+    "zh": "我們在吧台點兩杯飲料。"
+  },
+  "der-veganer": {
+    "de": "Als Veganer verzichtet mein Bruder auch auf Eier und Milch.",
+    "zh": "我哥哥吃全素，也不吃蛋、不喝牛奶。"
+  },
+  "die-zubereitung": {
+    "de": "Die Zubereitung der Suppe dauert etwa eine halbe Stunde.",
+    "zh": "這道湯大約需要半小時製作。"
+  },
+  "die-zutat": {
+    "de": "Für das Rezept fehlt mir noch eine Zutat.",
+    "zh": "這個食譜需要的食材，我還少一樣。"
+  },
+  "die-atmosphaere": {
+    "de": "Die Kerzen sorgen im Restaurant für eine gemütliche Atmosphäre.",
+    "zh": "蠟燭讓餐廳的氣氛很溫馨。"
+  },
+  "die-bedingung": {
+    "de": "Eine Bedingung für den Kurs ist, dass man schwimmen kann.",
+    "zh": "參加這門課的條件之一是會游泳。"
+  },
+  "der-bereich": {
+    "de": "Sie möchte später im Bereich Gesundheit arbeiten.",
+    "zh": "她以後想在健康領域工作。"
+  },
+  "die-beschreibung": {
+    "de": "Mit deiner Beschreibung habe ich das Haus sofort gefunden.",
+    "zh": "照著你的描述，我馬上就找到那棟房子。"
+  },
+  "die-bestaetigung": {
+    "de": "Nach der Buchung erhältst du eine Bestätigung per E-Mail.",
+    "zh": "訂房後，你會收到電子郵件確認信。"
+  },
+  "die-flaeche": {
+    "de": "Die Wohnung hat eine Fläche von siebzig Quadratmetern.",
+    "zh": "這間公寓的面積是七十平方公尺。"
+  },
+  "fluessig": {
+    "de": "Die Butter ist noch flüssig, weil sie gerade geschmolzen ist.",
+    "zh": "奶油剛融化，還是液態的。"
+  },
+  "das-gebiet": {
+    "de": "Auf dem Gebiet der Medizin gibt es ständig neue Entwicklungen.",
+    "zh": "醫學領域持續有新的發展。"
+  },
+  "gemischt": {
+    "de": "Zum Mittagessen bestelle ich einen gemischten Salat.",
+    "zh": "午餐我點了一份綜合沙拉。"
+  },
+  "indirekt": {
+    "de": "Von ihrer Kündigung habe ich nur indirekt über einen Kollegen erfahren.",
+    "zh": "她辭職的事，我只是透過同事間接聽說的。"
+  },
+  "der-inhalt": {
+    "de": "Den Inhalt des Pakets habe ich noch nicht gesehen.",
+    "zh": "我還沒看過包裹裡的東西。"
+  },
+  "die-kategorie": {
+    "de": "Unter welcher Kategorie finde ich die Bücher über Reisen?",
+    "zh": "旅遊書在哪個類別底下？"
+  },
+  "die-kleinigkeit": {
+    "de": "Wir streiten oft über Kleinigkeiten wie offene Schubladen.",
+    "zh": "我們常為抽屜沒關這類小事吵架。"
+  },
+  "das-material": {
+    "de": "Für das Regal brauchen wir stabiles Material.",
+    "zh": "做這個架子需要堅固的材料。"
+  },
+  "die-reaktion": {
+    "de": "Auf meine Nachricht kam bisher keine Reaktion.",
+    "zh": "到目前為止，我的訊息還沒得到回應。"
+  },
+  "der-schaden": {
+    "de": "Der Sturm hat am Dach großen Schaden verursacht.",
+    "zh": "暴風雨讓屋頂嚴重受損。"
+  },
+  "seltsam": {
+    "de": "Aus dem Keller kommt ein seltsames Geräusch.",
+    "zh": "地下室傳來奇怪的聲音。"
+  },
+  "der-sinn": {
+    "de": "Nach dem Gespräch verstehe ich den Sinn dieser Regel besser.",
+    "zh": "談過之後，我更了解這條規定的意義。"
+  },
+  "spontan": {
+    "de": "Wir haben spontan beschlossen, am Wochenende ans Meer zu fahren.",
+    "zh": "我們臨時決定週末去海邊。"
+  },
+  "die-stufe": {
+    "de": "Nach dem Grundkurs beginnt die nächste Stufe der Ausbildung.",
+    "zh": "基礎課程結束後，就開始下一階段的訓練。"
+  },
+  "die-tatsache": {
+    "de": "Die Tatsache, dass der Laden schließt, macht viele Nachbarn traurig.",
+    "zh": "這家店要收掉了，這件事讓許多鄰居很難過。"
+  },
+  "das-objekt": {
+    "de": "In diesem Satz ist der Name des Kindes das Objekt.",
+    "zh": "在這個句子裡，孩子的名字是受詞。"
+  },
+  "der-durchfall": {
+    "de": "Wegen Durchfall musste er die Reise verschieben.",
+    "zh": "他因為腹瀉，只好延後旅行。"
+  },
+  "empfindlich": {
+    "de": "Meine Haut ist empfindlich und verträgt diese Seife nicht.",
+    "zh": "我的皮膚很敏感，用這款肥皂會不舒服。"
+  },
+  "die-gliederschmerzen": {
+    "de": "Seit gestern habe ich Fieber und Gliederschmerzen.",
+    "zh": "我從昨天起就發燒、四肢酸痛。"
+  },
+  "der-impfstoff": {
+    "de": "Die Ärztin erklärt mir, welcher Impfstoff für die Reise empfohlen wird.",
+    "zh": "醫師向我說明，這趟旅行建議接種哪種疫苗。"
+  },
+  "der-krebs": {
+    "de": "Seit der Diagnose Krebs bekommt er Unterstützung von seiner Familie.",
+    "zh": "自從確診癌症後，他一直有家人的支持。"
+  },
+  "kraeftig": {
+    "de": "Mein Onkel ist kräftig und kann die schwere Kiste allein tragen.",
+    "zh": "我叔叔很強壯，能一個人搬那箱重物。"
+  },
+  "die-maske": {
+    "de": "Im Wartezimmer trägt sie eine Maske.",
+    "zh": "她在候診室戴著口罩。"
+  },
+  "der-pickel": {
+    "de": "Kurz vor dem Treffen habe ich einen Pickel auf der Nase bekommen.",
+    "zh": "見面前不久，我的鼻子長了一顆痘痘。"
+  },
+  "die-untersuchung": {
+    "de": "Nach der Untersuchung bespricht der Arzt die Ergebnisse mit mir.",
+    "zh": "檢查後，醫師和我討論結果。"
+  },
+  "der-aschenbecher": {
+    "de": "Der Aschenbecher auf dem Balkon muss noch geleert werden.",
+    "zh": "陽台上的菸灰缸還沒清。"
+  },
+  "der-ventilator": {
+    "de": "Bei der Hitze stelle ich einen Ventilator neben den Schreibtisch.",
+    "zh": "天氣太熱，我在書桌旁放了一台電風扇。"
+  },
+  "das-feuerwerk": {
+    "de": "Vom Balkon aus schauen wir uns das Feuerwerk an.",
+    "zh": "我們從陽台看煙火。"
+  },
+  "das-kunstwerk": {
+    "de": "Dieses Kunstwerk besteht aus alten Fahrradteilen.",
+    "zh": "這件藝術作品是用舊腳踏車零件做的。"
+  },
+  "die-therme": {
+    "de": "Nach der Wanderung entspannen wir uns in der Therme.",
+    "zh": "健行後，我們到溫泉浴場放鬆。"
+  },
+  "die-veranstaltung": {
+    "de": "Für die Veranstaltung am Samstag sind noch Plätze frei.",
+    "zh": "星期六的活動還有名額。"
+  },
+  "der-vergnuegungspark": {
+    "de": "Im Vergnügungspark möchte mein Sohn zuerst mit der Achterbahn fahren.",
+    "zh": "到了遊樂園，我兒子想先坐雲霄飛車。"
+  },
+  "die-erzaehlung": {
+    "de": "Ihre Erzählung über die lange Zugreise hat mich zum Lachen gebracht.",
+    "zh": "她講的長途火車旅行故事讓我笑了出來。"
+  },
+  "die-mailbox": {
+    "de": "Hinterlass mir bitte eine Nachricht auf der Mailbox.",
+    "zh": "請在語音信箱留言給我。"
+  },
+  "das-sachbuch": {
+    "de": "Für mein Referat lese ich ein Sachbuch über Vulkane.",
+    "zh": "為了做報告，我在讀一本介紹火山的知識類書籍。"
+  },
+  "der-dauerregen": {
+    "de": "Wegen des Dauerregens sind die Wege im Wald sehr matschig.",
+    "zh": "因為持續下雨，森林步道變得很泥濘。"
+  },
+  "das-erdbeben": {
+    "de": "Nach dem Erdbeben haben viele Menschen die Nacht draußen verbracht.",
+    "zh": "地震後，很多人在戶外過夜。"
+  },
+  "die-hitzewelle": {
+    "de": "Während der Hitzewelle bleibt die Bibliothek abends länger geöffnet.",
+    "zh": "熱浪期間，圖書館晚間延長開放。"
+  },
+  "das-kalb": {
+    "de": "Das Kalb bleibt auf der Weide dicht bei seiner Mutter.",
+    "zh": "小牛在牧場上緊緊跟著媽媽。"
+  },
+  "die-kirschbluete": {
+    "de": "Zur Kirschblüte fahren wir jedes Jahr nach Bonn.",
+    "zh": "每年櫻花季我們都會去波昂。"
+  },
+  "der-kaefer": {
+    "de": "Ein kleiner Käfer krabbelt über das Blatt.",
+    "zh": "一隻小甲蟲爬過葉子。"
+  },
+  "die-muecke": {
+    "de": "Eine Mücke hat mich nachts am Arm gestochen.",
+    "zh": "夜裡有隻蚊子叮了我的手臂。"
+  },
+  "der-papagei": {
+    "de": "Der Papagei sitzt auf einem Ast und schreit laut.",
+    "zh": "鸚鵡站在樹枝上大聲尖叫。"
+  },
+  "der-rabe": {
+    "de": "Ein Rabe landet auf dem Dach der Scheune.",
+    "zh": "一隻渡鴉降落在穀倉屋頂上。"
+  },
+  "der-karamell": {
+    "de": "Für die Soße lasse ich Zucker langsam im Topf zu Karamell schmelzen.",
+    "zh": "做醬汁時，我先把糖放在鍋裡慢慢熬成焦糖。"
+  }
+}

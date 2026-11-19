@@ -1,0 +1,358 @@
+{
+  "die-kleidung": {
+    "de": "Im Winter brauche ich warme Kleidung.",
+    "zh": "冬天我需要保暖的衣服。"
+  },
+  "die-nummer": {
+    "de": "Welche Nummer steht auf deinem Ticket?",
+    "zh": "你的票上是幾號？"
+  },
+  "das-abendessen": {
+    "de": "Zum Abendessen gibt es heute Suppe.",
+    "zh": "今天晚餐喝湯。"
+  },
+  "das-eis": {
+    "de": "Im Winter liegt Eis auf dem See.",
+    "zh": "冬天湖面上結了冰。"
+  },
+  "der-rotwein": {
+    "de": "Zum Fleisch trinkt Paul ein Glas Rotwein.",
+    "zh": "保羅吃肉時喝一杯紅酒。"
+  },
+  "fertig": {
+    "de": "Die Suppe ist fertig, wir können essen.",
+    "zh": "湯好了，我們可以吃飯了。"
+  },
+  "stark": {
+    "de": "Mein Bruder ist stark und trägt den schweren Tisch.",
+    "zh": "我哥哥很強壯，正在搬那張很重的桌子。"
+  },
+  "wichtig": {
+    "de": "Deine Adresse ist für die Anmeldung wichtig.",
+    "zh": "你的地址對報名很重要。"
+  },
+  "der-mund": {
+    "de": "Der Zahnarzt sagt: „Bitte machen Sie den Mund auf.“",
+    "zh": "牙醫說：「請把嘴巴張開。」"
+  },
+  "das-klavier": {
+    "de": "Am Sonntag spielt Lea Klavier.",
+    "zh": "星期天蕾雅彈鋼琴。"
+  },
+  "das-foto": {
+    "de": "Auf dem Foto steht meine Mutter am Meer.",
+    "zh": "照片裡，我媽媽站在海邊。"
+  },
+  "der-chinese": {
+    "de": "Mein Nachbar ist Chinese und kommt aus Shanghai.",
+    "zh": "我的鄰居是中國人，來自上海。"
+  },
+  "die-chinesin": {
+    "de": "Die Chinesin neben mir heißt Lin.",
+    "zh": "坐我旁邊的那位中國女生叫林。"
+  },
+  "die-geschwister": {
+    "de": "Meine Geschwister wohnen noch bei unseren Eltern.",
+    "zh": "我的兄弟姊妹還住在爸媽家。"
+  },
+  "die-grossmutter": {
+    "de": "Meine Großmutter backt heute einen Kuchen.",
+    "zh": "我祖母今天烤蛋糕。"
+  },
+  "der-japaner": {
+    "de": "Der Japaner in unserer Gruppe kommt aus Osaka.",
+    "zh": "我們這組的那個日本男生來自大阪。"
+  },
+  "die-japanerin": {
+    "de": "Die Japanerin arbeitet hier im Café.",
+    "zh": "那位日本女生在這間咖啡店工作。"
+  },
+  "der-junge": {
+    "de": "Der Junge sucht seinen Ball im Garten.",
+    "zh": "男孩在花園裡找他的球。"
+  },
+  "die-gruppe": {
+    "de": "Unsere Gruppe trifft sich vor der Schule.",
+    "zh": "我們這組在學校前面集合。"
+  },
+  "polnisch": {
+    "de": "Meine Freundin hört gern polnische Musik.",
+    "zh": "我朋友喜歡聽波蘭音樂。"
+  },
+  "die-schuelerin": {
+    "de": "Die Schülerin fährt jeden Morgen mit dem Bus zur Schule.",
+    "zh": "那位女學生每天早上搭公車上學。"
+  },
+  "die-baeckerei": {
+    "de": "In der Bäckerei kaufe ich zwei Brötchen.",
+    "zh": "我在麵包店買兩個小麵包。"
+  },
+  "der-nachmittag": {
+    "de": "Am Nachmittag gehen wir in den Park.",
+    "zh": "下午我們去公園。"
+  },
+  "der-abflug": {
+    "de": "Der Abflug ist um neun Uhr.",
+    "zh": "飛機九點起飛。"
+  },
+  "die-ankunft": {
+    "de": "Nach der Ankunft rufe ich dich an.",
+    "zh": "抵達後我打電話給你。"
+  },
+  "der-rucksack": {
+    "de": "In meinem Rucksack sind Wasser und Brot.",
+    "zh": "我的背包裡有水和麵包。"
+  },
+  "das-amt": {
+    "de": "Ich habe morgen einen Termin beim Amt.",
+    "zh": "我明天預約了到公家機關辦事。"
+  },
+  "die-hausfrau": {
+    "de": "Meine Tante ist Hausfrau und kümmert sich um die Kinder.",
+    "zh": "我阿姨是家庭主婦，負責照顧孩子。"
+  },
+  "die-ruhe": {
+    "de": "Bitte sei leise, ich brauche Ruhe.",
+    "zh": "請小聲一點，我需要安靜。"
+  },
+  "bloed": {
+    "de": "Es war blöd von mir, den Schlüssel im Auto zu lassen.",
+    "zh": "我把鑰匙留在車裡，真是笨。"
+  },
+  "komisch": {
+    "de": "Die Milch riecht komisch.",
+    "zh": "牛奶聞起來怪怪的。"
+  },
+  "schlimm": {
+    "de": "Der Unfall war schlimm, zwei Menschen sind im Krankenhaus.",
+    "zh": "車禍很嚴重，有兩個人住院了。"
+  },
+  "der-becher": {
+    "de": "Für das Picknick nehme ich vier Becher mit.",
+    "zh": "我要帶四個杯子去野餐。"
+  },
+  "die-kanne": {
+    "de": "Auf dem Tisch steht eine Kanne Tee.",
+    "zh": "桌上有一壺茶。"
+  },
+  "die-nuss": {
+    "de": "Im Müsli sind Nüsse und Obst.",
+    "zh": "麥片裡有堅果和水果。"
+  },
+  "der-pilz": {
+    "de": "Für die Soße schneide ich die Pilze klein.",
+    "zh": "我要做醬汁，把菇切小塊。"
+  },
+  "das-ruehrei": {
+    "de": "Zum Frühstück mache ich Rührei mit Tomaten.",
+    "zh": "早餐我做番茄炒蛋。"
+  },
+  "die-salami": {
+    "de": "Auf meiner Pizza liegt Salami.",
+    "zh": "我的披薩上有薩拉米香腸。"
+  },
+  "der-schafskaese": {
+    "de": "In den Salat kommt etwas Schafskäse.",
+    "zh": "沙拉裡加一點羊乳起司。"
+  },
+  "das-spiegelei": {
+    "de": "Zum Spiegelei esse ich eine Scheibe Brot.",
+    "zh": "我吃荷包蛋時配一片麵包。"
+  },
+  "der-toast": {
+    "de": "Der Toast ist noch warm.",
+    "zh": "吐司還是熱的。"
+  },
+  "der-vegetarier": {
+    "de": "Mein Bruder ist Vegetarier und isst kein Fleisch.",
+    "zh": "我哥哥是素食者，不吃肉。"
+  },
+  "das-ding": {
+    "de": "Was ist das für ein Ding unter dem Sofa?",
+    "zh": "沙發底下那個是什麼東西？"
+  },
+  "direkt": {
+    "de": "Dieser Bus fährt direkt zum Bahnhof.",
+    "zh": "這班公車直達火車站。"
+  },
+  "gefaehrlich": {
+    "de": "Bei Schnee ist diese Straße gefährlich.",
+    "zh": "下雪時，這條路很危險。"
+  },
+  "klar": {
+    "de": "Das Wasser im See ist klar.",
+    "zh": "湖水很清澈。"
+  },
+  "das-stueck": {
+    "de": "Möchtest du noch ein Stück Kuchen?",
+    "zh": "你還要一塊蛋糕嗎？"
+  },
+  "trocken": {
+    "de": "Nach zwei Stunden in der Sonne ist das Handtuch trocken.",
+    "zh": "毛巾在太陽下曬了兩小時，已經乾了。"
+  },
+  "verschieden": {
+    "de": "Die beiden Schwestern haben verschiedene Hobbys.",
+    "zh": "這兩姊妹的興趣不同。"
+  },
+  "der-vorschlag": {
+    "de": "Dein Vorschlag für den Ausflug gefällt mir.",
+    "zh": "我喜歡你對這次出遊的建議。"
+  },
+  "die-erkaeltung": {
+    "de": "Wegen einer Erkältung bleibe ich heute zu Hause.",
+    "zh": "我感冒了，今天待在家。"
+  },
+  "die-grippe": {
+    "de": "Meine Kollegin hat Grippe und bleibt im Bett.",
+    "zh": "我同事得了流感，臥床休息。"
+  },
+  "bequem": {
+    "de": "Auf diesem Sofa sitze ich sehr bequem.",
+    "zh": "坐在這張沙發上很舒服。"
+  },
+  "die-hausarbeit": {
+    "de": "Wir teilen uns die Hausarbeit.",
+    "zh": "我們分擔家事。"
+  },
+  "die-kerze": {
+    "de": "Auf dem Geburtstagstisch brennen fünf Kerzen.",
+    "zh": "生日餐桌上點著五根蠟燭。"
+  },
+  "die-klimaanlage": {
+    "de": "Im Sommer läuft im Büro jeden Tag die Klimaanlage.",
+    "zh": "夏天辦公室每天都開冷氣。"
+  },
+  "das-licht": {
+    "de": "Durch das Fenster kommt viel Licht ins Zimmer.",
+    "zh": "許多光線從窗戶照進房間。"
+  },
+  "die-mikrowelle": {
+    "de": "Ich wärme die Suppe in der Mikrowelle auf.",
+    "zh": "我用微波爐把湯加熱。"
+  },
+  "die-muelltonne": {
+    "de": "Die Mülltonne steht hinter dem Haus.",
+    "zh": "垃圾桶在房子後面。"
+  },
+  "die-ausstellung": {
+    "de": "Im Museum gibt es eine Ausstellung mit alten Fotos.",
+    "zh": "博物館有一個老照片展。"
+  },
+  "die-oper": {
+    "de": "Heute Abend sehen wir eine Oper von Mozart.",
+    "zh": "今晚我們看一齣莫札特的歌劇。"
+  },
+  "der-torwart": {
+    "de": "Der Torwart hält den Ball fest.",
+    "zh": "守門員把球牢牢接住。"
+  },
+  "die-tv-sendung": {
+    "de": "Diese TV-Sendung beginnt um acht Uhr.",
+    "zh": "這個電視節目八點開始。"
+  },
+  "windig": {
+    "de": "Am Meer ist es heute sehr windig.",
+    "zh": "今天海邊風很大。"
+  },
+  "dumm": {
+    "de": "Das war eine dumme Idee.",
+    "zh": "那是個笨主意。"
+  },
+  "faul": {
+    "de": "Heute bin ich faul und bleibe auf dem Sofa.",
+    "zh": "今天我很懶，窩在沙發上。"
+  },
+  "schlank": {
+    "de": "Die Hose passt meinem Bruder, er ist sehr schlank.",
+    "zh": "這條褲子我哥哥穿得下，他很瘦。"
+  },
+  "der-schwager": {
+    "de": "Meine Schwester und mein Schwager kommen zum Essen.",
+    "zh": "我姊姊和姊夫要來吃飯。"
+  },
+  "die-schwaegerin": {
+    "de": "Mein Bruder und meine Schwägerin wohnen in Bonn.",
+    "zh": "我哥哥和嫂嫂住在波昂。"
+  },
+  "die-grundschule": {
+    "de": "Unsere Tochter geht seit August in die Grundschule.",
+    "zh": "我們女兒從八月起開始上小學。"
+  },
+  "das-gymnasium": {
+    "de": "Nach der Grundschule möchte Tim aufs Gymnasium gehen.",
+    "zh": "提姆小學畢業後想讀文理中學。"
+  },
+  "die-klassenfahrt": {
+    "de": "Für die Klassenfahrt packe ich warme Kleidung ein.",
+    "zh": "我要參加班級旅行，把保暖衣物放進行李。"
+  },
+  "die-mathematik": {
+    "de": "In Mathematik üben wir heute das Rechnen mit Geld.",
+    "zh": "今天數學課練習金錢計算。"
+  },
+  "der-online-unterricht": {
+    "de": "Für den Online-Unterricht brauche ich einen Computer.",
+    "zh": "上線上課需要電腦。"
+  },
+  "der-schulausflug": {
+    "de": "Beim Schulausflug besuchen wir einen Bauernhof.",
+    "zh": "學校出遊時，我們參觀一座農場。"
+  },
+  "das-schuljahr": {
+    "de": "Das neue Schuljahr beginnt nächste Woche.",
+    "zh": "新學年下週開始。"
+  },
+  "die-unterrichtsstunde": {
+    "de": "Nach der zweiten Unterrichtsstunde haben wir Pause.",
+    "zh": "上完第二堂課後，我們有休息時間。"
+  },
+  "die-uebung": {
+    "de": "Diese Übung mache ich noch einmal.",
+    "zh": "這個練習我再做一次。"
+  },
+  "das-bargeld": {
+    "de": "Im Bus kann man nur mit Bargeld bezahlen.",
+    "zh": "公車上只能付現金。"
+  },
+  "guenstig": {
+    "de": "Auf dem Markt sind die Äpfel heute günstig.",
+    "zh": "今天市場的蘋果很便宜。"
+  },
+  "das-sonderangebot": {
+    "de": "Der Kaffee ist diese Woche im Sonderangebot.",
+    "zh": "咖啡這週有特價。"
+  },
+  "der-dieb": {
+    "de": "Die Polizei hat den Dieb am Bahnhof gefasst.",
+    "zh": "警察在火車站抓到了那個小偷。"
+  },
+  "die-diebin": {
+    "de": "Die Diebin hat mein Handy aus meiner Tasche genommen.",
+    "zh": "那個女小偷從我的包包裡拿走了手機。"
+  },
+  "der-heiligabend": {
+    "de": "An Heiligabend essen wir bei meinen Eltern.",
+    "zh": "平安夜我們在我爸媽家吃飯。"
+  },
+  "das-mitglied": {
+    "de": "Seit Mai bin ich Mitglied im Sportverein.",
+    "zh": "從五月起，我就是運動社團的會員。"
+  },
+  "das-quadrat": {
+    "de": "Zeichne bitte ein Quadrat auf das Papier.",
+    "zh": "請在紙上畫一個正方形。"
+  },
+  "die-abreise": {
+    "de": "Vor der Abreise kontrolliere ich meinen Pass.",
+    "zh": "啟程前，我檢查護照。"
+  },
+  "der-hinflug": {
+    "de": "Unser Hinflug nach Wien ist am Montag.",
+    "zh": "我們飛往維也納的去程航班在星期一。"
+  },
+  "die-kreuzung": {
+    "de": "An der nächsten Kreuzung biegen wir links ab.",
+    "zh": "我們在下一個十字路口左轉。"
+  }
+}

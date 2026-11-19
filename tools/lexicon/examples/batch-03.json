@@ -1,0 +1,358 @@
+{
+  "die-schnecke": {
+    "de": "Nach dem Regen kriecht eine Schnecke über den Gartenweg.",
+    "zh": "下雨後，一隻蝸牛爬過花園小徑。"
+  },
+  "der-sonnenaufgang": {
+    "de": "Um den Sonnenaufgang zu sehen, sind wir heute besonders früh aufgestanden.",
+    "zh": "為了看日出，我們今天特別早起。"
+  },
+  "steil": {
+    "de": "Der Weg zum Schloss ist steil, deshalb machen wir oft Pause.",
+    "zh": "通往城堡的路很陡，所以我們經常停下來休息。"
+  },
+  "das-unwetter": {
+    "de": "Wegen des Unwetters fällt das Konzert im Park aus.",
+    "zh": "因為天氣惡劣，公園裡的音樂會取消了。"
+  },
+  "wild": {
+    "de": "In diesem Wald leben noch wilde Pferde.",
+    "zh": "這座森林裡還有野馬。"
+  },
+  "das-wildtier": {
+    "de": "Bitte füttert keine Wildtiere, auch wenn sie zutraulich wirken.",
+    "zh": "請不要餵野生動物，即使牠們看起來很親人。"
+  },
+  "der-angehoerige": {
+    "de": "Als Angehöriger darf er seine Mutter auch außerhalb der Besuchszeiten sehen.",
+    "zh": "身為家屬，他在探病時間之外也能探望母親。"
+  },
+  "begabt": {
+    "de": "Sie ist musikalisch begabt und spielt schon mit fünf Jahren Klavier.",
+    "zh": "她有音樂天分，五歲就會彈鋼琴。"
+  },
+  "erwachsen": {
+    "de": "Meine Kinder sind inzwischen erwachsen und wohnen nicht mehr hier.",
+    "zh": "我的孩子現在都成年了，已經不住這裡。"
+  },
+  "der-erwachsene": {
+    "de": "Für Erwachsene kostet der Eintritt zehn Euro.",
+    "zh": "成人入場費是十歐元。"
+  },
+  "der-gastgeber": {
+    "de": "Unser Gastgeber hat für alle Gäste gekocht.",
+    "zh": "主人為所有客人煮了飯。"
+  },
+  "lebhaft": {
+    "de": "Der kleine Junge ist sehr lebhaft und möchte ständig draußen spielen.",
+    "zh": "那個小男孩很活潑，一直想去外面玩。"
+  },
+  "talentiert": {
+    "de": "Die junge Sängerin ist talentiert, muss aber noch viel üben.",
+    "zh": "那位年輕歌手很有才華，但還需要多練習。"
+  },
+  "das-abitur": {
+    "de": "Nach dem Abitur möchte sie ein Jahr im Ausland verbringen.",
+    "zh": "高中畢業後，她想去國外待一年。"
+  },
+  "das-experiment": {
+    "de": "Bei diesem Experiment beobachten wir, wie sich Zucker in Wasser löst.",
+    "zh": "在這個實驗中，我們觀察糖如何溶於水。"
+  },
+  "das-gedicht": {
+    "de": "Für den Geburtstag seiner Mutter hat er ein Gedicht geschrieben.",
+    "zh": "他為媽媽的生日寫了一首詩。"
+  },
+  "der-vortrag": {
+    "de": "Morgen halte ich einen Vortrag über erneuerbare Energien.",
+    "zh": "明天我要做一場關於再生能源的報告。"
+  },
+  "das-wissen": {
+    "de": "Im Praktikum kann ich mein Wissen aus dem Kurs anwenden.",
+    "zh": "實習時，我可以運用課堂上學到的知識。"
+  },
+  "das-zertifikat": {
+    "de": "Nach bestandener Prüfung bekommt man ein Zertifikat.",
+    "zh": "考試通過後，就能拿到證書。"
+  },
+  "das-einkommen": {
+    "de": "Mit ihrem Einkommen kann sie die Miete kaum bezahlen.",
+    "zh": "靠她的收入，幾乎付不起房租。"
+  },
+  "das-outfit": {
+    "de": "Für das Bewerbungsgespräch wählt sie ein schlichtes Outfit.",
+    "zh": "她為求職面試選了一套簡單的服裝。"
+  },
+  "pleite": {
+    "de": "Nach dem Urlaub bin ich fast pleite und muss sparen.",
+    "zh": "度假後，我幾乎沒錢了，得省著花。"
+  },
+  "die-wolle": {
+    "de": "Der Pullover ist aus Wolle und hält schön warm.",
+    "zh": "這件毛衣是羊毛做的，穿起來很保暖。"
+  },
+  "die-zahlung": {
+    "de": "Die Zahlung ist gestern auf unserem Konto eingegangen.",
+    "zh": "款項昨天已匯入我們的帳戶。"
+  },
+  "der-advent": {
+    "de": "Im Advent backen wir oft zusammen Plätzchen.",
+    "zh": "將臨期時，我們常一起烤小餅乾。"
+  },
+  "der-adventskalender": {
+    "de": "Jeden Morgen öffnet das Kind ein Türchen am Adventskalender.",
+    "zh": "孩子每天早上都打開倒數聖誕月曆上的一扇小門。"
+  },
+  "der-adventskranz": {
+    "de": "Auf unserem Adventskranz stehen vier Kerzen.",
+    "zh": "我們的將臨圈上有四根蠟燭。"
+  },
+  "die-beerdigung": {
+    "de": "Zur Beerdigung ihres Onkels ist die ganze Familie gekommen.",
+    "zh": "全家人都來參加了她叔叔的葬禮。"
+  },
+  "der-diebstahl": {
+    "de": "Nach dem Diebstahl meiner Tasche habe ich sofort die Polizei angerufen.",
+    "zh": "包包遭竊後，我立刻報警。"
+  },
+  "der-einbruch": {
+    "de": "Beim Einbruch in die Bäckerei wurde die Kasse gestohlen.",
+    "zh": "麵包店遭闖入行竊，收銀機被偷走了。"
+  },
+  "heilig": {
+    "de": "Dieser Berg ist für die Menschen der Region heilig.",
+    "zh": "這座山對當地人來說是神聖的。"
+  },
+  "die-heimat": {
+    "de": "Auch nach vielen Jahren im Ausland vermisst er seine Heimat.",
+    "zh": "即使在國外住了很多年，他還是想念故鄉。"
+  },
+  "der-kaiser": {
+    "de": "Im Museum sehen wir ein altes Porträt des Kaisers.",
+    "zh": "我們在博物館裡看到一幅皇帝的古老肖像。"
+  },
+  "der-konflikt": {
+    "de": "Ein ruhiges Gespräch hat geholfen, den Konflikt zu lösen.",
+    "zh": "一場平和的談話幫助化解了衝突。"
+  },
+  "die-macht": {
+    "de": "Nach der Wahl hat eine neue Partei die Macht übernommen.",
+    "zh": "選舉後，一個新政黨掌握了權力。"
+  },
+  "die-nachbarschaftshilfe": {
+    "de": "Durch die Nachbarschaftshilfe bekommt meine Oma Unterstützung beim Einkaufen.",
+    "zh": "透過鄰里互助，我奶奶買東西時有人幫忙。"
+  },
+  "die-regierung": {
+    "de": "Die Regierung plant mehr Geld für den öffentlichen Verkehr ein.",
+    "zh": "政府規劃投入更多經費在大眾運輸上。"
+  },
+  "traditionell": {
+    "de": "Bei diesem Fest tragen viele Menschen traditionelle Kleidung.",
+    "zh": "在這個節慶上，很多人穿傳統服飾。"
+  },
+  "ewig": {
+    "de": "Sie versprechen sich ewige Liebe.",
+    "zh": "他們向彼此許下永恆的愛。"
+  },
+  "die-saison": {
+    "de": "In dieser Saison sind die Hotels am See fast alle ausgebucht.",
+    "zh": "這個旺季，湖邊的飯店幾乎都客滿了。"
+  },
+  "vorletzt": {
+    "de": "Ich steige an der vorletzten Haltestelle aus.",
+    "zh": "我在倒數第二站下車。"
+  },
+  "uebernaechst": {
+    "de": "Übernächste Woche beginnt mein neuer Kurs.",
+    "zh": "我的新課程下下週開始。"
+  },
+  "die-fluggesellschaft": {
+    "de": "Die Fluggesellschaft hat unseren Flug wegen des Sturms gestrichen.",
+    "zh": "航空公司因暴風雨取消了我們的航班。"
+  },
+  "die-halbpension": {
+    "de": "Wir buchen ein Zimmer mit Halbpension, damit Frühstück und Abendessen dabei sind.",
+    "zh": "我們訂含早晚餐的半膳住宿。"
+  },
+  "der-hochgeschwindigkeitszug": {
+    "de": "Mit dem Hochgeschwindigkeitszug erreichen wir die Hauptstadt in zwei Stunden.",
+    "zh": "搭高速列車，我們兩小時就能到首都。"
+  },
+  "die-strecke": {
+    "de": "Die Strecke vom Hotel zum Strand gehen wir zu Fuß.",
+    "zh": "飯店到海灘這段路，我們用走的。"
+  },
+  "der-anbieter": {
+    "de": "Bevor ich einen Vertrag unterschreibe, vergleiche ich mehrere Anbieter.",
+    "zh": "簽約前，我會比較幾家供應商。"
+  },
+  "die-arbeitsstelle": {
+    "de": "Sie sucht eine Arbeitsstelle in der Nähe ihrer Wohnung.",
+    "zh": "她在找住家附近的工作職位。"
+  },
+  "die-arbeitsweise": {
+    "de": "Durch seine genaue Arbeitsweise macht er nur selten Fehler.",
+    "zh": "他的工作方式很仔細，很少出錯。"
+  },
+  "der-beamte": {
+    "de": "Der Beamte prüft meinen Antrag und erklärt mir den nächsten Schritt.",
+    "zh": "那位公務員審核我的申請，並向我說明下一步。"
+  },
+  "die-besprechung": {
+    "de": "In der Besprechung verteilen wir die Aufgaben für nächste Woche.",
+    "zh": "我們在會議中分配下週的工作。"
+  },
+  "das-bewerbungsgespraech": {
+    "de": "Für das Bewerbungsgespräch habe ich mich über die Firma informiert.",
+    "zh": "為了求職面試，我已經查過這間公司的資料。"
+  },
+  "die-direktorin": {
+    "de": "Die Direktorin begrüßt die neuen Kinder auf dem Schulhof.",
+    "zh": "女校長在校園裡歡迎新生。"
+  },
+  "der-geschaeftspartner": {
+    "de": "Unser Geschäftspartner aus Wien besucht nächste Woche die Firma.",
+    "zh": "我們在維也納的商業夥伴下週要來公司。"
+  },
+  "das-handwerk": {
+    "de": "Meine Schwester lernt ein Handwerk: Sie macht eine Ausbildung zur Tischlerin.",
+    "zh": "我妹妹在學一門手藝，她正在接受木工職業訓練。"
+  },
+  "die-industrie": {
+    "de": "In dieser Region bietet die Industrie viele Arbeitsplätze.",
+    "zh": "這個地區的工業提供很多工作機會。"
+  },
+  "der-lohn": {
+    "de": "Für die zusätzliche Arbeit bekommt er einen höheren Lohn.",
+    "zh": "他做了額外的工作，因此得到較高的工資。"
+  },
+  "die-messe": {
+    "de": "Auf der Messe stellen viele Firmen ihre neuen Produkte vor.",
+    "zh": "許多公司在展覽會上介紹新產品。"
+  },
+  "professionell": {
+    "de": "Die Mitarbeiterin hat sehr professionell auf die Beschwerde reagiert.",
+    "zh": "那位員工很專業地處理了客訴。"
+  },
+  "das-unternehmen": {
+    "de": "Das Unternehmen stellt dieses Jahr zehn neue Mitarbeiter ein.",
+    "zh": "這間企業今年要聘用十名新員工。"
+  },
+  "das-antiquariat": {
+    "de": "Im Antiquariat habe ich eine alte Ausgabe meines Lieblingsromans gefunden.",
+    "zh": "我在舊書店找到我最愛那本小說的舊版本。"
+  },
+  "das-bauwerk": {
+    "de": "Das historische Bauwerk wird restauriert, damit es auch künftig besucht werden kann.",
+    "zh": "這棟歷史建築正在修復，讓未來也能開放參觀。"
+  },
+  "die-kathedrale": {
+    "de": "Die bunten Fenster der Kathedrale leuchten in der Nachmittagssonne.",
+    "zh": "大教堂的彩色玻璃窗在午後陽光下閃耀。"
+  },
+  "unterirdisch": {
+    "de": "Ein unterirdischer Gang verbindet die beiden Gebäude.",
+    "zh": "一條地下通道連接這兩棟建築。"
+  },
+  "gruselig": {
+    "de": "Im Dunkeln wirkt der verlassene Bahnhof ziemlich gruselig.",
+    "zh": "黑暗中，那座廢棄車站顯得相當陰森。"
+  },
+  "die-hemmung": {
+    "de": "Anfangs hatte sie Hemmungen, vor der Gruppe zu sprechen.",
+    "zh": "一開始，她不太敢在大家面前說話。"
+  },
+  "die-leere": {
+    "de": "Nach dem Auszug der Kinder spürte er eine ungewohnte Leere.",
+    "zh": "孩子搬出去後，他感受到一股不習慣的空虛。"
+  },
+  "unbewusst": {
+    "de": "Während sie nachdenkt, dreht sie unbewusst an ihrem Ring.",
+    "zh": "她思考時，會無意識地轉動戒指。"
+  },
+  "die-backstube": {
+    "de": "Schon um vier Uhr morgens brennt in der Backstube Licht.",
+    "zh": "凌晨四點，烘焙工作室就已經亮著燈。"
+  },
+  "das-kaennchen": {
+    "de": "Zum Frühstück bringt der Kellner mir ein Kännchen Kaffee.",
+    "zh": "早餐時，服務生端來一小壺咖啡。"
+  },
+  "der-anteil": {
+    "de": "Der Anteil der Menschen, die mit dem Rad zur Arbeit fahren, ist gestiegen.",
+    "zh": "騎腳踏車上班的人所占比例提高了。"
+  },
+  "ausserirdisch": {
+    "de": "In dem Film landet ein außerirdisches Raumschiff mitten in der Stadt.",
+    "zh": "電影裡，一艘外星太空船降落在城市正中央。"
+  },
+  "bedingt": {
+    "de": "Die Bank hat uns nur eine bedingte Zusage gegeben: Zuerst muss der Arbeitsvertrag vorliegen.",
+    "zh": "銀行只給了我們有條件的承諾：要先拿到工作合約才行。"
+  },
+  "das-bewusstsein": {
+    "de": "Nach dem Sturz vom Fahrrad verlor er kurz das Bewusstsein.",
+    "zh": "從腳踏車上摔下來後，他短暫失去了意識。"
+  },
+  "die-einfuehrung": {
+    "de": "Die Einführung der neuen Software hat unseren Arbeitsalltag verändert.",
+    "zh": "導入新軟體改變了我們的日常工作。"
+  },
+  "das-exemplar": {
+    "de": "Von diesem Buch ist nur noch ein Exemplar in der Bibliothek verfügbar.",
+    "zh": "圖書館裡這本書只剩一本可借。"
+  },
+  "das-fazit": {
+    "de": "Mein Fazit nach dem Kurs ist, dass regelmäßiges Üben am meisten hilft.",
+    "zh": "上完課後，我的結論是規律練習最有幫助。"
+  },
+  "der-hoehepunkt": {
+    "de": "Der Höhepunkt des Festes war ein Konzert auf dem Marktplatz.",
+    "zh": "節慶的重頭戲是市集廣場上的音樂會。"
+  },
+  "ironisch": {
+    "de": "Sein ironischer Kommentar über das schlechte Wetter brachte uns zum Lachen.",
+    "zh": "他對壞天氣的諷刺評論讓我們笑了出來。"
+  },
+  "machbar": {
+    "de": "Mit zwei zusätzlichen Helfern wäre der Umzug an einem Tag machbar.",
+    "zh": "如果多兩個人幫忙，一天搬完家是可行的。"
+  },
+  "die-prozedur": {
+    "de": "Die Prozedur am Schalter dauerte länger, als ich erwartet hatte.",
+    "zh": "櫃檯的辦理程序比我預期的久。"
+  },
+  "der-schnitt": {
+    "de": "Der Schnitt am Finger ist nicht tief, blutet aber stark.",
+    "zh": "手指上的切口不深，但流了很多血。"
+  },
+  "der-sonderfall": {
+    "de": "Für diesen Sonderfall müssen wir eine eigene Lösung finden.",
+    "zh": "針對這個特殊情況，我們得另外找解決方法。"
+  },
+  "die-umstellung": {
+    "de": "Die Umstellung auf die neue Arbeitszeit fällt mir noch schwer.",
+    "zh": "我還不太適應新的工作時間。"
+  },
+  "veraltet": {
+    "de": "Die Informationen auf dieser Webseite sind veraltet und sollten überprüft werden.",
+    "zh": "這個網頁的資訊過時了，應該重新確認。"
+  },
+  "vielfaeltig": {
+    "de": "Auf dem Markt gibt es ein vielfältiges Angebot an regionalen Produkten.",
+    "zh": "市場上有各式各樣的在地產品。"
+  },
+  "die-entzuendung": {
+    "de": "Die Ärztin hat eine Entzündung im Knie festgestellt.",
+    "zh": "醫師發現膝蓋有發炎的情況。"
+  },
+  "das-glied": {
+    "de": "Nach dem langen Sitzen im Zug musste sie ihre müden Glieder strecken.",
+    "zh": "在火車上坐了很久後，她得伸展疲累的四肢。"
+  },
+  "die-kohlenhydrate": {
+    "de": "Kartoffeln enthalten viele Kohlenhydrate und machen lange satt.",
+    "zh": "馬鈴薯含有許多碳水化合物，能讓飽足感維持很久。"
+  }
+}
