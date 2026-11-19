@@ -21,7 +21,8 @@
 ## 重要慣例與陷阱
 
 - **顏色一律用色彩變數，深色模式自動切換**（2026-11-11 起，取代舊的 `.dark .bg-*` 覆寫做法）。完整規則見下方「顏色規則」，`tests/design-tokens.test.mjs` 會擋下違規。
-- 動畫一律寫成 `global.css` 的共用 class（`fx-*`），並且受 `prefers-reduced-motion` 規則保護。
+- **動態規則（紙本練習簿）**：動畫一律寫成 `global.css` 共用 class（`fx-*`）。時間只用 `--motion-100/150/200/300`，進場用 `--ease-out`、離場用 `--ease-in`；純顏色轉場可用 `ease`，不超過 150ms。只動畫 `transform`／`opacity`，不回彈、不從透明淡入整個容器（動畫沒跑時仍須可見）；答對裝飾偽元素蓋章例外。SVG 格位畫線與進度圓環保留 stroke-dashoffset；骨架循環 1.4s、tooltip 等待 400ms 是有註解的時間例外。`tests/motion-tokens.test.mjs` 檢查時間、曲線、inline transition 與 keyframes。全站 `prefers-reduced-motion` 用 `!important` 縮短元素、偽元素及 inline transition／animation 的 duration 和 delay。
+- 換題 `.fx-question` 預設從右 8px 進場；往回由 `.is-back` 設 `--page-enter-x: -8px`（可繼承）。第 2～8 課由 `LessonApp` 的 next／prev 設方向，第 1 課由 `move(delta)`／評分設方向；保持每題的 React key，才會重新播放。
 - 答題回饋請使用共用模組 `src/lib/answerFeedback.js`，不要在各元件重寫。
 - Git：2026-10-24 已將累積的未提交工作依主題拆成 6 個 commit（見下方進度紀錄），目前工作區乾淨。之後請維持「一個主題一個 commit」，push／deploy 前先和使用者確認。
 
@@ -84,7 +85,7 @@
 答案按鈕需要加 `data-answer-option`，讓 Enter 在按鈕有焦點時仍能前往下一題。
 
 CSS class（`src/styles/global.css` 檔尾）：
-- `fx-correct`（放大加綠光）、`fx-wrong`（左右搖晃）、`fx-enter`（回饋卡淡入上滑）、`fx-question`（換題淡入，搭配 `key={current.id}`）
+- `fx-correct`（偽元素綠框蓋章 200ms）、`fx-wrong`（4px 短搖頭 200ms）、`fx-enter`（回饋卡上滑 8px，不淡入）、`fx-question`（依方向水平滑入 8px，搭配每題 key）
 - `kbd-hint`（鍵盤提示小標，觸控裝置自動隱藏）
 - `sound-toggle`、`lesson-skeleton`（載入骨架）
 
@@ -108,6 +109,16 @@ CSS class（`src/styles/global.css` 檔尾）：
 建議順序：A1 冠詞顏色 → E 結算與今日複習 → A 圖解 → B → C/D → F/G。
 
 ## 進度紀錄
+
+### 2026-11-19 全站紙本練習簿動態（Codex 實作、Claude Code 審查，已部署）
+
+- 限定 `codex-motion` worktree／`codex/motion`：新增 4 個時間 token 和進出場曲線，移除 pop／glow／回彈；答對改偽元素綠框蓋章，答錯 4px 短搖頭，選項／評分按鈕壓至 0.98，填空落筆 150ms。回饋卡／toast／重點卡 200ms，底部選單／結算彈窗 300ms，仍只有位移、不從透明開始。
+- 第 2～8 課 `LessonApp` 於 begin／next 重設前進、prev 設 `.is-back`，透過 CSS 變數繼承給各題 `.fx-question`；第 1 課 `move(delta)` 接上一個／下一個、左右鍵，評分前進，字卡也加入水平進場。每題既有 key 保留。
+- 第 1 課 3D 翻面 300ms、拖曳放開 200ms（離場評分等待也對齊 200ms）；第 2、3 課共用 `FlipCard` 拖曳中無 transition，放開 200ms 回位，背面內容 4px 上滑 150ms。`CaseDiagram` 目標 4px 上滑、畫線 300ms、連線 200ms，逐項延遲用 100ms token 倍數。
+- 進度條／圓環統一 300ms（含首頁 inline），首頁課程卡／LangLoop hover 改上浮 2px／150ms 並移除陰影轉場。主題選單開 150ms ease-out／關 100ms ease-in，用 `inert` 管理關閉時的焦點與可及性，避免 visibility 立即隱藏退場。tooltip 100ms，保留 400ms 等待。骨架閃光改為偽元素 transform，保留 1.4s 循環。確認 src 無引用後刪除 `src/lib/flipStyles.mjs`（歷史紀錄提及處保留）。
+- 驗證：`npm test` 145 個全過（新增 `motion-tokens.test.mjs` 5 個檢查）；`npm run build` 成功，10 頁；`git diff --check` 通過。reduced-motion 全站 `!important` 涵蓋所有新動畫、偽元素及 inline transition，並補 duration／delay 的靜態檢查。
+- Claude Code 審查：讀過全部 diff；本機手機寬度實測第 8 課換題（前進 `fx-page` 8px、按上一題變 `.is-back` −8px）、答對蓋章框、答錯搖頭、回饋卡 200ms，第 2 課字卡翻面背面排版與放開回位，主題選單開關的 `inert`／曲線，主控台無錯誤。之後 commit、`main` 快轉、部署 Hosting。
+- 還沒做什麼：未在 iPhone 實機試拖曳手感；深色與 reduced-motion 只靠 CSS 規則與測試，沒有逐頁看。
 
 ### 2026-11-19 主字庫缺例句補寫（Codex 撰寫、獨立校對，已部署）
 
@@ -628,6 +639,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [ ] 9 筆無法辨識的筆記詞條（Putzhilfer、Frumgung、Sonnenunteraufgang 等）需使用者對照原始筆記確認
 
 ### 介面（使用者目前最在意）
+- [ ] `codex/motion` 紙本練習簿動態已實作並通過測試／建置；待瀏覽器介面檢查（本輪沙盒禁止本機 server），確認後才部署。
 - [x] 每輪 10 題的結算（2026-10-24 完成）
 - [x] 六課統一三個入口（2026-10-24 完成）
 - [x] 第 2～6 課在手機上的篩選列和設定區改成可收合（2026-10-27，實際只需改第 3、5 課）
