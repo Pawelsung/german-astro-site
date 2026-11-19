@@ -46,7 +46,7 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
   <body>
     <slot />
     <div class="theme-switcher" data-theme-switcher aria-label="介面模式">
-      <div class="theme-options" data-theme-options>
+      <div class="theme-options" data-theme-options inert>
         <button type="button" data-theme-choice="system">系統</button>
         <button type="button" data-theme-choice="light">淺色</button>
         <button type="button" data-theme-choice="dark">深色</button>
@@ -62,6 +62,12 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
         const toggle = document.querySelector('[data-theme-toggle]');
         const buttons = Array.from(document.querySelectorAll('[data-theme-choice]'));
 
+        function setThemeMenu(open) {
+          switcher?.setAttribute('data-open', String(open));
+          toggle?.setAttribute('aria-expanded', String(open));
+          document.querySelector('[data-theme-options]')?.toggleAttribute('inert', !open);
+        }
+
         function applyTheme(mode) {
           const systemDark = media.matches;
           const active = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
@@ -76,14 +82,12 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
           buttons.forEach((button) => {
             button.setAttribute('aria-pressed', String(button.dataset.themeChoice === mode));
           });
-          switcher?.setAttribute('data-open', 'false');
-          toggle?.setAttribute('aria-expanded', 'false');
+          setThemeMenu(false);
         }
 
         toggle?.addEventListener('click', () => {
           const isOpen = switcher?.getAttribute('data-open') === 'true';
-          switcher?.setAttribute('data-open', String(!isOpen));
-          toggle.setAttribute('aria-expanded', String(!isOpen));
+          setThemeMenu(!isOpen);
         });
 
         buttons.forEach((button) => {
@@ -92,15 +96,13 @@ const firebaseAppIdForClient = import.meta.env.PUBLIC_FIREBASE_APP_ID || 'german
 
         document.addEventListener('keydown', (event) => {
           if (event.key !== 'Escape' || switcher?.getAttribute('data-open') !== 'true') return;
-          switcher.setAttribute('data-open', 'false');
-          toggle?.setAttribute('aria-expanded', 'false');
+          setThemeMenu(false);
           toggle?.focus();
         });
 
         document.addEventListener('click', (event) => {
           if (!switcher || switcher.contains(event.target)) return;
-          switcher.setAttribute('data-open', 'false');
-          toggle?.setAttribute('aria-expanded', 'false');
+          setThemeMenu(false);
         });
 
         media.addEventListener('change', () => {

@@ -49,7 +49,7 @@ function LessonCard({ lesson, stats, ready }) {
   return (
     <a
       href={lesson.href}
-      className={`group relative flex flex-col rounded-3xl border border-line bg-surface p-5 shadow-sm transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-lg ${theme.ring}`}
+      className={`group relative flex flex-col rounded-3xl border border-line bg-surface p-5 shadow-sm transition-transform duration-150 ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-lg ${theme.ring}`}
     >
       <div className="flex items-start justify-between gap-3">
         <span className={`grid h-11 w-11 place-items-center rounded-2xl text-lg font-black ${theme.badge}`}>{lesson.order}</span>
@@ -72,7 +72,7 @@ function LessonCard({ lesson, stats, ready }) {
           </span>
         </div>
         <div className="h-2 overflow-hidden rounded-full bg-surface-muted">
-          <div className={`h-full w-full origin-left ${theme.bar}`} style={{ transform: `scaleX(${ready ? percent / 100 : 0})`, transition: 'transform 700ms ease-out' }} />
+          <div className={`h-full w-full origin-left ${theme.bar}`} style={{ transform: `scaleX(${ready ? percent / 100 : 0})`, transition: 'transform var(--motion-300) var(--ease-out)' }} />
         </div>
       </div>
     </a>

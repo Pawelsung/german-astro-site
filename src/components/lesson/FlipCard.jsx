@@ -29,7 +29,7 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
 
   return <div className="lc fx-question">
     <div ref={swipe.ref} onClickCapture={swipe.onClickCapture} role="button" tabIndex={0} aria-pressed={revealed} aria-label={revealed ? '翻回正面' : '翻面看答案'}
-      className={`calm-card lc-flip${revealed ? ' is-revealed' : ''}`}
+      className={`calm-card lc-flip${revealed ? ' is-revealed' : ''}${dragX ? ' is-dragging' : ''}`}
       style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined }}
       onClick={event => { if (!event.target.closest('button, a, summary, details')) flip(); }}
       onKeyDown={event => { if (event.key === 'Enter' && event.target === event.currentTarget) { event.preventDefault(); flip(); } }}>
@@ -37,7 +37,7 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
         <p className="lc-tags">{tag && <span>{tag}</span>}{level && <span>{level}</span>}</p>
         {actions && <div className="lc-actions">{actions}</div>}
       </div>
-      {revealed ? back : front}
+      {revealed ? <div className="lc-flip-back">{back}</div> : front}
       {!revealed && <p className="calm-hint">點一下翻面</p>}
     </div>
     {revealed && footer ? footer : <div className="lc-nav">

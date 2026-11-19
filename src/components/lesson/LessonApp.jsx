@@ -20,6 +20,7 @@ const KEEP_ORDER = () => 0.9999;
 export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, reviewItems, records = [], panels = [], featuredPanels = [], isSequential, unit = () => '題', renderQuestion }) {
   const scopeKey = `gw-lesson-filters-${lessonKey}`;
   const [selection, setSelection] = useState(() => cleanSelection(readJSON(scopeKey, null), filters));
+  const [isBack, setIsBack] = useState(false);
   const [phase, setPhase] = useState('start');
   const [run, setRun] = useState(null);
   const [activity, setActivity] = useState(null);
@@ -38,6 +39,7 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
   const results = run ? Object.values(run.results) : [];
 
   function begin(review) {
+    setIsBack(false);
     const pool = review ? reviewItems() : itemsFor(selection);
     const taken = takeRound(review ? [] : queue.current, pool, !review && isSequential?.(selection) ? { random: KEEP_ORDER } : {});
     if (!review) queue.current = taken.queue;
@@ -67,6 +69,7 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
   }
 
   function advance() {
+    setIsBack(false);
     if (run.pos + 1 < run.items.length) { setRun({ ...run, pos: run.pos + 1 }); return; }
     if (!results.length) { setPhase('start'); return; }
     setActivity(getActivity());
@@ -118,7 +121,7 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
         </div>
       </section>}
 
-      {phase === 'session' && <div className="lf-session">
+      {phase === 'session' && <div className={`lf-session${isBack ? ' is-back' : ''}`}>
         <div className="calm-progress" aria-hidden="true"><span style={{ transform: `scaleX(${(run.pos + 1) / run.items.length})` }}/></div>
         {renderQuestion({
           key: `${run.number}-${run.pos}`,
@@ -128,7 +131,7 @@ export default function LessonApp({ lessonKey, title, blurb, filters, itemsFor, 
           isLast: run.pos + 1 >= run.items.length,
           report,
           next: advance,
-          prev: run.pos > 0 ? () => setRun({ ...run, pos: run.pos - 1 }) : undefined
+          prev: run.pos > 0 ? () => { setIsBack(true); setRun({ ...run, pos: run.pos - 1 }); } : undefined
         })}
       </div>}
 

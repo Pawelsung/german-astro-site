@@ -46,7 +46,7 @@ function posOptions(word) {
 }
 
 // Learn-mode card: tap or Space flips in 3D; swipe right = 記住了, left = 還不熟.
-function FlashCard({ word, flipped, onFlip, onRate, speak }) {
+function FlashCard({ word, flipped, onFlip, onRate, speak, isBack }) {
   const [dx, setDx] = useState(0);
   const [leaving, setLeaving] = useState(0);
   // Touch-safe swipe (iOS ignores touch-action: pan-y); taps flip through the normal click event.
@@ -56,7 +56,7 @@ function FlashCard({ word, flipped, onFlip, onRate, speak }) {
     onSwipe: (direction) => {
       const dir = direction === 'right' ? 1 : -1;
       setLeaving(dir);
-      setTimeout(() => { setLeaving(0); setDx(0); onRate(dir > 0); }, 180);
+      setTimeout(() => { setLeaving(0); setDx(0); onRate(dir > 0); }, 200);
     }
   });
   function tap(e) {
@@ -66,9 +66,9 @@ function FlashCard({ word, flipped, onFlip, onRate, speak }) {
   }
   const offset = leaving ? leaving * 600 : dx;
   const hint = dx > 30 ? 'known' : dx < -30 ? 'unknown' : '';
-  return <div className="flip-wrap">
+  return <div className={`flip-wrap fx-question${isBack ? ' is-back' : ''}`}>
     <div
-      className={`flip-card${dx || leaving ? ' is-dragging' : ''}`}
+      className={`flip-card${dx && !leaving ? ' is-dragging' : ''}`}
       style={{ transform: `translateX(${offset}px) rotate(${offset / 18}deg)`, opacity: leaving ? 0 : 1 }}
       ref={swipe.ref} onClickCapture={swipe.onClickCapture} onClick={tap}
       onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); onFlip(); } }}
@@ -138,6 +138,7 @@ export default function VocabularyTrainer() {
   const menu = useRef(null);
   const submitting = useRef(false);
   // Freeze current question after answering so a resolved review item stays visible.
+  const [isBack, setIsBack] = useState(false);
   const [answeredWord, setAnsweredWord] = useState(null);
   const chapters = useMemo(() => chaptersFor(words), [words]);
   const filtered = useMemo(() => filterVocabulary(words, { ...ui, query }), [words, ui.chapter, ui.filter, ui.mode, query]);
@@ -145,6 +146,7 @@ export default function VocabularyTrainer() {
   const selectedPreset = presets.find(p => p.id === ui.preset);
 
   function change(patch) {
+    setIsBack(false);
     setUI(prev => ({ ...prev, ...patch, index: 0 }));
     setFeedback(null); setAnsweredWord(null); setFlipped(false); setAnswer(''); setHint(false); submitting.current = false;
   }
@@ -236,6 +238,7 @@ export default function VocabularyTrainer() {
     setSession(s => ({ done: s.done + 1, correct: s.correct + Number(correct) }));
   }
   function move(delta) {
+    setIsBack(delta < 0);
     // In a review deck the current word may have been removed on a correct answer.
     const stillPresent = filtered.some(w => wordKey(w) === wordKey(current || {}));
     setUI(prev => ({ ...prev, index: (prev.index + (answeredWord && !stillPresent && delta > 0 ? 0 : delta) + filtered.length) % Math.max(filtered.length, 1) }));
@@ -245,6 +248,7 @@ export default function VocabularyTrainer() {
     setFlipped(v => !v); if (!flipped) updateWord({ seen: (current.seen || 0) + 1 });
   }
   function rateCard(known) {
+    setIsBack(false);
     if (!current) return;
     answerCue(known, `${current.article ? `${current.article} ` : ''}${current.word}（${current.meaning}）`);
     updateWord({ errors: known ? 0 : (current.errors || 0) + 1, attempts: (current.attempts || 0) + 1, correct: (current.correct || 0) + Number(known) });
@@ -326,7 +330,7 @@ export default function VocabularyTrainer() {
       {message && <div className="speech-toast is-dismissible" role="status">{message}<button aria-label="關閉訊息" onClick={() => setMessage('')}>×</button></div>}
       {loading ? <p role="status" className="vocab-empty">正在載入字庫…</p> : !current ? <div className="vocab-empty"><Check size={28}/><h3>{ui.filter === 'review' ? '這個範圍沒有待複習單字' : '沒有符合條件的單字'}</h3><p>可以切換課次、模式或清除篩選繼續學習。</p><button className={button} onClick={() => { setQuery(''); change({ filter:'all', chapter:'all', mode:'learn' }); }}>查看全部單字</button></div> : ui.mode === 'list' ? <div className="vocab-dictionary">{filtered.map(w => <article key={wordKey(w)}><div><h3 lang="de">{w.article && <span className={`g-${genderKey(w.article)}`}>{w.article} </span>}{w.word}</h3><p>{w.meaning}</p><small>{POS_LABELS[w.pos] || w.pos} · {w.category}</small>{w.example && <p lang="de">{w.example} <SpeakButton small label="播放例句" onSpeak={() => speak(w.example)}/></p>}{w.exampleZh && <p>{w.exampleZh}</p>}</div><SpeakButton label={`播放 ${w.word}`} onSpeak={() => speak(w.word)}/></article>)}</div> : <>
         <div className="vocab-card-meta"><span>{chapters.find(c => c.key === ui.chapter)?.label || '全部課次'} · {Math.min(ui.index + 1, Math.max(filtered.length,1))} / {Math.max(filtered.length,answeredWord ? 1 : 0)}</span><button className={button} aria-label={current.starred ? '取消收藏' : '收藏單字'} aria-pressed={!!current.starred} onClick={() => { updateWord({starred:!current.starred}); if(answeredWord) setAnsweredWord(w => ({...w,starred:!w.starred})); }}><Star size={17} fill={current.starred ? 'currentColor' : 'none'}/></button></div>
-        {ui.mode === 'learn' ? <FlashCard key={wordKey(current)} word={current} flipped={flipped} onFlip={toggleFlip} onRate={rateCard} speak={speak}/> : <div className="vocab-card fx-question" key={`${wordKey(current)}-${ui.mode}`}>
+        {ui.mode === 'learn' ? <FlashCard key={wordKey(current)} word={current} flipped={flipped} onFlip={toggleFlip} onRate={rateCard} speak={speak} isBack={isBack}/> : <div className={`vocab-card fx-question${isBack ? ' is-back' : ''}`} key={`${wordKey(current)}-${ui.mode}`}>
           <span className="vocab-pos">{ui.mode === 'pos' && !feedback ? '判斷詞性' : POS_LABELS[current.pos] || current.pos}</span>
           {ui.mode === 'produce' ? <><h3>{current.meaning}</h3><p className="vocab-task">{current.article ? '用德文寫出來，名詞要連冠詞（例如 der Tisch）' : '用德文寫出這個字'}</p></> : ui.mode === 'cloze' ? (() => { const cloze = findClozeTarget(current); return <><p className="vocab-cloze" lang="de">{cloze.before}<span className={`vocab-blank${feedback ? ' is-filled' : ''}`}>{feedback ? cloze.answer : '\u00a0'.repeat(Math.max(6, cloze.answer.length))}</span>{cloze.after}</p><p className="vocab-task">提示：<b lang="de">{current.article ? `${current.article} ` : ''}{current.word}</b>（{current.meaning}）{cloze.inflected ? '・要寫成句中的正確形式' : ''}</p>{current.exampleZh && <p className="vocab-task">{current.exampleZh}</p>}</>; })() : ui.mode === 'spell' ? <><h3>{current.meaning}</h3><button className={button} onClick={() => speak(current.word)}><Volume2 size={19}/>播放單字</button></> : <><h3 lang="de">{ui.mode === 'learn' && current.article && <span className="vocab-article">{current.article} </span>}{current.word}</h3><SpeakButton label="播放單字發音" onSpeak={() => speak(current.word)}/>{ui.mode !== 'learn' && <p>{current.meaning}</p>}</>}
           {ui.mode === 'article' && <div className="vocab-answers">{answerOptions.map((a, i) => <button key={a} data-answer-option data-g={a} className={`g-btn ${optionState(a)}`} disabled={!!feedback} onClick={() => submit(a)}>{!feedback && <span className="kbd-hint" aria-hidden="true">{i + 1}</span>}{a}</button>)}</div>}

@@ -93,7 +93,7 @@ export default function LangLoopCard() {
       onClick={handleOpen}
       disabled={opening}
       aria-label={opening ? 'LangLoop 跟讀練習，開啟中' : '開啟 LangLoop 跟讀練習'}
-      className="langloop-card group relative flex flex-col rounded-3xl p-5 text-left shadow-sm transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-lg disabled:cursor-wait"
+      className="langloop-card group relative flex flex-col rounded-3xl p-5 text-left shadow-sm transition-transform duration-150 ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-wait"
     >
       <div className="flex items-start justify-between gap-3">
         <span className="langloop-card-icon grid h-11 w-11 place-items-center rounded-2xl">

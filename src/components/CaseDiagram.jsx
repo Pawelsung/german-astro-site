@@ -95,7 +95,7 @@ export default function CaseDiagram({ exercise }) {
           const target = model.targets[Number(chunk.role.slice(1))];
           const caseKey = CASE_KEYS[target.caseName] || 'other';
           return (
-            <span key={chunk.key} ref={ref} className={`cd-chunk cd-target case-${caseKey}`} style={{ animationDelay: `${Number(chunk.role.slice(1)) * 120}ms` }}>
+            <span key={chunk.key} ref={ref} className={`cd-chunk cd-target case-${caseKey}`} style={{ animationDelay: `calc(var(--motion-100) * ${Number(chunk.role.slice(1))})` }}>
               <span className="cd-text">{chunk.words.join(' ')}</span>
               <span className="cd-tag">
                 {target.gender && <i className={`g-dot g-${target.gender}`} title={GENDER_LABELS[target.gender]} />}
