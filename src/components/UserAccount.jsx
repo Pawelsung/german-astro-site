@@ -9,11 +9,13 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { getFirebaseServices, hasFirebaseConfig } from '../lib/firebase';
-import { collectLocalProgress, mergeLessonValue, mergeRemoteProgress, MERGED_LESSON_KEYS, PROGRESS_KEYS, readJSON, writeJSON } from '../lib/progressStorage';
+import { collectLocalProgress, mergeRemoteActivity, mergeLessonValue, mergeRemoteProgress, MERGED_LESSON_KEYS, PROGRESS_KEYS, readJSON, writeJSON } from '../lib/progressStorage';
 import { changedKeys, hashProgress, mergeReviewValues, readSyncState, shouldDownload, stableStringify, writeSyncState } from '../lib/cloudSync.mjs';
 
+import { ACTIVITY_KEY } from '../lib/dailyActivity.mjs';
+
 const provider = new GoogleAuthProvider();
-const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7', 'lesson8', 'review'];
+const PROGRESS_DOCS = ['lesson1Words', 'lesson1Stats', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'lesson7', 'lesson8', 'review', 'activity'];
 const REVIEW_SYNC_DELAY = 5000;
 const LESSON_SYNC_DELAY = 700;
 const PULL_GAP = 30000;
@@ -120,7 +122,7 @@ async function saveRemoteProgress(db, uid, progress, keys) {
           value: progress[key] ?? null,
           updatedAt: progress.updatedAt
         },
-        { merge: true }
+        { merge: key !== 'activity' }
       )
     )
   );
@@ -164,8 +166,10 @@ export default function UserAccount({ compact = false }) {
     try {
       const progress = collectLocalProgress();
       const state = readSyncState(currentUser.uid);
-      const keys = changedKeys(progress, PROGRESS_DOCS, state.hashes);
-      const toMerge = keys.filter((key) => key === 'review' || MERGED_LESSON_KEYS.includes(key));
+      let keys = changedKeys(progress, PROGRESS_DOCS, state.hashes);
+      // Activity could not be read with a device id; never overwrite the cloud copy with nothing.
+      if (progress.activity === null) keys = keys.filter((key) => key !== 'activity');
+      const toMerge = keys.filter((key) => key === 'activity' || key === 'review' || MERGED_LESSON_KEYS.includes(key));
       if (toMerge.length) {
         const snaps = await Promise.all(toMerge.map((key) => getDoc(doc(services.db, 'users', currentUser.uid, 'learning', key))));
         // Read local again after the wait, in case another answer was saved meanwhile.
@@ -173,6 +177,12 @@ export default function UserAccount({ compact = false }) {
         let changed = false;
         toMerge.forEach((key, index) => {
           const remote = snaps[index].exists() ? snaps[index].data()?.value : null;
+          if (key === 'activity') {
+            progress.activity = mergeRemoteActivity(remote);
+            // If the cloud already contains the result, no activity write is needed.
+            if (stableStringify(progress.activity) === stableStringify(remote)) keys = keys.filter(key => key !== 'activity');
+            return;
+          }
           const current = readJSON(PROGRESS_KEYS[key], null);
           progress[key] = key === 'review' ? mergeReviewValues(current, remote) : mergeLessonValue(key, current, remote);
           if (stableStringify(progress[key]) !== stableStringify(current)) {
@@ -249,7 +259,7 @@ export default function UserAccount({ compact = false }) {
 
     const handleProgressUpdated = (event) => {
       if (syncingRef.current) return;
-      if (event.detail?.key && !Object.values(PROGRESS_KEYS).includes(event.detail.key)) return;
+      if (event.detail?.key && event.detail.key !== ACTIVITY_KEY && !Object.values(PROGRESS_KEYS).includes(event.detail.key)) return;
       window.clearTimeout(syncTimerRef.current);
       syncTimerRef.current = window.setTimeout(() => {
         syncTimerRef.current = null;

@@ -1,3 +1,4 @@
+import { ACTIVITY_KEY, readActivity, getDeviceId, activityToCloud, activityToLocal, mergeActivityValues } from './dailyActivity.mjs';
 import { REVIEW_KEY, decodeReview, encodeReview, mergeReview } from './reviewStore.mjs';
 
 export const PROGRESS_KEYS = {
@@ -267,6 +268,28 @@ export function mergeLessonValue(key: string, local: any, remote: any) {
   return LESSON_MERGERS[key](local, remote);
 }
 
+// Activity has a distinct local shape; never put its key in PROGRESS_KEYS.
+// Without a stored device id (storage full or blocked) activity stays local: null means "do not upload".
+function localActivity() {
+  try {
+    return activityToCloud(readActivity(), getDeviceId());
+  } catch {
+    return null;
+  }
+}
+
+export function mergeRemoteActivity(remote: any) {
+  let deviceId;
+  try {
+    deviceId = getDeviceId();
+  } catch {
+    return remote ?? null;
+  }
+  const merged = mergeActivityValues(activityToCloud(readActivity(), deviceId), remote);
+  writeJSON(ACTIVITY_KEY, activityToLocal(merged, deviceId));
+  return merged;
+}
+
 export function collectLocalProgress() {
   return {
     lesson1Words: readJSON(PROGRESS_KEYS.lesson1Words, []),
@@ -278,6 +301,7 @@ export function collectLocalProgress() {
     lesson6: readJSON(PROGRESS_KEYS.lesson6, {}),
     lesson7: readJSON(PROGRESS_KEYS.lesson7, {}),
     lesson8: readJSON(PROGRESS_KEYS.lesson8, {}),
+    activity: localActivity(),
     review: readJSON(PROGRESS_KEYS.review, null),
     updatedAt: new Date().toISOString()
   };
@@ -286,6 +310,7 @@ export function collectLocalProgress() {
 export function mergeRemoteProgress(remoteProgress: any = {}) {
   const local = collectLocalProgress();
   const merged = {
+    activity: mergeRemoteActivity(remoteProgress.activity),
     lesson1Words: mergeLesson1Words(local.lesson1Words, remoteProgress.lesson1Words),
     lesson1Stats: local.lesson1Stats || remoteProgress.lesson1Stats || null,
     lesson2: mergeLesson2(local.lesson2, remoteProgress.lesson2),

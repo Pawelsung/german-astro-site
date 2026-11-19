@@ -20,6 +20,8 @@
 
 ## 重要慣例與陷阱
 
+- 每日活動：本機 `gw-daily-activity-v1` 的 `days`＝本機、`others[deviceId]`＝其他裝置；雲端 `learning/activity.value.devices[deviceId]` 保存各裝置，使用 `gw-device-id-v1` 識別。同裝置同日各欄取 max，顯示跨裝置加總，每台保留最近 60 個日曆日；不可將雲端形狀直接寫進本機 key。
+
 - **顏色一律用色彩變數，深色模式自動切換**（2026-11-11 起，取代舊的 `.dark .bg-*` 覆寫做法）。完整規則見下方「顏色規則」，`tests/design-tokens.test.mjs` 會擋下違規。
 - **動態規則（紙本練習簿）**：動畫一律寫成 `global.css` 共用 class（`fx-*`）。時間只用 `--motion-100/150/200/300`，進場用 `--ease-out`、離場用 `--ease-in`；純顏色轉場可用 `ease`，不超過 150ms。只動畫 `transform`／`opacity`，不回彈、不從透明淡入整個容器（動畫沒跑時仍須可見）；答對裝飾偽元素蓋章例外。SVG 格位畫線與進度圓環保留 stroke-dashoffset；骨架循環 1.4s、tooltip 等待 400ms 是有註解的時間例外。`tests/motion-tokens.test.mjs` 檢查時間、曲線、inline transition 與 keyframes。全站 `prefers-reduced-motion` 用 `!important` 縮短元素、偽元素及 inline transition／animation 的 duration 和 delay。
 - 換題 `.fx-question` 預設從右 8px 進場；往回由 `.is-back` 設 `--page-enter-x: -8px`（可繼承）。第 2～8 課由 `LessonApp` 的 next／prev 設方向，第 1 課由 `move(delta)`／評分設方向；保持每題的 React key，才會重新播放。
@@ -109,6 +111,17 @@ CSS class（`src/styles/global.css` 檔尾）：
 建議順序：A1 冠詞顏色 → E 結算與今日複習 → A 圖解 → B → C/D → F/G。
 
 ## 進度紀錄
+
+### 2026-11-19 每日活動跨裝置同步（Codex 實作、Claude Code 審查，已部署）
+
+- 限定 `codex-activity-sync` worktree／`codex/activity-sync`。修改 `dailyActivity.mjs`、`progressStorage.ts`、`UserAccount.jsx`；新增／擴充 `activity.test.mjs`、`activity-sync.test.mjs`。舊 days 直接歸這台裝置，recordAnswer 保留 others；顯示今日／近 7 天／連續天數時跨裝置加總。純函式合併同裝置同日各欄取 max，回補自己的雲端紀錄，忽略壞資料並修剪最近 60 天、移除空裝置。
+- collectLocalProgress.activity 一律回傳雲端 devices；上傳前讀 activity 合併、回寫本機 days／others 並通知首頁，再依雲端形狀比較內容／雜湊，沒變不寫。下載也走同一轉換。activity 事件使用既有 700ms 延遲。activity 文件整份替換合併結果，避免 Firestore 深層 merge 留下過期裝置；其他文件原流程不變。
+- 額度：相較原流程，每輪最多多讀 activity 1 次、多寫 activity 1 次；沿用既有 progressMeta，不新增另一份 metadata 或即時監聽。上傳活動沒變時不額外讀寫；完整下載多讀 1 次。
+- Claude Code 審查後修正兩點：(1) 裝置 id 存不進去（儲存空間滿或被擋）時，`collectLocalProgress().activity` 回傳 null，該輪不上傳活動，不再讓整個同步失敗，也不會用空值蓋掉雲端；(2) 合併允許到「今天＋2 天」的日期，時區較快的裝置（例如在台灣、另一台在德國）記下的「明天」不會被丟掉。各補一個測試。
+- 驗證：`npm test` 153 個全過；`npm run build` 成功（10 頁）。本機瀏覽器用測試資料確認：本機 days＋其他裝置 others 加總後連續天數為 3、作答後 days 增加且 others 保留、主控台沒有錯誤。測試涵蓋舊格式、5+6＝11、跨裝置連續天數、冪等／交換律、自己雲端回補、60 天邊界、整台過期、壞資料、轉換／雜湊／事件及同步後繼續作答。
+- 歷史補充：2026-11-09 的「連續天數仍分開計算」及舊「目前只存在本機」描述已由本次實作改善，歷史原文保留。
+- 還沒做什麼：未使用真實 Firebase 帳號／兩台實機驗證，未 push；換帳號登入時，前一個帳號在這台裝置的 others 會一起帶到新帳號（和各課進度現有行為相同）；未改 rules 或上次課程。沿用先讀後寫流程，兩台恰好同時讀到舊文件再覆寫仍有競態，後續同步可由各台本機紀錄補回，沒有加入會增加讀取次數的 transaction。
+
 
 ### 2026-11-19 全站紙本練習簿動態（Codex 實作、Claude Code 審查，已部署）
 
@@ -644,7 +657,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 六課統一三個入口（2026-10-24 完成）
 - [x] 第 2～6 課在手機上的篩選列和設定區改成可收合（2026-10-27，實際只需改第 3、5 課）
 - [ ] 第 2、3 課的字卡也改用 3D 翻面加滑動（目前只有第 1 課有）
-- [ ] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）
+- [x] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）
 
 ### 自然人聲（Google Cloud TTS）
 - 已完成，見進度紀錄。之後**新增或修改任何會被 `speak()` 唸出的文字**（單字、例句、動詞形態）時，都要執行 `npm run audio`。腳本只會補產生缺少的音檔；可以先用 `npm run audio -- --dry-run` 看要產生幾個、共多少字元。
