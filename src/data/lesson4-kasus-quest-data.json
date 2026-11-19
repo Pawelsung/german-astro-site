@@ -4311,7 +4311,7 @@
       "mode": "genitiv",
       "prompt": "請選出正確答案。",
       "sentence": "Das ist das Zimmer ___.",
-      "translation": "這是我妹妹（姊姊）的房間。",
+      "translation": "這是我姊姊的房間。",
       "options": [
         "meiner Schwester",
         "meine Schwester",
@@ -4708,7 +4708,7 @@
       "mode": "genitiv",
       "prompt": "畫線名詞 meines Bruders 是哪一格？",
       "sentence": "Das Handy meines Bruders ist kaputt.",
-      "translation": "我哥哥（弟弟）的手機壞了。",
+      "translation": "我哥哥的手機壞了。",
       "options": [
         "Nominativ",
         "Akkusativ",

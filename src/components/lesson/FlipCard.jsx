@@ -5,13 +5,22 @@ import { useSwipe } from '../../hooks/useSwipe';
 export default function FlipCard({ tag, level, actions, front, back, footer, onFirstReveal, onNext, onPrev, isLast }) {
   const [revealed, setRevealed] = useState(false);
   const [dragX, setDragX] = useState(0);
+  // While the card turns edge-on, the tag/star row would float over nothing, so it fades out.
+  const [turning, setTurning] = useState(false);
+  const turnTimer = useRef(0);
   const seen = useRef(false);
   const swipe = useSwipe({ onDrag: setDragX, onSwipe: direction => { setDragX(0); if (direction === 'left') onNext(); else onPrev?.(); } });
 
   function flip() {
     if (!seen.current) { seen.current = true; onFirstReveal?.(); }
     setRevealed(value => !value);
+    setTurning(true);
+    window.clearTimeout(turnTimer.current);
+    // Fallback for when no transitionend fires (reduced motion, hidden tab); a little over --motion-300.
+    turnTimer.current = window.setTimeout(() => setTurning(false), 400);
   }
+
+  useEffect(() => () => window.clearTimeout(turnTimer.current), []);
 
   const latest = useRef({});
   latest.current = { flip, onNext, onPrev };
@@ -29,7 +38,7 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
 
   return <div className="lc fx-question">
     <div ref={swipe.ref} onClickCapture={swipe.onClickCapture} role="button" tabIndex={0} aria-pressed={revealed} aria-label={revealed ? '翻回正面' : '翻面看答案'}
-      className={`lc-flip${revealed ? ' is-revealed' : ''}${dragX ? ' is-dragging' : ''}`}
+      className={`lc-flip${revealed ? ' is-revealed' : ''}${dragX ? ' is-dragging' : ''}${turning ? ' is-turning' : ''}`}
       style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined }}
       onClick={event => { if (!event.target.closest('button, a, summary, details')) flip(); }}
       onKeyDown={event => { if (event.key === 'Enter' && event.target === event.currentTarget) { event.preventDefault(); flip(); } }}>
@@ -38,7 +47,7 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
         {actions && <div className="lc-actions">{actions}</div>}
       </div>
       {/* Both faces size the same grid track; only the inner rotates, never the controls. */}
-      <div className="lc-flip-inner">
+      <div className="lc-flip-inner" onTransitionEnd={event => { if (event.target === event.currentTarget && event.propertyName === 'transform') setTurning(false); }}>
         <div className="calm-card lc-flip-face lc-flip-front" aria-hidden={revealed} inert={revealed}>
           {front}
           <p className="calm-hint">點一下翻面</p>

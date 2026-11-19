@@ -99,7 +99,7 @@ export const verbPrepositions = [
   { id: 98, verb: "einverstanden sein", verbTrans: "同意", prep: "mit", case: "D", forms: "war einverstanden / ist einverstanden gewesen", example: "Bist du mit dem Vorschlag einverstanden?", exampleTrans: "你同意這個提議嗎？" },
   { id: 99, verb: "zufrieden sein", verbTrans: "對…滿意", prep: "mit", case: "D", forms: "war zufrieden / ist zufrieden gewesen", example: "Der Chef ist mit meiner Arbeit zufrieden.", exampleTrans: "老闆對我的工作很滿意。" },
   { id: 100, verb: "stolz sein", verbTrans: "以…為傲", prep: "auf", case: "A", forms: "war stolz / ist stolz gewesen", example: "Die Eltern sind stolz auf ihre Tochter.", exampleTrans: "父母以女兒為傲。" },
-  { id: 101, verb: "neidisch sein", verbTrans: "嫉妒", prep: "auf", case: "A", forms: "war neidisch / ist neidisch gewesen", example: "Er ist neidisch auf den Erfolg seines Bruders.", exampleTrans: "他嫉妒哥哥（弟弟）的成功。" },
+  { id: 101, verb: "neidisch sein", verbTrans: "嫉妒", prep: "auf", case: "A", forms: "war neidisch / ist neidisch gewesen", example: "Er ist neidisch auf den Erfolg seines Bruders.", exampleTrans: "他嫉妒哥哥的成功。" },
   { id: 102, verb: "gespannt sein", verbTrans: "期待；好奇", prep: "auf", case: "A", forms: "war gespannt / ist gespannt gewesen", example: "Ich bin gespannt auf das Ergebnis.", exampleTrans: "我很好奇結果會如何。" },
   { id: 103, verb: "sich aufregen", verbTrans: "為…激動、發火", prep: "über", case: "A", forms: "regte sich auf / hat sich aufgeregt", example: "Mein Vater regt sich über den Verkehr auf.", exampleTrans: "我爸爸為交通狀況發火。" },
   { id: 104, verb: "Lust haben", verbTrans: "想要；有興致", prep: "auf", case: "A", forms: "hatte Lust / hat Lust gehabt", example: "Hast du Lust auf ein Eis?", exampleTrans: "你想吃冰淇淋嗎？" },

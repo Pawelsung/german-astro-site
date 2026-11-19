@@ -759,7 +759,8 @@ body:has(.picker-sheet[open]) { overflow: hidden; }
 .lc-flip-front { transform: rotateY(0deg); }
 .lc-flip-back { transform: rotateY(180deg); }
 /* A single control layer stays outside the rotating tree and remains tappable. */
-.lc-flip-top { z-index: 1; position: absolute; top: 10px; left: 14px; right: 10px; }
+.lc-flip-top { z-index: 1; position: absolute; top: 10px; left: 14px; right: 10px; transition: opacity var(--motion-150) var(--ease-out); }
+.lc-flip.is-turning .lc-flip-top { opacity: 0; transition: opacity var(--motion-100) var(--ease-in); }
 .lc-rate { flex-direction: column; gap: 0; line-height: 1.25; }
 .lc-rate small { font-size: 12px; font-weight: 600; opacity: 0.75; }
 .lc-single { grid-template-columns: minmax(0, 1fr); }
@@ -799,4 +800,5 @@ body:has(.picker-sheet[open]) { overflow: hidden; }
   .lc-flip .lc-flip-inner, .lc-flip .lc-flip-face { transform: none; transition: none; }
   .lc-flip .lc-flip-face[aria-hidden="true"] { visibility: hidden; pointer-events: none; }
   .lc-flip .lc-flip-face[aria-hidden="false"] { visibility: visible; }
+  .lc-flip.is-turning .lc-flip-top { opacity: 1; }
 }

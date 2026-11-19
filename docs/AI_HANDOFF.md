@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-19 翻卡標籤列與兄弟姊妹譯文（Claude Code，已部署）
+
+- 第 2、3 課翻面時，標籤與收藏列原本會浮在轉到側面的卡片上。`FlipCard` 加 `turning` 狀態（`is-turning`），inner 的 transform `transitionend` 結束；另有 400ms 計時器當備援（reduced motion、背景分頁不會觸發 transitionend）。CSS：`.lc-flip.is-turning .lc-flip-top` 100ms ease-in 淡出，結束後 150ms ease-out 回來；reduced-motion 下不淡出。`tests/flip-card.test.mjs` 加一項。
+- 譯文去掉「哥哥（弟弟）」「妹妹（姊姊）」這類括號：第 2 課 neidisch sein 例句改「他嫉妒哥哥的成功。」，第 4 課兩題改「我哥哥的手機壞了。」「這是我姊姊的房間。」（只改中文，不影響語音）。
+- 驗證：`npm test` 157 個全過；本機瀏覽器確認翻面時標籤列 opacity 0、結束後恢復。注意：瀏覽器分頁沒有繪製時，動畫時間軸不會前進，用 JS 量 transition 中途值會一直是起點，要搭配截圖看。
+- 還沒做什麼：iPhone 實機。
+
 ### 2026-11-19 第 2、3 課字卡 3D 翻面（Codex 實作、Claude Code 審查，已部署）
 
 - 限定 `codex-flip-3d` worktree／`codex/flip-3d`。共用 `FlipCard` 外層保留拖曳 transform／200ms 回位，新增 grid inner 以 300ms ease-out rotateY 翻面；兩面同格、各自 calm 卡片外框，高度取兩面較高者，長內容換行且不設定裁切。標籤／actions 只有一份，作為旋轉層外的定位覆蓋層，保持可點與位置固定。

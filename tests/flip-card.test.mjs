@@ -36,3 +36,13 @@ test('reduced motion removes rotation and explicitly selects the visible face wi
   assert.match(reduced, /\[aria-hidden="false"\] \{ visibility: visible; \}/);
   assert.doesNotMatch(reduced, /display: none/);
 });
+
+test('tag and action row fades out only while the card turns', () => {
+  const jsx = readFileSync(new URL('../src/components/lesson/FlipCard.jsx', import.meta.url), 'utf8');
+  const css = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
+  assert.match(jsx, /is-turning/);
+  assert.match(jsx, /onTransitionEnd=/);
+  assert.match(css, /\.lc-flip\.is-turning \.lc-flip-top \{ opacity: 0;/);
+  const reduced = css.slice(css.lastIndexOf('.lc-flip .lc-flip-inner, .lc-flip .lc-flip-face'));
+  assert.match(reduced.slice(0, 400), /\.lc-flip\.is-turning \.lc-flip-top \{ opacity: 1; \}/);
+});
