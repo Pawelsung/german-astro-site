@@ -19,7 +19,7 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
     const onKey = event => {
       if (event.metaKey || event.ctrlKey || event.altKey || document.querySelector('dialog[open]')) return;
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(event.target?.tagName || '')) return;
-      if (event.key === ' ' && event.target?.tagName !== 'BUTTON') { event.preventDefault(); latest.current.flip(); }
+      if (event.key === ' ' && !event.target?.closest('button, a, summary, details')) { event.preventDefault(); latest.current.flip(); }
       if (event.key === 'ArrowRight') latest.current.onNext();
       if (event.key === 'ArrowLeft') latest.current.onPrev?.();
     };
@@ -29,7 +29,7 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
 
   return <div className="lc fx-question">
     <div ref={swipe.ref} onClickCapture={swipe.onClickCapture} role="button" tabIndex={0} aria-pressed={revealed} aria-label={revealed ? '翻回正面' : '翻面看答案'}
-      className={`calm-card lc-flip${revealed ? ' is-revealed' : ''}${dragX ? ' is-dragging' : ''}`}
+      className={`lc-flip${revealed ? ' is-revealed' : ''}${dragX ? ' is-dragging' : ''}`}
       style={{ transform: dragX ? `translateX(${dragX * 0.5}px) rotate(${dragX / 40}deg)` : undefined }}
       onClick={event => { if (!event.target.closest('button, a, summary, details')) flip(); }}
       onKeyDown={event => { if (event.key === 'Enter' && event.target === event.currentTarget) { event.preventDefault(); flip(); } }}>
@@ -37,8 +37,16 @@ export default function FlipCard({ tag, level, actions, front, back, footer, onF
         <p className="lc-tags">{tag && <span>{tag}</span>}{level && <span>{level}</span>}</p>
         {actions && <div className="lc-actions">{actions}</div>}
       </div>
-      {revealed ? <div className="lc-flip-back">{back}</div> : front}
-      {!revealed && <p className="calm-hint">點一下翻面</p>}
+      {/* Both faces size the same grid track; only the inner rotates, never the controls. */}
+      <div className="lc-flip-inner">
+        <div className="calm-card lc-flip-face lc-flip-front" aria-hidden={revealed} inert={revealed}>
+          {front}
+          <p className="calm-hint">點一下翻面</p>
+        </div>
+        <div className="calm-card lc-flip-face lc-flip-back" aria-hidden={!revealed} inert={!revealed}>
+          {back}
+        </div>
+      </div>
     </div>
     {revealed && footer ? footer : <div className="lc-nav">
       {onPrev && <button type="button" className="calm-link" onClick={onPrev}>上一張</button>}

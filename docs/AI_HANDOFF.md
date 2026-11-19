@@ -112,6 +112,16 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-19 第 2、3 課字卡 3D 翻面（Codex 實作、Claude Code 審查，已部署）
+
+- 限定 `codex-flip-3d` worktree／`codex/flip-3d`。共用 `FlipCard` 外層保留拖曳 transform／200ms 回位，新增 grid inner 以 300ms ease-out rotateY 翻面；兩面同格、各自 calm 卡片外框，高度取兩面較高者，長內容換行且不設定裁切。標籤／actions 只有一份，作為旋轉層外的定位覆蓋層，保持可點與位置固定。
+- 點擊、Space、Enter 翻面；左右滑動／方向鍵維持換卡，footer 仍只在背面出現，seen ref 保留首次翻開才 report／markSeen。第 2 課目前程式實際有三個評分按鈕，本次不改評分；滑動不能表達完整評分選項，因此不採第 1 課滑動評分。
+- 檢查兩個 Trainer 的 back、VerbForms、SpeakButton：沒有 mount 即朗讀／計數／記錄，故兩面同時 mount；朗讀按鈕只在點擊觸發。第 3 課 AutoSpeak 在正面，現在正面持續 mount，每張卡仍自動朗讀，翻回不再因 remount 重播。隱藏面以 aria-hidden＋inert 排除讀屏與 Tab；正面提示跟著正面翻走，移除背面 fx-reveal。
+- reduced-motion 明確移除 inner／face transform，依 aria-hidden 用 visibility 切換，兩面仍參與高度計算。Safari 防護含標準／webkit backface 隱藏，3D 祖先不加 overflow:hidden，操作層不放入旋轉樹。
+- 驗證：新增 `tests/flip-card.test.mjs` 三項結構／無障礙／reduced-motion 靜態測試；`npm test` 156 個全過，`npm run build` 成功（10 頁），`git diff --check` 通過。
+- Claude Code 審查：原本兩面只有內容高度，卡片在手機上比舊版短一截、下方空白仍可點擊翻面；改成 `.lc-flip` 為直向 flex、`.lc-flip-inner` `flex: 1` 加 `grid-template-rows: minmax(0, 1fr)`，兩面填滿卡片區，和舊版一樣高。本機 375px 實測第 2、3 課：翻面中途 inner 為 rotateY 動畫、結束為 180deg；隱藏面 aria-hidden／inert 正確；收藏按鈕不會觸發翻面；評分後換下一張且回到正面；第 3 課背面長內容沒有被裁切、無橫向捲動；主控台沒有錯誤。
+- 還沒做什麼：iPhone Safari 實機的翻面閃爍、VoiceOver 與拖曳手感；reduced-motion 只靠 CSS 與測試，沒有在瀏覽器切換系統設定實測。未 push。
+
 ### 2026-11-19 處理 4 個可疑詞條（Claude Code 撰寫、german-reviewer 校對，已部署）
 
 - 使用者請 Claude Code 自行判斷。`corrections.json`：Kunstwerkladen → der Kunstladen、Sonderkräfte → die Spezialkräfte（只用複數）、Bauarbeitsgerät → das Baugerät 三筆改名（舊 id 進 `redirects.json`，進度不遺失）；Bildmodell 保留，釋義改為「（AI）圖像生成模型」。4 句例句放在 `tools/lexicon/examples/batch-06.json`，細節見 `tools/lexicon/examples/notes.md`。
@@ -663,7 +673,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 每輪 10 題的結算（2026-10-24 完成）
 - [x] 六課統一三個入口（2026-10-24 完成）
 - [x] 第 2～6 課在手機上的篩選列和設定區改成可收合（2026-10-27，實際只需改第 3、5 課）
-- [ ] 第 2、3 課的字卡也改用 3D 翻面加滑動（目前只有第 1 課有）
+- [x] 第 2、3 課的字卡已改用 3D 翻面；滑動維持上一張／下一張，不做滑動評分，因第 2 課有多個評分等級，左右兩種手勢無法完整表達。
 - [x] 每日活動 `gw-daily-activity-v1` 加入 Firebase 同步（`collectLocalProgress`／`mergeRemoteProgress`）
 
 ### 自然人聲（Google Cloud TTS）
