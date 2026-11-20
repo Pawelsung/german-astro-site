@@ -64,13 +64,15 @@ test('underlined Schritte list is unique, substantive and available in lesson 1'
   assert.ok(list);
   assert.equal(list.label, 'Schritte B1.1｜我在課本劃線的字');
   const selected = list.groups.flatMap(g => g.ids);
+  assert.equal(selected.length, 275);
   assert.equal(new Set(selected).size, selected.length);
-  assert.deepEqual(list.groups.map(g => g.ids.length), [86, 49, 113, 80, 52, 3]);
+  assert.deepEqual(list.groups.map(g => g.ids.length), [53, 36, 86, 58, 40, 2]);
   const forbidden = new Set(['der', 'die', 'das', 'und', 'ich', 'sie', 'nach', 'was', 'sein', 'haben', 'werden']);
   const functionPos = new Set(['connector', 'conjunction', 'preposition', 'pronoun', 'determiner', 'particle', 'numeral', 'contraction']);
   for (const id of selected) {
     const e = entries.find(e => e.id === id);
     assert.ok(e, id);
+    assert.notEqual(e.level, 'A1', `${id} must not be A1`);
     assert.ok(!forbidden.has(e.word.toLowerCase()), e.word);
     assert.ok(!functionPos.has(e.pos), `${id}: ${e.pos}`);
   }

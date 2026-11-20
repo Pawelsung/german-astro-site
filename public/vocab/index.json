@@ -51,8 +51,8 @@
   {
     "id": "schritte-b1-1-underlined",
     "label": "Schritte B1.1｜我在課本劃線的字",
-    "description": "課本紅筆劃線實詞，還原原形並去除重複，依第一次出現的課次分組；新增內容待校對。",
+    "description": "課本紅筆劃線實詞，還原原形並去除重複，依第一次出現的課次分組；已排除 A1 基本字。",
     "path": "/vocab/schritte-b1-1-underlined.json",
-    "count": 383
+    "count": 275
   }
 ]

@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 Schritte 6 校對套用與劃線清單清理（Codex，未部署）
+
+- 套用兩份獨立 Schritte 6 校對表全部 43 條及使用者指定存疑項，修改 47 筆／58 欄位；401 筆不變，A2 65、B1 322、B2 14。其餘存疑維持原樣，詳見 schritte6-notes「校對結果」。
+- 個人劃線清單排除主字庫 A1 共 108 IDs，剩 275（L1 53、L2 36、L3 86、L4 58、L5 40、L6 2）。更新 manifest、清單產物、總數／分課測試並斷言無 A1；未改 schritte5-underlined.json。主字庫仍 4,598，所有 ID 保留；練習池 A1 846、A2 1291、B1 1858、B2 179。
+- check-drafts 全 9 檔 ✓（為指定 Geschirrspüler 釋義加精確同義詞提示例外）；apply-tags／build-site-data 成功；npm test 157/158，唯一 audio-coverage 缺音檔為預期；build 成功 10 頁；diff --check 通過。
+- 下一步：使用者抽查 Schritte 6；Schritte B1.1 新詞仍待另輪獨立校對。未產生音檔、commit、push、部署、stash 或切分支；其他 worktree 的未提交交接文件未觸碰。
+
 ### 2026-11-20 Schritte B1.1 紅筆劃線字與個人清單（Codex，未部署，待校對）
 
 - 新增 `tools/lexicon/drafts/schritte5-underlined.json` **68 筆**（A1 1、A2 16、B1 48、B2 3），含 missing 還原 52 詞與 known 子字串誤判缺口 16 詞；釋義、德中例句自行撰寫。未複製 repo 外 OCR／課文，未改 `schritte6.json`。
@@ -722,7 +729,8 @@ CSS class（`src/styles/global.css` 檔尾）：
 ## 下一步（建議順序）
 
 ### 內容擴充（見 `docs/content-expansion-plan.md`）
-- [ ] Schritte B1.1 劃線字：68 筆草稿與 383 ID 個人清單已完成；待獨立德文校對、對照紅筆抽查及介面檢查，再核准音檔／部署。見 `tools/lexicon/drafts/schritte5-underlined-notes.md`。
+- [ ] Schritte 6：401 筆已套用獨立校對；待使用者抽查，再核准音檔／部署。見 `tools/lexicon/drafts/schritte6-notes.md`。
+- [ ] Schritte B1.1 劃線字：68 筆草稿與排除 A1 後的 275 ID 個人清單已完成；待獨立德文校對、對照紅筆抽查及介面檢查，再核准音檔／部署。見 `tools/lexicon/drafts/schritte5-underlined-notes.md`。
 - [ ] 課本全文第二輪：865 筆草稿已生成並完成工程驗證（2026-11-20，Codex，未部署）；待獨立德文校對、使用者抽查，再核准生成音檔／部署。詳見 `tools/lexicon/drafts/textbook-fulltext-notes.md`。
 - [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
 - [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）

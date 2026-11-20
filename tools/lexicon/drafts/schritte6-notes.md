@@ -94,3 +94,11 @@ B2 僅 **bürgerschaftlich**：屬較正式的公共事務形容詞，常用於�
 ### 已有原形（39）
 
 ablehnen、alt、ankreuzen、ansehen、ausgeben、begabt、brauchen、derselbe、dumm、dunkel、einladen、entlassen、erhalten、essen、euer、gefallen、groß、haben、hoch、kennenlernen、klein、kochen、lesen、mitnehmen、schlafen、sehen、sein、sich treffen、sprechen、tief、tragen、tun、vergessen、vorbereiten、wachsen、werden、wollen、überfliegen、übrigens。
+
+## 校對結果（2026-11-20）
+
+- 套用兩份獨立校對表全部 43 條：錯誤 4、不自然 15、建議 24。Rostbratwurst 的例句與建議 B2 均採納；Geschirrspüler 依使用者指定用「洗碗機（同 Spülmaschine）」。
+- 另採納指定存疑處理：Tempolimit「速限」、Geschwindigkeitsbeschränkung「速度限制（正式用語）」；Litfaßsäule、Fremdheit、Erdapfel 改 B2。合計修改 47 筆／58 欄位，401 筆總數不變（A2 65、B1 322、B2 14）。
+- 未採納其餘存疑項：Heimatstadt、sämtlich、weisen、irgendwo、wohltun 維持原樣；沒有漏套表格條目。
+- check-drafts 全 9 檔 ✓；檢查器僅對上述 Geschirrspüler 完整指定釋義允許同義詞提示。apply-tags、build-site-data 成功；npm test 158 項中 157 通過，唯一 audio-coverage 缺音檔失敗為預期；build 成功 10 頁；diff --check 通過。
+- 未產生音檔、commit、push、部署、stash 或切分支；仍待使用者抽查。

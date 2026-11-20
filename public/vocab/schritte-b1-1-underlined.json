@@ -1,18 +1,5 @@
 [
   {
-    "id": "richtig",
-    "article": "",
-    "word": "richtig",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "正確的",
-    "exampleDe": "Deine Antwort ist richtig.",
-    "exampleZh": "你的答案是對的。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
     "id": "die-stimme",
     "article": "die",
     "word": "Stimme",
@@ -26,23 +13,6 @@
     "groupOrder": 0
   },
   {
-    "id": "fragen",
-    "article": "",
-    "word": "fragen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "詢問",
-    "exampleDe": "Darf ich dich etwas fragen?",
-    "exampleZh": "我可以問你一件事嗎？",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "fragte",
-      "perfekt_3sg": "hat gefragt"
-    }
-  },
-  {
     "id": "die-lottoziehung",
     "article": "die",
     "word": "Lottoziehung",
@@ -54,49 +24,6 @@
     "exampleZh": "我們透過廣播收聽了樂透開獎。",
     "category": "Lektion 1｜Glück im Alltag",
     "groupOrder": 0
-  },
-  {
-    "id": "das-fernsehen",
-    "article": "das",
-    "word": "Fernsehen",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "",
-    "meaning": "電視；電視節目",
-    "exampleDe": "Die Nachricht habe ich gestern im Fernsehen gesehen.",
-    "exampleZh": "我昨天在電視上看到了這則新聞。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "der-ehemann",
-    "article": "der",
-    "word": "Ehemann",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Ehemänner",
-    "meaning": "丈夫",
-    "exampleDe": "Ihr Ehemann kommt aus Spanien.",
-    "exampleZh": "她先生來自西班牙。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "kaufen",
-    "article": "",
-    "word": "kaufen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "購買；買",
-    "exampleDe": "Ich kaufe heute Gemüse auf dem Markt.",
-    "exampleZh": "我今天去市場買蔬菜。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "kaufte",
-      "perfekt_3sg": "hat gekauft"
-    }
   },
   {
     "id": "verschwinden",
@@ -142,19 +69,6 @@
     "meaning": "最後；畢竟",
     "exampleDe": "Schließlich haben wir eine Lösung gefunden.",
     "exampleZh": "最後我們找到了解決方法。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "spaeter",
-    "article": "",
-    "word": "später",
-    "pos": "adverb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "稍後",
-    "exampleDe": "Wir können später darüber sprechen.",
-    "exampleZh": "我們可以晚點再談。",
     "category": "Lektion 1｜Glück im Alltag",
     "groupOrder": 0
   },
@@ -253,23 +167,6 @@
     }
   },
   {
-    "id": "liegen",
-    "article": "",
-    "word": "liegen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "躺；位於；躺著",
-    "exampleDe": "Mein Handy liegt auf dem Tisch.",
-    "exampleZh": "我的手機放在桌上。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "lag",
-      "perfekt_3sg": "hat gelegen"
-    }
-  },
-  {
     "id": "das-ehepaar",
     "article": "das",
     "word": "Ehepaar",
@@ -281,40 +178,6 @@
     "exampleZh": "那對年長夫妻住在我們隔壁。",
     "category": "Lektion 1｜Glück im Alltag",
     "groupOrder": 0
-  },
-  {
-    "id": "kommen",
-    "article": "",
-    "word": "kommen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "來",
-    "exampleDe": "Wann kommst du nach Hause?",
-    "exampleZh": "你什麼時候回家？",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "kam",
-      "perfekt_3sg": "ist gekommen"
-    }
-  },
-  {
-    "id": "abfahren",
-    "article": "",
-    "word": "abfahren",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "出發；發車",
-    "exampleDe": "Der Zug fährt um neun Uhr ab.",
-    "exampleZh": "火車九點出發。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "fuhr ab",
-      "perfekt_3sg": "ist abgefahren"
-    }
   },
   {
     "id": "sich-befinden",
@@ -450,58 +313,6 @@
     }
   },
   {
-    "id": "klein",
-    "article": "",
-    "word": "klein",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "小的；矮的",
-    "exampleDe": "Das Zimmer ist klein, aber hell.",
-    "exampleZh": "這個房間很小，但是很明亮。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "das-radio",
-    "article": "das",
-    "word": "Radio",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Radios",
-    "meaning": "收音機",
-    "exampleDe": "Wir hören Musik im Radio.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "der-opa",
-    "article": "der",
-    "word": "Opa",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Opas",
-    "meaning": "爺爺；外公",
-    "exampleDe": "Mein Opa kocht sehr gut.",
-    "exampleZh": "我爺爺很會做菜。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "der-text",
-    "article": "der",
-    "word": "Text",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Texte",
-    "meaning": "文章/文本",
-    "exampleDe": "Lesen Sie den Text.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
     "id": "trainieren",
     "article": "",
     "word": "trainieren",
@@ -519,40 +330,6 @@
     }
   },
   {
-    "id": "stehen",
-    "article": "",
-    "word": "stehen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "站；站著",
-    "exampleDe": "Der Bus steht vor dem Bahnhof.",
-    "exampleZh": "公車停在火車站前。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "stand",
-      "perfekt_3sg": "hat gestanden"
-    }
-  },
-  {
-    "id": "nehmen",
-    "article": "",
-    "word": "nehmen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "拿；點（餐）；搭（車）",
-    "exampleDe": "Ich nehme die Suppe.",
-    "exampleZh": "我要點這個湯。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "nahm",
-      "perfekt_3sg": "hat genommen"
-    }
-  },
-  {
     "id": "das-feld",
     "article": "das",
     "word": "Feld",
@@ -562,105 +339,6 @@
     "meaning": "田地；場地",
     "exampleDe": "Die Kinder spielen auf dem Feld.",
     "exampleZh": "孩子們在田野/球場上玩。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "das-leben",
-    "article": "das",
-    "word": "Leben",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Leben",
-    "meaning": "生活；生命",
-    "exampleDe": "Das Leben ist manchmal überraschend.",
-    "exampleZh": "人生有時候很令人意外。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "sehen",
-    "article": "",
-    "word": "sehen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "看見",
-    "exampleDe": "Ich sehe einen Vogel im Garten.",
-    "exampleZh": "我看到花園裡有一隻鳥。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "sah",
-      "perfekt_3sg": "hat gesehen"
-    }
-  },
-  {
-    "id": "die-schwester",
-    "article": "die",
-    "word": "Schwester",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Schwestern",
-    "meaning": "姊姊；妹妹；護理師",
-    "exampleDe": "Meine Schwester studiert in Berlin.",
-    "exampleZh": "我姊姊在柏林讀大學。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "der-freund",
-    "article": "der",
-    "word": "Freund",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Freunde",
-    "meaning": "朋友；男朋友",
-    "exampleDe": "Ein guter Freund hilft mir beim Umzug.",
-    "exampleZh": "一個好朋友幫我搬家。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "sich-anmelden",
-    "article": "",
-    "word": "sich anmelden",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "報名；登記",
-    "exampleDe": "Ich melde mich für den Kurs an.",
-    "exampleZh": "我報名這堂課。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "meldete sich an",
-      "perfekt_3sg": "hat sich angemeldet"
-    }
-  },
-  {
-    "id": "die-familie",
-    "article": "die",
-    "word": "Familie",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Familien",
-    "meaning": "家庭",
-    "exampleDe": "Meine Familie ist sehr groß.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "das-kind",
-    "article": "das",
-    "word": "Kind",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Kinder",
-    "meaning": "小孩",
-    "exampleDe": "Das Kind spielt im Garten.",
-    "exampleZh": "那個孩子在花園玩。",
     "category": "Lektion 1｜Glück im Alltag",
     "groupOrder": 0
   },
@@ -755,19 +433,6 @@
     }
   },
   {
-    "id": "das-geld",
-    "article": "das",
-    "word": "Geld",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Gelder（指資金、款項）",
-    "meaning": "錢",
-    "exampleDe": "Ich habe nicht genug Geld dabei.",
-    "exampleZh": "我身上帶的錢不夠。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
     "id": "fehlen",
     "article": "",
     "word": "fehlen",
@@ -811,19 +476,6 @@
     "groupOrder": 0
   },
   {
-    "id": "die-mutter",
-    "article": "die",
-    "word": "Mutter",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Mütter",
-    "meaning": "母親",
-    "exampleDe": "Meine Mutter kocht sehr gut.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
     "id": "erwachsen",
     "article": "",
     "word": "erwachsen",
@@ -833,19 +485,6 @@
     "meaning": "成年的",
     "exampleDe": "Meine Kinder sind inzwischen erwachsen und wohnen nicht mehr hier.",
     "exampleZh": "我的孩子現在都成年了，已經不住這裡。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "der-sohn",
-    "article": "der",
-    "word": "Sohn",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Söhne",
-    "meaning": "兒子",
-    "exampleDe": "Ihr Sohn geht schon zur Schule.",
-    "exampleZh": "她兒子已經上學了。",
     "category": "Lektion 1｜Glück im Alltag",
     "groupOrder": 0
   },
@@ -928,23 +567,6 @@
     "groupOrder": 0
   },
   {
-    "id": "fahren",
-    "article": "",
-    "word": "fahren",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "搭乘；開車；行駛",
-    "exampleDe": "Morgen fahre ich mit dem Zug nach Berlin.",
-    "exampleZh": "我明天搭火車去柏林。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "fuhr",
-      "perfekt_3sg": "ist gefahren（帶受詞時 hat gefahren）"
-    }
-  },
-  {
     "id": "unbedingt",
     "article": "",
     "word": "unbedingt",
@@ -973,19 +595,6 @@
       "praeteritum_3sg": "unterstützte",
       "perfekt_3sg": "hat unterstützt"
     }
-  },
-  {
-    "id": "die-arbeit",
-    "article": "die",
-    "word": "Arbeit",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Arbeiten",
-    "meaning": "工作",
-    "exampleDe": "Ich habe heute viel Arbeit.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
   },
   {
     "id": "sich-kuemmern-um",
@@ -1061,19 +670,6 @@
     }
   },
   {
-    "id": "der-ausflug",
-    "article": "der",
-    "word": "Ausflug",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Ausflüge",
-    "meaning": "郊遊；出遊",
-    "exampleDe": "Wir machen am Samstag einen Ausflug.",
-    "exampleZh": "我們星期六去郊遊。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
     "id": "die-umgebung",
     "article": "die",
     "word": "Umgebung",
@@ -1113,23 +709,6 @@
     "groupOrder": 0
   },
   {
-    "id": "suchen",
-    "article": "",
-    "word": "suchen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "尋找",
-    "exampleDe": "Ich suche meinen Schlüssel.",
-    "exampleZh": "我在找鑰匙。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "suchte",
-      "perfekt_3sg": "hat gesucht"
-    }
-  },
-  {
     "id": "sich-spezialisieren",
     "article": "",
     "word": "sich spezialisieren",
@@ -1160,23 +739,6 @@
     "groupOrder": 0
   },
   {
-    "id": "kennenlernen",
-    "article": "",
-    "word": "kennenlernen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "認識；結識",
-    "exampleDe": "Wir haben uns im Sprachkurs kennengelernt.",
-    "exampleZh": "我們在語言課認識彼此。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0,
-    "practice": {
-      "praeteritum_3sg": "lernte kennen",
-      "perfekt_3sg": "hat kennengelernt"
-    }
-  },
-  {
     "id": "die-gegenleistung",
     "article": "die",
     "word": "Gegenleistung",
@@ -1203,45 +765,6 @@
     "groupOrder": 0
   },
   {
-    "id": "die-bank",
-    "article": "die",
-    "word": "Bank",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Banken",
-    "meaning": "銀行；長椅",
-    "exampleDe": "Ich hole Geld bei der Bank.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "das-blatt",
-    "article": "das",
-    "word": "Blatt",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Blätter",
-    "meaning": "葉子；一張紙",
-    "exampleDe": "Gib mir bitte ein leeres Blatt Papier.",
-    "exampleZh": "請給我一張白紙。",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
-    "id": "der-tag",
-    "article": "der",
-    "word": "Tag",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Tage",
-    "meaning": "天/日子",
-    "exampleDe": "Ich habe heute einen guten Tag.",
-    "exampleZh": "",
-    "category": "Lektion 1｜Glück im Alltag",
-    "groupOrder": 0
-  },
-  {
     "id": "die-serie",
     "article": "die",
     "word": "Serie",
@@ -1253,23 +776,6 @@
     "exampleZh": "這部影集有很多集。",
     "category": "Lektion 2｜Unterhaltung",
     "groupOrder": 1
-  },
-  {
-    "id": "gehen",
-    "article": "",
-    "word": "gehen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "走；去",
-    "exampleDe": "Ich gehe nach der Arbeit einkaufen.",
-    "exampleZh": "我下班後去購物。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1,
-    "practice": {
-      "praeteritum_3sg": "ging",
-      "perfekt_3sg": "ist gegangen"
-    }
   },
   {
     "id": "die-staffel",
@@ -1328,19 +834,6 @@
     }
   },
   {
-    "id": "die-freundin",
-    "article": "die",
-    "word": "Freundin",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Freundinnen",
-    "meaning": "女性朋友；女朋友",
-    "exampleDe": "Ich gehe heute mit meiner Freundin ins Kino.",
-    "exampleZh": "我今天要和女朋友去看電影。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
     "id": "aufregend",
     "article": "",
     "word": "aufregend",
@@ -1378,49 +871,6 @@
     "exampleZh": "這部小說的主角是一位女醫生。",
     "category": "Lektion 2｜Unterhaltung",
     "groupOrder": 1
-  },
-  {
-    "id": "wirklich",
-    "article": "",
-    "word": "wirklich",
-    "pos": "adverb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "真的；確實",
-    "exampleDe": "Ist der Laden wirklich schon zu?",
-    "exampleZh": "那間店真的已經關了嗎？",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
-    "id": "super",
-    "article": "",
-    "word": "super",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "很棒的",
-    "exampleDe": "Dein neuer Haarschnitt sieht super aus.",
-    "exampleZh": "你的新髮型很好看。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
-    "id": "finden",
-    "article": "",
-    "word": "finden",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "找到；認為",
-    "exampleDe": "Ich finde diese Idee gut.",
-    "exampleZh": "我覺得這個主意很好。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1,
-    "practice": {
-      "praeteritum_3sg": "fand",
-      "perfekt_3sg": "hat gefunden"
-    }
   },
   {
     "id": "meckern",
@@ -1496,32 +946,6 @@
     }
   },
   {
-    "id": "neu",
-    "article": "",
-    "word": "neu",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "新的",
-    "exampleDe": "Ich habe ein neues Fahrrad.",
-    "exampleZh": "我有一台新腳踏車。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
-    "id": "deutsch",
-    "article": "",
-    "word": "deutsch",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "德國的；德語的",
-    "exampleDe": "Ich lerne die deutsche Sprache.",
-    "exampleZh": "我在學德文。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
     "id": "sich-beschaeftigen",
     "article": "",
     "word": "sich beschäftigen",
@@ -1537,19 +961,6 @@
       "praeteritum_3sg": "beschäftigte sich",
       "perfekt_3sg": "hat sich beschäftigt"
     }
-  },
-  {
-    "id": "der-name",
-    "article": "der",
-    "word": "Name",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Namen",
-    "meaning": "名字",
-    "exampleDe": "Wie ist dein Name?",
-    "exampleZh": "",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
   },
   {
     "id": "aufnehmen",
@@ -1771,19 +1182,6 @@
     "groupOrder": 1
   },
   {
-    "id": "die-eltern",
-    "article": "die",
-    "word": "Eltern",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "(只有複數)",
-    "meaning": "父母",
-    "exampleDe": "Meine Eltern wohnen in Taipeh.",
-    "exampleZh": "我父母住在台北。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
     "id": "sich-erfuellen",
     "article": "",
     "word": "sich erfüllen",
@@ -1801,32 +1199,6 @@
     }
   },
   {
-    "id": "langweilig",
-    "article": "",
-    "word": "langweilig",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "無聊的",
-    "exampleDe": "Mir ist langweilig.",
-    "exampleZh": "我好無聊。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
-    "id": "gut",
-    "article": "",
-    "word": "gut",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "好的",
-    "exampleDe": "Der Kuchen schmeckt gut.",
-    "exampleZh": "這個蛋糕很好吃。",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
-  },
-  {
     "id": "einverstanden",
     "article": "",
     "word": "einverstanden",
@@ -1838,23 +1210,6 @@
     "exampleZh": "我同意你的提議。",
     "category": "Lektion 2｜Unterhaltung",
     "groupOrder": 1
-  },
-  {
-    "id": "machen",
-    "article": "",
-    "word": "machen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "做",
-    "exampleDe": "Was machst du am Wochenende?",
-    "exampleZh": "你週末要做什麼？",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1,
-    "practice": {
-      "praeteritum_3sg": "machte",
-      "perfekt_3sg": "hat gemacht"
-    }
   },
   {
     "id": "erkranken",
@@ -1872,19 +1227,6 @@
       "praeteritum_3sg": "erkrankte",
       "perfekt_3sg": "ist erkrankt"
     }
-  },
-  {
-    "id": "das-land",
-    "article": "das",
-    "word": "Land",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Länder",
-    "meaning": "國家",
-    "exampleDe": "Deutschland ist ein schönes Land.",
-    "exampleZh": "",
-    "category": "Lektion 2｜Unterhaltung",
-    "groupOrder": 1
   },
   {
     "id": "doppelt",
@@ -1952,19 +1294,6 @@
     "meaning": "壓力",
     "exampleDe": "Vor der Prüfung habe ich viel Stress.",
     "exampleZh": "考試前我壓力很大。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "der-arzt",
-    "article": "der",
-    "word": "Arzt",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Ärzte",
-    "meaning": "醫生(男)",
-    "exampleDe": "Ich muss heute zum Arzt.",
-    "exampleZh": "",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
   },
@@ -2044,23 +1373,6 @@
     "exampleZh": "這個標題讓人好奇。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
-  },
-  {
-    "id": "brauchen",
-    "article": "",
-    "word": "brauchen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "需要",
-    "exampleDe": "Ich brauche einen Stift.",
-    "exampleZh": "我需要一支筆。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "brauchte",
-      "perfekt_3sg": "hat gebraucht"
-    }
   },
   {
     "id": "fit-halten",
@@ -2147,19 +1459,6 @@
       "praeteritum_3sg": "konzentrierte sich",
       "perfekt_3sg": "hat sich konzentriert"
     }
-  },
-  {
-    "id": "fertig",
-    "article": "",
-    "word": "fertig",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "完成的",
-    "exampleDe": "Die Suppe ist fertig, wir können essen.",
-    "exampleZh": "湯好了，我們可以吃飯了。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
   },
   {
     "id": "umgehen",
@@ -2256,23 +1555,6 @@
     }
   },
   {
-    "id": "holen",
-    "article": "",
-    "word": "holen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "去拿；去取",
-    "exampleDe": "Ich hole schnell das Brot.",
-    "exampleZh": "我趕快去拿麵包。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "holte",
-      "perfekt_3sg": "hat geholt"
-    }
-  },
-  {
     "id": "untersuchen",
     "article": "",
     "word": "untersuchen",
@@ -2318,19 +1600,6 @@
       "praeteritum_3sg": "streckte",
       "perfekt_3sg": "hat gestreckt"
     }
-  },
-  {
-    "id": "rechts",
-    "article": "",
-    "word": "rechts",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "-",
-    "meaning": "右邊的；在右邊",
-    "exampleDe": "Die Apotheke ist gleich rechts.",
-    "exampleZh": "藥局就在右邊。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
   },
   {
     "id": "die-kraeftigung",
@@ -2454,23 +1723,6 @@
     "groupOrder": 2
   },
   {
-    "id": "geben",
-    "article": "",
-    "word": "geben",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "給",
-    "exampleDe": "Kannst du mir bitte das Buch geben?",
-    "exampleZh": "你可以把書給我嗎？",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "gab",
-      "perfekt_3sg": "hat gegeben"
-    }
-  },
-  {
     "id": "die-stelle",
     "article": "die",
     "word": "Stelle",
@@ -2508,23 +1760,6 @@
     "exampleZh": "這家廣播電台早上播報地方新聞。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
-  },
-  {
-    "id": "leben",
-    "article": "",
-    "word": "leben",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "生活；居住",
-    "exampleDe": "Meine Familie lebt in Taiwan.",
-    "exampleZh": "我的家人住在臺灣。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "lebte",
-      "perfekt_3sg": "hat gelebt"
-    }
   },
   {
     "id": "klingen",
@@ -2566,19 +1801,6 @@
     "meaning": "有壓力的",
     "exampleDe": "Mein Alltag ist sehr stressig.",
     "exampleZh": "我的日常生活壓力很大。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "das-broetchen",
-    "article": "das",
-    "word": "Brötchen",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Brötchen",
-    "meaning": "小圓麵包",
-    "exampleDe": "Zum Frühstück esse ich zwei Brötchen.",
-    "exampleZh": "我早餐吃兩個小麵包。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
   },
@@ -2656,19 +1878,6 @@
     }
   },
   {
-    "id": "gesund",
-    "article": "",
-    "word": "gesund",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "健康的",
-    "exampleDe": "Ich möchte gesund bleiben.",
-    "exampleZh": "我想保持健康。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
     "id": "anstrengend",
     "article": "",
     "word": "anstrengend",
@@ -2695,19 +1904,6 @@
     "groupOrder": 2
   },
   {
-    "id": "der-sport",
-    "article": "der",
-    "word": "Sport",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Sportarten",
-    "meaning": "運動",
-    "exampleDe": "Sport ist wichtig für uns.",
-    "exampleZh": "",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
     "id": "die-suche",
     "article": "die",
     "word": "Suche",
@@ -2721,79 +1917,6 @@
     "groupOrder": 2
   },
   {
-    "id": "der-partner",
-    "article": "der",
-    "word": "Partner",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Partner",
-    "meaning": "伴侶；搭檔",
-    "exampleDe": "Mein Partner kocht heute Abend.",
-    "exampleZh": "我的伴侶今天晚上煮飯。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "das-wasser",
-    "article": "das",
-    "word": "Wasser",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "(無複數)",
-    "meaning": "水",
-    "exampleDe": "Ich trinke jeden Tag viel Wasser.",
-    "exampleZh": "我每天喝很多水。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "der-tee",
-    "article": "der",
-    "word": "Tee",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Tees",
-    "meaning": "茶",
-    "exampleDe": "Ich trinke gern grünen Tee.",
-    "exampleZh": "我喜歡喝綠茶。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "trinken",
-    "article": "",
-    "word": "trinken",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "喝",
-    "exampleDe": "Morgens trinke ich Kaffee.",
-    "exampleZh": "我早上喝咖啡。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "trank",
-      "perfekt_3sg": "hat getrunken"
-    }
-  },
-  {
-    "id": "rauchen",
-    "article": "",
-    "word": "rauchen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "抽菸",
-    "exampleDe": "Hier dürfen Sie nicht rauchen.",
-    "exampleZh": "這裡不能抽菸。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "rauchte",
-      "perfekt_3sg": "hat geraucht"
-    }
-  },
-  {
     "id": "ausreichend",
     "article": "",
     "word": "ausreichend",
@@ -2803,19 +1926,6 @@
     "meaning": "足夠的",
     "exampleDe": "Ausreichend Schlaf ist wichtig.",
     "exampleZh": "充足的睡眠很重要。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "sport-treiben",
-    "article": "",
-    "word": "Sport treiben",
-    "pos": "phrase",
-    "level": "A1",
-    "plural": "-",
-    "meaning": "運動",
-    "exampleDe": "Ich treibe zweimal pro Woche Sport.",
-    "exampleZh": "我每週運動兩次。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
   },
@@ -2932,19 +2042,6 @@
     }
   },
   {
-    "id": "muede",
-    "article": "",
-    "word": "müde",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "疲倦的",
-    "exampleDe": "Nach der Arbeit bin ich müde.",
-    "exampleZh": "下班後我很累。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
     "id": "ploetzlich",
     "article": "",
     "word": "plötzlich",
@@ -2956,23 +2053,6 @@
     "exampleZh": "整棟房子突然停電了。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
-  },
-  {
-    "id": "lachen",
-    "article": "",
-    "word": "lachen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "笑",
-    "exampleDe": "Das Baby lacht viel.",
-    "exampleZh": "這個小寶寶很愛笑。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "lachte",
-      "perfekt_3sg": "hat gelacht"
-    }
   },
   {
     "id": "die-hauptsache",
@@ -3083,32 +2163,6 @@
     "groupOrder": 2
   },
   {
-    "id": "das-fleisch",
-    "article": "das",
-    "word": "Fleisch",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "(無複數)",
-    "meaning": "肉",
-    "exampleDe": "Ich esse nur selten Fleisch.",
-    "exampleZh": "我很少吃肉。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "frei",
-    "article": "",
-    "word": "frei",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "空的；有空的；自由的",
-    "exampleDe": "Ist der Platz hier frei?",
-    "exampleZh": "這個位子是空的嗎？",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
     "id": "einfuehren",
     "article": "",
     "word": "einführen",
@@ -3169,23 +2223,6 @@
     "groupOrder": 2
   },
   {
-    "id": "essen",
-    "article": "",
-    "word": "essen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "吃",
-    "exampleDe": "Wir essen heute zusammen zu Abend.",
-    "exampleZh": "我們今天一起吃晚餐。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "aß",
-      "perfekt_3sg": "hat gegessen"
-    }
-  },
-  {
     "id": "laengst",
     "article": "",
     "word": "längst",
@@ -3195,19 +2232,6 @@
     "meaning": "早就",
     "exampleDe": "Das habe ich dir doch längst gesagt!",
     "exampleZh": "這件事我早就跟你說過了！",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "schlecht",
-    "article": "",
-    "word": "schlecht",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "壞的；不好的",
-    "exampleDe": "Heute ist das Wetter schlecht.",
-    "exampleZh": "今天天氣不好。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
   },
@@ -3247,32 +2271,6 @@
     "meaning": "顧客(男)",
     "exampleDe": "Der Kunde wartet an der Kasse.",
     "exampleZh": "",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "die-zahl",
-    "article": "die",
-    "word": "Zahl",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Zahlen",
-    "meaning": "數字",
-    "exampleDe": "Die Kinder lernen die Zahlen.",
-    "exampleZh": "孩子們在學數字。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
-    "id": "der-mensch",
-    "article": "der",
-    "word": "Mensch",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Menschen",
-    "meaning": "人",
-    "exampleDe": "In der Stadt wohnen viele Menschen.",
-    "exampleZh": "這座城市住了很多人。",
     "category": "Lektion 3｜Gesund bleiben",
     "groupOrder": 2
   },
@@ -3331,19 +2329,6 @@
       "praeteritum_3sg": "erinnerte sich",
       "perfekt_3sg": "hat sich erinnert"
     }
-  },
-  {
-    "id": "alt",
-    "article": "",
-    "word": "alt",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "老的；舊的",
-    "exampleDe": "Das Haus ist sehr alt.",
-    "exampleZh": "這棟房子很舊。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
   },
   {
     "id": "die-wahrheit",
@@ -3514,36 +2499,6 @@
     "groupOrder": 2
   },
   {
-    "id": "beginnen",
-    "article": "",
-    "word": "beginnen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "開始",
-    "exampleDe": "Der Kurs beginnt nächste Woche.",
-    "exampleZh": "課程下週開始。",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2,
-    "practice": {
-      "praeteritum_3sg": "begann",
-      "perfekt_3sg": "hat begonnen"
-    }
-  },
-  {
-    "id": "der-mund",
-    "article": "der",
-    "word": "Mund",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Münder",
-    "meaning": "嘴巴",
-    "exampleDe": "Der Zahnarzt sagt: „Bitte machen Sie den Mund auf.“",
-    "exampleZh": "牙醫說：「請把嘴巴張開。」",
-    "category": "Lektion 3｜Gesund bleiben",
-    "groupOrder": 2
-  },
-  {
     "id": "vergleichen",
     "article": "",
     "word": "vergleichen",
@@ -3600,19 +2555,6 @@
     "groupOrder": 3
   },
   {
-    "id": "das-problem",
-    "article": "das",
-    "word": "Problem",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Probleme",
-    "meaning": "問題/困難",
-    "exampleDe": "Kein Problem!",
-    "exampleZh": "",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
     "id": "das-yoga",
     "article": "das",
     "word": "Yoga",
@@ -3626,19 +2568,6 @@
     "groupOrder": 3
   },
   {
-    "id": "leider",
-    "article": "",
-    "word": "leider",
-    "pos": "adverb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "可惜，很遺憾",
-    "exampleDe": "Am Samstag habe ich leider keine Zeit.",
-    "exampleZh": "很可惜，我星期六沒空。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
     "id": "deutlich",
     "article": "",
     "word": "deutlich",
@@ -3648,19 +2577,6 @@
     "meaning": "明顯的；清楚的",
     "exampleDe": "Der Unterschied ist deutlich.",
     "exampleZh": "這個差異很明顯。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "das-kino",
-    "article": "das",
-    "word": "Kino",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Kinos",
-    "meaning": "電影院",
-    "exampleDe": "Wir gehen heute ins Kino.",
-    "exampleZh": "",
     "category": "Lektion 4｜Sprachen",
     "groupOrder": 3
   },
@@ -3729,23 +2645,6 @@
     }
   },
   {
-    "id": "hoeren",
-    "article": "",
-    "word": "hören",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "聽見",
-    "exampleDe": "Ich höre gern Musik.",
-    "exampleZh": "我喜歡聽音樂。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3,
-    "practice": {
-      "praeteritum_3sg": "hörte",
-      "perfekt_3sg": "hat gehört"
-    }
-  },
-  {
     "id": "die-sprachkenntnisse",
     "article": "die",
     "word": "Sprachkenntnisse",
@@ -3773,23 +2672,6 @@
     "practice": {
       "praeteritum_3sg": "floh",
       "perfekt_3sg": "ist geflohen"
-    }
-  },
-  {
-    "id": "heissen",
-    "article": "",
-    "word": "heißen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "名叫",
-    "exampleDe": "Ich heiße Anna.",
-    "exampleZh": "我叫安娜。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3,
-    "practice": {
-      "praeteritum_3sg": "hieß",
-      "perfekt_3sg": "hat geheißen"
     }
   },
   {
@@ -3828,19 +2710,6 @@
     "meaning": "外語",
     "exampleDe": "Deutsch ist für mich eine Fremdsprache.",
     "exampleZh": "德文對我來說是一門外語。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "einfach",
-    "article": "",
-    "word": "einfach",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "簡單的",
-    "exampleDe": "Die Aufgabe ist einfach.",
-    "exampleZh": "這個題目很簡單。",
     "category": "Lektion 4｜Sprachen",
     "groupOrder": 3
   },
@@ -3918,19 +2787,6 @@
     }
   },
   {
-    "id": "falsch",
-    "article": "",
-    "word": "falsch",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "錯誤的",
-    "exampleDe": "Die Nummer ist falsch.",
-    "exampleZh": "這個號碼是錯的。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
     "id": "der-weg",
     "article": "der",
     "word": "Weg",
@@ -3972,23 +2828,6 @@
     "exampleZh": "",
     "category": "Lektion 4｜Sprachen",
     "groupOrder": 3
-  },
-  {
-    "id": "lernen",
-    "article": "",
-    "word": "lernen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "學習",
-    "exampleDe": "Ich lerne seit einem Jahr Deutsch.",
-    "exampleZh": "我學德文一年了。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3,
-    "practice": {
-      "praeteritum_3sg": "lernte",
-      "perfekt_3sg": "hat gelernt"
-    }
   },
   {
     "id": "der-gedanke",
@@ -4116,19 +2955,6 @@
     "groupOrder": 3
   },
   {
-    "id": "die-sprache",
-    "article": "die",
-    "word": "Sprache",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Sprachen",
-    "meaning": "語言",
-    "exampleDe": "Welche Sprache sprichst du?",
-    "exampleZh": "",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
     "id": "wohl",
     "article": "",
     "word": "wohl",
@@ -4140,49 +2966,6 @@
     "exampleZh": "公車大概會晚到。",
     "category": "Lektion 4｜Sprachen",
     "groupOrder": 3
-  },
-  {
-    "id": "spanisch",
-    "article": "",
-    "word": "spanisch",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "西班牙的；西班牙語的",
-    "exampleDe": "Meine Freundin hört gern spanische Lieder.",
-    "exampleZh": "我朋友喜歡聽西班牙語歌曲。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "die-kueche",
-    "article": "die",
-    "word": "Küche",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Küchen",
-    "meaning": "廚房",
-    "exampleDe": "Wir kochen in der Küche.",
-    "exampleZh": "",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "kochen",
-    "article": "",
-    "word": "kochen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "烹飪",
-    "exampleDe": "Heute koche ich für meine Familie.",
-    "exampleZh": "我今天煮飯給家人吃。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3,
-    "practice": {
-      "praeteritum_3sg": "kochte",
-      "perfekt_3sg": "hat gekocht"
-    }
   },
   {
     "id": "verbinden",
@@ -4310,19 +3093,6 @@
     }
   },
   {
-    "id": "die-schule",
-    "article": "die",
-    "word": "Schule",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Schulen",
-    "meaning": "學校",
-    "exampleDe": "Die Kinder gehen in die Schule.",
-    "exampleZh": "",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
     "id": "der-rabe",
     "article": "der",
     "word": "Rabe",
@@ -4347,49 +3117,6 @@
     "exampleZh": "這份禮物需要一個有創意的點子。",
     "category": "Lektion 4｜Sprachen",
     "groupOrder": 3
-  },
-  {
-    "id": "der-anfang",
-    "article": "der",
-    "word": "Anfang",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Anfänge",
-    "meaning": "開始",
-    "exampleDe": "Am Anfang war die Aufgabe schwer.",
-    "exampleZh": "一開始這項任務很難。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "oft",
-    "article": "",
-    "word": "oft",
-    "pos": "adverb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "經常",
-    "exampleDe": "Ich gehe oft zu Fuß zur Schule.",
-    "exampleZh": "我常常走路去學校。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "sagen",
-    "article": "",
-    "word": "sagen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "說",
-    "exampleDe": "Was sagst du?",
-    "exampleZh": "你說什麼？",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3,
-    "practice": {
-      "praeteritum_3sg": "sagte",
-      "perfekt_3sg": "hat gesagt"
-    }
   },
   {
     "id": "sich-veraendern",
@@ -4435,19 +3162,6 @@
     "groupOrder": 3
   },
   {
-    "id": "italienisch",
-    "article": "",
-    "word": "italienisch",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "義大利的；義大利語的",
-    "exampleDe": "Heute kochen wir italienisch.",
-    "exampleZh": "我們今天煮義大利料理。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
     "id": "trennen",
     "article": "",
     "word": "trennen",
@@ -4463,58 +3177,6 @@
       "praeteritum_3sg": "trennte",
       "perfekt_3sg": "hat getrennt"
     }
-  },
-  {
-    "id": "das-jahr",
-    "article": "das",
-    "word": "Jahr",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Jahre",
-    "meaning": "年",
-    "exampleDe": "Frohes neues Jahr!",
-    "exampleZh": "",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "der-papa",
-    "article": "der",
-    "word": "Papa",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Papas",
-    "meaning": "爸爸",
-    "exampleDe": "Papa, kommst du heute früh nach Hause?",
-    "exampleZh": "爸爸，你今天會早點回家嗎？",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "manchmal",
-    "article": "",
-    "word": "manchmal",
-    "pos": "adverb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "有時候",
-    "exampleDe": "Manchmal gehe ich allein ins Kino.",
-    "exampleZh": "我有時候一個人去看電影。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "der-satz",
-    "article": "der",
-    "word": "Satz",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Sätze",
-    "meaning": "句子",
-    "exampleDe": "Dieser Satz ist schwer zu verstehen.",
-    "exampleZh": "這個句子很難理解。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
   },
   {
     "id": "zustande-kommen",
@@ -4663,36 +3325,6 @@
     "groupOrder": 3
   },
   {
-    "id": "das-englisch",
-    "article": "das",
-    "word": "Englisch",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "",
-    "meaning": "英文",
-    "exampleDe": "Er spricht gut Englisch.",
-    "exampleZh": "他英文說得很好。",
-    "category": "Lektion 4｜Sprachen",
-    "groupOrder": 3
-  },
-  {
-    "id": "helfen",
-    "article": "",
-    "word": "helfen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "幫助",
-    "exampleDe": "Kannst du mir bitte helfen?",
-    "exampleZh": "你可以幫我嗎？",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4,
-    "practice": {
-      "praeteritum_3sg": "half",
-      "perfekt_3sg": "hat geholfen"
-    }
-  },
-  {
     "id": "teilnehmen",
     "article": "",
     "word": "teilnehmen",
@@ -4783,19 +3415,6 @@
     "groupOrder": 4
   },
   {
-    "id": "die-studentin",
-    "article": "die",
-    "word": "Studentin",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Studentinnen",
-    "meaning": "女大學生",
-    "exampleDe": "Die Studentin schreibt ihre Masterarbeit.",
-    "exampleZh": "那位女大學生正在寫碩士論文。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
     "id": "der-haushalt",
     "article": "der",
     "word": "Haushalt",
@@ -4837,19 +3456,6 @@
       "praeteritum_3sg": "erledigte",
       "perfekt_3sg": "hat erledigt"
     }
-  },
-  {
-    "id": "gross",
-    "article": "",
-    "word": "groß",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "大的；高的",
-    "exampleDe": "Unsere Wohnung ist groß.",
-    "exampleZh": "我們的公寓很大。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
   },
   {
     "id": "stellen",
@@ -4920,23 +3526,6 @@
     }
   },
   {
-    "id": "spazieren-gehen",
-    "article": "",
-    "word": "spazieren gehen",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "散步",
-    "exampleDe": "Wir gehen am Sonntag spazieren.",
-    "exampleZh": "我們星期天去散步。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4,
-    "practice": {
-      "praeteritum_3sg": "ging spazieren",
-      "perfekt_3sg": "ist spazieren gegangen"
-    }
-  },
-  {
     "id": "nervoes",
     "article": "",
     "word": "nervös",
@@ -5002,19 +3591,6 @@
     "meaning": "建築；建造",
     "exampleDe": "Er arbeitet auf dem Bau.",
     "exampleZh": "他在工地工作。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
-    "id": "die-hand",
-    "article": "die",
-    "word": "Hand",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Hände",
-    "meaning": "手",
-    "exampleDe": "Bitte waschen Sie die Hände.",
-    "exampleZh": "",
     "category": "Lektion 5｜Eine Arbeit finden",
     "groupOrder": 4
   },
@@ -5097,19 +3673,6 @@
     "groupOrder": 4
   },
   {
-    "id": "der-vater",
-    "article": "der",
-    "word": "Vater",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Väter",
-    "meaning": "父親",
-    "exampleDe": "Mein Vater arbeitet als Ingenieur.",
-    "exampleZh": "我爸爸是工程師。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
     "id": "der-geniesser",
     "article": "der",
     "word": "Genießer",
@@ -5132,19 +3695,6 @@
     "meaning": "技術；科技",
     "exampleDe": "Mein Vater kommt mit der modernen Technik gar nicht klar.",
     "exampleZh": "我爸爸完全搞不定現代科技。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
-    "id": "wichtig",
-    "article": "",
-    "word": "wichtig",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "重要的",
-    "exampleDe": "Deine Adresse ist für die Anmeldung wichtig.",
-    "exampleZh": "你的地址對報名很重要。",
     "category": "Lektion 5｜Eine Arbeit finden",
     "groupOrder": 4
   },
@@ -5192,19 +3742,6 @@
     "groupOrder": 4
   },
   {
-    "id": "allein",
-    "article": "",
-    "word": "allein",
-    "pos": "adverb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "獨自（也寫 alleine）",
-    "exampleDe": "Sie wohnt allein.",
-    "exampleZh": "她一個人住。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
     "id": "das-mitglied",
     "article": "das",
     "word": "Mitglied",
@@ -5214,19 +3751,6 @@
     "meaning": "會員；成員",
     "exampleDe": "Seit Mai bin ich Mitglied im Sportverein.",
     "exampleZh": "從五月起，我就是運動社團的會員。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
-    "id": "der-kaffee",
-    "article": "der",
-    "word": "Kaffee",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Kaffees",
-    "meaning": "咖啡",
-    "exampleDe": "Möchtest du noch einen Kaffee?",
-    "exampleZh": "你還想再喝一杯咖啡嗎？",
     "category": "Lektion 5｜Eine Arbeit finden",
     "groupOrder": 4
   },
@@ -5242,36 +3766,6 @@
     "exampleZh": "我不知道這封信是誰寫的。",
     "category": "Lektion 5｜Eine Arbeit finden",
     "groupOrder": 4
-  },
-  {
-    "id": "schwer",
-    "article": "",
-    "word": "schwer",
-    "pos": "adjective",
-    "level": "A1",
-    "plural": "",
-    "meaning": "困難的；重的",
-    "exampleDe": "Deutsch ist nicht so schwer.",
-    "exampleZh": "德文沒有那麼難。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
-    "id": "ueben",
-    "article": "",
-    "word": "üben",
-    "pos": "verb",
-    "level": "A1",
-    "plural": "",
-    "meaning": "練習",
-    "exampleDe": "Wir üben heute die Aussprache.",
-    "exampleZh": "我們今天練習發音。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4,
-    "practice": {
-      "praeteritum_3sg": "übte",
-      "perfekt_3sg": "hat geübt"
-    }
   },
   {
     "id": "gewohnt",
@@ -5382,19 +3876,6 @@
     "groupOrder": 4
   },
   {
-    "id": "die-woche",
-    "article": "die",
-    "word": "Woche",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Wochen",
-    "meaning": "週",
-    "exampleDe": "Nächste Woche habe ich Urlaub.",
-    "exampleZh": "我下週休假。",
-    "category": "Lektion 5｜Eine Arbeit finden",
-    "groupOrder": 4
-  },
-  {
     "id": "die-ausbildung",
     "article": "die",
     "word": "Ausbildung",
@@ -5406,19 +3887,6 @@
     "exampleZh": "",
     "category": "Lektion 5｜Eine Arbeit finden",
     "groupOrder": 4
-  },
-  {
-    "id": "das-maedchen",
-    "article": "das",
-    "word": "Mädchen",
-    "pos": "noun",
-    "level": "A1",
-    "plural": "die Mädchen",
-    "meaning": "女孩",
-    "exampleDe": "Das Mädchen spielt mit seinem Hund im Park.",
-    "exampleZh": "那個女孩在公園裡和她的狗玩。",
-    "category": "Lektion 6｜Dienstleistung",
-    "groupOrder": 5
   },
   {
     "id": "verlieren",

@@ -6644,7 +6644,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "接駁列車；轉乘列車"
+    "轉乘列車；銜接的班車"
    ],
    "examples": [
     {
@@ -8114,7 +8114,7 @@
    "word": "Arbeitsatmosphäre",
    "pos": "noun",
    "kind": "word",
-   "plural": "die Arbeitsatmosphären",
+   "plural": "",
    "verb": null,
    "noArticle": false,
    "meanings": [
@@ -9294,7 +9294,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "面向；觀點"
+    "面向；方面"
    ],
    "examples": [
     {
@@ -10315,7 +10315,7 @@
    },
    "noArticle": false,
    "meanings": [
-    "放棄；交寄；布置任務"
+    "放棄；寄（包裹）；登（廣告）、下（訂單）"
    ],
    "examples": [
     {
@@ -11103,7 +11103,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "監督人員；照顧管理人員"
+    "看管人員；監護人"
    ],
    "examples": [
     {
@@ -15601,7 +15601,7 @@
    "examples": [
     {
      "de": "Wir suchen eine barrierefreie Wohnung im Erdgeschoss.",
-     "zh": "我們在找一間位於地面層的無障礙住宅。"
+     "zh": "我們在找一間一樓的無障礙住宅。"
     }
    ],
    "sourceLevel": null,
@@ -16029,7 +16029,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "city",
    "push": true,
    "flag": ""
@@ -22168,7 +22168,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "勞資內部協議"
+    "（企業內）勞資協定"
    ],
    "examples": [
     {
@@ -22185,7 +22185,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "work",
    "push": true,
    "flag": ""
@@ -27278,7 +27278,7 @@
    "examples": [
     {
      "de": "Den Termin klären wir schnell im Chat.",
-     "zh": "我們在線上聊天時很快就敲定時間。"
+     "zh": "時間我們在聊天訊息裡很快確認一下就好。"
     }
    ],
    "sourceLevel": null,
@@ -36144,7 +36144,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "單位；統一；整體"
+    "單位；單元；統一"
    ],
    "examples": [
     {
@@ -38152,7 +38152,7 @@
    ],
    "examples": [
     {
-     "de": "Mit der elektrischen Zahnbürste putzt er gern die Zähne.",
+     "de": "Mit der elektrischen Zahnbürste putzt er sich gern die Zähne.",
      "zh": "他很喜歡用電動牙刷刷牙。"
     }
    ],
@@ -38891,7 +38891,7 @@
    "examples": [
     {
      "de": "Unsere engagierte Nachbarin organisiert jede Woche einen Spielenachmittag.",
-     "zh": "我們熱心的鄰居每週都安排一個遊戲下午。"
+     "zh": "我們熱心的鄰居每週都會辦一場下午的遊戲聚會。"
     }
    ],
    "sourceLevel": null,
@@ -39497,7 +39497,7 @@
    ],
    "examples": [
     {
-     "de": "Sie ist entschlossen, die Ausbildung zu beenden.",
+     "de": "Sie ist entschlossen, die Ausbildung abzuschließen.",
      "zh": "她下定決心要完成職業訓練。"
     }
    ],
@@ -40115,12 +40115,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "馬鈴薯"
+    "馬鈴薯（奧地利用語）"
    ],
    "examples": [
     {
-     "de": "Auf der österreichischen Speisekarte steht Erdapfel statt Kartoffel.",
-     "zh": "奧地利的菜單用另一種說法寫馬鈴薯。"
+     "de": "Auf österreichischen Speisekarten steht oft Erdapfel statt Kartoffel.",
+     "zh": "奧地利的菜單上常用另一種說法來寫馬鈴薯。"
     }
    ],
    "sourceLevel": null,
@@ -40132,7 +40132,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "food",
    "push": true,
    "flag": ""
@@ -48208,12 +48208,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "難民住宿處"
+    "難民收容所"
    ],
    "examples": [
     {
      "de": "Die Stadt richtet eine neue Flüchtlingsunterkunft ein.",
-     "zh": "市府正在設置新的難民住宿處。"
+     "zh": "市府正在設置新的難民收容所。"
     }
    ],
    "sourceLevel": null,
@@ -49943,7 +49943,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "feel",
    "push": true,
    "flag": ""
@@ -50542,7 +50542,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "work",
    "push": true,
    "flag": ""
@@ -56118,7 +56118,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "洗碗機"
+    "洗碗機（另一種常見說法）"
    ],
    "examples": [
     {
@@ -56310,7 +56310,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "速度限制"
+    "速度限制（正式用語）"
    ],
    "examples": [
     {
@@ -59698,7 +59698,7 @@
    "examples": [
     {
      "de": "Vor der Gründung ihres Geschäfts hat sie lange gespart.",
-     "zh": "開店前，她存了很久的錢。"
+     "zh": "創立自己的店之前，她存了很久的錢。"
     }
    ],
    "sourceLevel": null,
@@ -63608,7 +63608,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "原籍國"
+    "出身國；母國"
    ],
    "examples": [
     {
@@ -63710,7 +63710,7 @@
    },
    "noArticle": false,
    "meanings": [
-    "支配；處於某種狀態"
+    "統治；（氣氛、狀況）籠罩、普遍存在"
    ],
    "examples": [
     {
@@ -75952,7 +75952,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "德式丸子；麵糰丸子"
+    "德式丸子（馬鈴薯或麵包做的）"
    ],
    "examples": [
     {
@@ -78728,7 +78728,7 @@
    "examples": [
     {
      "de": "Zum Vorstellungsgespräch trägt er eine dunkle Krawatte.",
-     "zh": "他參加面試時打了一條深色領帶。"
+     "zh": "他去面試時會打一條深色領帶。"
     }
    ],
    "sourceLevel": null,
@@ -79637,7 +79637,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "原子筆"
+    "原子筆（口語）"
    ],
    "examples": [
     {
@@ -80882,7 +80882,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "society",
    "push": true,
    "flag": ""
@@ -81642,7 +81642,7 @@
    "word": "Lebensgefühl",
    "pos": "noun",
    "kind": "word",
-   "plural": "die Lebensgefühle",
+   "plural": "",
    "verb": null,
    "noArticle": false,
    "meanings": [
@@ -82764,7 +82764,7 @@
    "examples": [
     {
      "de": "Sie schreibt einen Leserbrief über die neuen Buspreise.",
-     "zh": "她寫了一封關於公車新票價的讀者投書。"
+     "zh": "她正在寫一封讀者投書，談公車的新票價。"
     }
    ],
    "sourceLevel": null,
@@ -83949,7 +83949,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "city",
    "push": true,
    "flag": ""
@@ -86029,7 +86029,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "杏桃餡甜丸子"
+    "杏桃餡甜丸子（奧地利甜點）"
    ],
    "examples": [
     {
@@ -86046,7 +86046,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "food",
    "push": true,
    "flag": ""
@@ -86132,7 +86132,7 @@
    ],
    "examples": [
     {
-     "de": "Die Firma fragt Kunden für ihre Marktforschung nach ihren Wünschen.",
+     "de": "Für ihre Marktforschung befragt die Firma Kunden nach ihren Wünschen.",
      "zh": "公司為了做市場調查，詢問顧客的需求。"
     }
    ],
@@ -89699,12 +89699,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "同理心；同情"
+    "同情心；體恤"
    ],
    "examples": [
     {
      "de": "Sie hörte ihm mit viel Mitgefühl zu.",
-     "zh": "她很有同理心地聽他說話。"
+     "zh": "她帶著同情心聽他說話。"
     }
    ],
    "sourceLevel": null,
@@ -91658,7 +91658,7 @@
    "examples": [
     {
      "de": "Wir haben monatelang nach einer bezahlbaren Wohnung gesucht.",
-     "zh": "我們找了好幾個月，才找到負擔得起的住處。"
+     "zh": "我們花了好幾個月找負擔得起的房子。"
     }
    ],
    "sourceLevel": null,
@@ -97453,7 +97453,7 @@
    ],
    "examples": [
     {
-     "de": "Für die Wanderung nehme ich eine kleine Nussmischung mit.",
+     "de": "Für die Wanderung nehme ich eine kleine Tüte Nussmischung mit.",
      "zh": "健行時，我會帶一小包綜合堅果。"
     }
    ],
@@ -102747,7 +102747,7 @@
    "examples": [
     {
      "de": "Für die Präsentation brauchen wir einen größeren Bildschirm.",
-     "zh": "這場簡報需要更大的螢幕。"
+     "zh": "這場簡報我們需要更大的螢幕。"
     }
    ],
    "sourceLevel": null,
@@ -109526,7 +109526,7 @@
    ],
    "examples": [
     {
-     "de": "Zum Mittagessen gibt es Rostbratwurst mit Brot.",
+     "de": "Zum Mittagessen gibt es Rostbratwürste mit Brot.",
      "zh": "午餐有炭烤香腸配麵包。"
     }
    ],
@@ -109539,7 +109539,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "food",
    "push": true,
    "flag": ""
@@ -109930,7 +109930,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "紅蘿蔔"
+    "紅蘿蔔（瑞士用語）"
    ],
    "examples": [
     {
@@ -109947,7 +109947,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "food",
    "push": true,
    "flag": ""
@@ -109979,7 +109979,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "food",
    "push": true,
    "flag": ""
@@ -122125,7 +122125,7 @@
      "group": null
     }
    ],
-   "level": "A2",
+   "level": "B1",
    "topic": "leisure",
    "push": true,
    "flag": ""
@@ -126718,7 +126718,7 @@
    "examples": [
     {
      "de": "Der Staatsgast wird am Flughafen begrüßt.",
-     "zh": "國賓在機場受到歡迎。"
+     "zh": "國賓抵達機場時受到迎接。"
     }
    ],
    "sourceLevel": null,
@@ -126730,7 +126730,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "society",
    "push": true,
    "flag": ""
@@ -128030,7 +128030,7 @@
     "praeteritum": "steckte",
     "perfekt": "hat gesteckt",
     "aux": "haben",
-    "note": "表示位置時，過去式也可用 stak"
+    "note": "也可不及物，表示「插在、卡在某處」：Der Schlüssel steckt im Schloss."
    },
    "noArticle": false,
    "meanings": [
@@ -133350,7 +133350,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "速度限制"
+    "速限"
    ],
    "examples": [
     {
@@ -135846,7 +135846,7 @@
     "praeteritum": "trat",
     "perfekt": "hat/ist getreten",
     "aux": "haben/sein",
-    "note": "踩踢物品用 haben；移動如 ins Zimmer treten 用 sein"
+    "note": "踢人或踢東西（jemanden treten、gegen etwas treten）用 haben；踩到、踏進（auf/in etwas treten、ins Zimmer treten）用 sein"
    },
    "noArticle": false,
    "meanings": [
@@ -148510,8 +148510,8 @@
    ],
    "examples": [
     {
-     "de": "Nach dem Gespräch war die Verwirrung vollkommen.",
-     "zh": "談完之後，情況完全亂了。"
+     "de": "Mit dem Ergebnis bin ich vollkommen zufrieden.",
+     "zh": "我對結果完全滿意。"
     }
    ],
    "sourceLevel": null,
@@ -150100,7 +150100,7 @@
    "examples": [
     {
      "de": "Mein Vorsatz für dieses Jahr ist, öfter selbst zu kochen.",
-     "zh": "我今年的目標是更常自己煮飯。"
+     "zh": "我今年下定的決心是更常自己煮飯。"
     }
    ],
    "sourceLevel": null,
@@ -156505,7 +156505,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "在做什麼時；在哪方面"
+    "在做什麼時；在哪方面；（連接詞）不過、話說回來"
    ],
    "examples": [
     {
@@ -159372,7 +159372,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "city",
    "push": true,
    "flag": ""

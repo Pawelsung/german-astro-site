@@ -56,3 +56,9 @@
 - npm run build：成功，10 頁。
 - audio dry-run：共 **11,012 段**，待產生 **931 段／29,179 字元**（包含先前 Schritte 6 尚未產生的音檔，不是本次新增量）。
 - 未產生音檔；未 commit、push、部署、stash 或切分支。
+
+## 排除 A1 基本字（2026-11-20）
+
+- 依主字庫 level 移除 108 個 A1 ID：L1 33、L2 13、L3 27、L4 22、L5 12、L6 1。
+- 清單由 383 減至 275 IDs：L1 53、L2 36、L3 86、L4 58、L5 40、L6 2；無空分組，A2 以上全部保留。未修改 schritte5-underlined.json，也未刪除主字庫詞條或既有進度 ID。
+- 更新 public manifest 的 count／description、各課數量測試，新增總數 275 與清單無 A1 斷言；生成 lists／site／public 字庫。測試 157/158 通過，唯一缺音檔失敗為預期；build 成功。

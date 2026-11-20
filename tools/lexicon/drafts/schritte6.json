@@ -8,7 +8,7 @@
     "topic": "work",
     "meaning": "簡報；展示",
     "exampleDe": "Für die Präsentation brauchen wir einen größeren Bildschirm.",
-    "exampleZh": "這場簡報需要更大的螢幕。"
+    "exampleZh": "這場簡報我們需要更大的螢幕。"
   },
   {
     "word": "Vorbild",
@@ -70,7 +70,7 @@
     "pos": "noun",
     "article": "die",
     "plural": "",
-    "level": "B1",
+    "level": "B2",
     "topic": "feel",
     "meaning": "陌生感；異鄉感",
     "exampleDe": "Nach einigen Wochen verlor sich das Gefühl der Fremdheit.",
@@ -83,7 +83,7 @@
     "plural": "die Herkunftsländer",
     "level": "B1",
     "topic": "society",
-    "meaning": "原籍國",
+    "meaning": "出身國；母國",
     "exampleDe": "Welche Sprachen spricht man in deinem Herkunftsland?",
     "exampleZh": "你的原籍國使用哪些語言？"
   },
@@ -102,7 +102,7 @@
     "word": "Arbeitsatmosphäre",
     "pos": "noun",
     "article": "die",
-    "plural": "die Arbeitsatmosphären",
+    "plural": "",
     "level": "B1",
     "topic": "work",
     "meaning": "工作氣氛",
@@ -180,7 +180,7 @@
     "pos": "noun",
     "article": "die",
     "plural": "die Litfaßsäulen",
-    "level": "B1",
+    "level": "B2",
     "topic": "city",
     "meaning": "圓柱形廣告柱",
     "exampleDe": "An der Litfaßsäule hängt ein Plakat für das Stadtfest.",
@@ -337,7 +337,7 @@
     "level": "B1",
     "topic": "work",
     "meaning": "市場調查",
-    "exampleDe": "Die Firma fragt Kunden für ihre Marktforschung nach ihren Wünschen.",
+    "exampleDe": "Für ihre Marktforschung befragt die Firma Kunden nach ihren Wünschen.",
     "exampleZh": "公司為了做市場調查，詢問顧客的需求。"
   },
   {
@@ -598,7 +598,7 @@
     "pos": "noun",
     "article": "die",
     "plural": "die Baugruben",
-    "level": "B1",
+    "level": "B2",
     "topic": "city",
     "meaning": "建築工地的基坑",
     "exampleDe": "Um die Baugrube steht ein hoher Zaun.",
@@ -767,7 +767,7 @@
     "topic": "media",
     "meaning": "線上聊天；聊天室對話",
     "exampleDe": "Den Termin klären wir schnell im Chat.",
-    "exampleZh": "我們在線上聊天時很快就敲定時間。"
+    "exampleZh": "時間我們在聊天訊息裡很快確認一下就好。"
   },
   {
     "word": "Orchester",
@@ -1009,7 +1009,7 @@
     "topic": "general",
     "meaning": "決心；打算",
     "exampleDe": "Mein Vorsatz für dieses Jahr ist, öfter selbst zu kochen.",
-    "exampleZh": "我今年的目標是更常自己煮飯。"
+    "exampleZh": "我今年下定的決心是更常自己煮飯。"
   },
   {
     "word": "Ferienprogramm",
@@ -1247,7 +1247,7 @@
     "pos": "noun",
     "article": "die",
     "plural": "",
-    "level": "B1",
+    "level": "B2",
     "topic": "society",
     "meaning": "人口外移都市；農村人口流失",
     "exampleDe": "Wegen der Landflucht stehen im Dorf viele Häuser leer.",
@@ -1269,11 +1269,11 @@
     "pos": "noun",
     "article": "der",
     "plural": "die Staatsgäste",
-    "level": "B1",
+    "level": "B2",
     "topic": "society",
     "meaning": "國賓",
     "exampleDe": "Der Staatsgast wird am Flughafen begrüßt.",
-    "exampleZh": "國賓在機場受到歡迎。"
+    "exampleZh": "國賓抵達機場時受到迎接。"
   },
   {
     "word": "Rahmen",
@@ -1293,7 +1293,7 @@
     "plural": "die Kulis",
     "level": "A2",
     "topic": "school",
-    "meaning": "原子筆",
+    "meaning": "原子筆（口語）",
     "exampleDe": "Kannst du mir kurz deinen Kuli leihen?",
     "exampleZh": "可以借我用一下你的原子筆嗎？"
   },
@@ -1337,7 +1337,7 @@
     "plural": "die Geschirrspüler",
     "level": "A2",
     "topic": "home",
-    "meaning": "洗碗機",
+    "meaning": "洗碗機（另一種常見說法）",
     "exampleDe": "Räum bitte die sauberen Teller aus dem Geschirrspüler.",
     "exampleZh": "請把洗碗機裡洗好的盤子拿出來。"
   },
@@ -1482,7 +1482,7 @@
     "topic": "work",
     "meaning": "創立；成立",
     "exampleDe": "Vor der Gründung ihres Geschäfts hat sie lange gespart.",
-    "exampleZh": "開店前，她存了很久的錢。"
+    "exampleZh": "創立自己的店之前，她存了很久的錢。"
   },
   {
     "word": "Nussmischung",
@@ -1492,7 +1492,7 @@
     "level": "B1",
     "topic": "food",
     "meaning": "綜合堅果",
-    "exampleDe": "Für die Wanderung nehme ich eine kleine Nussmischung mit.",
+    "exampleDe": "Für die Wanderung nehme ich eine kleine Tüte Nussmischung mit.",
     "exampleZh": "健行時，我會帶一小包綜合堅果。"
   },
   {
@@ -1544,7 +1544,7 @@
     "pos": "noun",
     "article": "der",
     "plural": "die Zeitungskästen",
-    "level": "B1",
+    "level": "B2",
     "topic": "city",
     "meaning": "報紙販售箱；報紙投遞箱",
     "exampleDe": "Vor dem Bahnhof steht ein Zeitungskasten.",
@@ -1581,7 +1581,7 @@
     "topic": "people",
     "meaning": "領帶",
     "exampleDe": "Zum Vorstellungsgespräch trägt er eine dunkle Krawatte.",
-    "exampleZh": "他參加面試時打了一條深色領帶。"
+    "exampleZh": "他去面試時會打一條深色領帶。"
   },
   {
     "word": "Aufsichtsperson",
@@ -1590,7 +1590,7 @@
     "plural": "die Aufsichtspersonen",
     "level": "B1",
     "topic": "people",
-    "meaning": "監督人員；照顧管理人員",
+    "meaning": "看管人員；監護人",
     "exampleDe": "Kinder dürfen nur mit einer Aufsichtsperson ins Wasser.",
     "exampleZh": "兒童必須有照顧人員陪同才能下水。"
   },
@@ -1601,7 +1601,7 @@
     "plural": "die Anschlusszüge",
     "level": "B1",
     "topic": "travel",
-    "meaning": "接駁列車；轉乘列車",
+    "meaning": "轉乘列車；銜接的班車",
     "exampleDe": "Wegen der Verspätung haben wir den Anschlusszug verpasst.",
     "exampleZh": "因為誤點，我們錯過了轉乘列車。"
   },
@@ -1645,7 +1645,7 @@
     "plural": "die Aspekte",
     "level": "B1",
     "topic": "general",
-    "meaning": "面向；觀點",
+    "meaning": "面向；方面",
     "exampleDe": "Bei der Wohnungssuche spielt auch der finanzielle Aspekt eine Rolle.",
     "exampleZh": "找房子時，財務方面也是考量之一。"
   },
@@ -1689,7 +1689,7 @@
     "plural": "die Tempolimits",
     "level": "B1",
     "topic": "travel",
-    "meaning": "速度限制",
+    "meaning": "速限",
     "exampleDe": "Auch nachts gilt hier das Tempolimit.",
     "exampleZh": "這裡即使在夜間也有速限。"
   },
@@ -1744,7 +1744,7 @@
     "plural": "die Einheiten",
     "level": "B1",
     "topic": "general",
-    "meaning": "單位；統一；整體",
+    "meaning": "單位；單元；統一",
     "exampleDe": "Die letzte Einheit des Kurses dauert neunzig Minuten.",
     "exampleZh": "課程最後一個單元長九十分鐘。"
   },
@@ -1785,7 +1785,7 @@
     "word": "Lebensgefühl",
     "pos": "noun",
     "article": "das",
-    "plural": "die Lebensgefühle",
+    "plural": "",
     "level": "B1",
     "topic": "feel",
     "meaning": "生活感受；生活態度",
@@ -1823,7 +1823,7 @@
     "topic": "media",
     "meaning": "讀者投書",
     "exampleDe": "Sie schreibt einen Leserbrief über die neuen Buspreise.",
-    "exampleZh": "她寫了一封關於公車新票價的讀者投書。"
+    "exampleZh": "她正在寫一封讀者投書，談公車的新票價。"
   },
   {
     "word": "Bezahlung",
@@ -1909,9 +1909,9 @@
     "plural": "",
     "level": "B1",
     "topic": "feel",
-    "meaning": "同理心；同情",
+    "meaning": "同情心；體恤",
     "exampleDe": "Sie hörte ihm mit viel Mitgefühl zu.",
-    "exampleZh": "她很有同理心地聽他說話。"
+    "exampleZh": "她帶著同情心聽他說話。"
   },
   {
     "word": "Altkleider",
@@ -2116,7 +2116,7 @@
     "pos": "noun",
     "article": "die",
     "plural": "die Siegerinnen",
-    "level": "A2",
+    "level": "B1",
     "topic": "leisure",
     "meaning": "女性獲勝者；女冠軍",
     "exampleDe": "Die Siegerin bedankt sich bei ihrem Trainer.",
@@ -2151,7 +2151,7 @@
     "plural": "die Knödel",
     "level": "B1",
     "topic": "food",
-    "meaning": "德式丸子；麵糰丸子",
+    "meaning": "德式丸子（馬鈴薯或麵包做的）",
     "exampleDe": "Zu den Knödeln gibt es Pilze in einer cremigen Soße.",
     "exampleZh": "丸子搭配奶油蘑菇醬。"
   },
@@ -2160,11 +2160,11 @@
     "pos": "noun",
     "article": "der",
     "plural": "die Erdäpfel",
-    "level": "B1",
+    "level": "B2",
     "topic": "food",
-    "meaning": "馬鈴薯",
-    "exampleDe": "Auf der österreichischen Speisekarte steht Erdapfel statt Kartoffel.",
-    "exampleZh": "奧地利的菜單用另一種說法寫馬鈴薯。"
+    "meaning": "馬鈴薯（奧地利用語）",
+    "exampleDe": "Auf österreichischen Speisekarten steht oft Erdapfel statt Kartoffel.",
+    "exampleZh": "奧地利的菜單上常用另一種說法來寫馬鈴薯。"
   },
   {
     "word": "Snack",
@@ -2248,9 +2248,9 @@
     "pos": "noun",
     "article": "der",
     "plural": "die Marillenknödel",
-    "level": "B1",
+    "level": "B2",
     "topic": "food",
-    "meaning": "杏桃餡甜丸子",
+    "meaning": "杏桃餡甜丸子（奧地利甜點）",
     "exampleDe": "Als Nachtisch teilen wir uns einen Marillenknödel.",
     "exampleZh": "我們分著吃一顆杏桃餡甜丸子當甜點。"
   },
@@ -2259,9 +2259,9 @@
     "pos": "noun",
     "article": "das",
     "plural": "die Rüebli",
-    "level": "B1",
+    "level": "B2",
     "topic": "food",
-    "meaning": "紅蘿蔔",
+    "meaning": "紅蘿蔔（瑞士用語）",
     "exampleDe": "In der Schweiz kauft sie auf dem Markt ein Kilo Rüebli.",
     "exampleZh": "她在瑞士的市場買了一公斤紅蘿蔔。"
   },
@@ -2270,10 +2270,10 @@
     "pos": "noun",
     "article": "die",
     "plural": "die Rostbratwürste",
-    "level": "B1",
+    "level": "B2",
     "topic": "food",
     "meaning": "炭烤香腸；鐵架烤香腸",
-    "exampleDe": "Zum Mittagessen gibt es Rostbratwurst mit Brot.",
+    "exampleDe": "Zum Mittagessen gibt es Rostbratwürste mit Brot.",
     "exampleZh": "午餐有炭烤香腸配麵包。"
   },
   {
@@ -2281,9 +2281,9 @@
     "pos": "noun",
     "article": "die",
     "plural": "die Betriebsvereinbarungen",
-    "level": "B1",
+    "level": "B2",
     "topic": "work",
-    "meaning": "勞資內部協議",
+    "meaning": "（企業內）勞資協定",
     "exampleDe": "Die neue Betriebsvereinbarung regelt die Arbeit von zu Hause.",
     "exampleZh": "新的勞資內部協議規範在家工作的方式。"
   },
@@ -2294,7 +2294,7 @@
     "plural": "die Geschwindigkeitsbeschränkungen",
     "level": "B1",
     "topic": "travel",
-    "meaning": "速度限制",
+    "meaning": "速度限制（正式用語）",
     "exampleDe": "Wegen der Baustelle gilt hier eine Geschwindigkeitsbeschränkung.",
     "exampleZh": "因為施工，這裡設有速度限制。"
   },
@@ -2305,16 +2305,16 @@
     "plural": "die Flüchtlingsunterkünfte",
     "level": "B1",
     "topic": "society",
-    "meaning": "難民住宿處",
+    "meaning": "難民收容所",
     "exampleDe": "Die Stadt richtet eine neue Flüchtlingsunterkunft ein.",
-    "exampleZh": "市府正在設置新的難民住宿處。"
+    "exampleZh": "市府正在設置新的難民收容所。"
   },
   {
     "word": "Rüeblitorte",
     "pos": "noun",
     "article": "die",
     "plural": "die Rüeblitorten",
-    "level": "B1",
+    "level": "B2",
     "topic": "food",
     "meaning": "瑞士紅蘿蔔蛋糕",
     "exampleDe": "Zum Kaffee serviert unsere Gastgeberin eine selbst gebackene Rüeblitorte.",
@@ -2460,7 +2460,7 @@
     "pos": "verb",
     "level": "B1",
     "topic": "general",
-    "meaning": "放棄；交寄；布置任務",
+    "meaning": "放棄；寄（包裹）；登（廣告）、下（訂單）",
     "exampleDe": "Auch nach zwei Absagen gibt sie die Jobsuche nicht auf.",
     "exampleZh": "即使被拒絕兩次，她也沒有放棄找工作。",
     "verb": {
@@ -2540,7 +2540,7 @@
     "pos": "verb",
     "level": "B1",
     "topic": "general",
-    "meaning": "支配；處於某種狀態",
+    "meaning": "統治；（氣氛、狀況）籠罩、普遍存在",
     "exampleDe": "Im Wartezimmer herrscht heute große Unruhe.",
     "exampleZh": "候診室今天很不平靜。",
     "verb": {
@@ -2724,7 +2724,7 @@
       "praeteritum": "steckte",
       "perfekt": "hat gesteckt",
       "aux": "haben",
-      "note": "表示位置時，過去式也可用 stak"
+      "note": "也可不及物，表示「插在、卡在某處」：Der Schlüssel steckt im Schloss."
     }
   },
   {
@@ -3300,7 +3300,7 @@
       "praeteritum": "trat",
       "perfekt": "hat/ist getreten",
       "aux": "haben/sein",
-      "note": "踩踢物品用 haben；移動如 ins Zimmer treten 用 sein"
+      "note": "踢人或踢東西（jemanden treten、gegen etwas treten）用 haben；踩到、踏進（auf/in etwas treten、ins Zimmer treten）用 sein"
     }
   },
   {
@@ -3708,8 +3708,8 @@
     "level": "B1",
     "topic": "general",
     "meaning": "完全的；完美的",
-    "exampleDe": "Nach dem Gespräch war die Verwirrung vollkommen.",
-    "exampleZh": "談完之後，情況完全亂了。"
+    "exampleDe": "Mit dem Ergebnis bin ich vollkommen zufrieden.",
+    "exampleZh": "我對結果完全滿意。"
   },
   {
     "word": "endgültig",
@@ -3745,7 +3745,7 @@
     "topic": "people",
     "meaning": "熱心投入的",
     "exampleDe": "Unsere engagierte Nachbarin organisiert jede Woche einen Spielenachmittag.",
-    "exampleZh": "我們熱心的鄰居每週都安排一個遊戲下午。"
+    "exampleZh": "我們熱心的鄰居每週都會辦一場下午的遊戲聚會。"
   },
   {
     "word": "beeindruckt",
@@ -3780,7 +3780,7 @@
     "level": "B1",
     "topic": "people",
     "meaning": "堅決的；下定決心的",
-    "exampleDe": "Sie ist entschlossen, die Ausbildung zu beenden.",
+    "exampleDe": "Sie ist entschlossen, die Ausbildung abzuschließen.",
     "exampleZh": "她下定決心要完成職業訓練。"
   },
   {
@@ -3907,7 +3907,7 @@
     "topic": "city",
     "meaning": "無障礙的",
     "exampleDe": "Wir suchen eine barrierefreie Wohnung im Erdgeschoss.",
-    "exampleZh": "我們在找一間位於地面層的無障礙住宅。"
+    "exampleZh": "我們在找一間一樓的無障礙住宅。"
   },
   {
     "word": "bedürftig",
@@ -4173,7 +4173,7 @@
   {
     "word": "fristgerecht",
     "pos": "adjective",
-    "level": "B1",
+    "level": "B2",
     "topic": "work",
     "meaning": "在期限內完成的",
     "exampleDe": "Die fristgerechte Abgabe der Unterlagen ist wichtig.",
@@ -4275,7 +4275,7 @@
     "level": "A2",
     "topic": "media",
     "meaning": "電動的；用電的",
-    "exampleDe": "Mit der elektrischen Zahnbürste putzt er gern die Zähne.",
+    "exampleDe": "Mit der elektrischen Zahnbürste putzt er sich gern die Zähne.",
     "exampleZh": "他很喜歡用電動牙刷刷牙。"
   },
   {
@@ -4321,7 +4321,7 @@
     "topic": "time",
     "meaning": "長達數月",
     "exampleDe": "Wir haben monatelang nach einer bezahlbaren Wohnung gesucht.",
-    "exampleZh": "我們找了好幾個月，才找到負擔得起的住處。"
+    "exampleZh": "我們花了好幾個月找負擔得起的房子。"
   },
   {
     "word": "tagelang",
@@ -4589,7 +4589,7 @@
     "pos": "adverb",
     "level": "B1",
     "topic": "grammar",
-    "meaning": "在做什麼時；在哪方面",
+    "meaning": "在做什麼時；在哪方面；（連接詞）不過、話說回來",
     "exampleDe": "Wobei kann ich dir heute helfen?",
     "exampleZh": "今天我能在哪方面幫你？"
   }
