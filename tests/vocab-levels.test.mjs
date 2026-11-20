@@ -8,7 +8,7 @@ import { emptyRecord, emptyReview } from '../src/lib/reviewStore.mjs';
 const read = name => JSON.parse(readFileSync(new URL(`../src/data/lexicon/site/${name}.json`, import.meta.url)));
 const rows = read('index');
 
-for (const [level, expected] of [['A1', 845], ['A2', 1210], ['B1', 1488], ['B2', 162]]) {
+for (const [level, expected] of [['A1', 845], ['A2', 1276], ['B1', 1822], ['B2', 163]]) {
   test(`${level} keeps every practice word, once, in groups of at most 40`, () => {
     const words = normalizeVocabulary(levelWords(rows, read(level), level));
     assert.equal(words.length, expected);

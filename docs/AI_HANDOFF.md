@@ -112,6 +112,14 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 Schritte international Neu 6（B1.2）補字草稿（Codex，未部署，待校對）
+
+- 撰寫角色完整處理 repo 外 1,209 個候選字形，新增 `tools/lexicon/drafts/schritte6.json` **401 筆**：A2 66、B1 334、B2 1（bürgerschaftlich，字表教到的正式公民參與用語）。釋義及德中例句自行撰寫，未複製課本或原候選清單進 repo。
+- 473 來源字形對應 401 新詞；其他排除 682（專名 305、低優先／透明組合 130、英文圖庫／OCR 雜訊 100、數字 82、教材文法術語 65），還原後已有 54（39 原形）。完整互斥索引、分級理由與待校對用法見 `tools/lexicon/drafts/schritte6-notes.md`。
+- 指定腳本生成主字庫 4,129→4,530、練習池 3,707→4,108；原有 4,129 筆整筆內容與 ID 全部保留，ids.lock 只新增 401 行。固定測試數更新 A1 845、A2 1276、B1 1822、B2 163。
+- 驗證：check-drafts 全 8 檔 ✓；apply-tags／build-site-data 成功；npm test 156/157，唯一 audio-coverage 缺音檔失敗為預期；build 成功（10 頁）；audio dry-run 共 10,877 段、待產生 796 段／24,862 字元；diff --check 通過。沒有產生音檔、commit、push、部署、stash 或切分支。
+- 尚待另一角色／另一次獨立德文校對、使用者抽查，再經核准產生音檔與部署。優先確認 bürgerschaftlich、Litfaßsäule 及地域飲食詞分級，Virus／Tonne／Folie／treten 多義與三形。本次沒有兼任獨立校對。另一 Claude worktree 的交接檔原有未提交修改，未碰觸。
+
 ### 2026-11-20 課本 OCR 與補字（Claude Code 統籌、Codex 撰寫、german-reviewer 校對，已部署）
 
 - 用 macOS Vision（Swift 小程式，暫存區）把 `參考書籍` 的掃描檔 OCR，輸出在 `參考書籍/ocr/`（repo 外、不進 git；課本內容不可提交）。兩個 Schritte PDF 是同一本；Schritte B1.1 字表原本就已收錄，B1.2（Schritte 6）資料夾裡沒有。
@@ -712,7 +720,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
 - [x] 新增 Passiv 課（2026-11-18，第 8 課 49 題；已校對、介面檢查、產生音檔並部署）
 - [ ] Menschen A2 補缺：247 筆草稿與資料產生已完成（2026-11-20，Codex，未部署）；待獨立德文校對、使用者抽查，再經核准產生音檔／部署。詳見 `tools/lexicon/drafts/menschen-a2-notes.md`。
-- [ ] 單字 B1.2（需要使用者確認教材範圍）
+- [ ] Schritte international Neu 6（B1.2）補字：401 筆草稿與工程驗證已完成（2026-11-20，Codex，未部署）；待獨立德文校對及使用者抽查。見 `tools/lexicon/drafts/schritte6-notes.md`。
 - [x] 主字庫缺例句補寫（2026-11-19，441 句已部署）
 - [x] 4 個可疑詞條（Kunstwerkladen、Bildmodell、Sonderkräfte、Bauarbeitsgerät）已處理並補例句（2026-11-19）
 - [x] 9 筆無法辨識的筆記詞條已依前後文推測處理（2026-11-19，見 `tools/lexicon/examples/notes.md`）
