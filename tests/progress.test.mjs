@@ -66,3 +66,37 @@ test('corrupt JSON does not break dashboard', () => {
   data.clear(); data.set(PROGRESS_KEYS.lesson1Words, '{broken');
   assert.equal(getLearningSummary().lesson1ErrorCount, 0);
 });
+
+
+test('old cloud bank ids hydrate into merged Schritte without losing progress or review schedule', async () => {
+  const { normalizeVocabulary, mergeVocabularyProgress, migrateVocabularyUI } = await import('../src/lib/vocabulary.mjs');
+  const read = path => JSON.parse(readFileSync(new URL('../' + path, import.meta.url)));
+  const merged = normalizeVocabulary(read('public/vocab/schritte-b1-1-merged.json'));
+  const old = normalizeVocabulary(read('public/vocab/schritte-b1-1-hidden-advanced.json'))
+    .find(w => w.word === 'sich anstrengen');
+  const target = merged.find(w => w.legacyIds.includes(old.id));
+  assert.ok(target);
+  const { encodeReview, emptyReview, emptyRecord, decodeReview } = await import('../src/lib/reviewStore.mjs');
+  const state = emptyReview();
+  state.words['sich-anstrengen'] = { ...emptyRecord(), b: 4, d: 24000, t: 12, r: 9 };
+  const review = encodeReview(state);
+  data.clear();
+  put(PROGRESS_KEYS.review, review);
+  mergeRemoteProgress({ lesson1Words: [{ ...old, errors: 3, starred: true, attempts: 12, correct: 7, seen: 4, updatedAt: '2026-11-20' }] });
+  const saved = JSON.parse(localStorage.getItem(PROGRESS_KEYS.lesson1Words));
+  const hydrated = mergeVocabularyProgress(merged, saved);
+  const word = hydrated.find(w => w.id === target.id);
+  assert.equal(word.errors, 3);
+  assert.equal(word.starred, true);
+  assert.equal(word.attempts, 12);
+  assert.equal(word.correct, 7);
+  assert.equal(word.seen, 4);
+  assert.deepEqual(mergeVocabularyProgress(merged, hydrated), hydrated);
+  assert.deepEqual(migrateVocabularyUI({preset:'schritte-b1-1-hidden-advanced', chapter:'3', filter:'review'}),
+    {preset:'schritte-b1-1',chapter:'3',filter:'review',index:0});
+  // Hydration never rewrites the review store; its master ids and due dates stay intact.
+  assert.deepEqual(decodeReview(JSON.parse(localStorage.getItem(PROGRESS_KEYS.review))).words, state.words);
+  const before = localStorage.getItem(PROGRESS_KEYS.review);
+  mergeVocabularyProgress(merged, saved);
+  assert.equal(localStorage.getItem(PROGRESS_KEYS.review), before);
+});

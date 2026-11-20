@@ -112,6 +112,18 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 第 1 課 Schritte B1.1 字庫合併與舊進度相容（Codex，未部署）
+
+- 本輪小修正：移除劃線清單覆蓋課本課次的邏輯並補來源課次／標題／分類測試，確認 verrückt（b1_1_l01_w003）保留第 1 課（劃線來源為第 3 課），僅劃線新增字沿用劃線課次；重跑 apply-tags、build-site-data、npm test（166/166）、npm run build（10 頁）與 diff --check 通過，lexicon.graded.json 仍無 diff。修正後劃線字數 L1～L7：51、37、79、54、45、6、3（合計 275）。未做瀏覽器驗證，未 commit、push、部署、stash 或切分支。
+
+- 「我的教材」改為 Schritte B1.1、課程筆記、A1-B1 Part 1 三個 preset。新增產物 `public/vocab/schritte-b1-1-merged.json`：完整字庫按冠詞＋原形去重為 459（原 460 的 das Mittel 重複），hidden 87 中 sich anstrengen 已存在，合計 545；劃線字再新增 197，總共 **742 字、275 個 underlined:true**。其餘明確標 false，依 Lektion 1～7 分組；課本 complete／hidden-advanced 已有的字保留原 lesson、lessonTitle、category，劃線來源只加 `underlined: true`；僅劃線清單新增的字使用 custom-lists 課次。篩選列沿用現有按鈕加入「我劃線的」，可與課次／模式／搜尋組合，無劃線字則隱藏。
+- 產生流程：`merge-schritte.mjs` 提供去重與對照，`build-site-data.mjs` 從原始字庫及 custom-lists 經 graded 主字庫解析出的字詞產生新版字庫／三項 manifest，沒有手改產出內容。刪除獨立 public 劃線字庫，停止生成該檔；保留 `custom-lists.json` 作為劃線來源。其他舊 public 字庫（complete、enhanced、supplement、nouns、hidden-advanced、原 schritte-b1-1）仍是 build-lexicon／合併器輸入，故保留但不列入選單。
+- 進度：`lesson1Words` 仍為 `deutschLernkartenDB_vPro`；UI `german-vocabulary-workspace-v1`、archive `german-vocabulary-library-v1`、wordKey 計算及統一 review store 格式／排程 key 都不變。每個詞保留先出現的舊 id／釋義，重複版本的 id／wordKey 存入 `legacyIds`／`legacyKeys`；`mergeVocabularyProgress` 對所有版本取最新時間戳進度（包含已清除錯誤／取消收藏），不改 review 排程；缺時間戳的舊備份以各進度欄位 max／收藏 OR 保守保留，不重複加總。無 id 的舊 nouns 亦可用原 wordKey 對應。
+- 純函式 `migrateVocabularyUI` 將 enhanced／supplement／nouns／hidden-advanced／underlined 五種舊 preset 改為 schritte-b1-1，保留有效課次、篩選與模式，重設 index；underlined 來源強制 filter:underlined。初始化即套用；既有 default 或舊 preset 都會重新載入新版字庫並合併 archive 進度。同步事件帶回舊 words 時，用相同純進度合併函式重新補上新版內容／劃線標記，舊 words 先留存 archive。UI 與 archive 本來不在雲端同步資料中，雲端同步 words／review 的 key 無需轉換。
+- 主字庫：先確認 build-lexicon 不會生成 batches 才執行。build-lexicon → apply-tags → build-site-data 後，`lexicon.graded.json` **4,598 筆完整內容逐位元不變**，`redirects.json`／ids.lock／batches 亦無 diff；draft 僅生成日期變動，已還原日期。apply-tags 將 graded canonical `schritte-b1-1` 清單改為新版對應，並更新 site/lists：742 舊字卡經既有 redirects 對應 **738 主字庫 ID**，四組詞形原本已合併。其餘歷史清單及個人劃線清單保留為相容檢視，不影響三項教材選單。
+- 驗證：check-tags 9 批全過；npm test **166/166**；npm run build 10 頁成功；diff --check 通過。新增全舊字庫 id／wordKey 對應、無字消失、去重數量、275 劃線字與課次、三項 manifest、舊 preset 遷移冪等、雲端舊 id 回流／已清除狀態／review 排程保留、主清單對應測試。apply-tags／build-site-data 重跑 SHA-256 完全一致。
+- 尚未驗證：實際瀏覽器／實體手機介面與真實帳號同步（依要求未啟動 dev server）。未新增詞義／例句／音訊，未 commit、push、部署、stash 或切分支。
+
 ### 2026-11-20 Schritte 6 與 B1.1 劃線字（Claude Code 統籌、Codex 撰寫、german-reviewer 校對，已部署）
 
 - Schritte international Neu 6（B1.2）：PDF 文字層會吃掉 fi／fl 連字，改用 Vision OCR；`drafts/schritte6.json` 401 筆。
@@ -750,6 +762,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 9 筆無法辨識的筆記詞條已依前後文推測處理（2026-11-19，見 `tools/lexicon/examples/notes.md`）
 
 ### 介面（使用者目前最在意）
+- [ ] 第 1 課教材合併已完成工程驗證，待實際瀏覽器／手機抽查後依使用者指示部署。
 - [x] 紙本練習簿動態（2026-11-19 已審查並部署）
 - [x] 每輪 10 題的結算（2026-10-24 完成）
 - [x] 六課統一三個入口（2026-10-24 完成）

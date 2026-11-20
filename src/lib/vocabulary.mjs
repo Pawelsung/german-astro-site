@@ -18,11 +18,31 @@ export function normalizeVocabulary(input) {
   });
 }
 export function mergeVocabularyProgress(incoming, saved) {
-  const byKey = new Map(saved.map(w => [wordKey(w), w]));
-  const byId = new Map(saved.filter(w => w.id).map(w => [w.id, w]));
+  const byKey = new Map();
+  const byId = new Map();
+  for (const w of saved) {
+    const put = (map, key) => {
+      if (key && (!map.has(key) || (w.updatedAt || '') >= (map.get(key).updatedAt || ''))) map.set(key, w);
+    };
+    put(byKey, wordKey(w));
+    put(byId, w.id);
+  }
   return incoming.map(w => {
-    const old = (w.id && byId.get(w.id)) || byKey.get(wordKey(w));
-    if (!old) return w;
+    const matches = [w.id, ...(w.legacyIds || [])].map(id => byId.get(id))
+      .concat([wordKey(w), ...(w.legacyKeys || [])].map(key => byKey.get(key))).filter(Boolean);
+    const old = matches.reduce((latest, item) => {
+      if (!latest) return item;
+      // Pre-timestamp backups cannot tell us which version cleared a field. Preserve
+      // their accumulated state conservatively, without double-counting duplicates.
+      if (!latest.updatedAt && !item.updatedAt) return { ...latest, ...item,
+        errors: Math.max(latest.errors || 0, item.errors || 0),
+        starred: !!(latest.starred || item.starred),
+        seen: Math.max(latest.seen || 0, item.seen || 0),
+        attempts: Math.max(latest.attempts || 0, item.attempts || 0),
+        correct: Math.max(latest.correct || 0, item.correct || 0) };
+      return (item.updatedAt || '') >= (latest.updatedAt || '') ? item : latest;
+    }, null);
+    if (!old) return { ...w, seen: w.seen || 0, attempts: w.attempts || 0, correct: w.correct || 0, updatedAt: w.updatedAt };
     const latest = (old.updatedAt || '') >= (w.updatedAt || '') ? old : w;
     return { ...w, errors: latest.errors || 0, starred: !!latest.starred, seen: latest.seen || 0, attempts: latest.attempts || 0, correct: latest.correct || 0, updatedAt: latest.updatedAt };
   });
@@ -39,10 +59,20 @@ export function chaptersFor(words) {
 }
 export function filterVocabulary(words, { chapter = 'all', filter = 'all', mode = 'learn', query = '' } = {}) {
   const q = query.trim().toLocaleLowerCase('de');
-  return words.filter(w => (chapter === 'all' || String(w.lesson || w.category) === chapter) && (filter !== 'review' || w.errors > 0) && (filter !== 'starred' || w.starred) && (mode !== 'article' || ['der','die','das'].includes(w.article)) && (mode !== 'cloze' || findClozeTarget(w)) && (!q || `${w.article} ${w.word} ${w.meaning}`.toLocaleLowerCase('de').includes(q)));
+  return words.filter(w => (chapter === 'all' || String(w.lesson || w.category) === chapter) && (filter !== 'review' || w.errors > 0) && (filter !== 'starred' || w.starred) && (filter !== 'underlined' || w.underlined === true) && (mode !== 'article' || ['der','die','das'].includes(w.article)) && (mode !== 'cloze' || findClozeTarget(w)) && (!q || `${w.article} ${w.word} ${w.meaning}`.toLocaleLowerCase('de').includes(q)));
 }
 export function articleExplanation(word) {
   if (word.article === 'die' && /(ung|heit|keit|schaft|tion|tät)$/.test(word.word)) return '這類字尾通常是陰性名詞，使用 die。請連同例句一起記憶。';
   if (word.article === 'das' && /(chen|lein)$/.test(word.word)) return '這個指小詞字尾使用中性冠詞 das。';
   return `把「${word.article} ${word.word}」當作一個單位記憶，不能只由中文意思推算性別。`;
+}
+
+const RETIRED_SCHRITTE = new Set(['enhanced', 'supplement', 'nouns', 'hidden-advanced', 'underlined'].map(s => `schritte-b1-1-${s}`));
+// Pure, idempotent UI migration. Word/review storage keys never change.
+export function migrateVocabularyUI(ui = {}) {
+  if (!ui || typeof ui !== 'object' || Array.isArray(ui)) return {};
+  if (!RETIRED_SCHRITTE.has(ui.preset)) return { ...ui };
+  return { ...ui, preset: 'schritte-b1-1', index: 0,
+    chapter: ui.chapter === 'all' || /^[1-7]$/.test(String(ui.chapter)) ? String(ui.chapter) : 'all',
+    filter: ui.preset === 'schritte-b1-1-underlined' ? 'underlined' : (['all', 'review', 'starred', 'underlined'].includes(ui.filter) ? ui.filter : 'all') };
 }

@@ -1,45 +1,10 @@
 [
   {
-    "id": "a1-b1-part1",
-    "label": "A1-B1 Part 1",
-    "description": "依主題分類的 A1-B1 德語名詞字庫，去重後共 449 個單字",
-    "path": "/vocab/a1-b1-part1.json",
-    "count": 449
-  },
-  {
-    "id": "schritte-b1-1-nouns",
-    "label": "Schritte B1.1 名詞",
-    "description": "Schritte International Neu 5 B1.1，依 Lektion 分類的名詞冠詞練習字庫",
-    "path": "/vocab/schritte-b1-1-nouns.json",
-    "count": 166
-  },
-  {
     "id": "schritte-b1-1",
-    "label": "Schritte B1.1 完整單字＋補充",
-    "description": "Schritte B1.1 官方 Lernwortschatz 加精選去重 B1/B1+ 補充詞，共 460 筆，含詞性用法、動詞變化與例句中文翻譯",
-    "path": "/vocab/schritte-b1-1-complete.json",
-    "count": 460
-  },
-  {
-    "id": "schritte-b1-1-enhanced",
-    "label": "Schritte B1.1 官方全單字＋用法",
-    "description": "Schritte International Neu 5 B1.1，352 筆官方 Lernwortschatz，全詞性單字，含用法提示與例句中文翻譯",
-    "path": "/vocab/schritte-b1-1-enhanced.json",
-    "count": 352
-  },
-  {
-    "id": "schritte-b1-1-supplement",
-    "label": "Schritte B1.1 精選補充詞",
-    "description": "已排除官方核心字庫重複，精選 B1/B1+ 實用補充詞，共 108 筆，可單獨練習",
-    "path": "/vocab/schritte-b1-1-supplement.json",
-    "count": 108
-  },
-  {
-    "id": "schritte-b1-1-hidden-advanced",
-    "label": "Schritte B1.1 隱藏版進階詞",
-    "description": "課文、音檔與補充閱讀中的 B1/B2 進階詞彙；原 100 筆去除既有字庫重複後共 87 筆，含短語與口語表達。",
-    "path": "/vocab/schritte-b1-1-hidden-advanced.json",
-    "count": 87
+    "label": "Schritte B1.1",
+    "description": "完整單字、補充、進階詞與課本劃線字，依 Lektion 1～7 分組。",
+    "path": "/vocab/schritte-b1-1-merged.json",
+    "count": 742
   },
   {
     "id": "course-notes",
@@ -49,10 +14,10 @@
     "count": 1495
   },
   {
-    "id": "schritte-b1-1-underlined",
-    "label": "Schritte B1.1｜我在課本劃線的字",
-    "description": "課本紅筆劃線實詞，還原原形並去除重複，依第一次出現的課次分組；已排除 A1 基本字。",
-    "path": "/vocab/schritte-b1-1-underlined.json",
-    "count": 275
+    "id": "a1-b1-part1",
+    "label": "A1-B1 Part 1",
+    "description": "依主題分類的 A1-B1 德語名詞字庫，去重後共 449 個單字",
+    "path": "/vocab/a1-b1-part1.json",
+    "count": 449
   }
 ]

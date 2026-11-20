@@ -4,6 +4,7 @@
 // index.json   rows: [id, article, word, level, topic, pos, inPool, variants?]
 // <level>.json { id: [plural, meaning, exampleDe, exampleZh, verb] }, verb = [present3, past, perfect] or 0
 // lists.json   word ids replaced by their row number in index.json
+import { mergeSchritte } from './merge-schritte.mjs';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const DATA = new URL('../../src/data/lexicon/', import.meta.url);
@@ -54,6 +55,7 @@ console.log(`site data: ${index.length} words, ${index.filter(r => r[6]).length}
 // Export personal lists in the existing lesson-1 bank format, using master ids and prose.
 const customLists = readJson(new URL('custom-lists.json', import.meta.url));
 const byId = new Map(entries.map(e => [e.id, e]));
+let underlined;
 for (const list of customLists) {
   const resolved = readJson(new URL('lists.graded.json', DATA)).find(l => l.id === list.id);
   const words = resolved.groups.flatMap((g, groupOrder) => g.ids.map(id => {
@@ -66,6 +68,23 @@ for (const list of customLists) {
       category: g.label, groupOrder,
       ...(forms ? { practice: { praeteritum_3sg: forms[1], perfekt_3sg: forms[2] } } : {}) };
   }));
-  writeFileSync(new URL(`../../public/vocab/${list.id}.json`, import.meta.url), JSON.stringify(words, null, 2) + '\n');
+  if (list.id === 'schritte-b1-1-underlined') underlined = words;
+  else writeFileSync(new URL(`../../public/vocab/${list.id}.json`, import.meta.url), JSON.stringify(words, null, 2) + '\n');
   console.log(`${list.id}: ${words.length} words in ${resolved.groups.length} lessons`);
 }
+
+// Legacy banks remain immutable inputs to build-lexicon; never feed this export back into it.
+const vocab = new URL('../../public/vocab/', import.meta.url);
+const banks = ['complete', 'hidden-advanced', 'enhanced', 'supplement', 'nouns'].map(name =>
+  readJson(new URL(`schritte-b1-1-${name}.json`, vocab)));
+banks.push(readJson(new URL('schritte-b1-1.json', vocab)));
+if (!underlined) throw new Error('Missing underlined custom list');
+const merged = mergeSchritte(banks, underlined);
+writeFileSync(new URL('schritte-b1-1-merged.json', vocab), JSON.stringify(merged, null, 2) + '\n');
+const manifest = readJson(new URL('index.json', vocab));
+const preset = { id: 'schritte-b1-1', label: 'Schritte B1.1',
+  description: '完整單字、補充、進階詞與課本劃線字，依 Lektion 1～7 分組。',
+  path: '/vocab/schritte-b1-1-merged.json', count: merged.length };
+writeFileSync(new URL('index.json', vocab), JSON.stringify([preset,
+  ...['course-notes', 'a1-b1-part1'].map(id => manifest.find(p => p.id === id))], null, 2) + '\n');
+console.log(`merged Schritte: ${merged.length}, underlined: ${merged.filter(w => w.underlined).length}`);

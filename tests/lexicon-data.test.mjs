@@ -77,12 +77,14 @@ test('underlined Schritte list is unique, substantive and available in lesson 1'
     assert.ok(!functionPos.has(e.pos), `${id}: ${e.pos}`);
   }
   const manifest = JSON.parse(readFileSync(new URL('../public/vocab/index.json', import.meta.url), 'utf8'));
-  const preset = manifest.find(p => p.id === name);
+  assert.ok(!manifest.some(p => p.id === name));
+  const preset = manifest.find(p => p.id === 'schritte-b1-1');
   assert.ok(preset);
-  assert.equal(preset.label, list.label);
-  assert.equal(preset.count, selected.length);
+  assert.equal(preset.label, 'Schritte B1.1');
   const bank = JSON.parse(readFileSync(new URL(`../public${preset.path}`, import.meta.url), 'utf8'));
-  assert.deepEqual(normalizeVocabulary(bank).map(w => w.id), selected);
+  const marked = normalizeVocabulary(bank).filter(w => w.underlined);
+  assert.equal(marked.length, selected.length);
+  for (const id of selected) assert.ok(marked.some(w => w.id === id || w.legacyIds.includes(id)), id);
   const index = read('site/index.json');
   const siteList = read('site/lists.json').find(l => l.id === name);
   assert.deepEqual(siteList.groups.map(g => g.rows.map(row => index[row][0])), list.groups.map(g => g.ids));

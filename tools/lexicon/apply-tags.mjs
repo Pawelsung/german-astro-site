@@ -143,6 +143,25 @@ const lists = [...readJson(new URL('lists.json', DATA)), ...customLists].map(lis
   ...list,
   groups: list.groups.map(g => ({ ...g, ids: [...new Set(g.ids.map(id => redirects.get(id) || id))] }))
 }));
+// Canonical textbook list follows the merged lesson-1 bank. Keep historical list ids
+// as compatibility views; the personal list still supplies annotation lesson assignments.
+const textbookGroups = new Map();
+const lessonOf = new Map();
+for (const id of ['schritte-b1-1-complete', 'schritte-b1-1-hidden-advanced', 'schritte-b1-1-underlined']) {
+  const list = lists.find(l => l.id === id);
+  for (const group of list.groups) {
+    const lesson = Number(group.label.match(/Lektion\s*(\d+)/)?.[1]);
+    if (!lesson) throw new Error(`Missing lesson: ${group.label}`);
+    if (!textbookGroups.has(lesson)) textbookGroups.set(lesson, { label: group.label.split('｜').slice(0, 2).join('｜'), ids: [] });
+    for (const wordId of group.ids) {
+      if (!lessonOf.has(wordId) || id === 'schritte-b1-1-underlined') lessonOf.set(wordId, lesson);
+    }
+  }
+}
+for (const [id, lesson] of lessonOf) textbookGroups.get(lesson).ids.push(id);
+const textbook = lists.find(l => l.id === 'schritte-b1-1');
+textbook.label = 'Schritte B1.1';
+textbook.groups = [...textbookGroups].sort(([a], [b]) => a - b).map(([, group]) => group);
 writeFileSync(new URL('lists.graded.json', DATA), JSON.stringify(lists, null, 1));
 
 const tally = rows => Object.fromEntries(LEVELS.map(l => [l, rows.filter(e => e.level === l).length]));
