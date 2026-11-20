@@ -32,3 +32,5 @@
 | test geredt | gerettet（低信心；可能是 fast gerettet） | 字庫已有 retten，不新增 |
 | Sonnenunteraufgang | Sonnenaufgang／Sonnenuntergang 寫在一起 | 兩個字庫都有，不新增 |
 | früher gegen müssen | früher gehen müssen | 新增片語 |
+
+使用者 2026-11-20 確認：3 筆低信心（Frumgung、sammen gesmaaelt、test geredt）想不起原意，不新增、不再追查。
