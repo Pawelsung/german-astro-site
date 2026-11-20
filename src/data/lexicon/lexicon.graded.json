@@ -1,6 +1,6 @@
 {
  "meta": {
-  "count": 3017,
+  "count": 3264,
   "status": "graded-ai-only"
  },
  "entries": [
@@ -1250,6 +1250,38 @@
    "flag": ""
   },
   {
+   "id": "der-absatz",
+   "article": "der",
+   "word": "Absatz",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Absätze",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "段落；鞋跟"
+   ],
+   "examples": [
+    {
+     "de": "Lies bitte nur den ersten Absatz.",
+     "zh": "請只讀第一段。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "abschaffen",
    "article": "",
    "word": "abschaffen",
@@ -1434,6 +1466,38 @@
    "flag": ""
   },
   {
+   "id": "der-absender",
+   "article": "der",
+   "word": "Absender",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Absender",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "寄件人"
+   ],
+   "examples": [
+    {
+     "de": "Auf dem Paket fehlt der Absender.",
+     "zh": "包裹上沒有寫寄件人。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "absichtlich",
    "pos": "adverb",
@@ -1610,6 +1674,70 @@
    "id": "abstimmen",
    "level": "B1",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-abstimmung",
+   "article": "die",
+   "word": "Abstimmung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Abstimmungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "投票表決"
+   ],
+   "examples": [
+    {
+     "de": "Bei der Abstimmung waren alle für den neuen Plan.",
+     "zh": "表決時大家都支持新計畫。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "abstrakt",
+   "article": "",
+   "word": "abstrakt",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "抽象的"
+   ],
+   "examples": [
+    {
+     "de": "Die Erklärung ist mir zu abstrakt; kannst du ein Beispiel geben?",
+     "zh": "這個解釋對我來說太抽象了，你能舉個例子嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -2204,6 +2332,70 @@
    "flag": ""
   },
   {
+   "id": "die-aktentasche",
+   "article": "die",
+   "word": "Aktentasche",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Aktentaschen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "公事包"
+   ],
+   "examples": [
+    {
+     "de": "Die Unterlagen stecken in meiner Aktentasche.",
+     "zh": "文件在我的公事包裡。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "aktiv",
+   "article": "",
+   "word": "aktiv",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "活躍的；積極的"
+   ],
+   "examples": [
+    {
+     "de": "Meine Oma ist noch sehr aktiv und fährt täglich Rad.",
+     "zh": "我奶奶依然很活躍，每天都騎自行車。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "aktualisieren",
    "pos": "verb",
@@ -2247,6 +2439,38 @@
    "id": "aktualisieren",
    "level": "B1",
    "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-alkohol",
+   "article": "der",
+   "word": "Alkohol",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "酒精；酒類"
+   ],
+   "examples": [
+    {
+     "de": "Heute trinke ich keinen Alkohol, weil ich fahre.",
+     "zh": "我今天要開車，所以不喝酒。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -2376,6 +2600,38 @@
    "level": "A2",
    "topic": "time",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "die-allee",
+   "article": "die",
+   "word": "Allee",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Alleen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "林蔭大道"
+   ],
+   "examples": [
+    {
+     "de": "Wir gehen die Allee bis zum Schloss entlang.",
+     "zh": "我們沿著林蔭大道走到城堡。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "city",
+   "push": true,
    "flag": ""
   },
   {
@@ -3502,6 +3758,38 @@
    "flag": ""
   },
   {
+   "id": "anderswo",
+   "article": "",
+   "word": "anderswo",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在別處；到別處"
+   ],
+   "examples": [
+    {
+     "de": "Hier ist es zu voll, wir essen lieber anderswo.",
+     "zh": "這裡人太多，我們換個地方吃好了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "anerkennen",
    "pos": "verb",
@@ -3616,6 +3904,38 @@
    "flag": ""
   },
   {
+   "id": "der-anfaenger",
+   "article": "der",
+   "word": "Anfänger",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Anfänger",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "初學者"
+   ],
+   "examples": [
+    {
+     "de": "Dieser Schwimmkurs ist für Anfänger.",
+     "zh": "這堂游泳課適合初學者。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "anfangs",
    "pos": "adverb/connector",
@@ -3659,6 +3979,44 @@
    "id": "anfangs",
    "level": "B1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "anfassen",
+   "article": "",
+   "word": "anfassen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "fasst an",
+    "praeteritum": "fasste an",
+    "perfekt": "hat angefasst",
+    "aux": "haben",
+    "note": "可分動詞"
+   },
+   "noArticle": false,
+   "meanings": [
+    "碰；觸摸"
+   ],
+   "examples": [
+    {
+     "de": "Bitte fass die heiße Pfanne nicht an.",
+     "zh": "請不要碰熱鍋子。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
    "push": true,
    "flag": ""
   },
@@ -4027,6 +4385,44 @@
     }
    ],
    "level": "B1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "anklicken",
+   "article": "",
+   "word": "anklicken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "klickt an",
+    "praeteritum": "klickte an",
+    "perfekt": "hat angeklickt",
+    "aux": "haben",
+    "note": "可分動詞"
+   },
+   "noArticle": false,
+   "meanings": [
+    "點選；按一下"
+   ],
+   "examples": [
+    {
+     "de": "Klicken Sie bitte den blauen Pfeil an.",
+     "zh": "請點一下藍色箭頭。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "media",
    "push": true,
    "flag": ""
@@ -4519,6 +4915,44 @@
    "flag": ""
   },
   {
+   "id": "anschauen",
+   "article": "",
+   "word": "anschauen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "schaut an",
+    "praeteritum": "schaute an",
+    "perfekt": "hat angeschaut",
+    "aux": "haben",
+    "note": "可分動詞；也可用反身與格：sich etwas anschauen"
+   },
+   "noArticle": false,
+   "meanings": [
+    "看；觀看"
+   ],
+   "examples": [
+    {
+     "de": "Am Abend schauen wir alte Fotos an.",
+     "zh": "晚上我們一起看舊照片。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "anscheinend",
    "pos": "adverb",
@@ -4693,6 +5127,38 @@
    "flag": ""
   },
   {
+   "id": "ansonsten",
+   "article": "",
+   "word": "ansonsten",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "除此之外；否則"
+   ],
+   "examples": [
+    {
+     "de": "Morgen regnet es, ansonsten bleibt das Wetter schön.",
+     "zh": "明天會下雨，其他時間天氣都很好。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "anstatt",
    "article": "",
    "word": "anstatt",
@@ -4825,6 +5291,38 @@
    "id": "anstrengend",
    "level": "A2",
    "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-anstrengung",
+   "article": "die",
+   "word": "Anstrengung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Anstrengungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "努力；費力"
+   ],
+   "examples": [
+    {
+     "de": "Nach der Anstrengung brauche ich eine Pause.",
+     "zh": "費了這麼多力氣，我需要休息一下。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "health",
    "push": true,
    "flag": ""
   },
@@ -5459,6 +5957,38 @@
    "flag": ""
   },
   {
+   "id": "der-arbeiter",
+   "article": "der",
+   "word": "Arbeiter",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Arbeiter",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "工人"
+   ],
+   "examples": [
+    {
+     "de": "Die Arbeiter machen um zwölf eine Pause.",
+     "zh": "工人十二點休息。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Arbeitgeber",
    "pos": "noun",
@@ -5523,6 +6053,38 @@
     }
    ],
    "id": "der-arbeitnehmer",
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-arbeitsbedingungen",
+   "article": "die",
+   "word": "Arbeitsbedingungen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Arbeitsbedingungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "工作條件"
+   ],
+   "examples": [
+    {
+     "de": "Die Beschäftigten wünschen sich bessere Arbeitsbedingungen.",
+     "zh": "員工希望有更好的工作條件。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "B1",
    "topic": "work",
    "push": true,
@@ -5607,6 +6169,38 @@
    "id": "die-arbeitslosigkeit",
    "level": "B1",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-arbeitsort",
+   "article": "der",
+   "word": "Arbeitsort",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Arbeitsorte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "工作地點"
+   ],
+   "examples": [
+    {
+     "de": "Mein neuer Arbeitsort ist näher an meiner Wohnung.",
+     "zh": "我新的工作地點離家比較近。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -7527,6 +8121,44 @@
    "flag": ""
   },
   {
+   "id": "aufschreiben",
+   "article": "",
+   "word": "aufschreiben",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "schreibt auf",
+    "praeteritum": "schrieb auf",
+    "perfekt": "hat aufgeschrieben",
+    "aux": "haben",
+    "note": "可分動詞"
+   },
+   "noArticle": false,
+   "meanings": [
+    "寫下；記下"
+   ],
+   "examples": [
+    {
+     "de": "Schreib bitte die Zimmernummer auf.",
+     "zh": "請把房號記下來。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "aufstehen",
    "pos": "verb",
@@ -8912,6 +9544,38 @@
    "flag": ""
   },
   {
+   "id": "die-ausruestung",
+   "article": "die",
+   "word": "Ausrüstung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Ausrüstungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "裝備"
+   ],
+   "examples": [
+    {
+     "de": "Für die Wanderung brauchen wir die richtige Ausrüstung.",
+     "zh": "這次健行需要合適的裝備。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "ausschalten",
    "pos": "verb",
@@ -8987,6 +9651,44 @@
    "flag": ""
   },
   {
+   "id": "ausschliessen",
+   "article": "",
+   "word": "ausschließen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "schließt aus",
+    "praeteritum": "schloss aus",
+    "perfekt": "hat ausgeschlossen",
+    "aux": "haben",
+    "note": "可分動詞"
+   },
+   "noArticle": false,
+   "meanings": [
+    "排除；不讓參加"
+   ],
+   "examples": [
+    {
+     "de": "Einen Fehler können wir noch nicht ausschließen.",
+     "zh": "我們還不能排除出錯的可能。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "ausschließlich",
    "pos": "adverb/connector",
@@ -9030,6 +9732,38 @@
    "id": "ausschliesslich",
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-ausschnitt",
+   "article": "der",
+   "word": "Ausschnitt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Ausschnitte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "片段；節錄"
+   ],
+   "examples": [
+    {
+     "de": "Im Kurs sehen wir einen kurzen Ausschnitt aus einem Film.",
+     "zh": "課堂上我們會看一小段電影。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -10059,6 +10793,38 @@
    ]
   },
   {
+   "id": "der-autoreifen",
+   "article": "der",
+   "word": "Autoreifen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Autoreifen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "汽車輪胎"
+   ],
+   "examples": [
+    {
+     "de": "Der linke Autoreifen verliert Luft.",
+     "zh": "左邊的汽車輪胎在漏氣。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Baby",
    "pos": "noun",
@@ -10125,6 +10891,38 @@
    "id": "backen",
    "level": "A2",
    "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-baecker",
+   "article": "der",
+   "word": "Bäcker",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Bäcker",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "麵包師傅"
+   ],
+   "examples": [
+    {
+     "de": "Der Bäcker beginnt schon um vier Uhr mit der Arbeit.",
+     "zh": "麵包師傅凌晨四點就開始工作。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -11514,6 +12312,38 @@
    "flag": ""
   },
   {
+   "id": "beeindruckend",
+   "article": "",
+   "word": "beeindruckend",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "令人印象深刻的"
+   ],
+   "examples": [
+    {
+     "de": "Die Aussicht vom Berg ist wirklich beeindruckend.",
+     "zh": "山上的景色真的讓人難忘。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Beerdigung",
    "pos": "noun",
@@ -11855,6 +12685,38 @@
    "flag": ""
   },
   {
+   "id": "der-beginn",
+   "article": "der",
+   "word": "Beginn",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "開始"
+   ],
+   "examples": [
+    {
+     "de": "Bitte kommen Sie zehn Minuten vor Beginn des Kurses.",
+     "zh": "請在課程開始前十分鐘到。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "beginnen",
    "pos": "verb",
@@ -12016,6 +12878,38 @@
    "sources": [
     {
      "bank": "new-b1-public",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-begriff",
+   "article": "der",
+   "word": "Begriff",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Begriffe",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "概念；詞語"
+   ],
+   "examples": [
+    {
+     "de": "Kannst du diesen Begriff mit eigenen Worten erklären?",
+     "zh": "你可以用自己的話解釋這個概念嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
      "id": null,
      "group": null
     }
@@ -14195,6 +15089,43 @@
    "flag": ""
   },
   {
+   "id": "besitzen",
+   "article": "",
+   "word": "besitzen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "besitzt",
+    "praeteritum": "besaß",
+    "perfekt": "hat besessen",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "擁有"
+   ],
+   "examples": [
+    {
+     "de": "Meine Eltern besitzen ein kleines Haus auf dem Land.",
+     "zh": "我爸媽在鄉下有一間小房子。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "besonders",
    "pos": "adverb",
@@ -14688,6 +15619,38 @@
    ],
    "level": "B1",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-besuch",
+   "article": "der",
+   "word": "Besuch",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Besuche",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "拜訪；訪客"
+   ],
+   "examples": [
+    {
+     "de": "Am Sonntag bekommen wir Besuch.",
+     "zh": "星期天有客人要來我們家。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -15663,6 +16626,70 @@
    "flag": ""
   },
   {
+   "id": "das-bilderbuch",
+   "article": "das",
+   "word": "Bilderbuch",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Bilderbücher",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "圖畫書"
+   ],
+   "examples": [
+    {
+     "de": "Vor dem Schlafen schauen wir ein Bilderbuch an.",
+     "zh": "睡前我們一起看圖畫書。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-bilderrahmen",
+   "article": "der",
+   "word": "Bilderrahmen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Bilderrahmen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "相框；畫框"
+   ],
+   "examples": [
+    {
+     "de": "Für das Foto fehlt uns noch ein Bilderrahmen.",
+     "zh": "這張照片還缺一個相框。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Bildmodell",
    "pos": "noun",
@@ -15801,6 +16828,38 @@
    "variants": [
     "billiger"
    ]
+  },
+  {
+   "id": "die-birne",
+   "article": "die",
+   "word": "Birne",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Birnen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "梨子"
+   ],
+   "examples": [
+    {
+     "de": "Die Birnen sind noch zu hart.",
+     "zh": "這些梨子還太硬。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
   },
   {
    "article": "",
@@ -16519,6 +17578,38 @@
    "flag": ""
   },
   {
+   "id": "das-blumenbeet",
+   "article": "das",
+   "word": "Blumenbeet",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Blumenbeete",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "花圃"
+   ],
+   "examples": [
+    {
+     "de": "Die Kinder dürfen nicht durch das Blumenbeet laufen.",
+     "zh": "孩子們不能從花圃裡穿過去。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Blut",
    "pos": "noun",
@@ -16681,6 +17772,38 @@
    ],
    "level": "A2",
    "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-bohne",
+   "article": "die",
+   "word": "Bohne",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Bohnen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "豆子"
+   ],
+   "examples": [
+    {
+     "de": "Die Bohnen müssen noch zehn Minuten kochen.",
+     "zh": "豆子還要煮十分鐘。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -17026,6 +18149,38 @@
    "flag": ""
   },
   {
+   "id": "die-brezel",
+   "article": "die",
+   "word": "Brezel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Brezeln",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "扭結麵包"
+   ],
+   "examples": [
+    {
+     "de": "Am Bahnhof kaufe ich eine Brezel für unterwegs.",
+     "zh": "我在車站買一個扭結麵包路上吃。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Brief",
    "pos": "noun",
@@ -17095,6 +18250,38 @@
    "flag": ""
   },
   {
+   "id": "der-briefkasten",
+   "article": "der",
+   "word": "Briefkasten",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Briefkästen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "信箱；郵筒"
+   ],
+   "examples": [
+    {
+     "de": "Der nächste Briefkasten steht vor der Post.",
+     "zh": "最近的郵筒在郵局前面。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Briefmarke",
    "pos": "noun",
@@ -17119,6 +18306,38 @@
     }
    ],
    "id": "die-briefmarke",
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-briefumschlag",
+   "article": "der",
+   "word": "Briefumschlag",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Briefumschläge",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "信封"
+   ],
+   "examples": [
+    {
+     "de": "Die Adresse schreibe ich auf den Briefumschlag.",
+     "zh": "我把地址寫在信封上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "A2",
    "topic": "media",
    "push": true,
@@ -17541,6 +18760,38 @@
    "id": "buchen",
    "level": "A2",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-buchstabe",
+   "article": "der",
+   "word": "Buchstabe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Buchstaben",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "字母"
+   ],
+   "examples": [
+    {
+     "de": "Der erste Buchstabe fehlt in diesem Wort.",
+     "zh": "這個字少了第一個字母。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "school",
    "push": true,
    "flag": ""
   },
@@ -18173,6 +19424,38 @@
    "flag": ""
   },
   {
+   "id": "der-campingplatz",
+   "article": "der",
+   "word": "Campingplatz",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Campingplätze",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "露營地"
+   ],
+   "examples": [
+    {
+     "de": "Der Campingplatz liegt direkt am See.",
+     "zh": "露營地就在湖邊。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "Cäsar",
    "pos": "noun",
@@ -18316,6 +19599,38 @@
     }
    ],
    "id": "der-charakter",
+   "level": "B1",
+   "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "charmant",
+   "article": "",
+   "word": "charmant",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "迷人的；親切有禮的"
+   ],
+   "examples": [
+    {
+     "de": "Der Kellner war sehr charmant und hat uns gut beraten.",
+     "zh": "服務生很親切，也給了我們很好的點餐建議。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "B1",
    "topic": "people",
    "push": true,
@@ -18486,6 +19801,38 @@
    "flag": ""
   },
   {
+   "id": "die-chipkarte",
+   "article": "die",
+   "word": "Chipkarte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Chipkarten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "晶片卡"
+   ],
+   "examples": [
+    {
+     "de": "Mit dieser Chipkarte öffnest du die Tür.",
+     "zh": "這張晶片卡可以開門。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "circa",
    "pos": "adverb",
@@ -18515,6 +19862,38 @@
    "id": "circa",
    "level": "B1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-club",
+   "article": "der",
+   "word": "Club",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Clubs",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "俱樂部；夜店"
+   ],
+   "examples": [
+    {
+     "de": "Nach dem Konzert gehen wir in einen Club.",
+     "zh": "演唱會結束後我們要去夜店。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -18549,6 +19928,38 @@
    "id": "die-cola",
    "level": "A1",
    "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-comic",
+   "article": "der",
+   "word": "Comic",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Comics",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "漫畫"
+   ],
+   "examples": [
+    {
+     "de": "Im Zug liest er einen Comic.",
+     "zh": "他在火車上看漫畫。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -18643,6 +20054,38 @@
    ],
    "level": "A1",
    "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-creme",
+   "article": "die",
+   "word": "Creme",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Cremes",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "乳霜"
+   ],
+   "examples": [
+    {
+     "de": "Diese Creme hilft gegen trockene Haut.",
+     "zh": "這款乳霜能改善皮膚乾燥。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
    "push": true,
    "flag": ""
   },
@@ -18943,6 +20386,38 @@
    "flag": ""
   },
   {
+   "id": "damit",
+   "article": "",
+   "word": "damit",
+   "pos": "conjunction",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "為了讓；以便"
+   ],
+   "examples": [
+    {
+     "de": "Ich schreibe dir die Adresse auf, damit du uns findest.",
+     "zh": "我把地址寫給你，這樣你才找得到我們。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "danach",
    "pos": "adverb",
@@ -19164,6 +20639,38 @@
    "id": "darstellen",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-darsteller",
+   "article": "der",
+   "word": "Darsteller",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Darsteller",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "演員；演出者"
+   ],
+   "examples": [
+    {
+     "de": "Der junge Darsteller spielt einen Arzt.",
+     "zh": "這位年輕演員飾演醫師。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -20750,6 +22257,38 @@
    "flag": ""
   },
   {
+   "id": "die-diaet",
+   "article": "die",
+   "word": "Diät",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Diäten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "節食；飲食控制"
+   ],
+   "examples": [
+    {
+     "de": "Seit Montag macht er eine Diät.",
+     "zh": "他從星期一開始控制飲食。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "dich",
    "article": "",
    "word": "dich",
@@ -21084,6 +22623,38 @@
    "sources": [
     {
      "bank": "new-a1",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "dienstags",
+   "article": "",
+   "word": "dienstags",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "每週二"
+   ],
+   "examples": [
+    {
+     "de": "Dienstags gehe ich nach der Arbeit schwimmen.",
+     "zh": "我每週二下班後去游泳。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
      "id": null,
      "group": null
     }
@@ -21819,6 +23390,38 @@
    "flag": ""
   },
   {
+   "id": "die-dose",
+   "article": "die",
+   "word": "Dose",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Dosen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "罐子；罐裝食品"
+   ],
+   "examples": [
+    {
+     "de": "Für die Soße brauchen wir eine Dose Tomaten.",
+     "zh": "做醬汁需要一罐番茄。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Drachenfest",
    "pos": "noun",
@@ -22153,6 +23756,38 @@
    "flag": ""
   },
   {
+   "id": "drinnen",
+   "article": "",
+   "word": "drinnen",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在裡面；在室內"
+   ],
+   "examples": [
+    {
+     "de": "Es ist kalt, wir warten lieber drinnen.",
+     "zh": "天氣很冷，我們在裡面等好了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Drittel",
    "pos": "noun",
@@ -22199,6 +23834,38 @@
    "id": "das-drittel",
    "level": "B1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "drueben",
+   "article": "",
+   "word": "drüben",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在那邊；在對面"
+   ],
+   "examples": [
+    {
+     "de": "Die Bushaltestelle ist drüben auf der anderen Straßenseite.",
+     "zh": "公車站在馬路對面。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
    "push": true,
    "flag": ""
   },
@@ -22321,6 +23988,43 @@
    ],
    "level": "A1",
    "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "duften",
+   "article": "",
+   "word": "duften",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "duftet",
+    "praeteritum": "duftete",
+    "perfekt": "hat geduftet",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "散發香味"
+   ],
+   "examples": [
+    {
+     "de": "Das frische Brot duftet wunderbar.",
+     "zh": "剛出爐的麵包好香。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -22872,6 +24576,70 @@
    ],
    "level": "A2",
    "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "effektiv",
+   "article": "",
+   "word": "effektiv",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "有效的"
+   ],
+   "examples": [
+    {
+     "de": "Mit kurzen Pausen kann ich effektiver arbeiten.",
+     "zh": "中間休息一下，我工作會更有效率。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "egal",
+   "article": "",
+   "word": "egal",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "無所謂的；不在意的"
+   ],
+   "examples": [
+    {
+     "de": "Mir ist egal, welchen Film wir sehen.",
+     "zh": "看哪部電影我都可以。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
    "push": true,
    "flag": ""
   },
@@ -24437,6 +26205,70 @@
    "flag": ""
   },
   {
+   "id": "die-einkaufsliste",
+   "article": "die",
+   "word": "Einkaufsliste",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Einkaufslisten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "購物清單"
+   ],
+   "examples": [
+    {
+     "de": "Milch steht ganz oben auf meiner Einkaufsliste.",
+     "zh": "牛奶寫在我的購物清單最上面。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-einkaufszettel",
+   "article": "der",
+   "word": "Einkaufszettel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Einkaufszettel",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "購物紙條；購物清單"
+   ],
+   "examples": [
+    {
+     "de": "Ohne Einkaufszettel vergesse ich immer etwas.",
+     "zh": "沒帶購物清單，我總會漏買東西。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Einkommen",
    "pos": "noun",
@@ -24714,6 +26546,44 @@
    "flag": ""
   },
   {
+   "id": "einpacken",
+   "article": "",
+   "word": "einpacken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "packt ein",
+    "praeteritum": "packte ein",
+    "perfekt": "hat eingepackt",
+    "aux": "haben",
+    "note": "可分動詞"
+   },
+   "noArticle": false,
+   "meanings": [
+    "包起來；裝入行李"
+   ],
+   "examples": [
+    {
+     "de": "Soll ich das Geschenk für Sie einpacken?",
+     "zh": "需要幫您把禮物包起來嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Einreisetag",
    "pos": "noun",
@@ -24984,6 +26854,38 @@
    "flag": ""
   },
   {
+   "id": "die-einsparung",
+   "article": "die",
+   "word": "Einsparung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Einsparungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "節省；節省下來的金額"
+   ],
+   "examples": [
+    {
+     "de": "Mit dem neuen Gerät ist eine Einsparung von zwanzig Euro im Monat möglich.",
+     "zh": "用新機器每月可以省二十歐元。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "einsteigen",
    "pos": "verb",
@@ -25174,6 +27076,76 @@
    "flag": ""
   },
   {
+   "id": "einverstanden",
+   "article": "",
+   "word": "einverstanden",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "同意的；贊成的"
+   ],
+   "examples": [
+    {
+     "de": "Mit deinem Vorschlag bin ich einverstanden.",
+     "zh": "我同意你的提議。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "einweichen",
+   "article": "",
+   "word": "einweichen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "weicht ein",
+    "praeteritum": "weichte ein",
+    "perfekt": "hat eingeweicht",
+    "aux": "haben",
+    "note": "可分動詞；此處指把食材浸泡，不是退縮"
+   },
+   "noArticle": false,
+   "meanings": [
+    "浸泡；泡軟"
+   ],
+   "examples": [
+    {
+     "de": "Die Bohnen weiche ich über Nacht in Wasser ein.",
+     "zh": "我把豆子泡在水裡一整晚。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-einwohner",
    "article": "der",
    "word": "Einwohner",
@@ -25289,6 +27261,38 @@
    "id": "das-eis",
    "level": "A1",
    "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-eishockey",
+   "article": "das",
+   "word": "Eishockey",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "冰球"
+   ],
+   "examples": [
+    {
+     "de": "Im Winter schauen wir oft Eishockey im Fernsehen.",
+     "zh": "冬天我們常在電視上看冰球比賽。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -25501,6 +27505,38 @@
    "flag": ""
   },
   {
+   "id": "der-empfaenger",
+   "article": "der",
+   "word": "Empfänger",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Empfänger",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "收件人"
+   ],
+   "examples": [
+    {
+     "de": "Bitte schreiben Sie den Namen des Empfängers deutlich.",
+     "zh": "請把收件人的名字寫清楚。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "empfehlen",
    "pos": "verb",
@@ -25549,6 +27585,38 @@
    ],
    "id": "empfehlen",
    "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "empfehlenswert",
+   "article": "",
+   "word": "empfehlenswert",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "值得推薦的"
+   ],
+   "examples": [
+    {
+     "de": "Die kleine Bäckerei am Markt ist sehr empfehlenswert.",
+     "zh": "市場旁的小麵包店很值得推薦。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
    "topic": "general",
    "push": true,
    "flag": ""
@@ -25615,6 +27683,43 @@
    ],
    "id": "das-ende",
    "level": "A1",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "enden",
+   "article": "",
+   "word": "enden",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "endet",
+    "praeteritum": "endete",
+    "perfekt": "hat geendet",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "結束"
+   ],
+   "examples": [
+    {
+     "de": "Der Film endet erst nach Mitternacht.",
+     "zh": "這部電影到午夜過後才結束。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "time",
    "push": true,
    "flag": ""
@@ -25732,6 +27837,38 @@
    "id": "eng",
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-engagement",
+   "article": "das",
+   "word": "Engagement",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Engagements",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "投入；熱心參與"
+   ],
+   "examples": [
+    {
+     "de": "Für dein Engagement im Verein danke ich dir.",
+     "zh": "謝謝你為協會這麼用心付出。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "society",
    "push": true,
    "flag": ""
   },
@@ -25977,6 +28114,38 @@
    "id": "entkommen",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "entlang",
+   "article": "",
+   "word": "entlang",
+   "pos": "preposition",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "沿著"
+   ],
+   "examples": [
+    {
+     "de": "Wir gehen den Fluss entlang bis zur Brücke.",
+     "zh": "我們沿著河走到橋邊。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
    "push": true,
    "flag": ""
   },
@@ -26737,6 +28906,38 @@
    "flag": ""
   },
   {
+   "id": "die-erdbeere",
+   "article": "die",
+   "word": "Erdbeere",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Erdbeeren",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "草莓"
+   ],
+   "examples": [
+    {
+     "de": "Die Erdbeeren aus dem Garten schmecken sehr süß.",
+     "zh": "花園裡的草莓吃起來很甜。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Erde",
    "pos": "noun",
@@ -27079,6 +29280,43 @@
    "flag": ""
   },
   {
+   "id": "ergaenzen",
+   "article": "",
+   "word": "ergänzen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "ergänzt",
+    "praeteritum": "ergänzte",
+    "perfekt": "hat ergänzt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "補充；補上"
+   ],
+   "examples": [
+    {
+     "de": "Bitte ergänzen Sie die fehlende Adresse.",
+     "zh": "請補上缺少的地址。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Ergebnis",
    "pos": "noun",
@@ -27169,6 +29407,43 @@
    "id": "erhalten",
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "erhitzen",
+   "article": "",
+   "word": "erhitzen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "erhitzt",
+    "praeteritum": "erhitzte",
+    "perfekt": "hat erhitzt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "加熱"
+   ],
+   "examples": [
+    {
+     "de": "Erhitze das Öl langsam in der Pfanne.",
+     "zh": "把平底鍋裡的油慢慢加熱。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -27850,6 +30125,43 @@
    ],
    "level": "B1",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "eroeffnen",
+   "article": "",
+   "word": "eröffnen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "eröffnet",
+    "praeteritum": "eröffnete",
+    "perfekt": "hat eröffnet",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "開設；開幕"
+   ],
+   "examples": [
+    {
+     "de": "Nächste Woche eröffnet hier ein neues Café.",
+     "zh": "下週這裡會有一間新咖啡店開幕。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -29043,6 +31355,38 @@
    "flag": "少見；釋義待確認"
   },
   {
+   "id": "der-essig",
+   "article": "der",
+   "word": "Essig",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "醋"
+   ],
+   "examples": [
+    {
+     "de": "Für den Salat nehme ich Essig und Öl.",
+     "zh": "我用醋和油拌沙拉。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "etwa",
    "pos": "adverb/connector",
@@ -29283,6 +31627,38 @@
    "flag": ""
   },
   {
+   "id": "eventuell",
+   "article": "",
+   "word": "eventuell",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "可能；也許"
+   ],
+   "examples": [
+    {
+     "de": "Eventuell komme ich morgen etwas später.",
+     "zh": "我明天可能會晚一點到。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "ewig",
    "pos": "adjective",
@@ -29379,6 +31755,70 @@
    "id": "das-experiment",
    "level": "B1",
    "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-export",
+   "article": "der",
+   "word": "Export",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Exporte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "出口；外銷"
+   ],
+   "examples": [
+    {
+     "de": "Diese Maschinen sind für den Export bestimmt.",
+     "zh": "這些機器是要外銷的。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-extra",
+   "article": "das",
+   "word": "Extra",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Extras",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "額外項目；附加服務"
+   ],
+   "examples": [
+    {
+     "de": "Für jedes Extra müssen wir mehr bezahlen.",
+     "zh": "每個額外項目都要加錢。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -29907,6 +32347,38 @@
    "flag": ""
   },
   {
+   "id": "der-fahrplan",
+   "article": "der",
+   "word": "Fahrplan",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Fahrpläne",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "時刻表；行車時間表"
+   ],
+   "examples": [
+    {
+     "de": "Am Sonntag gilt ein anderer Fahrplan.",
+     "zh": "星期天適用另一份時刻表。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Fahrrad",
    "pos": "noun",
@@ -29945,6 +32417,38 @@
    ],
    "id": "das-fahrrad",
    "level": "A1",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-fahrt",
+   "article": "die",
+   "word": "Fahrt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Fahrten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "搭車或開車的行程"
+   ],
+   "examples": [
+    {
+     "de": "Die Fahrt zum Flughafen dauert eine Stunde.",
+     "zh": "到機場的車程要一小時。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "travel",
    "push": true,
    "flag": ""
@@ -30917,6 +33421,38 @@
    "flag": ""
   },
   {
+   "id": "das-fernsehgeraet",
+   "article": "das",
+   "word": "Fernsehgerät",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Fernsehgeräte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "電視機"
+   ],
+   "examples": [
+    {
+     "de": "Unser altes Fernsehgerät funktioniert noch.",
+     "zh": "我們的舊電視還能用。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "fertig",
    "pos": "adjective",
@@ -30983,6 +33519,70 @@
    ],
    "id": "das-fest",
    "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-festival",
+   "article": "das",
+   "word": "Festival",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Festivals",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "藝術節；音樂祭"
+   ],
+   "examples": [
+    {
+     "de": "Für das Festival gibt es nur noch wenige Karten.",
+     "zh": "音樂祭只剩少量門票了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "festlich",
+   "article": "",
+   "word": "festlich",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "有節慶氣氛的；隆重的"
+   ],
+   "examples": [
+    {
+     "de": "Für die Hochzeit ist der Saal festlich geschmückt.",
+     "zh": "大廳為了婚禮布置得很有喜氣。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
    "topic": "leisure",
    "push": true,
    "flag": ""
@@ -31158,6 +33758,38 @@
    "flag": ""
   },
   {
+   "id": "fettarm",
+   "article": "",
+   "word": "fettarm",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "低脂的"
+   ],
+   "examples": [
+    {
+     "de": "Für die Soße nehme ich fettarme Milch.",
+     "zh": "我用低脂牛奶做醬汁。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "fettig",
    "article": "",
    "word": "fettig",
@@ -31217,6 +33849,38 @@
     }
    ],
    "level": "B1",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-feuer",
+   "article": "das",
+   "word": "Feuer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Feuer",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "火；火災"
+   ],
+   "examples": [
+    {
+     "de": "Bitte halte Abstand vom Feuer.",
+     "zh": "請離火遠一點。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "nature",
    "push": true,
    "flag": ""
@@ -32500,6 +35164,38 @@
    "id": "fluessig",
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-flyer",
+   "article": "der",
+   "word": "Flyer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Flyer",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "傳單"
+   ],
+   "examples": [
+    {
+     "de": "Vor dem Kino verteilt jemand Flyer.",
+     "zh": "電影院前有人在發傳單。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -34527,6 +37223,38 @@
    "flag": ""
   },
   {
+   "id": "die-fuehrung",
+   "article": "die",
+   "word": "Führung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Führungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "導覽"
+   ],
+   "examples": [
+    {
+     "de": "Die Führung durch das Museum beginnt um elf.",
+     "zh": "博物館導覽十一點開始。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "das-fundbuero",
    "article": "das",
    "word": "Fundbüro",
@@ -35190,6 +37918,43 @@
    "flag": ""
   },
   {
+   "id": "gaertnern",
+   "article": "",
+   "word": "gärtnern",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "gärtnert",
+    "praeteritum": "gärtnerte",
+    "perfekt": "hat gegärtnert",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "從事園藝；照顧花草"
+   ],
+   "examples": [
+    {
+     "de": "Seit dem Frühling gärtnert mein Vater jeden Nachmittag.",
+     "zh": "從春天開始，我爸爸每天下午都在照顧花草。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Gast",
    "pos": "noun",
@@ -35259,6 +38024,38 @@
    "id": "der-gastgeber",
    "level": "B1",
    "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-gaststaette",
+   "article": "die",
+   "word": "Gaststätte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Gaststätten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "餐館；小酒館"
+   ],
+   "examples": [
+    {
+     "de": "Nach der Wanderung essen wir in einer Gaststätte.",
+     "zh": "健行結束後，我們在一間餐館吃飯。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -35417,6 +38214,38 @@
    "flag": ""
   },
   {
+   "id": "das-gebirge",
+   "article": "das",
+   "word": "Gebirge",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Gebirge",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "山脈；山區"
+   ],
+   "examples": [
+    {
+     "de": "Im Gebirge kann das Wetter schnell wechseln.",
+     "zh": "山區的天氣可能變得很快。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "geboren sein",
    "pos": "phrase",
@@ -35449,6 +38278,43 @@
    "flag": ""
   },
   {
+   "id": "gebrauchen",
+   "article": "",
+   "word": "gebrauchen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "gebraucht",
+    "praeteritum": "gebrauchte",
+    "perfekt": "hat gebraucht",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "使用；用得上"
+   ],
+   "examples": [
+    {
+     "de": "Diese alte Lampe kann ich noch gut gebrauchen.",
+     "zh": "這盞舊燈我還很用得上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-gebuehr",
    "article": "die",
    "word": "Gebühr",
@@ -35477,6 +38343,38 @@
    ],
    "level": "B1",
    "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-geburt",
+   "article": "die",
+   "word": "Geburt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Geburten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "出生；生產"
+   ],
+   "examples": [
+    {
+     "de": "Seit der Geburt ihrer Tochter arbeitet sie weniger.",
+     "zh": "女兒出生後，她減少了工作時間。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -35920,6 +38818,38 @@
    ],
    "id": "der-gegenstand",
    "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-gegenteil",
+   "article": "das",
+   "word": "Gegenteil",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Gegenteile",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "相反的事物；反面"
+   ],
+   "examples": [
+    {
+     "de": "Ich dachte, du bist müde, aber das Gegenteil ist der Fall.",
+     "zh": "我以為你累了，結果正好相反。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "general",
    "push": true,
    "flag": ""
@@ -36902,6 +39832,38 @@
    ],
    "level": "B1",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-genie",
+   "article": "das",
+   "word": "Genie",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Genies",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "天才"
+   ],
+   "examples": [
+    {
+     "de": "Für diese Aufgabe muss man kein Genie sein.",
+     "zh": "這個任務不用是天才也做得來。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -39011,6 +41973,38 @@
    "flag": ""
   },
   {
+   "id": "das-golf",
+   "article": "das",
+   "word": "Golf",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "高爾夫球"
+   ],
+   "examples": [
+    {
+     "de": "Mein Onkel spielt jeden Samstag Golf.",
+     "zh": "我叔叔每週六都打高爾夫球。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Gondel",
    "pos": "noun",
@@ -39183,6 +42177,38 @@
    "id": "der-grad",
    "level": "A2",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-gramm",
+   "article": "das",
+   "word": "Gramm",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Gramm",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "公克"
+   ],
+   "examples": [
+    {
+     "de": "Für den Kuchen fehlen noch hundert Gramm Zucker.",
+     "zh": "做蛋糕還少一百公克的糖。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -39580,6 +42606,38 @@
    ],
    "level": "A1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "grossartig",
+   "article": "",
+   "word": "großartig",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "很棒的；出色的"
+   ],
+   "examples": [
+    {
+     "de": "Euer Konzert gestern war großartig!",
+     "zh": "你們昨天的演出太棒了！"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
    "push": true,
    "flag": ""
   },
@@ -40147,6 +43205,44 @@
    "flag": ""
   },
   {
+   "id": "gucken",
+   "article": "",
+   "word": "gucken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "guckt",
+    "praeteritum": "guckte",
+    "perfekt": "hat geguckt",
+    "aux": "haben",
+    "note": "口語"
+   },
+   "noArticle": false,
+   "meanings": [
+    "看；瞧"
+   ],
+   "examples": [
+    {
+     "de": "Die Kinder gucken aus dem Fenster.",
+     "zh": "孩子們往窗外看。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "gueltig",
    "article": "",
    "word": "gültig",
@@ -40490,6 +43586,38 @@
    "flag": ""
   },
   {
+   "id": "das-haehnchen",
+   "article": "das",
+   "word": "Hähnchen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Hähnchen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "雞肉；烤雞"
+   ],
+   "examples": [
+    {
+     "de": "Das Hähnchen bleibt noch zwanzig Minuten im Ofen.",
+     "zh": "雞還要在烤箱裡烤二十分鐘。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "halb",
    "pos": "adjective",
@@ -40828,6 +43956,38 @@
    "flag": ""
   },
   {
+   "id": "der-hammer",
+   "article": "der",
+   "word": "Hammer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Hämmer",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "鐵鎚"
+   ],
+   "examples": [
+    {
+     "de": "Kannst du mir den Hammer aus dem Keller holen?",
+     "zh": "你可以幫我拿地下室的鐵鎚嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Hand",
    "pos": "noun",
@@ -40990,6 +44150,38 @@
    "id": "die-handlung",
    "level": "B1",
    "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-handtasche",
+   "article": "die",
+   "word": "Handtasche",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Handtaschen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "手提包"
+   ],
+   "examples": [
+    {
+     "de": "In diese Handtasche passt sogar ein kleines Buch.",
+     "zh": "這個手提包連一本小書都裝得下。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -42165,6 +45357,38 @@
    "flag": ""
   },
   {
+   "id": "hellgruen",
+   "article": "",
+   "word": "hellgrün",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "淺綠色的"
+   ],
+   "examples": [
+    {
+     "de": "Für die Küche haben wir hellgrüne Vorhänge gekauft.",
+     "zh": "我們買了淺綠色窗簾放在廚房。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "hellhörig",
    "pos": "adjective",
@@ -42417,6 +45641,38 @@
    "flag": ""
   },
   {
+   "id": "herbstlich",
+   "article": "",
+   "word": "herbstlich",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "秋天般的；有秋意的"
+   ],
+   "examples": [
+    {
+     "de": "Heute ist es schon richtig herbstlich und kühl.",
+     "zh": "今天已經很有秋意，涼涼的。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-herd",
    "article": "der",
    "word": "Herd",
@@ -42657,6 +45913,38 @@
    "id": "hervorragend",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-herz",
+   "article": "das",
+   "word": "Herz",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Herzen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "心臟；心"
+   ],
+   "examples": [
+    {
+     "de": "Beim Laufen schlägt mein Herz schneller.",
+     "zh": "跑步時我的心跳會加快。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
    "push": true,
    "flag": ""
   },
@@ -43009,6 +46297,38 @@
    ],
    "id": "der-hinflug",
    "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "hinten",
+   "article": "",
+   "word": "hinten",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在後面；在後方"
+   ],
+   "examples": [
+    {
+     "de": "Im Bus sind hinten noch Plätze frei.",
+     "zh": "公車後面還有空位。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
    "topic": "travel",
    "push": true,
    "flag": ""
@@ -43830,6 +47150,38 @@
    "flag": ""
   },
   {
+   "id": "das-hoerbuch",
+   "article": "das",
+   "word": "Hörbuch",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Hörbücher",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "有聲書"
+   ],
+   "examples": [
+    {
+     "de": "Beim Kochen höre ich gern ein Hörbuch.",
+     "zh": "我做飯時喜歡聽有聲書。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "hören",
    "pos": "verb",
@@ -43933,6 +47285,70 @@
    "id": "das-hotel",
    "level": "A1",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-huhn",
+   "article": "das",
+   "word": "Huhn",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Hühner",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "雞"
+   ],
+   "examples": [
+    {
+     "de": "Die Hühner laufen frei im Garten herum.",
+     "zh": "雞在花園裡自由走動。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-huehnerfleisch",
+   "article": "das",
+   "word": "Hühnerfleisch",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "雞肉"
+   ],
+   "examples": [
+    {
+     "de": "Für die Suppe schneide ich das Hühnerfleisch klein.",
+     "zh": "我把雞肉切小塊來煮湯。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -44088,6 +47504,38 @@
     }
    ],
    "id": "der-hunger",
+   "level": "A1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "hungrig",
+   "article": "",
+   "word": "hungrig",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "肚子餓的"
+   ],
+   "examples": [
+    {
+     "de": "Bist du schon hungrig oder können wir später essen?",
+     "zh": "你已經餓了嗎？還是我們可以晚點吃？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "A1",
    "topic": "food",
    "push": true,
@@ -45192,6 +48640,70 @@
    "id": "der-impfstoff",
    "level": "B1",
    "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-impfung",
+   "article": "die",
+   "word": "Impfung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Impfungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "疫苗接種"
+   ],
+   "examples": [
+    {
+     "de": "Für die Impfung habe ich am Freitag einen Termin.",
+     "zh": "我約了星期五打疫苗。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-import",
+   "article": "der",
+   "word": "Import",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Importe",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "進口"
+   ],
+   "examples": [
+    {
+     "de": "Die Firma ist auf den Import von Kaffee spezialisiert.",
+     "zh": "這間公司專門進口咖啡。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -47709,6 +51221,44 @@
    "flag": ""
   },
   {
+   "id": "joggen",
+   "article": "",
+   "word": "joggen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "joggt",
+    "praeteritum": "joggte",
+    "perfekt": "ist gejoggt",
+    "aux": "sein",
+    "note": "表示移動的慢跑用法"
+   },
+   "noArticle": false,
+   "meanings": [
+    "慢跑"
+   ],
+   "examples": [
+    {
+     "de": "Vor der Arbeit joggt sie eine halbe Stunde.",
+     "zh": "她上班前會慢跑半小時。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Joghurt",
    "pos": "noun",
@@ -47801,6 +51351,38 @@
    "id": "das-jubilaeum",
    "level": "B2",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-judo",
+   "article": "das",
+   "word": "Judo",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "柔道"
+   ],
+   "examples": [
+    {
+     "de": "Meine Tochter lernt seit einem Jahr Judo.",
+     "zh": "我女兒學柔道一年了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -48506,6 +52088,38 @@
    "flag": ""
   },
   {
+   "id": "die-kamera",
+   "article": "die",
+   "word": "Kamera",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kameras",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "相機；攝影機"
+   ],
+   "examples": [
+    {
+     "de": "Darf ich deine Kamera kurz benutzen?",
+     "zh": "我可以借用一下你的相機嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Kamm",
    "pos": "noun",
@@ -48736,6 +52350,70 @@
    "level": "B1",
    "topic": "shop",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "das-kaertchen",
+   "article": "das",
+   "word": "Kärtchen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kärtchen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "小卡片"
+   ],
+   "examples": [
+    {
+     "de": "Schreib die Antwort auf ein Kärtchen.",
+     "zh": "把答案寫在一張小卡片上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-karte",
+   "article": "die",
+   "word": "Karte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Karten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "卡片；地圖；票"
+   ],
+   "examples": [
+    {
+     "de": "Zum Geburtstag schicke ich dir eine Karte.",
+     "zh": "你生日的時候，我會寄張卡片給你。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "daily",
+   "push": true,
    "flag": ""
   },
   {
@@ -49611,6 +53289,38 @@
    "flag": ""
   },
   {
+   "id": "die-kenntnis",
+   "article": "die",
+   "word": "Kenntnis",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kenntnisse",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "知識；技能"
+   ],
+   "examples": [
+    {
+     "de": "Für diese Arbeit brauche ich gute Kenntnisse in Mathematik.",
+     "zh": "這份工作需要有良好的數學基礎。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Kenntnisse",
    "pos": "noun",
@@ -49839,6 +53549,38 @@
    "flag": ""
   },
   {
+   "id": "das-kinderbuch",
+   "article": "das",
+   "word": "Kinderbuch",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kinderbücher",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "童書"
+   ],
+   "examples": [
+    {
+     "de": "Dieses Kinderbuch hat besonders schöne Bilder.",
+     "zh": "這本童書的插圖特別漂亮。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Kinderüberraschung",
    "pos": "noun",
@@ -49870,6 +53612,38 @@
    "level": "B2",
    "topic": "food",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "der-kinderwagen",
+   "article": "der",
+   "word": "Kinderwagen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kinderwagen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "嬰兒車"
+   ],
+   "examples": [
+    {
+     "de": "Passt der Kinderwagen in den Aufzug?",
+     "zh": "嬰兒車進得了電梯嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
+   "push": true,
    "flag": ""
   },
   {
@@ -50068,6 +53842,38 @@
    "id": "die-kirschbluete",
    "level": "B1",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-kissen",
+   "article": "das",
+   "word": "Kissen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kissen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "枕頭；靠墊"
+   ],
+   "examples": [
+    {
+     "de": "Auf dem Sofa liegen drei weiche Kissen.",
+     "zh": "沙發上有三個柔軟的靠墊。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
    "push": true,
    "flag": ""
   },
@@ -50304,6 +54110,43 @@
    "id": "das-klavier",
    "level": "A1",
    "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "kleben",
+   "article": "",
+   "word": "kleben",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "klebt",
+    "praeteritum": "klebte",
+    "perfekt": "hat geklebt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "黏；貼"
+   ],
+   "examples": [
+    {
+     "de": "Ich klebe das Foto in mein Heft.",
+     "zh": "我把照片貼進筆記本。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
    "push": true,
    "flag": ""
   },
@@ -51682,6 +55525,102 @@
    "flag": ""
   },
   {
+   "id": "das-konsulat",
+   "article": "das",
+   "word": "Konsulat",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Konsulate",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "領事館"
+   ],
+   "examples": [
+    {
+     "de": "Für ein neues Reisedokument muss sie zum Konsulat.",
+     "zh": "她得去領事館辦新的旅行證件。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-kontakt",
+   "article": "der",
+   "word": "Kontakt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kontakte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "聯繫；接觸"
+   ],
+   "examples": [
+    {
+     "de": "Mit meinen alten Nachbarn habe ich noch Kontakt.",
+     "zh": "我和以前的鄰居還有聯絡。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-kontinent",
+   "article": "der",
+   "word": "Kontinent",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kontinente",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "洲；大陸"
+   ],
+   "examples": [
+    {
+     "de": "Auf welchem Kontinent liegt dieses Land?",
+     "zh": "這個國家在哪一洲？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Konto",
    "pos": "noun",
@@ -51708,6 +55647,38 @@
    "id": "das-konto",
    "level": "A2",
    "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-kontrolle",
+   "article": "die",
+   "word": "Kontrolle",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kontrollen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "檢查；管制"
+   ],
+   "examples": [
+    {
+     "de": "Bei der Kontrolle zeige ich meine Fahrkarte.",
+     "zh": "查票時我出示車票。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -51985,6 +55956,38 @@
    ],
    "level": "A1",
    "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-kostuem",
+   "article": "das",
+   "word": "Kostüm",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kostüme",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "戲服；變裝服裝"
+   ],
+   "examples": [
+    {
+     "de": "Für die Party leiht er sich ein Kostüm.",
+     "zh": "他為了派對借了一套變裝服裝。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -52695,6 +56698,44 @@
    "id": "der-krieg",
    "level": "A2",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "kriegen",
+   "article": "",
+   "word": "kriegen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "kriegt",
+    "praeteritum": "kriegte",
+    "perfekt": "hat gekriegt",
+    "aux": "haben",
+    "note": "口語"
+   },
+   "noArticle": false,
+   "meanings": [
+    "得到；收到"
+   ],
+   "examples": [
+    {
+     "de": "Zum Geburtstag habe ich ein Fahrrad gekriegt.",
+     "zh": "我生日收到一輛自行車。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
    "push": true,
    "flag": ""
   },
@@ -53541,6 +57582,38 @@
    "flag": ""
   },
   {
+   "id": "die-kursleiterin",
+   "article": "die",
+   "word": "Kursleiterin",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Kursleiterinnen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "課程女老師；女性課程負責人"
+   ],
+   "examples": [
+    {
+     "de": "Unsere Kursleiterin erklärt die Aufgabe noch einmal.",
+     "zh": "我們的課程老師再解釋一次題目。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "kurz",
    "article": "",
    "word": "kurz",
@@ -53888,6 +57961,38 @@
    "id": "die-lage",
    "level": "B1",
    "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-lager",
+   "article": "das",
+   "word": "Lager",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Lager",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "倉庫；庫存"
+   ],
+   "examples": [
+    {
+     "de": "Wir haben diese Größe noch im Lager.",
+     "zh": "倉庫裡還有這個尺寸。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -54689,6 +58794,38 @@
    "flag": ""
   },
   {
+   "id": "lebenswert",
+   "article": "",
+   "word": "lebenswert",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "適合生活的；宜居的"
+   ],
+   "examples": [
+    {
+     "de": "Viele Parks machen unsere Stadt lebenswert.",
+     "zh": "許多公園讓我們的城市很適合生活。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Lebermetastase",
    "pos": "noun",
@@ -54953,6 +59090,38 @@
    "id": "legen",
    "level": "A1",
    "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-lehre",
+   "article": "die",
+   "word": "Lehre",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Lehren",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "職業訓練；學徒訓練"
+   ],
+   "examples": [
+    {
+     "de": "Nach der Schule macht sie eine Lehre in einer Bäckerei.",
+     "zh": "她畢業後到麵包店接受學徒訓練。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -56007,6 +60176,38 @@
    "flag": ""
   },
   {
+   "id": "die-limonade",
+   "article": "die",
+   "word": "Limonade",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Limonaden",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "汽水；檸檬飲料"
+   ],
+   "examples": [
+    {
+     "de": "Die Kinder trinken selbst gemachte Limonade.",
+     "zh": "孩子們喝自己做的檸檬飲料。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "lindern",
    "pos": "verb",
@@ -56104,6 +60305,38 @@
    "flag": ""
   },
   {
+   "id": "die-liste",
+   "article": "die",
+   "word": "Liste",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Listen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "清單；名單"
+   ],
+   "examples": [
+    {
+     "de": "Dein Name steht noch nicht auf der Liste.",
+     "zh": "名單上還沒有你的名字。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-liter",
    "article": "der",
    "word": "Liter",
@@ -56132,6 +60365,38 @@
    ],
    "level": "A1",
    "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-literatur",
+   "article": "die",
+   "word": "Literatur",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "文學；文獻"
+   ],
+   "examples": [
+    {
+     "de": "Im Unterricht sprechen wir über moderne Literatur.",
+     "zh": "我們在課堂上討論現代文學。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -56168,6 +60433,75 @@
    "topic": "city",
    "push": false,
    "flag": "專有機構名"
+  },
+  {
+   "id": "der-lkw",
+   "article": "der",
+   "word": "Lkw",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Lkws",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "卡車"
+   ],
+   "examples": [
+    {
+     "de": "Ein Lkw steht vor der Einfahrt.",
+     "zh": "一輛卡車停在車道入口前。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "loben",
+   "article": "",
+   "word": "loben",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "lobt",
+    "praeteritum": "lobte",
+    "perfekt": "hat gelobt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "稱讚；讚美"
+   ],
+   "examples": [
+    {
+     "de": "Die Lehrerin lobt ihn für seine gute Arbeit.",
+     "zh": "老師稱讚他做得很好。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "people",
+   "push": true,
+   "flag": ""
   },
   {
    "article": "",
@@ -56280,6 +60614,38 @@
    "flag": ""
   },
   {
+   "id": "das-lokal",
+   "article": "das",
+   "word": "Lokal",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Lokale",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "餐館；酒館"
+   ],
+   "examples": [
+    {
+     "de": "Wir treffen uns in einem kleinen Lokal am Bahnhof.",
+     "zh": "我們在車站旁的一間小餐館碰面。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "loeschen",
    "article": "",
    "word": "löschen",
@@ -56313,6 +60679,43 @@
    ],
    "level": "B1",
    "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "loesen",
+   "article": "",
+   "word": "lösen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "löst",
+    "praeteritum": "löste",
+    "perfekt": "hat gelöst",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "解決；解開"
+   ],
+   "examples": [
+    {
+     "de": "Können wir das Problem gemeinsam lösen?",
+     "zh": "我們可以一起解決這個問題嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -56980,6 +61383,38 @@
    "flag": ""
   },
   {
+   "id": "mager",
+   "article": "",
+   "word": "mager",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "瘦的；脂肪少的"
+   ],
+   "examples": [
+    {
+     "de": "Für dieses Gericht brauchen wir mageres Fleisch.",
+     "zh": "這道菜需要用瘦肉。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Mahlzeit",
    "pos": "noun",
@@ -57548,6 +61983,38 @@
    "flag": ""
   },
   {
+   "id": "das-maerchen",
+   "article": "das",
+   "word": "Märchen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Märchen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "童話"
+   ],
+   "examples": [
+    {
+     "de": "Meine Oma hat uns früher Märchen erzählt.",
+     "zh": "奶奶以前會講童話給我們聽。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Markt",
    "pos": "noun",
@@ -57750,6 +62217,38 @@
    ]
   },
   {
+   "id": "die-mauer",
+   "article": "die",
+   "word": "Mauer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Mauern",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "圍牆；牆"
+   ],
+   "examples": [
+    {
+     "de": "Hinter der Mauer liegt ein Garten.",
+     "zh": "圍牆後面有一座花園。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Maus",
    "pos": "noun",
@@ -57911,6 +62410,38 @@
    "id": "das-medikament",
    "level": "A2",
    "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "medium",
+   "article": "",
+   "word": "medium",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "半熟的；五分熟的"
+   ],
+   "examples": [
+    {
+     "de": "Ich hätte mein Steak gern medium.",
+     "zh": "我的牛排要五分熟。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -58648,6 +63179,38 @@
    "flag": ""
   },
   {
+   "id": "das-menue",
+   "article": "das",
+   "word": "Menü",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Menüs",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "套餐；選單"
+   ],
+   "examples": [
+    {
+     "de": "Zum Menü gehören eine Suppe und ein Getränk.",
+     "zh": "套餐包含一碗湯和一杯飲料。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "merken",
    "article": "",
    "word": "merken",
@@ -59222,6 +63785,102 @@
    "flag": ""
   },
   {
+   "id": "das-milchprodukt",
+   "article": "das",
+   "word": "Milchprodukt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Milchprodukte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "乳製品"
+   ],
+   "examples": [
+    {
+     "de": "Im Kühlschrank stehen die Milchprodukte oben.",
+     "zh": "冰箱裡的乳製品放在上層。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-milchtuete",
+   "article": "die",
+   "word": "Milchtüte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Milchtüten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "牛奶紙盒；袋裝牛奶"
+   ],
+   "examples": [
+    {
+     "de": "Die leere Milchtüte kommt in die gelbe Tonne.",
+     "zh": "空牛奶紙盒要丟進黃色回收桶。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "mild",
+   "article": "",
+   "word": "mild",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "溫和的；味道不重的"
+   ],
+   "examples": [
+    {
+     "de": "Diese Soße ist mild und passt gut zu Fisch.",
+     "zh": "這個醬汁口味溫和，很適合配魚。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-minderheit",
    "article": "die",
    "word": "Minderheit",
@@ -59282,6 +63941,38 @@
    ],
    "level": "B1",
    "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-mineralwasser",
+   "article": "das",
+   "word": "Mineralwasser",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "礦泉水"
+   ],
+   "examples": [
+    {
+     "de": "Eine Flasche Mineralwasser ohne Kohlensäure, bitte.",
+     "zh": "請給我一瓶無氣泡礦泉水。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -59923,6 +64614,38 @@
    "flag": ""
   },
   {
+   "id": "mithilfe",
+   "article": "",
+   "word": "mithilfe",
+   "pos": "preposition",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "藉助；透過……的幫助"
+   ],
+   "examples": [
+    {
+     "de": "Mithilfe einer Karte haben wir den Weg gefunden.",
+     "zh": "我們靠著地圖找到了路。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "mitkommen",
    "article": "",
    "word": "mitkommen",
@@ -60351,6 +65074,38 @@
    "flag": ""
   },
   {
+   "id": "das-mittelalter",
+   "article": "das",
+   "word": "Mittelalter",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "中世紀"
+   ],
+   "examples": [
+    {
+     "de": "Diese Burg wurde im Mittelalter gebaut.",
+     "zh": "這座城堡建於中世紀。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "Mitteldeutschland",
    "pos": "noun",
@@ -60382,6 +65137,38 @@
    "level": "B1",
    "topic": "society",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "der-mittelpunkt",
+   "article": "der",
+   "word": "Mittelpunkt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Mittelpunkte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "中心；焦點"
+   ],
+   "examples": [
+    {
+     "de": "Bei dem Fest stehen die Kinder im Mittelpunkt.",
+     "zh": "這場慶典以孩子為主角。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
    "flag": ""
   },
   {
@@ -60687,6 +65474,38 @@
    "flag": ""
   },
   {
+   "id": "das-moebelstueck",
+   "article": "das",
+   "word": "Möbelstück",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Möbelstücke",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "一件家具"
+   ],
+   "examples": [
+    {
+     "de": "Dieses Möbelstück passt nicht durch die Tür.",
+     "zh": "這件家具搬不過門。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "möbliert",
    "pos": "adjective",
@@ -60794,6 +65613,38 @@
    "level": "A2",
    "topic": "grammar",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "die-mode",
+   "article": "die",
+   "word": "Mode",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Moden",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "時尚；流行款式"
+   ],
+   "examples": [
+    {
+     "de": "Meine Schwester interessiert sich für Mode.",
+     "zh": "我姊姊對時尚很有興趣。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
    "flag": ""
   },
   {
@@ -61179,6 +66030,38 @@
    "flag": ""
   },
   {
+   "id": "monatlich",
+   "article": "",
+   "word": "monatlich",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "每月的；按月的"
+   ],
+   "examples": [
+    {
+     "de": "Die Miete zahlen wir monatlich.",
+     "zh": "我們按月付房租。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Mond",
    "pos": "noun",
@@ -61240,6 +66123,38 @@
    "sources": [
     {
      "bank": "new-a1",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "montags",
+   "article": "",
+   "word": "montags",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "每週一"
+   ],
+   "examples": [
+    {
+     "de": "Montags bleibt unser Lieblingscafé geschlossen.",
+     "zh": "我們最喜歡的咖啡店每週一公休。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
      "id": null,
      "group": null
     }
@@ -61419,6 +66334,38 @@
    "id": "morgens",
    "level": "A1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-motivation",
+   "article": "die",
+   "word": "Motivation",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Motivationen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "動力；學習動機"
+   ],
+   "examples": [
+    {
+     "de": "Ein kleines Ziel gibt mir mehr Motivation.",
+     "zh": "小目標讓我更有動力。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
    "push": true,
    "flag": ""
   },
@@ -62078,6 +67025,38 @@
    "id": "die-musikerin",
    "level": "A2",
    "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-muskel",
+   "article": "der",
+   "word": "Muskel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Muskeln",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "肌肉"
+   ],
+   "examples": [
+    {
+     "de": "Nach dem Training tun mir alle Muskeln weh.",
+     "zh": "訓練後我全身肌肉痠痛。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
    "push": true,
    "flag": ""
   },
@@ -63138,6 +68117,38 @@
    "flag": ""
   },
   {
+   "id": "die-nachspeise",
+   "article": "die",
+   "word": "Nachspeise",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Nachspeisen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "飯後甜點"
+   ],
+   "examples": [
+    {
+     "de": "Als Nachspeise gibt es heute Obstsalat.",
+     "zh": "今天的飯後甜點是水果沙拉。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "nächste Woche",
    "pos": "phrase",
@@ -63306,6 +68317,38 @@
    "id": "der-nachteil",
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "nachts",
+   "article": "",
+   "word": "nachts",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在夜裡；每晚"
+   ],
+   "examples": [
+    {
+     "de": "Nachts ist es in unserer Straße sehr ruhig.",
+     "zh": "我們這條街夜裡很安靜。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "time",
    "push": true,
    "flag": ""
   },
@@ -65057,6 +70100,70 @@
    "flag": ""
   },
   {
+   "id": "der-notarzt",
+   "article": "der",
+   "word": "Notarzt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Notärzte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "急救醫師"
+   ],
+   "examples": [
+    {
+     "de": "Der Notarzt ist schon unterwegs.",
+     "zh": "急救醫師已經在路上了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-notaufnahme",
+   "article": "die",
+   "word": "Notaufnahme",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Notaufnahmen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "急診室"
+   ],
+   "examples": [
+    {
+     "de": "In der Notaufnahme mussten wir lange warten.",
+     "zh": "我們在急診室等了很久。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-note",
    "article": "die",
    "word": "Note",
@@ -65153,6 +70260,70 @@
    "flag": ""
   },
   {
+   "id": "die-notiz",
+   "article": "die",
+   "word": "Notiz",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Notizen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "筆記；簡短紀錄"
+   ],
+   "examples": [
+    {
+     "de": "Während des Gesprächs mache ich mir Notizen.",
+     "zh": "談話時我會做筆記。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-notizblock",
+   "article": "der",
+   "word": "Notizblock",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Notizblöcke",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "便條本；筆記本"
+   ],
+   "examples": [
+    {
+     "de": "In meiner Tasche habe ich immer einen Notizblock.",
+     "zh": "我包包裡隨時都放著一本便條本。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-notruf",
    "article": "der",
    "word": "Notruf",
@@ -65245,6 +70416,38 @@
    ],
    "level": "A1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-nudel",
+   "article": "die",
+   "word": "Nudel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Nudeln",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "麵條"
+   ],
+   "examples": [
+    {
+     "de": "Die Nudeln sind in fünf Minuten fertig.",
+     "zh": "麵再五分鐘就好了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -66092,6 +71295,38 @@
    "flag": ""
   },
   {
+   "id": "oekologisch",
+   "article": "",
+   "word": "ökologisch",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "生態的；環保的"
+   ],
+   "examples": [
+    {
+     "de": "Wir suchen eine ökologisch sinnvolle Verpackung.",
+     "zh": "我們在找對環境比較好的包裝方式。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-oktober",
    "article": "der",
    "word": "Oktober",
@@ -66120,6 +71355,38 @@
    ],
    "level": "A1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-oel",
+   "article": "das",
+   "word": "Öl",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "油"
+   ],
+   "examples": [
+    {
+     "de": "Gib etwas Öl in die Pfanne.",
+     "zh": "在平底鍋裡加一點油。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -66342,6 +71609,43 @@
     }
    ],
    "id": "die-operation",
+   "level": "B1",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "operieren",
+   "article": "",
+   "word": "operieren",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "operiert",
+    "praeteritum": "operierte",
+    "perfekt": "hat operiert",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "動手術"
+   ],
+   "examples": [
+    {
+     "de": "Der Arzt hat gestern mein Knie operiert.",
+     "zh": "醫師昨天幫我的膝蓋動了手術。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "B1",
    "topic": "health",
    "push": true,
@@ -66663,6 +71967,107 @@
    "flag": ""
   },
   {
+   "id": "das-paeckchen",
+   "article": "das",
+   "word": "Päckchen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Päckchen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "小包裹"
+   ],
+   "examples": [
+    {
+     "de": "Morgen bringe ich dein Päckchen zur Post.",
+     "zh": "明天我會把你的小包裹拿去郵局寄。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "packen",
+   "article": "",
+   "word": "packen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "packt",
+    "praeteritum": "packte",
+    "perfekt": "hat gepackt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "打包；整理行李"
+   ],
+   "examples": [
+    {
+     "de": "Hast du deinen Koffer schon gepackt?",
+     "zh": "你的行李箱收好了嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-packung",
+   "article": "die",
+   "word": "Packung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Packungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "一包；包裝"
+   ],
+   "examples": [
+    {
+     "de": "Kannst du eine Packung Reis mitbringen?",
+     "zh": "你可以帶一包米來嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Paket",
    "pos": "noun",
@@ -66821,6 +72226,38 @@
    "flag": ""
   },
   {
+   "id": "das-parfuem",
+   "article": "das",
+   "word": "Parfüm",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Parfüms",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "香水"
+   ],
+   "examples": [
+    {
+     "de": "Dieses Parfüm riecht nach Rosen.",
+     "zh": "這款香水有玫瑰香。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Park",
    "pos": "noun",
@@ -66888,6 +72325,38 @@
    "flag": ""
   },
   {
+   "id": "der-parkplatz",
+   "article": "der",
+   "word": "Parkplatz",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Parkplätze",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "停車位；停車場"
+   ],
+   "examples": [
+    {
+     "de": "Vor dem Supermarkt ist noch ein Parkplatz frei.",
+     "zh": "超市前面還有一個空車位。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Partei",
    "pos": "noun",
@@ -66914,6 +72383,38 @@
    "id": "die-partei",
    "level": "B1",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-partnerin",
+   "article": "die",
+   "word": "Partnerin",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Partnerinnen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "女性伴侶；女性合作夥伴"
+   ],
+   "examples": [
+    {
+     "de": "Meine Partnerin und ich teilen uns die Hausarbeit.",
+     "zh": "我和伴侶分擔家事。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -67780,6 +73281,38 @@
    "flag": ""
   },
   {
+   "id": "der-pfeffer",
+   "article": "der",
+   "word": "Pfeffer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "胡椒"
+   ],
+   "examples": [
+    {
+     "de": "Möchtest du noch etwas Pfeffer auf die Suppe?",
+     "zh": "你的湯還要加一點胡椒嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Pferd",
    "pos": "noun",
@@ -67989,6 +73522,38 @@
    ],
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-pfund",
+   "article": "das",
+   "word": "Pfund",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Pfund",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "半公斤（德國購物慣用單位）；磅"
+   ],
+   "examples": [
+    {
+     "de": "Auf dem Markt kaufe ich ein Pfund Kirschen.",
+     "zh": "我在市場買半公斤櫻桃。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -68297,6 +73862,70 @@
    "id": "die-planung",
    "level": "B1",
    "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-plastikflasche",
+   "article": "die",
+   "word": "Plastikflasche",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Plastikflaschen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "塑膠瓶"
+   ],
+   "examples": [
+    {
+     "de": "Diese Plastikflasche benutze ich mehrmals.",
+     "zh": "這個塑膠瓶我會重複使用。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-plastiktuete",
+   "article": "die",
+   "word": "Plastiktüte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Plastiktüten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "塑膠袋"
+   ],
+   "examples": [
+    {
+     "de": "Ich brauche keine Plastiktüte, ich habe eine Tasche dabei.",
+     "zh": "我不用塑膠袋，我有帶袋子。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -68879,6 +74508,70 @@
    "flag": ""
   },
   {
+   "id": "die-postkarte",
+   "article": "die",
+   "word": "Postkarte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Postkarten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "明信片"
+   ],
+   "examples": [
+    {
+     "de": "Aus dem Urlaub hat sie uns eine Postkarte geschickt.",
+     "zh": "她度假時寄了一張明信片給我們。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-praktikant",
+   "article": "der",
+   "word": "Praktikant",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Praktikanten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "實習生"
+   ],
+   "examples": [
+    {
+     "de": "Der neue Praktikant hilft heute im Büro.",
+     "zh": "新來的實習生今天在辦公室幫忙。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Praktikum",
    "pos": "noun",
@@ -69251,6 +74944,107 @@
    "flag": ""
   },
   {
+   "id": "pressen",
+   "article": "",
+   "word": "pressen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "presst",
+    "praeteritum": "presste",
+    "perfekt": "hat gepresst",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "壓；榨"
+   ],
+   "examples": [
+    {
+     "de": "Für das Frühstück presse ich zwei Orangen.",
+     "zh": "我榨兩顆柳橙準備早餐。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "prima",
+   "article": "",
+   "word": "prima",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "很棒的；很好的"
+   ],
+   "examples": [
+    {
+     "de": "Die neue Wohnung gefällt mir prima.",
+     "zh": "我很喜歡這間新公寓。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-privatsender",
+   "article": "der",
+   "word": "Privatsender",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Privatsender",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "民營電視台；民營電台"
+   ],
+   "examples": [
+    {
+     "de": "Auf diesem Privatsender läuft viel Werbung.",
+     "zh": "這個民營電視台的廣告很多。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "pro Monat",
    "pos": "phrase",
@@ -69435,6 +75229,38 @@
    "id": "das-produkt",
    "level": "B1",
    "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-produktion",
+   "article": "die",
+   "word": "Produktion",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Produktionen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "生產；製作"
+   ],
+   "examples": [
+    {
+     "de": "Die Produktion der neuen Fahrräder beginnt im Mai.",
+     "zh": "新款自行車五月開始生產。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -69689,6 +75515,38 @@
    "flag": ""
   },
   {
+   "id": "der-prospekt",
+   "article": "der",
+   "word": "Prospekt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Prospekte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "廣告冊；簡介"
+   ],
+   "examples": [
+    {
+     "de": "Im Prospekt findest du die Preise für alle Zimmer.",
+     "zh": "簡介裡有所有房型的價格。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "protestieren",
    "article": "",
    "word": "protestieren",
@@ -69756,6 +75614,38 @@
    "id": "die-prozedur",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-prozent",
+   "article": "das",
+   "word": "Prozent",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Prozent",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "百分比"
+   ],
+   "examples": [
+    {
+     "de": "Heute sind alle Jacken zwanzig Prozent billiger.",
+     "zh": "今天所有外套都打八折。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -69965,6 +75855,38 @@
    "flag": ""
   },
   {
+   "id": "der-punkt",
+   "article": "der",
+   "word": "Punkt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Punkte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "點；分數"
+   ],
+   "examples": [
+    {
+     "de": "Für diese Antwort bekommst du zwei Punkte.",
+     "zh": "這個答案可以拿兩分。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "puenktlich",
    "article": "",
    "word": "pünktlich",
@@ -69993,6 +75915,38 @@
    ],
    "level": "A2",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-puppe",
+   "article": "die",
+   "word": "Puppe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Puppen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "洋娃娃"
+   ],
+   "examples": [
+    {
+     "de": "Das Kind legt seine Puppe ins Bett.",
+     "zh": "孩子把洋娃娃放到床上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -70827,6 +76781,70 @@
    "flag": ""
   },
   {
+   "id": "der-raucher",
+   "article": "der",
+   "word": "Raucher",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Raucher",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "吸菸者"
+   ],
+   "examples": [
+    {
+     "de": "Für Raucher gibt es draußen einen eigenen Bereich.",
+     "zh": "外面有吸菸者專用區。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-raum",
+   "article": "der",
+   "word": "Raum",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Räume",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "房間；空間"
+   ],
+   "examples": [
+    {
+     "de": "Der Kurs findet heute in einem anderen Raum statt.",
+     "zh": "今天的課換到另一間教室上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "reagieren",
    "pos": "verb",
@@ -70960,6 +76978,38 @@
    "id": "die-realitaet",
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-realschule",
+   "article": "die",
+   "word": "Realschule",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Realschulen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "實科中學（德國中等教育的一種）"
+   ],
+   "examples": [
+    {
+     "de": "Sein Sohn besucht eine Realschule.",
+     "zh": "他的兒子就讀實科中學。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
    "push": true,
    "flag": ""
   },
@@ -71591,6 +77641,38 @@
    "flag": ""
   },
   {
+   "id": "die-region",
+   "article": "die",
+   "word": "Region",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Regionen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "地區"
+   ],
+   "examples": [
+    {
+     "de": "In dieser Region gibt es viele Radwege.",
+     "zh": "這個地區有很多自行車道。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "regnen",
    "pos": "verb",
@@ -71912,6 +77994,38 @@
    "flag": ""
   },
   {
+   "id": "der-reisefuehrer",
+   "article": "der",
+   "word": "Reiseführer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Reiseführer",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "旅遊指南；導遊"
+   ],
+   "examples": [
+    {
+     "de": "Im Reiseführer steht ein Tipp für ein günstiges Hotel.",
+     "zh": "旅遊指南推薦了一間便宜的旅館。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "reisen",
    "pos": "verb",
@@ -71979,6 +78093,38 @@
     }
    ],
    "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-reiseveranstalter",
+   "article": "der",
+   "word": "Reiseveranstalter",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Reiseveranstalter",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "旅行業者；旅遊行程主辦商"
+   ],
+   "examples": [
+    {
+     "de": "Der Reiseveranstalter hat unsere Reise abgesagt.",
+     "zh": "旅行業者取消了我們的行程。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
    "topic": "travel",
    "push": true,
    "flag": ""
@@ -72456,6 +78602,38 @@
    "flag": ""
   },
   {
+   "id": "die-reparatur",
+   "article": "die",
+   "word": "Reparatur",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Reparaturen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "修理"
+   ],
+   "examples": [
+    {
+     "de": "Die Reparatur kostet mehr als ein neues Gerät.",
+     "zh": "修理費比買新機器還貴。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "reparieren",
    "article": "",
    "word": "reparieren",
@@ -72659,6 +78837,38 @@
    ],
    "level": "A1",
    "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "restlos",
+   "article": "",
+   "word": "restlos",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "完全地；一點也不剩地"
+   ],
+   "examples": [
+    {
+     "de": "Die Suppe wurde restlos aufgegessen.",
+     "zh": "湯被喝得一點也不剩。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -73180,6 +79390,38 @@
    "flag": ""
   },
   {
+   "id": "die-rose",
+   "article": "die",
+   "word": "Rose",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Rosen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "玫瑰"
+   ],
+   "examples": [
+    {
+     "de": "Zum Geburtstag bekommt sie gelbe Rosen.",
+     "zh": "她生日收到黃色玫瑰。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "rot",
    "article": "",
    "word": "rot",
@@ -73270,6 +79512,38 @@
     }
    ],
    "id": "der-ruecken",
+   "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-rueckenschmerzen",
+   "article": "die",
+   "word": "Rückenschmerzen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Rückenschmerzen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "背痛；腰痛"
+   ],
+   "examples": [
+    {
+     "de": "Wegen meiner Rückenschmerzen kann ich heute nicht schwer tragen.",
+     "zh": "我今天背痛，沒辦法搬重物。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "A2",
    "topic": "health",
    "push": true,
@@ -73828,6 +80102,76 @@
    "flag": ""
   },
   {
+   "id": "der-rundgang",
+   "article": "der",
+   "word": "Rundgang",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Rundgänge",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "步行參觀；巡覽"
+   ],
+   "examples": [
+    {
+     "de": "Nach einem Rundgang durch die Altstadt essen wir zu Mittag.",
+     "zh": "逛完舊城區，我們就去吃午餐。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "runterladen",
+   "article": "",
+   "word": "runterladen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "lädt runter",
+    "praeteritum": "lud runter",
+    "perfekt": "hat runtergeladen",
+    "aux": "haben",
+    "note": "可分動詞；口語，較正式的說法為 herunterladen"
+   },
+   "noArticle": false,
+   "meanings": [
+    "下載"
+   ],
+   "examples": [
+    {
+     "de": "Du kannst die Fahrkarte auf dein Handy runterladen.",
+     "zh": "你可以把車票下載到手機。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Sachbuch",
    "pos": "noun",
@@ -73902,6 +80246,38 @@
    "id": "die-sache",
    "level": "A2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-sack",
+   "article": "der",
+   "word": "Sack",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Säcke",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "大袋子；麻袋"
+   ],
+   "examples": [
+    {
+     "de": "Für die Gartenabfälle brauchen wir einen großen Sack.",
+     "zh": "我們需要一個大袋子裝庭園廢料。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
    "push": true,
    "flag": ""
   },
@@ -74050,6 +80426,38 @@
    "id": "die-saison",
    "level": "B1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "saisonal",
+   "article": "",
+   "word": "saisonal",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "當季的；季節性的"
+   ],
+   "examples": [
+    {
+     "de": "Wir kochen gern mit saisonalem Gemüse.",
+     "zh": "我們喜歡用當季蔬菜做菜。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -74937,6 +81345,38 @@
    "flag": ""
   },
   {
+   "id": "die-scheibe",
+   "article": "die",
+   "word": "Scheibe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Scheiben",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "薄片；玻璃片"
+   ],
+   "examples": [
+    {
+     "de": "Auf mein Brot lege ich eine Scheibe Käse.",
+     "zh": "我在麵包上放一片起司。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-scheidung",
    "article": "die",
    "word": "Scheidung",
@@ -75079,6 +81519,38 @@
    "flag": ""
   },
   {
+   "id": "die-scherbe",
+   "article": "die",
+   "word": "Scherbe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Scherben",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "碎片；玻璃碎片"
+   ],
+   "examples": [
+    {
+     "de": "Vorsicht, auf dem Boden liegen Scherben!",
+     "zh": "小心，地上有玻璃碎片！"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Schere",
    "pos": "noun",
@@ -75137,6 +81609,38 @@
    ],
    "level": "B1",
    "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "schick",
+   "article": "",
+   "word": "schick",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "時髦的；好看的"
+   ],
+   "examples": [
+    {
+     "de": "Mit der neuen Jacke siehst du richtig schick aus.",
+     "zh": "你穿新外套看起來真好看。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -75351,6 +81855,38 @@
    "id": "schiessen",
    "level": "B1",
    "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-schifffahrt",
+   "article": "die",
+   "word": "Schifffahrt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schifffahrten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "船運；乘船航行"
+   ],
+   "examples": [
+    {
+     "de": "Bei starkem Wind wird die Schifffahrt eingestellt.",
+     "zh": "風很大的時候會停航。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "travel",
    "push": true,
    "flag": ""
   },
@@ -75806,6 +82342,38 @@
    "flag": ""
   },
   {
+   "id": "der-schluss",
+   "article": "der",
+   "word": "Schluss",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schlüsse",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "結束；結尾"
+   ],
+   "examples": [
+    {
+     "de": "Am Schluss räumen wir gemeinsam auf.",
+     "zh": "最後我們一起收拾。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Schlüssel",
    "pos": "noun",
@@ -75844,6 +82412,70 @@
    ],
    "id": "der-schluessel",
    "level": "A1",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-schluesselbund",
+   "article": "der",
+   "word": "Schlüsselbund",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schlüsselbunde",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "一串鑰匙"
+   ],
+   "examples": [
+    {
+     "de": "Mein Schlüsselbund liegt noch im Auto.",
+     "zh": "我的那串鑰匙還在車上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-schluesseldienst",
+   "article": "der",
+   "word": "Schlüsseldienst",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schlüsseldienste",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "鎖匠服務；開鎖業者"
+   ],
+   "examples": [
+    {
+     "de": "Weil die Tür zugefallen ist, rufen wir den Schlüsseldienst.",
+     "zh": "門不小心關上了，我們要找鎖匠來開。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "home",
    "push": true,
    "flag": ""
@@ -76257,6 +82889,43 @@
    "flag": ""
   },
   {
+   "id": "schneiden",
+   "article": "",
+   "word": "schneiden",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "schneidet",
+    "praeteritum": "schnitt",
+    "perfekt": "hat geschnitten",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "切；剪"
+   ],
+   "examples": [
+    {
+     "de": "Schneide die Zwiebel bitte in kleine Stücke.",
+     "zh": "請把洋蔥切成小塊。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "schneien",
    "pos": "verb",
@@ -76359,6 +83028,38 @@
    "id": "der-schnitt",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-schnitzel",
+   "article": "das",
+   "word": "Schnitzel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schnitzel",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "薄肉排；炸肉排"
+   ],
+   "examples": [
+    {
+     "de": "Zum Schnitzel möchte ich lieber Salat als Pommes.",
+     "zh": "肉排的配菜我想要沙拉，不要薯條。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -76593,6 +83294,38 @@
    "flag": ""
   },
   {
+   "id": "schrecklich",
+   "article": "",
+   "word": "schrecklich",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "可怕的；糟糕的"
+   ],
+   "examples": [
+    {
+     "de": "Letzte Nacht hatte ich einen schrecklichen Traum.",
+     "zh": "我昨晚做了一個可怕的夢。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "schreiben",
    "pos": "verb",
@@ -76636,6 +83369,38 @@
    "id": "schreiben",
    "level": "A1",
    "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-schreibtisch",
+   "article": "der",
+   "word": "Schreibtisch",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schreibtische",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "書桌；辦公桌"
+   ],
+   "examples": [
+    {
+     "de": "Meine Brille liegt auf dem Schreibtisch.",
+     "zh": "我的眼鏡放在書桌上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "home",
    "push": true,
    "flag": ""
   },
@@ -76772,6 +83537,38 @@
    "flag": ""
   },
   {
+   "id": "der-schriftsteller",
+   "article": "der",
+   "word": "Schriftsteller",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schriftsteller",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "作家"
+   ],
+   "examples": [
+    {
+     "de": "Der Schriftsteller liest heute aus seinem neuen Buch.",
+     "zh": "這位作家今天會朗讀自己的新書。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Schriftsystem",
    "pos": "noun",
@@ -76804,6 +83601,38 @@
    "level": "B2",
    "topic": "school",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "der-schritt",
+   "article": "der",
+   "word": "Schritt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Schritte",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "步；步驟"
+   ],
+   "examples": [
+    {
+     "de": "Gehen Sie bitte zwei Schritte zurück.",
+     "zh": "請往後退兩步。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
    "flag": ""
   },
   {
@@ -78134,6 +84963,38 @@
    "flag": ""
   },
   {
+   "id": "sehenswert",
+   "article": "",
+   "word": "sehenswert",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "值得一看的"
+   ],
+   "examples": [
+    {
+     "de": "Die Altstadt ist besonders am Abend sehenswert.",
+     "zh": "舊城區在晚上特別值得一看。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Sehenswürdigkeit",
    "pos": "noun",
@@ -78802,6 +85663,38 @@
    ],
    "level": "B1",
    "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-sender",
+   "article": "der",
+   "word": "Sender",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Sender",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "電視台；廣播電台"
+   ],
+   "examples": [
+    {
+     "de": "Welcher Sender zeigt heute das Spiel?",
+     "zh": "今天哪個電視台轉播比賽？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -82456,6 +89349,43 @@
    "flag": ""
   },
   {
+   "id": "sinken",
+   "article": "",
+   "word": "sinken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "sinkt",
+    "praeteritum": "sank",
+    "perfekt": "ist gesunken",
+    "aux": "sein"
+   },
+   "noArticle": false,
+   "meanings": [
+    "下降；下沉"
+   ],
+   "examples": [
+    {
+     "de": "Nachts sinkt die Temperatur auf fünf Grad.",
+     "zh": "夜裡氣溫會降到五度。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Sinn",
    "pos": "noun",
@@ -83813,6 +90743,38 @@
    "flag": ""
   },
   {
+   "id": "die-sosse",
+   "article": "die",
+   "word": "Soße",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Soßen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "醬汁"
+   ],
+   "examples": [
+    {
+     "de": "Zu den Kartoffeln gibt es eine warme Soße.",
+     "zh": "馬鈴薯會搭配熱醬汁。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "souverän",
    "pos": "adjective",
@@ -84501,6 +91463,38 @@
    "flag": ""
   },
   {
+   "id": "der-spaziergang",
+   "article": "der",
+   "word": "Spaziergang",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Spaziergänge",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "散步"
+   ],
+   "examples": [
+    {
+     "de": "Nach dem Abendessen machen wir einen kurzen Spaziergang.",
+     "zh": "晚餐後我們去散步一下。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Speditionsunternehmen",
    "pos": "noun",
@@ -84901,6 +91895,38 @@
    ],
    "level": "A1",
    "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-spielfilm",
+   "article": "der",
+   "word": "Spielfilm",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Spielfilme",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "劇情長片"
+   ],
+   "examples": [
+    {
+     "de": "Nach den Nachrichten kommt ein Spielfilm.",
+     "zh": "新聞結束後會播一部電影。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -86267,6 +93293,38 @@
    "flag": ""
   },
   {
+   "id": "das-steak",
+   "article": "das",
+   "word": "Steak",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Steaks",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "牛排；厚肉排"
+   ],
+   "examples": [
+    {
+     "de": "Wie möchten Sie Ihr Steak haben?",
+     "zh": "您的牛排要幾分熟？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Steckdose",
    "pos": "noun",
@@ -86875,6 +93933,38 @@
    "flag": ""
   },
   {
+   "id": "stilvoll",
+   "article": "",
+   "word": "stilvoll",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "有品味的；有格調的"
+   ],
+   "examples": [
+    {
+     "de": "Das Zimmer ist einfach, aber stilvoll eingerichtet.",
+     "zh": "房間布置簡單，但很有品味。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Stimmung",
    "pos": "noun",
@@ -86937,6 +94027,38 @@
    ],
    "level": "B1",
    "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-stoff",
+   "article": "der",
+   "word": "Stoff",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Stoffe",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "布料；材料"
+   ],
+   "examples": [
+    {
+     "de": "Für die Vorhänge brauchen wir drei Meter Stoff.",
+     "zh": "做窗簾需要三公尺布料。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -87799,6 +94921,43 @@
    "flag": ""
   },
   {
+   "id": "studieren",
+   "article": "",
+   "word": "studieren",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "studiert",
+    "praeteritum": "studierte",
+    "perfekt": "hat studiert",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "讀大學；就讀某科系"
+   ],
+   "examples": [
+    {
+     "de": "Meine Schwester studiert Medizin in Wien.",
+     "zh": "我姊姊在維也納讀醫學。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Studierenden",
    "pos": "noun",
@@ -88505,6 +95664,38 @@
    "flag": ""
   },
   {
+   "id": "die-tabelle",
+   "article": "die",
+   "word": "Tabelle",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Tabellen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "表格"
+   ],
+   "examples": [
+    {
+     "de": "Trage die Preise bitte in die Tabelle ein.",
+     "zh": "請把價格填進表格。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Tablet",
    "pos": "noun",
@@ -89108,6 +96299,38 @@
    "flag": ""
   },
   {
+   "id": "der-taeter",
+   "article": "der",
+   "word": "Täter",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Täter",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "犯案者；行凶者"
+   ],
+   "examples": [
+    {
+     "de": "Die Polizei sucht noch nach dem Täter.",
+     "zh": "警方還在找犯案者。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "taetig",
    "article": "",
    "word": "tätig",
@@ -89357,6 +96580,38 @@
    ],
    "level": "A1",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-team",
+   "article": "das",
+   "word": "Team",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Teams",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "團隊"
+   ],
+   "examples": [
+    {
+     "de": "In unserem Team arbeiten sechs Personen.",
+     "zh": "我們團隊有六個人。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -91127,6 +98382,38 @@
    "flag": ""
   },
   {
+   "id": "touristisch",
+   "article": "",
+   "word": "touristisch",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "觀光的"
+   ],
+   "examples": [
+    {
+     "de": "In den touristischen Vierteln sind die Restaurants oft teurer.",
+     "zh": "觀光區的餐廳往往比較貴。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-tradition",
    "article": "die",
    "word": "Tradition",
@@ -91481,6 +98768,38 @@
    "flag": ""
   },
   {
+   "id": "der-trend",
+   "article": "der",
+   "word": "Trend",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Trends",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "趨勢；潮流"
+   ],
+   "examples": [
+    {
+     "de": "Fahrradurlaub liegt gerade im Trend.",
+     "zh": "騎自行車度假最近很流行。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "trennen",
    "article": "",
    "word": "trennen",
@@ -91730,6 +99049,108 @@
    "id": "trocken",
    "level": "A2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-trockenheit",
+   "article": "die",
+   "word": "Trockenheit",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "乾旱；乾燥"
+   ],
+   "examples": [
+    {
+     "de": "Wegen der Trockenheit müssen wir den Garten öfter gießen.",
+     "zh": "因為天氣乾燥，我們得更常澆花園。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "trocknen",
+   "article": "",
+   "word": "trocknen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "trocknet",
+    "praeteritum": "trocknete",
+    "perfekt": "hat getrocknet",
+    "aux": "haben",
+    "note": "此處是把東西弄乾的及物用法；自行變乾也可用 sein"
+   },
+   "noArticle": false,
+   "meanings": [
+    "晾乾；使乾燥"
+   ],
+   "examples": [
+    {
+     "de": "Im Sommer trockne ich die Wäsche draußen.",
+     "zh": "夏天我把衣服晾在外面。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-tropfen",
+   "article": "der",
+   "word": "Tropfen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Tropfen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "滴；水滴"
+   ],
+   "examples": [
+    {
+     "de": "Ein Tropfen Wasser fällt auf mein Heft.",
+     "zh": "一滴水滴到我的筆記本上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "nature",
    "push": true,
    "flag": ""
   },
@@ -92750,6 +100171,43 @@
    ],
    "level": "A2",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "ueberraschen",
+   "article": "",
+   "word": "überraschen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "überrascht",
+    "praeteritum": "überraschte",
+    "perfekt": "hat überrascht",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "使驚喜；使意外"
+   ],
+   "examples": [
+    {
+     "de": "Mit dem Besuch hast du mich wirklich überrascht.",
+     "zh": "你突然來看我，真讓我驚喜。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
    "push": true,
    "flag": ""
   },
@@ -94576,6 +102034,38 @@
    "id": "ungerecht",
    "level": "B1",
    "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "ungewiss",
+   "article": "",
+   "word": "ungewiss",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "不確定的；難以預料的"
+   ],
+   "examples": [
+    {
+     "de": "Ob wir morgen fahren können, ist noch ungewiss.",
+     "zh": "我們明天能不能出發，還不確定。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -99526,6 +107016,43 @@
    "flag": ""
   },
   {
+   "id": "versorgen",
+   "article": "",
+   "word": "versorgen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "versorgt",
+    "praeteritum": "versorgte",
+    "perfekt": "hat versorgt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "照顧；供應所需"
+   ],
+   "examples": [
+    {
+     "de": "Unsere Nachbarin versorgt die Katze, wenn wir verreisen.",
+     "zh": "我們出遠門時，鄰居會幫忙照顧貓。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "verspaetet",
    "article": "",
    "word": "verspätet",
@@ -100419,6 +107946,38 @@
    "flag": ""
   },
   {
+   "id": "das-video",
+   "article": "das",
+   "word": "Video",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Videos",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "影片"
+   ],
+   "examples": [
+    {
+     "de": "Schickst du mir das Video von der Feier?",
+     "zh": "你可以把聚會的影片傳給我嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "viel",
    "article": "",
    "word": "viel",
@@ -100672,6 +108231,38 @@
    "id": "vielleicht",
    "level": "A1",
    "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "vielseitig",
+   "article": "",
+   "word": "vielseitig",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "多才多藝的；用途多的"
+   ],
+   "examples": [
+    {
+     "de": "Mit diesem vielseitigen Gerät kann man kochen und backen.",
+     "zh": "這台多功能機器可以煮東西，也能烘焙。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -102089,6 +109680,38 @@
    "flag": ""
   },
   {
+   "id": "die-vorliebe",
+   "article": "die",
+   "word": "Vorliebe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Vorlieben",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "偏好；喜好"
+   ],
+   "examples": [
+    {
+     "de": "Sie hat eine Vorliebe für alte Filme.",
+     "zh": "她特別喜歡老電影。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "vormittags",
    "pos": "adverb",
@@ -102402,6 +110025,38 @@
    "flag": ""
   },
   {
+   "id": "die-vorstellung",
+   "article": "die",
+   "word": "Vorstellung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Vorstellungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "演出；想像"
+   ],
+   "examples": [
+    {
+     "de": "Die letzte Vorstellung beginnt um neun Uhr.",
+     "zh": "最後一場演出九點開始。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Vorstellungsgespräch",
    "pos": "noun",
@@ -102657,6 +110312,38 @@
    "id": "wachsen",
    "level": "B1",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-wagen",
+   "article": "der",
+   "word": "Wagen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Wagen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "汽車；車廂"
+   ],
+   "examples": [
+    {
+     "de": "Unser Wagen steht hinter dem Haus.",
+     "zh": "我們的車停在屋後。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
    "push": true,
    "flag": ""
   },
@@ -103039,6 +110726,38 @@
    "flag": ""
   },
   {
+   "id": "der-wanderer",
+   "article": "der",
+   "word": "Wanderer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Wanderer",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "健行者"
+   ],
+   "examples": [
+    {
+     "de": "Die Wanderer machen am See eine Pause.",
+     "zh": "健行的人在湖邊休息。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "wandern",
    "pos": "verb",
@@ -103285,6 +111004,38 @@
     }
    ],
    "level": "A1",
+   "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-waerme",
+   "article": "die",
+   "word": "Wärme",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "溫暖；熱度"
+   ],
+   "examples": [
+    {
+     "de": "Die Wärme der Sonne tut mir gut.",
+     "zh": "曬著暖暖的太陽，我覺得很舒服。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "nature",
    "push": true,
    "flag": ""
@@ -105350,6 +113101,70 @@
    "flag": ""
   },
   {
+   "id": "das-werk",
+   "article": "das",
+   "word": "Werk",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Werke",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "工廠；作品"
+   ],
+   "examples": [
+    {
+     "de": "In diesem Werk werden Autos gebaut.",
+     "zh": "這座工廠生產汽車。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-werkstatt",
+   "article": "die",
+   "word": "Werkstatt",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Werkstätten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "修車廠；工作坊"
+   ],
+   "examples": [
+    {
+     "de": "Mein Fahrrad ist noch in der Werkstatt.",
+     "zh": "我的自行車還在修車店。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "das-werkzeug",
    "article": "das",
    "word": "Werkzeug",
@@ -106120,6 +113935,44 @@
    "flag": ""
   },
   {
+   "id": "wiegen",
+   "article": "",
+   "word": "wiegen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "wiegt",
+    "praeteritum": "wog",
+    "perfekt": "hat gewogen",
+    "aux": "haben",
+    "note": "此處是稱重量，不是搖晃"
+   },
+   "noArticle": false,
+   "meanings": [
+    "稱重；重達"
+   ],
+   "examples": [
+    {
+     "de": "Kannst du bitte die Kartoffeln wiegen?",
+     "zh": "你可以幫忙秤馬鈴薯嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Wiese",
    "pos": "noun",
@@ -106323,6 +114176,44 @@
    "id": "windig",
    "level": "A2",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "winken",
+   "article": "",
+   "word": "winken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "winkt",
+    "praeteritum": "winkte",
+    "perfekt": "hat gewinkt",
+    "aux": "haben",
+    "note": "完成式也可用 hat gewunken"
+   },
+   "noArticle": false,
+   "meanings": [
+    "揮手"
+   ],
+   "examples": [
+    {
+     "de": "Am Bahnsteig winken uns die Kinder zum Abschied.",
+     "zh": "孩子們在月台上揮手向我們道別。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -107400,6 +115291,70 @@
    "flag": ""
   },
   {
+   "id": "worauf",
+   "article": "",
+   "word": "worauf",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "對什麼；在什麼上面"
+   ],
+   "examples": [
+    {
+     "de": "Worauf freust du dich am meisten?",
+     "zh": "你最期待什麼？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "woraus",
+   "article": "",
+   "word": "woraus",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "用什麼材料；從什麼之中"
+   ],
+   "examples": [
+    {
+     "de": "Woraus ist diese Tasche gemacht?",
+     "zh": "這個袋子是用什麼做的？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Wort",
    "pos": "noun",
@@ -107660,6 +115615,38 @@
    "id": "die-wunde",
    "level": "B1",
    "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "wundervoll",
+   "article": "",
+   "word": "wundervoll",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "美妙的；極好的"
+   ],
+   "examples": [
+    {
+     "de": "Wir hatten einen wundervollen Tag am Meer.",
+     "zh": "我們在海邊度過了美好的一天。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
    "push": true,
    "flag": ""
   },
@@ -108446,6 +116433,38 @@
    "flag": ""
   },
   {
+   "id": "zeitlich",
+   "article": "",
+   "word": "zeitlich",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "時間上的"
+   ],
+   "examples": [
+    {
+     "de": "Passt dir der Termin zeitlich?",
+     "zh": "這個時段你方便嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Zeitpunkt",
    "pos": "noun",
@@ -108764,6 +116783,38 @@
    "flag": ""
   },
   {
+   "id": "der-zettel",
+   "article": "der",
+   "word": "Zettel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Zettel",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "紙條"
+   ],
+   "examples": [
+    {
+     "de": "Die Telefonnummer steht auf einem gelben Zettel.",
+     "zh": "電話號碼寫在一張黃色紙條上。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-zeuge",
    "article": "der",
    "word": "Zeuge",
@@ -108904,6 +116955,38 @@
    ],
    "level": "A2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-zigarette",
+   "article": "die",
+   "word": "Zigarette",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Zigaretten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "香菸"
+   ],
+   "examples": [
+    {
+     "de": "Er raucht jeden Tag fünf Zigaretten.",
+     "zh": "他每天抽五根菸。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-menschen-a2",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A1",
+   "topic": "health",
    "push": true,
    "flag": ""
   },

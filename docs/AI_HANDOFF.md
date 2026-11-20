@@ -112,6 +112,16 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 Menschen A2 字表補缺草稿（Codex 撰寫，未部署）
+
+- 僅在 `codex-menschen-vocab` worktree／`codex/menschen-vocab` 工作。逐筆篩選 repo 外 OCR 候選 311 筆，以新增前 `lexicon.graded.json` 的 word／variants 及 `lexicon.draft.json` 去重，統一 sich、可分符號、大小寫及 Umlaut 轉寫；未複製原候選清單進 repo。
+- `tools/lexicon/drafts/menschen-a2.json` 新增 247 筆自行撰寫的釋義、德中例句及動詞變化：A1 29、A2 157、B1 61。排除 64 筆：專名／品牌／地名等 5、OCR 殘字／截斷 7、還原後已有 3、文法術語 1、較專門／低優先／地域用語等 48。明細與疑慮見 `tools/lexicon/drafts/menschen-a2-notes.md`。
+- 明確還原 Ol→Öl、gartnern→gärtnern；hinte→hinten 為待確認推測。spricht→sprechen、lemen→lernen、uro→Euro（推測）還原後已有。可分動詞移除 •，另以 verb.note 標示。
+- 依本次使用者明確要求執行 apply-tags／build-site-data，主字庫 3017→3264、練習池 2595→2842；原有 id 全數保留。`tests/vocab-levels.test.mjs` 固定數更新為 A1 709、A2 808、B1 1161（B2 162）。未改儲存格式。
+- 驗證：check-drafts 247 筆 ✓、check-tags 通過；311 筆完整分類與新增前主字庫正規化去重斷言通過；`npm test` 157 項中 156 通過，唯一失敗為缺新增音檔的 audio-coverage（依任務要求預期）；`npm run build` 成功（10 頁）；`git diff --check` 通過。
+- `npm run audio -- --dry-run`：總文字 8362 段，待產生 **490 段、12749 字元**；未產生音檔，未 commit／push／部署。
+- 尚未完成：所有 247 筆的獨立德文校對、使用者抽查、核准後音檔生成及部署。校對特別注意 hinte 還原、Pfund 單位、程度邊界、疑問代副詞詞性及動詞助動詞說明。本次撰寫者沒有兼任獨立校對。
+
 ### 2026-11-19 推測 9 筆無法辨識的筆記詞（Claude Code 撰寫、german-reviewer 校對，已部署）
 
 - 依原始筆記逐頁辨識的前後行推測；5 個新詞放在 `tools/lexicon/drafts/notes-recovered.json`（die Putzhilfe、nördlich von、der Wandel、sich auseinandersetzen、früher gehen müssen），其餘 4 筆對應的字庫已有（Umgebung、sammeln、retten、Sonnenauf-／untergang）。對照表在 `tools/lexicon/examples/notes.md`，其中 3 筆為低信心。
@@ -677,6 +687,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）
 - [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
 - [x] 新增 Passiv 課（2026-11-18，第 8 課 49 題；已校對、介面檢查、產生音檔並部署）
+- [ ] Menschen A2 補缺：247 筆草稿與資料產生已完成（2026-11-20，Codex，未部署）；待獨立德文校對、使用者抽查，再經核准產生音檔／部署。詳見 `tools/lexicon/drafts/menschen-a2-notes.md`。
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
 - [x] 主字庫缺例句補寫（2026-11-19，441 句已部署）
 - [x] 4 個可疑詞條（Kunstwerkladen、Bildmodell、Sonderkräfte、Bauarbeitsgerät）已處理並補例句（2026-11-19）
