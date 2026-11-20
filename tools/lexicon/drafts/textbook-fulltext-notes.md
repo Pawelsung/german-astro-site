@@ -1,6 +1,6 @@
 # 課本全文補缺：第二輪撰寫紀錄
 
-2026-11-20，Codex 撰寫；**草稿，尚未獨立德文校對、使用者抽查或部署**。
+2026-11-20，Codex 撰寫；**已完成獨立德文校對並套用，尚待使用者抽查；未部署**。
 
 ## 範圍與方法
 
@@ -113,3 +113,24 @@
 
 463–466、469–471、473、487–494、496、609、612、614、616–619、621–626、628、631–634、636、639–640、643–647、650、652、655、658–662、664、666、668–669、671–672、675–679、681–682、871、936、1275–1276、1278–1282、1284–1287、1289–1290、2016、2018、2068
 
+
+## 校對結果
+
+2026-11-20：依 repo 外四份獨立校對表逐條套用；未自行重做德文校對。表格提供兩種方案時選第一種。
+
+| 組別 | 檢查筆數 | 錯誤 | 不自然 | 建議 | 合計 |
+|---|---:|---:|---:|---:|---:|
+| 1（索引 0–216） | 217 | 3 | 9 | 9 | 21 |
+| 2（索引 217–433） | 217 | 4 | 14 | 12 | 30 |
+| 3（索引 434–650） | 217 | 2 | 3 | 11 | 16 |
+| 4（索引 651–864） | 214 | 1 | 7 | 10 | 18 |
+| 合計 | 865 | 10 | 33 | 42 | 85 |
+
+- 85 條表格意見全部套用；加上使用者指定存疑項，共修改 97 筆詞條、123 個欄位（詞條總數仍為 865）。Dienstleistung 採第一案，只改中文例句。
+- hierher 例句合寫 hierhergekommen；Aupair 改 Au-pair 並採表格釋義；besonder 改 besondere。
+- Mehl、Aufbau、Druck、Honig、Briefpapier 的 plural 留空。
+- erlauben、Kette、Waschmittel、Helm、Haut、Postbote、Autofahrer、gratis、Trainingshose 改 A2；erraten、Gehirn 維持原級。校後程度為 A1 136、A2 402、B1 327。
+- 其餘存疑項依使用者指示維持：Einwilligung、Alibi、Wichtigkeit 的程度；Paprika、Yoga、Chili 的冠詞；einbrechen 的助動詞；verlegen 另立形容詞及陽性人稱名詞的女性形補充，均不另作修改。
+- apply-tags 每次從來源重建，不保留舊詞條，但 ids.lock 會拒絕沒有 redirect 的消失 ID。四個改名詞條皆為本批未上線新字，因此只移除舊鎖 besonder、das-aupair、der-verdaechtiger、der-hotelangestellter，再由生成器加入 besondere、das-au-pair、der-verdaechtige、der-hotelangestellte；未加 redirect，其餘既有 ID 保留。未手改 lexicon.graded.json。
+- check-drafts 全 7 檔 ✓；apply-tags、build-site-data 成功；練習字數 A1 845、A2 1210、B1 1488、B2 162，已更新固定數測試。npm test 157 項中 156 通過，唯一 audio-coverage 缺音檔為預期；npm run build 成功（10 頁）。
+- 尚待使用者抽查、核准後音檔生成／部署；未 commit、push、部署、stash、切分支或產生音檔。

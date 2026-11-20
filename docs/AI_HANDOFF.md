@@ -112,6 +112,20 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 課本 OCR 與補字（Claude Code 統籌、Codex 撰寫、german-reviewer 校對，已部署）
+
+- 用 macOS Vision（Swift 小程式，暫存區）把 `參考書籍` 的掃描檔 OCR，輸出在 `參考書籍/ocr/`（repo 外、不進 git；課本內容不可提交）。兩個 Schritte PDF 是同一本；Schritte B1.1 字表原本就已收錄，B1.2（Schritte 6）資料夾裡沒有。
+- 第一輪：Menschen A2.1／A2.2 的 Lernwortschatz 與字表 → `drafts/menschen-a2.json` 247 筆。第二輪：課本全文逐字比對 → `drafts/textbook-fulltext.json` 865 筆（主字庫原本缺 bekommen、natürlich、genug 等基本字）。主字庫 3,017 → 4,129 筆。
+- 兩輪都經獨立校對（第一輪 18 項、第二輪約 85 項＋存疑項）並全數套用；音檔 2,209 段已產生。
+- 還沒做什麼：使用者抽查；全文比對只收出現 2 次以上的字形。
+
+### 2026-11-20 課本全文獨立校對意見套用（Codex，未部署）
+
+- 四組獨立校對表的 85 條意見（錯誤 10、不自然 33、建議 42）全部套用，加上使用者指定存疑項，共修正 97 筆／123 欄位；865 筆總數不變。詳細分組統計及保留的存疑項見 `tools/lexicon/drafts/textbook-fulltext-notes.md`「校對結果」。
+- 只在本 worktree 修改；graded／site 由指定腳本生成。四個未上線改名詞條的舊鎖 besonder、das-aupair、der-verdaechtiger、der-hotelangestellter 移除，由 apply-tags 加入新 ID；沒有 redirect，其餘既有 ID 保留。
+- 驗證：check-drafts 全 7 檔 ✓、apply-tags／build-site-data 成功；npm test 156/157，唯一 audio-coverage 缺音檔為預期；build 成功（10 頁）。固定程度數更新 A1 845、A2 1210（B1 1488、B2 162 不變）。逐欄比對校對表及 ID 保留檢查、diff --check 通過。
+- 尚待使用者抽查、核准後音檔生成／部署；未 commit、push、部署、stash、切分支或產生音檔。另一 worktree 的交接檔有未提交修改，未碰觸。
+
 ### 2026-11-20 課本全文補缺第二輪（Codex 撰寫，未部署）
 
 - 完整檢視 repo 外 OCR 高頻未知字形 2,560 筆，未複製原清單／OCR 進 repo。新增 `tools/lexicon/drafts/textbook-fulltext.json` **865 筆**：A1 146、A2 392、B1 327、B2 0，釋義與德中例句自行撰寫。依最早對應字形的出現次數排序。
@@ -119,7 +133,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - 依使用者要求生成 graded／site：主字庫 3264→4129，練習池 2842→3707；保留原有 3264 個 id 與原形，不改儲存格式。固定測試字數改為 A1 855、A2 1200、B1 1488、B2 162。
 - 驗證：check-drafts 全 7 檔 ✓、check-tags 全 9 批 ✓；apply-tags／build-site-data 成功；npm test 157 項中 156 通過，唯一缺音檔 audio-coverage 為預期；build 成功（10 頁）；diff --check 通過。audio dry-run：總文字 10081 段，待產生 **2209 段、56751 字元**，包含上一輪未生成音檔。沒有產生音檔、commit／push／部署／stash／切分支。
 - 協作注意：本次沒有寫入 `menschen-a2.json`，但執行途中觀察到該檔出現其他工作修改；保留不覆蓋、不回復。衍生資料包含生成時的工作區內容；不要把該檔現有 diff 歸因於本輪新增。另一 Claude worktree 的交接檔原先也有未提交改動，未動對方檔案。
-- 尚未完成：865 筆的獨立德文校對、使用者抽查、核准後音檔生成／部署。待確認來源字形：Mark、Specht、Brudler、Timbel、Mönchen、Losung、Obei。撰寫者沒有兼任獨立校對。
+- 已完成：865 筆的獨立德文校對並套用（見上筆紀錄）。尚待使用者抽查、核准後音檔生成／部署。待確認來源字形：Mark、Specht、Brudler、Timbel、Mönchen、Losung、Obei。撰寫者沒有兼任獨立校對。
 
 ### 2026-11-20 Menschen A2 字表補缺草稿（Codex 撰寫，未部署）
 

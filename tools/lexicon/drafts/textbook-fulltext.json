@@ -103,7 +103,7 @@
     "topic": "school",
     "meaning": "標記",
     "exampleDe": "Ich markiere den Termin im Kalender.",
-    "exampleZh": "我在行事曆上標記日期。",
+    "exampleZh": "我在行事曆上把這個約標起來。",
     "verb": {
       "praesens3": "markiert",
       "praeteritum": "markierte",
@@ -200,7 +200,7 @@
     "topic": "general",
     "meaning": "真的；真正的",
     "exampleDe": "Ist der Ring aus echtem Gold?",
-    "exampleZh": "這枚戒指是純金的嗎？"
+    "exampleZh": "這枚戒指是真金做的嗎？"
   },
   {
     "word": "tauschen",
@@ -337,7 +337,7 @@
     "topic": "home",
     "meaning": "樓層；棍棒",
     "exampleDe": "Meine Tante wohnt im dritten Stock.",
-    "exampleZh": "我阿姨住在德式三樓（地上第四層）。",
+    "exampleZh": "我阿姨住在四樓（德國說法是三樓）。",
     "article": "der",
     "plural": "die Stockwerke; die Stöcke"
   },
@@ -497,9 +497,9 @@
     "pos": "noun",
     "level": "A2",
     "topic": "leisure",
-    "meaning": "三溫暖；桑拿浴室",
+    "meaning": "三溫暖",
     "exampleDe": "Nach dem Schwimmen gehe ich in die Sauna.",
-    "exampleZh": "游泳後我去蒸桑拿。",
+    "exampleZh": "游泳後我去洗三溫暖。",
     "article": "die",
     "plural": "die Saunen"
   },
@@ -558,7 +558,7 @@
     "topic": "leisure",
     "meaning": "卡拉OK",
     "exampleDe": "Am Samstag singen wir Karaoke.",
-    "exampleZh": "星期六我們要唱卡拉ＯＫ。",
+    "exampleZh": "星期六我們要唱卡拉OK。",
     "article": "das",
     "plural": ""
   },
@@ -650,7 +650,7 @@
   {
     "word": "Bauernhof",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "nature",
     "meaning": "農場",
     "exampleDe": "Die Kinder besuchen einen Bauernhof.",
@@ -710,7 +710,7 @@
     "exampleZh": "那件事我們明天再談。"
   },
   {
-    "word": "besonder",
+    "word": "besondere",
     "pos": "adjective",
     "level": "A2",
     "topic": "general",
@@ -847,7 +847,7 @@
     "topic": "general",
     "meaning": "典型的",
     "exampleDe": "Regen ist typisch für diese Jahreszeit.",
-    "exampleZh": "這個季節經常下雨。"
+    "exampleZh": "下雨是這個季節的典型天氣。"
   },
   {
     "word": "Fernbeziehung",
@@ -980,7 +980,7 @@
     "topic": "people",
     "meaning": "批評；評論",
     "exampleDe": "Sachliche Kritik hilft mir bei der Arbeit.",
-    "exampleZh": "具體客觀的批評有助於我的工作。",
+    "exampleZh": "就事論事的批評對我的工作有幫助。",
     "article": "die",
     "plural": "die Kritiken"
   },
@@ -1030,7 +1030,7 @@
     "pos": "verb",
     "level": "A2",
     "topic": "general",
-    "meaning": "填報；告知",
+    "meaning": "填報；告知；炫耀",
     "exampleDe": "Bitte geben Sie Ihre Telefonnummer an.",
     "exampleZh": "請填寫您的電話號碼。",
     "verb": {
@@ -1061,7 +1061,7 @@
     "pos": "noun",
     "level": "A1",
     "topic": "travel",
-    "meaning": "機車；重型機車",
+    "meaning": "摩托車；重型機車",
     "exampleDe": "Bei Regen fahre ich nicht mit dem Motorrad.",
     "exampleZh": "下雨時我不騎機車。",
     "article": "das",
@@ -1126,7 +1126,7 @@
   },
   {
     "word": "kostenlos",
-    "pos": "adverb",
+    "pos": "adjective",
     "level": "A1",
     "topic": "shop",
     "meaning": "免費的",
@@ -1395,7 +1395,7 @@
     "topic": "people",
     "meaning": "彼此；一起",
     "exampleDe": "Wir sollten öfter miteinander reden.",
-    "exampleZh": "我們應該多聊聊。"
+    "exampleZh": "我們應該多和彼此聊聊。"
   },
   {
     "word": "solcher",
@@ -1516,7 +1516,7 @@
     "topic": "leisure",
     "meaning": "朗讀會",
     "exampleDe": "Die Autorin kommt morgen zu einer Lesung.",
-    "exampleZh": "那位女作家明天會來參加朗讀會。",
+    "exampleZh": "那位女作家明天要來辦一場朗讀會。",
     "article": "die",
     "plural": "die Lesungen"
   },
@@ -1674,7 +1674,7 @@
     "exampleDe": "Für den Kuchen fehlen noch hundert Gramm Mehl.",
     "exampleZh": "做蛋糕還差一百公克麵粉。",
     "article": "das",
-    "plural": "die Mehle"
+    "plural": ""
   },
   {
     "word": "Grundstück",
@@ -1828,7 +1828,7 @@
   },
   {
     "word": "vorgestern",
-    "pos": "adjective",
+    "pos": "adverb",
     "level": "A1",
     "topic": "time",
     "meaning": "前天",
@@ -1912,7 +1912,7 @@
     "pos": "noun",
     "level": "B1",
     "topic": "school",
-    "meaning": "研究所；專門機構",
+    "meaning": "研究機構；（大學的）系所",
     "exampleDe": "Sie arbeitet an einem Institut für Umweltforschung.",
     "exampleZh": "她在環境研究機構工作。",
     "article": "das",
@@ -2131,7 +2131,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "nature",
-    "meaning": "霜；冰凍",
+    "meaning": "霜凍；零度以下的嚴寒",
     "exampleDe": "Bei Frost bleiben die Pflanzen im Haus.",
     "exampleZh": "有霜凍時植物要留在室內。",
     "article": "der",
@@ -2249,7 +2249,7 @@
     "exampleDe": "Vor dem Abgabetermin stehe ich unter großem Druck.",
     "exampleZh": "截止日前我的壓力很大。",
     "article": "der",
-    "plural": "die Drucke"
+    "plural": ""
   },
   {
     "word": "Reihenfolge",
@@ -2257,8 +2257,8 @@
     "level": "A2",
     "topic": "general",
     "meaning": "順序",
-    "exampleDe": "Bitte warten Sie in der richtigen Reihenfolge.",
-    "exampleZh": "請依順序等候。",
+    "exampleDe": "Bitte bringen Sie die Bilder in die richtige Reihenfolge.",
+    "exampleZh": "請把圖片排成正確的順序。",
     "article": "die",
     "plural": "die Reihenfolgen"
   },
@@ -2268,8 +2268,8 @@
     "level": "B1",
     "topic": "health",
     "meaning": "飲食計畫",
-    "exampleDe": "Die Ärztin hilft mir mit einem Ernährungsplan.",
-    "exampleZh": "醫生幫我擬定飲食計畫。",
+    "exampleDe": "Die Ärztin erstellt mit mir einen Ernährungsplan.",
+    "exampleZh": "醫生和我一起擬定飲食計畫。",
     "article": "der",
     "plural": "die Ernährungspläne"
   },
@@ -2289,7 +2289,7 @@
     "pos": "adverb",
     "level": "A2",
     "topic": "general",
-    "meaning": "額外的",
+    "meaning": "額外；另外",
     "exampleDe": "Für das Gepäck musst du zusätzlich bezahlen.",
     "exampleZh": "行李需要額外付費。"
   },
@@ -2302,7 +2302,7 @@
     "exampleDe": "Der Aufbau des Zeltes dauert zehn Minuten.",
     "exampleZh": "搭帳篷需要十分鐘。",
     "article": "der",
-    "plural": "die Aufbauten"
+    "plural": ""
   },
   {
     "word": "Tour",
@@ -2347,8 +2347,8 @@
     "level": "A1",
     "topic": "feel",
     "meaning": "非常美麗的",
-    "exampleDe": "Vom Balkon ist die Aussicht wunderschön.",
-    "exampleZh": "從陽台望出去的景色很美。"
+    "exampleDe": "Vom Balkon aus ist die Aussicht wunderschön.",
+    "exampleZh": "從陽台望出去的景色美極了。"
   },
   {
     "word": "schaffen",
@@ -2420,7 +2420,7 @@
     "exampleDe": "Ich süße meinen Tee mit Honig.",
     "exampleZh": "我用蜂蜜替茶加點甜味。",
     "article": "der",
-    "plural": "die Honige"
+    "plural": ""
   },
   {
     "word": "vegetarisch",
@@ -2458,7 +2458,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "leisure",
-    "meaning": "自行車之旅",
+    "meaning": "腳踏車旅行；單車行程",
     "exampleDe": "Am Wochenende machen wir eine Radtour am Fluss.",
     "exampleZh": "週末我們要沿著河騎腳踏車。",
     "article": "die",
@@ -2513,7 +2513,7 @@
     "topic": "work",
     "meaning": "工作日",
     "exampleDe": "Mein Arbeitstag beginnt um halb neun.",
-    "exampleZh": "我的工作日從八點半開始。",
+    "exampleZh": "我每天八點半開始上班。",
     "article": "der",
     "plural": "die Arbeitstage"
   },
@@ -2586,7 +2586,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "travel",
-    "meaning": "民宿；小型旅館",
+    "meaning": "民宿；小型旅館；退休金",
     "exampleDe": "Wir übernachten in einer Pension am See.",
     "exampleZh": "我們在湖邊的一間民宿過夜。",
     "article": "die",
@@ -2638,10 +2638,10 @@
   },
   {
     "word": "heimlich",
-    "pos": "adverb",
+    "pos": "adjective",
     "level": "B1",
     "topic": "people",
-    "meaning": "偷偷地；秘密的",
+    "meaning": "秘密的；偷偷地",
     "exampleDe": "Die Kinder essen heimlich Schokolade.",
     "exampleZh": "孩子們偷偷吃巧克力。"
   },
@@ -2652,7 +2652,7 @@
     "topic": "general",
     "meaning": "封鎖；停用",
     "exampleDe": "Nach dem Diebstahl lasse ich meine Karte sperren.",
-    "exampleZh": "被偷後我要把卡片停用。",
+    "exampleZh": "東西被偷之後，我要請銀行把卡停掉。",
     "verb": {
       "praesens3": "sperrt",
       "praeteritum": "sperrte",
@@ -2729,7 +2729,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "work",
-    "meaning": "員工餐廳；團體膳堂",
+    "meaning": "員工餐廳；機關、公司內的餐廳",
     "exampleDe": "In der Kantine gibt es heute Fisch.",
     "exampleZh": "員工餐廳今天供應魚。",
     "article": "die",
@@ -2742,7 +2742,7 @@
     "topic": "work",
     "meaning": "服務",
     "exampleDe": "Die Reinigung bietet verschiedene Dienstleistungen an.",
-    "exampleZh": "這家清潔公司提供多種服務。",
+    "exampleZh": "這家洗衣店提供多種服務。",
     "article": "die",
     "plural": "die Dienstleistungen"
   },
@@ -2840,7 +2840,7 @@
     "level": "A1",
     "topic": "travel",
     "meaning": "到這裡",
-    "exampleDe": "Wie bist du hierher gekommen?",
+    "exampleDe": "Wie bist du hierhergekommen?",
     "exampleZh": "你怎麼來這裡的？"
   },
   {
@@ -2890,7 +2890,7 @@
     "topic": "media",
     "meaning": "廣播通知；語音訊息",
     "exampleDe": "Wegen des Lärms verstehe ich die Ansage nicht.",
-    "exampleZh": "因為太吵，我聽不懂廣播。",
+    "exampleZh": "因為太吵，我聽不清楚廣播。",
     "article": "die",
     "plural": "die Ansagen"
   },
@@ -3044,7 +3044,7 @@
     "exampleDe": "Für den Brief nehme ich schönes Briefpapier.",
     "exampleZh": "寫這封信我要用漂亮的信紙。",
     "article": "das",
-    "plural": "die Briefpapiere"
+    "plural": ""
   },
   {
     "word": "Geldbörse",
@@ -3161,7 +3161,7 @@
     "topic": "home",
     "meaning": "裝飾",
     "exampleDe": "Die Dekoration für das Fest machen wir selbst.",
-    "exampleZh": "節慶的裝飾由我們自己做。",
+    "exampleZh": "派對的佈置是我們自己做的。",
     "article": "die",
     "plural": "die Dekorationen"
   },
@@ -3410,8 +3410,8 @@
     "level": "B1",
     "topic": "health",
     "meaning": "女物理治療師",
-    "exampleDe": "Die Physiotherapeutin erklärt mir die Bewegung.",
-    "exampleZh": "女物理治療師向我說明動作。",
+    "exampleDe": "Die Physiotherapeutin zeigt mir die Übungen.",
+    "exampleZh": "女物理治療師示範動作給我看。",
     "article": "die",
     "plural": "die Physiotherapeutinnen"
   },
@@ -3452,13 +3452,13 @@
     "level": "A2",
     "topic": "school",
     "meaning": "葡萄牙的；葡萄牙語的",
-    "exampleDe": "Meine Nachbarin spricht mit ihren Eltern portugiesisch.",
-    "exampleZh": "我的鄰居和父母說葡萄牙語。"
+    "exampleDe": "Wir essen heute in einem portugiesischen Restaurant.",
+    "exampleZh": "我們今天去一家葡萄牙餐廳吃飯。"
   },
   {
     "word": "geehrt",
     "pos": "adjective",
-    "level": "B1",
+    "level": "A2",
     "topic": "people",
     "meaning": "尊敬的；感到榮幸的",
     "exampleDe": "Sehr geehrte Frau Müller, vielen Dank für Ihre Nachricht.",
@@ -3514,15 +3514,15 @@
     "plural": ""
   },
   {
-    "word": "Aupair",
+    "word": "Au-pair",
     "pos": "noun",
     "level": "B1",
     "topic": "work",
-    "meaning": "換宿保母；互惠生",
-    "exampleDe": "Als Aupair lebt sie ein Jahr bei einer Familie.",
+    "meaning": "互惠生（住在寄宿家庭、幫忙照顧小孩）",
+    "exampleDe": "Als Au-pair lebt sie ein Jahr bei einer Familie.",
     "exampleZh": "她當互惠生，在一個家庭住一年。",
     "article": "das",
-    "plural": "die Aupairs"
+    "plural": "die Au-pairs"
   },
   {
     "word": "gegenseitig",
@@ -3539,8 +3539,8 @@
     "level": "B1",
     "topic": "people",
     "meaning": "保護",
-    "exampleDe": "Der Helm beschützt deinen Kopf.",
-    "exampleZh": "安全帽保護你的頭。",
+    "exampleDe": "Der große Bruder beschützt seine kleine Schwester.",
+    "exampleZh": "哥哥保護他的妹妹。",
     "verb": {
       "praesens3": "beschützt",
       "praeteritum": "beschützte",
@@ -3576,8 +3576,8 @@
     "level": "A2",
     "topic": "school",
     "meaning": "阿拉伯的；阿拉伯語的",
-    "exampleDe": "Die Speisekarte gibt es auch auf Arabisch.",
-    "exampleZh": "菜單也有阿拉伯文版。"
+    "exampleDe": "In unserer Straße gibt es ein arabisches Restaurant.",
+    "exampleZh": "我們這條街上有一家阿拉伯餐廳。"
   },
   {
     "word": "Bewerbungsschreiben",
@@ -3645,8 +3645,8 @@
     "level": "B1",
     "topic": "general",
     "meaning": "稱為；標示",
-    "exampleDe": "Als Frühaufsteher bezeichnet man jemanden, der gern früh aufsteht.",
-    "exampleZh": "喜歡早起的人會被稱為早起的人。",
+    "exampleDe": "Viele bezeichnen ihn als den besten Koch der Stadt.",
+    "exampleZh": "很多人稱他是城裡最好的廚師。",
     "verb": {
       "praesens3": "bezeichnet",
       "praeteritum": "bezeichnete",
@@ -3747,7 +3747,7 @@
     "topic": "travel",
     "meaning": "往那裡；到那時",
     "exampleDe": "Der Termin ist im Mai. Bis dahin haben wir noch Zeit.",
-    "exampleZh": "約定在五月，在那之前我們還有時間。"
+    "exampleZh": "時間定在五月，在那之前我們還有時間。"
   },
   {
     "word": "Klassiker",
@@ -3782,10 +3782,10 @@
   },
   {
     "word": "weltweit",
-    "pos": "adverb",
+    "pos": "adjective",
     "level": "B1",
     "topic": "society",
-    "meaning": "全世界的",
+    "meaning": "全世界的；在全球各地",
     "exampleDe": "Die Firma verkauft ihre Produkte weltweit.",
     "exampleZh": "這家公司在全世界銷售產品。"
   },
@@ -4179,7 +4179,7 @@
     "topic": "media",
     "meaning": "愛情電影",
     "exampleDe": "Heute sehen wir einen Liebesfilm statt eines Krimis.",
-    "exampleZh": "今天我們看愛情電影，換換口味。",
+    "exampleZh": "今天我們不看犯罪片，改看愛情片。",
     "article": "der",
     "plural": "die Liebesfilme"
   },
@@ -4291,7 +4291,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "media",
-    "meaning": "播客；網路音訊節目",
+    "meaning": "網路廣播節目；音訊節目",
     "exampleDe": "Beim Putzen höre ich einen Podcast.",
     "exampleZh": "打掃時我會聽播客。",
     "article": "der",
@@ -4337,16 +4337,16 @@
     "topic": "media",
     "meaning": "經驗分享；心得報告",
     "exampleDe": "Vor der Reise lese ich einen Erfahrungsbericht über das Hotel.",
-    "exampleZh": "旅行前我讀了一篇住過那家飯店的心得。",
+    "exampleZh": "旅行前我會先看那家飯店的住宿心得。",
     "article": "der",
     "plural": "die Erfahrungsberichte"
   },
   {
-    "word": "Verdächtiger",
+    "word": "Verdächtige",
     "pos": "noun",
     "level": "B1",
     "topic": "society",
-    "meaning": "男性嫌疑人",
+    "meaning": "嫌疑人（男性）",
     "exampleDe": "Der Verdächtige spricht mit seinem Anwalt.",
     "exampleZh": "那名男性嫌疑人和律師談話。",
     "article": "der",
@@ -4381,7 +4381,7 @@
     "topic": "school",
     "meaning": "母語使用者",
     "exampleDe": "Ich übe Deutsch mit einem Muttersprachler.",
-    "exampleZh": "我和一位母語使用者練習德文。",
+    "exampleZh": "我和一位德語母語人士練習德文。",
     "article": "der",
     "plural": "die Muttersprachler"
   },
@@ -4438,16 +4438,16 @@
     "topic": "health",
     "meaning": "醫療保險機構",
     "exampleDe": "Meine Krankenkasse bezahlt die Behandlung.",
-    "exampleZh": "我的醫療保險機構負擔這項治療。",
+    "exampleZh": "我的健康保險會給付這項治療。",
     "article": "die",
     "plural": "die Krankenkassen"
   },
   {
     "word": "telefonisch",
-    "pos": "adverb",
+    "pos": "adjective",
     "level": "A2",
     "topic": "media",
-    "meaning": "透過電話",
+    "meaning": "電話的；透過電話",
     "exampleDe": "Sie können den Termin telefonisch vereinbaren.",
     "exampleZh": "您可以打電話預約。"
   },
@@ -4475,7 +4475,8 @@
     "exampleDe": "Im neuen Job verbessere ich meine Deutschkenntnisse.",
     "exampleZh": "我在新工作中增進德文能力。",
     "article": "die",
-    "plural": ""
+    "plural": "die Deutschkenntnisse",
+    "note": "此義通常僅用複數，沒有日常使用的對應單數。"
   },
   {
     "word": "ansprechen",
@@ -4597,8 +4598,8 @@
     "level": "B1",
     "topic": "time",
     "meaning": "頻率",
-    "exampleDe": "Die Häufigkeit der Busfahrten nimmt am Wochenende ab.",
-    "exampleZh": "週末公車班次比較少。",
+    "exampleDe": "Der Arzt fragt nach der Häufigkeit der Kopfschmerzen.",
+    "exampleZh": "醫生問頭痛發作的頻率。",
     "article": "die",
     "plural": "die Häufigkeiten"
   },
@@ -4749,7 +4750,7 @@
     "topic": "people",
     "meaning": "接續討論；採用",
     "exampleDe": "Die Chefin greift meinen Vorschlag auf.",
-    "exampleZh": "主管採用了我的提議。",
+    "exampleZh": "主管把我的提議拿出來討論。",
     "verb": {
       "praesens3": "greift auf",
       "praeteritum": "griff auf",
@@ -4851,9 +4852,9 @@
     "pos": "adjective",
     "level": "A2",
     "topic": "food",
-    "meaning": "細緻的；精細的",
+    "meaning": "細的；精細的；高級的",
     "exampleDe": "Schneide die Zwiebel in feine Stücke.",
-    "exampleZh": "把洋蔥切成細末。"
+    "exampleZh": "把洋蔥切細。"
   },
   {
     "word": "Weintraube",
@@ -4985,7 +4986,7 @@
     "topic": "people",
     "meaning": "道別；離別",
     "exampleDe": "Zum Abschied haben wir zusammen gegessen.",
-    "exampleZh": "道別前我們一起吃了頓飯。",
+    "exampleZh": "為了道別，我們一起吃了頓飯。",
     "article": "der",
     "plural": "die Abschiede"
   },
@@ -5003,7 +5004,7 @@
   {
     "word": "Haut",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "health",
     "meaning": "皮膚",
     "exampleDe": "Im Winter ist meine Haut sehr trocken.",
@@ -5102,7 +5103,7 @@
     "pos": "verb",
     "level": "B1",
     "topic": "travel",
-    "meaning": "轉向；翻面",
+    "meaning": "轉向；迴轉；翻面；（反身）向人洽詢、求助",
     "exampleDe": "Hier darfst du das Auto nicht wenden.",
     "exampleZh": "這裡不能迴轉。",
     "verb": {
@@ -5325,8 +5326,8 @@
     "level": "A2",
     "topic": "travel",
     "meaning": "往裡面",
-    "exampleDe": "Die Tür ist offen. Komm hinein!",
-    "exampleZh": "門開著，進來吧！"
+    "exampleDe": "Die Tür ist offen. Geh ruhig hinein!",
+    "exampleZh": "門開著，儘管進去吧！"
   },
   {
     "word": "Gebrauchsanweisung",
@@ -5373,7 +5374,7 @@
   {
     "word": "erlauben",
     "pos": "verb",
-    "level": "A1",
+    "level": "A2",
     "topic": "people",
     "meaning": "允許",
     "exampleDe": "Meine Eltern erlauben mir, länger draußen zu bleiben.",
@@ -5439,7 +5440,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "school",
-    "meaning": "大學學期間的假期",
+    "meaning": "大學的學期假期；寒暑假",
     "exampleDe": "In den Semesterferien besuche ich meine Eltern.",
     "exampleZh": "大學放假時我去看父母。",
     "article": "die",
@@ -5547,9 +5548,9 @@
     "pos": "noun",
     "level": "B1",
     "topic": "school",
-    "meaning": "日常學校生活",
+    "meaning": "學校的日常生活",
     "exampleDe": "Sport gehört für mich zum Schulalltag.",
-    "exampleZh": "運動是我日常學校生活的一部分。",
+    "exampleZh": "對我來說，運動是學校日常生活的一部分。",
     "article": "der",
     "plural": ""
   },
@@ -5559,7 +5560,7 @@
     "level": "A2",
     "topic": "people",
     "meaning": "推薦；建議",
-    "exampleDe": "Auf deine Empfehlung habe ich das Buch gekauft.",
+    "exampleDe": "Auf deine Empfehlung hin habe ich das Buch gekauft.",
     "exampleZh": "我聽了你的推薦買了那本書。",
     "article": "die",
     "plural": "die Empfehlungen"
@@ -5938,7 +5939,7 @@
     "pos": "noun",
     "level": "B1",
     "topic": "people",
-    "meaning": "另一個提議",
+    "meaning": "反提案；對方提議外的替代提議",
     "exampleDe": "Wenn dir der Termin nicht passt, mach einen Gegenvorschlag.",
     "exampleZh": "如果時間不適合你，請另外提個時間。",
     "article": "der",
@@ -6083,7 +6084,7 @@
   {
     "word": "Waschmittel",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "home",
     "meaning": "洗衣精；洗衣粉",
     "exampleDe": "Für dunkle Kleidung nehme ich dieses Waschmittel.",
@@ -6123,7 +6124,7 @@
     "pos": "verb",
     "level": "A2",
     "topic": "nature",
-    "meaning": "狗吠",
+    "meaning": "（狗）吠叫",
     "exampleDe": "Der Hund bellt, wenn jemand klingelt.",
     "exampleZh": "有人按門鈴時狗就會叫。",
     "verb": {
@@ -6253,7 +6254,7 @@
     "topic": "leisure",
     "meaning": "電影之夜；看電影的聚會",
     "exampleDe": "Für den Filmabend bringe ich Popcorn mit.",
-    "exampleZh": "晚上看電影聚會，我會帶爆米花。",
+    "exampleZh": "電影之夜我會帶爆米花過去。",
     "article": "der",
     "plural": "die Filmabende"
   },
@@ -6416,7 +6417,7 @@
     "level": "B1",
     "topic": "general",
     "meaning": "聯想",
-    "exampleDe": "Bei diesem Bild habe ich sofort eine Assoziation mit Urlaub.",
+    "exampleDe": "Dieses Bild weckt bei mir sofort Assoziationen an Urlaub.",
     "exampleZh": "看到這張圖，我立刻聯想到度假。",
     "article": "die",
     "plural": "die Assoziationen"
@@ -6508,7 +6509,7 @@
     "pos": "noun",
     "level": "A1",
     "topic": "food",
-    "meaning": "水蜜桃",
+    "meaning": "桃子；水蜜桃",
     "exampleDe": "Dieser Pfirsich ist noch hart.",
     "exampleZh": "這顆水蜜桃還很硬。",
     "article": "der",
@@ -6846,8 +6847,8 @@
     "level": "A2",
     "topic": "media",
     "meaning": "列印；印刷",
-    "exampleDe": "Kannst du die Fahrkarten für mich drucken?",
-    "exampleZh": "你可以幫我印車票嗎？",
+    "exampleDe": "Der Drucker druckt nur noch schwarz-weiß.",
+    "exampleZh": "這台印表機現在只能印黑白。",
     "verb": {
       "praesens3": "druckt",
       "praeteritum": "druckte",
@@ -6920,7 +6921,7 @@
   {
     "word": "Kette",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "shop",
     "meaning": "項鍊；鏈條",
     "exampleDe": "Die Kette an meinem Fahrrad ist kaputt.",
@@ -6952,7 +6953,7 @@
   },
   {
     "word": "diagonal",
-    "pos": "adverb",
+    "pos": "adjective",
     "level": "B1",
     "topic": "general",
     "meaning": "對角的；斜向的",
@@ -7042,7 +7043,7 @@
     "topic": "people",
     "meaning": "孫子女；外孫子女",
     "exampleDe": "Sie freut sich über ihr erstes Enkelkind.",
-    "exampleZh": "她很高興有了第一個孫子。",
+    "exampleZh": "她很高興有了第一個孫兒。",
     "article": "das",
     "plural": "die Enkelkinder"
   },
@@ -7250,7 +7251,7 @@
   {
     "word": "Helm",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "travel",
     "meaning": "安全帽；頭盔",
     "exampleDe": "Beim Radfahren trage ich immer einen Helm.",
@@ -7275,8 +7276,8 @@
     "level": "A2",
     "topic": "people",
     "meaning": "不討人喜歡的",
-    "exampleDe": "Ich finde den Mann nicht unsympathisch.",
-    "exampleZh": "我覺得那個男人並不討厭。"
+    "exampleDe": "Den neuen Kollegen finde ich leider unsympathisch.",
+    "exampleZh": "可惜我對新同事沒什麼好感。"
   },
   {
     "word": "Firmenwagen",
@@ -7306,7 +7307,7 @@
     "level": "B1",
     "topic": "work",
     "meaning": "參與工作；協助",
-    "exampleDe": "Vielen Dank für Ihre Mitarbeit an dem Projekt.",
+    "exampleDe": "Vielen Dank für Ihre Mitarbeit am Projekt.",
     "exampleZh": "謝謝您參與這項計畫。",
     "article": "die",
     "plural": ""
@@ -7360,9 +7361,9 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "鄉間餐館；小旅店",
+    "meaning": "傳統餐館；小旅館",
     "exampleDe": "Nach der Wanderung essen wir im Gasthaus.",
-    "exampleZh": "健行後我們在鄉間餐館吃飯。",
+    "exampleZh": "健行後我們在一家傳統餐館吃飯。",
     "article": "das",
     "plural": "die Gasthäuser"
   },
@@ -7382,7 +7383,7 @@
     "topic": "food",
     "meaning": "檸檬",
     "exampleDe": "Für den Tee schneide ich eine Zitrone auf.",
-    "exampleZh": "我切一顆檸檬來泡茶。",
+    "exampleZh": "我切一顆檸檬配茶。",
     "article": "die",
     "plural": "die Zitronen"
   },
@@ -7458,11 +7459,11 @@
   {
     "word": "bekleben",
     "pos": "verb",
-    "level": "A2",
+    "level": "B1",
     "topic": "leisure",
-    "meaning": "貼上；用貼紙覆蓋",
+    "meaning": "在…上貼東西；貼滿",
     "exampleDe": "Die Kinder bekleben die Schachtel mit buntem Papier.",
-    "exampleZh": "孩子們用彩色紙裝飾盒子。",
+    "exampleZh": "孩子們在盒子上貼滿彩色紙。",
     "verb": {
       "praesens3": "beklebt",
       "praeteritum": "beklebte",
@@ -7573,7 +7574,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "咖啡館",
+    "meaning": "咖啡館（奧地利常用）",
     "exampleDe": "Im Kaffeehaus treffen wir alte Freunde.",
     "exampleZh": "我們在咖啡館見老朋友。",
     "article": "das",
@@ -7582,7 +7583,7 @@
   {
     "word": "Postbote",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "work",
     "meaning": "郵差",
     "exampleDe": "Der Postbote kommt meistens gegen zehn.",
@@ -7591,11 +7592,11 @@
     "plural": "die Postboten"
   },
   {
-    "word": "Hotelangestellter",
+    "word": "Hotelangestellte",
     "pos": "noun",
     "level": "A2",
     "topic": "work",
-    "meaning": "男性飯店員工",
+    "meaning": "飯店員工（男）",
     "exampleDe": "Ein Hotelangestellter hilft uns mit dem Gepäck.",
     "exampleZh": "一位飯店男員工幫我們拿行李。",
     "article": "der",
@@ -7797,7 +7798,7 @@
     "pos": "noun",
     "level": "B1",
     "topic": "media",
-    "meaning": "主角角色",
+    "meaning": "主角；主要角色",
     "exampleDe": "In dem Film spielt sie die Hauptrolle.",
     "exampleZh": "她在這部電影中演主角。",
     "article": "die",
@@ -7875,7 +7876,7 @@
     "topic": "leisure",
     "meaning": "紙牌遊戲",
     "exampleDe": "Für die Zugfahrt nehmen wir ein Kartenspiel mit.",
-    "exampleZh": "搭火車時我們帶一套紙牌遊戲玩。",
+    "exampleZh": "搭火車時我們會帶一副紙牌來玩。",
     "article": "das",
     "plural": "die Kartenspiele"
   },
@@ -7939,7 +7940,7 @@
     "pos": "noun",
     "level": "B1",
     "topic": "society",
-    "meaning": "倡議；主動行動",
+    "meaning": "主動；倡議；民間團體",
     "exampleDe": "Eine lokale Initiative sammelt Kleidung für Familien.",
     "exampleZh": "一個地方公益團體替家庭募集衣服。",
     "article": "die",
@@ -8248,11 +8249,11 @@
   {
     "word": "Autofahrer",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "travel",
     "meaning": "汽車駕駛",
     "exampleDe": "Der Autofahrer hält am Zebrastreifen.",
-    "exampleZh": "汽車駕駛在人行穿越道前停車。",
+    "exampleZh": "汽車駕駛在斑馬線前停車。",
     "article": "der",
     "plural": "die Autofahrer"
   },
@@ -8270,7 +8271,7 @@
   {
     "word": "gratis",
     "pos": "adverb",
-    "level": "A1",
+    "level": "A2",
     "topic": "shop",
     "meaning": "免費",
     "exampleDe": "Zum Kaffee gibt es ein Glas Wasser gratis.",
@@ -8431,14 +8432,14 @@
     "topic": "general",
     "meaning": "可取得的；有空的",
     "exampleDe": "Das Zimmer ist erst ab Freitag verfügbar.",
-    "exampleZh": "這間房間星期五起才有空房。"
+    "exampleZh": "這個房間星期五起才能入住。"
   },
   {
     "word": "Glücksspiel",
     "pos": "noun",
     "level": "B1",
     "topic": "leisure",
-    "meaning": "賭博；機會遊戲",
+    "meaning": "賭博；博弈遊戲",
     "exampleDe": "Für Glücksspiel gebe ich kein Geld aus.",
     "exampleZh": "我不會花錢賭博。",
     "article": "das",
@@ -9161,7 +9162,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "travel",
-    "meaning": "租賃汽車",
+    "meaning": "租來的車；租車",
     "exampleDe": "Den Mietwagen geben wir am Flughafen zurück.",
     "exampleZh": "我們在機場還租來的車。",
     "article": "der",
@@ -9359,7 +9360,7 @@
     "level": "A1",
     "topic": "nature",
     "meaning": "沙子",
-    "exampleDe": "Nach dem Strandtag ist Sand in meinen Schuhen.",
+    "exampleDe": "Nach dem Strandtag habe ich überall Sand in den Schuhen.",
     "exampleZh": "去海邊玩了一天後，我的鞋子裡都是沙。",
     "article": "der",
     "plural": ""
@@ -9504,7 +9505,7 @@
     "pos": "adverb",
     "level": "A2",
     "topic": "time",
-    "meaning": "每週的",
+    "meaning": "每週；每週一次",
     "exampleDe": "Der Kurs findet wöchentlich statt.",
     "exampleZh": "這門課每週上一次。"
   },
@@ -9555,7 +9556,7 @@
     "topic": "work",
     "meaning": "就業市場",
     "exampleDe": "Auf dem Arbeitsmarkt werden Pflegekräfte gesucht.",
-    "exampleZh": "就業市場正在招募照護人員。",
+    "exampleZh": "就業市場很缺照護人員。",
     "article": "der",
     "plural": "die Arbeitsmärkte"
   },
@@ -9582,7 +9583,7 @@
   {
     "word": "Trainingshose",
     "pos": "noun",
-    "level": "A1",
+    "level": "A2",
     "topic": "shop",
     "meaning": "運動長褲",
     "exampleDe": "Zum Laufen ziehe ich eine Trainingshose an.",
@@ -9660,7 +9661,7 @@
     "topic": "home",
     "meaning": "電梯",
     "exampleDe": "Mit dem Lift fahren wir in den fünften Stock.",
-    "exampleZh": "我們搭電梯到德式五樓。",
+    "exampleZh": "我們搭電梯到五樓。",
     "article": "der",
     "plural": "die Lifte"
   },
@@ -9682,7 +9683,7 @@
     "topic": "general",
     "meaning": "可供使用的情況；供應狀況",
     "exampleDe": "Bitte prüfen Sie die Verfügbarkeit des Zimmers.",
-    "exampleZh": "請確認這間房間是否還有空房。",
+    "exampleZh": "請確認這個房間是否還能預訂。",
     "article": "die",
     "plural": ""
   },
