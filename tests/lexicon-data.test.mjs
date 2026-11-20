@@ -57,3 +57,31 @@ test('daily pool excludes terms, chunks and unpushable words', () => {
     if (e.kind === 'term' || e.kind === 'chunk' || !e.push) assert.ok(!pool.has(e.id), e.id);
   }
 });
+
+test('underlined Schritte list is unique, substantive and available in lesson 1', () => {
+  const name = 'schritte-b1-1-underlined';
+  const list = read('lists.graded.json').find(l => l.id === name);
+  assert.ok(list);
+  assert.equal(list.label, 'Schritte B1.1｜我在課本劃線的字');
+  const selected = list.groups.flatMap(g => g.ids);
+  assert.equal(new Set(selected).size, selected.length);
+  assert.deepEqual(list.groups.map(g => g.ids.length), [86, 49, 113, 80, 52, 3]);
+  const forbidden = new Set(['der', 'die', 'das', 'und', 'ich', 'sie', 'nach', 'was', 'sein', 'haben', 'werden']);
+  const functionPos = new Set(['connector', 'conjunction', 'preposition', 'pronoun', 'determiner', 'particle', 'numeral', 'contraction']);
+  for (const id of selected) {
+    const e = entries.find(e => e.id === id);
+    assert.ok(e, id);
+    assert.ok(!forbidden.has(e.word.toLowerCase()), e.word);
+    assert.ok(!functionPos.has(e.pos), `${id}: ${e.pos}`);
+  }
+  const manifest = JSON.parse(readFileSync(new URL('../public/vocab/index.json', import.meta.url), 'utf8'));
+  const preset = manifest.find(p => p.id === name);
+  assert.ok(preset);
+  assert.equal(preset.label, list.label);
+  assert.equal(preset.count, selected.length);
+  const bank = JSON.parse(readFileSync(new URL(`../public${preset.path}`, import.meta.url), 'utf8'));
+  assert.deepEqual(normalizeVocabulary(bank).map(w => w.id), selected);
+  const index = read('site/index.json');
+  const siteList = read('site/lists.json').find(l => l.id === name);
+  assert.deepEqual(siteList.groups.map(g => g.rows.map(row => index[row][0])), list.groups.map(g => g.ids));
+});

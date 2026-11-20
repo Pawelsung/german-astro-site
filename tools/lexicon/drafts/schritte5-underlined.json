@@ -1,0 +1,828 @@
+[
+  {
+    "word": "Stimme",
+    "pos": "noun",
+    "level": "A2",
+    "topic": "people",
+    "meaning": "聲音；嗓音",
+    "exampleDe": "Am Telefon klang ihre Stimme sehr ruhig.",
+    "exampleZh": "她在電話裡的聲音聽起來很平靜。",
+    "article": "die",
+    "plural": "Stimmen"
+  },
+  {
+    "word": "Logis",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "food",
+    "meaning": "住宿與膳食",
+    "exampleDe": "Als Gegenleistung bietet die Familie freie Kost und Logis.",
+    "exampleZh": "作為回報，這個家庭提供免費食宿。",
+    "article": "das",
+    "plural": ""
+  },
+  {
+    "word": "Suche",
+    "pos": "noun",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "尋找",
+    "exampleDe": "Die Suche nach einer Wohnung dauert länger als erwartet.",
+    "exampleZh": "找房子花的時間比預期久。",
+    "article": "die",
+    "plural": "Suchen"
+  },
+  {
+    "word": "Hersteller",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "製造商",
+    "exampleDe": "Bei Fragen zur Garantie wenden Sie sich an den Hersteller.",
+    "exampleZh": "有保固問題請洽製造商。",
+    "article": "der",
+    "plural": "Hersteller"
+  },
+  {
+    "word": "Tiefstpreis",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "shop",
+    "meaning": "最低價",
+    "exampleDe": "Der Laden verkauft die letzten Fahrräder zum Tiefstpreis.",
+    "exampleZh": "這家店以最低價出售最後幾台腳踏車。",
+    "article": "der",
+    "plural": "Tiefstpreise"
+  },
+  {
+    "word": "Gedanke",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "school",
+    "meaning": "想法；念頭",
+    "exampleDe": "Der Gedanke an die Reise macht mir Freude.",
+    "exampleZh": "想到這趟旅行就讓我開心。",
+    "article": "der",
+    "plural": "Gedanken"
+  },
+  {
+    "word": "Genießer",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "懂得享受生活的人",
+    "exampleDe": "Mein Vater ist ein Genießer und kocht jeden Abend frisch.",
+    "exampleZh": "爸爸很懂得享受生活，每晚都用新鮮食材做飯。",
+    "article": "der",
+    "plural": "Genießer"
+  },
+  {
+    "word": "Lottoziehung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "media",
+    "meaning": "樂透開獎",
+    "exampleDe": "Wir haben die Lottoziehung im Radio verfolgt.",
+    "exampleZh": "我們透過廣播收聽了樂透開獎。",
+    "article": "die",
+    "plural": "Lottoziehungen"
+  },
+  {
+    "word": "Kurzmeldung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "media",
+    "meaning": "簡短新聞",
+    "exampleDe": "Die Zeitung berichtet in einer Kurzmeldung über den Unfall.",
+    "exampleZh": "報紙用一則短訊報導了這場事故。",
+    "article": "die",
+    "plural": "Kurzmeldungen"
+  },
+  {
+    "word": "Autobahnraststätte",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "travel",
+    "meaning": "高速公路休息站",
+    "exampleDe": "An der nächsten Autobahnraststätte machen wir eine Pause.",
+    "exampleZh": "我們在下一個高速公路休息站休息。",
+    "article": "die",
+    "plural": "Autobahnraststätten"
+  },
+  {
+    "word": "Rosenstrauß",
+    "pos": "noun",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "一束玫瑰花",
+    "exampleDe": "Zum Geburtstag bekam meine Schwester einen Rosenstrauß.",
+    "exampleZh": "姊姊生日收到了一束玫瑰。",
+    "article": "der",
+    "plural": "Rosensträuße"
+  },
+  {
+    "word": "Betreuung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "people",
+    "meaning": "照顧；照護",
+    "exampleDe": "Für die Betreuung der Kinder ist am Nachmittag gesorgt.",
+    "exampleZh": "孩子們下午的照顧已經安排好了。",
+    "article": "die",
+    "plural": "Betreuungen"
+  },
+  {
+    "word": "Gegenleistung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "people",
+    "meaning": "回報；交換條件",
+    "exampleDe": "Ich helfe dir gern und erwarte keine Gegenleistung.",
+    "exampleZh": "我很樂意幫你，不期待任何回報。",
+    "article": "die",
+    "plural": "Gegenleistungen"
+  },
+  {
+    "word": "Taschengeld",
+    "pos": "noun",
+    "level": "A2",
+    "topic": "people",
+    "meaning": "零用錢",
+    "exampleDe": "Von ihrem Taschengeld spart Lea jeden Monat fünf Euro.",
+    "exampleZh": "莉亞每個月從零用錢中存下五歐元。",
+    "article": "das",
+    "plural": "Taschengelder"
+  },
+  {
+    "word": "Hip-Hop",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "media",
+    "meaning": "嘻哈音樂",
+    "exampleDe": "Mein Bruder hört Hip-Hop und schreibt eigene Texte.",
+    "exampleZh": "弟弟聽嘻哈音樂，也自己寫歌詞。",
+    "article": "der",
+    "plural": ""
+  },
+  {
+    "word": "Holzfäller",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "伐木工人",
+    "exampleDe": "Der Holzfäller trägt bei der Arbeit einen Schutzhelm.",
+    "exampleZh": "伐木工人工作時戴著安全帽。",
+    "article": "der",
+    "plural": "Holzfäller"
+  },
+  {
+    "word": "Kräftigung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "強化；增強肌力",
+    "exampleDe": "Die Übungen dienen der Kräftigung des Rückens.",
+    "exampleZh": "這些練習用來增強背部肌力。",
+    "article": "die",
+    "plural": "Kräftigungen"
+  },
+  {
+    "word": "Beinmuskulatur",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "腿部肌肉",
+    "exampleDe": "Regelmäßiges Radfahren stärkt die Beinmuskulatur.",
+    "exampleZh": "規律騎腳踏車可以強化腿部肌肉。",
+    "article": "die",
+    "plural": ""
+  },
+  {
+    "word": "Gesundheitssprechstunde",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "健康諮詢時段",
+    "exampleDe": "In der Gesundheitssprechstunde beantwortet eine Ärztin unsere Fragen.",
+    "exampleZh": "一位女醫師在健康諮詢時段回答我們的問題。",
+    "article": "die",
+    "plural": "Gesundheitssprechstunden"
+  },
+  {
+    "word": "Radiosender",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "media",
+    "meaning": "廣播電台",
+    "exampleDe": "Dieser Radiosender bringt morgens Nachrichten aus der Region.",
+    "exampleZh": "這家廣播電台早上播報地方新聞。",
+    "article": "der",
+    "plural": "Radiosender"
+  },
+  {
+    "word": "Entspannungsübung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "放鬆練習",
+    "exampleDe": "Vor dem Schlafen mache ich eine kurze Entspannungsübung.",
+    "exampleZh": "睡前我會做一個簡短的放鬆練習。",
+    "article": "die",
+    "plural": "Entspannungsübungen"
+  },
+  {
+    "word": "Energiemenge",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "能量的量",
+    "exampleDe": "Die benötigte Energiemenge hängt von der körperlichen Arbeit ab.",
+    "exampleZh": "所需的能量多寡取決於體力勞動的程度。",
+    "article": "die",
+    "plural": "Energiemengen"
+  },
+  {
+    "word": "These",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "school",
+    "meaning": "論點；主張",
+    "exampleDe": "Für diese These fehlen noch überzeugende Belege.",
+    "exampleZh": "這個論點還缺乏有說服力的證據。",
+    "article": "die",
+    "plural": "Thesen"
+  },
+  {
+    "word": "Schweinekotelett",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "food",
+    "meaning": "豬排",
+    "exampleDe": "Zum Mittagessen braten wir zwei Schweinekoteletts.",
+    "exampleZh": "午餐我們煎兩片豬排。",
+    "article": "das",
+    "plural": "Schweinekoteletts"
+  },
+  {
+    "word": "Produktionsmethode",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "生產方法",
+    "exampleDe": "Mit der neuen Produktionsmethode spart der Betrieb Wasser.",
+    "exampleZh": "這家企業採用新的生產方法來節省用水。",
+    "article": "die",
+    "plural": "Produktionsmethoden"
+  },
+  {
+    "word": "Übertreibung",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "誇大；誇張的說法",
+    "exampleDe": "Die Behauptung, alle seien dagegen, ist eine Übertreibung.",
+    "exampleZh": "說所有人都反對，是一種誇大的說法。",
+    "article": "die",
+    "plural": "Übertreibungen"
+  },
+  {
+    "word": "Sonntagsbraten",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "food",
+    "meaning": "星期日享用的烤肉大餐",
+    "exampleDe": "Früher kam die ganze Familie zum Sonntagsbraten zusammen.",
+    "exampleZh": "以前全家人會聚在一起享用週日烤肉大餐。",
+    "article": "der",
+    "plural": "Sonntagsbraten"
+  },
+  {
+    "word": "Anreise",
+    "pos": "noun",
+    "level": "A2",
+    "topic": "travel",
+    "meaning": "前往目的地的旅程",
+    "exampleDe": "Unsere Anreise mit dem Zug verlief ohne Probleme.",
+    "exampleZh": "我們搭火車前往目的地的旅程很順利。",
+    "article": "die",
+    "plural": "Anreisen"
+  },
+  {
+    "word": "Brainstorming",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "腦力激盪",
+    "exampleDe": "Beim Brainstorming sammeln wir zunächst alle Vorschläge.",
+    "exampleZh": "腦力激盪時，我們先蒐集所有提議。",
+    "article": "das",
+    "plural": "Brainstormings"
+  },
+  {
+    "word": "Mindmapping",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "心智圖法",
+    "exampleDe": "Mit Mindmapping ordne ich meine Ideen für den Vortrag.",
+    "exampleZh": "我用心智圖法整理演講的構想。",
+    "article": "das",
+    "plural": ""
+  },
+  {
+    "word": "Zeitvorgabe",
+    "pos": "noun",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "時間限制；規定時間",
+    "exampleDe": "Die Zeitvorgabe für jede Präsentation beträgt zehn Minuten.",
+    "exampleZh": "每場簡報的規定時間是十分鐘。",
+    "article": "die",
+    "plural": "Zeitvorgaben"
+  },
+  {
+    "word": "reichen",
+    "pos": "verb",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "足夠；遞給",
+    "exampleDe": "Kannst du mir bitte das Salz reichen?",
+    "exampleZh": "可以請你把鹽遞給我嗎？",
+    "verb": {
+      "praesens3": "reicht",
+      "praeteritum": "reichte",
+      "perfekt": "hat gereicht",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "strecken",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "伸展；伸直",
+    "exampleDe": "Strecken Sie die Arme langsam nach oben.",
+    "exampleZh": "請慢慢把手臂向上伸直。",
+    "verb": {
+      "praesens3": "streckt",
+      "praeteritum": "streckte",
+      "perfekt": "hat gestreckt",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "reden",
+    "pos": "verb",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "說話；交談",
+    "exampleDe": "Wir müssen in Ruhe über unsere Pläne reden.",
+    "exampleZh": "我們得靜下來談談我們的計畫。",
+    "verb": {
+      "praesens3": "redet",
+      "praeteritum": "redete",
+      "perfekt": "hat geredet",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "sich spezialisieren",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "專精於",
+    "exampleDe": "Die Firma spezialisiert sich auf kleine Solaranlagen.",
+    "exampleZh": "這家公司專門經營小型太陽能設備。",
+    "verb": {
+      "praesens3": "spezialisiert sich",
+      "praeteritum": "spezialisierte sich",
+      "perfekt": "hat sich spezialisiert",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": true
+  },
+  {
+    "word": "erkranken",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "health",
+    "meaning": "患病",
+    "exampleDe": "Im Winter sind mehrere Kollegen an Grippe erkrankt.",
+    "exampleZh": "冬天有好幾位同事得了流感。",
+    "verb": {
+      "praesens3": "erkrankt",
+      "praeteritum": "erkrankte",
+      "perfekt": "ist erkrankt",
+      "aux": "sein"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "abbauen",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "減少；拆除",
+    "exampleDe": "Nach der Messe bauen wir unseren Stand ab.",
+    "exampleZh": "展覽結束後，我們拆掉攤位。",
+    "verb": {
+      "praesens3": "baut ab",
+      "praeteritum": "baute ab",
+      "perfekt": "hat abgebaut",
+      "aux": "haben"
+    },
+    "separable": true,
+    "reflexive": false
+  },
+  {
+    "word": "erzielen",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "獲得；達成",
+    "exampleDe": "Mit regelmäßigem Training erzielst du bessere Ergebnisse.",
+    "exampleZh": "規律訓練能讓你獲得更好的成果。",
+    "verb": {
+      "praesens3": "erzielt",
+      "praeteritum": "erzielte",
+      "perfekt": "hat erzielt",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "anheben",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "抬高；提高",
+    "exampleDe": "Bitte heben Sie den Karton vorsichtig an.",
+    "exampleZh": "請小心地把紙箱抬起來。",
+    "verb": {
+      "praesens3": "hebt an",
+      "praeteritum": "hob an",
+      "perfekt": "hat angehoben",
+      "aux": "haben"
+    },
+    "separable": true,
+    "reflexive": false
+  },
+  {
+    "word": "anlächeln",
+    "pos": "verb",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "對某人微笑",
+    "exampleDe": "Die Verkäuferin lächelt den kleinen Jungen freundlich an.",
+    "exampleZh": "女店員親切地對小男孩微笑。",
+    "verb": {
+      "praesens3": "lächelt an",
+      "praeteritum": "lächelte an",
+      "perfekt": "hat angelächelt",
+      "aux": "haben"
+    },
+    "separable": true,
+    "reflexive": false
+  },
+  {
+    "word": "bedenken",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "考慮到",
+    "exampleDe": "Wir müssen bedenken, dass die Fahrt zwei Stunden dauert.",
+    "exampleZh": "我們必須考慮到車程需要兩小時。",
+    "verb": {
+      "praesens3": "bedenkt",
+      "praeteritum": "bedachte",
+      "perfekt": "hat bedacht",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "wirtschaften",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "work",
+    "meaning": "經營；管理資源",
+    "exampleDe": "Mit wenig Geld muss man besonders sparsam wirtschaften.",
+    "exampleZh": "錢不多時，管理開銷就得格外節省。",
+    "verb": {
+      "praesens3": "wirtschaftet",
+      "praeteritum": "wirtschaftete",
+      "perfekt": "hat gewirtschaftet",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "sich ausdenken",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "想出；構思",
+    "exampleDe": "Für den Geburtstag denkt sie sich ein neues Spiel aus.",
+    "exampleZh": "她為生日聚會想出一個新遊戲。",
+    "verb": {
+      "praesens3": "denkt sich aus",
+      "praeteritum": "dachte sich aus",
+      "perfekt": "hat sich ausgedacht",
+      "aux": "haben"
+    },
+    "separable": true,
+    "reflexive": true
+  },
+  {
+    "word": "beobachten",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "school",
+    "meaning": "觀察",
+    "exampleDe": "Vom Fenster aus beobachten wir die Vögel im Garten.",
+    "exampleZh": "我們從窗邊觀察花園裡的鳥。",
+    "verb": {
+      "praesens3": "beobachtet",
+      "praeteritum": "beobachtete",
+      "perfekt": "hat beobachtet",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "aufbauen",
+    "pos": "verb",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "建造；建立",
+    "exampleDe": "Nach dem Umzug möchte ich mir einen neuen Freundeskreis aufbauen.",
+    "exampleZh": "搬家後，我想建立新的朋友圈。",
+    "verb": {
+      "praesens3": "baut auf",
+      "praeteritum": "baute auf",
+      "perfekt": "hat aufgebaut",
+      "aux": "haben"
+    },
+    "separable": true,
+    "reflexive": false
+  },
+  {
+    "word": "nachsprechen",
+    "pos": "verb",
+    "level": "A2",
+    "topic": "school",
+    "meaning": "跟著複誦",
+    "exampleDe": "Hör zuerst zu und sprich den Satz dann nach.",
+    "exampleZh": "先聽，再跟著複誦這個句子。",
+    "verb": {
+      "praesens3": "spricht nach",
+      "praeteritum": "sprach nach",
+      "perfekt": "hat nachgesprochen",
+      "aux": "haben"
+    },
+    "separable": true,
+    "reflexive": false
+  },
+  {
+    "word": "vermischen",
+    "pos": "verb",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "混合",
+    "exampleDe": "Vermischen Sie das Mehl mit den übrigen Zutaten.",
+    "exampleZh": "請把麵粉與其餘材料混合。",
+    "verb": {
+      "praesens3": "vermischt",
+      "praeteritum": "vermischte",
+      "perfekt": "hat vermischt",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "unterteilen",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "劃分；細分",
+    "exampleDe": "Wir unterteilen das Projekt in drei kleine Aufgaben.",
+    "exampleZh": "我們把這個專案分成三個小任務。",
+    "verb": {
+      "praesens3": "unterteilt",
+      "praeteritum": "unterteilte",
+      "perfekt": "hat unterteilt",
+      "aux": "haben"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "genau",
+    "pos": "adjective",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "精確的；仔細地",
+    "exampleDe": "Lies die Anleitung bitte genau durch.",
+    "exampleZh": "請仔細讀完說明。"
+  },
+  {
+    "word": "unsicher",
+    "pos": "adjective",
+    "level": "A2",
+    "topic": "feel",
+    "meaning": "不確定的；缺乏安全感的",
+    "exampleDe": "Vor meinem ersten Arbeitstag war ich ziemlich unsicher.",
+    "exampleZh": "第一天上班前，我相當沒把握。"
+  },
+  {
+    "word": "einig",
+    "pos": "adjective",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "意見一致的",
+    "exampleDe": "Über den Termin sind wir uns endlich einig.",
+    "exampleZh": "我們終於對日期達成共識。"
+  },
+  {
+    "word": "lose",
+    "pos": "adjective",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "鬆散的；未固定的",
+    "exampleDe": "Wir sammeln zunächst lose Ideen und ordnen sie später.",
+    "exampleZh": "我們先蒐集零散的構想，之後再整理。"
+  },
+  {
+    "word": "fünfjährig",
+    "pos": "adjective",
+    "level": "A2",
+    "topic": "people",
+    "meaning": "五歲的；為期五年的",
+    "exampleDe": "Unser fünfjähriger Sohn geht noch in den Kindergarten.",
+    "exampleZh": "我們五歲的兒子還在上幼兒園。"
+  },
+  {
+    "word": "brutal",
+    "pos": "adjective",
+    "level": "B1",
+    "topic": "feel",
+    "meaning": "殘暴的；暴力的",
+    "exampleDe": "Der Film war mir zu brutal, deshalb habe ich ausgeschaltet.",
+    "exampleZh": "這部電影對我來說太暴力，所以我關掉了。"
+  },
+  {
+    "word": "sogenannt",
+    "pos": "adjective",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "所謂的",
+    "exampleDe": "Im Büro gibt es eine sogenannte Ruhezone.",
+    "exampleZh": "辦公室裡有一個所謂的安靜區。"
+  },
+  {
+    "word": "riesig",
+    "pos": "adjective",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "巨大的",
+    "exampleDe": "Die neue Wohnung hat einen riesigen Balkon.",
+    "exampleZh": "新公寓有一個很大的陽台。"
+  },
+  {
+    "word": "angeboren",
+    "pos": "adjective",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "天生的；先天的",
+    "exampleDe": "Nicht jede Fähigkeit ist angeboren; vieles kann man lernen.",
+    "exampleZh": "並非每種能力都是天生的，很多都能學會。"
+  },
+  {
+    "word": "zuvor",
+    "pos": "adverb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "在此之前",
+    "exampleDe": "Heute wohne ich in Bonn, zuvor habe ich in Köln gelebt.",
+    "exampleZh": "我現在住在波昂，之前住在科隆。"
+  },
+  {
+    "word": "wochenlang",
+    "pos": "adverb",
+    "level": "A2",
+    "topic": "general",
+    "meaning": "長達數週",
+    "exampleDe": "Wegen der Baustelle war die Straße wochenlang gesperrt.",
+    "exampleZh": "因為施工，這條路封閉了好幾週。"
+  },
+  {
+    "word": "letztendlich",
+    "pos": "adverb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "到頭來；最後",
+    "exampleDe": "Letztendlich haben wir uns für die kleinere Wohnung entschieden.",
+    "exampleZh": "最後我們決定選較小的公寓。"
+  },
+  {
+    "word": "generell",
+    "pos": "adverb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "一般而言；普遍地",
+    "exampleDe": "Generell fahre ich lieber mit der Bahn als mit dem Auto.",
+    "exampleZh": "一般而言，比起開車，我更喜歡搭火車。"
+  },
+  {
+    "word": "zustande kommen",
+    "pos": "phrase",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "促成；實現",
+    "exampleDe": "Wie ist der Kontakt zu dieser Firma zustande gekommen?",
+    "exampleZh": "你是怎麼跟這家公司建立聯繫的？"
+  },
+  {
+    "word": "geraten",
+    "pos": "verb",
+    "level": "B1",
+    "topic": "general",
+    "meaning": "陷入；進入某種狀態",
+    "exampleDe": "Auf dem Heimweg sind wir in einen Stau geraten.",
+    "exampleZh": "回家途中，我們遇上了塞車。",
+    "verb": {
+      "praesens3": "gerät",
+      "praeteritum": "geriet",
+      "perfekt": "ist geraten",
+      "aux": "sein"
+    },
+    "separable": false,
+    "reflexive": false
+  },
+  {
+    "word": "Fernsehen",
+    "pos": "noun",
+    "level": "A1",
+    "topic": "media",
+    "meaning": "電視；電視節目",
+    "exampleDe": "Die Nachricht habe ich gestern im Fernsehen gesehen.",
+    "exampleZh": "我昨天在電視上看到了這則新聞。",
+    "article": "das",
+    "plural": ""
+  },
+  {
+    "word": "Chilenin",
+    "pos": "noun",
+    "level": "A2",
+    "topic": "people",
+    "meaning": "智利女性",
+    "exampleDe": "Meine Nachbarin ist Chilenin und lebt seit drei Jahren in Wien.",
+    "exampleZh": "我的鄰居是智利女性，在維也納住了三年。",
+    "article": "die",
+    "plural": "Chileninnen"
+  },
+  {
+    "word": "antigrün",
+    "pos": "adjective",
+    "level": "B2",
+    "topic": "society",
+    "meaning": "反對綠黨或環保政治的",
+    "exampleDe": "Die Zeitung berichtet über antigrüne Kommentare im Internet.",
+    "exampleZh": "這家報紙報導了網路上反對綠黨的言論。"
+  },
+  {
+    "word": "Verbotsrepublik",
+    "pos": "noun",
+    "level": "B2",
+    "topic": "society",
+    "meaning": "禁令充斥的國家（帶批評意味）",
+    "exampleDe": "Einige Kritiker sprechen von einer Verbotsrepublik, andere halten die Regeln für notwendig.",
+    "exampleZh": "一些批評者把這個國家稱為禁令充斥的國家，其他人則認為這些規定有必要。",
+    "article": "die",
+    "plural": "Verbotsrepubliken"
+  },
+  {
+    "word": "Erziehungsdiktatur",
+    "pos": "noun",
+    "level": "B2",
+    "topic": "society",
+    "meaning": "以教化之名干涉生活的專制體制（貶義）",
+    "exampleDe": "In der Debatte fiel der scharfe Vorwurf einer Erziehungsdiktatur.",
+    "exampleZh": "辯論中出現了以教化之名實施專制的尖銳指控。",
+    "article": "die",
+    "plural": "Erziehungsdiktaturen"
+  }
+]

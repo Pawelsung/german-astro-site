@@ -1,6 +1,6 @@
 {
  "meta": {
-  "count": 4530,
+  "count": 4598,
   "status": "graded-ai-only"
  },
  "entries": [
@@ -99,6 +99,43 @@
    "level": "A1",
    "topic": "time",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "abbauen",
+   "article": "",
+   "word": "abbauen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "baut ab",
+    "praeteritum": "baute ab",
+    "perfekt": "hat abgebaut",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "減少；拆除"
+   ],
+   "examples": [
+    {
+     "de": "Nach der Messe bauen wir unseren Stand ab.",
+     "zh": "展覽結束後，我們拆掉攤位。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
    "flag": ""
   },
   {
@@ -5235,6 +5272,38 @@
    "flag": ""
   },
   {
+   "id": "angeboren",
+   "article": "",
+   "word": "angeboren",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "天生的；先天的"
+   ],
+   "examples": [
+    {
+     "de": "Nicht jede Fähigkeit ist angeboren; vieles kann man lernen.",
+     "zh": "並非每種能力都是天生的，很多都能學會。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Angebot",
    "pos": "noun",
@@ -5545,6 +5614,43 @@
    "flag": ""
   },
   {
+   "id": "anheben",
+   "article": "",
+   "word": "anheben",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "hebt an",
+    "praeteritum": "hob an",
+    "perfekt": "hat angehoben",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "抬高；提高"
+   ],
+   "examples": [
+    {
+     "de": "Bitte heben Sie den Karton vorsichtig an.",
+     "zh": "請小心地把紙箱抬起來。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "anklicken",
    "article": "",
    "word": "anklicken",
@@ -5691,6 +5797,43 @@
    "id": "die-ankunft",
    "level": "A1",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "anlaecheln",
+   "article": "",
+   "word": "anlächeln",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "lächelt an",
+    "praeteritum": "lächelte an",
+    "perfekt": "hat angelächelt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "對某人微笑"
+   ],
+   "examples": [
+    {
+     "de": "Die Verkäuferin lächelt den kleinen Jungen freundlich an.",
+     "zh": "女店員親切地對小男孩微笑。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -6100,6 +6243,38 @@
    ],
    "level": "A2",
    "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-anreise",
+   "article": "die",
+   "word": "Anreise",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Anreisen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "前往目的地的旅程"
+   ],
+   "examples": [
+    {
+     "de": "Unsere Anreise mit dem Zug verlief ohne Probleme.",
+     "zh": "我們搭火車前往目的地的旅程很順利。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
    "push": true,
    "flag": ""
   },
@@ -6938,6 +7113,38 @@
    "id": "der-anteil",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "antigruen",
+   "article": "",
+   "word": "antigrün",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "反對綠黨或環保政治的"
+   ],
+   "examples": [
+    {
+     "de": "Die Zeitung berichtet über antigrüne Kommentare im Internet.",
+     "zh": "這家報紙報導了網路上反對綠黨的言論。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B2",
+   "topic": "society",
    "push": true,
    "flag": ""
   },
@@ -9685,6 +9892,43 @@
     }
    ],
    "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "aufbauen",
+   "article": "",
+   "word": "aufbauen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "baut auf",
+    "praeteritum": "baute auf",
+    "perfekt": "hat aufgebaut",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "建造；建立"
+   ],
+   "examples": [
+    {
+     "de": "Nach dem Umzug möchte ich mir einen neuen Freundeskreis aufbauen.",
+     "zh": "搬家後，我想建立新的朋友圈。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
    "topic": "general",
    "push": true,
    "flag": ""
@@ -14228,6 +14472,38 @@
    "flag": ""
   },
   {
+   "id": "die-autobahnraststaette",
+   "article": "die",
+   "word": "Autobahnraststätte",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Autobahnraststätten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "高速公路休息站"
+   ],
+   "examples": [
+    {
+     "de": "An der nächsten Autobahnraststätte machen wir eine Pause.",
+     "zh": "我們在下一個高速公路休息站休息。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-autofahrer",
    "article": "der",
    "word": "Autofahrer",
@@ -16378,6 +16654,43 @@
    "flag": ""
   },
   {
+   "id": "bedenken",
+   "article": "",
+   "word": "bedenken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "bedenkt",
+    "praeteritum": "bedachte",
+    "perfekt": "hat bedacht",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "考慮到"
+   ],
+   "examples": [
+    {
+     "de": "Wir müssen bedenken, dass die Fahrt zwei Stunden dauert.",
+     "zh": "我們必須考慮到車程需要兩小時。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "bedeuten",
    "article": "",
    "word": "bedeuten",
@@ -18404,6 +18717,38 @@
    "flag": ""
   },
   {
+   "id": "die-beinmuskulatur",
+   "article": "die",
+   "word": "Beinmuskulatur",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "腿部肌肉"
+   ],
+   "examples": [
+    {
+     "de": "Regelmäßiges Radfahren stärkt die Beinmuskulatur.",
+     "zh": "規律騎腳踏車可以強化腿部肌肉。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Beispiel",
    "pos": "noun",
@@ -19261,6 +19606,43 @@
    "id": "das-benzin",
    "level": "A2",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "beobachten",
+   "article": "",
+   "word": "beobachten",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "beobachtet",
+    "praeteritum": "beobachtete",
+    "perfekt": "hat beobachtet",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "觀察"
+   ],
+   "examples": [
+    {
+     "de": "Vom Fenster aus beobachten wir die Vögel im Garten.",
+     "zh": "我們從窗邊觀察花園裡的鳥。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
    "push": true,
    "flag": ""
   },
@@ -21637,6 +22019,38 @@
    "id": "der-betreuer",
    "level": "B2",
    "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-betreuung",
+   "article": "die",
+   "word": "Betreuung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Betreuungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "照顧；照護"
+   ],
+   "examples": [
+    {
+     "de": "Für die Betreuung der Kinder ist am Nachmittag gesorgt.",
+     "zh": "孩子們下午的照顧已經安排好了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -24351,6 +24765,38 @@
    "flag": ""
   },
   {
+   "id": "das-brainstorming",
+   "article": "das",
+   "word": "Brainstorming",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Brainstormings",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "腦力激盪"
+   ],
+   "examples": [
+    {
+     "de": "Beim Brainstorming sammeln wir zunächst alle Vorschläge.",
+     "zh": "腦力激盪時，我們先蒐集所有提議。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-branche",
    "article": "die",
    "word": "Branche",
@@ -25346,6 +25792,38 @@
    ],
    "level": "A2",
    "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "brutal",
+   "article": "",
+   "word": "brutal",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "殘暴的；暴力的"
+   ],
+   "examples": [
+    {
+     "de": "Der Film war mir zu brutal, deshalb habe ich ausgeschaltet.",
+     "zh": "這部電影對我來說太暴力，所以我關掉了。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "feel",
    "push": true,
    "flag": ""
   },
@@ -26977,6 +27455,38 @@
    ],
    "level": "A2",
    "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-chilenin",
+   "article": "die",
+   "word": "Chilenin",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Chileninnen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "智利女性"
+   ],
+   "examples": [
+    {
+     "de": "Meine Nachbarin ist Chilenin und lebt seit drei Jahren in Wien.",
+     "zh": "我的鄰居是智利女性，在維也納住了三年。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -35657,6 +36167,38 @@
    "flag": ""
   },
   {
+   "id": "einig",
+   "article": "",
+   "word": "einig",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "意見一致的"
+   ],
+   "examples": [
+    {
+     "de": "Über den Termin sind wir uns endlich einig.",
+     "zh": "我們終於對日期達成共識。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "einige",
    "pos": "adjective",
@@ -38217,6 +38759,38 @@
    "flag": ""
   },
   {
+   "id": "die-energiemenge",
+   "article": "die",
+   "word": "Energiemenge",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Energiemengen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "能量的量"
+   ],
+   "examples": [
+    {
+     "de": "Die benötigte Energiemenge hängt von der körperlichen Arbeit ab.",
+     "zh": "所需的能量多寡取決於體力勞動的程度。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "eng",
    "pos": "adjective",
@@ -39043,6 +39617,38 @@
     }
    ],
    "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-entspannungsuebung",
+   "article": "die",
+   "word": "Entspannungsübung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Entspannungsübungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "放鬆練習"
+   ],
+   "examples": [
+    {
+     "de": "Vor dem Schlafen mache ich eine kurze Entspannungsübung.",
+     "zh": "睡前我會做一個簡短的放鬆練習。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
    "topic": "health",
    "push": true,
    "flag": ""
@@ -40537,6 +41143,43 @@
    ],
    "level": "B1",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "erkranken",
+   "article": "",
+   "word": "erkranken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "erkrankt",
+    "praeteritum": "erkrankte",
+    "perfekt": "ist erkrankt",
+    "aux": "sein"
+   },
+   "noArticle": false,
+   "meanings": [
+    "患病"
+   ],
+   "examples": [
+    {
+     "de": "Im Winter sind mehrere Kollegen an Grippe erkrankt.",
+     "zh": "冬天有好幾位同事得了流感。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "health",
    "push": true,
    "flag": ""
   },
@@ -42204,6 +42847,75 @@
    ],
    "level": "B1",
    "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-erziehungsdiktatur",
+   "article": "die",
+   "word": "Erziehungsdiktatur",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Erziehungsdiktaturen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "以教化之名干涉生活的專制體制（貶義）"
+   ],
+   "examples": [
+    {
+     "de": "In der Debatte fiel der scharfe Vorwurf einer Erziehungsdiktatur.",
+     "zh": "辯論中出現了以教化之名實施專制的尖銳指控。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B2",
+   "topic": "society",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "erzielen",
+   "article": "",
+   "word": "erzielen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "erzielt",
+    "praeteritum": "erzielte",
+    "perfekt": "hat erzielt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "獲得；達成"
+   ],
+   "examples": [
+    {
+     "de": "Mit regelmäßigem Training erzielst du bessere Ergebnisse.",
+     "zh": "規律訓練能讓你獲得更好的成果。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -45404,6 +46116,38 @@
     }
    ],
    "id": "fernsehen",
+   "level": "A1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-fernsehen",
+   "article": "das",
+   "word": "Fernsehen",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "電視；電視節目"
+   ],
+   "examples": [
+    {
+     "de": "Die Nachricht habe ich gestern im Fernsehen gesehen.",
+     "zh": "我昨天在電視上看到了這則新聞。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
    "level": "A1",
    "topic": "media",
    "push": true,
@@ -50640,6 +51384,38 @@
    "flag": ""
   },
   {
+   "id": "fuenfjaehrig",
+   "article": "",
+   "word": "fünfjährig",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "五歲的；為期五年的"
+   ],
+   "examples": [
+    {
+     "de": "Unser fünfjähriger Sohn geht noch in den Kindergarten.",
+     "zh": "我們五歲的兒子還在上幼兒園。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "das-fuenftel",
    "article": "das",
    "word": "Fünftel",
@@ -52219,6 +52995,38 @@
    "flag": ""
   },
   {
+   "id": "der-gedanke",
+   "article": "der",
+   "word": "Gedanke",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Gedanken",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "想法；念頭"
+   ],
+   "examples": [
+    {
+     "de": "Der Gedanke an die Reise macht mir Freude.",
+     "zh": "想到這趟旅行就讓我開心。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Gedicht",
    "pos": "noun",
@@ -52607,6 +53415,38 @@
    ],
    "level": "B1",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-gegenleistung",
+   "article": "die",
+   "word": "Gegenleistung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Gegenleistungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "回報；交換條件"
+   ],
+   "examples": [
+    {
+     "de": "Ich helfe dir gern und erwarte keine Gegenleistung.",
+     "zh": "我很樂意幫你，不期待任何回報。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -53893,6 +54733,38 @@
    "flag": ""
   },
   {
+   "id": "genau",
+   "article": "",
+   "word": "genau",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "精確的；仔細地"
+   ],
+   "examples": [
+    {
+     "de": "Lies die Anleitung bitte genau durch.",
+     "zh": "請仔細讀完說明。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "genauso",
    "article": "",
    "word": "genauso",
@@ -54026,6 +54898,38 @@
    "flag": ""
   },
   {
+   "id": "generell",
+   "article": "",
+   "word": "generell",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "一般而言；普遍地"
+   ],
+   "examples": [
+    {
+     "de": "Generell fahre ich lieber mit der Bahn als mit dem Auto.",
+     "zh": "一般而言，比起開車，我更喜歡搭火車。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "das-genie",
    "article": "das",
    "word": "Genie",
@@ -54094,6 +54998,38 @@
    "id": "geniessen",
    "level": "B1",
    "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-geniesser",
+   "article": "der",
+   "word": "Genießer",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Genießer",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "懂得享受生活的人"
+   ],
+   "examples": [
+    {
+     "de": "Mein Vater ist ein Genießer und kocht jeden Abend frisch.",
+     "zh": "爸爸很懂得享受生活，每晚都用新鮮食材做飯。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -54453,6 +55389,43 @@
    "id": "das-geraet",
    "level": "B1",
    "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "geraten",
+   "article": "",
+   "word": "geraten",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "gerät",
+    "praeteritum": "geriet",
+    "perfekt": "ist geraten",
+    "aux": "sein"
+   },
+   "noArticle": false,
+   "meanings": [
+    "陷入；進入某種狀態"
+   ],
+   "examples": [
+    {
+     "de": "Auf dem Heimweg sind wir in einen Stau geraten.",
+     "zh": "回家途中，我們遇上了塞車。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -55952,6 +56925,38 @@
     }
    ],
    "level": "A2",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-gesundheitssprechstunde",
+   "article": "die",
+   "word": "Gesundheitssprechstunde",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Gesundheitssprechstunden",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "健康諮詢時段"
+   ],
+   "examples": [
+    {
+     "de": "In der Gesundheitssprechstunde beantwortet eine Ärztin unsere Fragen.",
+     "zh": "一位女醫師在健康諮詢時段回答我們的問題。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
    "topic": "health",
    "push": true,
    "flag": ""
@@ -62788,6 +63793,38 @@
    "flag": ""
   },
   {
+   "id": "der-hersteller",
+   "article": "der",
+   "word": "Hersteller",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Hersteller",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "製造商"
+   ],
+   "examples": [
+    {
+     "de": "Bei Fragen zur Garantie wenden Sie sich an den Hersteller.",
+     "zh": "有保固問題請洽製造商。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "herum",
    "article": "",
    "word": "herum",
@@ -63842,6 +64879,38 @@
    "flag": ""
   },
   {
+   "id": "der-hip-hop",
+   "article": "der",
+   "word": "Hip-Hop",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "嘻哈音樂"
+   ],
+   "examples": [
+    {
+     "de": "Mein Bruder hört Hip-Hop und schreibt eigene Texte.",
+     "zh": "弟弟聽嘻哈音樂，也自己寫歌詞。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "historisch",
    "article": "",
    "word": "historisch",
@@ -64712,6 +65781,38 @@
    "id": "das-holz",
    "level": "A2",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-holzfaeller",
+   "article": "der",
+   "word": "Holzfäller",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Holzfäller",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "伐木工人"
+   ],
+   "examples": [
+    {
+     "de": "Der Holzfäller trägt bei der Arbeit einen Schutzhelm.",
+     "zh": "伐木工人工作時戴著安全帽。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -77148,6 +78249,38 @@
    "flag": ""
   },
   {
+   "id": "die-kraeftigung",
+   "article": "die",
+   "word": "Kräftigung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Kräftigungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "強化；增強肌力"
+   ],
+   "examples": [
+    {
+     "de": "Die Übungen dienen der Kräftigung des Rückens.",
+     "zh": "這些練習用來增強背部肌力。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Krähe",
    "pos": "noun",
@@ -79190,6 +80323,38 @@
    "id": "kuerzlich",
    "level": "B1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-kurzmeldung",
+   "article": "die",
+   "word": "Kurzmeldung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Kurzmeldungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "簡短新聞"
+   ],
+   "examples": [
+    {
+     "de": "Die Zeitung berichtet in einer Kurzmeldung über den Unfall.",
+     "zh": "報紙用一則短訊報導了這場事故。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -81841,6 +83006,38 @@
    "flag": ""
   },
   {
+   "id": "letztendlich",
+   "article": "",
+   "word": "letztendlich",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "到頭來；最後"
+   ],
+   "examples": [
+    {
+     "de": "Letztendlich haben wir uns für die kleinere Wohnung entschieden.",
+     "zh": "最後我們決定選較小的公寓。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "leuchten",
    "article": "",
    "word": "leuchten",
@@ -82935,6 +84132,38 @@
    "flag": ""
   },
   {
+   "id": "das-logis",
+   "article": "das",
+   "word": "Logis",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "住宿與膳食"
+   ],
+   "examples": [
+    {
+     "de": "Als Gegenleistung bietet die Familie freie Kost und Logis.",
+     "zh": "作為回報，這個家庭提供免費食宿。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "logisch",
    "article": "",
    "word": "logisch",
@@ -83066,6 +84295,38 @@
    ],
    "level": "B1",
    "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "lose",
+   "article": "",
+   "word": "lose",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "鬆散的；未固定的"
+   ],
+   "examples": [
+    {
+     "de": "Wir sammeln zunächst lose Ideen und ordnen sie später.",
+     "zh": "我們先蒐集零散的構想，之後再整理。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -83267,6 +84528,38 @@
    ],
    "level": "A2",
    "topic": "leisure",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-lottoziehung",
+   "article": "die",
+   "word": "Lottoziehung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Lottoziehungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "樂透開獎"
+   ],
+   "examples": [
+    {
+     "de": "Wir haben die Lottoziehung im Radio verfolgt.",
+     "zh": "我們透過廣播收聽了樂透開獎。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
    "push": true,
    "flag": ""
   },
@@ -87362,6 +88655,38 @@
    ],
    "level": "B1",
    "topic": "grammar",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-mindmapping",
+   "article": "das",
+   "word": "Mindmapping",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "心智圖法"
+   ],
+   "examples": [
+    {
+     "de": "Mit Mindmapping ordne ich meine Ideen für den Vortrag.",
+     "zh": "我用心智圖法整理演講的構想。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -92856,6 +94181,43 @@
    ],
    "level": "A2",
    "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "nachsprechen",
+   "article": "",
+   "word": "nachsprechen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "spricht nach",
+    "praeteritum": "sprach nach",
+    "perfekt": "hat nachgesprochen",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "跟著複誦"
+   ],
+   "examples": [
+    {
+     "de": "Hör zuerst zu und sprich den Satz dann nach.",
+     "zh": "先聽，再跟著複誦這個句子。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "school",
    "push": true,
    "flag": ""
   },
@@ -102231,6 +103593,38 @@
    "flag": ""
   },
   {
+   "id": "die-produktionsmethode",
+   "article": "die",
+   "word": "Produktionsmethode",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Produktionsmethoden",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "生產方法"
+   ],
+   "examples": [
+    {
+     "de": "Mit der neuen Produktionsmethode spart der Betrieb Wasser.",
+     "zh": "這家企業採用新的生產方法來節省用水。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "produzieren",
    "pos": "verb",
@@ -103857,6 +105251,38 @@
    "flag": ""
   },
   {
+   "id": "der-radiosender",
+   "article": "der",
+   "word": "Radiosender",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Radiosender",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "廣播電台"
+   ],
+   "examples": [
+    {
+     "de": "Dieser Radiosender bringt morgens Nachrichten aus der Region.",
+     "zh": "這家廣播電台早上播報地方新聞。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "media",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "die-radiosendung",
    "article": "die",
    "word": "Radiosendung",
@@ -105128,6 +106554,43 @@
    "flag": ""
   },
   {
+   "id": "reden",
+   "article": "",
+   "word": "reden",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "redet",
+    "praeteritum": "redete",
+    "perfekt": "hat geredet",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "說話；交談"
+   ],
+   "examples": [
+    {
+     "de": "Wir müssen in Ruhe über unsere Pläne reden.",
+     "zh": "我們得靜下來談談我們的計畫。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Redewendung",
    "pos": "noun",
@@ -105660,6 +107123,43 @@
    "id": "regnen",
    "level": "A1",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "reichen",
+   "article": "",
+   "word": "reichen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "reicht",
+    "praeteritum": "reichte",
+    "perfekt": "hat gereicht",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "足夠；遞給"
+   ],
+   "examples": [
+    {
+     "de": "Kannst du mir bitte das Salz reichen?",
+     "zh": "可以請你把鹽遞給我嗎？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -107446,6 +108946,38 @@
    "flag": ""
   },
   {
+   "id": "riesig",
+   "article": "",
+   "word": "riesig",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "巨大的"
+   ],
+   "examples": [
+    {
+     "de": "Die neue Wohnung hat einen riesigen Balkon.",
+     "zh": "新公寓有一個很大的陽台。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "das",
    "word": "Rind",
    "pos": "noun",
@@ -107945,6 +109477,38 @@
    ],
    "level": "A2",
    "topic": "nature",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-rosenstrauss",
+   "article": "der",
+   "word": "Rosenstrauß",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Rosensträuße",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "一束玫瑰花"
+   ],
+   "examples": [
+    {
+     "de": "Zum Geburtstag bekam meine Schwester einen Rosenstrauß.",
+     "zh": "姊姊生日收到了一束玫瑰。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -114521,6 +116085,38 @@
    "flag": ""
   },
   {
+   "id": "das-schweinekotelett",
+   "article": "das",
+   "word": "Schweinekotelett",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Schweinekoteletts",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "豬排"
+   ],
+   "examples": [
+    {
+     "de": "Zum Mittagessen braten wir zwei Schweinekoteletts.",
+     "zh": "午餐我們煎兩片豬排。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Schweinestall",
    "pos": "noun",
@@ -117028,6 +118624,43 @@
    "flag": ""
   },
   {
+   "id": "sich-ausdenken",
+   "article": "",
+   "word": "sich ausdenken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "denkt sich aus",
+    "praeteritum": "dachte sich aus",
+    "perfekt": "hat sich ausgedacht",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "想出；構思"
+   ],
+   "examples": [
+    {
+     "de": "Für den Geburtstag denkt sie sich ein neues Spiel aus.",
+     "zh": "她為生日聚會想出一個新遊戲。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "sich ausdrücken",
    "pos": "verb",
@@ -119105,6 +120738,43 @@
    "id": "sich-sorgen-machen-um",
    "level": "B1",
    "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "sich-spezialisieren",
+   "article": "",
+   "word": "sich spezialisieren",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "spezialisiert sich",
+    "praeteritum": "spezialisierte sich",
+    "perfekt": "hat sich spezialisiert",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "專精於"
+   ],
+   "examples": [
+    {
+     "de": "Die Firma spezialisiert sich auf kleine Solaranlagen.",
+     "zh": "這家公司專門經營小型太陽能設備。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -121392,6 +123062,38 @@
    "flag": ""
   },
   {
+   "id": "sogenannt",
+   "article": "",
+   "word": "sogenannt",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "所謂的"
+   ],
+   "examples": [
+    {
+     "de": "Im Büro gibt es eine sogenannte Ruhezone.",
+     "zh": "辦公室裡有一個所謂的安靜區。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-sohn",
    "article": "der",
    "word": "Sohn",
@@ -122092,6 +123794,38 @@
    ],
    "level": "A1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-sonntagsbraten",
+   "article": "der",
+   "word": "Sonntagsbraten",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Sonntagsbraten",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "星期日享用的烤肉大餐"
+   ],
+   "examples": [
+    {
+     "de": "Früher kam die ganze Familie zum Sonntagsbraten zusammen.",
+     "zh": "以前全家人會聚在一起享用週日烤肉大餐。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "food",
    "push": true,
    "flag": ""
   },
@@ -127066,6 +128800,38 @@
    "flag": ""
   },
   {
+   "id": "die-stimme",
+   "article": "die",
+   "word": "Stimme",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Stimmen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "聲音；嗓音"
+   ],
+   "examples": [
+    {
+     "de": "Am Telefon klang ihre Stimme sehr ruhig.",
+     "zh": "她在電話裡的聲音聽起來很平靜。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "die",
    "word": "Stimmung",
    "pos": "noun",
@@ -127566,6 +129332,43 @@
    "id": "die-strecke",
    "level": "B1",
    "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "strecken",
+   "article": "",
+   "word": "strecken",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "streckt",
+    "praeteritum": "streckte",
+    "perfekt": "hat gestreckt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "伸展；伸直"
+   ],
+   "examples": [
+    {
+     "de": "Strecken Sie die Arme langsam nach oben.",
+     "zh": "請慢慢把手臂向上伸直。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "health",
    "push": true,
    "flag": ""
   },
@@ -128761,6 +130564,38 @@
    "level": "A2",
    "topic": "grammar",
    "push": false,
+   "flag": ""
+  },
+  {
+   "id": "die-suche",
+   "article": "die",
+   "word": "Suche",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Suchen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "尋找"
+   ],
+   "examples": [
+    {
+     "de": "Die Suche nach einer Wohnung dauert länger als erwartet.",
+     "zh": "找房子花的時間比預期久。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
+   "push": true,
    "flag": ""
   },
   {
@@ -130046,6 +131881,38 @@
    "id": "die-tasche",
    "level": "A1",
    "topic": "shop",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "das-taschengeld",
+   "article": "das",
+   "word": "Taschengeld",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Taschengelder",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "零用錢"
+   ],
+   "examples": [
+    {
+     "de": "Von ihrem Taschengeld spart Lea jeden Monat fünf Euro.",
+     "zh": "莉亞每個月從零用錢中存下五歐元。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -132005,6 +133872,38 @@
    "flag": ""
   },
   {
+   "id": "die-these",
+   "article": "die",
+   "word": "These",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Thesen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "論點；主張"
+   ],
+   "examples": [
+    {
+     "de": "Für diese These fehlen noch überzeugende Belege.",
+     "zh": "這個論點還缺乏有說服力的證據。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-thunfisch",
    "article": "der",
    "word": "Thunfisch",
@@ -132177,6 +134076,38 @@
    "id": "tiefgruendig",
    "level": "B2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-tiefstpreis",
+   "article": "der",
+   "word": "Tiefstpreis",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Tiefstpreise",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "最低價"
+   ],
+   "examples": [
+    {
+     "de": "Der Laden verkauft die letzten Fahrräder zum Tiefstpreis.",
+     "zh": "這家店以最低價出售最後幾台腳踏車。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "shop",
    "push": true,
    "flag": ""
   },
@@ -136011,6 +137942,38 @@
    "flag": ""
   },
   {
+   "id": "die-uebertreibung",
+   "article": "die",
+   "word": "Übertreibung",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Übertreibungen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "誇大；誇張的說法"
+   ],
+   "examples": [
+    {
+     "de": "Die Behauptung, alle seien dagegen, ist eine Übertreibung.",
+     "zh": "說所有人都反對，是一種誇大的說法。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "uebertrieben",
    "article": "",
    "word": "übertrieben",
@@ -138550,6 +140513,38 @@
    "flag": ""
   },
   {
+   "id": "unsicher",
+   "article": "",
+   "word": "unsicher",
+   "pos": "adjective",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "不確定的；缺乏安全感的"
+   ],
+   "examples": [
+    {
+     "de": "Vor meinem ersten Arbeitstag war ich ziemlich unsicher.",
+     "zh": "第一天上班前，我相當沒把握。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "feel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Unsinn",
    "pos": "noun",
@@ -139581,6 +141576,43 @@
    "id": "die-untersuchung",
    "level": "B1",
    "topic": "health",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "unterteilen",
+   "article": "",
+   "word": "unterteilen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "unterteilt",
+    "praeteritum": "unterteilte",
+    "perfekt": "hat unterteilt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "劃分；細分"
+   ],
+   "examples": [
+    {
+     "de": "Wir unterteilen das Projekt in drei kleine Aufgaben.",
+     "zh": "我們把這個專案分成三個小任務。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -141151,6 +143183,38 @@
    ],
    "level": "A2",
    "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-verbotsrepublik",
+   "article": "die",
+   "word": "Verbotsrepublik",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Verbotsrepubliken",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "禁令充斥的國家（帶批評意味）"
+   ],
+   "examples": [
+    {
+     "de": "Einige Kritiker sprechen von einer Verbotsrepublik, andere halten die Regeln für notwendig.",
+     "zh": "一些批評者把這個國家稱為禁令充斥的國家，其他人則認為這些規定有必要。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B2",
+   "topic": "society",
    "push": true,
    "flag": ""
   },
@@ -143214,6 +145278,43 @@
    "id": "der-vermieter",
    "level": "B1",
    "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "vermischen",
+   "article": "",
+   "word": "vermischen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "vermischt",
+    "praeteritum": "vermischte",
+    "perfekt": "hat vermischt",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "混合"
+   ],
+   "examples": [
+    {
+     "de": "Vermischen Sie das Mehl mit den übrigen Zutaten.",
+     "zh": "請把麵粉與其餘材料混合。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -153940,6 +156041,43 @@
    "flag": ""
   },
   {
+   "id": "wirtschaften",
+   "article": "",
+   "word": "wirtschaften",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "wirtschaftet",
+    "praeteritum": "wirtschaftete",
+    "perfekt": "hat gewirtschaftet",
+    "aux": "haben"
+   },
+   "noArticle": false,
+   "meanings": [
+    "經營；管理資源"
+   ],
+   "examples": [
+    {
+     "de": "Mit wenig Geld muss man besonders sparsam wirtschaften.",
+     "zh": "錢不多時，管理開銷就得格外節省。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "wirtschaftlich",
    "article": "",
    "word": "wirtschaftlich",
@@ -154460,6 +156598,38 @@
    "id": "das-wochenende",
    "level": "A1",
    "topic": "time",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "wochenlang",
+   "article": "",
+   "word": "wochenlang",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "長達數週"
+   ],
+   "examples": [
+    {
+     "de": "Wegen der Baustelle war die Straße wochenlang gesperrt.",
+     "zh": "因為施工，這條路封閉了好幾週。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -157204,6 +159374,38 @@
    ],
    "level": "B1",
    "topic": "city",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-zeitvorgabe",
+   "article": "die",
+   "word": "Zeitvorgabe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "Zeitvorgaben",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "時間限制；規定時間"
+   ],
+   "examples": [
+    {
+     "de": "Die Zeitvorgabe für jede Präsentation beträgt zehn Minuten.",
+     "zh": "每場簡報的規定時間是十分鐘。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "work",
    "push": true,
    "flag": ""
   },
@@ -160352,6 +162554,38 @@
    "flag": ""
   },
   {
+   "id": "zustande-kommen",
+   "article": "",
+   "word": "zustande kommen",
+   "pos": "phrase",
+   "kind": "phrase",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "促成；實現"
+   ],
+   "examples": [
+    {
+     "de": "Wie ist der Kontakt zu dieser Firma zustande gekommen?",
+     "zh": "你是怎麼跟這家公司建立聯繫的？"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "",
    "word": "zuständig",
    "pos": "adjective",
@@ -160524,6 +162758,38 @@
    "id": "zuverlaessig",
    "level": "B1",
    "topic": "people",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "zuvor",
+   "article": "",
+   "word": "zuvor",
+   "pos": "adverb",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在此之前"
+   ],
+   "examples": [
+    {
+     "de": "Heute wohne ich in Bonn, zuvor habe ich in Köln gelebt.",
+     "zh": "我現在住在波昂，之前住在科隆。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-schritte5-underlined",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B1",
+   "topic": "general",
    "push": true,
    "flag": ""
   },

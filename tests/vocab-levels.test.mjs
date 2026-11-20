@@ -8,7 +8,7 @@ import { emptyRecord, emptyReview } from '../src/lib/reviewStore.mjs';
 const read = name => JSON.parse(readFileSync(new URL(`../src/data/lexicon/site/${name}.json`, import.meta.url)));
 const rows = read('index');
 
-for (const [level, expected] of [['A1', 845], ['A2', 1276], ['B1', 1822], ['B2', 163]]) {
+for (const [level, expected] of [['A1', 846], ['A2', 1292], ['B1', 1870], ['B2', 166]]) {
   test(`${level} keeps every practice word, once, in groups of at most 40`, () => {
     const words = normalizeVocabulary(levelWords(rows, read(level), level));
     assert.equal(words.length, expected);
@@ -35,7 +35,7 @@ test('level cards count only well-known words at that level', () => {
   review.words[a1] = { ...emptyRecord(), b: 4 };
   review.words[rows.find(r => r[3] === 'A1' && r[6] && r[0] !== a1)[0]] = { ...emptyRecord(), b: 3 };
   const [first, second] = levelPresets(rows, review);
-  assert.deepEqual([first.level, first.learned, first.count], ['A1', 1, 845]);
+  assert.deepEqual([first.level, first.learned, first.count], ['A1', 1, 846]);
   assert.equal(second.learned, 0);
 });
 

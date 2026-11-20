@@ -47,5 +47,12 @@
     "description": "整理自 61 份德文課程筆記，依出現次數分成 ★★★ 到初次收錄 4 組，共 1495 筆；已修正冠詞、複數、動詞形態與中文釋義",
     "path": "/vocab/course-notes.json",
     "count": 1495
+  },
+  {
+    "id": "schritte-b1-1-underlined",
+    "label": "Schritte B1.1｜我在課本劃線的字",
+    "description": "課本紅筆劃線實詞，還原原形並去除重複，依第一次出現的課次分組；新增內容待校對。",
+    "path": "/vocab/schritte-b1-1-underlined.json",
+    "count": 383
   }
 ]

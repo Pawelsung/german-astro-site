@@ -9,7 +9,7 @@ test('every bundled vocabulary loads and matches advertised unique count', () =>
   for (const preset of read('/vocab/index.json')) {
     const words = normalizeVocabulary(read(preset.path));
     assert.equal(words.length, preset.count, preset.id);
-    if (preset.id.startsWith('schritte')) assert.equal(chaptersFor(words).length, 7, preset.id);
+    if (preset.id.startsWith('schritte')) assert.equal(chaptersFor(words).length, preset.id === 'schritte-b1-1-underlined' ? 6 : 7, preset.id);
   }
 });
 test('class-notes vocabulary keeps frequency groups in order and every entry is usable', () => {

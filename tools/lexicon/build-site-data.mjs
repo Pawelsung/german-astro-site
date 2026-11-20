@@ -50,3 +50,22 @@ const lists = readJson(new URL('lists.graded.json', DATA)).map(list => ({
 writeFileSync(new URL('lists.json', SITE), JSON.stringify(lists));
 
 console.log(`site data: ${index.length} words, ${index.filter(r => r[6]).length} in pool`);
+
+// Export personal lists in the existing lesson-1 bank format, using master ids and prose.
+const customLists = readJson(new URL('custom-lists.json', import.meta.url));
+const byId = new Map(entries.map(e => [e.id, e]));
+for (const list of customLists) {
+  const resolved = readJson(new URL('lists.graded.json', DATA)).find(l => l.id === list.id);
+  const words = resolved.groups.flatMap((g, groupOrder) => g.ids.map(id => {
+    const e = byId.get(id);
+    if (!e) throw new Error(`${list.id}: unknown id ${id}`);
+    const ex = e.examples[0] || {};
+    const forms = verbForms(e);
+    return { id, article: e.article, word: e.word, pos: e.pos, level: e.level, plural: e.plural,
+      meaning: e.meanings[0], exampleDe: ex.de || '', exampleZh: ex.zh || '',
+      category: g.label, groupOrder,
+      ...(forms ? { practice: { praeteritum_3sg: forms[1], perfekt_3sg: forms[2] } } : {}) };
+  }));
+  writeFileSync(new URL(`../../public/vocab/${list.id}.json`, import.meta.url), JSON.stringify(words, null, 2) + '\n');
+  console.log(`${list.id}: ${words.length} words in ${resolved.groups.length} lessons`);
+}

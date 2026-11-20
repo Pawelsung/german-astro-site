@@ -137,7 +137,9 @@ writeFileSync(new URL('redirects.json', DATA), JSON.stringify(Object.fromEntries
 
 writeFileSync(new URL('lexicon.graded.json', DATA), JSON.stringify({ meta: { count: graded.length, status: 'graded-ai-only' }, entries: graded }, null, 1));
 
-const lists = readJson(new URL('lists.json', DATA)).map(list => ({
+// Personal curated lists share the same redirect and site-data pipeline as bank lists.
+const customLists = readJson(new URL('custom-lists.json', DIR));
+const lists = [...readJson(new URL('lists.json', DATA)), ...customLists].map(list => ({
   ...list,
   groups: list.groups.map(g => ({ ...g, ids: [...new Set(g.ids.map(id => redirects.get(id) || id))] }))
 }));

@@ -112,6 +112,14 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 Schritte B1.1 紅筆劃線字與個人清單（Codex，未部署，待校對）
+
+- 新增 `tools/lexicon/drafts/schritte5-underlined.json` **68 筆**（A1 1、A2 16、B1 48、B2 3），含 missing 還原 52 詞與 known 子字串誤判缺口 16 詞；釋義、德中例句自行撰寫。未複製 repo 外 OCR／課文，未改 `schritte6.json`。
+- 個人清單 `schritte-b1-1-underlined` **383 IDs**：L1 86、L2 49、L3 113、L4 80、L5 52、L6 3；依掃描頁尾實際課次、首次出現去重。643 來源字形整理為收錄 383、重複 45、功能詞 141、其他排除 74。完整原形規則、排除及存疑項見 `tools/lexicon/drafts/schritte5-underlined-notes.md`。
+- 新增可維護來源 `tools/lexicon/custom-lists.json`；apply-tags 合併至 lists.graded，build-site-data 同步輸出 site 清單與 public 字庫；第 1 課字庫／範圍選單可選「Schritte B1.1｜我在課本劃線的字」，沿用現有分課介面。沒有改 UI 或瀏覽器獨立介面審查。
+- 主字庫 4,530→4,598，原 4,530 筆內容及 ID 全保留，ids.lock 僅增 68。check-drafts 全 9 檔 ✓；apply-tags／build-site-data 成功；npm test 157/158，唯一 audio-coverage 預期失敗；build 成功 10 頁；audio dry-run 11,012 段、缺 931 段／29,179 字元。新增清單 ID／去重／功能詞／選單及產物一致性測試。
+- 未產生音檔、commit、push、部署、stash 或切分支。尚待獨立德文校對、使用者對照紅筆抽查（特別 Bauten、政治評論詞與既有 sich erfüllen 的非反身用法），再核准音檔與部署。另一 Claude worktree 的交接檔原有未提交修改，未碰觸。
+
 ### 2026-11-20 Schritte international Neu 6（B1.2）補字草稿（Codex，未部署，待校對）
 
 - 撰寫角色完整處理 repo 外 1,209 個候選字形，新增 `tools/lexicon/drafts/schritte6.json` **401 筆**：A2 66、B1 334、B2 1（bürgerschaftlich，字表教到的正式公民參與用語）。釋義及德中例句自行撰寫，未複製課本或原候選清單進 repo。
@@ -714,6 +722,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 ## 下一步（建議順序）
 
 ### 內容擴充（見 `docs/content-expansion-plan.md`）
+- [ ] Schritte B1.1 劃線字：68 筆草稿與 383 ID 個人清單已完成；待獨立德文校對、對照紅筆抽查及介面檢查，再核准音檔／部署。見 `tools/lexicon/drafts/schritte5-underlined-notes.md`。
 - [ ] 課本全文第二輪：865 筆草稿已生成並完成工程驗證（2026-11-20，Codex，未部署）；待獨立德文校對、使用者抽查，再核准生成音檔／部署。詳見 `tools/lexicon/drafts/textbook-fulltext-notes.md`。
 - [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
 - [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）
