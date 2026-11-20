@@ -1,0 +1,7 @@
+[
+  {"word":"Putzhilfe","article":"die","plural":"die Putzhilfen","pos":"noun","level":"A2","topic":"home","meaning":"打掃幫手；鐘點清潔人員","exampleDe":"Wir haben eine Putzhilfe, die jeden Freitag zwei Stunden kommt.","exampleZh":"我們請了一位打掃幫手，每週五來兩個小時。"},
+  {"word":"nördlich von","article":"","plural":"","pos":"phrase","level":"A2","topic":"travel","meaning":"在……以北","exampleDe":"Wir wohnen in einem kleinen Dorf nördlich von München.","exampleZh":"我們住在慕尼黑北邊的一個小村子。"},
+  {"word":"Wandel","article":"der","plural":"","pos":"noun","level":"B2","topic":"society","meaning":"變化；變遷（常說「處於轉變中」）","exampleDe":"Die Arbeitswelt befindet sich durch die Digitalisierung im Wandel.","exampleZh":"因為數位化，職場正在轉變。"},
+  {"word":"sich auseinandersetzen","article":"","plural":"","pos":"verb","level":"B2","topic":"general","meaning":"深入探討；認真面對；（和人）爭論、起衝突","exampleDe":"Im Kurs setzen wir uns mit der Geschichte der Stadt auseinander.","exampleZh":"課堂上我們深入探討這座城市的歷史。","verb":{"praesens3":"setzt sich auseinander","praeteritum":"setzte sich auseinander","perfekt":"hat sich auseinandergesetzt","aux":"haben","note":"反身、可分：sich auseinandersetzen (mit + D)"}},
+  {"word":"früher gehen müssen","article":"","plural":"","pos":"phrase","level":"A2","topic":"daily","meaning":"得提早離開","exampleDe":"Tut mir leid, ich muss heute früher gehen, denn mein Zug fährt um sechs.","exampleZh":"抱歉，我今天得提早走，因為我的火車六點開。"}
+]

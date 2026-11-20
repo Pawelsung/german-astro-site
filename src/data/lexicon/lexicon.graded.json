@@ -1,6 +1,6 @@
 {
  "meta": {
-  "count": 3012,
+  "count": 3017,
   "status": "graded-ai-only"
  },
  "entries": [
@@ -34167,6 +34167,38 @@
    "flag": ""
   },
   {
+   "id": "frueher-gehen-muessen",
+   "article": "",
+   "word": "früher gehen müssen",
+   "pos": "phrase",
+   "kind": "phrase",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "得提早離開"
+   ],
+   "examples": [
+    {
+     "de": "Tut mir leid, ich muss heute früher gehen, denn mein Zug fährt um sechs.",
+     "zh": "抱歉，我今天得提早走，因為我的火車六點開。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-notes-recovered",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "daily",
+   "push": true,
+   "flag": ""
+  },
+  {
    "id": "der-fruehling",
    "article": "der",
    "word": "Frühling",
@@ -64925,6 +64957,38 @@
    "flag": ""
   },
   {
+   "id": "noerdlich-von",
+   "article": "",
+   "word": "nördlich von",
+   "pos": "phrase",
+   "kind": "phrase",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "在……以北"
+   ],
+   "examples": [
+    {
+     "de": "Wir wohnen in einem kleinen Dorf nördlich von München.",
+     "zh": "我們住在慕尼黑北邊的一個小村子。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-notes-recovered",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "travel",
+   "push": true,
+   "flag": ""
+  },
+  {
    "article": "der",
    "word": "Nordosten",
    "pos": "noun",
@@ -70000,6 +70064,38 @@
    "id": "die-putzfrau",
    "level": "A2",
    "topic": "work",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "die-putzhilfe",
+   "article": "die",
+   "word": "Putzhilfe",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "die Putzhilfen",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "打掃幫手；鐘點清潔人員"
+   ],
+   "examples": [
+    {
+     "de": "Wir haben eine Putzhilfe, die jeden Freitag zwei Stunden kommt.",
+     "zh": "我們請了一位打掃幫手，每週五來兩個小時。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-notes-recovered",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "A2",
+   "topic": "home",
    "push": true,
    "flag": ""
   },
@@ -79453,6 +79549,44 @@
    "id": "sich-ausdruecken",
    "level": "B1",
    "topic": "school",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "sich-auseinandersetzen",
+   "article": "",
+   "word": "sich auseinandersetzen",
+   "pos": "verb",
+   "kind": "word",
+   "plural": "",
+   "verb": {
+    "praesens3": "setzt sich auseinander",
+    "praeteritum": "setzte sich auseinander",
+    "perfekt": "hat sich auseinandergesetzt",
+    "aux": "haben",
+    "note": "反身、可分：sich auseinandersetzen (mit + D)"
+   },
+   "noArticle": false,
+   "meanings": [
+    "深入探討；認真面對；（和人）爭論、起衝突"
+   ],
+   "examples": [
+    {
+     "de": "Im Kurs setzen wir uns mit der Geschichte der Stadt auseinander.",
+     "zh": "課堂上我們深入探討這座城市的歷史。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-notes-recovered",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B2",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -102869,6 +103003,38 @@
    ],
    "level": "A2",
    "topic": "home",
+   "push": true,
+   "flag": ""
+  },
+  {
+   "id": "der-wandel",
+   "article": "der",
+   "word": "Wandel",
+   "pos": "noun",
+   "kind": "word",
+   "plural": "",
+   "verb": null,
+   "noArticle": false,
+   "meanings": [
+    "變化；變遷（常說「處於轉變中」）"
+   ],
+   "examples": [
+    {
+     "de": "Die Arbeitswelt befindet sich durch die Digitalisierung im Wandel.",
+     "zh": "因為數位化，職場正在轉變。"
+    }
+   ],
+   "sourceLevel": null,
+   "practice": null,
+   "sources": [
+    {
+     "bank": "new-notes-recovered",
+     "id": null,
+     "group": null
+    }
+   ],
+   "level": "B2",
+   "topic": "society",
    "push": true,
    "flag": ""
   },

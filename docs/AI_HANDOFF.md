@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-19 推測 9 筆無法辨識的筆記詞（Claude Code 撰寫、german-reviewer 校對，已部署）
+
+- 依原始筆記逐頁辨識的前後行推測；5 個新詞放在 `tools/lexicon/drafts/notes-recovered.json`（die Putzhilfe、nördlich von、der Wandel、sich auseinandersetzen、früher gehen müssen），其餘 4 筆對應的字庫已有（Umgebung、sammeln、retten、Sonnenauf-／untergang）。對照表在 `tools/lexicon/examples/notes.md`，其中 3 筆為低信心。
+- 校對 1 項必須修正（sich auseinandersetzen 補「和人爭論」義）、4 項建議，全部採納。
+- `tests/vocab-levels.test.mjs` 的練習字數 A2 648→651、B2 160→162（新增字造成）。`npm test` 157 全過；`npm run audio` 產生 10 段。
+- 還沒做什麼：使用者抽查；`參考書籍` 中 Menschen、Schritte 為掃描檔，沒有 OCR，未能比對課本原文。
+
 ### 2026-11-19 翻卡標籤列與兄弟姊妹譯文（Claude Code，已部署）
 
 - 第 2、3 課翻面時，標籤與收藏列原本會浮在轉到側面的卡片上。`FlipCard` 加 `turning` 狀態（`is-turning`），inner 的 transform `transitionend` 結束；另有 400ms 計時器當備援（reduced motion、背景分頁不會觸發 transitionend）。CSS：`.lc-flip.is-turning .lc-flip-top` 100ms ease-in 淡出，結束後 150ms ease-out 回來；reduced-motion 下不淡出。`tests/flip-card.test.mjs` 加一項。
@@ -673,7 +680,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 - [ ] 單字 B1.2（需要使用者確認教材範圍）
 - [x] 主字庫缺例句補寫（2026-11-19，441 句已部署）
 - [x] 4 個可疑詞條（Kunstwerkladen、Bildmodell、Sonderkräfte、Bauarbeitsgerät）已處理並補例句（2026-11-19）
-- [ ] 9 筆無法辨識的筆記詞條（Putzhilfer、Frumgung、Sonnenunteraufgang 等）需使用者對照原始筆記確認
+- [x] 9 筆無法辨識的筆記詞條已依前後文推測處理（2026-11-19，見 `tools/lexicon/examples/notes.md`）
 
 ### 介面（使用者目前最在意）
 - [x] 紙本練習簿動態（2026-11-19 已審查並部署）
