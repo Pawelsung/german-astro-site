@@ -112,6 +112,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 課本全文補缺第二輪（Codex 撰寫，未部署）
+
+- 完整檢視 repo 外 OCR 高頻未知字形 2,560 筆，未複製原清單／OCR 進 repo。新增 `tools/lexicon/drafts/textbook-fulltext.json` **865 筆**：A1 146、A2 392、B1 327、B2 0，釋義與德中例句自行撰寫。依最早對應字形的出現次數排序。
+- 1,051 個來源字形對應本輪 864 個原形／說法，另補 in Ordnung。排除 1,509：專名 530、較專門／低優先／透明組合 380、教材文法術語 198、英文品牌圖庫／OCR 雜訊 166、還原後已有 146（117 個既有詞條）、規則數字 82、待確認 7。全清單分類索引、疑慮與校對重點見 `tools/lexicon/drafts/textbook-fulltext-notes.md`。
+- 依使用者要求生成 graded／site：主字庫 3264→4129，練習池 2842→3707；保留原有 3264 個 id 與原形，不改儲存格式。固定測試字數改為 A1 855、A2 1200、B1 1488、B2 162。
+- 驗證：check-drafts 全 7 檔 ✓、check-tags 全 9 批 ✓；apply-tags／build-site-data 成功；npm test 157 項中 156 通過，唯一缺音檔 audio-coverage 為預期；build 成功（10 頁）；diff --check 通過。audio dry-run：總文字 10081 段，待產生 **2209 段、56751 字元**，包含上一輪未生成音檔。沒有產生音檔、commit／push／部署／stash／切分支。
+- 協作注意：本次沒有寫入 `menschen-a2.json`，但執行途中觀察到該檔出現其他工作修改；保留不覆蓋、不回復。衍生資料包含生成時的工作區內容；不要把該檔現有 diff 歸因於本輪新增。另一 Claude worktree 的交接檔原先也有未提交改動，未動對方檔案。
+- 尚未完成：865 筆的獨立德文校對、使用者抽查、核准後音檔生成／部署。待確認來源字形：Mark、Specht、Brudler、Timbel、Mönchen、Losung、Obei。撰寫者沒有兼任獨立校對。
+
 ### 2026-11-20 Menschen A2 字表補缺草稿（Codex 撰寫，未部署）
 
 - 僅在 `codex-menschen-vocab` worktree／`codex/menschen-vocab` 工作。逐筆篩選 repo 外 OCR 候選 311 筆，以新增前 `lexicon.graded.json` 的 word／variants 及 `lexicon.draft.json` 去重，統一 sich、可分符號、大小寫及 Umlaut 轉寫；未複製原候選清單進 repo。
@@ -683,6 +692,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 ## 下一步（建議順序）
 
 ### 內容擴充（見 `docs/content-expansion-plan.md`）
+- [ ] 課本全文第二輪：865 筆草稿已生成並完成工程驗證（2026-11-20，Codex，未部署）；待獨立德文校對、使用者抽查，再核准生成音檔／部署。詳見 `tools/lexicon/drafts/textbook-fulltext-notes.md`。
 - [x] 第 6 課、第 4 課、第 2 課擴充（2026-10-26）
 - [x] 第 2 課加入 wo(r)-／da(r)- 練習（2026-10-27）
 - [x] 新增 Konjunktiv II 課（2026-10-27，第 7 課）
