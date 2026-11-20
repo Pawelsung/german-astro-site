@@ -6261,7 +6261,7 @@
    "examples": [
     {
      "de": "Unsere Anreise mit dem Zug verlief ohne Probleme.",
-     "zh": "我們搭火車前往目的地的旅程很順利。"
+     "zh": "我們搭火車過去，一路都很順利。"
     }
    ],
    "sourceLevel": null,
@@ -7145,7 +7145,7 @@
    ],
    "level": "B2",
    "topic": "society",
-   "push": true,
+   "push": false,
    "flag": ""
   },
   {
@@ -22028,7 +22028,7 @@
    "word": "Betreuung",
    "pos": "noun",
    "kind": "word",
-   "plural": "Betreuungen",
+   "plural": "",
    "verb": null,
    "noArticle": false,
    "meanings": [
@@ -25809,7 +25809,7 @@
    ],
    "examples": [
     {
-     "de": "Der Film war mir zu brutal, deshalb habe ich ausgeschaltet.",
+     "de": "Der Film war mir zu brutal, deshalb habe ich ihn ausgeschaltet.",
      "zh": "這部電影對我來說太暴力，所以我關掉了。"
     }
    ],
@@ -25823,7 +25823,7 @@
     }
    ],
    "level": "B1",
-   "topic": "feel",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -27468,12 +27468,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "智利女性"
+    "智利人（女性）"
    ],
    "examples": [
     {
      "de": "Meine Nachbarin ist Chilenin und lebt seit drei Jahren in Wien.",
-     "zh": "我的鄰居是智利女性，在維也納住了三年。"
+     "zh": "我的鄰居是智利人，已經在維也納住了三年。"
     }
    ],
    "sourceLevel": null,
@@ -38768,12 +38768,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "能量的量"
+    "所需能量多寡；熱量"
    ],
    "examples": [
     {
-     "de": "Die benötigte Energiemenge hängt von der körperlichen Arbeit ab.",
-     "zh": "所需的能量多寡取決於體力勞動的程度。"
+     "de": "Die benötigte Energiemenge hängt davon ab, wie schwer man körperlich arbeitet.",
+     "zh": "所需的能量多寡，取決於體力工作有多繁重。"
     }
    ],
    "sourceLevel": null,
@@ -42864,8 +42864,8 @@
    ],
    "examples": [
     {
-     "de": "In der Debatte fiel der scharfe Vorwurf einer Erziehungsdiktatur.",
-     "zh": "辯論中出現了以教化之名實施專制的尖銳指控。"
+     "de": "Kritiker werfen der Regierung eine Erziehungsdiktatur vor.",
+     "zh": "批評者指責政府以教化之名實施專制。"
     }
    ],
    "sourceLevel": null,
@@ -46131,7 +46131,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "電視；電視節目"
+    "電視（媒體）；電視節目"
    ],
    "examples": [
     {
@@ -53022,7 +53022,7 @@
     }
    ],
    "level": "B1",
-   "topic": "school",
+   "topic": "general",
    "push": true,
    "flag": ""
   },
@@ -54742,7 +54742,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "精確的；仔細地"
+    "精確的；仔細地；（回應）沒錯"
    ],
    "examples": [
     {
@@ -55029,7 +55029,7 @@
     }
    ],
    "level": "B1",
-   "topic": "general",
+   "topic": "people",
    "push": true,
    "flag": ""
   },
@@ -56958,7 +56958,7 @@
    ],
    "level": "B1",
    "topic": "health",
-   "push": true,
+   "push": false,
    "flag": ""
   },
   {
@@ -64906,7 +64906,7 @@
     }
    ],
    "level": "B1",
-   "topic": "media",
+   "topic": "leisure",
    "push": true,
    "flag": ""
   },
@@ -78254,7 +78254,7 @@
    "word": "Kräftigung",
    "pos": "noun",
    "kind": "word",
-   "plural": "Kräftigungen",
+   "plural": "",
    "verb": null,
    "noArticle": false,
    "meanings": [
@@ -78275,7 +78275,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "health",
    "push": true,
    "flag": ""
@@ -84141,7 +84141,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "住宿與膳食"
+    "住宿；住處（多與「膳食」連用）"
    ],
    "examples": [
     {
@@ -84158,8 +84158,8 @@
      "group": null
     }
    ],
-   "level": "B1",
-   "topic": "food",
+   "level": "B2",
+   "topic": "home",
    "push": true,
    "flag": ""
   },
@@ -84312,8 +84312,8 @@
    ],
    "examples": [
     {
-     "de": "Wir sammeln zunächst lose Ideen und ordnen sie später.",
-     "zh": "我們先蒐集零散的構想，之後再整理。"
+     "de": "Die Schraube am Stuhl ist lose, ich ziehe sie gleich fest.",
+     "zh": "椅子上的螺絲鬆了，我馬上把它鎖緊。"
     }
    ],
    "sourceLevel": null,
@@ -84560,7 +84560,7 @@
    ],
    "level": "B1",
    "topic": "media",
-   "push": true,
+   "push": false,
    "flag": ""
   },
   {
@@ -107145,8 +107145,8 @@
    ],
    "examples": [
     {
-     "de": "Kannst du mir bitte das Salz reichen?",
-     "zh": "可以請你把鹽遞給我嗎？"
+     "de": "Zehn Euro reichen für zwei Tickets.",
+     "zh": "十歐元夠買兩張票。"
     }
    ],
    "sourceLevel": null,
@@ -108960,7 +108960,7 @@
    "examples": [
     {
      "de": "Die neue Wohnung hat einen riesigen Balkon.",
-     "zh": "新公寓有一個很大的陽台。"
+     "zh": "新公寓有一個超大的陽台。"
     }
    ],
    "sourceLevel": null,
@@ -116111,7 +116111,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "A2",
    "topic": "food",
    "push": true,
    "flag": ""
@@ -120760,7 +120760,7 @@
    ],
    "examples": [
     {
-     "de": "Die Firma spezialisiert sich auf kleine Solaranlagen.",
+     "de": "Die Firma hat sich auf kleine Solaranlagen spezialisiert.",
      "zh": "這家公司專門經營小型太陽能設備。"
     }
    ],
@@ -128809,7 +128809,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "聲音；嗓音"
+    "聲音；嗓音；選票"
    ],
    "examples": [
     {
@@ -130576,7 +130576,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "尋找"
+    "尋找的過程；搜尋（名詞）"
    ],
    "examples": [
     {
@@ -131890,7 +131890,7 @@
    "word": "Taschengeld",
    "pos": "noun",
    "kind": "word",
-   "plural": "Taschengelder",
+   "plural": "",
    "verb": null,
    "noArticle": false,
    "meanings": [
@@ -145296,7 +145296,7 @@
    },
    "noArticle": false,
    "meanings": [
-    "混合"
+    "把（不同東西）混在一起；攪拌混合"
    ],
    "examples": [
     {
@@ -145313,7 +145313,7 @@
      "group": null
     }
    ],
-   "level": "A2",
+   "level": "B1",
    "topic": "general",
    "push": true,
    "flag": ""
@@ -156055,7 +156055,7 @@
    },
    "noArticle": false,
    "meanings": [
-    "經營；管理資源"
+    "經營；持家理財"
    ],
    "examples": [
     {
@@ -156072,7 +156072,7 @@
      "group": null
     }
    ],
-   "level": "B1",
+   "level": "B2",
    "topic": "work",
    "push": true,
    "flag": ""
@@ -162563,7 +162563,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "促成；實現"
+    "（得以）成立；達成；產生"
    ],
    "examples": [
     {

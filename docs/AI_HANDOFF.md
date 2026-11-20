@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-20 Schritte 6 與 B1.1 劃線字（Claude Code 統籌、Codex 撰寫、german-reviewer 校對，已部署）
+
+- Schritte international Neu 6（B1.2）：PDF 文字層會吃掉 fi／fl 連字，改用 Vision OCR；`drafts/schritte6.json` 401 筆。
+- 使用者在 Schritte 5 筆記版用紅筆劃線：手寫已平面化，沒有 PDF 註解物件。用帶座標的 Vision OCR（逐字框）＋紅色像素偵測判斷底線（腳本在暫存區，輸出在 `參考書籍/ocr/`）。紅色中文小註解會造成誤抓，所以清單排除 A1。`drafts/schritte5-underlined.json` 新增 68 筆；`tools/lexicon/custom-lists.json` 新增清單「Schritte B1.1｜我在課本劃線的字」275 字（第 1 課 → 我的教材），由 apply-tags／build-site-data 一併產生 `public/vocab/schritte-b1-1-underlined.json`。
+- 三批都經獨立校對並套用；Gesundheitssprechstunde、Lottoziehung、antigrün 設 noPush。音檔 931 段。主字庫 4,129 → 4,598 筆。`npm test` 158 全過；本機瀏覽器確認清單出現在「我的教材」、字卡正常。
+- 還沒做什麼：使用者抽查；劃線偵測準確度約七成，可能漏抓或多抓。
+
 ### 2026-11-20 Schritte 6 校對套用與劃線清單清理（Codex，未部署）
 
 - 套用兩份獨立 Schritte 6 校對表全部 43 條及使用者指定存疑項，修改 47 筆／58 欄位；401 筆不變，A2 65、B1 322、B2 14。其餘存疑維持原樣，詳見 schritte6-notes「校對結果」。
