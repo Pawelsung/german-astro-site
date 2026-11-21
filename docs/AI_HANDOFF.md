@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-22 聽力頁「選擇材料」、手機首頁課程精簡清單（Claude Code，已部署）
+
+- 聽力頁加「選擇材料」底部選單：列出 LangLoop 所有德文專案，打勾即放到聽力頁（LangLoop 新增 `GET /api/site/projects?all=1`、`PATCH /api/site/projects/[id]`，只能改自己的德文專案）。LangLoop commit `10652b0` 已部署 Vercel。
+- 首頁：手機（<640px）課程改成一行一課的清單（`LessonRow`），整頁 2661px → 1140px，第 8 課從 2255px 移到 910px；桌面維持卡片。進度資料沒動。
+- 驗證：網站 171／LangLoop 28 測試全過，兩邊建置通過；手機與桌面截圖確認；正式站假 token 回 401、PATCH 預檢通過。用使用者帳號實際勾選尚未實測。
+- 部署方式同前：從正式站版本 `91ceccb` 加上本次 commit（cherry-pick 為 `b1d24ec`）建置部署，**`cc079f8` 仍未部署**。
+
 ### 2026-11-21 聽力頁、寫作與口說頁，串接 LangLoop（Claude Code，已部署聽力頁）
 
 - **部署（使用者同意）**：LangLoop 建立 git（`ad4887f`），改動 commit 為 `1117722` 並 fast-forward 到 LangLoop 的 main，用 `npx vercel deploy --prod` 部署，另加 `.vercelignore` 排除本機上傳檔與截圖；正式站確認 `/api/site/projects` 沒 token 回 401、CORS 只給 german-astro-site.web.app。德語網站 commit `91ceccb`（基底 d97fa4f＝當時正式站），在暫時 worktree 從這個 commit 建置，`npx firebase-tools deploy --only hosting`；正式站 `/listening/` 200。**main 上 Codex 的 `cc079f8`（Schritte B1.1 字庫合併，標未部署）沒有一起部署。** 聽力頁已經使用者同意 fast-forward 合併進 main。下一次從 main 部署時，會連同 `cc079f8` 一起上線，部署前先確認使用者看過那個改動。
