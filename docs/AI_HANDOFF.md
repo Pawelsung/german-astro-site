@@ -114,7 +114,7 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ### 2026-11-21 聽力頁、寫作與口說頁，串接 LangLoop（Claude Code，已部署聽力頁）
 
-- **部署（使用者同意）**：LangLoop 建立 git（`ad4887f`），改動 commit 為 `1117722` 並 fast-forward 到 LangLoop 的 main，用 `npx vercel deploy --prod` 部署，另加 `.vercelignore` 排除本機上傳檔與截圖；正式站確認 `/api/site/projects` 沒 token 回 401、CORS 只給 german-astro-site.web.app。德語網站 commit `91ceccb`（基底 d97fa4f＝當時正式站），在暫時 worktree 從這個 commit 建置，`npx firebase-tools deploy --only hosting`；正式站 `/listening/` 200。**main 上 Codex 的 `cc079f8`（Schritte B1.1 字庫合併，標未部署）沒有一起部署。** 本分支已 rebase 到 main（`890a018`），但還沒合併進 main：下一次從 main 部署前要先合併，否則聽力頁會消失。
+- **部署（使用者同意）**：LangLoop 建立 git（`ad4887f`），改動 commit 為 `1117722` 並 fast-forward 到 LangLoop 的 main，用 `npx vercel deploy --prod` 部署，另加 `.vercelignore` 排除本機上傳檔與截圖；正式站確認 `/api/site/projects` 沒 token 回 401、CORS 只給 german-astro-site.web.app。德語網站 commit `91ceccb`（基底 d97fa4f＝當時正式站），在暫時 worktree 從這個 commit 建置，`npx firebase-tools deploy --only hosting`；正式站 `/listening/` 200。**main 上 Codex 的 `cc079f8`（Schritte B1.1 字庫合併，標未部署）沒有一起部署。** 聽力頁已經使用者同意 fast-forward 合併進 main。下一次從 main 部署時，會連同 `cc079f8` 一起上線，部署前先確認使用者看過那個改動。
 - 播放器預覽用的 `src/pages/zz-player-preview.astro`、`src/components/_preview/` 在本 worktree 未追蹤、未部署，刪除需使用者同意。
 - 新 worktree 沒有 `.env`（Firebase 設定，git 不追蹤），本機會無法登入；從主資料夾複製一份即可。
 - **播放器照 LangLoop 重做（同日）**：使用者覺得整頁列句的版本不好用。`ListeningApp.jsx` 的 `Player` 改成 LangLoop 版面：中間大字單句、逐字亮起（用專案的 words 時間）、前後句小字、底部進度條／速度 0.5–1.25／上一句・播放・下一句／單句循環／全部字幕（全螢幕 dialog）、快捷鍵空白鍵・←→・R。樣式 `listen-*` 重寫。用暫時預覽頁看過桌面與手機版（預覽檔見上方部署說明）。
