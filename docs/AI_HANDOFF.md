@@ -112,10 +112,12 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
-### 2026-11-21 聽力頁、寫作與口說頁，串接 LangLoop（Claude Code，未部署、未 commit）
+### 2026-11-21 聽力頁、寫作與口說頁，串接 LangLoop（Claude Code，已部署聽力頁）
 
+- **部署（使用者同意）**：LangLoop 建立 git（`ad4887f`），改動 commit 為 `1117722` 並 fast-forward 到 LangLoop 的 main，用 `npx vercel deploy --prod` 部署，另加 `.vercelignore` 排除本機上傳檔與截圖；正式站確認 `/api/site/projects` 沒 token 回 401、CORS 只給 german-astro-site.web.app。德語網站 commit `91ceccb`（基底 d97fa4f＝當時正式站），在暫時 worktree 從這個 commit 建置，`npx firebase-tools deploy --only hosting`；正式站 `/listening/` 200。**main 上 Codex 的 `cc079f8`（Schritte B1.1 字庫合併，標未部署）沒有一起部署。** 本分支已 rebase 到 main（`890a018`），但還沒合併進 main：下一次從 main 部署前要先合併，否則聽力頁會消失。
+- 播放器預覽用的 `src/pages/zz-player-preview.astro`、`src/components/_preview/` 在本 worktree 未追蹤、未部署，刪除需使用者同意。
 - 新 worktree 沒有 `.env`（Firebase 設定，git 不追蹤），本機會無法登入；從主資料夾複製一份即可。
-- **播放器照 LangLoop 重做（同日）**：使用者覺得整頁列句的版本不好用。`ListeningApp.jsx` 的 `Player` 改成 LangLoop 版面：中間大字單句、逐字亮起（用專案的 words 時間）、前後句小字、底部進度條／速度 0.5–1.25／上一句・播放・下一句／單句循環／全部字幕（全螢幕 dialog）、快捷鍵空白鍵・←→・R。樣式 `listen-*` 重寫。用暫時頁 `src/pages/zz-player-preview.astro`＋`src/components/_preview/` 看過桌面與手機版，**這兩個暫時檔還沒刪（刪除需使用者同意），commit 前一定要刪掉**。
+- **播放器照 LangLoop 重做（同日）**：使用者覺得整頁列句的版本不好用。`ListeningApp.jsx` 的 `Player` 改成 LangLoop 版面：中間大字單句、逐字亮起（用專案的 words 時間）、前後句小字、底部進度條／速度 0.5–1.25／上一句・播放・下一句／單句循環／全部字幕（全螢幕 dialog）、快捷鍵空白鍵・←→・R。樣式 `listen-*` 重寫。用暫時預覽頁看過桌面與手機版（預覽檔見上方部署說明）。
 - **後續調整（同日）**：使用者決定先只做聽力播放。聽力頁拿掉跟讀錄音（`useRecorder`、`compareShadowing` 暫時沒有頁面使用）；首頁 LangLoop 卡片改成「聽力練習」橫卡，放在今日複習下面；寫作入口拿掉，`/writing` 仍可用網址打開，等使用者決定。已替使用者把 11/20 DW 新聞勾選「放到德語網站」（他在 LangLoop 已登入、同意測試）。
 
 - 規格：`docs/listening-writing-spec.md`。德語網站新增 `/listening`（LangLoop 勾選「放到德語網站」的專案、逐句播放、單句循環、速度 0.75／0.9／1、點字存字、跟讀錄音與 AI 發音檢查）和 `/writing`（每週題目、打字或用說的、AI 批改附原因、重寫對照、存字）。首頁 LangLoop 卡片改成三個入口。只有 LangLoop 允許名單裡的帳號看得到，網站本身仍無額外費用。
