@@ -719,6 +719,13 @@ body:has(.picker-sheet[open]) { overflow: hidden; }
   .listen-row { grid-template-columns: 64px minmax(0, 1fr) 44px; gap: 20px; padding: 22px 24px; }
   .listen-row-num { text-align: right; }
 }
+.listen-list-head { display: grid; gap: 10px; margin-bottom: 12px; }
+.listen-choose { min-height: 44px; font-size: 15px; }
+.listen-choice { grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 12px; }
+.picker-row.listen-choice .listen-choice-box { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; border: 2px solid var(--calm-line); color: var(--calm-on-accent); }
+.picker-row.listen-choice[aria-pressed="true"] .listen-choice-box { background: var(--calm-accent); border-color: var(--calm-accent); }
+.picker-row.listen-choice .listen-choice-text { display: grid; gap: 4px; min-width: 0; color: var(--calm-ink); font-size: 16px; }
+.listen-choice:disabled { opacity: 0.6; }
 .listen-word-card { display: grid; gap: 8px; padding-bottom: 8px; }
 .listen-word-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .listen-word-card h3 { font-size: 24px; font-weight: 800; }

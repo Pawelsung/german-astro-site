@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Flame } from 'lucide-react';
+import { ArrowRight, ChevronRight, Flame } from 'lucide-react';
 import { PROGRESS_KEYS, getLearningSummary, getReviewAction, readJSON } from '../lib/progressStorage';
 import { dayNumber, decodeReview } from '../lib/reviewStore.mjs';
 import { TODAY_KEY, getReviewSnapshot } from '../lib/reviewQueue.mjs';
@@ -38,14 +38,48 @@ function greeting(date) {
   return '晚安';
 }
 
-function LessonCard({ lesson, stats, ready }) {
+// What a lesson shows on the home page, shared by the phone row and the desktop card.
+function lessonView(lesson, stats) {
   const theme = THEMES[lesson.theme] || THEMES.sky;
   const total = stats.total || lesson.total || 0;
   const done = Math.min(stats.done || 0, total || Infinity);
   const percent = total ? Math.round((done / total) * 100) : 0;
   const [prefix, name] = lesson.title.includes('｜') ? lesson.title.split('｜') : ['', lesson.title];
-  const kicker = `Lektion ${lesson.order} · ${lesson.category}`;
   const heading = prefix.startsWith('Lektion') ? name : prefix || name;
+  return { theme, total, done, percent, heading };
+}
+
+// Phones: one compact row per lesson, so all lessons fit in about one screen.
+function LessonRow({ lesson, stats, ready }) {
+  const { theme, total, done, percent, heading } = lessonView(lesson, stats);
+  return (
+    <li>
+      <a href={lesson.href} className="flex min-h-16 items-center gap-3 px-4 py-3">
+        <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl text-base font-black ${theme.badge}`}>{lesson.order}</span>
+        <span className="min-w-0 flex-1">
+          <span className="flex items-baseline gap-2">
+            <span className="truncate text-[15px] font-black text-ink">{heading}</span>
+            {lesson.level && <span className="shrink-0 text-[11px] font-bold text-ink-muted">{lesson.level}</span>}
+          </span>
+          <span className="mt-1.5 flex items-center gap-2">
+            <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
+              <span className={`block h-full w-full origin-left ${theme.bar}`} style={{ transform: `scaleX(${ready ? percent / 100 : 0})`, transition: 'transform var(--motion-300) var(--ease-out)' }} />
+            </span>
+            <span className="shrink-0 text-[11px] font-bold tabular-nums text-ink-muted">{ready && total ? `${done} / ${total}` : `${lesson.minutes || 15} 分鐘`}</span>
+          </span>
+        </span>
+        {ready && stats.review > 0 && (
+          <span className="shrink-0 rounded-full bg-rose-soft px-2 py-0.5 text-[11px] font-black text-rose-ink">{stats.review} 待複習</span>
+        )}
+        <ChevronRight size={18} className="shrink-0 text-ink-muted" aria-hidden="true" />
+      </a>
+    </li>
+  );
+}
+
+function LessonCard({ lesson, stats, ready }) {
+  const { theme, total, done, percent, heading } = lessonView(lesson, stats);
+  const kicker = `Lektion ${lesson.order} · ${lesson.category}`;
   return (
     <a
       href={lesson.href}
@@ -146,7 +180,12 @@ export default function LearningDashboard({ lessons = [] }) {
           <h2 className="text-lg font-black text-ink">全部課程</h2>
           <span className="text-xs font-bold text-ink-muted">{lessons.length} 個主題</span>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="divide-y divide-line overflow-hidden rounded-3xl border border-line bg-surface shadow-sm sm:hidden">
+          {lessons.map((lesson) => (
+            <LessonRow key={lesson.href} lesson={lesson} stats={stats[lesson.order]} ready={ready} />
+          ))}
+        </ul>
+        <div className="hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {lessons.map((lesson) => (
             <LessonCard key={lesson.href} lesson={lesson} stats={stats[lesson.order]} ready={ready} />
           ))}

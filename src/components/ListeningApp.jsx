@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ListMusic, Pause, Play, Repeat2, SkipBack, SkipForward, X } from 'lucide-react';
+import { ArrowLeft, Check, ListMusic, Pause, Play, Repeat2, SkipBack, SkipForward, X } from 'lucide-react';
 import LangLoopWordSheet from './LangLoopWordSheet.jsx';
+import { BottomSheet } from './lesson/BottomSheet.jsx';
 import { useGermanSpeech } from '../hooks/useGermanSpeech';
-import { getProject, listProjects, openLangLoop, useLangLoopAccess } from '../lib/langloopClient';
+import { getProject, listChoices, listProjects, openLangLoop, setShowOnSite, useLangLoopAccess } from '../lib/langloopClient';
 import { segmentAt, splitWords } from '../lib/listening.mjs';
 
 const SPEED_KEY = 'gw-listening-speed-v1';
@@ -37,27 +38,90 @@ function Notice({ title, body, children }) {
 const minutes = seconds => (seconds ? `${Math.max(1, Math.round(seconds / 60))} 分鐘` : '');
 
 
-function ProjectList({ user, onOpen }) {
-  const [state, setState] = useState({ phase: 'loading' });
-  useEffect(() => {
-    let alive = true;
-    listProjects(user)
-      .then(projects => { if (alive) setState({ phase: 'ready', projects }); })
-      .catch(error => { if (alive) setState({ phase: 'error', message: error.message }); });
-    return () => { alive = false; };
+// Every German project in LangLoop with a tick box; ticking one puts it on this page.
+function ChooseSheet({ ref, user, onChanged }) {
+  const sheet = useRef(null);
+  const [state, setState] = useState({ phase: 'idle' });
+  const [busy, setBusy] = useState(null);
+  const [error, setError] = useState('');
+
+  const load = useCallback(() => {
+    setState({ phase: 'loading' });
+    listChoices(user)
+      .then(projects => setState({ phase: 'ready', projects }))
+      .catch(err => setState({ phase: 'error', message: err.message }));
   }, [user]);
 
+  React.useImperativeHandle(ref, () => ({ open() { setError(''); load(); sheet.current?.open(); } }), [load]);
+
+  async function toggle(project) {
+    const next = !project.showOnSite;
+    setBusy(project.id);
+    setError('');
+    try {
+      await setShowOnSite(user, project.id, next);
+      setState(prev => ({ ...prev, projects: prev.projects.map(item => (item.id === project.id ? { ...item, showOnSite: next } : item)) }));
+      onChanged();
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  const chosen = state.projects?.filter(project => project.showOnSite).length || 0;
+
+  return <BottomSheet ref={sheet} title="選擇聽力材料">
+    <p className="picker-status">{state.phase === 'ready' ? `勾選的材料會出現在聽力頁。已選 ${chosen} 份，共 ${state.projects.length} 份德文材料。` : '這裡列出你在 LangLoop 的所有德文專案。'}</p>
+    {error && <p role="alert" className="picker-status picker-error">{error}</p>}
+    {state.phase === 'loading' && <p className="calm-loading">讀取中…</p>}
+    {state.phase === 'error' && <p role="alert" className="picker-status picker-error">{state.message}</p>}
+    {state.phase === 'ready' && (state.projects.length
+      ? <div className="picker-list">
+          {state.projects.map(project => (
+            <button key={project.id} type="button" className="picker-row listen-choice" aria-pressed={project.showOnSite} disabled={busy === project.id} onClick={() => toggle(project)}>
+              <span className="listen-choice-box" aria-hidden="true">{project.showOnSite ? <Check size={16}/> : null}</span>
+              <span className="listen-choice-text">
+                <strong lang="de">{project.title}</strong>
+                <span>{[minutes(project.duration), `${project.segmentCount} 句`].filter(Boolean).join(' · ')}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+      : <p className="picker-status">LangLoop 裡還沒有德文專案。先到 LangLoop 上傳音檔或貼上文章。</p>)}
+  </BottomSheet>;
+}
+
+function ProjectList({ user, onOpen }) {
+  const [state, setState] = useState({ phase: 'loading' });
+  const chooser = useRef(null);
+  const load = useCallback(() => {
+    listProjects(user)
+      .then(projects => setState({ phase: 'ready', projects }))
+      .catch(error => setState({ phase: 'error', message: error.message }));
+  }, [user]);
+  useEffect(() => { load(); }, [load]);
+
   const openLL = async () => openLangLoop(await user.getIdToken());
+  const choose = () => chooser.current?.open();
+  const sheet = <ChooseSheet ref={chooser} user={user} onChanged={load}/>;
 
   if (state.phase === 'loading') return <p className="calm-loading">讀取聽力材料…</p>;
   if (state.phase === 'error') return <Notice title="暫時打不開" body={state.message}><button type="button" className="calm-secondary" onClick={() => location.reload()}>重新整理</button></Notice>;
   if (!state.projects.length) {
-    return <Notice title="還沒有聽力材料" body="在 LangLoop 打開一個德文專案，從右上角選單勾選「放到德語網站」，它就會出現在這裡。">
-      <button type="button" className="calm-primary" onClick={openLL}>開啟 LangLoop</button>
-    </Notice>;
+    return <>
+      <Notice title="還沒有聽力材料" body="從你在 LangLoop 的德文專案裡，勾選要放到這裡的材料。">
+        <button type="button" className="calm-primary" onClick={choose}>選擇材料</button>
+        <button type="button" className="calm-link" onClick={openLL}>到 LangLoop 新增材料</button>
+      </Notice>
+      {sheet}
+    </>;
   }
   return <div className="calm-session fx-enter">
-    <p className="calm-hint">同一段分三天聽：先不看字幕抓大意，再對照字幕，最後不看字幕跟讀。</p>
+    <div className="listen-list-head">
+      <p className="calm-hint">同一段分三天聽：先不看字幕抓大意，再對照字幕，最後不看字幕跟讀。</p>
+      <button type="button" className="calm-secondary listen-choose" onClick={choose}>選擇材料</button>
+    </div>
     <div className="picker-list">
       {state.projects.map(project => (
         <button key={project.id} type="button" className="picker-row" onClick={() => onOpen(project.id)}>
@@ -67,6 +131,7 @@ function ProjectList({ user, onOpen }) {
       ))}
     </div>
     <button type="button" className="calm-link" onClick={openLL}>到 LangLoop 新增材料</button>
+    {sheet}
   </div>;
 }
 

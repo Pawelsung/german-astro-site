@@ -38,6 +38,8 @@ export async function checkAccess(user) {
 
 export const listSavedWords = async user => (await call(user, '/api/words'))?.words || [];
 export const listProjects = async user => (await call(user, '/api/site/projects'))?.projects || [];
+export const listChoices = async user => (await call(user, '/api/site/projects?all=1'))?.projects || [];
+export const setShowOnSite = (user, id, showOnSite) => call(user, `/api/site/projects/${encodeURIComponent(id)}`, { method: 'PATCH', json: { showOnSite } });
 export const getProject = async (user, id) => (await call(user, `/api/site/projects/${encodeURIComponent(id)}`))?.project;
 export const lookupWord = async (user, word, sentence) => (await call(user, '/api/site/words/lookup', { method: 'POST', json: { word, sentence, language: 'de' } }))?.entry;
 export const saveWord = async (user, entry, sentence, projectId) => (await call(user, '/api/site/words', { method: 'POST', json: { entry, sentence, projectId } }))?.word;
