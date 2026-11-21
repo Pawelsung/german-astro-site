@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WritingApp from '../components/WritingApp.jsx';
+import UserAccount from '../components/UserAccount.jsx';
+---
+
+<Layout title="寫作與口說 | 德語學習工作台">
+  <div hidden><UserAccount client:only="react" compact /></div>
+  <WritingApp client:only="react" />
+</Layout>

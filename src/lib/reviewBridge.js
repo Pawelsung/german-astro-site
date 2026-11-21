@@ -100,3 +100,12 @@ export async function importFromLangLoop(words) {
   if (added.length) saveReview(review);
   return added.length;
 }
+
+// Matches a tapped word to its word-list entry (see listening.mjs); loads the index on first use.
+export async function loadWordMatcher() {
+  const [rows, { buildWordMatcher }] = await Promise.all([loadIndex(), import('./listening.mjs')]);
+  return buildWordMatcher(rows);
+}
+
+// A word saved from the listening or writing page joins the review now, like a LangLoop save.
+export const addToReview = ids => importFromLangLoop(ids.map(lexiconId => ({ lexiconId, updatedAt: new Date().toISOString() })));

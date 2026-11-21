@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ListeningApp from '../components/ListeningApp.jsx';
+import UserAccount from '../components/UserAccount.jsx';
+---
+
+<Layout title="聽力練習 | 德語學習工作台">
+  <div hidden><UserAccount client:only="react" compact /></div>
+  <ListeningApp client:only="react" />
+</Layout>

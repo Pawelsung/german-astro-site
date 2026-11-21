@@ -112,6 +112,18 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-21 聽力頁、寫作與口說頁，串接 LangLoop（Claude Code，未部署、未 commit）
+
+- 新 worktree 沒有 `.env`（Firebase 設定，git 不追蹤），本機會無法登入；從主資料夾複製一份即可。
+- **播放器照 LangLoop 重做（同日）**：使用者覺得整頁列句的版本不好用。`ListeningApp.jsx` 的 `Player` 改成 LangLoop 版面：中間大字單句、逐字亮起（用專案的 words 時間）、前後句小字、底部進度條／速度 0.5–1.25／上一句・播放・下一句／單句循環／全部字幕（全螢幕 dialog）、快捷鍵空白鍵・←→・R。樣式 `listen-*` 重寫。用暫時頁 `src/pages/zz-player-preview.astro`＋`src/components/_preview/` 看過桌面與手機版，**這兩個暫時檔還沒刪（刪除需使用者同意），commit 前一定要刪掉**。
+- **後續調整（同日）**：使用者決定先只做聽力播放。聽力頁拿掉跟讀錄音（`useRecorder`、`compareShadowing` 暫時沒有頁面使用）；首頁 LangLoop 卡片改成「聽力練習」橫卡，放在今日複習下面；寫作入口拿掉，`/writing` 仍可用網址打開，等使用者決定。已替使用者把 11/20 DW 新聞勾選「放到德語網站」（他在 LangLoop 已登入、同意測試）。
+
+- 規格：`docs/listening-writing-spec.md`。德語網站新增 `/listening`（LangLoop 勾選「放到德語網站」的專案、逐句播放、單句循環、速度 0.75／0.9／1、點字存字、跟讀錄音與 AI 發音檢查）和 `/writing`（每週題目、打字或用說的、AI 批改附原因、重寫對照、存字）。首頁 LangLoop 卡片改成三個入口。只有 LangLoop 允許名單裡的帳號看得到，網站本身仍無額外費用。
+- 新檔：`ListeningApp.jsx`、`WritingApp.jsx`、`LangLoopWordSheet.jsx`（兩頁共用的單字卡）、`hooks/useRecorder.js`、`lib/langloopClient.js`（所有 LangLoop 呼叫，`LangLoopCard` 也改用它）、`lib/listening.mjs`（斷字、字庫比對、跟讀比對，`tests/listening.test.mjs`）。`reviewBridge.js` 多了 `loadWordMatcher`、`addToReview`。樣式 `listen-*`、`write-*` 在 `global.css`，沿用 calm 版面、`picker-*`、`BottomSheet`。
+- LangLoop（`~/Codex/LangLoop`，今天才建立 git，工作在分支 `listening-share`）：`/api/site/*` 六個路由、`proxy.ts` 放行帶 Bearer 的 `/api/site/*`、專案選單勾選框、migration 008（已經使用者同意套用到 Supabase）。
+- 驗證：網站 `npm test` 163 全過、`npm run build` 通過；LangLoop `npm test` 28 全過、lint、build 通過；本機確認沒 token 時 401、CORS 只給 localhost:4321、未登入畫面正常。**登入後的流程還沒實測**：內建瀏覽器窗格無法完成 Google 登入。
+- 還沒做什麼：登入後實測（播放、點字、跟讀、批改、iPhone 錄音）、介面檢查、兩邊 commit、部署（LangLoop 要先部署到 Vercel，網站才呼叫得到新 API）。本 worktree 基底是 d97fa4f，比 main 舊，合併前要先 rebase。
+
 ### 2026-11-20 第 1 課 Schritte B1.1 字庫合併與舊進度相容（Codex，未部署）
 
 - 本輪小修正：移除劃線清單覆蓋課本課次的邏輯並補來源課次／標題／分類測試，確認 verrückt（b1_1_l01_w003）保留第 1 課（劃線來源為第 3 課），僅劃線新增字沿用劃線課次；重跑 apply-tags、build-site-data、npm test（166/166）、npm run build（10 頁）與 diff --check 通過，lexicon.graded.json 仍無 diff。修正後劃線字數 L1～L7：51、37、79、54、45、6、3（合計 275）。未做瀏覽器驗證，未 commit、push、部署、stash 或切分支。

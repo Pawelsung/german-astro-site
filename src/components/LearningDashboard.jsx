@@ -139,6 +139,8 @@ export default function LearningDashboard({ lessons = [] }) {
         )}
       </section>
 
+      <LangLoopCard />
+
       <section>
         <div className="mb-4 flex items-baseline justify-between gap-3">
           <h2 className="text-lg font-black text-ink">全部課程</h2>
@@ -148,7 +150,6 @@ export default function LearningDashboard({ lessons = [] }) {
           {lessons.map((lesson) => (
             <LessonCard key={lesson.href} lesson={lesson} stats={stats[lesson.order]} ready={ready} />
           ))}
-          <LangLoopCard />
         </div>
       </section>
     </div>
