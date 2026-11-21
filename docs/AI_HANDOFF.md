@@ -112,16 +112,22 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-22 聽力卡片縮小、main 全部部署（Claude Code，已部署）
+
+- 首頁聽力卡片改成一行（圖示、聽力練習、一行說明、開始聽），拿掉卡片上的「到 LangLoop 新增材料」（聽力頁裡有）。
+- 使用者要求「全部處理好」：本機瀏覽器確認 Codex `cc079f8` 的第 1 課（Schritte B1.1 742 字、選字庫、我劃線的，主控台無錯誤、提示舊進度保留），之後從 main `4bc94f1` 乾淨建置並部署，`cc079f8` 已上線。真實帳號雲端同步仍未實測。
+- 播放器預覽暫存檔 `src/pages/zz-player-preview.astro`、`src/components/_preview/` 仍在本 worktree（未追蹤、未部署）：刪除被確認提示擋下，需使用者自己刪。
+
 ### 2026-11-22 聽力頁「選擇材料」、手機首頁課程精簡清單（Claude Code，已部署）
 
 - 聽力頁加「選擇材料」底部選單：列出 LangLoop 所有德文專案，打勾即放到聽力頁（LangLoop 新增 `GET /api/site/projects?all=1`、`PATCH /api/site/projects/[id]`，只能改自己的德文專案）。LangLoop commit `10652b0` 已部署 Vercel。
 - 首頁：手機（<640px）課程改成一行一課的清單（`LessonRow`），整頁 2661px → 1140px，第 8 課從 2255px 移到 910px；桌面維持卡片。進度資料沒動。
 - 驗證：網站 171／LangLoop 28 測試全過，兩邊建置通過；手機與桌面截圖確認；正式站假 token 回 401、PATCH 預檢通過。用使用者帳號實際勾選尚未實測。
-- 部署方式同前：從正式站版本 `91ceccb` 加上本次 commit（cherry-pick 為 `b1d24ec`）建置部署，**`cc079f8` 仍未部署**。
+- 部署方式同前：從正式站版本 `91ceccb` 加上本次 commit（cherry-pick 為 `b1d24ec`）建置部署；`cc079f8` 之後已於同日一起部署（見上一筆）。
 
 ### 2026-11-21 聽力頁、寫作與口說頁，串接 LangLoop（Claude Code，已部署聽力頁）
 
-- **部署（使用者同意）**：LangLoop 建立 git（`ad4887f`），改動 commit 為 `1117722` 並 fast-forward 到 LangLoop 的 main，用 `npx vercel deploy --prod` 部署，另加 `.vercelignore` 排除本機上傳檔與截圖；正式站確認 `/api/site/projects` 沒 token 回 401、CORS 只給 german-astro-site.web.app。德語網站 commit `91ceccb`（基底 d97fa4f＝當時正式站），在暫時 worktree 從這個 commit 建置，`npx firebase-tools deploy --only hosting`；正式站 `/listening/` 200。**main 上 Codex 的 `cc079f8`（Schritte B1.1 字庫合併，標未部署）沒有一起部署。** 聽力頁已經使用者同意 fast-forward 合併進 main。下一次從 main 部署時，會連同 `cc079f8` 一起上線，部署前先確認使用者看過那個改動。
+- **部署（使用者同意）**：LangLoop 建立 git（`ad4887f`），改動 commit 為 `1117722` 並 fast-forward 到 LangLoop 的 main，用 `npx vercel deploy --prod` 部署，另加 `.vercelignore` 排除本機上傳檔與截圖；正式站確認 `/api/site/projects` 沒 token 回 401、CORS 只給 german-astro-site.web.app。德語網站 commit `91ceccb`（基底 d97fa4f＝當時正式站），在暫時 worktree 從這個 commit 建置，`npx firebase-tools deploy --only hosting`；正式站 `/listening/` 200。**main 上 Codex 的 `cc079f8`（Schritte B1.1 字庫合併，標未部署）沒有一起部署。** 聽力頁已經使用者同意 fast-forward 合併進 main；main 已於 2026-11-22 整體部署。
 - 播放器預覽用的 `src/pages/zz-player-preview.astro`、`src/components/_preview/` 在本 worktree 未追蹤、未部署，刪除需使用者同意。
 - 新 worktree 沒有 `.env`（Firebase 設定，git 不追蹤），本機會無法登入；從主資料夾複製一份即可。
 - **播放器照 LangLoop 重做（同日）**：使用者覺得整頁列句的版本不好用。`ListeningApp.jsx` 的 `Player` 改成 LangLoop 版面：中間大字單句、逐字亮起（用專案的 words 時間）、前後句小字、底部進度條／速度 0.5–1.25／上一句・播放・下一句／單句循環／全部字幕（全螢幕 dialog）、快捷鍵空白鍵・←→・R。樣式 `listen-*` 重寫。用暫時預覽頁看過桌面與手機版（預覽檔見上方部署說明）。
