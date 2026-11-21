@@ -534,7 +534,7 @@ button:disabled { cursor: default; }
 .langloop-card-accent { color: var(--night-accent); }
 .langloop-card-link { background: color-mix(in srgb, var(--night-ink) 6%, transparent); border: 1px solid var(--night-line); }
 .langloop-card-link:hover { border-color: var(--night-gold); }
-.langloop-card-link:focus-visible, .langloop-card button:focus-visible { outline: 3px solid var(--night-gold); outline-offset: 2px; }
+a.langloop-card:focus-visible, .langloop-card-link:focus-visible, .langloop-card button:focus-visible { outline: 3px solid var(--night-gold); outline-offset: 2px; }
 
 /* Daily review and the Today card: low density, one thing at a time. */
 :root {
