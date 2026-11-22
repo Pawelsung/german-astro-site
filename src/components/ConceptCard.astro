@@ -4,6 +4,8 @@ interface Props {
   lesson: string;
 }
 
+import { concept as tenseConcept } from '../data/lesson9-tenses';
+
 const { lesson } = Astro.props;
 const titles: Record<string, string> = {
   l1: '背單字的三個重點',
@@ -13,7 +15,8 @@ const titles: Record<string, string> = {
   l5: '連接詞決定動詞放哪裡',
   l6: '形容詞字尾：看冠詞有沒有「露出」性別',
   l7: 'Konjunktiv II：表達假設、願望與客氣語氣',
-  l8: 'Passiv：動作、時態與結果狀態'
+  l8: 'Passiv：動作、時態與結果狀態',
+  l9: '時態：先後順序與未來'
 };
 const ablaut = [
   ['ei → ie → ie', 'bleiben – blieb – geblieben', 'schreiben, steigen'],
@@ -266,6 +269,12 @@ const ablaut = [
           </section>
         </>
       )}
+      {lesson === 'l9' && tenseConcept.map(section => (
+        <section>
+          <h3>{section.title}</h3>
+          {section.lines.map(line => <p>{line}</p>)}
+        </section>
+      ))}
     </div>
   </section>
 )}

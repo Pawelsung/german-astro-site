@@ -14,6 +14,8 @@ import { adjectiveSpeechText, connectorSpeechText, kasusSpeechText } from '../sr
 
 import { passivExercises } from '../src/data/lesson8-passiv.ts';
 import { solvedText } from '../src/lib/passiv.mjs';
+import { tenseExercises } from '../src/data/lesson9-tenses.ts';
+import { tenseText } from '../src/lib/tenses.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 
@@ -55,6 +57,7 @@ export function collectTexts() {
   }
 
   for (const item of passivExercises) add(solvedText(item));
+  for (const item of tenseExercises) add(tenseText(item));
 
   // Lesson 3: forms, participle (speak(splitPerfekt(perfekt).participle)) and examples.
   for (const verb of irregularVerbs) {

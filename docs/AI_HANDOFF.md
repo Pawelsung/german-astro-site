@@ -112,6 +112,14 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-22 新增第 9 課 時態（Claude Code 統籌與實作、content-writer 撰寫、german-reviewer 校對，未部署）
+
+- 範圍：Plusquamperfekt（形式、haben／sein、nachdem、先後順序）、Futur I（形式、用法）、Futur II、時態綜合，8 個範圍 94 題，A2 15／B1 59／B2 20。草稿 `tools/lessons/lesson9-tenses.json`，用 `node tools/lessons/build-lesson9.mjs` 產生 `src/data/lesson9-tenses.ts`（改題目改草稿再重跑，不要直接改 .ts）。
+- 校對：german-reviewer 獨立校對全部 94 題、範圍說明、重點卡與頁面提示：must fix 2（futur-use-2 的 bin 也成立；pqp-form 1–6 應為 B1）、should fix 8、optional 20，全部套用。重點卡與頁面提示改用不和題目重複的例句。
+- 程式：`TensesTrainer.jsx`（照第 8 課，含程度篩選）、`lesson9-tenses.astro`、`lib/tenses.mjs`；進度 key `german-lesson9-tenses-progress`，接上摘要、待複習導向、雲端同步（UserAccount PROGRESS_DOCS）、首頁課程與題數、課程連結、1 分鐘重點卡、音檔收集。既有 key 都沒動。
+- 音檔 94 段。驗證：`npm test` 177 全過、建置 14 頁（含未追蹤的預覽頁；正式乾淨建置為 13 頁）；本機手機寬度作答、回饋、首頁出現第 9 課，主控台無錯誤。
+- 還沒做：使用者抽查（`tools/lessons/lesson9-tenses-review.md`）、部署、push。
+
 ### 2026-11-22 Menschen A2 247 字補做校對（Claude Code 統籌、german-reviewer 校對，未部署）
 
 - 發現：Menschen A2（`db66eb8`）、課本全文 865 字、Schritte 6 都已在 11-20 隨 d97fa4f 上線；其中 Menschen A2 一直沒有獨立校對。課本全文與 Schritte 6 已校對。

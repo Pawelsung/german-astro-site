@@ -1,0 +1,21 @@
+---
+import LessonFrame from '../components/LessonFrame.astro';
+import TensesTrainer from '../components/TensesTrainer.jsx';
+export const frontmatter = {
+  title: "Lektion 9｜時態：過去完成式與未來式",
+  description: "Plusquamperfekt、nachdem、Futur I 和 Futur II：分清楚事情的先後，說計畫、預測與推測。",
+  category: "文法練習",
+  tags: ["A2", "B1", "B2", "Plusquamperfekt", "Futur"],
+  order: 9,
+  level: "A2-B2",
+  estimatedMinutes: 20,
+  theme: "violet"
+};
+---
+<LessonFrame frontmatter={frontmatter}>
+  <TensesTrainer client:only="react" />
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>過去完成式＝hatte／war＋過去分詞，表示在過去某件事之前就已經發生：Als ich zur Party kam, war Mia schon gegangen.</span></li>
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>nachdem 從句比主句早一步：主句 Präteritum 或 Perfekt 時，nachdem 用 Plusquamperfekt；主句 Präsens 或 Futur I 時，nachdem 用 Perfekt。</span></li>
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>未來式＝werden＋句尾不定式。有時間詞時，現在式也能表示未來；加 wohl 常表示推測：Er wird wohl im Stau stehen.</span></li>
+  <li slot="tips" class="flex items-start gap-2"><span class="text-current opacity-70 mt-0.5">•</span><span>未來完成式＝werden＋過去分詞＋haben／sein：Bis Montag werde ich das Buch gelesen haben.</span></li>
+</LessonFrame>

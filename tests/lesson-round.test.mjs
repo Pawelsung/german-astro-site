@@ -113,3 +113,11 @@ test('a hint gives the answer away only when it contains the whole word', () => 
   assert.equal(revealsAnswer('für', 'ü'), false);
   assert.equal(revealsAnswer('', 'der'), false);
 });
+
+test('an upload keeps what another device answered in lesson 9, and the newer answer wins', () => {
+  const local = { a: { wrong: 1, updatedAt: '2026-02-01' }, shared: { correct: 1, updatedAt: '2026-01-01' } };
+  const remote = { b: { correct: 1, updatedAt: '2026-01-15' }, shared: { correct: 5, updatedAt: '2026-03-01' } };
+  const merged = mergeLessonValue('lesson9', local, remote);
+  assert.deepEqual(Object.keys(merged).sort(), ['a', 'b', 'shared']);
+  assert.equal(merged.shared.correct, 5);
+});

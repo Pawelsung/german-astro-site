@@ -10,6 +10,7 @@ import adjectiveData from '../data/lesson6-adjective-declension';
 import { konjunktivExercises } from '../data/lesson7-konjunktiv';
 import { formExercises } from '../lib/konjunktiv.mjs';
 import { passivExercises } from '../data/lesson8-passiv';
+import { tenseExercises } from '../data/lesson9-tenses';
 
 const allFiles = import.meta.glob('./*.{mdx,astro}', { eager: true });
 
@@ -30,7 +31,8 @@ const totals: Record<number, number> = {
   5: connectorData.questions?.length ?? 0,
   6: adjectiveData.exercises?.length ?? 0,
   7: formExercises().length + konjunktivExercises.length,
-  8: passivExercises.length
+  8: passivExercises.length,
+  9: tenseExercises.length
 };
 
 const lessons = allLessons.map(({ url, frontmatter }: any) => ({
