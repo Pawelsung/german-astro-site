@@ -112,6 +112,13 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-22 Menschen A2 247 字補做校對（Claude Code 統籌、german-reviewer 校對，未部署）
+
+- 發現：Menschen A2（`db66eb8`）、課本全文 865 字、Schritte 6 都已在 11-20 隨 d97fa4f 上線；其中 Menschen A2 一直沒有獨立校對。課本全文與 Schritte 6 已校對。
+- 本次兩位 german-reviewer 分半校對 247 筆，套用 29 條（1 條錯誤：Werkstatt）。細節見 `tools/lexicon/drafts/menschen-a2-notes.md`「校對結果」。id 全部不變、音檔補 6 段、測試 173 全過。
+- 另修：`apply-tags.mjs` 會把 `tools/lexicon/drafts/*.json` 全當字庫讀，第 8 課題目草稿已移到 `tools/lessons/`（`c9c8544`）。之後課程題目草稿不要放進 drafts。
+- 還沒做：使用者抽查、部署、push。
+
 ### 2026-11-22 LangLoop 建立 GitHub 私人備份（Claude Code）
 
 - `~/Codex/LangLoop` 推到私人儲存庫 https://github.com/Pawelsung/langloop（main，`origin` 已設定）。推送前掃過歷史：只有規格文件裡的 `sk-...` 佔位字，沒有真的密鑰；`.env*`、上傳檔、`data/projects`、`.audit` 都沒被追蹤。

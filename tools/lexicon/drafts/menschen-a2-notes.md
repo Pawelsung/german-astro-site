@@ -66,3 +66,11 @@ Kassette、an•dünsten、Arbeitsvorgang、barock、Bauteil、Bergkräutertee�
 - `npm run build`：成功，10 頁。
 - `npm run audio -- --dry-run`：總計 8362 段文字，待產生 490 段、12749 字元；未產生音檔。
 - 311 筆候選的收錄／排除分配與新增前主字庫正規化去重斷言通過。
+
+## 校對結果（2026-11-22，german-reviewer 兩位分半獨立校對，Claude Code 套用）
+
+- 247 筆全查：must fix 1（Werkstatt 原釋義「工作坊」在台灣指研習活動，改「修理廠；修車廠；工坊」）、should fix 12、optional 16，全部 29 條套用。
+- 重點：Pfund 改「半公斤；英鎊」；Hähnchen 與 Hühnerfleisch、Punkt 與 Note、Gaststätte 與 Lokal／Kneipe 的釋義區隔；Gegenteil 例句改成 A2 程度；restlos 詞性改 adjective；nachts 改「在夜裡；夜間」；medium 改「五分熟的」。
+- Kenntnis 與既有的 Kenntnisse（只用複數）重複：為了不影響已存的複習進度，不刪 id，改教單數用法 zur Kenntnis nehmen（知悉；了解）。
+- 未採納（留給分級或使用者決定）：程度微調建議（Zigarette、Packung、Spaziergang、Anfänger 可能 A2；Notarzt、Notaufnahme、Allee 可能 B1；restlos 可能 B2；prima 可能 A1 等）、damit 另立副詞詞條、Schlüsselbund 的 das 變體。
+- 驗證：check-drafts ✓、apply-tags／build-site-data 成功，4,598 個 id 不變；新例句音檔 6 段；npm test 173 全過。

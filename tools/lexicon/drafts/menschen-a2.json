@@ -17,7 +17,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "general",
-    "meaning": "點；分數",
+    "meaning": "點；得分",
     "exampleDe": "Für diese Antwort bekommst du zwei Punkte.",
     "exampleZh": "這個答案可以拿兩分。"
   },
@@ -105,7 +105,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "travel",
-    "meaning": "搭車或開車的行程",
+    "meaning": "車程；（搭車或開車的）行程",
     "exampleDe": "Die Fahrt zum Flughafen dauert eine Stunde.",
     "exampleZh": "到機場的車程要一小時。"
   },
@@ -149,7 +149,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "罐子；罐裝食品",
+    "meaning": "罐子；罐頭；盒子",
     "exampleDe": "Für die Soße brauchen wir eine Dose Tomaten.",
     "exampleZh": "做醬汁需要一罐番茄。"
   },
@@ -204,7 +204,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "shop",
-    "meaning": "半公斤（德國購物慣用單位）；磅",
+    "meaning": "半公斤；英鎊",
     "exampleDe": "Auf dem Markt kaufe ich ein Pfund Kirschen.",
     "exampleZh": "我在市場買半公斤櫻桃。"
   },
@@ -292,7 +292,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "shop",
-    "meaning": "廣告冊；簡介",
+    "meaning": "宣傳冊；廣告傳單",
     "exampleDe": "Im Prospekt findest du die Preise für alle Zimmer.",
     "exampleZh": "簡介裡有所有房型的價格。"
   },
@@ -336,7 +336,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "leisure",
-    "meaning": "戲服；變裝服裝",
+    "meaning": "戲服；變裝服裝；女用套裝",
     "exampleDe": "Für die Party leiht er sich ein Kostüm.",
     "exampleZh": "他為了派對要去租一套變裝服裝。"
   },
@@ -567,7 +567,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "雞肉；烤雞",
+    "meaning": "（食用的）雞；烤雞",
     "exampleDe": "Das Hähnchen bleibt noch zwanzig Minuten im Ofen.",
     "exampleZh": "雞還要在烤箱裡烤二十分鐘。"
   },
@@ -655,7 +655,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "work",
-    "meaning": "修車廠；工作坊",
+    "meaning": "修理廠；修車廠；工坊",
     "exampleDe": "Mein Fahrrad ist noch in der Werkstatt.",
     "exampleZh": "我的腳踏車還在修車店。"
   },
@@ -666,7 +666,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "shop",
-    "meaning": "布料；材料",
+    "meaning": "布料；物質",
     "exampleDe": "Für die Vorhänge brauchen wir drei Meter Stoff.",
     "exampleZh": "做窗簾需要三公尺布料。"
   },
@@ -864,9 +864,9 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "餐館；小酒館",
-    "exampleDe": "Nach der Wanderung essen wir in einer Gaststätte.",
-    "exampleZh": "健行結束後，我們在一間餐館吃飯。"
+    "meaning": "餐館；飯館",
+    "exampleDe": "Die Gaststätte im Dorf ist montags geschlossen.",
+    "exampleZh": "村子裡的那家餐館每週一公休。"
   },
   {
     "word": "Kinderwagen",
@@ -996,9 +996,9 @@
     "pos": "noun",
     "level": "A2",
     "topic": "general",
-    "meaning": "相反的事物；反面",
-    "exampleDe": "Ich dachte, du wärst müde, aber das Gegenteil ist der Fall.",
-    "exampleZh": "我以為你累了，結果正好相反。"
+    "meaning": "相反；反面",
+    "exampleDe": "Er ist nicht faul – im Gegenteil, er arbeitet sehr viel.",
+    "exampleZh": "他一點也不懶，正好相反，他非常努力工作。"
   },
   {
     "word": "Beginn",
@@ -1041,7 +1041,7 @@
     "level": "A2",
     "topic": "leisure",
     "meaning": "圖畫書",
-    "exampleDe": "Vor dem Schlafen schauen wir ein Bilderbuch an.",
+    "exampleDe": "Vor dem Schlafen schauen wir uns ein Bilderbuch an.",
     "exampleZh": "睡前我們一起看圖畫書。"
   },
   {
@@ -1227,7 +1227,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "people",
-    "meaning": "出生；生產",
+    "meaning": "出生；分娩",
     "exampleDe": "Seit der Geburt ihrer Tochter arbeitet sie weniger.",
     "exampleZh": "女兒出生後，她減少了工作時間。"
   },
@@ -1238,9 +1238,9 @@
     "pos": "noun",
     "level": "B1",
     "topic": "school",
-    "meaning": "知識；技能",
-    "exampleDe": "Für diese Arbeit brauche ich gute Kenntnisse in Mathematik.",
-    "exampleZh": "這份工作需要有良好的數學基礎。"
+    "meaning": "知悉；了解",
+    "exampleDe": "Ich habe Ihre Nachricht zur Kenntnis genommen.",
+    "exampleZh": "我已經知悉您的訊息。"
   },
   {
     "word": "Absatz",
@@ -1305,7 +1305,7 @@
     "level": "B1",
     "topic": "health",
     "meaning": "努力；費力",
-    "exampleDe": "Nach der Anstrengung brauche ich eine Pause.",
+    "exampleDe": "Nach so viel Anstrengung brauche ich eine Pause.",
     "exampleZh": "費了這麼多力氣，我需要休息一下。"
   },
   {
@@ -1360,8 +1360,8 @@
     "level": "A2",
     "topic": "travel",
     "meaning": "汽車輪胎",
-    "exampleDe": "Der linke Autoreifen verliert Luft.",
-    "exampleZh": "左邊的汽車輪胎在漏氣。"
+    "exampleDe": "Einer der Autoreifen verliert Luft.",
+    "exampleZh": "其中一個汽車輪胎在漏氣。"
   },
   {
     "word": "Bäcker",
@@ -1403,7 +1403,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "扭結麵包",
+    "meaning": "德國結麵包；蝴蝶餅",
     "exampleDe": "Am Bahnhof kaufe ich eine Brezel für unterwegs.",
     "exampleZh": "我在車站買一個扭結麵包路上吃。"
   },
@@ -1480,7 +1480,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "leisure",
-    "meaning": "冰上曲棍球",
+    "meaning": "冰上曲棍球；冰球",
     "exampleDe": "Im Winter schauen wir oft Eishockey im Fernsehen.",
     "exampleZh": "冬天我們常在電視上看冰上曲棍球比賽。"
   },
@@ -1623,7 +1623,7 @@
     "pos": "noun",
     "level": "B1",
     "topic": "school",
-    "meaning": "動力；學習動機",
+    "meaning": "動機；動力",
     "exampleDe": "Ein kleines Ziel gibt mir mehr Motivation.",
     "exampleZh": "小目標讓我更有動力。"
   },
@@ -1678,7 +1678,7 @@
     "pos": "noun",
     "level": "B1",
     "topic": "travel",
-    "meaning": "旅行業者；旅遊行程主辦商",
+    "meaning": "旅遊業者；籌辦旅遊行程的公司",
     "exampleDe": "Der Reiseveranstalter hat unsere Reise abgesagt.",
     "exampleZh": "旅行業者取消了我們的行程。"
   },
@@ -1702,7 +1702,7 @@
     "topic": "daily",
     "meaning": "大袋子；麻袋",
     "exampleDe": "Für die Gartenabfälle brauchen wir einen großen Sack.",
-    "exampleZh": "我們需要一個大袋子裝庭園廢料。"
+    "exampleZh": "我們需要一個大袋子裝花園裡的落葉和雜草。"
   },
   {
     "word": "Scheibe",
@@ -1711,7 +1711,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "food",
-    "meaning": "薄片；玻璃片",
+    "meaning": "（一）片；薄片；窗玻璃",
     "exampleDe": "Auf mein Brot lege ich eine Scheibe Käse.",
     "exampleZh": "我在麵包上放一片起司。"
   },
@@ -1757,7 +1757,7 @@
     "topic": "home",
     "meaning": "鎖匠服務；開鎖業者",
     "exampleDe": "Weil die Tür zugefallen ist, rufen wir den Schlüsseldienst.",
-    "exampleZh": "門不小心關上了，我們要找鎖匠來開。"
+    "exampleZh": "門自己關上，把我們鎖在外面了，所以我們要找鎖匠。"
   },
   {
     "word": "Schriftsteller",
@@ -1810,7 +1810,7 @@
     "pos": "noun",
     "level": "A2",
     "topic": "school",
-    "meaning": "課程女老師；女性課程負責人",
+    "meaning": "（女）課程講師；（女）課程負責人",
     "exampleDe": "Unsere Kursleiterin erklärt die Aufgabe noch einmal.",
     "exampleZh": "我們的課程老師再解釋一次題目。"
   },
@@ -2021,7 +2021,7 @@
     "topic": "leisure",
     "meaning": "有節慶氣氛的；隆重的",
     "exampleDe": "Für die Hochzeit ist der Saal festlich geschmückt.",
-    "exampleZh": "大廳為了婚禮布置得很有喜氣。"
+    "exampleZh": "宴會廳為了婚禮布置得很隆重。"
   },
   {
     "word": "fettarm",
@@ -2107,7 +2107,7 @@
     "pos": "adjective",
     "level": "A2",
     "topic": "food",
-    "meaning": "半熟的；五分熟的",
+    "meaning": "五分熟的",
     "exampleDe": "Ich hätte mein Steak gern medium.",
     "exampleZh": "我的牛排要五分熟。"
   },
@@ -2162,7 +2162,7 @@
     "pos": "adverb",
     "level": "A2",
     "topic": "time",
-    "meaning": "在夜裡；每晚",
+    "meaning": "在夜裡；夜間",
     "exampleDe": "Nachts ist es in unserer Straße sehr ruhig.",
     "exampleZh": "我們這條街夜裡很安靜。"
   },
@@ -2192,7 +2192,7 @@
     "word": "restlos",
     "article": "",
     "plural": "",
-    "pos": "adverb",
+    "pos": "adjective",
     "level": "B1",
     "topic": "general",
     "meaning": "完全地；一點也不剩地",
@@ -2526,7 +2526,7 @@
     "topic": "daily",
     "meaning": "碰；觸摸",
     "exampleDe": "Bitte fass die heiße Pfanne nicht an.",
-    "exampleZh": "請不要碰熱鍋子。",
+    "exampleZh": "請不要碰很燙的平底鍋。",
     "verb": {
       "praesens3": "fasst an",
       "praeteritum": "fasste an",

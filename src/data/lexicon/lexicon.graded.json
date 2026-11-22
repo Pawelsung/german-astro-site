@@ -5125,7 +5125,7 @@
    "examples": [
     {
      "de": "Bitte fass die heiße Pfanne nicht an.",
-     "zh": "請不要碰熱鍋子。"
+     "zh": "請不要碰很燙的平底鍋。"
     }
    ],
    "sourceLevel": null,
@@ -7064,7 +7064,7 @@
    ],
    "examples": [
     {
-     "de": "Nach der Anstrengung brauche ich eine Pause.",
+     "de": "Nach so viel Anstrengung brauche ich eine Pause.",
      "zh": "費了這麼多力氣，我需要休息一下。"
     }
    ],
@@ -14690,8 +14690,8 @@
    ],
    "examples": [
     {
-     "de": "Der linke Autoreifen verliert Luft.",
-     "zh": "左邊的汽車輪胎在漏氣。"
+     "de": "Einer der Autoreifen verliert Luft.",
+     "zh": "其中一個汽車輪胎在漏氣。"
     }
    ],
    "sourceLevel": null,
@@ -23306,7 +23306,7 @@
    ],
    "examples": [
     {
-     "de": "Vor dem Schlafen schauen wir ein Bilderbuch an.",
+     "de": "Vor dem Schlafen schauen wir uns ein Bilderbuch an.",
      "zh": "睡前我們一起看圖畫書。"
     }
    ],
@@ -25209,7 +25209,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "扭結麵包"
+    "德國結麵包；蝴蝶餅"
    ],
    "examples": [
     {
@@ -32508,7 +32508,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "罐子；罐裝食品"
+    "罐子；罐頭；盒子"
    ],
    "examples": [
     {
@@ -37952,7 +37952,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "冰上曲棍球"
+    "冰上曲棍球；冰球"
    ],
    "examples": [
     {
@@ -44603,7 +44603,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "搭車或開車的行程"
+    "車程；（搭車或開車的）行程"
    ],
    "examples": [
     {
@@ -46435,7 +46435,7 @@
    "examples": [
     {
      "de": "Für die Hochzeit ist der Saal festlich geschmückt.",
-     "zh": "大廳為了婚禮布置得很有喜氣。"
+     "zh": "宴會廳為了婚禮布置得很隆重。"
     }
    ],
    "sourceLevel": null,
@@ -52491,12 +52491,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "餐館；小酒館"
+    "餐館；飯館"
    ],
    "examples": [
     {
-     "de": "Nach der Wanderung essen wir in einer Gaststätte.",
-     "zh": "健行結束後，我們在一間餐館吃飯。"
+     "de": "Die Gaststätte im Dorf ist montags geschlossen.",
+     "zh": "村子裡的那家餐館每週一公休。"
     }
    ],
    "sourceLevel": null,
@@ -52874,7 +52874,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "出生；生產"
+    "出生；分娩"
    ],
    "examples": [
     {
@@ -53574,12 +53574,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "相反的事物；反面"
+    "相反；反面"
    ],
    "examples": [
     {
-     "de": "Ich dachte, du wärst müde, aber das Gegenteil ist der Fall.",
-     "zh": "我以為你累了，結果正好相反。"
+     "de": "Er ist nicht faul – im Gegenteil, er arbeitet sehr viel.",
+     "zh": "他一點也不懶，正好相反，他非常努力工作。"
     }
    ],
    "sourceLevel": null,
@@ -60434,7 +60434,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "雞肉；烤雞"
+    "（食用的）雞；烤雞"
    ],
    "examples": [
     {
@@ -73766,12 +73766,12 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "知識；技能"
+    "知悉；了解"
    ],
    "examples": [
     {
-     "de": "Für diese Arbeit brauche ich gute Kenntnisse in Mathematik.",
-     "zh": "這份工作需要有良好的數學基礎。"
+     "de": "Ich habe Ihre Nachricht zur Kenntnis genommen.",
+     "zh": "我已經知悉您的訊息。"
     }
    ],
    "sourceLevel": null,
@@ -78091,7 +78091,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "戲服；變裝服裝"
+    "戲服；變裝服裝；女用套裝"
    ],
    "examples": [
     {
@@ -80225,7 +80225,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "課程女老師；女性課程負責人"
+    "（女）課程講師；（女）課程負責人"
    ],
    "examples": [
     {
@@ -86657,7 +86657,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "半熟的；五分熟的"
+    "五分熟的"
    ],
    "examples": [
     {
@@ -92057,7 +92057,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "動力；學習動機"
+    "動機；動力"
    ],
    "examples": [
     {
@@ -94403,7 +94403,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "在夜裡；每晚"
+    "在夜裡；夜間"
    ],
    "examples": [
     {
@@ -101122,7 +101122,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "半公斤（德國購物慣用單位）；磅"
+    "半公斤；英鎊"
    ],
    "examples": [
     {
@@ -103948,7 +103948,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "廣告冊；簡介"
+    "宣傳冊；廣告傳單"
    ],
    "examples": [
     {
@@ -104352,7 +104352,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "點；分數"
+    "點；得分"
    ],
    "examples": [
     {
@@ -107654,7 +107654,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "旅行業者；旅遊行程主辦商"
+    "旅遊業者；籌辦旅遊行程的公司"
    ],
    "examples": [
     {
@@ -108519,7 +108519,7 @@
    "id": "restlos",
    "article": "",
    "word": "restlos",
-   "pos": "adverb",
+   "pos": "adjective",
    "kind": "word",
    "plural": "",
    "verb": null,
@@ -110611,7 +110611,7 @@
    "examples": [
     {
      "de": "Für die Gartenabfälle brauchen wir einen großen Sack.",
-     "zh": "我們需要一個大袋子裝庭園廢料。"
+     "zh": "我們需要一個大袋子裝花園裡的落葉和雜草。"
     }
    ],
    "sourceLevel": null,
@@ -112170,7 +112170,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "薄片；玻璃片"
+    "（一）片；薄片；窗玻璃"
    ],
    "examples": [
     {
@@ -113578,7 +113578,7 @@
    "examples": [
     {
      "de": "Weil die Tür zugefallen ist, rufen wir den Schlüsseldienst.",
-     "zh": "門不小心關上了，我們要找鎖匠來開。"
+     "zh": "門自己關上，把我們鎖在外面了，所以我們要找鎖匠。"
     }
    ],
    "sourceLevel": null,
@@ -128939,7 +128939,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "布料；材料"
+    "布料；物質"
    ],
    "examples": [
     {
@@ -154363,7 +154363,7 @@
    "verb": null,
    "noArticle": false,
    "meanings": [
-    "修車廠；工作坊"
+    "修理廠；修車廠；工坊"
    ],
    "examples": [
     {
