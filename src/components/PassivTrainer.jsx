@@ -10,7 +10,10 @@ import { STAGES, passivExercises } from '../data/lesson8-passiv';
 
 const ALL_ITEMS = passivExercises;
 const loadProgress = () => readProgressMap(PROGRESS_KEYS.lesson8);
-const FILTERS = [{ id: 'stage', label: '範圍', options: [{ id: 'all', label: '全部範圍' }, ...STAGES.map(({ id, label }) => ({ id, label }))] }];
+const FILTERS = [
+  { id: 'stage', label: '範圍', options: [{ id: 'all', label: '全部範圍' }, ...STAGES.map(({ id, label }) => ({ id, label }))] },
+  { id: 'level', label: '程度', options: [{ id: 'all', label: '全部程度' }, { id: 'A2', label: 'A2' }, { id: 'B1', label: 'B1' }, { id: 'B2', label: 'B2' }] }
+];
 
 const Blank = ({ picked, answer }) => (picked ? <span className="lc-filled">{answer}</span> : <span className="lc-blank"/>);
 
@@ -39,7 +42,7 @@ export default function PassivTrainer() {
     ];
   }, [progress]);
 
-  const itemsFor = useCallback(({ stage }) => ALL_ITEMS.filter(item => stage === 'all' || item.stage === stage), []);
+  const itemsFor = useCallback(({ stage, level }) => ALL_ITEMS.filter(item => (stage === 'all' || item.stage === stage) && (!level || level === 'all' || item.level === level)), []);
   const reviewItems = () => ALL_ITEMS.filter(item => needsReview(progress[item.id]));
 
   function renderQuestion({ key, item, isLast, report, next, prev }) {

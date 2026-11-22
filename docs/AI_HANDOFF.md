@@ -112,6 +112,15 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-22 第 8 課 Passiv 擴充到 142 題、加入 B2（Claude Code 統籌、content-writer 撰寫、german-reviewer 校對，未部署）
+
+- 49 → 142 題：原 7 範圍各 7 → 14 題；新增範圍 `clause`（從句裡的被動，B1）、`alternatives`（替代說法 man／sich lassen／sein＋zu／-bar，B1–B2）、`subjunctive`（虛擬式被動）、`modal-past`（情態動詞的過去被動，含從句雙不定式語序）、`participle`（分詞當形容詞），後三個全是 B2。程度 A2 15／B1 98／B2 29。
+- 草稿與校對：`tools/lexicon/drafts/passiv-expansion.json`（撰寫），german-reviewer 獨立校對 93 題：答案全對、沒有第二個可接受選項；套用 15 條應改＋9 條選擇性修改（4 題過去式 A2→B1、state-13 說明、modal-past-7 時態、翻譯用語等）。使用者看過 `passiv-expansion-review.md` 後同意接入。
+- 程式：`lesson8-passiv.ts` 型別加新範圍與 `'B2'`；`PassivTrainer` 新增「程度」篩選（全部／A2／B1／B2）；頁面 level 改 A2-B2。原 49 題 id 不變（測試鎖住），`german-lesson8-passiv-progress` 進度不受影響。
+- 音檔：`npm run audio` 新增 93 段（Google TTS，約 4,300 字元）。
+- 驗證：`npm test` 173 全過、建置通過；本機手機寬度選 B2 → 29 題、作答回饋與朗讀句正常、主控台無錯誤。
+- 還沒做：部署、push。
+
 ### 2026-11-22 聽力卡片縮小、main 全部部署（Claude Code，已部署）
 
 - 首頁聽力卡片改成一行（圖示、聽力練習、一行說明、開始聽），拿掉卡片上的「到 LangLoop 新增材料」（聽力頁裡有）。

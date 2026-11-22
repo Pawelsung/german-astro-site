@@ -4,12 +4,17 @@ import { STAGES, passivExercises } from '../src/data/lesson8-passiv.ts';
 import { solvedText } from '../src/lib/passiv.mjs';
 import { collectLocalProgress, getLearningSummary, getReviewAction, mergeRemoteProgress, PROGRESS_KEYS } from '../src/lib/progressStorage.ts';
 
-test('49 original exercises cover all seven stages with distinct answers and ids', () => {
-  assert.equal(passivExercises.length, 49);
-  assert.equal(new Set(passivExercises.map(x => x.id)).size, 49);
-  for (const stage of STAGES) assert.equal(passivExercises.filter(x => x.stage === stage.id).length, 7);
+// The ids of the first 49 items; progress is stored by id, so they must never change.
+const ORIGINAL_IDS = ['forms', 'transform', 'past', 'perfect', 'modal', 'agent', 'state'].flatMap(stage => Array.from({ length: 7 }, (_, i) => `${stage}-${i + 1}`));
+
+test('142 original exercises cover twelve stages with distinct answers and ids', () => {
+  assert.equal(passivExercises.length, 142);
+  assert.equal(new Set(passivExercises.map(x => x.id)).size, 142);
+  assert.equal(STAGES.length, 12);
+  for (const stage of STAGES) assert.ok(passivExercises.filter(x => x.stage === stage.id).length >= 8, stage.id);
   for (const item of passivExercises) {
     assert.ok(STAGES.some(x => x.id === item.stage));
+    assert.ok(['A2', 'B1', 'B2'].includes(item.level), item.id);
     assert.ok(item.options[0]?.trim(), item.id);
     assert.equal(new Set(item.options).size, item.options.length, item.id);
     assert.ok(item.trans && item.explain, item.id);
@@ -18,12 +23,27 @@ test('49 original exercises cover all seven stages with distinct answers and ids
     assert.ok(!solvedText(item).includes('___'));
   }
 });
+
+test('the first 49 ids are kept, so saved lesson 8 progress still matches', () => {
+  const ids = new Set(passivExercises.map(x => x.id));
+  for (const id of ORIGINAL_IDS) assert.ok(ids.has(id), id);
+});
+
+test('each level has practice, and B2 has its own stages', () => {
+  const count = level => passivExercises.filter(x => x.level === level).length;
+  assert.equal(count('A2'), 15);
+  assert.equal(count('B1'), 98);
+  assert.equal(count('B2'), 29);
+  for (const stage of ['subjunctive', 'modal-past', 'participle']) assert.ok(passivExercises.filter(x => x.stage === stage).every(x => x.level === 'B2'), stage);
+  assert.equal(solvedText(passivExercises.find(x => x.id === 'modal-past-5')), 'Es tut mir leid, dass Ihr Termin hat verschoben werden müssen.');
+});
+
 test('spoken feedback uses a full German sentence for each task type', () => {
   assert.equal(solvedText(passivExercises[0]), 'Ich werde heute untersucht.');
   assert.equal(solvedText(passivExercises.find(x => x.stage === 'transform')), 'Das Gemüse wird geschnitten.');
   assert.equal(solvedText(passivExercises.find(x => x.stage === 'state')), 'Die Tür ist geöffnet.');
   for (const item of passivExercises.filter(x => x.stage === 'perfect')) {
-    assert.match(solvedText(item), / worden\./);
+    assert.match(solvedText(item), / worden[.?!]$/);
     assert.doesNotMatch(solvedText(item), /geworden/);
   }
 });
