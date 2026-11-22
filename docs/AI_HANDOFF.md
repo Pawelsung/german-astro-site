@@ -112,6 +112,10 @@ CSS class（`src/styles/global.css` 檔尾）：
 
 ## 進度紀錄
 
+### 2026-11-22 LangLoop 建立 GitHub 私人備份（Claude Code）
+
+- `~/Codex/LangLoop` 推到私人儲存庫 https://github.com/Pawelsung/langloop（main，`origin` 已設定）。推送前掃過歷史：只有規格文件裡的 `sk-...` 佔位字，沒有真的密鑰；`.env*`、上傳檔、`data/projects`、`.audit` 都沒被追蹤。
+
 ### 2026-11-22 第 8 課 Passiv 擴充到 142 題、加入 B2（Claude Code 統籌、content-writer 撰寫、german-reviewer 校對，未部署）
 
 - 49 → 142 題：原 7 範圍各 7 → 14 題；新增範圍 `clause`（從句裡的被動，B1）、`alternatives`（替代說法 man／sich lassen／sein＋zu／-bar，B1–B2）、`subjunctive`（虛擬式被動）、`modal-past`（情態動詞的過去被動，含從句雙不定式語序）、`participle`（分詞當形容詞），後三個全是 B2。程度 A2 15／B1 98／B2 29。
